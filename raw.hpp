@@ -4,6 +4,7 @@
 #include <map>
 #include <memory>
 #include <string>
+#include <vector>
 
 #include "caseidentification.hpp"
 #include "bus.hpp"
@@ -130,31 +131,31 @@ public:
     bool set_areas_from_buses(
             );
 
-    std::vector<Bus> get_buses(
+    vector<Bus> get_buses(
             );
 
-    std::vector<Load> get_loads(
+    vector<Load> get_loads(
             );
 
-    std::vector<FixedShunt> get_fixed_shunts(
+    vector<FixedShunt> get_fixed_shunts(
             );
 
-    std::vector<Generator> get_generators(
+    vector<Generator> get_generators(
             );
 
-    std::vector<NontransformerBranch> get_nontransformer_branches(
+    vector<NontransformerBranch> get_nontransformer_branches(
             );
 
-    std::vector<Transformer> get_transformers(
+    vector<Transformer> get_transformers(
             );
 
-    std::vector<Area> get_areas(
+    vector<Area> get_areas(
             );
 
-    std::vector<TransformerImpedanceCorrectionTable> get_transformer_impedance_correction_tables(
+    vector<TransformerImpedanceCorrectionTable> get_transformer_impedance_correction_tables(
             );
 
-    std::vector<SwitchedShunt> get_switched_shunts(
+    vector<SwitchedShunt> get_switched_shunts(
             );
 
     string construct_case_identification_section(

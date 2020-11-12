@@ -88,6 +88,14 @@ bool check_connectedness(
                          )
 {
     vector<Bus> buses = raw.get_buses();
+    vector<int> buses_id;
+    int num_buses = buses.capacity();
+    for(int idx=0; idx<num_buses; idx++)
+    {
+        buses_id.push_back(buses[idx].i);
+    }
+    
+
     
 }
 
