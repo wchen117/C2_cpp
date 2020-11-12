@@ -32,7 +32,7 @@ public:
     map<TransformerImpedanceCorrectionTable, int> transformer_impedance_correction_tables;
     map<SwitchedShunt, int> switched_shunts;
 
-    int num_loads_active = 0;
+    int num_loads_active;
 
     /**constructor and destructor**/
     Raw();
@@ -130,101 +130,101 @@ public:
     bool set_areas_from_buses(
             );
 
-    bool get_buses(
+    std::vector<Bus> get_buses(
             );
 
-    bool get_loads(
+    std::vector<Load> get_loads(
             );
 
-    bool get_fixed_shunts(
+    std::vector<FixedShunt> get_fixed_shunts(
             );
 
-    bool get_generators(
+    std::vector<Generator> get_generators(
             );
 
-    bool get_nontransformer_branches(
+    std::vector<NontransformerBranch> get_nontransformer_branches(
             );
 
-    bool get_transformers(
+    std::vector<Transformer> get_transformers(
             );
 
-    bool get_areas(
+    std::vector<Area> get_areas(
             );
 
-    bool get_transformer_impedance_correction_tables(
+    std::vector<TransformerImpedanceCorrectionTable> get_transformer_impedance_correction_tables(
             );
 
-    bool get_switched_shunts(
+    std::vector<SwitchedShunt> get_switched_shunts(
             );
 
-    bool construct_case_identification_section(
+    string construct_case_identification_section(
             );
 
-    bool construct_bus_section(
+    string construct_bus_section(
             );
 
-    bool construct_load_section(
+    string construct_load_section(
             );
 
-    bool construct_fixed_shunt_section(
+    string construct_fixed_shunt_section(
             );
 
-    bool construct_generator_section(
+    string construct_generator_section(
             );
 
-    bool construct_nontransformer_branch_section(
+    string construct_nontransformer_branch_section(
             );
 
-    bool construct_transformer_section(
+    string construct_transformer_section(
             );
 
-    bool construct_area_section(
+    string construct_area_section(
             );
 
-    bool construct_two_terminal_dc_section(
+    string construct_two_terminal_dc_section(
             );
 
-    bool construct_vsc_dc_section(
+    string construct_vsc_dc_section(
             );
 
-    bool construct_transformer_impedance_section(
+    string construct_transformer_impedance_section(
             );
 
-    bool construct_multi_terminal_dc_section(
+    string construct_multi_terminal_dc_section(
             );
 
-    bool construct_multi_section_line_section(
+    string construct_multi_section_line_section(
             );
 
-    bool construct_zone_section(
+    string construct_zone_section(
             );
 
-    bool construct_interarea_section(
+    string construct_interarea_section(
             );
 
-    bool construct_owner_section(
+    string construct_owner_section(
             );
 
-    bool construct_facts_section(
+    string construct_facts_section(
             );
 
-    bool construct_switched_shunt_section(
+    string construct_switched_shunt_section(
             );
 
-    bool construct_gne_section(
+    string construct_gne_section(
             );
 
-    bool construct_induction_section(
+    string construct_induction_section(
             );
 
-    bool construct_q_record(
+    string construct_q_record(
             );
 
     bool write(
             string file_name
             );
 
-    bool set_operating_point_to_offline_solution(
+    string set_operating_point_to_offline_solution(
             );
 
     bool read(

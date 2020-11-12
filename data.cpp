@@ -1,6 +1,8 @@
 #include "data.hpp"
 #include "iostream"
 #include <string>
+#include <vector>
+#include "bus.hpp"
 
 // constructor
 Data::Data() {
@@ -85,6 +87,7 @@ bool check_connectedness(
      scrub_mode=false
                          )
 {
+    vector<Bus> buses = raw.get_buses();
     
 }
 
