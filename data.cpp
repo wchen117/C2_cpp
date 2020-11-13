@@ -84,9 +84,10 @@ bool convert_to_offline()
 }
 
 bool check_connectedness(
-     scrub_mode=false
+     scrub_mode
                          )
 {
+    //get buses_id, num_buses, sort buses_id
     vector<Bus> buses = raw.get_buses();
     vector<int> buses_id;
     int num_buses = buses.capacity();
@@ -94,8 +95,11 @@ bool check_connectedness(
     {
         buses_id.push_back(buses[idx].i);
     }
-    
-
+    std::sort(buses_id.begin(), buses_id.end());
+   
+    vector<NontransformerBranch> nontransformerbranches = raw.get_nontransformer_branches();
+    int num_nontranformerbranches = nontransformerbranches.capacity();
+        
     
 }
 
