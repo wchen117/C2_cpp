@@ -99,7 +99,15 @@ bool check_connectedness(
    
     vector<NontransformerBranch> nontransformerbranches = raw.get_nontransformer_branches();
     int num_nontranformerbranches = nontransformerbranches.capacity();
-        
+    vecotr<int> lines_id_i;
+    vector<int> lines_id_j;
+    vector<int> lines_id_ckt;
+    for(int idx =0; idx<num_nontranformerbranches; idx++)
+    {
+        lines_id_i.push_back(nontransformerbranches[idx].i);
+        lines_id_j.push_back(nontransformerbranches[idx].j);
+        lines_id_ckt.push_back(nontransformerbranches[idx].ckt);
+    }    
     
 }
 
