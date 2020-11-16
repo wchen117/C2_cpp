@@ -4,7 +4,7 @@
 #include <map>
 #include <string>
 
-#include "contigency.hpp"
+#include "contingency.hpp"
 
 class Con
 

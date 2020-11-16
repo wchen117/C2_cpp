@@ -20,4 +20,10 @@ bool Raw::scrub()
     return true;
 }
 
+bool Raw::read(string file_name)
+{
+     
+
+}
+
 
