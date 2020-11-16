@@ -11,6 +11,7 @@ Sup::~Sup(){}
 std::string Sup::read(std::string file_name)
 {
     std::ifstream input(file_name, std::ios::in | std::ios::binary);
+    input.clear();
     if (input)  
     {
         std::string contents2;
