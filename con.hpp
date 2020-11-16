@@ -18,7 +18,7 @@ public:
             );
     
     // python: target_contingency default to None, how to translate? 
-    bool read(
+    std::string read(
             std::string file_name
             );
     // python: target_congingency default to None

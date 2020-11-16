@@ -11,7 +11,7 @@ public:
     Sup();
     ~Sup();
 
-    bool read(
+    std::string read(
          std::string file_name
             );
 
