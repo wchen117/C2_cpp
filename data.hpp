@@ -4,8 +4,7 @@
 #include <string>
 #include "raw.hpp"
 #include "con.hpp"
-##include "sup.hpp"
-#include "bus.hpp"
+#include "sup.hpp"
 
 class Data
 {
@@ -22,17 +21,18 @@ public:
 
     bool read(
         /**three input raw, sup, and con name**/
-        string raw_name,
-        string sup_name,
-        string con_name, 
+        std::string raw_name,
+        std::string sup_name,
+        std::string con_name
             );
     
     bool write(
         /**three output raw, sup and con name**/
-        string raw_name,
-        string sup_name,
-        string con_name, 
-            )
+        std::string raw_name,
+        std::string sup_name,
+        std::string con_name 
+            );
+
     bool check(
         /**check grid optimization competition assumptions**/
             );
@@ -133,5 +133,5 @@ public:
     bool remove_contingencies_with_offline_transformers(
             );
 
-}
+};
 #endif
