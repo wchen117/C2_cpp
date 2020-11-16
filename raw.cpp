@@ -20,4 +20,13 @@ bool Raw::scrub()
     return true;
 }
 
+bool Raw::read()
+{
+
+}
+
+bool Raw::read_from_rows(string rows)
+{
+
+}
 

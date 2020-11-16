@@ -4,7 +4,8 @@
 #include <string>
 #include "raw.hpp"
 #include "con.hpp"
-#include "sup.hpp"
+##include "sup.hpp"
+#include "bus.hpp"
 
 class Data
 {

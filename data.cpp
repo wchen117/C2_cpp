@@ -2,7 +2,6 @@
 #include "iostream"
 #include <string>
 #include <vector>
-#include "bus.hpp"
 
 // constructor
 Data::Data() {
