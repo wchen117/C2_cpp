@@ -13,6 +13,10 @@ EXE = data_main
 # CHANGEME: Here is the name of all object files corresponding to the source
 #           code that you wrote in order to define the problem statement
 OBJS = data_main.o \
+	   data.o \
+	   raw.o \
+	   con.o \
+	   sup.o \
 
 
 # CHANGEME: Additional libraries
@@ -27,7 +31,8 @@ ADDINCFLAGS =
 ##########################################################################
 
 # C++ Compiler command
-CXX = /usr/local/bin/g++-10
+CXX = /usr/bin/g++
+#CXX = /usr/local/bin/g++-10
 
 # C++ Compiler options
 CXXFLAGS = -O2 -DNDEBUG 

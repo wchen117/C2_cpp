@@ -19,7 +19,7 @@ public:
             std::string file_name
             );
 
-    bool read(
+    std::string read(
             std::string file_name
             );
     bool row_is_file_end(
