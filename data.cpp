@@ -107,8 +107,8 @@ bool check_connectedness(
         lines_id_i.push_back(nontransformerbranches[idx].i);
         lines_id_j.push_back(nontransformerbranches[idx].j);
         lines_id_ckt.push_back(nontransformerbranches[idx].ckt);
-    }    
-    
+    }
+    int num_lines = lines_id_j.capacity();
 }
 
 }
