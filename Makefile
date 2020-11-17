@@ -44,14 +44,12 @@ prefix=/usr/local
 exec_prefix=${prefix}
 
 # Include directories
-#INCL = `PKG_CONFIG_PATH=/usr/local/lib/pkgconfig: pkg-config --cflags ipopt` $(ADDINCFLAGS)
-#INCL = -I${prefix}/include/coin-or -I/usr/local/include/coin-or/hsl    -DIPOPTLIB_BUILD $(ADDINCFLAGS)
 
+INCL = -I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include
 #INCL = -I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/jsoncpp_x64-osx/include/json
 
 # Linker flags
 LIBS = -framework Accelerate -ldl
-#$LIBS = `PKG_CONFIG_PATH=/usr/local/lib/pkgconfig: pkg-config --libs ipopt`
 #LIBS = -L${exec_prefix}/lib -lipopt -L/usr/local/lib -lcoinhsl  -framework Accelerate  -ldl
 #LIBS = -L/Users/wchen/Softwares/JsonCpp/vcpkg/packages/jsoncpp_x64-osx/lib -ljsoncpp
 
