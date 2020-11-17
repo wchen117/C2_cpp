@@ -43,7 +43,7 @@ exec_prefix=${prefix}
 INCL = -I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include
 
 # Linker flags
-LIBS = -framework Accelerate -ldl
+#LIBS = -framework Accelerate -ldl
 #LIBS = -L${exec_prefix}/lib -lipopt -L/usr/local/lib -lcoinhsl  -framework Accelerate  -ldl
 
 all: $(EXE)

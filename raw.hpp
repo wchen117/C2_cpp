@@ -32,9 +32,7 @@ public:
             );
 
     // not sure type of rows here
-    bool read_from_rows(
-            std::string row
-            );
+    bool read_from_rows();
     
 };
 #endif
