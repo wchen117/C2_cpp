@@ -21,9 +21,13 @@ public:
             std::string file_name
             );
 
-    std::string read(
+    void read(
             std::string file_name
             );
+    std::string read_to_string(
+            std::string file_name
+            );
+
     bool row_is_file_end(
             int row
             );

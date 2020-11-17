@@ -19,8 +19,8 @@ bool Data::read(
     std::string con_name
                 )
 {
-    raw.raw_input = raw.read(raw_name);
-    raw.read_from_rows();
+    raw.read(raw_name);
+    
   
 
     return true;
