@@ -35,5 +35,9 @@ public:
     // not sure type of rows here
     void read_from_rows();
     
+    std::vector<std::string> lines_in_section(
+            std::string section
+            );
+        
 };
 #endif

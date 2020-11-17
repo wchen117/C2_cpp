@@ -4,6 +4,7 @@
 #include<cerrno>
 #include<vector>
 #include<iostream>
+#include <sstream>
 
 /**constructor and desctructor**/
 Raw::Raw(){}
@@ -37,16 +38,23 @@ void Raw::read_from_rows()
    
     while(end != std::string::npos)
     {
-         //std::cout << raw_input.substr(start, end - start) << std::endl;
          rows_sections.push_back(raw_input.substr(start, end - start));
          start = end + delimiter.length();
          end = raw_input.find(delimiter, start);
     }
-    
-    for(int idx=0; idx<1; idx++)
+ 
+}
+
+std::vector<std::string> Raw::lines_in_section(std::string section)
+{
+    std::vector<std::string> section_vector;
+    std::istringstream sectionstream (section);
+    std::string temp;
+    while(std::getline(sectionstream, temp))
     {
-        std::cout<<rows_sections[idx]<<std::endl;
+        section_vector.push_back(temp);
     }
-    //rows_sections.push_back(raw_input.substr(start, end));
+    return section_vector;
+    
 }
 
