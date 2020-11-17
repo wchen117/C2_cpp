@@ -7,6 +7,8 @@
 class Sup
 {
 public:
+
+    std::string sup_input;
     /**constructors and destructors**/
     Sup();
     ~Sup();

@@ -19,13 +19,13 @@ bool Data::read(
     std::string con_name
                 )
 {
-    std::string raw_input = raw.read(raw_name);
-    std::string sup_input = sup.read(sup_name);
-    std::string con_input = con.read(con_name);
+    raw.raw_input = raw.read(raw_name);
+    sup.sup_input = sup.read(sup_name);
+    con.con_input = con.read(con_name);
 
-    std::cout<<raw_input<<"\n";
-    std::cout<<sup_input<<"\n";
-    std::cout<<con_input<<"\n";
+    std::cout<<raw.raw_input<<"\n";
+    std::cout<<sup.sup_input<<"\n";
+    std::cout<<con.con_input<<"\n";
 
     return true;
 }

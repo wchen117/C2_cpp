@@ -2,7 +2,7 @@
 #include<fstream>
 #include<string>
 #include<cerrno>
-
+#include<iostream>
 
 Sup::Sup(){}
 

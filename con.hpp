@@ -10,6 +10,8 @@ class Con
 {
 public:
 
+    std::string con_input;
+
     Con();
     ~Con();
 

@@ -11,6 +11,7 @@ class Raw
 
 public:
 
+    std::string raw_input;
     /**constructor and destructor**/
     Raw();
     ~Raw();
