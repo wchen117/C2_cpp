@@ -11,6 +11,7 @@ class Raw
 
 public:
 
+    std::vector<std::string> rows_sections;
     std::string raw_input;
     /**constructor and destructor**/
     Raw();
@@ -32,7 +33,7 @@ public:
             );
 
     // not sure type of rows here
-    bool read_from_rows();
+    void read_from_rows();
     
 };
 #endif
