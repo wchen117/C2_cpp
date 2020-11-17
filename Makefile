@@ -25,11 +25,6 @@ ADDLIBS =
 # CHANGEME: Additional flags for compilation (e.g., include flags)
 ADDINCFLAGS =
 
-##########################################################################
-#  Usually, you don't have to change anything below.  Note that if you   #
-#  change certain compiler options, you might have to recompile Ipopt.   #
-##########################################################################
-
 # C++ Compiler command
 CXX = /usr/bin/g++ 
 #CXX = /usr/local/bin/g++-10
@@ -46,12 +41,10 @@ exec_prefix=${prefix}
 # Include directories
 
 INCL = -I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include
-#INCL = -I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/jsoncpp_x64-osx/include/json
 
 # Linker flags
 LIBS = -framework Accelerate -ldl
 #LIBS = -L${exec_prefix}/lib -lipopt -L/usr/local/lib -lcoinhsl  -framework Accelerate  -ldl
-#LIBS = -L/Users/wchen/Softwares/JsonCpp/vcpkg/packages/jsoncpp_x64-osx/lib -ljsoncpp
 
 all: $(EXE)
 
