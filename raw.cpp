@@ -30,7 +30,7 @@ std::string Raw::read(std::string file_name)
 void Raw::read_from_rows()
 {
     // parse the different section of case.raw file
-    std::string delimiter = "0 /";
+    std::string delimiter = "0 / ";
     std::size_t start = 0;
     std::size_t end = raw_input.find(delimiter);
 
