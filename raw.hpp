@@ -24,6 +24,7 @@ public:
     void read(
             std::string file_name
             );
+
     std::string read_to_string(
             std::string file_name
             );
@@ -36,12 +37,53 @@ public:
             int row
             );
 
-    // not sure type of rows here
-    void read_from_rows();
+    void string_to_section();
     
     std::vector<std::string> lines_in_section(
-            std::string section
+            size_t section_num 
             );
-        
+
+    std::vector<std::string> parse_on_delimiter(
+            std::string input_string,
+            std::string delimiter
+            );
+
+    void parse_case_id_bus(
+            std::vector<std::string> section
+    );
+
+    void parse_load();
+
+    void parse_fixed_bus_shunt();
+
+    void parse_generator();
+    
+    void parse_non_transformer_branch();
+    
+    void parse_transformer();
+    
+    void parse_area();
+    
+    void parse_two_terminal_dc_transmission_line();
+    
+    void parse_vsc_dc_transmission_line();
+    
+    void parse_transformer_impedance_correction_table();
+    
+    void parse_multisection_line_grouping();
+    
+    void parse_zone();
+    
+    void parse_interarea_transfer();
+    
+    void parse_owner();
+    
+    void parse_facts_device();
+    
+    void parse_switched_shunt();
+    
+    void parse_gne_device();
+    
+    void parse_induction_machine();
 };
 #endif
