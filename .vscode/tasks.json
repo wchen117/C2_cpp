@@ -6,12 +6,19 @@
     {
       "type": "shell",
       "label": "clang++ build active file",
-      "command": "/usr/bin/clang++",
+      "command": "/usr/bin/g++",
       "args": [
-        "-g",
-        "${file}",
         "-O2",
-        "${fileDirname}/${fileBasenameNoExtension}"
+        "-DNDEBUG",
+        "-I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include",
+        "-c",
+        "${workspaceFolder}/data_main.cpp",
+        "${workspaceFolder}/data.cpp",
+        "${workspaceFolder}/raw.cpp",
+        "${workspaceFolder}/sup.cpp",
+        "${workspaceFolder}/con.cpp",
+        "-o",
+        "${workspaceFolder}/data_main"
       ],
       "options": {
         "cwd": "${workspaceFolder}"

@@ -1,10 +1,13 @@
 #ifndef __RAW_HPP__
 #define __RAW_HPP__
 
-#include <map>
+#include <unordered_map>
 #include <memory>
 #include <string>
 #include <vector>
+#include "caseidentification.hpp"
+#include "bus.hpp"
+
 
 class Raw
 {
@@ -13,6 +16,11 @@ public:
 
     std::vector<std::string> rows_sections;
     std::string raw_input;
+    CaseIdentification CaseIdentificationData;
+    std::unordered_map<int, Bus> buses;
+
+
+
     /**constructor and destructor**/
     Raw();
     ~Raw();
@@ -51,6 +59,18 @@ public:
     void parse_case_id_bus(
             std::vector<std::string> section
     );
+
+    void parse_case_id(
+            std::string line1,
+            std::string line2,
+            std::string line3
+    );
+    void parse_bus(
+            std::string each_line,
+            Bus& ref
+
+    );
+
 
     void parse_load();
 

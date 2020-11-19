@@ -8,7 +8,7 @@
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/data_main.o",
+            "program": "${workspaceFolder}/data_main",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

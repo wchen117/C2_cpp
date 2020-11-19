@@ -17,6 +17,8 @@ OBJS = data_main.o \
 	   raw.o \
 	   con.o \
 	   sup.o \
+	   caseidentification.o \
+	   bus.o
 
 
 # CHANGEME: Additional libraries
