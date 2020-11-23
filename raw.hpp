@@ -11,6 +11,10 @@
 #include "fixedshunt.hpp"
 #include "generator.hpp"
 #include "nontransformerbranch.hpp"
+#include "transformer.hpp"
+#include "area.hpp"
+#include "transformerimpedancecorrectiontable.hpp"
+
 
 
 
@@ -27,6 +31,9 @@ public:
     std::unordered_map<int, FixedShunt> shunts;
     std::unordered_map<int, Generator> generators;
     std::unordered_map<int, NontransformerBranch> nontransformerbranches;
+    std::unordered_map<int, Transformer> transformers;
+    std::unordered_map<int, Area> areas;
+    std::unordered_map<int, TransformerImpedanceCorrectionTable> TFICTs;
 
 
 
@@ -97,14 +104,30 @@ public:
     void parse_nontransformerbranch(
             std::vector<std::string> nontransformerbranch_section
     );
+
+    void parse_transformer(
+            std::vector<std::string> transformer_section
+    );
     
-    void parse_area();
+    void regroup_transformer_section(
+            std::vector<std::string> transformer_section
+    );
+
+    void parse_area(
+            std::vector<std::string> area_section
+    );
     
-    void parse_two_terminal_dc_transmission_line();
+    void parse_two_terminal_dc_transmission_line(
+            std::vector<std::string> ttdc_transmission_line
+    );
     
-    void parse_vsc_dc_transmission_line();
+    void parse_vsc_dc_transmission_line(
+            std::vector<std::string> vsc_dc_transmission_section
+    );
     
-    void parse_transformer_impedance_correction_table();
+    void parse_transformer_impedance_correction_table(
+            std::vector<std::string> impedance_data_section
+    );
     
     void parse_multisection_line_grouping();
     

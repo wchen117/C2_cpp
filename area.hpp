@@ -11,7 +11,7 @@ public:
     int isw;
     double pdes;
     double ptol;
-    string arname;
+    std::string arname;
 
     /**constructor and destructor**/
     Area();
@@ -27,9 +27,9 @@ public:
             );
 
     bool read_from_row(
-            string row
+            std::string row
             );
 
-}
-#endif
+};
 
+#endif

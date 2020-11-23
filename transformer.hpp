@@ -11,14 +11,14 @@ public:
     // ptyhon: self.j = None, no default
     int j;
     int k;
-    string ckt;
+    std::string ckt;
     int cw;
     int cz;
     int cm;
     double mag1;
     double mag2;
     int nmetr;
-    string name;
+    std::string name;
     int stat;
     int o1;
     double f1;
@@ -28,10 +28,11 @@ public:
     double f3;
     int o4;
     double f4;
-    string vecgrp;
+    std::string vecgrp;
     double r12;
     int x12;
     double sbase12;
+    double windv1;
     double nomv1;
     double ang1;
     double rata1;
@@ -109,28 +110,27 @@ public:
             );
 
     bool get_num_rows_from_row(
-            string row
+            std::string row
             );
 
     bool read_from_rows(
-            string rows
+            std::string rows
             );
 
     bool pad_rows(
-            string rows
+            std::string rows
             );
 
     bool flatten_rows(
-            string rows
+            std::string rows
             );
 
     bool read_from_row(
-            string row
+            std::string row
             );
 
 
 
 
-}
-
+};
 #endif
