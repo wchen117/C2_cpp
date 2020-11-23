@@ -1,12 +1,14 @@
 #ifndef __NONTRANSFORMERBRANCH_HPP__
 #define __NONTRANSFORMERBRANCH_HPP__
 
+#include<string>
+
 class NontransformerBranch
 {
 public:
     int i;
     int j;
-    string ckt;
+    std::string ckt;
     int r;
     int x;
     double b;
@@ -63,5 +65,5 @@ public:
     bool read_from_row(
             );
 
-}
+};
 #endif

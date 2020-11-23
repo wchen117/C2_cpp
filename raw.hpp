@@ -7,6 +7,10 @@
 #include <vector>
 #include "caseidentification.hpp"
 #include "bus.hpp"
+#include "load.hpp"
+#include "fixedshunt.hpp"
+#include "generator.hpp"
+
 
 
 class Raw
@@ -18,6 +22,9 @@ public:
     std::string raw_input;
     CaseIdentification CaseIdentificationData;
     std::unordered_map<int, Bus> buses;
+    std::unordered_map<int, Load> loads;
+    std::unordered_map<int, FixedShunt> shunts;
+    std::unordered_map<int, Generator> generators;
 
 
 
@@ -72,15 +79,21 @@ public:
     );
 
 
-    void parse_load();
+    void parse_load(
+            std::vector<std::string> load_section
+    );
 
-    void parse_fixed_bus_shunt();
+    void parse_fixed_bus_shunt(
+            std::vector<std::string> fixed_shunt_section
+    );
 
-    void parse_generator();
+    void parse_generator(
+            std::vector<std::string> generator_section
+    );
     
-    void parse_non_transformer_branch();
-    
-    void parse_transformer();
+    void parse_nontransformerbranch(
+            std::vector<std::string> nontransformerbranch_section
+    );
     
     void parse_area();
     

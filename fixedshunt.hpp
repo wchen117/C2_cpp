@@ -1,5 +1,6 @@
 #ifndef __FIXEDSHUNT_HPP__
 #define __FIXEDSHUNT_HPP__
+
 #include <string>
 
 class FixedShunt
@@ -7,7 +8,7 @@ class FixedShunt
 public:
     // python: self.i = None, no default allowed
     int i;
-    string id;
+    std::string id;
     int status;
     double gl;
     double bl;
@@ -27,9 +28,9 @@ public:
             );
 
     bool read_from_row(
-            string row
+            std::string row
             ); 
 
 
-}
+};
 #endif

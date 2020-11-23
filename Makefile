@@ -18,7 +18,10 @@ OBJS = data_main.o \
 	   con.o \
 	   sup.o \
 	   caseidentification.o \
-	   bus.o
+	   bus.o \
+	   load.o \
+	   fixedshunt.o \
+	   generator.o  
 
 
 # CHANGEME: Additional libraries
