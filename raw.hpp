@@ -10,6 +10,7 @@
 #include "load.hpp"
 #include "fixedshunt.hpp"
 #include "generator.hpp"
+#include "nontransformerbranch.hpp"
 
 
 
@@ -25,6 +26,8 @@ public:
     std::unordered_map<int, Load> loads;
     std::unordered_map<int, FixedShunt> shunts;
     std::unordered_map<int, Generator> generators;
+    std::unordered_map<int, NontransformerBranch> nontransformerbranches;
+
 
 
 

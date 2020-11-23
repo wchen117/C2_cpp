@@ -238,5 +238,9 @@ void Raw::parse_generator(std::vector<std::string> generator_section)
 
 void Raw::parse_nontransformerbranch(std::vector<std::string> nontranformerbranch_section)
 {
+    for (int idx=1; idx<nontranformerbranch_section.size(); idx++)
+    {
+        std::vector<std::string> line_vector = parse_on_delimiter(nontranformerbranch_section[idx], ",");
 
+    }
 }
