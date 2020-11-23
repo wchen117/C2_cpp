@@ -26,6 +26,7 @@ void Raw::read(std::string file_name)
     std::vector<std::string> ttdc_transmission_line_section = lines_in_section(7);
     std::vector<std::string> vsc_dc_transmission_section = lines_in_section(8);
     std::vector<std::string> impedance_data_section = lines_in_section(9);
+    std::vector<std::string> multi_terminal_dc_section = lines_in_section(10);
 
 
     parse_case_id_bus(id_bus_section);
@@ -38,6 +39,7 @@ void Raw::read(std::string file_name)
     parse_two_terminal_dc_transmission_line(ttdc_transmission_line_section);
     parse_vsc_dc_transmission_line(vsc_dc_transmission_section);
     parse_transformer_impedance_correction_table(impedance_data_section);
+    parse_multi_terminal_dc(multi_terminal_dc_section);
 
     //parse_non_transformer_branch();
     //
@@ -382,7 +384,7 @@ void Raw::parse_transformer_impedance_correction_table(
 )
 {
     // here t[0] corresponds to t1, f[0] corresponds to f1, etc;
-    std::vector<std::string> line_vector = parse_on_delimiter(impedance_data_section[0], ",");
+    std::vector<std::string> line_vector = parse_on_delimiter(impedance_data_section[1], ",");
     TransformerImpedanceCorrectionTable tmp_tfict;
     tmp_tfict.i = std::stoi(line_vector[0]);
     for (int idx=1;idx<line_vector.size()-1; idx=idx+2)
@@ -391,4 +393,13 @@ void Raw::parse_transformer_impedance_correction_table(
             tmp_tfict.f.push_back(std::stod(line_vector[idx+1]));
         }
     TFICTs.insert(std::make_pair(tmp_tfict.i, tmp_tfict));
+}
+
+void Raw::parse_multi_terminal_dc(
+    std::vector<std::string> multi_terminal_dc_section
+)
+
+{
+    std::string tmp = multi_terminal_dc_section[0];
+
 }

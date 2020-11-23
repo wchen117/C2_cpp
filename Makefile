@@ -24,7 +24,8 @@ OBJS = data_main.o \
 	   generator.o \
 	   transformer.o \
 	   nontransformerbranch.o \
-	   area.o 
+	   area.o \
+	   transformerimpedancecorrectiontable.o  
 
 
 # CHANGEME: Additional libraries

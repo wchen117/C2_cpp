@@ -129,6 +129,10 @@ public:
             std::vector<std::string> impedance_data_section
     );
     
+    void parse_multi_terminal_dc(
+            std::vector<std::string> multi_terminal_dc_section
+    );
+    
     void parse_multisection_line_grouping();
     
     void parse_zone();
