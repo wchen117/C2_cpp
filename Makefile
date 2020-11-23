@@ -12,7 +12,21 @@ EXE = data_main
 
 # CHANGEME: Here is the name of all object files corresponding to the source
 #           code that you wrote in order to define the problem statement
+<<<<<<< HEAD
 OBJS = data_main.o 
+=======
+OBJS = data_main.o \
+	   data.o \
+	   raw.o \
+	   con.o \
+	   sup.o \
+	   caseidentification.o \
+	   bus.o \
+	   load.o \
+	   fixedshunt.o \
+	   generator.o  
+
+>>>>>>> simple
 
 # CHANGEME: Additional libraries
 ADDLIBS =
@@ -20,13 +34,9 @@ ADDLIBS =
 # CHANGEME: Additional flags for compilation (e.g., include flags)
 ADDINCFLAGS =
 
-##########################################################################
-#  Usually, you don't have to change anything below.  Note that if you   #
-#  change certain compiler options, you might have to recompile Ipopt.   #
-##########################################################################
-
 # C++ Compiler command
-CXX = /usr/local/bin/g++-10
+CXX = /usr/bin/g++ 
+#CXX = /usr/local/bin/g++-10
 
 # C++ Compiler options
 CXXFLAGS = -O2 -DNDEBUG 
@@ -38,11 +48,11 @@ prefix=/usr/local
 exec_prefix=${prefix}
 
 # Include directories
-INCL = `PKG_CONFIG_PATH=/usr/local/lib/pkgconfig: pkg-config --cflags ipopt` $(ADDINCFLAGS)
-#INCL = -I${prefix}/include/coin-or -I/usr/local/include/coin-or/hsl    -DIPOPTLIB_BUILD $(ADDINCFLAGS)
+
+INCL = -I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include
 
 # Linker flags
-LIBS = `PKG_CONFIG_PATH=/usr/local/lib/pkgconfig: pkg-config --libs ipopt`
+#LIBS = -framework Accelerate -ldl
 #LIBS = -L${exec_prefix}/lib -lipopt -L/usr/local/lib -lcoinhsl  -framework Accelerate  -ldl
 
 all: $(EXE)
@@ -53,7 +63,7 @@ $(EXE): $(OBJS)
 	$(CXX) $(CXXLINKFLAGS) $(CXXFLAGS) -o $@ $(OBJS) $(ADDLIBS) $(LIBS)
 
 clean:
-	rm -rf $(EXE) $(OBJS) ipopt.out
+	rm -rf $(EXE) $(OBJS) 
 
 .cpp.o:
 	$(CXX) $(CXXFLAGS) $(INCL) -c -o $@ $<

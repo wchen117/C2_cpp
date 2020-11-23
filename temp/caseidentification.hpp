@@ -1,7 +1,7 @@
 #ifndef __CASEIDENTIFICATION_HPP__
 #define __CASEIDENTIFICATION_HPP__
 
-#include<string>
+#include <string>
 
 class CaseIdentification
 {
@@ -12,8 +12,8 @@ public:
     int xfrrat;
     int nxfrat;
     double basfrq;
-    std::string record_2;
-    std::string record_3;
+    string record_2;
+    string record_3;
 
 
     /**constructor and desctructor**/
@@ -27,13 +27,13 @@ public:
             );
 
     bool read_record_1_from_row(
-            std::string row
+            string row
             );
 
     bool read_from_rows(
-            std::string rows
+            string rows
             );
      
 
-};
+}
 #endif

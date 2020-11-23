@@ -1,0 +1,33 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "clang++ build active file",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-O2",
+        "-DNDEBUG",
+        "-I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include",
+        "-c",
+        "${workspaceFolder}/data_main.cpp",
+        "${workspaceFolder}/data.cpp",
+        "${workspaceFolder}/raw.cpp",
+        "${workspaceFolder}/sup.cpp",
+        "${workspaceFolder}/con.cpp",
+        "-o",
+        "${workspaceFolder}/data_main"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}

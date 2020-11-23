@@ -1,12 +1,13 @@
 #ifndef __LOAD_HPP__
 #define __LOAD_HPP__
-
+#include <string>
 
 class Load
 {
 public:
     //python, self.i = None, no default allowed
     int i;
+    std::string id;
     int status;
     int area;
     int zone;
@@ -34,11 +35,11 @@ public:
             );
 
     bool read_from_row(
-            string row
+            std::string row
             );
 
 
 
-}
+};
 
 #endif

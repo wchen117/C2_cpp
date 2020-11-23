@@ -4,71 +4,34 @@
 #include <map>
 #include <string>
 
+<<<<<<< HEAD
 #include "contingency.hpp"
+=======
+>>>>>>> simple
 
 class Con
 
 {
 public:
-    
-    map<Contigency, int> contigencies;
-    
-    bool check(
-            );
 
-    Contingency get_contingencies(
-            );
+    std::string con_input;
 
-    string construct_data_records(
-            );
-
-    string construct_end_record(
-            );
-
-    /**constructor and desctructor**/
     Con();
     ~Con();
 
     bool write(
-            string file_name
+            std::string file_name
             );
     
     // python: target_contingency default to None, how to translate? 
-    bool read(
-            string file_name,
-            Contigency target_contingency 
+    std::string read(
+            std::string file_name
             );
-    
-    bool row_is_file_end(
-            string row
-            );
-
-    bool is_contingency_start(
-            string row
-            ); 
-    
-    bool is_end(
-            string row
-            );
-
-    bool is_branch_out_event(
-            string row
-            );
-
-    bool is_three_winding(
-            string row
-            );
-
-    bool is_generator_out_event(
-            string row
-            );
-
     // python: target_congingency default to None
     bool read_from_rows(
-            string rows,
-            Contigency target_contingency
+            std::string rows
             );
 
     
-}
+};
 #endif

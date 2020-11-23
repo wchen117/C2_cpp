@@ -1,2 +1,10 @@
-JsonCpp
-https://github.com/open-source-parsers/jsoncpp
+This code uses rapidjson for Json parsing.
+
+How to run:
+
+make
+./data_main
+
+
+
+

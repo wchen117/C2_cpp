@@ -6,7 +6,7 @@ class Generator
 {
 public:
     int i;
-    string id;
+    std::string id;
     double pg;
     double qg;
     double qt;
@@ -78,11 +78,11 @@ public:
             );
 
     bool read_from_row(
-            string row
+            std::string row
             );
     
       
 
-}
+};
 
 #endif

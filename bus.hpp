@@ -1,12 +1,14 @@
 #ifndef __BUS_HPP__
 #define __BUS_HPP__
 
+#include<string>
+
 class Bus
 {
 public:
     //python: self.i = None, no default allowed
     int i;
-    string name;
+    std::string name;
     double baskv;
     int ide;
     int area;
@@ -69,9 +71,9 @@ public:
             );
 
     bool read_from_row(
-            string row
+            std::string row
             );
 
 
-}
+};
 #endif
