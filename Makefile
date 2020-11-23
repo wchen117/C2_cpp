@@ -21,7 +21,10 @@ OBJS = data_main.o \
 	   bus.o \
 	   load.o \
 	   fixedshunt.o \
-	   generator.o  
+	   generator.o \
+	   transformer.o \
+	   nontransformerbranch.o \
+	   area.o 
 
 
 # CHANGEME: Additional libraries
