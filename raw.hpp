@@ -135,7 +135,8 @@ public:
     );
     
     void regroup_transformer_section(
-            std::vector<std::string> transformer_section
+            std::vector<std::string> transformer_section,
+            std::vector<std::vector<std::string> > &tmp_transformer_section
     );
 
     void parse_area(

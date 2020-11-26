@@ -42,7 +42,9 @@ void Raw::read(std::string file_name)
     parse_fixed_bus_shunt(fixed_shunt_section);
     parse_generator(generator_section);
     parse_nontransformerbranch(nontransformerbranch_section);
-    //parse_transformer(transformer_section);
+    std::vector<std::vector<std::string> > tmp_transformer_section; 
+    regroup_transformer_section(transformer_section, tmp_transformer_section);
+    //parse_transformer(tmp_transformer_section);
     parse_area(area_section);
     parse_two_terminal_dc_transmission_line(ttdc_transmission_line_section);
     parse_vsc_dc_transmission_line(vsc_dc_transmission_section);
@@ -320,11 +322,37 @@ void Raw::parse_nontransformerbranch(std::vector<std::string> nontranformerbranc
     }
 }
 
-void Raw::regroup_transformer_section(std::vector<std::string> transformer_section)
+void Raw::regroup_transformer_section(std::vector<std::string> transformer_section, std::vector<std::vector<std::string> > &tmp_transformer_section)
 { 
-    //each transformer should have 43 attributes, regroup the
+    // each transformer should have 43 attributes, regroup the
     // vector of strings to ignore line breaks;
-    
+    // the raw input is formulated is such each transformer is distributed in 4 lines
+
+    const int line_length = 43;
+    const int line_group = 4;
+    // don't count the 'END OF ...' line
+    int before_size = transformer_section.size() - 1;
+    std::cout<<"before_size = "<<before_size<<std::endl;
+    // maybe some kind of assert here?
+    int after_size = before_size / line_group;
+    tmp_transformer_section.resize(after_size);
+    std::cout<<"after_size = "<<after_size<<std::endl;
+
+    for (int idx=0; idx<before_size; idx++)
+    {
+         int tmp_line_number = idx / line_group;
+         int tmp_sect_id = idx % line_group;
+         std::vector<std::string> line_vector = parse_on_delimiter(transformer_section[idx+1], ",");
+         tmp_transformer_section[tmp_line_number].insert(tmp_transformer_section[tmp_line_number].end(), line_vector.begin(), line_vector.end());
+         
+    }
+
+    // Confirm each line contains 43 entries
+    //for (int idx=0; idx<after_size;idx++)
+    //{
+    //   std::cout<<tmp_transformer_section[idx].size()<<std::endl;
+    //}
+
 }
 
 void Raw::parse_transformer(
