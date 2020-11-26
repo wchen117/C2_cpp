@@ -343,8 +343,9 @@ void Raw::parse_transformer(std::vector<std::string> transformer_section)
          tmp_transformer_section[tmp_line_number].insert(tmp_transformer_section[tmp_line_number].end(), line_vector.begin(), line_vector.end());    
     }
 
-    for (int idx=0; idx< tmp_transformer_section.size(); idx++)
+    for (int idx=0; idx< after_size; idx++)
     {
+        
         Transformer tmp_tfmr;
         tmp_tfmr.i = std::stoi(tmp_transformer_section[idx][0]);
         tmp_tfmr.j = std::stoi(tmp_transformer_section[idx][1]);
@@ -357,6 +358,7 @@ void Raw::parse_transformer(std::vector<std::string> transformer_section)
         tmp_tfmr.mag2 = std::stod(tmp_transformer_section[idx][8]);
         tmp_tfmr.nmetr = std::stoi(tmp_transformer_section[idx][9]);
         tmp_tfmr.name = tmp_transformer_section[idx][10];
+        
         tmp_tfmr.stat = std::stoi(tmp_transformer_section[idx][11]);
         tmp_tfmr.o1 = std::stoi(tmp_transformer_section[idx][12]);
         tmp_tfmr.f1 = std::stod(tmp_transformer_section[idx][13]);
@@ -391,7 +393,6 @@ void Raw::parse_transformer(std::vector<std::string> transformer_section)
         tmp_tfmr.windv2 = std::stod(tmp_transformer_section[idx][41]);
         tmp_tfmr.nomv2 = std::stod(tmp_transformer_section[idx][42]);
         transformers.insert(std::make_pair(tmp_tfmr.i, tmp_tfmr));
-        //std::cout<<tmp_tfmr.i<<std::endl;
     }
  
 }
