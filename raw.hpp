@@ -14,6 +14,9 @@
 #include "transformer.hpp"
 #include "area.hpp"
 #include "transformerimpedancecorrectiontable.hpp"
+#include "zone.hpp"
+#include "owner.hpp"
+#include "switchedshunt.hpp"
 
 
 
@@ -26,6 +29,8 @@ public:
     std::vector<std::string> rows_sections;
     std::string raw_input;
     CaseIdentification CaseIdentificationData;
+    Zone zone;
+    Owner owner;
     std::unordered_map<int, Bus> buses;
     std::unordered_map<int, Load> loads;
     std::unordered_map<int, FixedShunt> shunts;
@@ -41,6 +46,26 @@ public:
     /**constructor and destructor**/
     Raw();
     ~Raw();
+
+    void parse_token(
+            int& value,
+            std::string input_string,
+            int default_value
+
+    );
+    
+    void parse_token(
+            double& value,
+            std::string input_string,
+            double default_value
+ 
+    );
+
+    void parse_token(
+            std::string& value, 
+            std::string input_string, 
+            std::string& default_value
+    );
 
     bool write(
             std::string file_name
@@ -133,20 +158,38 @@ public:
             std::vector<std::string> multi_terminal_dc_section
     );
     
+    void parse_multi_section_line(
+            std::vector<std::string> multi_section_line
+    );
+
     void parse_multisection_line_grouping();
     
-    void parse_zone();
+    void parse_zone(
+            std::vector<std::string> zone_section
+    );
     
-    void parse_interarea_transfer();
+    void parse_interarea_transfer(
+            std::vector<std::string> interarea_transfer_section
+    );
     
-    void parse_owner();
+    void parse_owner(
+            std::vector<std::string> owner_section
+    );
     
-    void parse_facts_device();
+    void parse_facts_control_device(
+            std::vector<std::string> facts_control_device_section
+    );
     
-    void parse_switched_shunt();
+    void parse_switched_shunt(
+            std::vector<std::string> switched_shunt_section
+    );
     
-    void parse_gne_device();
+    void parse_gne_device(
+            std::vector<std::string> gne_device_section
+    );
     
-    void parse_induction_machine();
+    void parse_induction_machine(
+            std::vector<std::string> induction_machine_section
+    );
 };
 #endif

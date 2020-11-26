@@ -1,10 +1,11 @@
 #include "raw.hpp"
-#include<fstream>
-#include<string>
-#include<cerrno>
-#include<vector>
-#include<iostream>
+#include <fstream>
+#include <string>
+#include <cerrno>
+#include <vector>
+#include <iostream>
 #include <sstream>
+#include <typeinfo>
 
 /**constructor and desctructor**/
 Raw::Raw(){}
@@ -27,7 +28,14 @@ void Raw::read(std::string file_name)
     std::vector<std::string> vsc_dc_transmission_section = lines_in_section(8);
     std::vector<std::string> impedance_data_section = lines_in_section(9);
     std::vector<std::string> multi_terminal_dc_section = lines_in_section(10);
-
+    std::vector<std::string> multi_section_line_section = lines_in_section(11);
+    std::vector<std::string> zone_section = lines_in_section(12);
+    std::vector<std::string> interarea_transfer_section = lines_in_section(13);
+    std::vector<std::string> owner_section = lines_in_section(14);
+    std::vector<std::string> facts_control_device_section = lines_in_section(15);
+    std::vector<std::string> switched_shunt_section = lines_in_section(16);
+    std::vector<std::string> gne_device_section = lines_in_section(17);
+    std::vector<std::string> induction_machine_section = lines_in_section(18);
 
     parse_case_id_bus(id_bus_section);
     parse_load(load_section);
@@ -40,19 +48,54 @@ void Raw::read(std::string file_name)
     parse_vsc_dc_transmission_line(vsc_dc_transmission_section);
     parse_transformer_impedance_correction_table(impedance_data_section);
     parse_multi_terminal_dc(multi_terminal_dc_section);
-
-    //parse_non_transformer_branch();
-    //
-    //parse_multisection_line_grouping();
-    //parse_zone();
-    //parse_interarea_transfer();
-    //parse_owner();
-    //parse_facts_device();
-    //parse_switched_shunt();
-    //parse_gne_device();
-    //parse_induction_machine();
+    parse_multi_section_line(multi_section_line_section);
+    parse_zone(zone_section);
+    parse_interarea_transfer(interarea_transfer_section);
+    parse_owner(owner_section);
+    parse_facts_control_device(facts_control_device_section);
+    parse_switched_shunt(switched_shunt_section);
+    parse_gne_device(gne_device_section);
+    parse_induction_machine(induction_machine_section);
 }
 
+void Raw::parse_token(int& value, std::string input_string, int default_value)
+{
+    if (input_string != " ")
+    {
+        value = std::stoi(input_string);
+    }
+    else 
+    {
+        value = default_value;
+    }
+
+}
+
+void Raw::parse_token(double& value, std::string input_string, double default_value)
+{
+    if (input_string != " ")
+    {
+        value = std::stod(input_string);
+    }
+    else 
+    {
+        value = default_value;
+    }
+
+
+
+}
+void Raw::parse_token(std::string& value, std::string input_string, std::string& default_value)
+{
+    if (input_string != " ''")
+    {
+        value = input_string;
+    }
+    else 
+    {
+        value = default_value;
+    }
+}
 std::string Raw::read_to_string(std::string file_name)
 {
     // read in case.raw file into a string
@@ -398,8 +441,96 @@ void Raw::parse_transformer_impedance_correction_table(
 void Raw::parse_multi_terminal_dc(
     std::vector<std::string> multi_terminal_dc_section
 )
-
 {
     std::string tmp = multi_terminal_dc_section[0];
+    //std::cout<<tmp<<std::endl;
+}
 
+void Raw::parse_multi_section_line(
+     std::vector<std::string> multi_section_section
+)
+{
+    std::string tmp = multi_section_section[0];
+    //std::cout<<tmp<<std::endl;
+}
+
+void Raw::parse_zone(
+    std::vector<std::string> zone_section   
+)
+{
+    std::vector<std::string> line_vector = parse_on_delimiter(zone_section[1], ",");
+    zone.i = std::stoi(line_vector[0]);
+    zone.zoname = line_vector[1];
+
+}
+
+void Raw::parse_interarea_transfer(
+    std::vector<std::string> interarea_transfer_section 
+)
+{
+    std::string tmp = interarea_transfer_section[0];
+
+}
+
+void Raw::parse_owner(
+    std::vector<std::string> owner_section
+)
+{
+    std::vector<std::string> line_vector = parse_on_delimiter(owner_section[1], ",");
+    owner.i = std::stoi(line_vector[0]);
+    owner.owner_id = line_vector[0];
+}
+
+void Raw::parse_facts_control_device(
+    std::vector<std::string> facts_control_device_section
+)
+{
+    std::string tmp = facts_control_device_section[0];
+}
+
+void Raw::parse_switched_shunt(
+    std::vector<std::string> switched_shunt_section
+)
+{
+    for (int idx=1; idx<switched_shunt_section.size(); idx++)
+    {
+        std::vector<std::string> line_vector = parse_on_delimiter(switched_shunt_section[idx], ",");
+        SwitchedShunt tmp_shunt;
+        tmp_shunt.i = std::stoi(line_vector[0]);
+        parse_token(tmp_shunt.modsw, line_vector[1], 1);
+        parse_token(tmp_shunt.adjm, line_vector[2], 0);
+        tmp_shunt.stat = std::stoi(line_vector[3]);
+        parse_token(tmp_shunt.vswhi, line_vector[4], 1.0);
+        parse_token(tmp_shunt.vswlo, line_vector[5], 1.0);
+        parse_token(tmp_shunt.swrem, line_vector[6], 0);
+        parse_token(tmp_shunt.rmpct, line_vector[7], 100.0);
+        std::string tmp = "            ";
+        parse_token(tmp_shunt.rmidnt, line_vector[8], tmp);
+        tmp_shunt.binit = std::stoi(line_vector[9]);
+
+        for (int idx=10; idx<line_vector.size(); idx=idx+2)
+        {
+            tmp_shunt.n.push_back(std::stoi(line_vector[idx]));
+            tmp_shunt.b.push_back(std::stod(line_vector[idx+1]));
+        }
+
+
+
+    }
+    
+
+}
+
+void Raw::parse_gne_device(
+    std::vector<std::string> gne_device_section
+)
+{
+    std::string tmp = gne_device_section[0];
+}
+
+void Raw::parse_induction_machine(
+    std::vector<std::string> induction_machine_section
+)
+{
+    std::string tmp = induction_machine_section[0];
 }

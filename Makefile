@@ -25,7 +25,10 @@ OBJS = data_main.o \
 	   transformer.o \
 	   nontransformerbranch.o \
 	   area.o \
-	   transformerimpedancecorrectiontable.o  
+	   transformerimpedancecorrectiontable.o \
+	   zone.o \
+	   owner.o \
+	   switchedshunt.o 
 
 
 # CHANGEME: Additional libraries

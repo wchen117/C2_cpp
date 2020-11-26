@@ -1,8 +1,8 @@
 #ifndef __SWITCHEDSHUNT_HPP__
 #define __SWITCHEDSHUNT_HPP__
 
-#include<string>
-
+#include <string>
+#include <vector>
 class SwitchedShunt
 {
 public:
@@ -12,10 +12,10 @@ public:
     int adjm;
     int stat;
     double vswhi;
-    double vwslo;
+    double vswlo;
     int swrem;
     double rmpct;
-    string rmidnt;
+    std::string rmidnt;
     double binit;
     int n1;
     double b1;
@@ -33,6 +33,8 @@ public:
     double b7;
     int n8;
     double b8;
+    std::vector<int> n;
+    std::vector<double> b;
     int swsh_susc_count;
 
     /**constructor and destructor**/
@@ -163,8 +165,8 @@ public:
             );
 
     bool read_from_row(
-            string row
+            std::string row
             );
 
-}
+};
 #endif
