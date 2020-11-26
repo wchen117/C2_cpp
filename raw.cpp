@@ -42,9 +42,7 @@ void Raw::read(std::string file_name)
     parse_fixed_bus_shunt(fixed_shunt_section);
     parse_generator(generator_section);
     parse_nontransformerbranch(nontransformerbranch_section);
-    std::vector<std::vector<std::string> > tmp_transformer_section; 
-    regroup_transformer_section(transformer_section, tmp_transformer_section);
-    //parse_transformer(tmp_transformer_section);
+    parse_transformer(transformer_section);
     parse_area(area_section);
     parse_two_terminal_dc_transmission_line(ttdc_transmission_line_section);
     parse_vsc_dc_transmission_line(vsc_dc_transmission_section);
@@ -322,7 +320,7 @@ void Raw::parse_nontransformerbranch(std::vector<std::string> nontranformerbranc
     }
 }
 
-void Raw::regroup_transformer_section(std::vector<std::string> transformer_section, std::vector<std::vector<std::string> > &tmp_transformer_section)
+void Raw::parse_transformer(std::vector<std::string> transformer_section)
 { 
     // each transformer should have 43 attributes, regroup the
     // vector of strings to ignore line breaks;
@@ -330,90 +328,73 @@ void Raw::regroup_transformer_section(std::vector<std::string> transformer_secti
 
     const int line_length = 43;
     const int line_group = 4;
+    std::vector<std::vector<std::string> > tmp_transformer_section;
     // don't count the 'END OF ...' line
     int before_size = transformer_section.size() - 1;
-    std::cout<<"before_size = "<<before_size<<std::endl;
     // maybe some kind of assert here?
     int after_size = before_size / line_group;
     tmp_transformer_section.resize(after_size);
-    std::cout<<"after_size = "<<after_size<<std::endl;
 
+    //
     for (int idx=0; idx<before_size; idx++)
     {
          int tmp_line_number = idx / line_group;
          std::vector<std::string> line_vector = parse_on_delimiter(transformer_section[idx+1], ",");
-         tmp_transformer_section[tmp_line_number].insert(tmp_transformer_section[tmp_line_number].end(), line_vector.begin(), line_vector.end());
-         
+         tmp_transformer_section[tmp_line_number].insert(tmp_transformer_section[tmp_line_number].end(), line_vector.begin(), line_vector.end());    
     }
 
-    // Confirm each line contains 43 entries
-    //for (int idx=0; idx<after_size;idx++)
-    //{
-    //   std::cout<<tmp_transformer_section[idx].size()<<std::endl;
-    //}
-
-}
-
-void Raw::parse_transformer(
-            std::vector<std::string> transformer_section
-    )
+    for (int idx=0; idx< tmp_transformer_section.size(); idx++)
     {
-        
-        for (int idx=1; idx<3; idx++)
-        {
-            std::cout<<transformer_section[idx]<<std::endl;
-            std::vector<std::string> line_vector = parse_on_delimiter(transformer_section[idx], ",");
-            Transformer tmp_tfmr;
-
-            tmp_tfmr.i = std::stoi(line_vector[0]);
-            tmp_tfmr.j = std::stoi(line_vector[1]);
-            tmp_tfmr.k = std::stoi(line_vector[2]);
-            tmp_tfmr.ckt = line_vector[3];
-            tmp_tfmr.cw = std::stoi(line_vector[4]);
-            tmp_tfmr.cz = std::stoi(line_vector[5]);
-            tmp_tfmr.cm = std::stoi(line_vector[6]);
-            tmp_tfmr.mag1 = std::stod(line_vector[7]);
-            tmp_tfmr.mag2 = std::stod(line_vector[8]);
-            tmp_tfmr.nmetr = std::stoi(line_vector[9]);
-            tmp_tfmr.name = line_vector[10];
-            tmp_tfmr.stat = std::stoi(line_vector[11]);
-            tmp_tfmr.o1 = std::stoi(line_vector[12]);
-            tmp_tfmr.f1 = std::stod(line_vector[13]);
-            tmp_tfmr.o2 = std::stoi(line_vector[14]);
-            tmp_tfmr.f2 = std::stod(line_vector[15]);
-            tmp_tfmr.o3 = std::stoi(line_vector[16]);
-            tmp_tfmr.f3 =  std::stod(line_vector[17]);
-            tmp_tfmr.o4 = std::stoi(line_vector[18]);
-            tmp_tfmr.f4 =  std::stod(line_vector[19]);
-            tmp_tfmr.vecgrp = line_vector[20];
-            tmp_tfmr.r12 = std::stod(line_vector[21]);
-            tmp_tfmr.x12 = std::stoi(line_vector[22]);
-            tmp_tfmr.sbase12 = std::stod(line_vector[23]);
-            tmp_tfmr.windv1 = std::stod(line_vector[24]);
-            tmp_tfmr.nomv1 = std::stod(line_vector[25]);
-            tmp_tfmr.ang1 = std::stod(line_vector[26]);
-            tmp_tfmr.rata1 = std::stod(line_vector[27]);
-            tmp_tfmr.ratb1 = std::stod(line_vector[28]);
-            tmp_tfmr.ratc1 = std::stod(line_vector[29]);
-            tmp_tfmr.cod1 = std::stoi(line_vector[30]);
-            tmp_tfmr.cont1 = std::stoi(line_vector[31]);
-            tmp_tfmr.rma1 = std::stod(line_vector[32]);
-            tmp_tfmr.rmi1 = std::stod(line_vector[33]);
-            tmp_tfmr.vma1 = std::stod(line_vector[34]);
-            tmp_tfmr.vmi1 = std::stod(line_vector[35]);
-            tmp_tfmr.ntp1 = std::stoi(line_vector[36]);
-            tmp_tfmr.tab1 = std::stoi(line_vector[37]);
-            tmp_tfmr.cr1 = std::stod(line_vector[38]);
-            tmp_tfmr.cx1 = std::stod(line_vector[39]);
-            tmp_tfmr.cnxa1 = std::stod(line_vector[40]);
-            tmp_tfmr.windv2 = std::stod(line_vector[41]);
-            tmp_tfmr.nomv2 = std::stod(line_vector[42]);
-            transformers.insert(std::make_pair(tmp_tfmr.i, tmp_tfmr));
-            
-
-        }
-
+        Transformer tmp_tfmr;
+        tmp_tfmr.i = std::stoi(tmp_transformer_section[idx][0]);
+        tmp_tfmr.j = std::stoi(tmp_transformer_section[idx][1]);
+        tmp_tfmr.k = std::stoi(tmp_transformer_section[idx][2]);
+        tmp_tfmr.ckt = tmp_transformer_section[idx][3];
+        tmp_tfmr.cw = std::stoi(tmp_transformer_section[idx][4]);
+        tmp_tfmr.cz = std::stoi(tmp_transformer_section[idx][5]);
+        tmp_tfmr.cm = std::stoi(tmp_transformer_section[idx][6]);
+        tmp_tfmr.mag1 = std::stod(tmp_transformer_section[idx][7]);
+        tmp_tfmr.mag2 = std::stod(tmp_transformer_section[idx][8]);
+        tmp_tfmr.nmetr = std::stoi(tmp_transformer_section[idx][9]);
+        tmp_tfmr.name = tmp_transformer_section[idx][10];
+        tmp_tfmr.stat = std::stoi(tmp_transformer_section[idx][11]);
+        tmp_tfmr.o1 = std::stoi(tmp_transformer_section[idx][12]);
+        tmp_tfmr.f1 = std::stod(tmp_transformer_section[idx][13]);
+        tmp_tfmr.o2 = std::stoi(tmp_transformer_section[idx][14]);
+        tmp_tfmr.f2 = std::stod(tmp_transformer_section[idx][15]);
+        tmp_tfmr.o3 = std::stoi(tmp_transformer_section[idx][16]);
+        tmp_tfmr.f3 = std::stod(tmp_transformer_section[idx][17]);
+        tmp_tfmr.o4 = std::stoi(tmp_transformer_section[idx][18]);
+        tmp_tfmr.f4 = std::stod(tmp_transformer_section[idx][19]);
+        std::string tmp_string = "           ";
+        parse_token(tmp_tfmr.vecgrp, tmp_transformer_section[idx][20], tmp_string);
+        tmp_tfmr.r12 = std::stod(tmp_transformer_section[idx][21]);
+        tmp_tfmr.x12 = std::stoi(tmp_transformer_section[idx][22]);
+        tmp_tfmr.sbase12 = std::stod(tmp_transformer_section[idx][23]);
+        tmp_tfmr.windv1 = std::stod(tmp_transformer_section[idx][24]);
+        tmp_tfmr.nomv1 = std::stod(tmp_transformer_section[idx][25]);
+        tmp_tfmr.ang1 = std::stod(tmp_transformer_section[idx][26]);
+        tmp_tfmr.rata1 = std::stod(tmp_transformer_section[idx][27]);
+        tmp_tfmr.ratb1 = std::stod(tmp_transformer_section[idx][28]);
+        tmp_tfmr.ratc1 = std::stod(tmp_transformer_section[idx][29]);
+        tmp_tfmr.cod1 = std::stoi(tmp_transformer_section[idx][30]);
+        tmp_tfmr.cont1 = std::stoi(tmp_transformer_section[idx][31]);
+        tmp_tfmr.rma1 = std::stod(tmp_transformer_section[idx][32]);
+        tmp_tfmr.rmi1 = std::stod(tmp_transformer_section[idx][33]);
+        tmp_tfmr.vma1 = std::stod(tmp_transformer_section[idx][34]);
+        tmp_tfmr.vmi1 = std::stod(tmp_transformer_section[idx][35]);
+        tmp_tfmr.ntp1 = std::stoi(tmp_transformer_section[idx][36]);
+        tmp_tfmr.tab1 = std::stoi(tmp_transformer_section[idx][37]);
+        tmp_tfmr.cr1 = std::stod(tmp_transformer_section[idx][38]);
+        tmp_tfmr.cx1 = std::stod(tmp_transformer_section[idx][39]);
+        tmp_tfmr.cnxa1 = std::stod(tmp_transformer_section[idx][40]);
+        tmp_tfmr.windv2 = std::stod(tmp_transformer_section[idx][41]);
+        tmp_tfmr.nomv2 = std::stod(tmp_transformer_section[idx][42]);
+        transformers.insert(std::make_pair(tmp_tfmr.i, tmp_tfmr));
+        //std::cout<<tmp_tfmr.i<<std::endl;
     }
+ 
+}
 
 void Raw::parse_area(
         std::vector<std::string> area_section

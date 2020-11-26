@@ -133,11 +133,6 @@ public:
     void parse_transformer(
             std::vector<std::string> transformer_section
     );
-    
-    void regroup_transformer_section(
-            std::vector<std::string> transformer_section,
-            std::vector<std::vector<std::string> > &tmp_transformer_section
-    );
 
     void parse_area(
             std::vector<std::string> area_section
