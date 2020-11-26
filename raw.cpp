@@ -341,7 +341,6 @@ void Raw::regroup_transformer_section(std::vector<std::string> transformer_secti
     for (int idx=0; idx<before_size; idx++)
     {
          int tmp_line_number = idx / line_group;
-         int tmp_sect_id = idx % line_group;
          std::vector<std::string> line_vector = parse_on_delimiter(transformer_section[idx+1], ",");
          tmp_transformer_section[tmp_line_number].insert(tmp_transformer_section[tmp_line_number].end(), line_vector.begin(), line_vector.end());
          
