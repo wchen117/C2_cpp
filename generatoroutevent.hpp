@@ -9,6 +9,9 @@ public:
     // python: self.i = None, no default
     int id;
 
+    GeneratorOutEvent();
+    ~GeneratorOutEvent();
+
     bool check(
             );
 
@@ -21,5 +24,6 @@ public:
     bool construct_record_row(
             );
 
-}
+};
+
 #endif
