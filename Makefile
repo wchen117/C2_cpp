@@ -28,7 +28,11 @@ OBJS = data_main.o \
 	   transformerimpedancecorrectiontable.o \
 	   zone.o \
 	   owner.o \
-	   switchedshunt.o 
+	   switchedshunt.o \
+	   contingency.o \
+	   generatoroutevent.o \
+	   branchoutevent.o \
+	   
 
 
 # CHANGEME: Additional libraries

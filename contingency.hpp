@@ -10,8 +10,8 @@ class Contingency
 {
     public:
     std::string label;
-    std::vector<GeneratorOutEvent> branch_out_events;
-    std::vector<BranchOutEvent> generator_out_events;
+    std::vector<BranchOutEvent> branch_out_events;
+    std::vector<GeneratorOutEvent> generator_out_events;
 
     Contingency();
     ~Contingency();

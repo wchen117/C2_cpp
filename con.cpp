@@ -56,42 +56,60 @@ void Con::read_from_rows()
 {
     // parse on "END"
     con_vector = parse_on_delimiter(con_input, "END");
-    std::vector<std::string> test_v = parse_on_delimiter(con_vector[0], " ");
  
+    std::cout<<con_vector[1]<<std::endl;
+    std::vector<std::string> tttt = parse_on_delimiter(con_vector[1], " ");
+    std::vector<std::string> t2 = parse_on_delimiter(tttt[1], "\n");
+    std::cout<<t2[0]<<std::endl;
+
     // two "END" at the end of file
-     for (int idx=0; idx<con_vector.size()-1; idx++)
+     for (int idx=0; idx<con_vector.size()-2; idx++)
     {
+        Contingency tmp_con;
+       
+        
         // parse each section to vector of strings
+        // maybe a try-catch would be better?
         std::vector<std::string> tmp_vect = parse_on_delimiter(con_vector[idx], " ");
-        if (tmp_vect[2] == "REMOVE")
+        // between label and "OPEN"/"REMOVE" there is a line breaker
+        std::vector<std::string> t2 = parse_on_delimiter(tmp_vect[1], "\n");
+        
+        tmp_con.label = t2[0];
+        
+        if (t2[1] == "REMOVE")
         {
             // generator out event
             GeneratorOutEvent tmp_gen_event;
             parse_generatorout(tmp_vect, tmp_gen_event);
+            tmp_con.generator_out_events.push_back(tmp_gen_event);
+            
         }
-        else if (tmp_vect[2] == "OPEN")
+        else if (t2[1] == "OPEN")
         {
             // branch out event
             BranchOutEvent tmp_branch_event;
             parse_branchout(tmp_vect, tmp_branch_event);
+            tmp_con.branch_out_events.push_back(tmp_branch_event);
         }
         else
         {
             // display error
         }
+        contingencies.push_back(tmp_con);
         
     }    
 }
 
-void Con::parse_branchout(std::vector<std::string> branchout_vector, BranchOutEvent& branch_event)
+void Con::parse_branchout(std::vector<std::string> tmp_vect, BranchOutEvent& branch_event)
 {
-    branch_event.label = branchout_string_vector[1];
-
-    
-
+    branch_event.i = std::stoi(tmp_vect[5]);
+    branch_event.j = std::stoi(tmp_vect[8]);
+    branch_event.ckt = std::stoi(tmp_vect[10]);
 }
 
-void Con::parse_generatorout(std::vector<std::string> genout_vector, GeneratorOutEvent& gen_event)
+void Con::parse_generatorout(std::vector<std::string> tmp_vect, GeneratorOutEvent& gen_event)
 {
+    gen_event.id = std::stoi(tmp_vect[3]);
+    gen_event.i = std::stoi(tmp_vect[6]);
 
 }

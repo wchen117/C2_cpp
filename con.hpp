@@ -6,15 +6,19 @@
 #include <vector>
 #include "generatoroutevent.hpp"
 #include "branchoutevent.hpp"
+#include "contingency.hpp"
 
 
 class Con
 
 {
 public:
-
+    // con_input stores entire file into a string
     std::string con_input;
+    // con_vector stores the vectore of string from con_input
     std::vector<std::string> con_vector;
+    // vector to store all contingencies
+    std::vector<Contingency> contingencies;
 
     Con();
     ~Con();
