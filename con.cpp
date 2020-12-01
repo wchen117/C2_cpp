@@ -57,17 +57,11 @@ void Con::read_from_rows()
     // parse on "END"
     con_vector = parse_on_delimiter(con_input, "END");
  
-    std::cout<<con_vector[1]<<std::endl;
-    std::vector<std::string> tttt = parse_on_delimiter(con_vector[1], " ");
-    std::vector<std::string> t2 = parse_on_delimiter(tttt[1], "\n");
-    std::cout<<t2[0]<<std::endl;
-
     // two "END" at the end of file
      for (int idx=0; idx<con_vector.size()-2; idx++)
     {
         Contingency tmp_con;
        
-        
         // parse each section to vector of strings
         // maybe a try-catch would be better?
         std::vector<std::string> tmp_vect = parse_on_delimiter(con_vector[idx], " ");

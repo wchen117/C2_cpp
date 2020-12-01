@@ -16,10 +16,7 @@ using namespace rapidjson;
 void Sup::string_to_json()
 {
     rapidjson::Document d;
-    d.Parse(sup_input);
-
-    std::cout<<d["systemparameters"]["delta"]<<std::endl;
-
+    d.Parse(sup_input.c_str());
 }
 
 std::string Sup::read_to_string(std::string file_name)
@@ -40,7 +37,7 @@ std::string Sup::read_to_string(std::string file_name)
     throw(errno);
 }
 
-std::string Sup::read(std::string file_name)
+void Sup::read(std::string file_name)
 {
     sup_input = read_to_string(file_name);
     string_to_json();

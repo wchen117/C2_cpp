@@ -12,7 +12,7 @@ public:
     Sup();
     ~Sup();
 
-    std::string read(
+    void read(
          std::string file_name
             );
     
