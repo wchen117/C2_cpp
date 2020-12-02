@@ -21,6 +21,7 @@ bool Data::read(
 {
     raw.read(raw_name);
     con.read(con_name);
+    sup.read(sup_name);
     
   
 

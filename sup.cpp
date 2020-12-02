@@ -3,9 +3,8 @@
 #include <string>
 #include <cerrno>
 #include <iostream>
-#include "rapidjson/document.h"
-#include "rapidjson/writer.h"
-#include "rapidjson/stringbuffer.h"
+
+#include "rapidjson/pointer.h"
 
 Sup::Sup(){}
 
@@ -13,10 +12,19 @@ Sup::~Sup(){}
 
 using namespace rapidjson;
 
-void Sup::string_to_json()
+
+void Sup::read_json()
 {
-    rapidjson::Document d;
-    d.Parse(sup_input.c_str());
+    sup_doc.Parse(sup_input.c_str());
+    const Value& sys_prms = sup_doc["systemparameters"];
+    const Value& loads = sup_doc["loads"];
+    const Value& generators = sup_doc["loads"];
+    const Value& lines = sup_doc["loads"];
+    const Value& transformers = sup_doc["transformers"];
+    const Value& pcblocks = sup_doc["pcblocks"];
+    const Value& qcblocks = sup_doc["qcblocks"];
+    const Value& scblocks = sup_doc["scblocks"];
+
 }
 
 std::string Sup::read_to_string(std::string file_name)
@@ -40,9 +48,15 @@ std::string Sup::read_to_string(std::string file_name)
 void Sup::read(std::string file_name)
 {
     sup_input = read_to_string(file_name);
-    string_to_json();
+    //std::cout<<sup_input<<std::endl;
+    // parse the entire file into a rapidjson::Document object
+    read_json();
 
 
 }
 
+void Sup::parse_system_parameters(Value& sys_prms)
+{
+    systemparameters 
+}
 
