@@ -12,6 +12,9 @@
 #include "sup_transformer.hpp"
 #include "sup_line.hpp"
 #include "sup_load.hpp"
+#include "sup_pcblock.hpp"
+#include "sup_qcblock.hpp"
+#include "sup_scblock.hpp"
 
 
 class Sup
@@ -37,9 +40,9 @@ public:
     std::vector<Sup_Generator> generators;
     std::vector<Sup_Transformer> transformers;
 
-    std::vector<Sup_Cblock> pcblocks;
-    std::vector<Sup_Cblock> qcblocks;
-    std::vector<Sup_Cblock> scblocks;
+    std::vector<Sup_Pcblock> pcblocks;
+    std::vector<Sup_Qcblock> qcblocks;
+    std::vector<Sup_Scblock> scblocks;
 
     /**constructors and destructors**/
     Sup();
