@@ -79,15 +79,15 @@ public:
          rapidjson::Value& local_transformers
          );
     void parse_pcblocks(
-       std::vector<Sup_Cblock>& dest_attr,
+       std::vector<Sup_Pcblock>& dest_attr,
        rapidjson::Value& local_blocks
        );
     void parse_qcblocks(
-       std::vector<Sup_Cblock>& dest_attr,
+       std::vector<Sup_Qcblock>& dest_attr,
        rapidjson::Value& local_blocks
        );
     void parse_scblocks(
-       std::vector<Sup_Cblock>& dest_attr,
+       std::vector<Sup_Scblock>& dest_attr,
        rapidjson::Value& local_blocks
        );
 };
