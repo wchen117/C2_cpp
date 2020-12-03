@@ -4,7 +4,7 @@
 
 int main(int args, char** argv)
 {
-    std::string data_folder = "./sample_data/ieee14/scenario_1/";
+    std::string data_folder = "./sample_data/ieee14/scenario_2/";
     std::string con_name = "case.con";
     std::string raw_name = "case.raw";
     std::string sup_name = "case.json";

@@ -37,8 +37,9 @@ OBJS = data_main.o \
 	   sup_load.o \
 	   sup_transformer.o \
 	   sup_cblock.o \
-	   
-
+	   sup_pcblock.o \
+	   sup_qcblock.o \
+	   sup_scblock.o 
 
 # CHANGEME: Additional libraries
 ADDLIBS =

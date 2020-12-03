@@ -67,9 +67,9 @@ void Con::read_from_rows()
         std::vector<std::string> tmp_vect = parse_on_delimiter(con_vector[idx], " ");
         // between label and "OPEN"/"REMOVE" there is a line breaker
         std::vector<std::string> t2 = parse_on_delimiter(tmp_vect[1], "\n");
-        
+       
         tmp_con.label = t2[0];
-        
+
         if (t2[1] == "REMOVE")
         {
             // generator out event
