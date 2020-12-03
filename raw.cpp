@@ -516,6 +516,7 @@ void Raw::parse_switched_shunt(
         std::string tmp = "            ";
         parse_token(tmp_shunt.rmidnt, line_vector[8], tmp);
         tmp_shunt.binit = std::stoi(line_vector[9]);
+        
 
         for (int idx=10; idx<line_vector.size(); idx=idx+2)
         {
@@ -523,8 +524,8 @@ void Raw::parse_switched_shunt(
             tmp_shunt.b.push_back(std::stod(line_vector[idx+1]));
         }
 
-
-
+        switchedshunts.insert(std::make_pair(tmp_shunt.i, tmp_shunt));
+        
     }
     
 

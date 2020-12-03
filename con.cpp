@@ -69,6 +69,7 @@ void Con::read_from_rows()
         std::vector<std::string> t2 = parse_on_delimiter(tmp_vect[1], "\n");
        
         tmp_con.label = t2[0];
+        
 
         if (t2[1] == "REMOVE")
         {
@@ -98,7 +99,9 @@ void Con::parse_branchout(std::vector<std::string> tmp_vect, BranchOutEvent& bra
 {
     branch_event.i = std::stoi(tmp_vect[5]);
     branch_event.j = std::stoi(tmp_vect[8]);
-    branch_event.ckt = std::stoi(tmp_vect[10]);
+    //ckt is followed by a "\n"
+    branch_event.ckt = parse_on_delimiter(tmp_vect[10], "\n")[0];
+    
 }
 
 void Con::parse_generatorout(std::vector<std::string> tmp_vect, GeneratorOutEvent& gen_event)

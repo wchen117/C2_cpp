@@ -38,6 +38,7 @@ public:
     std::unordered_map<int, NontransformerBranch> nontransformerbranches;
     std::unordered_map<int, Transformer> transformers;
     std::unordered_map<int, Area> areas;
+    std::unordered_map<int, SwitchedShunt> switchedshunts;
     std::unordered_map<int, TransformerImpedanceCorrectionTable> TFICTs;
 
 
