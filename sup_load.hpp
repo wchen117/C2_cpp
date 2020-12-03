@@ -14,7 +14,7 @@ class Sup_Load
     double prumax;
     double prdmax;
     double prumaxctg;
-    std::vector<Sup_Cblock> blocks;
+    std::vector<Sup_Cblock> cblocks;
 
     Sup_Load();
     ~Sup_Load();

@@ -31,21 +31,15 @@ public:
     std::set<int> line_ids;
     std::set<int> transformer_ids;
     
-    std::unordered_map<int, std::string> sys_prms;
+    std::unordered_map<std::string, double> sys_prms;
     std::vector<Sup_Load> loads;
     std::vector<Sup_Line> lines;
     std::vector<Sup_Generator> generators;
     std::vector<Sup_Transformer> transformers;
 
- 
-    std::vector<double> scblocks_tmax;
-    std::vector<double> scblocks_c;
-
-    std::vector<double> pcblocks_pmax;
-    std::vector<double> pcblocks_c;
-
-    std::vector<double> qcblocks_qmax;
-    std::vector<double> qcblocks_c;
+    std::vector<Sup_Cblock> pcblocks;
+    std::vector<Sup_Cblock> qcblocks;
+    std::vector<Sup_Cblock> scblocks;
 
     /**constructors and destructors**/
     Sup();
@@ -67,7 +61,31 @@ public:
             );  
         
     void parse_system_parameters(
-         rapidjson::Value& sys_prms
+         rapidjson::Value&  system_parameters
           );
+    void parse_loads(
+         rapidjson::Value&  tmp_loads
+          );
+    void parse_generators(
+         rapidjson::Value& tmp_generators
+         );
+    void parse_lines(
+         rapidjson::Value& local_lines
+         ); 
+    void parse_transformers(
+         rapidjson::Value& local_transformers
+         );
+    void parse_pcblocks(
+       std::vector<Sup_Cblock>& dest_attr,
+       rapidjson::Value& local_blocks
+       );
+    void parse_qcblocks(
+       std::vector<Sup_Cblock>& dest_attr,
+       rapidjson::Value& local_blocks
+       );
+    void parse_scblocks(
+       std::vector<Sup_Cblock>& dest_attr,
+       rapidjson::Value& local_blocks
+       );
 };
 #endif
