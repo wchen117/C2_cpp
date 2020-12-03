@@ -12,19 +12,27 @@ Sup::~Sup(){}
 
 using namespace rapidjson;
 
+void Sup::read(std::string file_name)
+{
+    sup_input = read_to_string(file_name);
+    //std::cout<<sup_input<<std::endl;
+    // parse the entire file into a rapidjson::Document object
+    read_json();
+}
+
 
 void Sup::read_json()
 {
     sup_doc.Parse(sup_input.c_str());
+    
     const Value& sys_prms = sup_doc["systemparameters"];
     const Value& loads = sup_doc["loads"];
-    const Value& generators = sup_doc["loads"];
-    const Value& lines = sup_doc["loads"];
+    const Value& generators = sup_doc["generators"];
+    const Value& lines = sup_doc["lines"];
     const Value& transformers = sup_doc["transformers"];
     const Value& pcblocks = sup_doc["pcblocks"];
     const Value& qcblocks = sup_doc["qcblocks"];
     const Value& scblocks = sup_doc["scblocks"];
-
 }
 
 std::string Sup::read_to_string(std::string file_name)
@@ -45,18 +53,5 @@ std::string Sup::read_to_string(std::string file_name)
     throw(errno);
 }
 
-void Sup::read(std::string file_name)
-{
-    sup_input = read_to_string(file_name);
-    //std::cout<<sup_input<<std::endl;
-    // parse the entire file into a rapidjson::Document object
-    read_json();
 
-
-}
-
-void Sup::parse_system_parameters(Value& sys_prms)
-{
-    systemparameters 
-}
 

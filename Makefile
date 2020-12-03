@@ -32,6 +32,11 @@ OBJS = data_main.o \
 	   contingency.o \
 	   generatoroutevent.o \
 	   branchoutevent.o \
+	   sup_generator.o \
+	   sup_line.o \
+	   sup_load.o \
+	   sup_transformer.o \
+	   sup_cblock.o \
 	   
 
 

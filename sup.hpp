@@ -8,9 +8,10 @@
 #include "rapidjson/document.h"
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
-#include "generator.hpp"
-#include "transformer.hpp"
-#include "line.hpp"
+#include "sup_generator.hpp"
+#include "sup_transformer.hpp"
+#include "sup_line.hpp"
+#include "sup_load.hpp"
 
 
 class Sup
@@ -29,10 +30,13 @@ public:
     std::set<int> load_ids;
     std::set<int> line_ids;
     std::set<int> transformer_ids;
-    std::unordered_map<int, Transformer> transformers;
-    std::unordered_map<int, Line> lines;
-    std::unordered_map<int, Generator> generators;
-    std::unordered_map<double, std::string> systemparameters;
+    
+    std::unordered_map<int, std::string> sys_prms;
+    std::vector<Sup_Load> loads;
+    std::vector<Sup_Line> lines;
+    std::vector<Sup_Generator> generators;
+    std::vector<Sup_Transformer> transformers;
+
  
     std::vector<double> scblocks_tmax;
     std::vector<double> scblocks_c;
