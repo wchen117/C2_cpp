@@ -8,11 +8,11 @@
 ##########################################################################
 
 # CHANGEME: This should be the name of your executable
-EXE = data_main
+EXE = main_1
 
 # CHANGEME: Here is the name of all object files corresponding to the source
 #           code that you wrote in order to define the problem statement
-OBJS = data_main.o \
+OBJS = main_1.o \
 	   data.o \
 	   raw.o \
 	   con.o \
