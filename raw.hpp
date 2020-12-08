@@ -68,10 +68,6 @@ public:
             std::string& default_value
     );
 
-    bool write(
-            std::string file_name
-            );
-
     void read(
             std::string file_name
             );
@@ -188,5 +184,22 @@ public:
     void parse_induction_machine(
             std::vector<std::string> induction_machine_section
     );
+
+    void write(
+            std::string write_file_name
+    );
+
+    void write_case_id(
+            std::ofstream& OutputFile
+    );
+
+    void write_bus(
+            std::ofstream& OutputFile
+    );
+
+    void write_load(
+            std::ofstream& OutputFile
+    );
+
 };
 #endif

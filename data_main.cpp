@@ -13,4 +13,15 @@ int main(int args, char** argv)
     new_data.read(data_folder + raw_name,\
                   data_folder + sup_name, \
                   data_folder + con_name);
+
+    std::string write_raw_name = "test_write.raw";
+    std::string write_con_name = "test_write.con";
+    std::string write_sup_name = "test_write.sup";
+    
+    //new_data.write(write_raw_name, \
+    //               write_con_name, \
+    //               write_sup_name);
+
+    
+    
 }

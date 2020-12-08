@@ -34,6 +34,7 @@ bool Data::write(
     std::string con_name
                  )
 {
+    raw.write(raw_name);
     return true;
     
 }

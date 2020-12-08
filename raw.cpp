@@ -58,6 +58,18 @@ void Raw::read(std::string file_name)
     parse_induction_machine(induction_machine_section);
 }
 
+void Raw::write( std::string write_file_name
+)
+{
+    std::ofstream MyFile(write_file_name, std::ios::out | std::ios::app) ;
+    write_case_id(MyFile);
+    write_bus(MyFile);
+    MyFile.close();
+
+
+}
+
+
 void Raw::parse_token(int& value, std::string input_string, int default_value)
 {
     if (input_string != " ")
@@ -188,6 +200,8 @@ void Raw::parse_bus(std::string each_line, Bus &bus_ref)
     bus_ref.va = std::stod(line_vector[8]);
     bus_ref.nvhi = std::stod(line_vector[9]);
     bus_ref.nvlo = std::stod(line_vector[10]);
+    bus_ref.evhi = std::stod(line_vector[11]);
+    bus_ref.evlo = std::stod(line_vector[12]);
 
 }
 void Raw::parse_case_id(std::string line1, std::string line2, std::string line3)
@@ -198,7 +212,7 @@ void Raw::parse_case_id(std::string line1, std::string line2, std::string line3)
    CaseIdentificationData.rev = std::stoi(first_line[2]);
    CaseIdentificationData.xfrrat = std::stoi(first_line[3]);
    CaseIdentificationData.nxfrat = std::stoi(first_line[4]);
-   CaseIdentificationData.nxfrat = std::stod(first_line[5]);
+   CaseIdentificationData.basfrq = std::stod(first_line[5]);
    CaseIdentificationData.record_2 = line2;
    CaseIdentificationData.record_3 = line3;
 
@@ -543,4 +557,43 @@ void Raw::parse_induction_machine(
 )
 {
     std::string tmp = induction_machine_section[0];
+}
+
+void Raw::write_case_id(std::ofstream& OutputFile)
+{
+
+   
+   OutputFile << CaseIdentificationData.ic << ", " << CaseIdentificationData.sbase << ", " \
+              << CaseIdentificationData.rev << ", " << CaseIdentificationData.xfrrat << ", " \
+              << CaseIdentificationData.nxfrat << ", " << CaseIdentificationData.basfrq << std::endl;
+
+   OutputFile << CaseIdentificationData.record_2 <<std::endl;
+   OutputFile << CaseIdentificationData.record_3 <<std::endl;
+   OutputFile.seekp(OutputFile.end);
+   long pos = OutputFile.tellp();
+   std::cout<<pos<<std::endl;
+        
+}
+
+void Raw::write_bus(std::ofstream& OutputFile)
+{
+    
+    
+    std::unordered_map<int, Bus>::iterator bus_it;
+    for (bus_it = buses.begin(); bus_it!=buses.end(); bus_it++)
+    {
+        OutputFile << bus_it->second.i << ", " <<  bus_it->second.name << ", "
+                   << bus_it->second.baskv << ", " \
+                   << bus_it->second.ide << ", " << bus_it->second.area << ", " \
+                   << bus_it->second.zone << ", " << bus_it->second.owner << ", " \
+                   << bus_it->second.vm << ", " << bus_it->second.va << ", " \
+                   << bus_it->second.nvhi << ", " << bus_it->second.nvlo << ", " \
+                   << bus_it->second.evhi << ", " << bus_it->second.evlo << std::endl;
+       
+    }
+}
+
+void Raw::write_load(std::ofstream& OutputFile)
+{
+    std::unordered_map<int, Load>::iterator load_it;
 }
