@@ -48,7 +48,7 @@ ADDLIBS =
 ADDINCFLAGS =
 
 # C++ Compiler command
-CXX = /usr/bin/g++ 
+CXX = /usr/bin/g++ -std=c++11
 #CXX = /usr/local/bin/g++-10
 
 # C++ Compiler options
@@ -62,7 +62,7 @@ exec_prefix=${prefix}
 
 # Include directories
 
-INCL = -I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include
+INCL = -I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include -I/Users/wchen/Softwares/boost_1_63_0/boost
 
 # Linker flags
 #LIBS = -framework Accelerate -ldl
