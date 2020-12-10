@@ -34,18 +34,14 @@ int main(int args, char** argv)
     // fixed shunt data from raw
     construct_fixed_shunt(new_data, Is, s_tilde_inverse);
    
-
     // generator data from raw
     int Gs = new_data.raw.generators.size();
     construct_fixed_shunt(new_data, Gs, s_tilde_inverse);
-
-
     
     // line (or non-transformer branch) data from raw
     construct_nontransformerbranch(new_data, s_tilde_inverse);
 
-    
-    
+    // transformer data from raw
     
 }
 
@@ -73,7 +69,8 @@ void construct_load(Data& new_data, double s_tilde_inverse)
     std::unordered_map<int, Load>::iterator load_it;
     for (load_it=new_data.raw.loads.begin(); load_it!=new_data.raw.loads.end(); load_it++)
     {
-        std::tuple<int, std::string> tmp_j;
+        // // hash key of tuple(int, string)
+        key_is tmp_j;
         tmp_j = std::make_tuple(load_it->second.i, load_it->second.id);
         J.push_back(tmp_j);
         iii.insert(std::make_pair(tmp_j, load_it->second.i));
@@ -119,7 +116,8 @@ void constuct_generator(Data& new_data, int Gs, double s_tilde_inverse)
     std::unordered_map<int, Generator>::iterator gen_it;
     for(gen_it=new_data.raw.generators.begin(); gen_it!=new_data.raw.generators.end(); gen_it++)
     {
-        std::tuple<int, std::string> tmp_g;
+        // hash key of tuple(int, string)
+        key_is tmp_g;
         tmp_g = std::make_tuple(gen_it->second.i, gen_it->second.id);
         G.push_back(tmp_g);
         i_g.insert(std::make_pair(tmp_g, gen_it->second.i));
@@ -139,11 +137,12 @@ void constuct_generator(Data& new_data, int Gs, double s_tilde_inverse)
 
 void construct_nontransformerbranch(Data& new_data, double s_tilde_inverse )
 {
-std::unordered_map<int, NontransformerBranch>::iterator non_it;
+    std::unordered_map<int, NontransformerBranch>::iterator non_it;
 
     for(non_it= new_data.raw.nontransformerbranches.begin(); non_it!= new_data.raw.nontransformerbranches.end(); non_it++)
     {
-        std::tuple<int, int, std::string> tmp_n;
+        // hash key of tuple(int, int, string)
+        key_iis tmp_n;
         double tmp_denom = std::pow(non_it->second.r, 2) + std::pow(non_it->second.x, 2);
         tmp_n = std::make_tuple(non_it->second.i, non_it->second.j, non_it->second.ckt);
         E.push_back(tmp_n);
@@ -156,5 +155,56 @@ std::unordered_map<int, NontransformerBranch>::iterator non_it;
         r_e_over.insert(std::make_pair(tmp_n, non_it->second.ratea * s_tilde_inverse));
         r_e_ct_over.insert(std::make_pair(tmp_n, non_it->second.ratec * s_tilde_inverse));
         x_e_sw_0.insert(std::make_pair(tmp_n, non_it->second.st));
+    }
+}
+
+void construct_transformer(Data& new_data, double s_tilde_inverse)
+{
+    std::unordered_map<int, Transformer>::iterator tran_it;
+    for(tran_it=new_data.raw.transformers.begin(); tran_it!=new_data.raw.transformers.end(); tran_it++)
+    {
+        // hash key of tuple(int, int, string)
+        key_iis tmp_t;
+        tmp_t = std::make_tuple(tran_it->second.i, tran_it->second.j, tran_it->second.ckt);
+        double tmp_denom = pow(tran_it->second.r12, 2) + pow(tran_it->second.x12, 2);
+        F.push_back(tmp_t);
+        i_f_o.insert(std:: make_pair(tmp_t, tran_it->second.i));
+        i_f_d.insert(std::make_pair(tmp_t, tran_it->second.j));
+        id_F.insert(std::make_pair(tmp_t, tran_it->second.ckt));
+        g_f_m.insert(std::make_pair(tmp_t, tran_it->second.mag1));
+        b_f_m.insert(std::make_pair(tmp_t, tran_it->second.mag2));
+        g_f_0.insert(std::make_pair(tmp_t, tran_it->second.r12 / tmp_denom));
+        b_f_0.insert(std::make_pair(tmp_t, - tran_it->second.x12 / tmp_denom));
+        tau_f_0.insert(std::make_pair(tmp_t, tran_it->second.windv1 / tran_it->second.windv2));
+        theta_f_0.insert(std::make_pair(tmp_t, tran_it->second.ang1 * PI / 180.0));
+        x_f_st_over.insert(std::make_pair(tmp_t, (tran_it->second.ntp1 - 1.0)/2.0));
+        
+        if (tran_it->second.cod1 == 1)
+        {
+            tau_f_over.insert(std::make_pair(tmp_t, tran_it->second.rma1));
+        }
+        else 
+        {
+            tau_f_over.insert(std::make_pair(tmp_t, tran_it->second.windv1 / tran_it->second.windv2)));
+        }
+    
+        if (tran_it->second.cod1 == 1)
+        {
+            tau_f_under.insert(std::make_pair(tmp_t, tran_it->second.rma1));
+        }
+        else 
+        {
+            tau_f_under.insert(std::make_pair(tmp_t, tran_it->second.windv1 / tran_it->second.windv2)));
+        }
+        
+        double tmp_tau_f = (tau_f_over[tmp_t] - tau_f_under[tmp_t]) / 2.0;
+        tau_f_st.insert(std::make_pair(tmp_t, tmp_tau_f / x_f_st_over[tmp_t]));
+        tau_f_any.insert(std::make_pair(tmp_t, tmp_tau_f));
+        
+        
+
+
+
+
     }
 }
