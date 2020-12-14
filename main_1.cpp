@@ -164,47 +164,67 @@ void construct_transformer(Data& new_data, double s_tilde_inverse)
     for(tran_it=new_data.raw.transformers.begin(); tran_it!=new_data.raw.transformers.end(); tran_it++)
     {
         // hash key of tuple(int, int, string)
-        key_iis tmp_t;
-        tmp_t = std::make_tuple(tran_it->second.i, tran_it->second.j, tran_it->second.ckt);
+        key_iis tmp_f;
+        tmp_f = std::make_tuple(tran_it->second.i, tran_it->second.j, tran_it->second.ckt);
         double tmp_denom = pow(tran_it->second.r12, 2) + pow(tran_it->second.x12, 2);
-        F.push_back(tmp_t);
-        i_f_o.insert(std:: make_pair(tmp_t, tran_it->second.i));
-        i_f_d.insert(std::make_pair(tmp_t, tran_it->second.j));
-        id_F.insert(std::make_pair(tmp_t, tran_it->second.ckt));
-        g_f_m.insert(std::make_pair(tmp_t, tran_it->second.mag1));
-        b_f_m.insert(std::make_pair(tmp_t, tran_it->second.mag2));
-        g_f_0.insert(std::make_pair(tmp_t, tran_it->second.r12 / tmp_denom));
-        b_f_0.insert(std::make_pair(tmp_t, - tran_it->second.x12 / tmp_denom));
-        tau_f_0.insert(std::make_pair(tmp_t, tran_it->second.windv1 / tran_it->second.windv2));
-        theta_f_0.insert(std::make_pair(tmp_t, tran_it->second.ang1 * PI / 180.0));
-        x_f_st_over.insert(std::make_pair(tmp_t, (tran_it->second.ntp1 - 1.0)/2.0));
+        F.push_back(tmp_f);
+        i_f_o.insert(std:: make_pair(tmp_f, tran_it->second.i));
+        i_f_d.insert(std::make_pair(tmp_f, tran_it->second.j));
+        id_F.insert(std::make_pair(tmp_f, tran_it->second.ckt));
+        g_f_m.insert(std::make_pair(tmp_f, tran_it->second.mag1));
+        b_f_m.insert(std::make_pair(tmp_f, tran_it->second.mag2));
+        g_f_0.insert(std::make_pair(tmp_f, tran_it->second.r12 / tmp_denom));
+        b_f_0.insert(std::make_pair(tmp_f, -tran_it->second.x12 / tmp_denom));
+        tau_f_0.insert(std::make_pair(tmp_f, tran_it->second.windv1 / tran_it->second.windv2));
+        theta_f_0.insert(std::make_pair(tmp_f, tran_it->second.ang1 * PI / 180.0));
+        x_f_st_over.insert(std::make_pair(tmp_f, (tran_it->second.ntp1 - 1.0)/2.0));
         
         if (tran_it->second.cod1 == 1)
         {
-            tau_f_over.insert(std::make_pair(tmp_t, tran_it->second.rma1));
+            tau_f_over.insert(std::make_pair(tmp_f, tran_it->second.rma1));
+            tau_f_under.insert(std::make_pair(tmp_f, tran_it->second.rma1));
+            F_tau.push_back(tmp_f);
+            theta_f_over.insert(std::make_pair(tmp_f, tran_it->second.rma1 * PI / 180.0));
+            
         }
         else 
         {
-            tau_f_over.insert(std::make_pair(tmp_t, tran_it->second.windv1 / tran_it->second.windv2)));
+            tau_f_over.insert(std::make_pair(tmp_f, tau_f_0[tmp_f]));
+            tau_f_under.insert(std::make_pair(tmp_f, tau_f_0[tmp_f]));
         }
-    
-        if (tran_it->second.cod1 == 1)
+        
+        double tmp_tau_f = (tau_f_over[tmp_f] - tau_f_under[tmp_f]) / 2.0;
+        tau_f_st.insert(std::make_pair(tmp_f, tmp_tau_f / x_f_st_over[tmp_f]));
+        tau_f_any.insert(std::make_pair(tmp_f, tmp_tau_f));
+
+        if(tran_it->second.cod1 == 3)
         {
-            tau_f_under.insert(std::make_pair(tmp_t, tran_it->second.rma1));
+            theta_f_over.insert(std::make_pair(tmp_f, tran_it->second.rma1 * PI / 180));
+            theta_f_under.insert(std::make_pair(tmp_f, tran_it->second.rma1 * PI / 180));
+            F_theta.push_back(tmp_f);
         }
         else 
         {
-            tau_f_under.insert(std::make_pair(tmp_t, tran_it->second.windv1 / tran_it->second.windv2)));
+            theta_f_over.insert(std::make_pair(tmp_f, theta_f_0[tmp_f]));
+            theta_f_under.insert(std::make_pair(tmp_f, theta_f_0[tmp_f]));
         }
-        
-        double tmp_tau_f = (tau_f_over[tmp_t] - tau_f_under[tmp_t]) / 2.0;
-        tau_f_st.insert(std::make_pair(tmp_t, tmp_tau_f / x_f_st_over[tmp_t]));
-        tau_f_any.insert(std::make_pair(tmp_t, tmp_tau_f));
-        
-        
 
+        if(tran_it->second.tab1 != 0)
+        {
+            F_gamma.push_back(tmp_f);
+        }
 
-
+        double tmp_theta_f = (theta_f_over[tmp_f] - theta_f_under[tmp_f]) / 2.0;
+        theta_f_st.insert(std::make_pair(tmp_f, tmp_theta_f/x_f_st_over[tmp_f]));
+        theta_f_any.insert(std::make_pair(tmp_f, tmp_theta_f));
+        s_f_over.insert(std::make_pair(tmp_f, tran_it->second.rata1 * s_tilde_inverse));
+        s_f_ct_over.insert(std::make_pair(tmp_f, tran_it->second.ratc1 * s_tilde_inverse));
+        x_f_sw_0.insert(std::make_pair(tmp_f, tran_it->second.stat));
 
     }
+}
+
+void construct_TICT(Data& new_data)
+{
+
 }

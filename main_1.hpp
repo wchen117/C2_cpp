@@ -91,6 +91,9 @@ UMAP_TUPLE_iis_DOUBLE x_e_sw_0;
 
 // vectors and maps holding transformer data
 std::vector<key_iis> F;
+std::vector<key_iis> F_tau;
+std::vector<key_iis> F_theta;
+std::vector<key_iis> F_gamma;
 UMAP_TUPLE_iis_INT i_f_o;
 UMAP_TUPLE_iis_INT i_f_d;
 UMAP_TUPLE_iis_STRING id_F;
@@ -113,9 +116,11 @@ UMAP_TUPLE_iis_DOUBLE s_f_over;
 UMAP_TUPLE_iis_DOUBLE s_f_ct_over;
 UMAP_TUPLE_iis_DOUBLE x_f_sw_0;
 
-
-
-
+// vectors and maps holding Transformer Impedance Correction Table data
+double NUMM;
+UMAP_TUPLE_iis_DOUBLE gamma_f_m;
+UMAP_TUPLE_iis_DOUBLE tau_f_m;
+UMAP_TUPLE_iis_DOUBLE theta_f_m;
 
 // functions to construct parameters using input from case.raw
 void construct_bus(Data& local_data);
@@ -124,6 +129,8 @@ void construct_fixed_shunt(Data& local_data, int Is, double s_tilde_inverse);
 void construct_generator(Data& local_data, int Gs, double s_tilde_inverse);
 void construct_nontransformerbranch(Data& local_data, double s_tilde_inverse);
 void construct_transformer(Data& local_data, double s_tilde_inverse);
+// TICF: transformer impedance correction table
+void construct_TICT(Data& local_data);
 
 
 
