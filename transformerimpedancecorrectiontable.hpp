@@ -17,10 +17,6 @@ public:
     TransformerImpedanceCorrectionTable();
     ~TransformerImpedanceCorrectionTable();
 
-    bool read_from_row(
-            std::string row
-            );
-
 
 };
 #endif

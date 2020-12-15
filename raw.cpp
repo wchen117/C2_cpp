@@ -305,6 +305,7 @@ void Raw::parse_nontransformerbranch(std::vector<std::string> nontranformerbranc
     for (int idx=1; idx<nontranformerbranch_section.size(); idx++)
     {
         std::vector<std::string> line_vector = parse_on_delimiter(nontranformerbranch_section[idx], ",");
+        key_iis tmp_key;
         NontransformerBranch tmp_ntb;
         tmp_ntb.i = std::stoi(line_vector[0]);
         tmp_ntb.j = std::stoi(line_vector[1]);
@@ -330,7 +331,8 @@ void Raw::parse_nontransformerbranch(std::vector<std::string> nontranformerbranc
         tmp_ntb.f3 = std::stod(line_vector[21]);
         tmp_ntb.o4 = std::stoi(line_vector[22]);
         tmp_ntb.f4 = std::stod(line_vector[23]);
-        nontransformerbranches.insert(std::make_pair(tmp_ntb.i, tmp_ntb));
+        tmp_key = std::make_tuple(tmp_ntb.i, tmp_ntb.j, tmp_ntb.ckt);
+        nontransformerbranches.insert(std::make_pair(tmp_key, tmp_ntb));
     }
 }
 
@@ -361,6 +363,7 @@ void Raw::parse_transformer(std::vector<std::string> transformer_section)
     {
         
         Transformer tmp_tfmr;
+        key_iis tmp_key;
         tmp_tfmr.i = std::stoi(tmp_transformer_section[idx][0]);
         tmp_tfmr.j = std::stoi(tmp_transformer_section[idx][1]);
         tmp_tfmr.k = std::stoi(tmp_transformer_section[idx][2]);
@@ -406,7 +409,9 @@ void Raw::parse_transformer(std::vector<std::string> transformer_section)
         tmp_tfmr.cnxa1 = std::stod(tmp_transformer_section[idx][40]);
         tmp_tfmr.windv2 = std::stod(tmp_transformer_section[idx][41]);
         tmp_tfmr.nomv2 = std::stod(tmp_transformer_section[idx][42]);
-        transformers.insert(std::make_pair(tmp_tfmr.i, tmp_tfmr));
+
+        tmp_key = std::make_tuple(tmp_tfmr.i, tmp_tfmr.j, tmp_tfmr.ckt);
+        transformers.insert(std::make_pair(tmp_key, tmp_tfmr));
     }
  
 }
@@ -450,15 +455,20 @@ void Raw::parse_transformer_impedance_correction_table(
 )
 {
     // here t[0] corresponds to t1, f[0] corresponds to f1, etc;
-    std::vector<std::string> line_vector = parse_on_delimiter(impedance_data_section[1], ",");
-    TransformerImpedanceCorrectionTable tmp_tfict;
-    tmp_tfict.i = std::stoi(line_vector[0]);
-    for (int idx=1;idx<line_vector.size()-1; idx=idx+2)
+
+    for(int idx=1; idx<impedance_data_section.size(); idx++)
+    {
+        std::vector<std::string> line_vector = parse_on_delimiter(impedance_data_section.at(idx), ",");
+        TransformerImpedanceCorrectionTable tmp_tfict;
+        tmp_tfict.i = std::stoi(line_vector[0]);
+        for (int idx=1;idx<line_vector.size()-1; idx=idx+2)
         {
             tmp_tfict.t.push_back(std::stod(line_vector[idx]));
             tmp_tfict.f.push_back(std::stod(line_vector[idx+1]));
         }
-    TFICTs.insert(std::make_pair(tmp_tfict.i, tmp_tfict));
+        TFICTs.insert(std::make_pair(tmp_tfict.i, tmp_tfict));
+    } 
+    
 }
 
 void Raw::parse_multi_terminal_dc(

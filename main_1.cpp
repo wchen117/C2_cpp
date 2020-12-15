@@ -42,6 +42,7 @@ int main(int args, char** argv)
     construct_nontransformerbranch(new_data, s_tilde_inverse);
 
     // transformer data from raw
+    construct_transformer(new_data, s_tilde_inverse);
     
 }
 
@@ -137,14 +138,14 @@ void constuct_generator(Data& new_data, int Gs, double s_tilde_inverse)
 
 void construct_nontransformerbranch(Data& new_data, double s_tilde_inverse )
 {
-    std::unordered_map<int, NontransformerBranch>::iterator non_it;
+    std::unordered_map<key_iis, NontransformerBranch, boost::hash<key_iis>>::iterator non_it;
 
     for(non_it= new_data.raw.nontransformerbranches.begin(); non_it!= new_data.raw.nontransformerbranches.end(); non_it++)
     {
         // hash key of tuple(int, int, string)
         key_iis tmp_n;
         double tmp_denom = std::pow(non_it->second.r, 2) + std::pow(non_it->second.x, 2);
-        tmp_n = std::make_tuple(non_it->second.i, non_it->second.j, non_it->second.ckt);
+        tmp_n = non_it->first;
         E.push_back(tmp_n);
         i_e_o.insert(std::make_pair(tmp_n, non_it->second.i));
         i_e_d.insert(std::make_pair(tmp_n, non_it->second.j));
@@ -160,13 +161,15 @@ void construct_nontransformerbranch(Data& new_data, double s_tilde_inverse )
 
 void construct_transformer(Data& new_data, double s_tilde_inverse)
 {
-    std::unordered_map<int, Transformer>::iterator tran_it;
+    std::unordered_map<key_iis, Transformer, boost::hash<key_iis>>::iterator tran_it;
+    std::unordered_map<int, TransformerImpedanceCorrectionTable>::iterator tcit_it;
+
     for(tran_it=new_data.raw.transformers.begin(); tran_it!=new_data.raw.transformers.end(); tran_it++)
     {
         // hash key of tuple(int, int, string)
-        key_iis tmp_f;
-        tmp_f = std::make_tuple(tran_it->second.i, tran_it->second.j, tran_it->second.ckt);
         double tmp_denom = pow(tran_it->second.r12, 2) + pow(tran_it->second.x12, 2);
+        key_iis tmp_f;
+        tmp_f = tran_it->first;
         F.push_back(tmp_f);
         i_f_o.insert(std:: make_pair(tmp_f, tran_it->second.i));
         i_f_d.insert(std::make_pair(tmp_f, tran_it->second.j));
@@ -202,16 +205,55 @@ void construct_transformer(Data& new_data, double s_tilde_inverse)
             theta_f_over.insert(std::make_pair(tmp_f, tran_it->second.rma1 * PI / 180));
             theta_f_under.insert(std::make_pair(tmp_f, tran_it->second.rma1 * PI / 180));
             F_theta.push_back(tmp_f);
+            
         }
         else 
         {
             theta_f_over.insert(std::make_pair(tmp_f, theta_f_0[tmp_f]));
             theta_f_under.insert(std::make_pair(tmp_f, theta_f_0[tmp_f]));
         }
-
-        if(tran_it->second.tab1 != 0)
+    
+        int tmp_i; int tmp_j; std::string tmp_ckt;
+        std::tie(tmp_i, tmp_j, tmp_ckt) = tmp_f;
+        
+        if (tran_it->second.tab1 != 0)
         {
+            
             F_gamma.push_back(tmp_f);
+            
+            for(tcit_it=new_data.raw.TFICTs.begin(); tcit_it!=new_data.raw.TFICTs.end();tcit_it++)
+            {
+                if(tcit_it->second.i == tran_it->second.tab1)
+                {
+                        for(int idx=0; idx<tcit_it->second.f.size(); idx++)
+                        {
+                            key_iisi tmp_fm = std::make_tuple(tmp_i, tmp_j, tmp_ckt, idx+1);
+                            gamma_f_m.insert(std::make_pair(tmp_fm, tcit_it->second.f.at(idx)));
+                    
+                        } 
+                    
+                        if(tran_it->second.cod1 == 1)
+                        {
+                            for(int idx=0; idx<tcit_it->second.t.size(); idx++)
+                            {
+                                key_iisi tmp_fm = std::make_tuple(tmp_i, tmp_j, tmp_ckt, idx+1);
+                                tau_f_m.insert(std::make_pair(tmp_fm, tcit_it->second.t.at(idx)));
+                        
+
+                            } 
+
+                        }
+                        else if(tran_it->second.cod1 == 3)
+                        {
+                            for(int idx=0; idx<tcit_it->second.t.size(); idx++)
+                            {
+                                key_iisi tmp_fm = std::make_tuple(tmp_i, tmp_j, tmp_ckt, idx+1);
+                                theta_f_m.insert(std::make_pair(tmp_fm, tcit_it->second.t.at(idx) * PI / 180.0));
+                            }
+
+                        }
+                }
+            }
         }
 
         double tmp_theta_f = (theta_f_over[tmp_f] - theta_f_under[tmp_f]) / 2.0;
@@ -221,10 +263,15 @@ void construct_transformer(Data& new_data, double s_tilde_inverse)
         s_f_ct_over.insert(std::make_pair(tmp_f, tran_it->second.ratc1 * s_tilde_inverse));
         x_f_sw_0.insert(std::make_pair(tmp_f, tran_it->second.stat));
 
+
+        
+
     }
 }
 
-void construct_TICT(Data& new_data)
+void construct_switched_shunt(Data& new_data, double s_tilde_inverse)
 {
 
 }
+
+

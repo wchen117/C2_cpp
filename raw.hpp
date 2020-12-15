@@ -17,9 +17,11 @@
 #include "zone.hpp"
 #include "owner.hpp"
 #include "switchedshunt.hpp"
+#include "typedefinition.hpp"
 
 
-
+typedef std::unordered_map<key_iis, Transformer,  boost::hash<key_iis> > UMP_TUPLE_iis_TRANSFORMER;
+typedef std::unordered_map<key_iis, NontransformerBranch, boost::hash<key_iis> > UMP_TUPLE_iis_NFB;
 
 class Raw
 {
@@ -35,11 +37,11 @@ public:
     std::unordered_map<int, Load> loads;
     std::unordered_map<int, FixedShunt> shunts;
     std::unordered_map<int, Generator> generators;
-    std::unordered_map<int, NontransformerBranch> nontransformerbranches;
-    std::unordered_map<int, Transformer> transformers;
     std::unordered_map<int, Area> areas;
     std::unordered_map<int, SwitchedShunt> switchedshunts;
     std::unordered_map<int, TransformerImpedanceCorrectionTable> TFICTs;
+    UMP_TUPLE_iis_NFB nontransformerbranches;
+    UMP_TUPLE_iis_TRANSFORMER transformers;
 
 
 

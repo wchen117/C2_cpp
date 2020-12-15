@@ -7,26 +7,9 @@
 #include <iostream>
 #include <tuple>
 #include <string>
-#include <boost/functional/hash.hpp>
+#include "typedefinition.hpp"
 #include "data.hpp"
 
-// some constants here
-const double PI  = 3.141592653589793238463;
-
-// some useful types
-
-// key: tuple(int, string)
-typedef std::tuple<int, std::string> key_is;
-// key: tuple(int, int, string) 
-typedef std::tuple<int, int, std::string> key_iis;
-// unordered_map using tuple(int, string) as hash key
-typedef std::unordered_map<key_is, int, boost::hash<key_is> > UMAP_TUPLE_is_INT;
-typedef std::unordered_map<key_is, double, boost::hash<key_is> > UMAP_TUPLE_is_DOUBLE;
-typedef std::unordered_map<key_is, std::string, boost::hash<key_is> > UMAP_TUPLE_is_STRING;
-// unordered map using tuple(int, int, string) as hash key
-typedef std::unordered_map<key_iis, int, boost::hash<key_iis> > UMAP_TUPLE_iis_INT;
-typedef std::unordered_map<key_iis, double, boost::hash<key_iis> > UMAP_TUPLE_iis_DOUBLE;
-typedef std::unordered_map<key_iis, std::string, boost::hash<key_iis> > UMAP_TUPLE_iis_STRING;
 
 // define the objective funcitons, assume types subject to changes
 
@@ -118,9 +101,9 @@ UMAP_TUPLE_iis_DOUBLE x_f_sw_0;
 
 // vectors and maps holding Transformer Impedance Correction Table data
 double NUMM;
-UMAP_TUPLE_iis_DOUBLE gamma_f_m;
-UMAP_TUPLE_iis_DOUBLE tau_f_m;
-UMAP_TUPLE_iis_DOUBLE theta_f_m;
+UMAP_TUPLE_iisi_DOUBLE gamma_f_m;
+UMAP_TUPLE_iisi_DOUBLE tau_f_m;
+UMAP_TUPLE_iisi_DOUBLE theta_f_m;
 
 // functions to construct parameters using input from case.raw
 void construct_bus(Data& local_data);
@@ -129,8 +112,7 @@ void construct_fixed_shunt(Data& local_data, int Is, double s_tilde_inverse);
 void construct_generator(Data& local_data, int Gs, double s_tilde_inverse);
 void construct_nontransformerbranch(Data& local_data, double s_tilde_inverse);
 void construct_transformer(Data& local_data, double s_tilde_inverse);
-// TICF: transformer impedance correction table
-void construct_TICT(Data& local_data);
+void construct_switchedshunt(Data& local_data, double s_tilde_inverse);
 
 
 
