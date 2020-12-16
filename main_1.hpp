@@ -19,8 +19,8 @@ std::string label_k_0 = "BASECASE";
 std::vector<std::string> K;
 std::vector<int> A = {1, 2, 3, 4, 5, 6, 7, 8};
 
-std::vector<double> H;
-std::vector<double> H_k_0;
+
+
 
 
 std::vector<int> M = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
@@ -104,6 +104,13 @@ double NUMM;
 UMAP_TUPLE_iisi_DOUBLE gamma_f_m;
 UMAP_TUPLE_iisi_DOUBLE tau_f_m;
 UMAP_TUPLE_iisi_DOUBLE theta_f_m;
+
+// vectors and maps holding switched shunt data
+std::vector<int> H;
+std::vector<double> H_k_0;
+
+
+
 
 // functions to construct parameters using input from case.raw
 void construct_bus(Data& local_data);

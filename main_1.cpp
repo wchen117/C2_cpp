@@ -271,6 +271,7 @@ void construct_transformer(Data& new_data, double s_tilde_inverse)
 
 void construct_switched_shunt(Data& new_data, double s_tilde_inverse)
 {
+    
 
 }
 
