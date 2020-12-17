@@ -8,7 +8,7 @@ class Zone
 public:
     //python self.i = None, no default
     int i;
-    string zoname;
+    std::string zoname;
 
     /**constructor and destructor**/
     Zone();
@@ -24,8 +24,8 @@ public:
             );
 
     bool read_from_row(
-            string row
+            std::string row
             );  
 
-}
+};
 #endif

@@ -1,6 +1,7 @@
 #ifndef __BRANCHOUTEVENT_HPP__
 #define __BRANCHOUTEVENT_HPP__
 
+#include <string>
 class BranchOutEvent
 {
 public:
@@ -9,22 +10,25 @@ public:
     // python: self.j = None, no default
     int j;
     // python: self.ckt = None, no default
-    string ckt;
+    std::string ckt;
+
+    BranchOutEvent();
+    ~BranchOutEvent();
 
     /**constructor and destructor**/
     bool check(
             );
 
     bool read_from_row(
-            string row
+            std::string row
             );
 
     bool read_from_csv(
-            string row
+            std::string row
             );
     
     bool construct_record_row(
             );
-}
+};
 
 #endif

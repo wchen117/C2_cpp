@@ -8,14 +8,18 @@
 ##########################################################################
 
 # CHANGEME: This should be the name of your executable
-EXE = data_main
+EXE = main_1
 
 # CHANGEME: Here is the name of all object files corresponding to the source
 #           code that you wrote in order to define the problem statement
 <<<<<<< HEAD
+<<<<<<< HEAD
 OBJS = data_main.o 
 =======
 OBJS = data_main.o \
+=======
+OBJS = main_1.o \
+>>>>>>> simple
 	   data.o \
 	   raw.o \
 	   con.o \
@@ -27,8 +31,27 @@ OBJS = data_main.o \
 	   generator.o \
 	   transformer.o \
 	   nontransformerbranch.o \
+<<<<<<< HEAD
 	   area.o 
 
+>>>>>>> simple
+=======
+	   area.o \
+	   transformerimpedancecorrectiontable.o \
+	   zone.o \
+	   owner.o \
+	   switchedshunt.o \
+	   contingency.o \
+	   generatoroutevent.o \
+	   branchoutevent.o \
+	   sup_generator.o \
+	   sup_line.o \
+	   sup_load.o \
+	   sup_transformer.o \
+	   sup_cblock.o \
+	   sup_pcblock.o \
+	   sup_qcblock.o \
+	   sup_scblock.o 
 >>>>>>> simple
 
 # CHANGEME: Additional libraries
@@ -38,7 +61,7 @@ ADDLIBS =
 ADDINCFLAGS =
 
 # C++ Compiler command
-CXX = /usr/bin/g++ 
+CXX = /usr/bin/g++ -std=c++11
 #CXX = /usr/local/bin/g++-10
 
 # C++ Compiler options
@@ -52,7 +75,7 @@ exec_prefix=${prefix}
 
 # Include directories
 
-INCL = -I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include
+INCL = -I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include -I/Users/wchen/Softwares/boost_1_63_0/boost
 
 # Linker flags
 #LIBS = -framework Accelerate -ldl
