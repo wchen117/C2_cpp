@@ -36,15 +36,24 @@ int main(int args, char** argv)
    
     // generator data from raw
     int Gs = new_data.raw.generators.size();
-    construct_fixed_shunt(new_data, Gs, s_tilde_inverse);
+    construct_generator(new_data, Gs, s_tilde_inverse);
     
     // line (or non-transformer branch) data from raw
     construct_nontransformerbranch(new_data, s_tilde_inverse);
 
     // transformer data from raw
     construct_transformer(new_data, s_tilde_inverse);
+
+    // switch shunt data from raw
+    construct_switched_shunt(new_data, s_tilde_inverse);
     
+    // construct con 
+    construct_con(new_data);
+
+    // nothing needs to be done for the case.sup file 
+
 }
+
 
 void construct_bus(Data& new_data)
 {
@@ -74,7 +83,7 @@ void construct_load(Data& new_data, double s_tilde_inverse)
         key_is tmp_j;
         tmp_j = std::make_tuple(load_it->second.i, load_it->second.id);
         J.push_back(tmp_j);
-        iii.insert(std::make_pair(tmp_j, load_it->second.i));
+        i_j.insert(std::make_pair(tmp_j, load_it->second.i));
         id.insert(std::make_pair(tmp_j, load_it->second.id));
         p_l.insert(std::make_pair(tmp_j, load_it->second.pl * s_tilde_inverse));
         q_l.insert(std::make_pair(tmp_j, load_it->second.ql * s_tilde_inverse));
@@ -84,7 +93,19 @@ void construct_load(Data& new_data, double s_tilde_inverse)
             J_k_0.push_back(tmp_j);
         }
     }
-    // missing: Having read and processed the load section, set:
+    // J_i = {j \in J: i_j = i}, \any i \in I
+    findIters(i_j, J_i);
+
+    
+    
+    /**
+    std::unordered_map<int, key_is>::iterator it2;
+
+    for(it2=J_i.begin();it2!=J_i.end(); it2++)
+    {
+        std::cout<<it2->first<<std::endl;
+    }
+    **/
 
 }
 
@@ -112,7 +133,7 @@ void construct_fixed_shunt(Data& new_data, int Is, double s_tilde_inverse)
 
 }
 
-void constuct_generator(Data& new_data, int Gs, double s_tilde_inverse)
+void construct_generator(Data& new_data, int Gs, double s_tilde_inverse)
 {
     std::unordered_map<int, Generator>::iterator gen_it;
     for(gen_it=new_data.raw.generators.begin(); gen_it!=new_data.raw.generators.end(); gen_it++)
@@ -133,7 +154,19 @@ void constuct_generator(Data& new_data, int Gs, double s_tilde_inverse)
         
     }
     
-    // again, haven't implemented the having read and process the generator section, set...
+    // G_k0 = G
+    // G_i  = {g \in G: i_g = i} \any i in I
+    // copy by value
+    G_k0 = G;
+    findIters(i_g, G_i);
+    UMAP_TUPLE_is_INT::iterator it2;
+
+    for(it2=G_i.begin();it2!=G_i.end(); it2++)
+    {
+        std::cout<<it2->second<<std::endl;
+    }
+    
+
 }
 
 void construct_nontransformerbranch(Data& new_data, double s_tilde_inverse )
@@ -157,6 +190,9 @@ void construct_nontransformerbranch(Data& new_data, double s_tilde_inverse )
         r_e_ct_over.insert(std::make_pair(tmp_n, non_it->second.ratec * s_tilde_inverse));
         x_e_sw_0.insert(std::make_pair(tmp_n, non_it->second.st));
     }
+
+
+
 }
 
 void construct_transformer(Data& new_data, double s_tilde_inverse)
@@ -271,6 +307,42 @@ void construct_transformer(Data& new_data, double s_tilde_inverse)
 
 void construct_switched_shunt(Data& new_data, double s_tilde_inverse)
 {
+    std::unordered_map<int, SwitchedShunt>::iterator ss_it;
+    for(ss_it=new_data.raw.switchedshunts.begin(); ss_it!=new_data.raw.switchedshunts.end(); ss_it++)
+    {
+        H.push_back(ss_it->second.i);
+        i_h.insert(std::make_pair(ss_it->second.i, ss_it->second.i));
+        b_h_cs0.insert(std::make_pair(ss_it->second.i, ss_it->second.binit));
+        NBL = ss_it->second.n.size();
+        // so this for loop is A_h
+        for(int idx=1; idx<=NBL; idx++)
+        {
+            key_ii tmp_ha;
+            tmp_ha = std::make_tuple(ss_it->second.i, idx);
+            x_ha_st_over.insert(std::make_pair(tmp_ha, ss_it->second.n.at(idx-1)));
+            b_ha_st.insert(std::make_pair(tmp_ha, ss_it->second.b.at(idx-1) * s_tilde_inverse));
+            
+        }
+
+        if (ss_it->second.stat == 1)
+        {
+            H_k0.push_back(ss_it->second.i);
+        }
+        
+    }
+
+}
+
+void construct_con(Data& new_data)
+{
+    for(int idx=0; idx<new_data.con.contingencies.size(); idx++)
+    {
+        if (!new_data.con.contingencies.at(idx).branch_out_events.empty())
+        {
+            //std::cout<<new_data.con.contingencies.at(idx).branch_out_events[0].i<<std::endl;
+
+        }
+    }
     
 
 }
