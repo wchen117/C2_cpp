@@ -74,6 +74,9 @@ UMAP_TUPLE_iis_DOUBLE x_e_sw_0;
 
 // vectors and maps holding transformer data
 std::vector<key_iis> F;
+std::vector<key_iis> F_k0;
+UMAP_TUPLE_iis_INT F_i_o;
+UMAP_TUPLE_iis_INT F_i_d;
 std::vector<key_iis> F_tau;
 std::vector<key_iis> F_theta;
 std::vector<key_iis> F_gamma;
@@ -108,12 +111,14 @@ UMAP_TUPLE_iisi_DOUBLE theta_f_m;
 // vectors and maps holding switched shunt data
 std::vector<int> H;
 std::unordered_map<int, int> i_h;
+std::unordered_map<int, int> H_i;
 std::unordered_map<int, double> b_h_cs0;
 int NBL;
 std::unordered_map<int, int> A_h;
 UMAP_TUPLE_ii_DOUBLE x_ha_st_over;
 UMAP_TUPLE_ii_DOUBLE b_ha_st;
 std::vector<int> H_k0;
+
 
 
 // vectors and maps holding con data
@@ -134,8 +139,8 @@ void construct_con(Data& local_data);
 
 
 // template to find J_i, G_i, etc
-template<typename T1, typename T2>
-void findIters(T1 target, T2& target_i)
+template<typename T1>
+void findIters(T1 target, T1& target_i)
 {
     typename T1::iterator it1;
     for (it1=target.begin(); it1!=target.end(); it1++)

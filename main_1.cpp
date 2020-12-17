@@ -309,7 +309,13 @@ void construct_transformer(Data& new_data, double s_tilde_inverse)
         
 
     }
-        
+    // F_k0 = F
+    // F_i_o = {f \in F: i_f_o = i} \any i in I
+    // F_i_d = {f \in F: i_f_d = i} \any i in I
+    F_k0 = F;
+    findIters(F_i_o, i_f_o);
+    findIters(F_i_d, i_f_d);
+
 }
 
 void construct_switched_shunt(Data& new_data, double s_tilde_inverse)
@@ -337,6 +343,9 @@ void construct_switched_shunt(Data& new_data, double s_tilde_inverse)
         }
         
     }
+
+    // H_i = {h \in H: i_h = i} \any i in I
+    findIters(H_i, i_h);
 
 }
 
