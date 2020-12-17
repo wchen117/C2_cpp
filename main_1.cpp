@@ -191,7 +191,13 @@ void construct_nontransformerbranch(Data& new_data, double s_tilde_inverse )
         x_e_sw_0.insert(std::make_pair(tmp_n, non_it->second.st));
     }
 
+    // E_k0 = E
+    // E_i_o = {e \in E: i_e_o = i} \any i \in I
+    // E_i_d = {e \in E: i_e_d = i} \any i \in I
 
+    E_k0 = E;
+    findIters(i_e_o, E_i_o);
+    findIters(i_e_d, E_i_d);
 
 }
 
@@ -303,6 +309,7 @@ void construct_transformer(Data& new_data, double s_tilde_inverse)
         
 
     }
+        
 }
 
 void construct_switched_shunt(Data& new_data, double s_tilde_inverse)

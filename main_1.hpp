@@ -59,6 +59,9 @@ UMAP_TUPLE_is_DOUBLE x_g_on_0;
 
 // vectors and maps holding line (non-transformer branch data)
 std::vector<key_iis> E;
+std::vector<key_iis> E_k0;
+UMAP_TUPLE_iis_INT E_i_o;
+UMAP_TUPLE_iis_INT E_i_d;
 UMAP_TUPLE_iis_INT i_e_o;
 UMAP_TUPLE_iis_INT i_e_d;
 UMAP_TUPLE_iis_STRING id_E;
