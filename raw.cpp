@@ -127,14 +127,6 @@ std::string Raw::read_to_string(std::string file_name)
     throw(errno);
 }
 
-<<<<<<< HEAD
-bool Raw::read(string file_name)
-{
-     
-
-}
-
-=======
 void Raw::string_to_section()
 {
     // parse the different section of case.raw file
@@ -182,7 +174,6 @@ void Raw::parse_case_id_bus(std::vector<std::string> section_lines)
 {
    // case identification and bus date corresponds to
    // section_vector[0]
->>>>>>> simple
 
    parse_case_id(section_lines[0], section_lines[1], section_lines[2]);
 

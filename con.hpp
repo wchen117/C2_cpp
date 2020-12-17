@@ -8,10 +8,6 @@
 #include "branchoutevent.hpp"
 #include "contingency.hpp"
 
-<<<<<<< HEAD
-#include "contingency.hpp"
-=======
->>>>>>> simple
 
 class Con
 
