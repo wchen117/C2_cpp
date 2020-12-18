@@ -159,14 +159,15 @@ void construct_generator(Data& new_data, int Gs, double s_tilde_inverse)
     // copy by value
     G_k0 = G;
     findIters(i_g, G_i);
+    
+    /**
     UMAP_TUPLE_is_INT::iterator it2;
 
     for(it2=G_i.begin();it2!=G_i.end(); it2++)
     {
         std::cout<<it2->second<<std::endl;
     }
-    
-
+    **/
 }
 
 void construct_nontransformerbranch(Data& new_data, double s_tilde_inverse )
@@ -351,12 +352,35 @@ void construct_switched_shunt(Data& new_data, double s_tilde_inverse)
 
 void construct_con(Data& new_data)
 {
-    for(int idx=0; idx<new_data.con.contingencies.size(); idx++)
+    for(size_t idx=0; idx<new_data.con.contingencies.size(); idx++)
     {
+        K.push_back(new_data.con.contingencies.at(idx).label);
+        label_k.push_back(new_data.con.contingencies.at(idx).label);
+        //  these are the branch out event
         if (!new_data.con.contingencies.at(idx).branch_out_events.empty())
         {
-            //std::cout<<new_data.con.contingencies.at(idx).branch_out_events[0].i<<std::endl;
+            key_iis tmp_key;
+            tmp_key = std::make_tuple(new_data.con.contingencies.at(idx).branch_out_events[0].i, \
+                                      new_data.con.contingencies.at(idx).branch_out_events[0].j, \
+                                      new_data.con.contingencies.at(idx).branch_out_events[0].ckt);
+            for (size_t jdx=0; jdx<E.size(); jdx++)
+            {
+                
+                if (tmp_key == E[jdx])
+                {
+                    int a, b;
+                    std::string c;
+                    std::tie(a, b,c) = E[jdx];
+                    std::cout<<a<<","<<b<<","<<c<<std::endl;
 
+                }
+
+            }
+
+        }
+        else if (!new_data.con.contingencies.at(idx).generator_out_events.empty())
+        {
+            //std::cout<<new_data.con.contingencies.at(idx).generator_out_events[0].i<<std::endl;
         }
     }
     

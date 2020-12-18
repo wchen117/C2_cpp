@@ -123,6 +123,9 @@ std::vector<int> H_k0;
 
 // vectors and maps holding con data
 std::vector<std::string> K;
+std::vector<std::string> label_k;
+
+// nothing needs to be done for json/sup data
 
 
 void construct_from_raw(Data& new_data, double s_tilde_inverse);
@@ -154,6 +157,12 @@ void findIters(T1 target, T1& target_i)
         }
 
     }
+}
+// template to print tuple
+template<typename T1>
+void printTuple(T1 target_tuple)
+{
+    
 }
 
 
