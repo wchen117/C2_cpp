@@ -190,6 +190,7 @@ void construct_nontransformerbranch(Data& new_data, double s_tilde_inverse )
         r_e_over.insert(std::make_pair(tmp_n, non_it->second.ratea * s_tilde_inverse));
         r_e_ct_over.insert(std::make_pair(tmp_n, non_it->second.ratec * s_tilde_inverse));
         x_e_sw_0.insert(std::make_pair(tmp_n, non_it->second.st));
+
     }
 
     // E_k0 = E
@@ -362,29 +363,51 @@ void construct_con(Data& new_data)
             key_iis tmp_key;
             tmp_key = std::make_tuple(new_data.con.contingencies.at(idx).branch_out_events[0].i, \
                                       new_data.con.contingencies.at(idx).branch_out_events[0].j, \
-                                      new_data.con.contingencies.at(idx).branch_out_events[0].ckt);
+                                      // the ckt number in case.con file is not surronded by \'\' marks
+                                      "'" + new_data.con.contingencies.at(idx).branch_out_events[0].ckt + "'");
+            //std::cout<<id_E[tmp_key]<<", "<<id_F[tmp_key]<< <<std::endl;
             for (size_t jdx=0; jdx<E.size(); jdx++)
             {
-                
-                if (tmp_key == E[jdx])
+                if (tmp_key == E.at(jdx))
                 {
-                    int a, b;
-                    std::string c;
-                    std::tie(a, b,c) = E[jdx];
-                    std::cout<<a<<","<<b<<","<<c<<std::endl;
-
+                    E_k.push_back(E.at(jdx));
+                    // remove e from E?
+                    //printtuple(E.at(jdx));
                 }
+            }
 
+            for (size_t jdx=0; jdx<F.size(); jdx++)
+            {
+                if (tmp_key == F.at(jdx))
+                {
+                    F_k.push_back(F.at(jdx));
+                    // remove f from F?
+                    //printtuple(F.at(jdx));
+                }
             }
 
         }
         else if (!new_data.con.contingencies.at(idx).generator_out_events.empty())
         {
-            //std::cout<<new_data.con.contingencies.at(idx).generator_out_events[0].i<<std::endl;
+            key_is tmp_key;
+            tmp_key = std::make_tuple(new_data.con.contingencies.at(idx).generator_out_events[0].i,\
+                                      "'" + new_data.con.contingencies.at(idx).generator_out_events[0].id + "'");
+            G_k.push_back(tmp_key);
+            // remove g from G?
+            
         }
     }
-    
+
 
 }
+void printtuple(const std::tuple<int, int, std::string>& tmp_key)
+{
+    int a, b;
+    std::string c;
+    std::tie(a, b,c) = tmp_key;
+    std::cout<<a<<","<<b<<","<<c<<std::endl;
+    //std::cout<<typeid(c).name()<<std::endl;
+}
+
 
 

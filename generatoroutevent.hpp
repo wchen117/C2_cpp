@@ -7,7 +7,7 @@ public:
     // python: self.i = None, no default
     int i;
     // python: self.i = None, no default
-    int id;
+    std::string id;
 
     GeneratorOutEvent();
     ~GeneratorOutEvent();

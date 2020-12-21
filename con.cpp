@@ -106,7 +106,7 @@ void Con::parse_branchout(std::vector<std::string> tmp_vect, BranchOutEvent& bra
 
 void Con::parse_generatorout(std::vector<std::string> tmp_vect, GeneratorOutEvent& gen_event)
 {
-    gen_event.id = std::stoi(tmp_vect[3]);
+    gen_event.id = tmp_vect[3];
     gen_event.i = std::stoi(tmp_vect[6]);
 
 }

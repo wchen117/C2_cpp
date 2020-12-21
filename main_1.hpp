@@ -45,6 +45,7 @@ std::vector<double> b_fs;
 
 // vectors and maps holding generator data
 std::vector<key_is> G;
+std::vector<key_is> G_k; 
 std::vector<key_is> G_k0;
 UMAP_TUPLE_is_INT G_i;
 UMAP_TUPLE_is_INT i_g;
@@ -59,6 +60,7 @@ UMAP_TUPLE_is_DOUBLE x_g_on_0;
 
 // vectors and maps holding line (non-transformer branch data)
 std::vector<key_iis> E;
+std::vector<key_iis> E_k;
 std::vector<key_iis> E_k0;
 UMAP_TUPLE_iis_INT E_i_o;
 UMAP_TUPLE_iis_INT E_i_d;
@@ -74,6 +76,7 @@ UMAP_TUPLE_iis_DOUBLE x_e_sw_0;
 
 // vectors and maps holding transformer data
 std::vector<key_iis> F;
+std::vector<key_iis> F_k;
 std::vector<key_iis> F_k0;
 UMAP_TUPLE_iis_INT F_i_o;
 UMAP_TUPLE_iis_INT F_i_d;
@@ -159,11 +162,7 @@ void findIters(T1 target, T1& target_i)
     }
 }
 // template to print tuple
-template<typename T1>
-void printTuple(T1 target_tuple)
-{
-    
-}
+void printtuple(const std::tuple<int, int, std::string>& tmp_key);
 
 
 
