@@ -32,7 +32,8 @@ std::vector<double> v_ct_under;
 
 // vectors and maps holding load data
 std::vector<key_is> J;
-std::vector<key_is> J_k_0;
+std::vector<key_is> J_k0;
+std::vector<key_is> J_k;
 UMAP_TUPLE_is_INT J_i;
 UMAP_TUPLE_is_INT i_j;
 UMAP_TUPLE_is_STRING id;
@@ -121,6 +122,7 @@ std::unordered_map<int, int> A_h;
 UMAP_TUPLE_ii_DOUBLE x_ha_st_over;
 UMAP_TUPLE_ii_DOUBLE b_ha_st;
 std::vector<int> H_k0;
+std::vector<int> H_k;
 
 
 

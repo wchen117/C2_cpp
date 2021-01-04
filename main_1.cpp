@@ -4,6 +4,7 @@
 #include <iostream>
 #include <typeinfo>
 #include <math.h>
+#include <assert.h> 
 
 
 int main(int args, char** argv)
@@ -52,6 +53,7 @@ int main(int args, char** argv)
 
     // nothing needs to be done for the case.sup file 
 
+    
 }
 
 
@@ -90,7 +92,7 @@ void construct_load(Data& new_data, double s_tilde_inverse)
 
         if (load_it->second.status == 1)
         {
-            J_k_0.push_back(tmp_j);
+            J_k0.push_back(tmp_j);
         }
     }
     // J_i = {j \in J: i_j = i}, \any i \in I
@@ -225,6 +227,7 @@ void construct_transformer(Data& new_data, double s_tilde_inverse)
         tau_f_0.insert(std::make_pair(tmp_f, tran_it->second.windv1 / tran_it->second.windv2));
         theta_f_0.insert(std::make_pair(tmp_f, tran_it->second.ang1 * PI / 180.0));
         x_f_st_over.insert(std::make_pair(tmp_f, (tran_it->second.ntp1 - 1.0)/2.0));
+        //std::cout<<x_f_st_over[tmp_f]<<std::endl;
         
         if (tran_it->second.cod1 == 1)
         {
@@ -336,6 +339,7 @@ void construct_switched_shunt(Data& new_data, double s_tilde_inverse)
             tmp_ha = std::make_tuple(ss_it->second.i, idx);
             x_ha_st_over.insert(std::make_pair(tmp_ha, ss_it->second.n.at(idx-1)));
             b_ha_st.insert(std::make_pair(tmp_ha, ss_it->second.b.at(idx-1) * s_tilde_inverse));
+            std::cout<<x_ha_st_over[tmp_ha]<<std::endl;
             
         }
 
@@ -353,6 +357,21 @@ void construct_switched_shunt(Data& new_data, double s_tilde_inverse)
 
 void construct_con(Data& new_data)
 {
+    // first copy vectors: Ek = E, Fk = F, Jk = Jk0 and Hk = Hk0
+    // at this point E, F, J_k0 and H_k0 should be occupied
+
+    assert(!E.empty());
+    assert(!F.empty());
+    assert(!J_k0.empty());
+    assert(!H_k0.empty());
+
+    E_k = E;
+    F_k = F;
+    G_k = G;
+    J_k = J_k0;
+    H_k = H_k0;
+    
+
     for(size_t idx=0; idx<new_data.con.contingencies.size(); idx++)
     {
         K.push_back(new_data.con.contingencies.at(idx).label);
@@ -365,14 +384,12 @@ void construct_con(Data& new_data)
                                       new_data.con.contingencies.at(idx).branch_out_events[0].j, \
                                       // the ckt number in case.con file is not surronded by \'\' marks
                                       "'" + new_data.con.contingencies.at(idx).branch_out_events[0].ckt + "'");
-            //std::cout<<id_E[tmp_key]<<", "<<id_F[tmp_key]<< <<std::endl;
+
             for (size_t jdx=0; jdx<E.size(); jdx++)
             {
                 if (tmp_key == E.at(jdx))
                 {
-                    E_k.push_back(E.at(jdx));
-                    // remove e from E?
-                    //printtuple(E.at(jdx));
+                    E_k.erase(find(E_k.begin(), E_k.end(), tmp_key));
                 }
             }
 
@@ -380,22 +397,40 @@ void construct_con(Data& new_data)
             {
                 if (tmp_key == F.at(jdx))
                 {
-                    F_k.push_back(F.at(jdx));
-                    // remove f from F?
-                    //printtuple(F.at(jdx));
+                    F_k.erase(find(F_k.begin(), F_k.end(), tmp_key));
                 }
             }
 
         }
+        // these are the Generator Out-of-Service Event
         else if (!new_data.con.contingencies.at(idx).generator_out_events.empty())
         {
             key_is tmp_key;
             tmp_key = std::make_tuple(new_data.con.contingencies.at(idx).generator_out_events[0].i,\
                                       "'" + new_data.con.contingencies.at(idx).generator_out_events[0].id + "'");
-            G_k.push_back(tmp_key);
-            // remove g from G?
+            for (size_t kdx=0; kdx<G.size(); kdx++)
+            {
+                if(tmp_key == G.at(kdx))
+                {
+                    G_k.erase(find(G_k.begin(), G_k.end(), G.at(kdx)));
+                }
+            }
+            
             
         }
+
+        // having read and processed the contingency file, set
+        // J_k = J_k0 \any k \in K \ {k0}
+        // H_k = H_k0 \any k \in K \ {k0}
+  
+        assert(!J_k0.empty());
+        assert(!H_k0.empty());
+        J_k = J_k0;
+        H_k = H_k0;
+
+
+
+
     }
 
 
@@ -408,6 +443,5 @@ void printtuple(const std::tuple<int, int, std::string>& tmp_key)
     std::cout<<a<<","<<b<<","<<c<<std::endl;
     //std::cout<<typeid(c).name()<<std::endl;
 }
-
 
 
