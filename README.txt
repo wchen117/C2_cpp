@@ -4,6 +4,8 @@ How to run:
 
 make
 ./data_main
+or 
+./main_1
 
 
 
