@@ -1,6 +1,5 @@
-#ifndef __CONSTRUCT_MODEL_PARAMS_HPP__
-#define __CONSTRUCT_MODEL_PARAMS_HPP__
-
+#ifndef __WRAPPER_CONSTRUCT_HPP__
+#define __WRAPPER_CONSTRUCT_HPP__
 #include <vector>
 #include <unordered_map>
 #include <iostream>
@@ -9,18 +8,17 @@
 #include "typedefinition.hpp"
 #include "data.hpp"
 
-class Construct_Model_Params
+class Wrapper_Construct
 {
-    // define the objective funcitons, assume types subject to changes
-public:
-
-    
-    std::string data_folder;
+    public:
     Data new_data;
+    std::string con_name = "case.con";
+    std::string raw_name = "case.raw";
+    std::string sup_name = "case.json";
+    Wrapper_Construct(std::string input_path);
+    ~Wrapper_Construct();
 
-    //convert input to model parameter
-
-    
+    // model parameters
     std::string k_0 = "BASECASE";
     std::string label_k_0 = "BASECASE";
     std::vector<int> A = {1, 2, 3, 4, 5, 6, 7, 8};
@@ -140,21 +138,16 @@ public:
     std::vector<std::string> K;
     std::vector<std::string> label_k;
 
-
-
-
-
-    // nothing needs to be done for json/sup data
-    void construct_from_raw(Data &new_data, double s_tilde_inverse);
     // functions to construct parameters using input from case.raw
-    void construct_bus(Data &local_data);
-    void construct_load(Data &local_data, double s_tilde_inverse);
-    void construct_fixed_shunt(Data &local_data, int Is, double s_tilde_inverse);
-    void construct_generator(Data &local_data, int Gs, double s_tilde_inverse);
-    void construct_nontransformerbranch(Data &local_data, double s_tilde_inverse);
-    void construct_transformer(Data &local_data, double s_tilde_inverse);
-    void construct_switched_shunt(Data &local_data, double s_tilde_inverse);
-    void construct_con(Data &local_data);
+    void construct_bus();
+    void construct_load();
+    void construct_fixed_shunt();
+    void construct_generator();
+    void construct_nontransformerbranch();
+    void construct_transformer();
+    void construct_switched_shunt();
+    void construct_con();
+
     // template to find J_i, G_i, etc
     template <typename T1>
     void findIters(T1 target, T1 &target_i)
@@ -193,11 +186,11 @@ public:
     size_t num_g = 0;
     // number of variables, essentailly length of x_vec
     size_t num_x = 0;
+    std::vector<size_t> Nj_size_list;
     // function related to ipopt implementation
-    void construct_size_and_bounds(Data &local_data);
-    void onstruct_g_vector(Data &new_data);
-    void get_Nj_size(const Data &new_data, std::vector<size_t> &Nj_size_list);
+    void construct_size_and_bounds();
+    void onstruct_g_vector();
+    void get_Nj_size();
     void get_num_constraints();
 };
-
 #endif

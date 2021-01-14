@@ -13,4 +13,5 @@ int main(int args, char** argv)
     new_data.read(data_folder + raw_name,\
                   data_folder + sup_name, \
                   data_folder + con_name);
+
 }

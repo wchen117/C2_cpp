@@ -14,6 +14,7 @@ EXE = test
 # CHANGEME: Here is the name of all object files corresponding to the source
 #           code that you wrote in order to define the problem statement
 OBJS = test.o \
+	   wrapper_construct.o \
 	   data.o \
 	   raw.o \
 	   con.o \
@@ -49,7 +50,7 @@ ADDLIBS =
 ADDINCFLAGS =
 
 # C++ Compiler command
-CXX = g++-10 -std=c++11
+CXX = /usr/bin/g++ -std=c++11
 #CXX = /usr/local/bin/g++-10
 
 # C++ Compiler options
