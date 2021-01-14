@@ -180,6 +180,7 @@ void Sup::parse_pcblocks(std::vector<Sup_Pcblock>& pcblock_attr, Value& local_pc
         Sup_Pcblock tmp_sup_pcblock;
         tmp_sup_pcblock.pmax = local_pcblocks[idx]["pmax"].GetDouble();
         tmp_sup_pcblock.c = local_pcblocks[idx]["c"].GetDouble();
+        pcblock_attr.push_back(tmp_sup_pcblock);
     }
 
 
@@ -189,9 +190,10 @@ void Sup::parse_qcblocks(std::vector<Sup_Qcblock>& qcblock_attr, Value& local_qc
 {
     for(SizeType idx = 0; idx < local_qcblocks.Size(); idx++)
     {
-        Sup_Pcblock tmp_sup_qcblock;
-        tmp_sup_qcblock.pmax = local_qcblocks[idx]["pmax"].GetDouble();
+        Sup_Qcblock tmp_sup_qcblock;
+        tmp_sup_qcblock.qmax = local_qcblocks[idx]["pmax"].GetDouble();
         tmp_sup_qcblock.c = local_qcblocks[idx]["c"].GetDouble();
+        qcblock_attr.push_back(tmp_sup_qcblock);
     }
 
 
@@ -200,9 +202,10 @@ void Sup::parse_scblocks(std::vector<Sup_Scblock>& scblock_attr, Value& local_sc
 {
     for(SizeType idx = 0; idx < local_scblocks.Size(); idx++)
     {
-        Sup_Pcblock tmp_sup_scblock;
-        tmp_sup_scblock.pmax = local_scblocks[idx]["pmax"].GetDouble();
+        Sup_Scblock tmp_sup_scblock;
+        tmp_sup_scblock.tmax = local_scblocks[idx]["pmax"].GetDouble();
         tmp_sup_scblock.c = local_scblocks[idx]["c"].GetDouble();
+        scblock_attr.push_back(tmp_sup_scblock);
     }
 
 

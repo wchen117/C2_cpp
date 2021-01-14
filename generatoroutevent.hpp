@@ -1,6 +1,6 @@
 #ifndef __GENERATOROUTEVENT_HPP__
 #define __GENERATOROUTEVENT_HPP__
-
+#include <string>
 class GeneratorOutEvent
 {
 public:

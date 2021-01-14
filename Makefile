@@ -9,11 +9,11 @@
 
 # CHANGEME: This should be the name of your executable
 # CHANGEME: This should be the name of your executable
-EXE = main_1
+EXE = test
 
 # CHANGEME: Here is the name of all object files corresponding to the source
 #           code that you wrote in order to define the problem statement
-OBJS = main_1.o \
+OBJS = test.o \
 	   data.o \
 	   raw.o \
 	   con.o \
@@ -49,7 +49,7 @@ ADDLIBS =
 ADDINCFLAGS =
 
 # C++ Compiler command
-CXX = /usr/bin/g++ -std=c++11
+CXX = g++-10 -std=c++11
 #CXX = /usr/local/bin/g++-10
 
 # C++ Compiler options
@@ -58,12 +58,13 @@ CXXFLAGS = -O2 -DNDEBUG
 # additional C++ Compiler options for linking
 CXXLINKFLAGS = 
 
-prefix=/usr/local
+prefix=/usr/local/
 exec_prefix=${prefix}
 
 # Include directories
 
-INCL = -I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include -I/Users/wchen/Softwares/boost_1_63_0/boost
+INCL = -I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include -I/usr/local/include `PKG_CONFIG_PATH=/Users/wchen/Softwares/another_ipopt_prefix/lib/pkgconfig: pkg-config --cflags ipopt` $(ADDINCFLAGS)
+LIBS = `PKG_CONFIG_PATH=/Users/wchen/Softwares/another_ipopt_prefix/lib/pkgconfig: pkg-config --libs ipopt`
 
 # Linker flags
 #LIBS = -framework Accelerate -ldl

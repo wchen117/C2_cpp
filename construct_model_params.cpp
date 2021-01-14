@@ -1,16 +1,14 @@
-#include "main_1.hpp"
+#include "construct_model_params.hpp"
 
 #include <string>
 #include <iostream>
 #include <typeinfo>
 #include <math.h>
-#include <assert.h> 
+#include <assert.h>
 
 
-int main(int args, char** argv)
+Construct_Model_Params::Construct_Model_Params()
 {
-    
-
     std::string data_folder = "./sample_data/ieee14/scenario_1/";
     std::string con_name = "case.con";
     std::string raw_name = "case.raw";
@@ -23,10 +21,10 @@ int main(int args, char** argv)
 
     // case identification data from raw
     s_tilde = new_data.raw.CaseIdentificationData.sbase;
-    double s_tilde_inverse = 1.0 / s_tilde;
+    s_tilde_inverse = 1.0 / s_tilde;
     
     // bus data from raw
-    int Is = new_data.raw.buses.size();
+    Is = new_data.raw.buses.size();
     construct_bus(new_data);
    
     // load data from raw
@@ -36,13 +34,15 @@ int main(int args, char** argv)
     construct_fixed_shunt(new_data, Is, s_tilde_inverse);
    
     // generator data from raw
-    int Gs = new_data.raw.generators.size();
+    Gs = new_data.raw.generators.size();
     construct_generator(new_data, Gs, s_tilde_inverse);
     
+    Es = new_data.raw.nontransformerbranches.size();
     // line (or non-transformer branch) data from raw
     construct_nontransformerbranch(new_data, s_tilde_inverse);
 
     // transformer data from raw
+    Fs = new_data.raw.transformers.size();
     construct_transformer(new_data, s_tilde_inverse);
 
     // switch shunt data from raw
@@ -51,13 +51,19 @@ int main(int args, char** argv)
     // construct con 
     construct_con(new_data);
 
-    // nothing needs to be done for the case.sup file 
+    // no further construction needed for case.json file
+    Ns = new_data.sup.sup_doc["pcblocks"].Size();
+    for(size_t idx=0; idx<=Ns; idx++)
+    {
+        N.push_back(idx);
+    }
 
-    
+    construct_size_and_bounds(new_data);
 }
 
+Construct_Model_Params::~Construct_Model_Params(){}
 
-void construct_bus(Data& new_data)
+void Construct_Model_Params::construct_bus(Data& new_data)
 {
      // bus data from raw
 
@@ -75,7 +81,7 @@ void construct_bus(Data& new_data)
     }
 }
 
-void construct_load(Data& new_data, double s_tilde_inverse)
+void Construct_Model_Params::construct_load(Data& new_data, double s_tilde_inverse)
 {
     // loads data from raw
     std::unordered_map<int, Load>::iterator load_it;
@@ -111,7 +117,7 @@ void construct_load(Data& new_data, double s_tilde_inverse)
 
 }
 
-void construct_fixed_shunt(Data& new_data, int Is, double s_tilde_inverse)
+void Construct_Model_Params::construct_fixed_shunt(Data& new_data, int Is, double s_tilde_inverse)
 {
      // initilize g_fs and b_fs to 0
     for (int idx=0; idx < Is; idx++)
@@ -135,7 +141,7 @@ void construct_fixed_shunt(Data& new_data, int Is, double s_tilde_inverse)
 
 }
 
-void construct_generator(Data& new_data, int Gs, double s_tilde_inverse)
+void Construct_Model_Params::construct_generator(Data& new_data, int Gs, double s_tilde_inverse)
 {
     std::unordered_map<int, Generator>::iterator gen_it;
     for(gen_it=new_data.raw.generators.begin(); gen_it!=new_data.raw.generators.end(); gen_it++)
@@ -172,7 +178,7 @@ void construct_generator(Data& new_data, int Gs, double s_tilde_inverse)
     **/
 }
 
-void construct_nontransformerbranch(Data& new_data, double s_tilde_inverse )
+void Construct_Model_Params::construct_nontransformerbranch(Data& new_data, double s_tilde_inverse)
 {
     std::unordered_map<key_iis, NontransformerBranch, boost::hash<key_iis>>::iterator non_it;
 
@@ -198,14 +204,13 @@ void construct_nontransformerbranch(Data& new_data, double s_tilde_inverse )
     // E_k0 = E
     // E_i_o = {e \in E: i_e_o = i} \any i \in I
     // E_i_d = {e \in E: i_e_d = i} \any i \in I
-
     E_k0 = E;
     findIters(i_e_o, E_i_o);
     findIters(i_e_d, E_i_d);
 
 }
 
-void construct_transformer(Data& new_data, double s_tilde_inverse)
+void Construct_Model_Params::construct_transformer(Data& new_data, double s_tilde_inverse)
 {
     std::unordered_map<key_iis, Transformer, boost::hash<key_iis>>::iterator tran_it;
     std::unordered_map<int, TransformerImpedanceCorrectionTable>::iterator tcit_it;
@@ -227,7 +232,7 @@ void construct_transformer(Data& new_data, double s_tilde_inverse)
         tau_f_0.insert(std::make_pair(tmp_f, tran_it->second.windv1 / tran_it->second.windv2));
         theta_f_0.insert(std::make_pair(tmp_f, tran_it->second.ang1 * PI / 180.0));
         x_f_st_over.insert(std::make_pair(tmp_f, (tran_it->second.ntp1 - 1.0)/2.0));
-        //std::cout<<x_f_st_over[tmp_f]<<std::endl;
+       
         
         if (tran_it->second.cod1 == 1)
         {
@@ -323,7 +328,7 @@ void construct_transformer(Data& new_data, double s_tilde_inverse)
 
 }
 
-void construct_switched_shunt(Data& new_data, double s_tilde_inverse)
+void Construct_Model_Params::construct_switched_shunt(Data& new_data, double s_tilde_inverse)
 {
     std::unordered_map<int, SwitchedShunt>::iterator ss_it;
     for(ss_it=new_data.raw.switchedshunts.begin(); ss_it!=new_data.raw.switchedshunts.end(); ss_it++)
@@ -339,7 +344,7 @@ void construct_switched_shunt(Data& new_data, double s_tilde_inverse)
             tmp_ha = std::make_tuple(ss_it->second.i, idx);
             x_ha_st_over.insert(std::make_pair(tmp_ha, ss_it->second.n.at(idx-1)));
             b_ha_st.insert(std::make_pair(tmp_ha, ss_it->second.b.at(idx-1) * s_tilde_inverse));
-            std::cout<<x_ha_st_over[tmp_ha]<<std::endl;
+
             
         }
 
@@ -355,7 +360,7 @@ void construct_switched_shunt(Data& new_data, double s_tilde_inverse)
 
 }
 
-void construct_con(Data& new_data)
+void Construct_Model_Params::construct_con(Data& new_data)
 {
     // first copy vectors: Ek = E, Fk = F, Jk = Jk0 and Hk = Hk0
     // at this point E, F, J_k0 and H_k0 should be occupied
@@ -435,7 +440,8 @@ void construct_con(Data& new_data)
 
 
 }
-void printtuple(const std::tuple<int, int, std::string>& tmp_key)
+
+void Construct_Model_Params::printtuple(const std::tuple<int, int, std::string>& tmp_key)
 {
     int a, b;
     std::string c;
@@ -444,4 +450,68 @@ void printtuple(const std::tuple<int, int, std::string>& tmp_key)
     //std::cout<<typeid(c).name()<<std::endl;
 }
 
+void Construct_Model_Params::construct_size_and_bounds(Data& new_data)
+{
+    
+    assert(x_vect.empty());
+    assert(!K.empty());
+    assert(!I.empty());
+    assert(!new_data.sup.pcblocks.empty());
+
+    size_t Np = new_data.sup.pcblocks.size();
+    size_t Nq = new_data.sup.qcblocks.size();
+
+    std::vector<size_t> Nj_size_list;
+    get_Nj_size(new_data, Nj_size_list);
+    get_num_constraints();
+    std::cout<<Np<<std::endl;
+    
+    // variables are arranged in x_vect in the following order:
+    // p_ikn+, p_ikn-, q_ikn+, q_ikn-, z_ik (scalar), 
+    // p_jkn, z_jk (scalar)
+    // s_enk+, z_ek (scalar)
+    // s_fnk+, z_fk (scalar)
+    // p_gnk, z_gk (scalar)
+
+    // variable length: p_ikn+, p_ikn-: Np
+    // q_ikn+, q_ikn-: Nq
+
+    //x_vec.resize(2*Np+2*Nq+1+Nj_max+1+);
+
+    
+}
+
+void Construct_Model_Params::get_Nj_size(const Data& new_data, std::vector<size_t> &Nj_size_list)
+{
+    
+    for (size_t idx=0; idx<new_data.sup.loads.size(); idx++)
+    {
+        Nj_size_list.push_back(new_data.sup.loads.at(idx).cblocks.size());
+    }
+    
+    std::sort(Nj_size_list.begin(), Nj_size_list.end());
+    size_t Nj_max = Nj_size_list.back();
+
+
+}
+
+void Construct_Model_Params::get_num_constraints()
+{
+ // number of constraints from sec 3.1.1
+    for (size_t idx=0; idx<I.size(); idx++)
+    {
+       num_g++;
+    }
+    // number of constraints from sec 3.1.2
+    for (size_t jdx=0; jdx<J_k.size(); jdx++)
+    {
+        num_g++;
+    }
+    // number of constraints from sec 3.1.3
+    for (size_t kdx=0; kdx<E_k.size(); kdx++)
+    {
+        num_g++;
+    }
+
+}
 

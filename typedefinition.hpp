@@ -5,6 +5,8 @@
 
 // we use boost library to implement unordered_map with sets as hash keys
 #include <boost/functional/hash.hpp>
+#include <boost/multi_array.hpp>
+
 
 // some constants here
 const double PI  = 3.141592653589793238463;
@@ -38,5 +40,9 @@ typedef std::unordered_map<key_iisi, int, boost::hash<key_iisi> > UMAP_TUPLE_iis
 typedef std::unordered_map<key_iisi, double, boost::hash<key_iisi> > UMAP_TUPLE_iisi_DOUBLE;
 typedef std::unordered_map<key_iisi, std::string, boost::hash<key_iisi> > UMAP_TUPLE_iisi_STRING;
 
+
+// two dimensional double vector
+typedef std::vector< std::vector<double> > twoD_vector_double;
+typedef std::vector< std::vector< std::vector<double> > > threeD_vector_double;
 
 #endif
