@@ -2,13 +2,14 @@
 #define __GOC_NLP_HPP__
 
 #include "IpTNLP.hpp"
-#include "construct_model_params.hpp"
+#include "wrapper_construct.hpp"
 using namespace Ipopt;
 
 class GOC_NLP: public TNLP
 {
 public:
     /** Constructor and Destructor **/
+    Wrapper_Construct model_construct("./sample_data/ieee14/scenario_1/");
 
     virtual GOC_NLP();
     virtual ~GOC_NLP();
