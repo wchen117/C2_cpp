@@ -1,0 +1,3 @@
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/rebuild_cache.dir
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/edit_cache.dir
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir
