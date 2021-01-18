@@ -11,8 +11,8 @@ public:
     /** Constructor and Destructor **/
     Wrapper_Construct model_construct;
 
-    virtual GOC_NLP();
-    virtual ~GOC_NLP();
+    GOC_NLP();
+    ~GOC_NLP();
 
     /** implement the eight pure virtual functions in NLP **/
     virtual bool get_nlp_info(
