@@ -43,8 +43,9 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "include"
   "/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include"
-  "/usr/local/include"
   "/Users/wchen/Softwares/another_ipopt_prefix/include/coin-or"
+  "/usr/local/include"
+  "/usr/local/include/eigen3"
   )
 
 # Targets to which this target links.
