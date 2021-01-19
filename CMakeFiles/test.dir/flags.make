@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/wchen/Projects/GOC_competition/C2_cpp_code/include -I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include -I/Users/wchen/Softwares/another_ipopt_prefix/include/coin-or -isystem /usr/local/include -isystem /usr/local/include/eigen3
+CXX_INCLUDES = -I/Users/wchen/Projects/GOC_competition/C2_cpp_code/include -I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include -I/usr/local/include -I/Users/wchen/Softwares/another_ipopt_prefix/include/coin-or
 
 CXX_FLAGS =  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -std=gnu++11
 

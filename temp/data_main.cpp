@@ -14,4 +14,5 @@ int main(int args, char** argv)
                   data_folder + sup_name, \
                   data_folder + con_name);
 
+    return 0;
 }

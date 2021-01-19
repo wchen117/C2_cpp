@@ -6,14 +6,15 @@ set(CMAKE_CXX_STANDARD 11)
 
 include_directories(include 
                     "/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include"
-                    "/usr/local/include"  
+                    "/usr/local/include"
                     "/Users/wchen/Softwares/another_ipopt_prefix/include/coin-or")
 
-find_library(IPOPT_LIB, libipopt.dylib
+find_library(IPOPT_LIB
+    NAMES ipopt sipopt ipopt.3 
     PATHS /Users/wchen/Softwares/another_ipopt_prefix/lib)
 
 file(GLOB SOURCES "src/*.cpp")
 add_executable(test ${SOURCES})
 
-find_package(ifopt)
-target_link_libraries(test PUBLIC ifopt::ifopt_ipopt)
+#find_package(ifopt)
+#target_link_libraries(test PUBLIC ifopt::ifopt_ipopt)

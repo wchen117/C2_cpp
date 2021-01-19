@@ -563,8 +563,6 @@ test: CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o
 test: CMakeFiles/test.dir/src/wrapper_construct.cpp.o
 test: CMakeFiles/test.dir/src/zone.cpp.o
 test: CMakeFiles/test.dir/build.make
-test: /usr/local/lib/libifopt_ipopt.dylib
-test: /usr/local/lib/libifopt_core.dylib
 test: CMakeFiles/test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Linking CXX executable test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)

@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/map_input.cpp
+map_input.hpp
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/map_input.hpp
+
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp
+wrapper_construct.hpp
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.hpp
+map_input.hpp
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/map_input.hpp
+string
+-
+iostream
+-
+
 /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.cpp
 wrapper_construct.hpp
 /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.hpp
@@ -6547,6 +6561,8 @@ string
 include/load.hpp
 string
 -
+
+include/map_input.hpp
 
 include/nontransformerbranch.hpp
 string
