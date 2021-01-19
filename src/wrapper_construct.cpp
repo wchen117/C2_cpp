@@ -424,7 +424,7 @@ void Wrapper_Construct::printtuple(const std::tuple<int, int, std::string>& tmp_
 void Wrapper_Construct::construct_size_and_bounds()
 {
     
-    assert(x_vect.empty());
+    assert(x_vec.empty());
     assert(!K.empty());
     assert(!I.empty());
     assert(!new_data.sup.pcblocks.empty());

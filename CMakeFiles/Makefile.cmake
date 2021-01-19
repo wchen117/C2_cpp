@@ -95,6 +95,12 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/Platform/Darwin-Initialize.cmake"
   "/usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/Platform/Darwin.cmake"
   "/usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/Platform/UnixPaths.cmake"
+  "/usr/local/share/ifopt/cmake/ifopt-config-version.cmake"
+  "/usr/local/share/ifopt/cmake/ifopt-config.cmake"
+  "/usr/local/share/ifopt/cmake/ifopt_core-targets-noconfig.cmake"
+  "/usr/local/share/ifopt/cmake/ifopt_core-targets.cmake"
+  "/usr/local/share/ifopt/cmake/ifopt_ipopt-targets-noconfig.cmake"
+  "/usr/local/share/ifopt/cmake/ifopt_ipopt-targets.cmake"
   )
 
 # The corresponding makefile is:
