@@ -144,7 +144,8 @@ void Sup::parse_lines(Value& local_lines)
     for(SizeType idx = 0; idx < local_lines.Size(); idx++)
     {
         Sup_Line tmp_sup_line;
-        tmp_sup_line.origbus = local_lines[idx]["local_lines"].GetInt();
+        tmp_sup_line.origbus = local_lines[idx]["origbus"].GetInt();
+        std::cout<<tmp_sup_line.origbus<<std::endl;
         tmp_sup_line.destbus = local_lines[idx]["destbus"].GetInt();
         tmp_sup_line.id = local_lines[idx]["id"].GetString();
         tmp_sup_line.swqual = local_lines[idx]["swqual"].GetInt();
@@ -191,7 +192,7 @@ void Sup::parse_qcblocks(std::vector<Sup_Qcblock>& qcblock_attr, Value& local_qc
     for(SizeType idx = 0; idx < local_qcblocks.Size(); idx++)
     {
         Sup_Qcblock tmp_sup_qcblock;
-        tmp_sup_qcblock.qmax = local_qcblocks[idx]["pmax"].GetDouble();
+        tmp_sup_qcblock.qmax = local_qcblocks[idx]["qmax"].GetDouble();
         tmp_sup_qcblock.c = local_qcblocks[idx]["c"].GetDouble();
         qcblock_attr.push_back(tmp_sup_qcblock);
     }
@@ -203,7 +204,7 @@ void Sup::parse_scblocks(std::vector<Sup_Scblock>& scblock_attr, Value& local_sc
     for(SizeType idx = 0; idx < local_scblocks.Size(); idx++)
     {
         Sup_Scblock tmp_sup_scblock;
-        tmp_sup_scblock.tmax = local_scblocks[idx]["pmax"].GetDouble();
+        tmp_sup_scblock.tmax = local_scblocks[idx]["tmax"].GetDouble();
         tmp_sup_scblock.c = local_scblocks[idx]["c"].GetDouble();
         scblock_attr.push_back(tmp_sup_scblock);
     }
