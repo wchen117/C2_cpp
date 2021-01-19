@@ -2,10 +2,10 @@ This code uses rapidjson for Json parsing.
 
 How to run:
 
+cmake .
+
 make
-./data_main
-or 
-./main_1
+
 
 
 

@@ -17,13 +17,13 @@ void bus_obej_constraints(Wrapper_Construct &new_model, Map_Input &new_input)
 }
 int main(int args, char** argv)
 {
-    //std::string data_folder = "./sample_data/ieee14/scenario_1/";
+    std::string data_folder = "./sample_data/ieee14/scenario_1/";
     
-    //Wrapper_Construct new_model;
-    //Map_Input new_input;
-    //new_input.test_a = new_model.s_tilde_inverse;
+    Wrapper_Construct new_model;
+    Map_Input new_input;
+    new_input.test_a = new_model.s_tilde_inverse;
     
-    //bus_obej_constraints(new_model, new_input);
+    bus_obej_constraints(new_model, new_input);
 
     Problem nlp;
     nlp.AddVariableSet  (std::make_shared<ExVariables>());
