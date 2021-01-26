@@ -37,8 +37,9 @@ class Wrapper_Construct
     size_t Fs;
     // number of K (cases?)
     size_t Ks;
-    // number of pcblocks and qcblocks in case.json
-    size_t Ns;
+    // number of pcblocks and qcblocks Np and Nq
+    size_t Np;
+    size_t Nq;
     std::vector<size_t> N;
     // vectors holding bus data
     std::vector<int> I;

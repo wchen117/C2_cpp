@@ -36,12 +36,9 @@ Wrapper_Construct::Wrapper_Construct(std::string input_path){
     // construct con 
     construct_con();
 
-    
-    Ns = new_data.sup.sup_doc["pcblocks"].Size();
-    for(size_t idx=0; idx<=Ns; idx++)
-    {
-        N.push_back(idx);
-    }
+    // if need sup data directly access new_data.sup
+    Np = new_data.sup.sup_doc["pcblocks"].Size();
+    Nq = new_data.sup.sup_doc["qcblocks"].Size();
 
 }
 

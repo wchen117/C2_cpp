@@ -6,20 +6,8 @@
 
 #IncludeRegexTransform: 
 
-/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp
-wrapper_construct.hpp
-/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.hpp
-map_input.hpp
-/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/map_input.hpp
-string
--
-iostream
--
-ifopt/problem.h
--
-ifopt/ipopt_solver.h
--
-test_vars_constr_cost.h
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/variables.cpp
+variables.hpp
 -
 
 /Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include/rapidjson/allocators.h
@@ -7914,34 +7902,6 @@ Eigen/Sparse
 bounds.h
 /usr/local/include/ifopt/bounds.h
 
-/usr/local/include/ifopt/constraint_set.h
-composite.h
-/usr/local/include/ifopt/composite.h
-
-/usr/local/include/ifopt/cost_term.h
-constraint_set.h
-/usr/local/include/ifopt/constraint_set.h
-
-/usr/local/include/ifopt/ipopt_solver.h
-ifopt/problem.h
--
-ifopt/solver.h
--
-
-/usr/local/include/ifopt/problem.h
-variable_set.h
-/usr/local/include/ifopt/variable_set.h
-constraint_set.h
-/usr/local/include/ifopt/constraint_set.h
-cost_term.h
-/usr/local/include/ifopt/cost_term.h
-
-/usr/local/include/ifopt/solver.h
-memory
--
-ifopt/problem.h
--
-
 /usr/local/include/ifopt/variable_set.h
 composite.h
 /usr/local/include/ifopt/composite.h
@@ -8009,8 +7969,6 @@ string
 include/load.hpp
 string
 -
-
-include/map_input.hpp
 
 include/nontransformerbranch.hpp
 string
@@ -8126,14 +8084,6 @@ string
 vector
 -
 
-include/test_vars_constr_cost.h
-ifopt/variable_set.h
--
-ifopt/constraint_set.h
--
-ifopt/cost_term.h
--
-
 include/transformer.hpp
 string
 -
@@ -8146,6 +8096,12 @@ include/typedefinition.hpp
 boost/functional/hash.hpp
 -
 boost/multi_array.hpp
+-
+
+include/variables.hpp
+ifopt/variable_set.h
+-
+wrapper_construct.hpp
 -
 
 include/wrapper_construct.hpp

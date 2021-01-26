@@ -1,37 +1,35 @@
-//#include "wrapper_construct.hpp"
+#include "wrapper_construct.hpp"
 #include "map_input.hpp"
 #include <string>
 #include <iostream>
 #include <ifopt/problem.h>
 #include <ifopt/ipopt_solver.h>
-#include <variables.hpp>
-#include <constraints.hpp>
-#include <costs.hpp>
+#include <test_vars_constr_cost.h>
 
 using namespace ifopt;
 
+void bus_obej_constraints(Wrapper_Construct &new_model, Map_Input &new_input)
+{
+    for(size_t idx=0; idx<new_model.Is; idx++)
+    {
+        std::cout<<new_model.I.at(idx)<<std::endl;
+    }
+}
 int main(int args, char** argv)
 {
-
+    std::string data_folder = "./sample_data/ieee14/scenario_1/";
     
     Wrapper_Construct new_model;
-    // p_ikn+, p_ikn-, q_ikn+, q_ikn-, z_ik
-    int p_ikn_size = new_model.Is * new_model.Np;
-    GocVariables p_ikn_plus(p_ikn_size, "p_ikn+");
-    //GocVariables p_ikn_minus(p_ikn_size, "p_ikn-");
-    //int q_ikn_size = new_model.Is * new_model.Nq;
-    //GocVariables q_ikn_plus(p_ikn_size, "q_ikn+");
-    //GocVariables q_ikn_minus(p_ikn_size, "q_ikn-");
-    //p_ikn_plus.ReadinData(new_model);
+    Map_Input new_input;
+    new_input.test_a = new_model.s_tilde_inverse;
+    
+    bus_obej_constraints(new_model, new_input);
 
     Problem nlp;
-    //nlp.AddVariableSet  (std::make_shared<p_ikn_plus>());
-    nlp.PrintCurrent();
-    /**
-    
+    nlp.AddVariableSet  (std::make_shared<ExVariables>());
     nlp.AddConstraintSet(std::make_shared<ExConstraint>());
     nlp.AddCostSet      (std::make_shared<ExCost>());
-    
+    nlp.PrintCurrent();
 
     // 2. choose solver and options
     IpoptSolver ipopt;
@@ -48,7 +46,7 @@ int main(int args, char** argv)
     assert(1.0-eps < x(0) && x(0) < 1.0+eps);
     assert(0.0-eps < x(1) && x(1) < 0.0+eps);
 
-    **/   
+   
     return 0;
 }
 
