@@ -13,20 +13,24 @@ using namespace ifopt;
 int main(int args, char** argv)
 {
 
-    
-    Wrapper_Construct new_model;
+    auto data_holder = std::make_shared<Wrapper_Construct>();
+    std::cout<<data_holder->s_tilde<<std::endl;
     // p_ikn+, p_ikn-, q_ikn+, q_ikn-, z_ik
-    int p_ikn_size = new_model.Is * new_model.Np;
-    GocVariables p_ikn_plus(p_ikn_size, "p_ikn+");
+    std::cout<<data_holder->Is<<std::endl;
+    std::cout<<data_holder->Np<<std::endl;
+    std::cout<<data_holder->Is * data_holder->Np<<std::endl;
+    
+    //int p_ikn_size = data_holder->Is * data_holder->Np;
+    //GocVariables p_ikn_plus(p_ikn_size, "p_ikn+");
     //GocVariables p_ikn_minus(p_ikn_size, "p_ikn-");
     //int q_ikn_size = new_model.Is * new_model.Nq;
     //GocVariables q_ikn_plus(p_ikn_size, "q_ikn+");
     //GocVariables q_ikn_minus(p_ikn_size, "q_ikn-");
     //p_ikn_plus.ReadinData(new_model);
 
-    Problem nlp;
+    //Problem nlp;
     //nlp.AddVariableSet  (std::make_shared<p_ikn_plus>());
-    nlp.PrintCurrent();
+    //nlp.PrintCurrent();
     /**
     
     nlp.AddConstraintSet(std::make_shared<ExConstraint>());
