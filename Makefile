@@ -223,6 +223,33 @@ src/bus.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus.cpp.s
 .PHONY : src/bus.cpp.s
 
+src/bus_variables.o: src/bus_variables.cpp.o
+
+.PHONY : src/bus_variables.o
+
+# target to build an object file
+src/bus_variables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_variables.cpp.o
+.PHONY : src/bus_variables.cpp.o
+
+src/bus_variables.i: src/bus_variables.cpp.i
+
+.PHONY : src/bus_variables.i
+
+# target to preprocess a source file
+src/bus_variables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_variables.cpp.i
+.PHONY : src/bus_variables.cpp.i
+
+src/bus_variables.s: src/bus_variables.cpp.s
+
+.PHONY : src/bus_variables.s
+
+# target to generate assembly for a file
+src/bus_variables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_variables.cpp.s
+.PHONY : src/bus_variables.cpp.s
+
 src/caseidentification.o: src/caseidentification.cpp.o
 
 .PHONY : src/caseidentification.o
@@ -1006,33 +1033,6 @@ src/transformerimpedancecorrectiontable.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.s
 .PHONY : src/transformerimpedancecorrectiontable.cpp.s
 
-src/variables.o: src/variables.cpp.o
-
-.PHONY : src/variables.o
-
-# target to build an object file
-src/variables.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables.cpp.o
-.PHONY : src/variables.cpp.o
-
-src/variables.i: src/variables.cpp.i
-
-.PHONY : src/variables.i
-
-# target to preprocess a source file
-src/variables.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables.cpp.i
-.PHONY : src/variables.cpp.i
-
-src/variables.s: src/variables.cpp.s
-
-.PHONY : src/variables.s
-
-# target to generate assembly for a file
-src/variables.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables.cpp.s
-.PHONY : src/variables.cpp.s
-
 src/wrapper_construct.o: src/wrapper_construct.cpp.o
 
 .PHONY : src/wrapper_construct.o
@@ -1105,6 +1105,9 @@ help:
 	@echo "... src/bus.o"
 	@echo "... src/bus.i"
 	@echo "... src/bus.s"
+	@echo "... src/bus_variables.o"
+	@echo "... src/bus_variables.i"
+	@echo "... src/bus_variables.s"
 	@echo "... src/caseidentification.o"
 	@echo "... src/caseidentification.i"
 	@echo "... src/caseidentification.s"
@@ -1192,9 +1195,6 @@ help:
 	@echo "... src/transformerimpedancecorrectiontable.o"
 	@echo "... src/transformerimpedancecorrectiontable.i"
 	@echo "... src/transformerimpedancecorrectiontable.s"
-	@echo "... src/variables.o"
-	@echo "... src/variables.i"
-	@echo "... src/variables.s"
 	@echo "... src/wrapper_construct.o"
 	@echo "... src/wrapper_construct.i"
 	@echo "... src/wrapper_construct.s"

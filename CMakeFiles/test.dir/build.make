@@ -115,9 +115,22 @@ CMakeFiles/test.dir/src/bus.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/bus.cpp.s"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus.cpp -o CMakeFiles/test.dir/src/bus.cpp.s
 
+CMakeFiles/test.dir/src/bus_variables.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/bus_variables.cpp.o: src/bus_variables.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test.dir/src/bus_variables.cpp.o"
+	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables.cpp
+
+CMakeFiles/test.dir/src/bus_variables.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/bus_variables.cpp.i"
+	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables.cpp > CMakeFiles/test.dir/src/bus_variables.cpp.i
+
+CMakeFiles/test.dir/src/bus_variables.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/bus_variables.cpp.s"
+	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables.cpp -o CMakeFiles/test.dir/src/bus_variables.cpp.s
+
 CMakeFiles/test.dir/src/caseidentification.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/caseidentification.cpp.o: src/caseidentification.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test.dir/src/caseidentification.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test.dir/src/caseidentification.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/caseidentification.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/caseidentification.cpp
 
 CMakeFiles/test.dir/src/caseidentification.cpp.i: cmake_force
@@ -130,7 +143,7 @@ CMakeFiles/test.dir/src/caseidentification.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/con.cpp.o: src/con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test.dir/src/con.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test.dir/src/con.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/con.cpp
 
 CMakeFiles/test.dir/src/con.cpp.i: cmake_force
@@ -143,7 +156,7 @@ CMakeFiles/test.dir/src/con.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/constraints.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/constraints.cpp.o: src/constraints.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test.dir/src/constraints.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/test.dir/src/constraints.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/constraints.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/constraints.cpp
 
 CMakeFiles/test.dir/src/constraints.cpp.i: cmake_force
@@ -156,7 +169,7 @@ CMakeFiles/test.dir/src/constraints.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/contingency.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/contingency.cpp.o: src/contingency.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/test.dir/src/contingency.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test.dir/src/contingency.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/contingency.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contingency.cpp
 
 CMakeFiles/test.dir/src/contingency.cpp.i: cmake_force
@@ -169,7 +182,7 @@ CMakeFiles/test.dir/src/contingency.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/costs.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/costs.cpp.o: src/costs.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test.dir/src/costs.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/test.dir/src/costs.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/costs.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/costs.cpp
 
 CMakeFiles/test.dir/src/costs.cpp.i: cmake_force
@@ -182,7 +195,7 @@ CMakeFiles/test.dir/src/costs.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/data.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/data.cpp.o: src/data.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/test.dir/src/data.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/test.dir/src/data.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/data.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/data.cpp
 
 CMakeFiles/test.dir/src/data.cpp.i: cmake_force
@@ -195,7 +208,7 @@ CMakeFiles/test.dir/src/data.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/fixedshunt.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/fixedshunt.cpp.o: src/fixedshunt.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/test.dir/src/fixedshunt.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/test.dir/src/fixedshunt.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/fixedshunt.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/fixedshunt.cpp
 
 CMakeFiles/test.dir/src/fixedshunt.cpp.i: cmake_force
@@ -208,7 +221,7 @@ CMakeFiles/test.dir/src/fixedshunt.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/generator.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/generator.cpp.o: src/generator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/test.dir/src/generator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/test.dir/src/generator.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator.cpp
 
 CMakeFiles/test.dir/src/generator.cpp.i: cmake_force
@@ -221,7 +234,7 @@ CMakeFiles/test.dir/src/generator.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/generatoroutevent.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/generatoroutevent.cpp.o: src/generatoroutevent.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/test.dir/src/generatoroutevent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/test.dir/src/generatoroutevent.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generatoroutevent.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generatoroutevent.cpp
 
 CMakeFiles/test.dir/src/generatoroutevent.cpp.i: cmake_force
@@ -234,7 +247,7 @@ CMakeFiles/test.dir/src/generatoroutevent.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/line.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/line.cpp.o: src/line.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/test.dir/src/line.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/test.dir/src/line.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line.cpp
 
 CMakeFiles/test.dir/src/line.cpp.i: cmake_force
@@ -247,7 +260,7 @@ CMakeFiles/test.dir/src/line.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/load.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/load.cpp.o: src/load.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/test.dir/src/load.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/test.dir/src/load.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load.cpp
 
 CMakeFiles/test.dir/src/load.cpp.i: cmake_force
@@ -260,7 +273,7 @@ CMakeFiles/test.dir/src/load.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/map_input.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/map_input.cpp.o: src/map_input.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/test.dir/src/map_input.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/test.dir/src/map_input.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/map_input.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/map_input.cpp
 
 CMakeFiles/test.dir/src/map_input.cpp.i: cmake_force
@@ -273,7 +286,7 @@ CMakeFiles/test.dir/src/map_input.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/nontransformerbranch.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/nontransformerbranch.cpp.o: src/nontransformerbranch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/test.dir/src/nontransformerbranch.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/test.dir/src/nontransformerbranch.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/nontransformerbranch.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/nontransformerbranch.cpp
 
 CMakeFiles/test.dir/src/nontransformerbranch.cpp.i: cmake_force
@@ -286,7 +299,7 @@ CMakeFiles/test.dir/src/nontransformerbranch.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/owner.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/owner.cpp.o: src/owner.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/test.dir/src/owner.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/test.dir/src/owner.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/owner.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/owner.cpp
 
 CMakeFiles/test.dir/src/owner.cpp.i: cmake_force
@@ -299,7 +312,7 @@ CMakeFiles/test.dir/src/owner.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/raw.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/raw.cpp.o: src/raw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/test.dir/src/raw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/test.dir/src/raw.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/raw.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/raw.cpp
 
 CMakeFiles/test.dir/src/raw.cpp.i: cmake_force
@@ -312,7 +325,7 @@ CMakeFiles/test.dir/src/raw.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/sup.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup.cpp.o: src/sup.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/test.dir/src/sup.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/test.dir/src/sup.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup.cpp
 
 CMakeFiles/test.dir/src/sup.cpp.i: cmake_force
@@ -325,7 +338,7 @@ CMakeFiles/test.dir/src/sup.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/sup_cblock.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_cblock.cpp.o: src/sup_cblock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/test.dir/src/sup_cblock.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/test.dir/src/sup_cblock.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_cblock.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_cblock.cpp
 
 CMakeFiles/test.dir/src/sup_cblock.cpp.i: cmake_force
@@ -338,7 +351,7 @@ CMakeFiles/test.dir/src/sup_cblock.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/sup_generator.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_generator.cpp.o: src/sup_generator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/test.dir/src/sup_generator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/test.dir/src/sup_generator.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_generator.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_generator.cpp
 
 CMakeFiles/test.dir/src/sup_generator.cpp.i: cmake_force
@@ -351,7 +364,7 @@ CMakeFiles/test.dir/src/sup_generator.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/sup_line.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_line.cpp.o: src/sup_line.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/test.dir/src/sup_line.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/test.dir/src/sup_line.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_line.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_line.cpp
 
 CMakeFiles/test.dir/src/sup_line.cpp.i: cmake_force
@@ -364,7 +377,7 @@ CMakeFiles/test.dir/src/sup_line.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/sup_load.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_load.cpp.o: src/sup_load.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/test.dir/src/sup_load.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/test.dir/src/sup_load.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_load.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_load.cpp
 
 CMakeFiles/test.dir/src/sup_load.cpp.i: cmake_force
@@ -377,7 +390,7 @@ CMakeFiles/test.dir/src/sup_load.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/sup_pcblock.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_pcblock.cpp.o: src/sup_pcblock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/test.dir/src/sup_pcblock.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/test.dir/src/sup_pcblock.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_pcblock.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_pcblock.cpp
 
 CMakeFiles/test.dir/src/sup_pcblock.cpp.i: cmake_force
@@ -390,7 +403,7 @@ CMakeFiles/test.dir/src/sup_pcblock.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/sup_qcblock.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_qcblock.cpp.o: src/sup_qcblock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/test.dir/src/sup_qcblock.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/test.dir/src/sup_qcblock.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_qcblock.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_qcblock.cpp
 
 CMakeFiles/test.dir/src/sup_qcblock.cpp.i: cmake_force
@@ -403,7 +416,7 @@ CMakeFiles/test.dir/src/sup_qcblock.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/sup_scblock.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_scblock.cpp.o: src/sup_scblock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/test.dir/src/sup_scblock.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/test.dir/src/sup_scblock.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_scblock.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_scblock.cpp
 
 CMakeFiles/test.dir/src/sup_scblock.cpp.i: cmake_force
@@ -416,7 +429,7 @@ CMakeFiles/test.dir/src/sup_scblock.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/sup_transformer.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_transformer.cpp.o: src/sup_transformer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/test.dir/src/sup_transformer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/test.dir/src/sup_transformer.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_transformer.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_transformer.cpp
 
 CMakeFiles/test.dir/src/sup_transformer.cpp.i: cmake_force
@@ -429,7 +442,7 @@ CMakeFiles/test.dir/src/sup_transformer.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/switchedshunt.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/switchedshunt.cpp.o: src/switchedshunt.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/test.dir/src/switchedshunt.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/test.dir/src/switchedshunt.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/switchedshunt.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchedshunt.cpp
 
 CMakeFiles/test.dir/src/switchedshunt.cpp.i: cmake_force
@@ -442,7 +455,7 @@ CMakeFiles/test.dir/src/switchedshunt.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/test.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/test.cpp.o: src/test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/test.dir/src/test.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/test.dir/src/test.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/test.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp
 
 CMakeFiles/test.dir/src/test.cpp.i: cmake_force
@@ -455,7 +468,7 @@ CMakeFiles/test.dir/src/test.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/test_param.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/test_param.cpp.o: src/test_param.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/test.dir/src/test_param.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/test.dir/src/test_param.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/test_param.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test_param.cpp
 
 CMakeFiles/test.dir/src/test_param.cpp.i: cmake_force
@@ -468,7 +481,7 @@ CMakeFiles/test.dir/src/test_param.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/transformer.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/transformer.cpp.o: src/transformer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/test.dir/src/transformer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/test.dir/src/transformer.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer.cpp
 
 CMakeFiles/test.dir/src/transformer.cpp.i: cmake_force
@@ -481,7 +494,7 @@ CMakeFiles/test.dir/src/transformer.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o: src/transformerimpedancecorrectiontable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformerimpedancecorrectiontable.cpp
 
 CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.i: cmake_force
@@ -491,19 +504,6 @@ CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.i: cmake_force
 CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.s"
 	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformerimpedancecorrectiontable.cpp -o CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.s
-
-CMakeFiles/test.dir/src/variables.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/variables.cpp.o: src/variables.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/test.dir/src/variables.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/variables.cpp
-
-CMakeFiles/test.dir/src/variables.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/variables.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/variables.cpp > CMakeFiles/test.dir/src/variables.cpp.i
-
-CMakeFiles/test.dir/src/variables.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/variables.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/variables.cpp -o CMakeFiles/test.dir/src/variables.cpp.s
 
 CMakeFiles/test.dir/src/wrapper_construct.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/wrapper_construct.cpp.o: src/wrapper_construct.cpp
@@ -536,6 +536,7 @@ test_OBJECTS = \
 "CMakeFiles/test.dir/src/area.cpp.o" \
 "CMakeFiles/test.dir/src/branchoutevent.cpp.o" \
 "CMakeFiles/test.dir/src/bus.cpp.o" \
+"CMakeFiles/test.dir/src/bus_variables.cpp.o" \
 "CMakeFiles/test.dir/src/caseidentification.cpp.o" \
 "CMakeFiles/test.dir/src/con.cpp.o" \
 "CMakeFiles/test.dir/src/constraints.cpp.o" \
@@ -565,7 +566,6 @@ test_OBJECTS = \
 "CMakeFiles/test.dir/src/test_param.cpp.o" \
 "CMakeFiles/test.dir/src/transformer.cpp.o" \
 "CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o" \
-"CMakeFiles/test.dir/src/variables.cpp.o" \
 "CMakeFiles/test.dir/src/wrapper_construct.cpp.o" \
 "CMakeFiles/test.dir/src/zone.cpp.o"
 
@@ -575,6 +575,7 @@ test_EXTERNAL_OBJECTS =
 test: CMakeFiles/test.dir/src/area.cpp.o
 test: CMakeFiles/test.dir/src/branchoutevent.cpp.o
 test: CMakeFiles/test.dir/src/bus.cpp.o
+test: CMakeFiles/test.dir/src/bus_variables.cpp.o
 test: CMakeFiles/test.dir/src/caseidentification.cpp.o
 test: CMakeFiles/test.dir/src/con.cpp.o
 test: CMakeFiles/test.dir/src/constraints.cpp.o
@@ -604,7 +605,6 @@ test: CMakeFiles/test.dir/src/test.cpp.o
 test: CMakeFiles/test.dir/src/test_param.cpp.o
 test: CMakeFiles/test.dir/src/transformer.cpp.o
 test: CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o
-test: CMakeFiles/test.dir/src/variables.cpp.o
 test: CMakeFiles/test.dir/src/wrapper_construct.cpp.o
 test: CMakeFiles/test.dir/src/zone.cpp.o
 test: CMakeFiles/test.dir/build.make

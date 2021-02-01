@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/area.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/area.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/branchoutevent.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/branchoutevent.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/bus.cpp.o"
+  "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/bus_variables.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/caseidentification.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/caseidentification.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/con.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/con.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/constraints.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/constraints.cpp.o"
@@ -36,7 +37,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test_param.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/test_param.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/transformer.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformerimpedancecorrectiontable.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o"
-  "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/variables.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/variables.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/wrapper_construct.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/zone.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/zone.cpp.o"
   )
@@ -47,8 +47,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "include"
   "/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include"
   "/Users/wchen/Softwares/another_ipopt_prefix/include/coin-or"
+  "/Users/wchen/Softwares/eigen"
   "/usr/local/include"
-  "/usr/local/include/eigen3"
   )
 
 # Targets to which this target links.

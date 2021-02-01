@@ -5,17 +5,21 @@
 
 using Eigen::VectorXd;
 
-class GocVariables : public ifopt::VariableSet {
+class BusVariables : public ifopt::VariableSet {
 public:
-    GocVariables(int n_var, const std::string& name);
-    ~GocVariables();
+    BusVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name);
+    ~BusVariables();
     // read in the input data that defines the variables
-    void ReadinData(const Wrapper_Construct& model);
     // define the variables
     VectorXd GetValues() const override;
     void SetVariables(const VectorXd &x) override;
     // define the bounds of variables
     VecBound GetBounds() const override;
+    std::shared_ptr<Wrapper_Construct> data_fvariable;
     
+private:
+    VectorXd p_ikn_plus, p_ikn_minus, q_ikn_plus, q_ikn_minus;
+    double z_ik;
+    size_t size_p_ikn, size_q_ikn, size_bus_variables;
 };
 #endif

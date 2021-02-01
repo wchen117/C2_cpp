@@ -4,8 +4,8 @@ set(CMAKE_CXX_STANDARD 11)
 
 include_directories(include 
                     "/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include"
-                    "/usr/local/include"
-                    "/Users/wchen/Softwares/another_ipopt_prefix/include/coin-or")
+                    "/Users/wchen/Softwares/another_ipopt_prefix/include/coin-or"
+                    "/Users/wchen/Softwares/eigen")
 find_library(IPOPT_LIB
     NAMES ipopt sipopt ipopt.3 
     PATHS /Users/wchen/Softwares/another_ipopt_prefix/lib)
