@@ -21,10 +21,8 @@ BusVariables::BusVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, co
         q_ikn_minus = VectorXd::Zero(size_q_ikn);
         z_ik = 0.0;
     }
-    
-
-    
 }
+
 BusVariables::~BusVariables(){}
 
 VectorXd BusVariables::GetValues() const 
@@ -105,7 +103,6 @@ BusVariables::VecBound BusVariables::GetBounds() const
     {
         bus_bounds.at(idx).lower_ = 0.0;
         bus_bounds.at(idx).upper_ = bus_upper_bound(idx);
-        //std::cout<<bus_bounds.at(idx).upper_<<std::endl;
     }
 
     return bus_bounds;
