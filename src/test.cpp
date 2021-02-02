@@ -4,9 +4,7 @@
 #include <iostream>
 #include <ifopt/problem.h>
 #include <ifopt/ipopt_solver.h>
-#include <bus_variables.hpp>
-#include <constraints.hpp>
-#include <costs.hpp>
+#include <variables/bus_variables.hpp>
 
 using namespace ifopt;
 
@@ -19,6 +17,11 @@ int main(int args, char** argv)
     // we first look at k = 0 case
     Problem nlp;
     auto bus_ptr = std::make_shared<BusVariables>(data_holder, "bus_variables");
+    auto initial_bus_values = bus_ptr->GetValues();
+    for(auto value : initial_bus_values)
+    {
+        std::cout<<value<<std::endl;
+    }
     //bus_ptr->GetBounds();
     nlp.AddVariableSet(bus_ptr);
     nlp.PrintCurrent();
