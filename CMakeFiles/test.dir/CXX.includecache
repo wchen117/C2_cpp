@@ -9,10 +9,6 @@
 /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables.cpp
 bus_variables.hpp
 -
-Eigen/Dense
-/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/Eigen/Dense
-Eigen/Core
-/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/Eigen/Core
 
 /Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include/rapidjson/allocators.h
 rapidjson.h

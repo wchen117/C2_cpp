@@ -1,7 +1,4 @@
 #include <bus_variables.hpp>
-using Eigen::Vector2d;
-#include "Eigen/Dense"
-#include "Eigen/Core"
 
 BusVariables::BusVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name) : VariableSet(kSpecifyLater, name) 
 {    
@@ -93,6 +90,16 @@ BusVariables::VecBound BusVariables::GetBounds() const
     bus_upper_bound.segment(size_p_ikn, size_p_ikn) = p_ikn_upper_bound;
     bus_upper_bound.segment(2*size_p_ikn, size_q_ikn) = q_ikn_upper_bound;
     bus_upper_bound.segment(2*size_p_ikn+size_q_ikn, size_q_ikn) = q_ikn_upper_bound;
+    // what's upper bound for z_ik?
+    bus_upper_bound(2*size_p_ikn+size_q_ikn+1) = 1.0e10;
+    // for p_ikn and q_ikn their lower bound is always zero
+
+    
+    for(size_t idx=0; idx<bus_bounds.size(); idx++)
+    {
+        bus_bounds.at(idx).lower_ = 0.0;
+        bus_bounds.at(idx).upper_ = bus_upper_bound(idx);
+    }
 
     return bus_bounds;
 }
