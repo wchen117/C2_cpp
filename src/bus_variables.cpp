@@ -24,7 +24,7 @@ BusVariables::BusVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, co
         q_ikn_minus = VectorXd::Zero(size_q_ikn);
         z_ik = 0.0;
     }
-    
+    //std::cout<<data_fvariable->new_data.sup.pcblocks.at(0).pmax<<std::endl;
 
     
 }
@@ -42,22 +42,59 @@ VectorXd BusVariables::GetValues() const
 
 void BusVariables::SetVariables(const VectorXd &x) 
 {
-    p_ikn_plus = x(Eigen::seq(0, size_p_ikn));
-    p_ikn_minus = x(Eigen::seq(size_p_ikn, 2*size_p_ikn));
-    q_ikn_plus = x(Eigen::seq(2*size_p_ikn, 2*size_p_ikn+size_q_ikn));
-    q_ikn_minus = x(Eigen::seq(2*size_p_ikn+size_q_ikn, 2*size_p_ikn+2*size_q_ikn));
+    // I guess?
+    p_ikn_plus = x.segment(0, size_p_ikn);
+    p_ikn_minus = x.segment(size_p_ikn, size_p_ikn);
+    q_ikn_plus = x.segment(2*size_p_ikn, size_q_ikn);
+    q_ikn_minus = x.segment(2*size_p_ikn+size_q_ikn, size_q_ikn);
     z_ik = x(2*size_p_ikn+2*size_q_ikn+1);
-
-   
 }
 
 BusVariables::VecBound BusVariables::GetBounds() const 
 {
     
-    VecBound bounds(GetRows());
-
+    VecBound bus_bounds(GetRows());
+    Eigen::VectorXd bus_upper_bound(GetRows());
+    std::vector<double> p_n_over_list;
+    std::vector<double> q_n_over_list;
+    for (auto pcblock: data_fvariable->new_data.sup.pcblocks)
+    {
+        // page 48, "pmax": p_n_over * s_tilde_inverse
+        p_n_over_list.push_back(pcblock.pmax * data_fvariable->s_tilde_inverse);
+        //std::cout<<pcblock.pmax * data_fvariable->s_tilde_inverse<<std::endl;
+    }
+    for (auto qcblock: data_fvariable->new_data.sup.qcblocks)
+    {
+        // page 48, "qmax": q_n_over * s_tilde_inverse
+        q_n_over_list.push_back(qcblock.qmax * data_fvariable->s_tilde_inverse);
+    }
     
-    return bounds;
+    auto block_size_p = size_p_ikn/p_n_over_list.size();
+    auto block_size_q = size_q_ikn/q_n_over_list.size();
+
+    Eigen::VectorXd p_ikn_upper_bound(size_p_ikn);
+    Eigen::VectorXd q_ikn_upper_bound(size_q_ikn);
+
+
+    for (size_t idx=0; idx<size_p_ikn; idx++)
+    {
+        auto tmp = idx/(size_p_ikn/p_n_over_list.size());
+        p_ikn_upper_bound(idx) = p_n_over_list.at(tmp);
+    }
+    
+    for (size_t idx=0; idx<size_q_ikn; idx++)
+    {
+        auto tmp = idx/(size_q_ikn/q_n_over_list.size());
+        q_ikn_upper_bound(idx) = q_n_over_list.at(tmp);
+    }
+    
+    // segment(i, n): a slice starting from i, for a length of n 
+    bus_upper_bound.segment(0,  size_p_ikn) = p_ikn_upper_bound;
+    bus_upper_bound.segment(size_p_ikn, size_p_ikn) = p_ikn_upper_bound;
+    bus_upper_bound.segment(2*size_p_ikn, size_q_ikn) = q_ikn_upper_bound;
+    bus_upper_bound.segment(2*size_p_ikn+size_q_ikn, size_q_ikn) = q_ikn_upper_bound;
+
+    return bus_bounds;
 }
 
 

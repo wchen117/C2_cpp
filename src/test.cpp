@@ -18,8 +18,10 @@ int main(int args, char** argv)
     
     // we first look at k = 0 case
     Problem nlp;
-    nlp.AddVariableSet(std::make_shared<BusVariables>(data_holder, "bus_variables"));
-    nlp.PrintCurrent();
+    auto bus_ptr = std::make_shared<BusVariables>(data_holder, "bus_variables");
+    bus_ptr->GetBounds();
+    nlp.AddVariableSet(bus_ptr);
+    //nlp.PrintCurrent();
     /**
     
     nlp.AddConstraintSet(std::make_shared<ExConstraint>());

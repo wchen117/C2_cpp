@@ -18,6 +18,7 @@ public:
     std::shared_ptr<Wrapper_Construct> data_fvariable;
     
 private:
+    // within *_ikn_*, size i*n
     VectorXd p_ikn_plus, p_ikn_minus, q_ikn_plus, q_ikn_minus;
     double z_ik;
     size_t size_p_ikn, size_q_ikn, size_bus_variables;
