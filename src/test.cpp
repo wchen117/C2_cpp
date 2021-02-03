@@ -1,10 +1,10 @@
-//#include "wrapper_construct.hpp"
-#include "map_input.hpp"
 #include <string>
 #include <iostream>
 #include <ifopt/problem.h>
 #include <ifopt/ipopt_solver.h>
 #include <variables/bus_variables.hpp>
+#include <constraints/bus_constraints.hpp>
+#include <costs/bus_costs.hpp>
 
 using namespace ifopt;
 
@@ -12,18 +12,16 @@ int main(int args, char** argv)
 {
 
     // smart pointer pointing to model parameters derived from raw inpu
-    auto data_holder = std::make_shared<Wrapper_Construct>();
+    auto input_ptr = std::make_shared<Wrapper_Construct>();
     
     // we first look at k = 0 case
     Problem nlp;
-    auto bus_ptr = std::make_shared<BusVariables>(data_holder, "bus_variables");
-    auto initial_bus_values = bus_ptr->GetValues();
-    for(auto value : initial_bus_values)
-    {
-        std::cout<<value<<std::endl;
-    }
-    //bus_ptr->GetBounds();
-    nlp.AddVariableSet(bus_ptr);
+    auto bus_variables_ptr = std::make_shared<BusVariables>(input_ptr, "bus_variables");
+    auto bus_constraints_ptr = std::make_shared<BusConstraints>(input_ptr, "bus_constraints");
+    auto bus_cost_ptr = std::make_shared<BusCosts>(input_ptr, "bus_objs");
+    nlp.AddVariableSet(bus_variables_ptr);
+    nlp.AddConstraintSet(bus_constraints_ptr);
+    nlp.AddCostSet(bus_cost_ptr);
     nlp.PrintCurrent();
     /**
     
