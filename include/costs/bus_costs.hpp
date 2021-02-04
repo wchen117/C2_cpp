@@ -1,15 +1,18 @@
 #ifndef __BUS_COSTS_HPP__
 #define __BUS_COSTS_HPP__
 #include <ifopt/cost_term.h>
-#include <wrapper_construct.hpp>
+#include <variables/bus_variables.hpp>
 class BusCosts : public ifopt::CostTerm {
 public:
-    BusCosts(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name);
+    BusCosts(const std::string& name);
     ~BusCosts();
     double GetCost () const override;
+    void InitVariableDependedQuantities(const VariablesPtr& x) override;
 private: 
     void FillJacobianBlock(std::string var_set, Jacobian& jac_block) const override;
-    std::shared_ptr<Wrapper_Construct> data_fvariable;
+    std::shared_ptr<BusVariables> bus_vars_ptr;
+    std::string bus_var_name;
+
 
     
 };

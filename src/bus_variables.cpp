@@ -49,6 +49,7 @@ void BusVariables::SetVariables(const VectorXd &x)
     q_ikn_minus = x.segment(2*size_p_ikn+size_q_ikn, size_q_ikn);
 }
 
+
 BusVariables::VecBound BusVariables::GetBounds() const
 {
     

@@ -4,7 +4,6 @@
 #include <wrapper_construct.hpp>
 
 using Eigen::VectorXd;
-
 class BusVariables : public ifopt::VariableSet {
 public:
     BusVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name);
@@ -16,7 +15,9 @@ public:
     // define the bounds of variables
     VecBound GetBounds() const override;
     std::shared_ptr<Wrapper_Construct> data_fvariable;
-    
+    std::vector<VectorXd> getVectorVars;
+    friend class BusCosts;
+
 private:
     // within *_ikn_*, size i*n
     VectorXd p_ikn_plus, p_ikn_minus, q_ikn_plus, q_ikn_minus;

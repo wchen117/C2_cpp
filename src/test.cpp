@@ -18,7 +18,7 @@ int main(int args, char** argv)
     Problem nlp;
     auto bus_variables_ptr = std::make_shared<BusVariables>(input_ptr, "bus_variables");
     auto bus_constraints_ptr = std::make_shared<BusConstraints>(input_ptr, "bus_constraints");
-    auto bus_cost_ptr = std::make_shared<BusCosts>(input_ptr, "bus_objs");
+    auto bus_cost_ptr = std::make_shared<BusCosts>("bus_variables");
     nlp.AddVariableSet(bus_variables_ptr);
     nlp.AddConstraintSet(bus_constraints_ptr);
     nlp.AddCostSet(bus_cost_ptr);

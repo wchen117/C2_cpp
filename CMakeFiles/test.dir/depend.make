@@ -1890,6 +1890,7 @@ CMakeFiles/test.dir/src/bus_costs.cpp.o: /usr/local/include/ifopt/bounds.h
 CMakeFiles/test.dir/src/bus_costs.cpp.o: /usr/local/include/ifopt/composite.h
 CMakeFiles/test.dir/src/bus_costs.cpp.o: /usr/local/include/ifopt/constraint_set.h
 CMakeFiles/test.dir/src/bus_costs.cpp.o: /usr/local/include/ifopt/cost_term.h
+CMakeFiles/test.dir/src/bus_costs.cpp.o: /usr/local/include/ifopt/variable_set.h
 CMakeFiles/test.dir/src/bus_costs.cpp.o: include/area.hpp
 CMakeFiles/test.dir/src/bus_costs.cpp.o: include/branchoutevent.hpp
 CMakeFiles/test.dir/src/bus_costs.cpp.o: include/bus.hpp
@@ -1918,6 +1919,7 @@ CMakeFiles/test.dir/src/bus_costs.cpp.o: include/switchedshunt.hpp
 CMakeFiles/test.dir/src/bus_costs.cpp.o: include/transformer.hpp
 CMakeFiles/test.dir/src/bus_costs.cpp.o: include/transformerimpedancecorrectiontable.hpp
 CMakeFiles/test.dir/src/bus_costs.cpp.o: include/typedefinition.hpp
+CMakeFiles/test.dir/src/bus_costs.cpp.o: include/variables/bus_variables.hpp
 CMakeFiles/test.dir/src/bus_costs.cpp.o: include/wrapper_construct.hpp
 CMakeFiles/test.dir/src/bus_costs.cpp.o: include/zone.hpp
 
