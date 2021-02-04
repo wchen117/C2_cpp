@@ -10,7 +10,7 @@ BusVariables::BusVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, co
     size_p_ikn = data_fvariable->Is * data_fvariable->Np;
     size_q_ikn = data_fvariable->Is * data_fvariable->Nq;
     // bus variables consist of p_ikn+, p_ikn-, q_ikn+, q_ikn-, z_ik (?)
-    size_bus_variables = 2 * size_q_ikn + 2 * size_p_ikn + 1;
+    size_bus_variables = 2 * size_q_ikn + 2 * size_p_ikn;
     SetRows(size_bus_variables);
     // initlize them to 0?
     if (size_p_ikn && size_q_ikn)
@@ -19,7 +19,7 @@ BusVariables::BusVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, co
         p_ikn_minus = VectorXd::Zero(size_p_ikn);
         q_ikn_plus = VectorXd::Zero(size_q_ikn);
         q_ikn_minus = VectorXd::Zero(size_q_ikn);
-        z_ik = 0.0;
+
     }
 }
 
@@ -35,7 +35,6 @@ VectorXd BusVariables::GetValues() const
        tmp_x.segment(size_p_ikn,size_p_ikn) = p_ikn_minus;
        tmp_x.segment(2*size_p_ikn, size_q_ikn) = q_ikn_plus;
        tmp_x.segment(2*size_p_ikn+size_q_ikn, size_q_ikn) = q_ikn_minus;
-       tmp_x(2*size_p_ikn+2*size_q_ikn) = z_ik;
        return tmp_x;
     }
     
@@ -48,7 +47,6 @@ void BusVariables::SetVariables(const VectorXd &x)
     p_ikn_minus = x.segment(size_p_ikn, size_p_ikn);
     q_ikn_plus = x.segment(2*size_p_ikn, size_q_ikn);
     q_ikn_minus = x.segment(2*size_p_ikn+size_q_ikn, size_q_ikn);
-    z_ik = x(2*size_p_ikn+2*size_q_ikn);
 }
 
 BusVariables::VecBound BusVariables::GetBounds() const
@@ -94,8 +92,6 @@ BusVariables::VecBound BusVariables::GetBounds() const
     bus_upper_bound.segment(size_p_ikn, size_p_ikn) = p_ikn_upper_bound;
     bus_upper_bound.segment(2*size_p_ikn, size_q_ikn) = q_ikn_upper_bound;
     bus_upper_bound.segment(2*size_p_ikn+size_q_ikn, size_q_ikn) = q_ikn_upper_bound;
-    // what's upper bound for z_ik?
-    bus_upper_bound(2*size_p_ikn+2*size_q_ikn) = 1.0e20;
     // for p_ikn and q_ikn their lower bound is always zero
 
     

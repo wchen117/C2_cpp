@@ -22,7 +22,6 @@ double BusCosts::GetCost () const
     }
     double z_ik;
 
-    z_ik = 
 
     return 0;
 }

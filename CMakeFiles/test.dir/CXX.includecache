@@ -10,6 +10,26 @@
 costs/bus_costs.hpp
 -
 
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables.cpp
+variables/bus_variables.hpp
+-
+
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp
+string
+-
+iostream
+-
+ifopt/problem.h
+-
+ifopt/ipopt_solver.h
+-
+variables/bus_variables.hpp
+-
+constraints/bus_constraints.hpp
+-
+costs/bus_costs.hpp
+-
+
 /Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include/rapidjson/allocators.h
 rapidjson.h
 /Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include/rapidjson/rapidjson.h
@@ -8102,6 +8122,30 @@ composite.h
 constraint_set.h
 /usr/local/include/ifopt/constraint_set.h
 
+/usr/local/include/ifopt/ipopt_solver.h
+ifopt/problem.h
+-
+ifopt/solver.h
+-
+
+/usr/local/include/ifopt/problem.h
+variable_set.h
+/usr/local/include/ifopt/variable_set.h
+constraint_set.h
+/usr/local/include/ifopt/constraint_set.h
+cost_term.h
+/usr/local/include/ifopt/cost_term.h
+
+/usr/local/include/ifopt/solver.h
+memory
+-
+ifopt/problem.h
+-
+
+/usr/local/include/ifopt/variable_set.h
+composite.h
+/usr/local/include/ifopt/composite.h
+
 include/area.hpp
 string
 -
@@ -8129,6 +8173,12 @@ branchoutevent.hpp
 include/branchoutevent.hpp
 contingency.hpp
 include/contingency.hpp
+
+include/constraints/bus_constraints.hpp
+ifopt/constraint_set.h
+-
+wrapper_construct.hpp
+-
 
 include/contingency.hpp
 string
@@ -8298,6 +8348,12 @@ include/typedefinition.hpp
 boost/functional/hash.hpp
 -
 boost/multi_array.hpp
+-
+
+include/variables/bus_variables.hpp
+ifopt/variable_set.h
+-
+wrapper_construct.hpp
 -
 
 include/wrapper_construct.hpp
