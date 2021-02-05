@@ -23,6 +23,13 @@ int main(int args, char** argv)
     nlp.AddConstraintSet(bus_constraints_ptr);
     nlp.AddCostSet(bus_cost_ptr);
     nlp.PrintCurrent();
+
+    IpoptSolver ipopt;
+    ipopt.SetOption("linear_solver", "ma97");
+    ipopt.SetOption("jacobian_approximation", "finite-difference-values");
+    ipopt.Solve(nlp);
+    Eigen::VectorXd x = nlp.GetOptVariables()->GetValues();
+    //std::cout << x << std::endl;
     /**
     
     nlp.AddConstraintSet(std::make_shared<ExConstraint>());
@@ -30,14 +37,12 @@ int main(int args, char** argv)
     
 
     // 2. choose solver and options
-    IpoptSolver ipopt;
-    ipopt.SetOption("linear_solver", "ma97");
-    ipopt.SetOption("jacobian_approximation", "exact");
+    
+    
 
     // 3 . solve
-    ipopt.Solve(nlp);
-    Eigen::VectorXd x = nlp.GetOptVariables()->GetValues();
-    std::cout << x.transpose() << std::endl;
+    
+    
 
     // 4. test if solution correct
     double eps = 1e-5; //double precision

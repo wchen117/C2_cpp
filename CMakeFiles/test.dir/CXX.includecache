@@ -6,7 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs.cpp
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp
+string
+-
+iostream
+-
+ifopt/problem.h
+-
+ifopt/ipopt_solver.h
+-
+variables/bus_variables.hpp
+-
+constraints/bus_constraints.hpp
+-
 costs/bus_costs.hpp
 -
 
@@ -8102,6 +8114,26 @@ composite.h
 constraint_set.h
 /usr/local/include/ifopt/constraint_set.h
 
+/usr/local/include/ifopt/ipopt_solver.h
+ifopt/problem.h
+-
+ifopt/solver.h
+-
+
+/usr/local/include/ifopt/problem.h
+variable_set.h
+/usr/local/include/ifopt/variable_set.h
+constraint_set.h
+/usr/local/include/ifopt/constraint_set.h
+cost_term.h
+/usr/local/include/ifopt/cost_term.h
+
+/usr/local/include/ifopt/solver.h
+memory
+-
+ifopt/problem.h
+-
+
 /usr/local/include/ifopt/variable_set.h
 composite.h
 /usr/local/include/ifopt/composite.h
@@ -8133,6 +8165,12 @@ branchoutevent.hpp
 include/branchoutevent.hpp
 contingency.hpp
 include/contingency.hpp
+
+include/constraints/bus_constraints.hpp
+ifopt/constraint_set.h
+-
+wrapper_construct.hpp
+-
 
 include/contingency.hpp
 string
