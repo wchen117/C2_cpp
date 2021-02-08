@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs.cpp
+costs/bus_costs.hpp
+-
+
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables.cpp
+variables/bus_variables.hpp
+-
+
 /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp
 string
 -

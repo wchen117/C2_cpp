@@ -15,7 +15,6 @@ public:
     // define the bounds of variables
     VecBound GetBounds() const override;
     std::shared_ptr<Wrapper_Construct> data_fvariable;
-    std::vector<VectorXd> getVectorVars;
     friend class BusCosts;
 
 private:

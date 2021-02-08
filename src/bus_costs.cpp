@@ -53,7 +53,7 @@ double BusCosts::ComputeObj(const Eigen::MatrixXd& ikn_plus, const Eigen::Matrix
             //std::cout<<tmp_row.colwise().sum()<<std::endl;;
         }
     }
-    return 0.0;
+    return tmp_np;
 
 }
 void BusCosts::InitVariableDependedQuantities (const VariablesPtr& x)

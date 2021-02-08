@@ -29,7 +29,7 @@ int main(int args, char** argv)
     ipopt.SetOption("jacobian_approximation", "finite-difference-values");
     ipopt.Solve(nlp);
     Eigen::VectorXd x = nlp.GetOptVariables()->GetValues();
-    //std::cout << x.transpose() << std::endl;
+    std::cout << x.transpose() << std::endl;
     /**
     
     nlp.AddConstraintSet(std::make_shared<ExConstraint>());
