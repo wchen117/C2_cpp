@@ -14,6 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.dir/src/generatoroutevent.cpp.o"
   "CMakeFiles/test.dir/src/line.cpp.o"
   "CMakeFiles/test.dir/src/load.cpp.o"
+  "CMakeFiles/test.dir/src/load_variables.cpp.o"
   "CMakeFiles/test.dir/src/nontransformerbranch.cpp.o"
   "CMakeFiles/test.dir/src/owner.cpp.o"
   "CMakeFiles/test.dir/src/raw.cpp.o"

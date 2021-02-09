@@ -3,6 +3,7 @@
 #include <ifopt/problem.h>
 #include <ifopt/ipopt_solver.h>
 #include <variables/bus_variables.hpp>
+#include <variables/load_variables.hpp>
 #include <constraints/bus_constraints.hpp>
 #include <costs/bus_costs.hpp>
 
@@ -16,20 +17,26 @@ int main(int args, char** argv)
     
     // we first look at k = 0 case
     Problem nlp;
+    // variables, constraints and objectives associated with buses
     auto bus_variables_ptr = std::make_shared<BusVariables>(input_ptr, "bus_variables");
     auto bus_constraints_ptr = std::make_shared<BusConstraints>(input_ptr, "bus_constraints");
     auto bus_cost_ptr = std::make_shared<BusCosts>("bus_variables");
     nlp.AddVariableSet(bus_variables_ptr);
     nlp.AddConstraintSet(bus_constraints_ptr);
     nlp.AddCostSet(bus_cost_ptr);
+    // variables, constraints and objectives assocaited with loads
+    auto load_vars_ptr = std::make_shared<LoadVariables>(input_ptr, "load_variables");
+    nlp.AddVariableSet(load_vars_ptr);
+
+  
     nlp.PrintCurrent();
 
-    IpoptSolver ipopt;
-    ipopt.SetOption("linear_solver", "ma97");
-    ipopt.SetOption("jacobian_approximation", "finite-difference-values");
-    ipopt.Solve(nlp);
-    Eigen::VectorXd x = nlp.GetOptVariables()->GetValues();
-    std::cout << x.transpose() << std::endl;
+    //IpoptSolver ipopt;
+    //ipopt.SetOption("linear_solver", "ma97");
+    //ipopt.SetOption("jacobian_approximation", "finite-difference-values");
+    //ipopt.Solve(nlp);
+    //Eigen::VectorXd x = nlp.GetOptVariables()->GetValues();
+    //std::cout << x.transpose() << std::endl;
     /**
     
     nlp.AddConstraintSet(std::make_shared<ExConstraint>());

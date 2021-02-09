@@ -547,6 +547,33 @@ src/load.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load.cpp.s
 .PHONY : src/load.cpp.s
 
+src/load_variables.o: src/load_variables.cpp.o
+
+.PHONY : src/load_variables.o
+
+# target to build an object file
+src/load_variables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_variables.cpp.o
+.PHONY : src/load_variables.cpp.o
+
+src/load_variables.i: src/load_variables.cpp.i
+
+.PHONY : src/load_variables.i
+
+# target to preprocess a source file
+src/load_variables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_variables.cpp.i
+.PHONY : src/load_variables.cpp.i
+
+src/load_variables.s: src/load_variables.cpp.s
+
+.PHONY : src/load_variables.s
+
+# target to generate assembly for a file
+src/load_variables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_variables.cpp.s
+.PHONY : src/load_variables.cpp.s
+
 src/nontransformerbranch.o: src/nontransformerbranch.cpp.o
 
 .PHONY : src/nontransformerbranch.o
@@ -1114,6 +1141,9 @@ help:
 	@echo "... src/load.o"
 	@echo "... src/load.i"
 	@echo "... src/load.s"
+	@echo "... src/load_variables.o"
+	@echo "... src/load_variables.i"
+	@echo "... src/load_variables.s"
 	@echo "... src/nontransformerbranch.o"
 	@echo "... src/nontransformerbranch.i"
 	@echo "... src/nontransformerbranch.s"

@@ -86,6 +86,7 @@
         "variant": "cpp",
         "stop_token": "cpp",
         "cfenv": "cpp",
-        "core": "cpp"
+        "core": "cpp",
+        "filesystem": "cpp"
     }
 }
