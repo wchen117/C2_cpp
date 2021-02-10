@@ -1,6 +1,6 @@
 #include <variables/load_variables.hpp>
 
-LoadVariables::LoadVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name) : VariableSet(kSpecifyLater, name)
+LoadVariables::LoadVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name) : VariableSet(10, name)
 {
     load_ref_data = data_ptr;
 
@@ -51,17 +51,52 @@ Eigen::VectorXd LoadVariables::GetValues() const
     if  (GetRows())
     {
         Eigen::VectorXd tmp_x(GetRows());
+        size_t num_j = p_jkn.size();
+        size_t idx = 0;
+        for(auto each_pj : p_jkn)
+        {
+            size_t each_pj_size = each_pj.size();
+
+            for (auto each_p_jn : each_pj)
+            {
+                tmp_x(idx) = each_p_jn;
+                idx++;
+            }
+        }
+
         return tmp_x;
     }
     
 }
 void LoadVariables::SetVariables(const Eigen::VectorXd &x) 
 {
+    size_t counter=0;
+    for (size_t idx=0; idx<p_jkn.size(); idx++)
+    {
+        size_t pj_len = p_jkn.at(idx).size();
+        for (size_t jdx=0; jdx<pj_len; jdx++)
+        {
+            p_jkn.at(idx).at(jdx) = x(counter);
+            counter++;
+        }
+    }
 
 }
 LoadVariables::VecBound LoadVariables::GetBounds() const 
 {
     VecBound load_bounds(GetRows());
+    int counter = 0;
+    for(auto each_pj : p_jn_over)
+        {
+            size_t each_pj_size = each_pj.size();
+
+            for (auto each_p_jn : each_pj)
+            {
+                load_bounds.at(counter).upper_ = each_p_jn;
+                load_bounds.at(counter).lower_ = 0.0;
+                counter++;
+            }
+        }
     return load_bounds;
 
 }

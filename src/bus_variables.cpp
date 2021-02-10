@@ -1,6 +1,6 @@
 #include <variables/bus_variables.hpp>
 
-BusVariables::BusVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name) : VariableSet(kSpecifyLater, name) 
+BusVariables::BusVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name) : VariableSet(-1, name) 
 {    
     // use kSpecifyLater since we need to figure out how many variables in bus_variables
     data_fvariable = data_ptr;
@@ -93,6 +93,7 @@ BusVariables::VecBound BusVariables::GetBounds() const
     bus_upper_bound.segment(size_p_ikn, size_p_ikn) = p_ikn_upper_bound;
     bus_upper_bound.segment(2*size_p_ikn, size_q_ikn) = q_ikn_upper_bound;
     bus_upper_bound.segment(2*size_p_ikn+size_q_ikn, size_q_ikn) = q_ikn_upper_bound;
+    
     // for p_ikn and q_ikn their lower bound is always zero
 
     

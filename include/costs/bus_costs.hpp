@@ -2,6 +2,7 @@
 #define __BUS_COSTS_HPP__
 #include <ifopt/cost_term.h>
 #include <variables/bus_variables.hpp>
+
 class BusCosts : public ifopt::CostTerm {
 public:
     BusCosts(const std::string& name);

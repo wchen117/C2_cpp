@@ -547,6 +547,33 @@ src/load.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load.cpp.s
 .PHONY : src/load.cpp.s
 
+src/load_costs.o: src/load_costs.cpp.o
+
+.PHONY : src/load_costs.o
+
+# target to build an object file
+src/load_costs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_costs.cpp.o
+.PHONY : src/load_costs.cpp.o
+
+src/load_costs.i: src/load_costs.cpp.i
+
+.PHONY : src/load_costs.i
+
+# target to preprocess a source file
+src/load_costs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_costs.cpp.i
+.PHONY : src/load_costs.cpp.i
+
+src/load_costs.s: src/load_costs.cpp.s
+
+.PHONY : src/load_costs.s
+
+# target to generate assembly for a file
+src/load_costs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_costs.cpp.s
+.PHONY : src/load_costs.cpp.s
+
 src/load_variables.o: src/load_variables.cpp.o
 
 .PHONY : src/load_variables.o
@@ -1141,6 +1168,9 @@ help:
 	@echo "... src/load.o"
 	@echo "... src/load.i"
 	@echo "... src/load.s"
+	@echo "... src/load_costs.o"
+	@echo "... src/load_costs.i"
+	@echo "... src/load_costs.s"
 	@echo "... src/load_variables.o"
 	@echo "... src/load_variables.i"
 	@echo "... src/load_variables.s"

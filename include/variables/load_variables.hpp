@@ -12,6 +12,7 @@ public:
     void SetVariables(const Eigen::VectorXd &x) override;
     // define the bounds of variables
     VecBound GetBounds() const override;
+    friend class LoadCosts;
 
 private:
     std::shared_ptr<Wrapper_Construct> load_ref_data;
@@ -19,6 +20,5 @@ private:
     std::vector<std::vector<double> > p_jn_over;
     std::vector<std::vector<double> > c_jn;
     std::vector<std::vector<double> > p_jkn;
-    
 };
 #endif
