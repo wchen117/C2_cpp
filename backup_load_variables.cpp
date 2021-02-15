@@ -29,13 +29,10 @@ LoadVariables::LoadVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                     p_jkn.at(idx).resize(cblock_size);
                     for (size_t jdx=0; jdx<cblock_size; jdx++)
                     {
-                        //p_jn_over.at(idx).at(jdx) = load.cblocks.at(jdx).pmax;
                         p_jn_over.at(idx).at(jdx) = load.cblocks.at(jdx).pmax * load_ref_data->s_tilde_inverse;
-                        //c_jn.at(idx).at(jdx) = load.cblocks.at(jdx).c;
                         c_jn.at(idx).at(jdx) = load.cblocks.at(jdx).c * load_ref_data->s_tilde_inverse;
                         p_jkn.at(idx).at(jdx) = 0.0;
                         p_jn_counter++;
-                        std::cout<<"bus_id = "<<load.bus<<" c_jn = "<<c_jn.at(idx).at(jdx)<<" p_jn_over = "<<p_jn_over.at(idx).at(jdx)<<std::endl;
                     }
                       
                 }

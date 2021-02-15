@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="goc_cpp"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\..\usr\local\share\ifopt\;CMake Files\..\..\..\..\..\usr\local\share\ifopt\cmake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/wchen/Projects/GOC_competition/C2_cpp_code"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/wchen/Projects/GOC_competition/C2_cpp_code"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/wchen/Projects/GOC_competition/C2_cpp_code"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test">
+				<Option output="/Users/wchen/Projects/GOC_competition/C2_cpp_code/test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wchen/Projects/GOC_competition/C2_cpp_code"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/wchen/Projects/GOC_competition/C2_cpp_code/include"/>
+					<Add directory="/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include"/>
+					<Add directory="/Users/wchen/Softwares/another_ipopt_prefix/include/coin-or"/>
+					<Add directory="/Users/wchen/Softwares/eigen"/>
+					<Add directory="/usr/local/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 test"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test/fast">
+				<Option output="/Users/wchen/Projects/GOC_competition/C2_cpp_code/test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wchen/Projects/GOC_competition/C2_cpp_code"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/wchen/Projects/GOC_competition/C2_cpp_code/include"/>
+					<Add directory="/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include"/>
+					<Add directory="/Users/wchen/Softwares/another_ipopt_prefix/include/coin-or"/>
+					<Add directory="/Users/wchen/Softwares/eigen"/>
+					<Add directory="/usr/local/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 test/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/area.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/branchoutevent.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/caseidentification.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/con.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contingency.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/data.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/fixedshunt.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generatoroutevent.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/nontransformerbranch.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/owner.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/raw.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_cblock.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_generator.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_line.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_load.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_pcblock.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_qcblock.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_scblock.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_transformer.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchedshunt.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test_param.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformerimpedancecorrectiontable.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/zone.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/../../../../../usr/local/share/ifopt/cmake/ifopt-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\share\ifopt\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/../../../../../usr/local/share/ifopt/cmake/ifopt-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\share\ifopt\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/../../../../../usr/local/share/ifopt/cmake/ifopt_core-targets-noconfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\share\ifopt\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/../../../../../usr/local/share/ifopt/cmake/ifopt_core-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\share\ifopt\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/../../../../../usr/local/share/ifopt/cmake/ifopt_ipopt-targets-noconfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\share\ifopt\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/../../../../../usr/local/share/ifopt/cmake/ifopt_ipopt-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\share\ifopt\cmake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -20,27 +20,26 @@ int main(int args, char** argv)
     Problem nlp;
     // variables, constraints and objectives associated with buses
     auto bus_variables_ptr = std::make_shared<BusVariables>(input_ptr, "bus_variables");
-    //auto bus_constraints_ptr = std::make_shared<BusConstraints>(input_ptr, "bus_constraints");
     auto bus_cost_ptr = std::make_shared<BusCosts>("bus_variables");
-    bus_variables_ptr->GetBounds();
-    nlp.AddVariableSet(bus_variables_ptr);
-    //nlp.AddConstraintSet(bus_constraints_ptr);
-    nlp.AddCostSet(bus_cost_ptr);
+    //nlp.AddVariableSet(bus_variables_ptr);
+    //nlp.AddCostSet(bus_cost_ptr);
     // variables, constraints and objectives assocaited with loads
     auto load_vars_ptr = std::make_shared<LoadVariables>(input_ptr, "load_variables");
     auto load_cost_ptr = std::make_shared<LoadCosts>("load_variables");
+    auto load_bounds = load_vars_ptr->GetBounds();
+
     nlp.AddVariableSet(load_vars_ptr);
-    //nlp.AddCostSet(load_cost_ptr);
-    Eigen::VectorXd x = nlp.GetOptVariables()->GetValues();
-    std::cout << x.transpose() << std::endl;
-    //nlp.PrintCurrent();
+    nlp.AddCostSet(load_cost_ptr);
+    //Eigen::VectorXd x = nlp.GetOptVariables()->GetValues();
+    //std::cout << x.transpose() << std::endl;
+    nlp.PrintCurrent();
 
 
 
     // 2. choose solver and options
 
     IpoptSolver ipopt;
-    ipopt.SetOption("linear_solver", "ma27");
+    //ipopt.SetOption("linear_solver", "ma27");
     ipopt.SetOption("jacobian_approximation", "finite-difference-values");
     ipopt.Solve(nlp);
     Eigen::VectorXd new_x = nlp.GetOptVariables()->GetValues();

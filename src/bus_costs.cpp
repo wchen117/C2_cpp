@@ -59,6 +59,7 @@ double BusCosts::ComputeObj(const Eigen::MatrixXd& ikn_plus, const Eigen::Matrix
 void BusCosts::InitVariableDependedQuantities (const VariablesPtr& x)
 {
     bus_vars_ptr = x->GetComponent<BusVariables>(bus_var_name);
+    
 }
 void BusCosts::FillJacobianBlock(std::string var_set, Jacobian&) const
 {
