@@ -1,16 +1,14 @@
 cmake_minimum_required(VERSION 3.13)
 project(goc_cpp)
 set(CMAKE_CXX_STANDARD 11)
-
 include_directories(include 
                     "/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include"
-                    "/Users/wchen/Softwares/another_ipopt_prefix/include/coin-or"
-                    "/Users/wchen/Softwares/eigen")
+                    "/Users/wchen/Softwares/another_ipopt_prefix/include/coin-or")
 find_library(IPOPT_LIB
     NAMES ipopt sipopt ipopt.3 
     PATHS /Users/wchen/Softwares/another_ipopt_prefix/lib)
 find_package(ifopt
     PATHS /usr/local/share/ifopt/cmake)
 file(GLOB SOURCES "src/*.cpp")
-add_executable(test ${SOURCES})
+add_executable(test ${SOURCES} src/line_variables.cpp include/variables/line_variables.hpp)
 target_link_libraries(test PUBLIC ifopt::ifopt_ipopt)

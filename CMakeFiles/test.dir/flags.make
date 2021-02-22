@@ -6,5 +6,5 @@ CXX_FLAGS =  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacO
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/wchen/Projects/GOC_competition/C2_cpp_code/include -I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include -I/Users/wchen/Softwares/another_ipopt_prefix/include/coin-or -isystem /Users/wchen/Softwares/eigen -isystem /usr/local/include 
+CXX_INCLUDES = -I/Users/wchen/Projects/GOC_competition/C2_cpp_code/include -I/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include -I/Users/wchen/Softwares/another_ipopt_prefix/include/coin-or -isystem /usr/local/include -isystem /Users/wchen/Softwares/eigen 
 

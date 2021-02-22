@@ -13,7 +13,6 @@ public:
                           const std::vector<double>& c_n) const;
 private: 
     void FillJacobianBlock(std::string var_set, Jacobian& jac_block) const override;
-    std::shared_ptr<BusVariables> bus_vars_ptr;
     std::string bus_var_name;
 
 

@@ -16,7 +16,7 @@ public:
     VecBound GetBounds() const override;
     std::shared_ptr<Wrapper_Construct> data_fvariable;
     friend class BusCosts;
-
+private:
     // within *_ikn_*, size i*n
     VectorXd p_ikn_plus, p_ikn_minus, q_ikn_plus, q_ikn_minus;
     size_t size_p_ikn, size_q_ikn, size_bus_variables;

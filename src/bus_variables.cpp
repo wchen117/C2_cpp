@@ -27,7 +27,7 @@ BusVariables::~BusVariables(){}
 
 VectorXd BusVariables::GetValues() const 
 {
-    // why rows = number of variables????
+    //
     if  (GetRows())
     {
        VectorXd tmp_x(GetRows());
@@ -36,6 +36,10 @@ VectorXd BusVariables::GetValues() const
        tmp_x.segment(2*size_p_ikn, size_q_ikn) = q_ikn_plus;
        tmp_x.segment(2*size_p_ikn+size_q_ikn, size_q_ikn) = q_ikn_minus;
        return tmp_x;
+    }
+    else 
+    {
+       exit(0);
     }
     
 }
@@ -60,13 +64,13 @@ BusVariables::VecBound BusVariables::GetBounds() const
     for (auto pcblock: data_fvariable->new_data.sup.pcblocks)
     {
         // page 48, "pmax": p_n_over * s_tilde_inverse
-        p_n_over_list.push_back(pcblock.pmax * data_fvariable->s_tilde_inverse);
+        p_n_over_list.push_back(pcblock.pmax * data_fvariable->s_tilde);
         //std::cout<<pcblock.pmax * data_fvariable->s_tilde_inverse<<std::endl;
     }
     for (auto qcblock: data_fvariable->new_data.sup.qcblocks)
     {
         // page 48, "qmax": q_n_over * s_tilde_inverse
-        q_n_over_list.push_back(qcblock.qmax * data_fvariable->s_tilde_inverse);
+        q_n_over_list.push_back(qcblock.qmax * data_fvariable->s_tilde);
     }
     
     size_t block_size_p = size_p_ikn/p_n_over_list.size();

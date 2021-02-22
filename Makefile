@@ -521,6 +521,33 @@ src/line.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line.cpp.s
 .PHONY : src/line.cpp.s
 
+src/line_variables.o: src/line_variables.cpp.o
+
+.PHONY : src/line_variables.o
+
+# target to build an object file
+src/line_variables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_variables.cpp.o
+.PHONY : src/line_variables.cpp.o
+
+src/line_variables.i: src/line_variables.cpp.i
+
+.PHONY : src/line_variables.i
+
+# target to preprocess a source file
+src/line_variables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_variables.cpp.i
+.PHONY : src/line_variables.cpp.i
+
+src/line_variables.s: src/line_variables.cpp.s
+
+.PHONY : src/line_variables.s
+
+# target to generate assembly for a file
+src/line_variables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_variables.cpp.s
+.PHONY : src/line_variables.cpp.s
+
 src/load.o: src/load.cpp.o
 
 .PHONY : src/load.o
@@ -1166,6 +1193,9 @@ help:
 	@echo "... src/line.o"
 	@echo "... src/line.i"
 	@echo "... src/line.s"
+	@echo "... src/line_variables.o"
+	@echo "... src/line_variables.i"
+	@echo "... src/line_variables.s"
 	@echo "... src/load.o"
 	@echo "... src/load.i"
 	@echo "... src/load.s"

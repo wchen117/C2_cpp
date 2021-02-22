@@ -47,8 +47,8 @@
 					<Add directory="/Users/wchen/Projects/GOC_competition/C2_cpp_code/include"/>
 					<Add directory="/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include"/>
 					<Add directory="/Users/wchen/Softwares/another_ipopt_prefix/include/coin-or"/>
-					<Add directory="/Users/wchen/Softwares/eigen"/>
 					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/wchen/Softwares/eigen"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 test"/>
@@ -67,8 +67,8 @@
 					<Add directory="/Users/wchen/Projects/GOC_competition/C2_cpp_code/include"/>
 					<Add directory="/Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include"/>
 					<Add directory="/Users/wchen/Softwares/another_ipopt_prefix/include/coin-or"/>
-					<Add directory="/Users/wchen/Softwares/eigen"/>
 					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/wchen/Softwares/eigen"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -f &quot;/Users/wchen/Projects/GOC_competition/C2_cpp_code/Makefile&quot;  VERBOSE=1 test/fast"/>
@@ -78,6 +78,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/include/variables/line_variables.hpp">
+			<Option target="test"/>
+		</Unit>
 		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/area.cpp">
 			<Option target="test"/>
 		</Unit>
@@ -118,6 +121,9 @@
 			<Option target="test"/>
 		</Unit>
 		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables.cpp">
 			<Option target="test"/>
 		</Unit>
 		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load.cpp">

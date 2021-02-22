@@ -1,6 +1,6 @@
 #include <variables/load_variables.hpp>
 
-LoadVariables::LoadVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name) : VariableSet(10, name)
+LoadVariables::LoadVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name) : VariableSet(-1, name)
 {
     load_ref_data = data_ptr;
 
@@ -30,12 +30,12 @@ LoadVariables::LoadVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                     for (size_t jdx=0; jdx<cblock_size; jdx++)
                     {
                         //p_jn_over.at(idx).at(jdx) = load.cblocks.at(jdx).pmax;
-                        p_jn_over.at(idx).at(jdx) = load.cblocks.at(jdx).pmax * load_ref_data->s_tilde_inverse;
+                        p_jn_over.at(idx).at(jdx) = load.cblocks.at(jdx).pmax * load_ref_data->s_tilde;
                         //c_jn.at(idx).at(jdx) = load.cblocks.at(jdx).c;
-                        c_jn.at(idx).at(jdx) = load.cblocks.at(jdx).c * load_ref_data->s_tilde_inverse;
-                        p_jkn.at(idx).at(jdx) = 0.0;
+                        c_jn.at(idx).at(jdx) = load.cblocks.at(jdx).c * load_ref_data->s_tilde;
+                        p_jkn.at(idx).at(jdx) = 0.5;
                         p_jn_counter++;
-                        std::cout<<"bus_id = "<<load.bus<<" c_jn = "<<c_jn.at(idx).at(jdx)<<" p_jn_over = "<<p_jn_over.at(idx).at(jdx)<<std::endl;
+                        //std::cout<<"bus_id = "<<load.bus<<" c_jn = "<<c_jn.at(idx).at(jdx)<<" p_jn_over = "<<p_jn_over.at(idx).at(jdx)<<std::endl;
                     }
                       
                 }
@@ -43,6 +43,7 @@ LoadVariables::LoadVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
             
         }
         SetRows(p_jn_counter);
+        assert(GetRows() == p_jn_counter);
     }
     else {
         std::cout<<"J_k vector is empty, quit!"<<std::endl;
@@ -55,6 +56,7 @@ LoadVariables::~LoadVariables() {}
 
 Eigen::VectorXd LoadVariables::GetValues() const 
 {
+    // in VariableSet GetRows return number of variables
     if  (GetRows())
     {
         Eigen::VectorXd tmp_x(GetRows());
@@ -71,6 +73,10 @@ Eigen::VectorXd LoadVariables::GetValues() const
         }
 
         return tmp_x;
+    }
+    else
+    {
+        exit(0);
     }
     
 }
@@ -104,6 +110,7 @@ LoadVariables::VecBound LoadVariables::GetBounds() const
                 load_bounds.at(counter).upper_ = each_p_jn;
                 load_bounds.at(counter).lower_ = 0.0;
                 counter++;
+                //std::cout<<"upper bounds are: "<<each_p_jn<<std::endl;
             }
         }
     return load_bounds;
