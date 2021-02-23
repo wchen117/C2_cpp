@@ -27,10 +27,10 @@ int main(int args, char** argv)
     //nlp.AddVariableSet(bus_variables_ptr);
     //nlp.AddCostSet(bus_cost_ptr);
     // variables, constraints and objectives assocaited with loads
-    //auto load_vars_ptr = std::make_shared<LoadVariables>(input_ptr, "load_variables");
+    auto load_vars_ptr = std::make_shared<LoadVariables>(input_ptr, "load_variables");
     //auto load_cost_ptr = std::make_shared<LoadCosts>("load_variables");
     //auto load_bounds = load_vars_ptr->GetBounds();
-    //nlp.AddVariableSet(load_vars_ptr);
+    nlp.AddVariableSet(load_vars_ptr);
     //nlp.AddCostSet(load_cost_ptr);
 
     // variables, constraints and objectives associated with lines

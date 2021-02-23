@@ -6,7 +6,7 @@
 #define __LINE_COSTS_HPP__
 #include <ifopt/cost_term.h>
 #include <variables/line_variables.hpp>
-
+//#include <variables/load_variables.hpp>
 class LineCosts : public ifopt::CostTerm{
 public:
     LineCosts(const std::string& name);
@@ -16,6 +16,8 @@ public:
 private:
     void FillJacobianBlock(std::string var_set, Jacobian& jac_block) const override;
     std::string line_var_name;
+    std::shared_ptr<LineVariables> line_var_ptr;
+    //std::shared_ptr<LoadVariables> load_var_ptr;
 
 };
 #endif
