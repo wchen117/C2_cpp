@@ -1,8 +1,13 @@
+//
+// Created by wchen on 2/23/21.
+//
+
 #ifndef __LINE_COSTS_HPP__
 #define __LINE_COSTS_HPP__
 #include <ifopt/cost_term.h>
 #include <variables/line_variables.hpp>
-class LineCosts :: public ifopt::CostTerm{
+
+class LineCosts : public ifopt::CostTerm{
 public:
     LineCosts(const std::string& name);
     ~LineCosts();

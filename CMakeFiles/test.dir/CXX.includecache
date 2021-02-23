@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs.cpp
-costs/load_costs.hpp
--
-
 /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp
 string
 -
@@ -30,6 +26,8 @@ constraints/bus_constraints.hpp
 costs/bus_costs.hpp
 -
 costs/load_costs.hpp
+-
+costs/line_costs.hpp
 -
 
 /Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include/rapidjson/allocators.h
@@ -8196,6 +8194,12 @@ include/costs/bus_costs.hpp
 ifopt/cost_term.h
 -
 variables/bus_variables.hpp
+-
+
+include/costs/line_costs.hpp
+ifopt/cost_term.h
+-
+variables/line_variables.hpp
 -
 
 include/costs/load_costs.hpp

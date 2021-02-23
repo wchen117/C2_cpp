@@ -8,6 +8,7 @@
 #include <constraints/bus_constraints.hpp>
 #include <costs/bus_costs.hpp>
 #include <costs/load_costs.hpp>
+#include <costs/line_costs.hpp>
 
 
 using namespace ifopt;
@@ -34,9 +35,10 @@ int main(int args, char** argv)
 
     // variables, constraints and objectives associated with lines
     auto line_vars_ptr = std::make_shared<LineVariables>(input_ptr, "line_variables");
-    line_vars_ptr->GetBounds();
-    //nlp.AddVariableSet(line_vars_ptr);
-    //nlp.PrintCurrent();
+    auto line_cost_ptr = std::make_shared<LineCosts>("line_variables");
+    nlp.AddVariableSet(line_vars_ptr);
+    nlp.AddCostSet(line_cost_ptr);
+    nlp.PrintCurrent();
 
 
 
