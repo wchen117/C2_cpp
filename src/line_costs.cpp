@@ -22,7 +22,7 @@ double LineCosts::GetCost() const
     double z_ek = 0.0;
     for (size_t idx=0; idx< first_term.rows(); idx++)
     {
-        z_ek += second_term(idx) + first_term(idx);
+        z_ek += line_var_ptr->local_input_ptr->new_data.sup.sys_prms["delta"] * second_term(idx) + first_term(idx);
     }
     return z_ek;
 
@@ -39,7 +39,7 @@ void LineCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const
     Eigen::Map<Eigen::VectorXd> flat_c_ns(line_var_ptr->c_n_s.data(), line_var_ptr->c_n_s.size());
     flat_c_ns *= -1;
     Eigen::VectorXd x_ek_sw_coeff (line_var_ptr->size_E_k0);
-    Eigen::VectorXd x_e_sw0_coeff (line_var_ptr->size_E_k0);
+
     for (size_t idx=0; idx<line_var_ptr->size_E_k0; idx++)
     {
         std::cout<< line_var_ptr->x_ek_sw(idx) - line_var_ptr->x_e_sw0(idx)<<std::endl;
@@ -47,20 +47,19 @@ void LineCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const
         if (line_var_ptr->x_ek_sw(idx) >= line_var_ptr->x_e_sw0(idx))
         {
             x_ek_sw_coeff(idx) = - line_var_ptr->c_e_sw(idx);
-            x_e_sw0_coeff(idx) = line_var_ptr->c_e_sw(idx);
         }
         else {
             x_ek_sw_coeff(idx) = line_var_ptr->c_e_sw(idx);
-            x_e_sw0_coeff(idx) = -line_var_ptr->c_e_sw(idx);
 
         }
     }
     Eigen::VectorXd tmp(line_var_ptr->line_var_len);
-    tmp<< flat_c_ns, x_ek_sw_coeff, x_e_sw0_coeff;
-
-    for (size_t idx=0; idx<line_var_ptr->line_var_len; idx++)
+    tmp<< flat_c_ns, x_ek_sw_coeff;
+    for (size_t idx=0; idx<line_var_ptr->line_var_len-10; idx++)
     {
-        jac.coeffRef(0, idx) = tmp(idx);
+        jac.insert(0, idx) = tmp(idx);
     }
+
+
 
 }

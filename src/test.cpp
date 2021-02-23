@@ -28,26 +28,26 @@ int main(int args, char** argv)
     //nlp.AddCostSet(bus_cost_ptr);
     // variables, constraints and objectives assocaited with loads
     auto load_vars_ptr = std::make_shared<LoadVariables>(input_ptr, "load_variables");
-    //auto load_cost_ptr = std::make_shared<LoadCosts>("load_variables");
+    auto load_cost_ptr = std::make_shared<LoadCosts>("load_variables");
     //auto load_bounds = load_vars_ptr->GetBounds();
-    nlp.AddVariableSet(load_vars_ptr);
+    //nlp.AddVariableSet(load_vars_ptr);
     //nlp.AddCostSet(load_cost_ptr);
 
     // variables, constraints and objectives associated with lines
     auto line_vars_ptr = std::make_shared<LineVariables>(input_ptr, "line_variables");
     auto line_cost_ptr = std::make_shared<LineCosts>("line_variables");
-    nlp.AddVariableSet(line_vars_ptr);
-    nlp.AddCostSet(line_cost_ptr);
+    //nlp.AddVariableSet(line_vars_ptr);
+    //nlp.AddCostSet(line_cost_ptr);
     nlp.PrintCurrent();
 
 
 
     // 2. choose solver and options
 
-    //IpoptSolver ipopt;
+    IpoptSolver ipopt;
     //ipopt.SetOption("linear_solver", "ma27");
     //ipopt.SetOption("jacobian_approximation", "finite-difference-values");
-    //ipopt.Solve(nlp);
+    ipopt.Solve(nlp);
     //Eigen::VectorXd new_x = nlp.GetOptVariables()->GetValues();
     //std::cout << new_x.transpose() << std::endl;
 

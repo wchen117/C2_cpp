@@ -44,6 +44,7 @@ void LoadCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const
         for (size_t jdx=0; jdx<num_n; jdx++)
         {
             auto tmp_c = load_var_ptr->c_jn.at(idx).at(jdx);
+            std::cout<<tmp_c<<std::endl;
             jac.coeffRef(0, counter) = tmp_c;
             counter++;
         }

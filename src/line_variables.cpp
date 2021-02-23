@@ -59,7 +59,7 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
         }
         if (size_E_k0 && Ns)
         {
-            line_var_len = size_E_k0 * Ns + 2 * size_E_k0;
+            line_var_len = size_E_k0 * Ns + size_E_k0;
             SetRows(line_var_len);
         }
         else{
@@ -85,7 +85,7 @@ Eigen::VectorXd LineVariables::GetValues() const
         // this flatten s_enk_plus col by col
         // why must declare const here???? it says s_enk_plus a const double*, why?
         Eigen::Map<const Eigen::VectorXd> flat_s_enk(s_enk_plus.data(), s_enk_plus.size());
-        tmp_x << flat_s_enk, x_ek_sw, x_e_sw0;
+        tmp_x << flat_s_enk, x_ek_sw;
         assert(tmp_x.size() == GetRows());
         return tmp_x;
     }
@@ -100,7 +100,6 @@ void LineVariables::SetVariables(const Eigen::VectorXd &x)
     size_t flat_len = size_E_k0 * Ns;
     auto tmp_flat = x.segment(0, flat_len);
     x_ek_sw = x.segment(flat_len, size_E_k0);
-    x_e_sw0 = x.segment(flat_len + size_E_k0, size_E_k0);
     Eigen::Map<const Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::ColMajor>> tmp_mat(tmp_flat.data(), Ns, size_E_k0);
     s_enk_plus = tmp_mat;
 }
@@ -123,7 +122,7 @@ LineVariables::VecBound  LineVariables::GetBounds() const
     }
 
     // x_ek_sw and x_e_sw0 are binary varialbles, for now we put them as real number between 0 and 1
-    upper_bound << tmp_flat_prod, up_bound_1, up_bound_1;
+    upper_bound << tmp_flat_prod, up_bound_1;
     for (size_t idx=0; idx<GetRows(); idx++)
     {
         line_bounds.at(idx).upper_ = upper_bound(idx);
