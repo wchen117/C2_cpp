@@ -45,4 +45,7 @@ typedef std::unordered_map<key_iisi, std::string, boost::hash<key_iisi> > UMAP_T
 typedef std::vector< std::vector<double> > twoD_vector_double;
 typedef std::vector< std::vector< std::vector<double> > > threeD_vector_double;
 
+// related to Eigen
+
+
 #endif

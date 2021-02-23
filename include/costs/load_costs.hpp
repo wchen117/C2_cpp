@@ -13,8 +13,7 @@ public:
 private: 
     void FillJacobianBlock(std::string var_set, Jacobian& jac_block) const override;
     std::string load_var_name;
-    //std::shared_ptr<LoadVariables> load_var_ptr;
-    //std::shared_ptr<BusVariables> bus_var_ptr;
+
 };
 
 #endif

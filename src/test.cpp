@@ -33,21 +33,21 @@ int main(int args, char** argv)
     //nlp.AddCostSet(load_cost_ptr);
 
     // variables, constraints and objectives associated with lines
-    auto lins_vars_ptr = std::make_shared<LineVariables>(input_ptr, "line_variables");
-    //Eigen::VectorXd x = nlp.GetOptVariables()->GetValues();
-    //std::cout << x.transpose() << std::endl;
-    nlp.PrintCurrent();
+    auto line_vars_ptr = std::make_shared<LineVariables>(input_ptr, "line_variables");
+    line_vars_ptr->GetBounds();
+    //nlp.AddVariableSet(line_vars_ptr);
+    //nlp.PrintCurrent();
 
 
 
     // 2. choose solver and options
 
-    IpoptSolver ipopt;
+    //IpoptSolver ipopt;
     //ipopt.SetOption("linear_solver", "ma27");
-    ipopt.SetOption("jacobian_approximation", "finite-difference-values");
-    ipopt.Solve(nlp);
-    Eigen::VectorXd new_x = nlp.GetOptVariables()->GetValues();
-    std::cout << new_x.transpose() << std::endl;
+    //ipopt.SetOption("jacobian_approximation", "finite-difference-values");
+    //ipopt.Solve(nlp);
+    //Eigen::VectorXd new_x = nlp.GetOptVariables()->GetValues();
+    //std::cout << new_x.transpose() << std::endl;
 
     return 0;
 }
