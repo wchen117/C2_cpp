@@ -22,6 +22,7 @@ private:
     // first, variables:
 
     Eigen::MatrixXd s_enk_plus;
+    // x_ek_sw is in {0, 1}, for now we sent it to a real number between 0 and 1;
     Eigen::VectorXd x_ek_sw;
     // then some parameters and coefficients;
     Eigen::MatrixXd c_n_s;
@@ -31,9 +32,6 @@ private:
     Eigen::VectorXd ref_oribus;
     Eigen::VectorXd ref_desbus;
     Eigen::VectorXd x_e_sw0;
-    // x_ek_sw is in {0, 1}, for now we sent it to a real number between 0 and 1;
-
-
 
     std::shared_ptr<Wrapper_Construct> local_input_ptr;
     size_t line_var_len, size_E_k0, Ns;

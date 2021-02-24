@@ -110,11 +110,29 @@ LineVariables::VecBound  LineVariables::GetBounds() const
 {
 
     VecBound line_bounds(GetRows());
-    for (size_t idx=0; idx<90; idx++)
+    Eigen::VectorXd upper_bound(GetRows());
+
+    // convert to array for in-place multiplication, then convert by to matrix (may not need to )
+    Eigen::MatrixXd tmp_prod = (t_n_s_over.array() * r_e_over_eigen.array()).matrix();
+    // flat the tmp_prod col wise, same as the s_enk_plus
+    Eigen::Map<const Eigen::VectorXd> tmp_flat_prod(tmp_prod.data(), tmp_prod.size());
+
+
+    Eigen::VectorXd up_bound_1(size_E_k0);
+    for (size_t idx=0; idx<size_E_k0; idx++)
     {
-        line_bounds.at(idx).upper_ = 1.0;
-        line_bounds.at(idx).lower_ = 0.0;
+        up_bound_1(idx) = 1.0;
     }
+
+    // x_ek_sw  is binary varialble, for now we put them as real number between 0 and 1
+    upper_bound << tmp_flat_prod, up_bound_1;
+    for (size_t idx=0; idx<GetRows(); idx++)
+    {
+        line_bounds.at(idx).upper_ = upper_bound(idx);
+        line_bounds.at(idx).lower_ = 0.0;
+
+    }
+
 
     return line_bounds;
 

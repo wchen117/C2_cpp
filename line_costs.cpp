@@ -18,7 +18,7 @@ double LineCosts::GetCost() const
     // first_term is a column vector
     auto first_term = -(line_var_ptr->x_ek_sw - line_var_ptr->x_e_sw0).array().abs() * (line_var_ptr->c_e_sw.array());
 
-    //
+    // so I am getting bugs tranpose second term and sum these two together, so here you go.
     double z_ek = 0.0;
     for (size_t idx=0; idx< first_term.rows(); idx++)
     {
@@ -35,36 +35,28 @@ void LineCosts::InitVariableDependedQuantities(const VariablesPtr& x)
 
 void LineCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const
 {
-    if (var_set == line_var_name)
+
+    Eigen::Map<Eigen::VectorXd> flat_c_ns(line_var_ptr->c_n_s.data(), line_var_ptr->c_n_s.size());
+    flat_c_ns *= -1;
+    Eigen::VectorXd x_ek_sw_coeff (line_var_ptr->size_E_k0);
+
+    for (size_t idx=0; idx<line_var_ptr->size_E_k0; idx++)
     {
-        Eigen::Map<Eigen::VectorXd> flat_c_ns(line_var_ptr->c_n_s.data(), line_var_ptr->c_n_s.size());
-        flat_c_ns *= -1;
-        Eigen::VectorXd x_ek_sw_coeff (line_var_ptr->size_E_k0);
-
-        for (size_t idx=0; idx<line_var_ptr->size_E_k0; idx++)
+        if (line_var_ptr->x_ek_sw(idx) >= line_var_ptr->x_e_sw0(idx))
         {
-            if (line_var_ptr->x_ek_sw(idx) >= line_var_ptr->x_e_sw0(idx))
-            {
-                x_ek_sw_coeff(idx) = - line_var_ptr->c_e_sw(idx);
-            }
-            else {
-                x_ek_sw_coeff(idx) = line_var_ptr->c_e_sw(idx);
-
-            }
+            x_ek_sw_coeff(idx) = - line_var_ptr->c_e_sw(idx);
         }
-        Eigen::VectorXd tmp(line_var_ptr->line_var_len);
-        tmp<< flat_c_ns, x_ek_sw_coeff;
-        for (size_t idx=0; idx<line_var_ptr->line_var_len; idx++)
-        {
-            jac.coeffRef(0, idx) = tmp(idx);
+        else {
+            x_ek_sw_coeff(idx) = line_var_ptr->c_e_sw(idx);
 
         }
-
     }
-
-
-
-
+    Eigen::VectorXd tmp(line_var_ptr->line_var_len);
+    tmp<< flat_c_ns, x_ek_sw_coeff;
+    for (size_t idx=0; idx<line_var_ptr->line_var_len; idx++)
+    {
+        jac.insert(0, idx) = tmp(idx);
+    }
 
 
 

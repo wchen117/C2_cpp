@@ -1,4 +1,4 @@
-The system is: Darwin - 20.2.0 - x86_64
+The system is: Darwin - 20.3.0 - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /usr/local/bin/gcc-10 
 Build flags: 
@@ -28,9 +28,9 @@ The CXX compiler identification is GNU, found in "/Users/wchen/Projects/GOC_comp
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_2af16/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_2af16.dir/build.make CMakeFiles/cmTC_2af16.dir/build
-Building C object CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o
-/usr/local/bin/gcc-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -v -Wl,-v -o CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o -c /usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/CMakeCCompilerABI.c
+Run Build Command(s):/usr/bin/make cmTC_25439/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_25439.dir/build.make CMakeFiles/cmTC_25439.dir/build
+Building C object CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o
+/usr/local/bin/gcc-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -v -Wl,-v -o CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o -c /usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/CMakeCCompilerABI.c
 Using built-in specs.
 COLLECT_GCC=/usr/local/bin/gcc-10
 Target: x86_64-apple-darwin20
@@ -38,8 +38,8 @@ Configured with: ../configure --build=x86_64-apple-darwin20 --prefix=/usr/local/
 Thread model: posix
 Supported LTO compression algorithms: zlib
 gcc version 10.2.0 (Homebrew GCC 10.2.0_2) 
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-mtune=core2'
- /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/cc1 -quiet -v -D__DYNAMIC__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk /usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/CMakeCCompilerABI.c -fPIC -quiet -dumpbase CMakeCCompilerABI.c -mmacosx-version-min=11.0.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o -version -o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccZg5XzS.s
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-mtune=core2'
+ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/cc1 -quiet -v -D__DYNAMIC__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk /usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/CMakeCCompilerABI.c -fPIC -quiet -dumpbase CMakeCCompilerABI.c -mmacosx-version-min=11.0.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o -version -o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccLVK3vl.s
 GNU C17 (Homebrew GCC 10.2.0_2) version 10.2.0 (x86_64-apple-darwin20)
 	compiled by GNU C version 10.2.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.23-GMP
 
@@ -59,19 +59,19 @@ GNU C17 (Homebrew GCC 10.2.0_2) version 10.2.0 (x86_64-apple-darwin20)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 7f03573292b1c4ad1e044e304c10d872
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0'  '-mtune=core2'
- as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=11.0 -o CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccZg5XzS.s
-Apple clang version 12.0.0 (clang-1200.0.32.28)
-Target: x86_64-apple-darwin20.2.0
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0'  '-mtune=core2'
+ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=11.0 -o CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccLVK3vl.s
+Apple clang version 12.0.0 (clang-1200.0.32.29)
+Target: x86_64-apple-darwin20.3.0
 Thread model: posix
 InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx11.0.0 -filetype obj -main-file-name ccZg5XzS.s -target-cpu penryn -fdebug-compilation-dir /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp -dwarf-debug-producer "Apple clang version 12.0.0 (clang-1200.0.32.28)" -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccZg5XzS.s
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx11.0.0 -filetype obj -main-file-name ccLVK3vl.s -target-cpu penryn -fdebug-compilation-dir /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp -dwarf-debug-producer "Apple clang version 12.0.0 (clang-1200.0.32.29)" -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccLVK3vl.s
 COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/
 LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../../
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0'  '-mtune=core2'
-Linking C executable cmTC_2af16
-/usr/local/Cellar/cmake/3.19.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2af16.dir/link.txt --verbose=1
-/usr/local/bin/gcc-10  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o -o cmTC_2af16 
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0'  '-mtune=core2'
+Linking C executable cmTC_25439
+/usr/local/Cellar/cmake/3.19.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_25439.dir/link.txt --verbose=1
+/usr/local/bin/gcc-10  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o -o cmTC_25439 
 Using built-in specs.
 COLLECT_GCC=/usr/local/bin/gcc-10
 COLLECT_LTO_WRAPPER=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/lto-wrapper
@@ -82,15 +82,15 @@ Supported LTO compression algorithms: zlib
 gcc version 10.2.0 (Homebrew GCC 10.2.0_2) 
 COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/
 LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../../
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'cmTC_2af16' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-mtune=core2'
- /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_2af16 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'cmTC_25439' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-mtune=core2'
+ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_25439 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
 collect2 version 10.2.0
-/usr/bin/ld -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_2af16 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
+/usr/bin/ld -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_25439 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
 @(#)PROGRAM:ld  PROJECT:ld64-609.8
-BUILD 20:09:52 Nov  4 2020
+BUILD 15:07:46 Dec 18 2020
 configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
 @(#)PROGRAM:ld  PROJECT:ld64-609.8
-BUILD 20:09:52 Nov  4 2020
+BUILD 15:07:46 Dec 18 2020
 configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
 Library search paths:
 	/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0
@@ -120,9 +120,9 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_2af16/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_2af16.dir/build.make CMakeFiles/cmTC_2af16.dir/build]
-  ignore line: [Building C object CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/local/bin/gcc-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -v -Wl -v -o CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o -c /usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_25439/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_25439.dir/build.make CMakeFiles/cmTC_25439.dir/build]
+  ignore line: [Building C object CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/local/bin/gcc-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -v -Wl -v -o CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o -c /usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/CMakeCCompilerABI.c]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/local/bin/gcc-10]
   ignore line: [Target: x86_64-apple-darwin20]
@@ -130,8 +130,8 @@ Parsed C implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib]
   ignore line: [gcc version 10.2.0 (Homebrew GCC 10.2.0_2) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-mtune=core2']
-  ignore line: [ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/cc1 -quiet -v -D__DYNAMIC__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk /usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/CMakeCCompilerABI.c -fPIC -quiet -dumpbase CMakeCCompilerABI.c -mmacosx-version-min=11.0.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o -version -o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccZg5XzS.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-mtune=core2']
+  ignore line: [ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/cc1 -quiet -v -D__DYNAMIC__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk /usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/CMakeCCompilerABI.c -fPIC -quiet -dumpbase CMakeCCompilerABI.c -mmacosx-version-min=11.0.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o -version -o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccLVK3vl.s]
   ignore line: [GNU C17 (Homebrew GCC 10.2.0_2) version 10.2.0 (x86_64-apple-darwin20)]
   ignore line: [	compiled by GNU C version 10.2.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.23-GMP]
   ignore line: []
@@ -151,19 +151,19 @@ Parsed C implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 7f03573292b1c4ad1e044e304c10d872]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0'  '-mtune=core2']
-  ignore line: [ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=11.0 -o CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccZg5XzS.s]
-  ignore line: [Apple clang version 12.0.0 (clang-1200.0.32.28)]
-  ignore line: [Target: x86_64-apple-darwin20.2.0]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0'  '-mtune=core2']
+  ignore line: [ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=11.0 -o CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccLVK3vl.s]
+  ignore line: [Apple clang version 12.0.0 (clang-1200.0.32.29)]
+  ignore line: [Target: x86_64-apple-darwin20.3.0]
   ignore line: [Thread model: posix]
   ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
-  ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx11.0.0 -filetype obj -main-file-name ccZg5XzS.s -target-cpu penryn -fdebug-compilation-dir /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp -dwarf-debug-producer "Apple clang version 12.0.0 (clang-1200.0.32.28)" -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccZg5XzS.s]
+  ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx11.0.0 -filetype obj -main-file-name ccLVK3vl.s -target-cpu penryn -fdebug-compilation-dir /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp -dwarf-debug-producer "Apple clang version 12.0.0 (clang-1200.0.32.29)" -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccLVK3vl.s]
   ignore line: [COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/]
   ignore line: [LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0'  '-mtune=core2']
-  ignore line: [Linking C executable cmTC_2af16]
-  ignore line: [/usr/local/Cellar/cmake/3.19.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2af16.dir/link.txt --verbose=1]
-  ignore line: [/usr/local/bin/gcc-10  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o -o cmTC_2af16 ]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0'  '-mtune=core2']
+  ignore line: [Linking C executable cmTC_25439]
+  ignore line: [/usr/local/Cellar/cmake/3.19.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_25439.dir/link.txt --verbose=1]
+  ignore line: [/usr/local/bin/gcc-10  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o -o cmTC_25439 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/local/bin/gcc-10]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/lto-wrapper]
@@ -174,8 +174,8 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 10.2.0 (Homebrew GCC 10.2.0_2) ]
   ignore line: [COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/]
   ignore line: [LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'cmTC_2af16' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-mtune=core2']
-  link line: [ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_2af16 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'cmTC_25439' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-mtune=core2']
+  link line: [ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_25439 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v]
     arg [/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2] ==> ignore
     arg [-dynamic] ==> ignore
     arg [-arch] ==> ignore
@@ -187,13 +187,13 @@ Parsed C implicit link information from above output:
     arg [-weak_reference_mismatches] ==> ignore
     arg [non-weak] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_2af16] ==> ignore
+    arg [cmTC_25439] ==> ignore
     arg [-L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0] ==> dir [/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0]
     arg [-L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../..] ==> dir [/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../..]
     arg [-search_paths_first] ==> ignore
     arg [-headerpad_max_install_names] ==> ignore
     arg [-v] ==> ignore
-    arg [CMakeFiles/cmTC_2af16.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_25439.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lSystem] ==> lib [System]
     arg [-lgcc_ext.10.5] ==> lib [gcc_ext.10.5]
     arg [-lgcc] ==> lib [gcc]
@@ -218,9 +218,9 @@ Parsed C implicit link information from above output:
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_1f37d/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_1f37d.dir/build.make CMakeFiles/cmTC_1f37d.dir/build
-Building CXX object CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o
-/usr/local/bin/g++-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -v -Wl,-v -o CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+Run Build Command(s):/usr/bin/make cmTC_18ad6/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_18ad6.dir/build.make CMakeFiles/cmTC_18ad6.dir/build
+Building CXX object CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o
+/usr/local/bin/g++-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -v -Wl,-v -o CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp
 Using built-in specs.
 COLLECT_GCC=/usr/local/bin/g++-10
 Target: x86_64-apple-darwin20
@@ -228,8 +228,8 @@ Configured with: ../configure --build=x86_64-apple-darwin20 --prefix=/usr/local/
 Thread model: posix
 Supported LTO compression algorithms: zlib
 gcc version 10.2.0 (Homebrew GCC 10.2.0_2) 
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-shared-libgcc' '-mtune=core2'
- /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/cc1plus -quiet -v -D__DYNAMIC__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk /usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp -fPIC -quiet -dumpbase CMakeCXXCompilerABI.cpp -mmacosx-version-min=11.0.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o -version -o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccsIs1bT.s
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-shared-libgcc' '-mtune=core2'
+ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/cc1plus -quiet -v -D__DYNAMIC__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk /usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp -fPIC -quiet -dumpbase CMakeCXXCompilerABI.cpp -mmacosx-version-min=11.0.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o -version -o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cclhJ35H.s
 GNU C++14 (Homebrew GCC 10.2.0_2) version 10.2.0 (x86_64-apple-darwin20)
 	compiled by GNU C version 10.2.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.23-GMP
 
@@ -252,19 +252,19 @@ GNU C++14 (Homebrew GCC 10.2.0_2) version 10.2.0 (x86_64-apple-darwin20)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 226b82c9217faee57636048830034c6a
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0'  '-shared-libgcc' '-mtune=core2'
- as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=11.0 -o CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccsIs1bT.s
-Apple clang version 12.0.0 (clang-1200.0.32.28)
-Target: x86_64-apple-darwin20.2.0
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0'  '-shared-libgcc' '-mtune=core2'
+ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=11.0 -o CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cclhJ35H.s
+Apple clang version 12.0.0 (clang-1200.0.32.29)
+Target: x86_64-apple-darwin20.3.0
 Thread model: posix
 InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx11.0.0 -filetype obj -main-file-name ccsIs1bT.s -target-cpu penryn -fdebug-compilation-dir /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp -dwarf-debug-producer "Apple clang version 12.0.0 (clang-1200.0.32.28)" -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccsIs1bT.s
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx11.0.0 -filetype obj -main-file-name cclhJ35H.s -target-cpu penryn -fdebug-compilation-dir /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp -dwarf-debug-producer "Apple clang version 12.0.0 (clang-1200.0.32.29)" -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cclhJ35H.s
 COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/
 LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../../
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0'  '-shared-libgcc' '-mtune=core2'
-Linking CXX executable cmTC_1f37d
-/usr/local/Cellar/cmake/3.19.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1f37d.dir/link.txt --verbose=1
-/usr/local/bin/g++-10  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_1f37d 
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0'  '-shared-libgcc' '-mtune=core2'
+Linking CXX executable cmTC_18ad6
+/usr/local/Cellar/cmake/3.19.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18ad6.dir/link.txt --verbose=1
+/usr/local/bin/g++-10  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_18ad6 
 Using built-in specs.
 COLLECT_GCC=/usr/local/bin/g++-10
 COLLECT_LTO_WRAPPER=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/lto-wrapper
@@ -275,15 +275,15 @@ Supported LTO compression algorithms: zlib
 gcc version 10.2.0 (Homebrew GCC 10.2.0_2) 
 COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/
 LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../../
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'cmTC_1f37d' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-shared-libgcc' '-mtune=core2'
- /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_1f37d -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'cmTC_18ad6' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-shared-libgcc' '-mtune=core2'
+ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_18ad6 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
 collect2 version 10.2.0
-/usr/bin/ld -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_1f37d -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
+/usr/bin/ld -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_18ad6 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
 @(#)PROGRAM:ld  PROJECT:ld64-609.8
-BUILD 20:09:52 Nov  4 2020
+BUILD 15:07:46 Dec 18 2020
 configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
 @(#)PROGRAM:ld  PROJECT:ld64-609.8
-BUILD 20:09:52 Nov  4 2020
+BUILD 15:07:46 Dec 18 2020
 configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
 Library search paths:
 	/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0
@@ -319,9 +319,9 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_1f37d/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_1f37d.dir/build.make CMakeFiles/cmTC_1f37d.dir/build]
-  ignore line: [Building CXX object CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/local/bin/g++-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -v -Wl -v -o CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_18ad6/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_18ad6.dir/build.make CMakeFiles/cmTC_18ad6.dir/build]
+  ignore line: [Building CXX object CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/local/bin/g++-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -v -Wl -v -o CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/local/bin/g++-10]
   ignore line: [Target: x86_64-apple-darwin20]
@@ -329,8 +329,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib]
   ignore line: [gcc version 10.2.0 (Homebrew GCC 10.2.0_2) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-shared-libgcc' '-mtune=core2']
-  ignore line: [ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/cc1plus -quiet -v -D__DYNAMIC__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk /usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp -fPIC -quiet -dumpbase CMakeCXXCompilerABI.cpp -mmacosx-version-min=11.0.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o -version -o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccsIs1bT.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-shared-libgcc' '-mtune=core2']
+  ignore line: [ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/cc1plus -quiet -v -D__DYNAMIC__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk /usr/local/Cellar/cmake/3.19.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp -fPIC -quiet -dumpbase CMakeCXXCompilerABI.cpp -mmacosx-version-min=11.0.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o -version -o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cclhJ35H.s]
   ignore line: [GNU C++14 (Homebrew GCC 10.2.0_2) version 10.2.0 (x86_64-apple-darwin20)]
   ignore line: [	compiled by GNU C version 10.2.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.23-GMP]
   ignore line: []
@@ -353,19 +353,19 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 226b82c9217faee57636048830034c6a]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0'  '-shared-libgcc' '-mtune=core2']
-  ignore line: [ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=11.0 -o CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccsIs1bT.s]
-  ignore line: [Apple clang version 12.0.0 (clang-1200.0.32.28)]
-  ignore line: [Target: x86_64-apple-darwin20.2.0]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0'  '-shared-libgcc' '-mtune=core2']
+  ignore line: [ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=11.0 -o CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cclhJ35H.s]
+  ignore line: [Apple clang version 12.0.0 (clang-1200.0.32.29)]
+  ignore line: [Target: x86_64-apple-darwin20.3.0]
   ignore line: [Thread model: posix]
   ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
-  ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx11.0.0 -filetype obj -main-file-name ccsIs1bT.s -target-cpu penryn -fdebug-compilation-dir /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp -dwarf-debug-producer "Apple clang version 12.0.0 (clang-1200.0.32.28)" -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccsIs1bT.s]
+  ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx11.0.0 -filetype obj -main-file-name cclhJ35H.s -target-cpu penryn -fdebug-compilation-dir /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp -dwarf-debug-producer "Apple clang version 12.0.0 (clang-1200.0.32.29)" -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cclhJ35H.s]
   ignore line: [COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/]
   ignore line: [LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0'  '-shared-libgcc' '-mtune=core2']
-  ignore line: [Linking CXX executable cmTC_1f37d]
-  ignore line: [/usr/local/Cellar/cmake/3.19.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1f37d.dir/link.txt --verbose=1]
-  ignore line: [/usr/local/bin/g++-10  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_1f37d ]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0'  '-shared-libgcc' '-mtune=core2']
+  ignore line: [Linking CXX executable cmTC_18ad6]
+  ignore line: [/usr/local/Cellar/cmake/3.19.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18ad6.dir/link.txt --verbose=1]
+  ignore line: [/usr/local/bin/g++-10  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_18ad6 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/local/bin/g++-10]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/lto-wrapper]
@@ -376,8 +376,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 10.2.0 (Homebrew GCC 10.2.0_2) ]
   ignore line: [COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/]
   ignore line: [LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'cmTC_1f37d' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-shared-libgcc' '-mtune=core2']
-  link line: [ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_1f37d -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'cmTC_18ad6' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-shared-libgcc' '-mtune=core2']
+  link line: [ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_18ad6 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v]
     arg [/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2] ==> ignore
     arg [-dynamic] ==> ignore
     arg [-arch] ==> ignore
@@ -389,13 +389,13 @@ Parsed CXX implicit link information from above output:
     arg [-weak_reference_mismatches] ==> ignore
     arg [non-weak] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_1f37d] ==> ignore
+    arg [cmTC_18ad6] ==> ignore
     arg [-L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0] ==> dir [/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0]
     arg [-L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../..] ==> dir [/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../..]
     arg [-search_paths_first] ==> ignore
     arg [-headerpad_max_install_names] ==> ignore
     arg [-v] ==> ignore
-    arg [CMakeFiles/cmTC_1f37d.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_18ad6.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lSystem] ==> lib [System]
     arg [-lgcc_ext.10.5] ==> lib [gcc_ext.10.5]
@@ -418,7 +418,7 @@ Parsed CXX implicit link information from above output:
   implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks]
 
 
-The system is: Darwin - 20.2.0 - x86_64
+The system is: Darwin - 20.3.0 - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /usr/local/bin/gcc-10 
 Build flags: 
@@ -448,21 +448,21 @@ The CXX compiler identification is GNU, found in "/Users/wchen/Projects/GOC_comp
 Determining if the C compiler works passed with the following output:
 Change Dir: /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_59cd6/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_59cd6.dir/build.make CMakeFiles/cmTC_59cd6.dir/build
-Building C object CMakeFiles/cmTC_59cd6.dir/testCCompiler.c.o
-/usr/local/bin/gcc-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -o CMakeFiles/cmTC_59cd6.dir/testCCompiler.c.o   -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_59cd6
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_59cd6.dir/link.txt --verbose=1
-/usr/local/bin/gcc-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_59cd6.dir/testCCompiler.c.o  -o cmTC_59cd6 
+Run Build Command(s):/usr/bin/make cmTC_f4ac2/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_f4ac2.dir/build.make CMakeFiles/cmTC_f4ac2.dir/build
+Building C object CMakeFiles/cmTC_f4ac2.dir/testCCompiler.c.o
+/usr/local/bin/gcc-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -o CMakeFiles/cmTC_f4ac2.dir/testCCompiler.c.o   -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_f4ac2
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f4ac2.dir/link.txt --verbose=1
+/usr/local/bin/gcc-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_f4ac2.dir/testCCompiler.c.o  -o cmTC_f4ac2 
 
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_d209f/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_d209f.dir/build.make CMakeFiles/cmTC_d209f.dir/build
-Building C object CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o
-/usr/local/bin/gcc-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -v -Wl,-v -o CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o   -c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCCompilerABI.c
+Run Build Command(s):/usr/bin/make cmTC_dc28a/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_dc28a.dir/build.make CMakeFiles/cmTC_dc28a.dir/build
+Building C object CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o
+/usr/local/bin/gcc-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -v -Wl,-v -o CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o   -c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCCompilerABI.c
 Using built-in specs.
 COLLECT_GCC=/usr/local/bin/gcc-10
 Target: x86_64-apple-darwin20
@@ -470,8 +470,8 @@ Configured with: ../configure --build=x86_64-apple-darwin20 --prefix=/usr/local/
 Thread model: posix
 Supported LTO compression algorithms: zlib
 gcc version 10.2.0 (Homebrew GCC 10.2.0_2) 
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-mtune=core2'
- /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/cc1 -quiet -v -D__DYNAMIC__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCCompilerABI.c -fPIC -quiet -dumpbase CMakeCCompilerABI.c -mmacosx-version-min=11.0.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o -version -o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccslP1gt.s
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-mtune=core2'
+ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/cc1 -quiet -v -D__DYNAMIC__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCCompilerABI.c -fPIC -quiet -dumpbase CMakeCCompilerABI.c -mmacosx-version-min=11.0.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o -version -o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccFEcu4Q.s
 GNU C17 (Homebrew GCC 10.2.0_2) version 10.2.0 (x86_64-apple-darwin20)
 	compiled by GNU C version 10.2.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.23-GMP
 
@@ -491,19 +491,19 @@ GNU C17 (Homebrew GCC 10.2.0_2) version 10.2.0 (x86_64-apple-darwin20)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 7f03573292b1c4ad1e044e304c10d872
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0'  '-mtune=core2'
- as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=11.0 -o CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccslP1gt.s
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0'  '-mtune=core2'
+ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=11.0 -o CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccFEcu4Q.s
 Apple clang version 12.0.0 (clang-1200.0.32.29)
-Target: x86_64-apple-darwin20.2.0
+Target: x86_64-apple-darwin20.3.0
 Thread model: posix
 InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx11.0.0 -filetype obj -main-file-name ccslP1gt.s -target-cpu penryn -fdebug-compilation-dir /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp -dwarf-debug-producer "Apple clang version 12.0.0 (clang-1200.0.32.29)" -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccslP1gt.s
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx11.0.0 -filetype obj -main-file-name ccFEcu4Q.s -target-cpu penryn -fdebug-compilation-dir /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp -dwarf-debug-producer "Apple clang version 12.0.0 (clang-1200.0.32.29)" -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccFEcu4Q.s
 COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/
 LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../../
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0'  '-mtune=core2'
-Linking C executable cmTC_d209f
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d209f.dir/link.txt --verbose=1
-/usr/local/bin/gcc-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o  -o cmTC_d209f 
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0'  '-mtune=core2'
+Linking C executable cmTC_dc28a
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dc28a.dir/link.txt --verbose=1
+/usr/local/bin/gcc-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o  -o cmTC_dc28a 
 Using built-in specs.
 COLLECT_GCC=/usr/local/bin/gcc-10
 COLLECT_LTO_WRAPPER=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/lto-wrapper
@@ -514,10 +514,10 @@ Supported LTO compression algorithms: zlib
 gcc version 10.2.0 (Homebrew GCC 10.2.0_2) 
 COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/
 LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../../
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'cmTC_d209f' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-mtune=core2'
- /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_d209f -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'cmTC_dc28a' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-mtune=core2'
+ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_dc28a -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
 collect2 version 10.2.0
-/usr/bin/ld -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_d209f -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
+/usr/bin/ld -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_dc28a -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
 @(#)PROGRAM:ld  PROJECT:ld64-609.8
 BUILD 15:07:46 Dec 18 2020
 configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
@@ -552,9 +552,9 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_d209f/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_d209f.dir/build.make CMakeFiles/cmTC_d209f.dir/build]
-  ignore line: [Building C object CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/local/bin/gcc-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -v -Wl -v -o CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o   -c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCCompilerABI.c]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_dc28a/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_dc28a.dir/build.make CMakeFiles/cmTC_dc28a.dir/build]
+  ignore line: [Building C object CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/local/bin/gcc-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -v -Wl -v -o CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o   -c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCCompilerABI.c]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/local/bin/gcc-10]
   ignore line: [Target: x86_64-apple-darwin20]
@@ -562,8 +562,8 @@ Parsed C implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib]
   ignore line: [gcc version 10.2.0 (Homebrew GCC 10.2.0_2) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-mtune=core2']
-  ignore line: [ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/cc1 -quiet -v -D__DYNAMIC__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCCompilerABI.c -fPIC -quiet -dumpbase CMakeCCompilerABI.c -mmacosx-version-min=11.0.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o -version -o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccslP1gt.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-mtune=core2']
+  ignore line: [ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/cc1 -quiet -v -D__DYNAMIC__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCCompilerABI.c -fPIC -quiet -dumpbase CMakeCCompilerABI.c -mmacosx-version-min=11.0.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o -version -o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccFEcu4Q.s]
   ignore line: [GNU C17 (Homebrew GCC 10.2.0_2) version 10.2.0 (x86_64-apple-darwin20)]
   ignore line: [	compiled by GNU C version 10.2.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.23-GMP]
   ignore line: []
@@ -583,19 +583,19 @@ Parsed C implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 7f03573292b1c4ad1e044e304c10d872]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0'  '-mtune=core2']
-  ignore line: [ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=11.0 -o CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccslP1gt.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0'  '-mtune=core2']
+  ignore line: [ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=11.0 -o CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccFEcu4Q.s]
   ignore line: [Apple clang version 12.0.0 (clang-1200.0.32.29)]
-  ignore line: [Target: x86_64-apple-darwin20.2.0]
+  ignore line: [Target: x86_64-apple-darwin20.3.0]
   ignore line: [Thread model: posix]
   ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
-  ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx11.0.0 -filetype obj -main-file-name ccslP1gt.s -target-cpu penryn -fdebug-compilation-dir /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp -dwarf-debug-producer "Apple clang version 12.0.0 (clang-1200.0.32.29)" -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccslP1gt.s]
+  ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx11.0.0 -filetype obj -main-file-name ccFEcu4Q.s -target-cpu penryn -fdebug-compilation-dir /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp -dwarf-debug-producer "Apple clang version 12.0.0 (clang-1200.0.32.29)" -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//ccFEcu4Q.s]
   ignore line: [COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/]
   ignore line: [LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0'  '-mtune=core2']
-  ignore line: [Linking C executable cmTC_d209f]
-  ignore line: [/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d209f.dir/link.txt --verbose=1]
-  ignore line: [/usr/local/bin/gcc-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o  -o cmTC_d209f ]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o' '-c' '-mmacosx-version-min=11.0.0'  '-mtune=core2']
+  ignore line: [Linking C executable cmTC_dc28a]
+  ignore line: [/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dc28a.dir/link.txt --verbose=1]
+  ignore line: [/usr/local/bin/gcc-10   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o  -o cmTC_dc28a ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/local/bin/gcc-10]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/lto-wrapper]
@@ -606,8 +606,8 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 10.2.0 (Homebrew GCC 10.2.0_2) ]
   ignore line: [COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/]
   ignore line: [LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'cmTC_d209f' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-mtune=core2']
-  link line: [ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_d209f -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'cmTC_dc28a' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-mtune=core2']
+  link line: [ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_dc28a -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v]
     arg [/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2] ==> ignore
     arg [-dynamic] ==> ignore
     arg [-arch] ==> ignore
@@ -619,13 +619,13 @@ Parsed C implicit link information from above output:
     arg [-weak_reference_mismatches] ==> ignore
     arg [non-weak] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_d209f] ==> ignore
+    arg [cmTC_dc28a] ==> ignore
     arg [-L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0] ==> dir [/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0]
     arg [-L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../..] ==> dir [/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../..]
     arg [-search_paths_first] ==> ignore
     arg [-headerpad_max_install_names] ==> ignore
     arg [-v] ==> ignore
-    arg [CMakeFiles/cmTC_d209f.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_dc28a.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lSystem] ==> lib [System]
     arg [-lgcc_ext.10.5] ==> lib [gcc_ext.10.5]
     arg [-lgcc] ==> lib [gcc]
@@ -650,21 +650,21 @@ Parsed C implicit link information from above output:
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_fec02/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_fec02.dir/build.make CMakeFiles/cmTC_fec02.dir/build
-Building CXX object CMakeFiles/cmTC_fec02.dir/testCXXCompiler.cxx.o
-/usr/local/bin/g++-10    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -o CMakeFiles/cmTC_fec02.dir/testCXXCompiler.cxx.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_fec02
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fec02.dir/link.txt --verbose=1
-/usr/local/bin/g++-10    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_fec02.dir/testCXXCompiler.cxx.o  -o cmTC_fec02 
+Run Build Command(s):/usr/bin/make cmTC_aa03c/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_aa03c.dir/build.make CMakeFiles/cmTC_aa03c.dir/build
+Building CXX object CMakeFiles/cmTC_aa03c.dir/testCXXCompiler.cxx.o
+/usr/local/bin/g++-10    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -o CMakeFiles/cmTC_aa03c.dir/testCXXCompiler.cxx.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_aa03c
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aa03c.dir/link.txt --verbose=1
+/usr/local/bin/g++-10    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_aa03c.dir/testCXXCompiler.cxx.o  -o cmTC_aa03c 
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_db77b/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_db77b.dir/build.make CMakeFiles/cmTC_db77b.dir/build
-Building CXX object CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o
-/usr/local/bin/g++-10    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -v -Wl,-v -o CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp
+Run Build Command(s):/usr/bin/make cmTC_da72d/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_da72d.dir/build.make CMakeFiles/cmTC_da72d.dir/build
+Building CXX object CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o
+/usr/local/bin/g++-10    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -v -Wl,-v -o CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp
 Using built-in specs.
 COLLECT_GCC=/usr/local/bin/g++-10
 Target: x86_64-apple-darwin20
@@ -672,8 +672,8 @@ Configured with: ../configure --build=x86_64-apple-darwin20 --prefix=/usr/local/
 Thread model: posix
 Supported LTO compression algorithms: zlib
 gcc version 10.2.0 (Homebrew GCC 10.2.0_2) 
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-shared-libgcc' '-mtune=core2'
- /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/cc1plus -quiet -v -D__DYNAMIC__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -fPIC -quiet -dumpbase CMakeCXXCompilerABI.cpp -mmacosx-version-min=11.0.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o -version -o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cctP0k4w.s
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-shared-libgcc' '-mtune=core2'
+ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/cc1plus -quiet -v -D__DYNAMIC__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -fPIC -quiet -dumpbase CMakeCXXCompilerABI.cpp -mmacosx-version-min=11.0.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o -version -o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cceyGFQj.s
 GNU C++14 (Homebrew GCC 10.2.0_2) version 10.2.0 (x86_64-apple-darwin20)
 	compiled by GNU C version 10.2.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.23-GMP
 
@@ -696,19 +696,19 @@ GNU C++14 (Homebrew GCC 10.2.0_2) version 10.2.0 (x86_64-apple-darwin20)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 226b82c9217faee57636048830034c6a
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0'  '-shared-libgcc' '-mtune=core2'
- as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=11.0 -o CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cctP0k4w.s
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0'  '-shared-libgcc' '-mtune=core2'
+ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=11.0 -o CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cceyGFQj.s
 Apple clang version 12.0.0 (clang-1200.0.32.29)
-Target: x86_64-apple-darwin20.2.0
+Target: x86_64-apple-darwin20.3.0
 Thread model: posix
 InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx11.0.0 -filetype obj -main-file-name cctP0k4w.s -target-cpu penryn -fdebug-compilation-dir /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp -dwarf-debug-producer "Apple clang version 12.0.0 (clang-1200.0.32.29)" -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cctP0k4w.s
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx11.0.0 -filetype obj -main-file-name cceyGFQj.s -target-cpu penryn -fdebug-compilation-dir /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp -dwarf-debug-producer "Apple clang version 12.0.0 (clang-1200.0.32.29)" -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cceyGFQj.s
 COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/
 LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../../
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0'  '-shared-libgcc' '-mtune=core2'
-Linking CXX executable cmTC_db77b
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_db77b.dir/link.txt --verbose=1
-/usr/local/bin/g++-10    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_db77b 
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0'  '-shared-libgcc' '-mtune=core2'
+Linking CXX executable cmTC_da72d
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_da72d.dir/link.txt --verbose=1
+/usr/local/bin/g++-10    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_da72d 
 Using built-in specs.
 COLLECT_GCC=/usr/local/bin/g++-10
 COLLECT_LTO_WRAPPER=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/lto-wrapper
@@ -719,10 +719,10 @@ Supported LTO compression algorithms: zlib
 gcc version 10.2.0 (Homebrew GCC 10.2.0_2) 
 COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/
 LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../../
-COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'cmTC_db77b' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-shared-libgcc' '-mtune=core2'
- /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_db77b -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
+COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'cmTC_da72d' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-shared-libgcc' '-mtune=core2'
+ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_da72d -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
 collect2 version 10.2.0
-/usr/bin/ld -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_db77b -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
+/usr/bin/ld -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_da72d -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
 @(#)PROGRAM:ld  PROJECT:ld64-609.8
 BUILD 15:07:46 Dec 18 2020
 configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
@@ -763,9 +763,9 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_db77b/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_db77b.dir/build.make CMakeFiles/cmTC_db77b.dir/build]
-  ignore line: [Building CXX object CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/local/bin/g++-10    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -v -Wl -v -o CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_da72d/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_da72d.dir/build.make CMakeFiles/cmTC_da72d.dir/build]
+  ignore line: [Building CXX object CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/local/bin/g++-10    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk   -v -Wl -v -o CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/local/bin/g++-10]
   ignore line: [Target: x86_64-apple-darwin20]
@@ -773,8 +773,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib]
   ignore line: [gcc version 10.2.0 (Homebrew GCC 10.2.0_2) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-shared-libgcc' '-mtune=core2']
-  ignore line: [ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/cc1plus -quiet -v -D__DYNAMIC__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -fPIC -quiet -dumpbase CMakeCXXCompilerABI.cpp -mmacosx-version-min=11.0.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o -version -o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cctP0k4w.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-shared-libgcc' '-mtune=core2']
+  ignore line: [ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/cc1plus -quiet -v -D__DYNAMIC__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -fPIC -quiet -dumpbase CMakeCXXCompilerABI.cpp -mmacosx-version-min=11.0.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o -version -o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cceyGFQj.s]
   ignore line: [GNU C++14 (Homebrew GCC 10.2.0_2) version 10.2.0 (x86_64-apple-darwin20)]
   ignore line: [	compiled by GNU C version 10.2.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.23-GMP]
   ignore line: []
@@ -797,19 +797,19 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 226b82c9217faee57636048830034c6a]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0'  '-shared-libgcc' '-mtune=core2']
-  ignore line: [ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=11.0 -o CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cctP0k4w.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0'  '-shared-libgcc' '-mtune=core2']
+  ignore line: [ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=11.0 -o CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cceyGFQj.s]
   ignore line: [Apple clang version 12.0.0 (clang-1200.0.32.29)]
-  ignore line: [Target: x86_64-apple-darwin20.2.0]
+  ignore line: [Target: x86_64-apple-darwin20.3.0]
   ignore line: [Thread model: posix]
   ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
-  ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx11.0.0 -filetype obj -main-file-name cctP0k4w.s -target-cpu penryn -fdebug-compilation-dir /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp -dwarf-debug-producer "Apple clang version 12.0.0 (clang-1200.0.32.29)" -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cctP0k4w.s]
+  ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1as -triple x86_64-apple-macosx11.0.0 -filetype obj -main-file-name cceyGFQj.s -target-cpu penryn -fdebug-compilation-dir /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/CMakeTmp -dwarf-debug-producer "Apple clang version 12.0.0 (clang-1200.0.32.29)" -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o /var/folders/yj/fy8pjjn52bx4lcr3x40s_xqm0000gn/T//cceyGFQj.s]
   ignore line: [COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/]
   ignore line: [LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0'  '-shared-libgcc' '-mtune=core2']
-  ignore line: [Linking CXX executable cmTC_db77b]
-  ignore line: [/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_db77b.dir/link.txt --verbose=1]
-  ignore line: [/usr/local/bin/g++-10    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_db77b ]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mmacosx-version-min=11.0.0'  '-shared-libgcc' '-mtune=core2']
+  ignore line: [Linking CXX executable cmTC_da72d]
+  ignore line: [/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_da72d.dir/link.txt --verbose=1]
+  ignore line: [/usr/local/bin/g++-10    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_da72d ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/local/bin/g++-10]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/lto-wrapper]
@@ -820,8 +820,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 10.2.0 (Homebrew GCC 10.2.0_2) ]
   ignore line: [COMPILER_PATH=/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/]
   ignore line: [LIBRARY_PATH=/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/:/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'cmTC_db77b' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-shared-libgcc' '-mtune=core2']
-  link line: [ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_db77b -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v]
+  ignore line: [COLLECT_GCC_OPTIONS='-isysroot' '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk' '-v' '-o' 'cmTC_da72d' '-mmacosx-version-min=11.0.0' '-asm_macosx_version_min=11.0' '-shared-libgcc' '-mtune=core2']
+  link line: [ /usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2 -dynamic -arch x86_64 -macosx_version_min 11.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -weak_reference_mismatches non-weak -o cmTC_da72d -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../.. -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lSystem -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v]
     arg [/usr/local/Cellar/gcc/10.2.0_2/libexec/gcc/x86_64-apple-darwin20/10.2.0/collect2] ==> ignore
     arg [-dynamic] ==> ignore
     arg [-arch] ==> ignore
@@ -833,13 +833,13 @@ Parsed CXX implicit link information from above output:
     arg [-weak_reference_mismatches] ==> ignore
     arg [non-weak] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_db77b] ==> ignore
+    arg [cmTC_da72d] ==> ignore
     arg [-L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0] ==> dir [/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0]
     arg [-L/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../..] ==> dir [/usr/local/Cellar/gcc/10.2.0_2/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0/../../..]
     arg [-search_paths_first] ==> ignore
     arg [-headerpad_max_install_names] ==> ignore
     arg [-v] ==> ignore
-    arg [CMakeFiles/cmTC_db77b.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_da72d.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lSystem] ==> lib [System]
     arg [-lgcc_ext.10.5] ==> lib [gcc_ext.10.5]

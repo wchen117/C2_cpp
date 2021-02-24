@@ -33,22 +33,27 @@ void LoadCosts::InitVariableDependedQuantities(const VariablesPtr& x)
 }
 void LoadCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const
 {
-    Eigen::VectorXd x = ifopt::ConstraintSet::GetVariables()->GetComponent("load_variables")->GetValues();
-    auto load_var_ptr = ifopt::ConstraintSet::GetVariables()->GetComponent<LoadVariables>("load_variables");
-
-    size_t num_j = load_var_ptr->c_jn.size();
-    size_t counter = 0;
-    for (size_t idx=0; idx<num_j; idx++)
+    if (var_set == load_var_name)
     {
-        size_t num_n = load_var_ptr->c_jn.at(idx).size();
-        for (size_t jdx=0; jdx<num_n; jdx++)
+        Eigen::VectorXd x = ifopt::ConstraintSet::GetVariables()->GetComponent("load_variables")->GetValues();
+        auto load_var_ptr = ifopt::ConstraintSet::GetVariables()->GetComponent<LoadVariables>("load_variables");
+
+        size_t num_j = load_var_ptr->c_jn.size();
+        size_t counter = 0;
+        for (size_t idx=0; idx<num_j; idx++)
         {
-            auto tmp_c = load_var_ptr->c_jn.at(idx).at(jdx);
-            std::cout<<tmp_c<<std::endl;
-            jac.coeffRef(0, counter) = tmp_c;
-            counter++;
+            size_t num_n = load_var_ptr->c_jn.at(idx).size();
+            for (size_t jdx=0; jdx<num_n; jdx++)
+            {
+                auto tmp_c = load_var_ptr->c_jn.at(idx).at(jdx);
+                jac.coeffRef(0, counter) = tmp_c;
+                counter++;
+            }
         }
     }
+
+
+
 
 
 }

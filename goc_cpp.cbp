@@ -78,9 +78,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/include/variables/line_variables.hpp">
-			<Option target="test"/>
-		</Unit>
 		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/area.cpp">
 			<Option target="test"/>
 		</Unit>
@@ -121,6 +118,9 @@
 			<Option target="test"/>
 		</Unit>
 		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs.cpp">
 			<Option target="test"/>
 		</Unit>
 		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables.cpp">
