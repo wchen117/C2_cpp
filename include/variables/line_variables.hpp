@@ -20,11 +20,11 @@ private:
     // first dimension: Ns, second dimension: size of E_k
     // MatrixXd by default is column major
     // first, variables:
-
     Eigen::MatrixXd s_enk_plus;
     // x_ek_sw is in {0, 1}, for now we sent it to a real number between 0 and 1;
     Eigen::VectorXd x_ek_sw;
     // then some parameters and coefficients;
+
     Eigen::MatrixXd c_n_s;
     Eigen::MatrixXd r_e_over_eigen;
     Eigen::MatrixXd t_n_s_over;

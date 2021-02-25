@@ -21,9 +21,9 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
         ref_desbus = Eigen::VectorXd::Zero(size_E_k0);
         ref_oribus = Eigen::VectorXd::Zero(size_E_k0);
         x_ek_sw = Eigen::VectorXd::Zero(size_E_k0);
+        // read in local_input_ptr->
         x_e_sw0 = Eigen::VectorXd::Zero(size_E_k0);
 
-        size_t var_counter = 0;
 
         for (size_t idx=0; idx <local_input_ptr->E_k0.size(); idx++)
         {
@@ -34,6 +34,7 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
             std::tie (oribus_num, destbus_num, bus_i) = e_key;
             // there are extra '' around the bus_id string read from E_k0
             bus_i.erase(std::remove(bus_i.begin(), bus_i.end(), '\''), bus_i.end());
+
             for (auto n: local_input_ptr->new_data.sup.lines)
             {
                 if (oribus_num == n.origbus && destbus_num == n.destbus &&  bus_i==n.id)
@@ -45,6 +46,8 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                     ref_oribus(idx) = n.origbus;
                     ref_desbus(idx) = n.destbus;
                     c_e_sw(idx) = n.csw;
+                    x_e_sw0(idx) = local_input_ptr->x_e_sw_0[tmp_e];
+
 
                     for(size_t jdx=0; jdx<Ns; jdx++)
                     {
@@ -110,10 +113,22 @@ LineVariables::VecBound  LineVariables::GetBounds() const
 {
 
     VecBound line_bounds(GetRows());
-    for (size_t idx=0; idx<90; idx++)
+    Eigen::VectorXd upper_bound(GetRows());
+    Eigen::MatrixXd tmp_prod = (t_n_s_over.array() * r_e_over_eigen.array()).matrix();
+    Eigen::Map<const Eigen::VectorXd> tmp_flat_prod(tmp_prod.data(), tmp_prod.size());
+    Eigen::VectorXd x_ek_sw_bound(size_E_k0);
+    for (size_t idx=0; idx<size_E_k0; idx++)
     {
-        line_bounds.at(idx).upper_ = 1.0;
+        x_ek_sw_bound(idx) = 1.0;
+    }
+    upper_bound << tmp_flat_prod, x_ek_sw_bound;
+
+
+    for (size_t idx=0; idx<GetRows(); idx++)
+    {
+        line_bounds.at(idx).upper_ = upper_bound(idx);
         line_bounds.at(idx).lower_ = 0.0;
+
     }
 
     return line_bounds;

@@ -34,6 +34,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.dir/src/test.cpp.o"
   "CMakeFiles/test.dir/src/test_param.cpp.o"
   "CMakeFiles/test.dir/src/transformer.cpp.o"
+  "CMakeFiles/test.dir/src/transformer_variables.cpp.o"
   "CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o"
   "CMakeFiles/test.dir/src/wrapper_construct.cpp.o"
   "CMakeFiles/test.dir/src/zone.cpp.o"
