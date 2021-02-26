@@ -10,6 +10,7 @@
 #include <costs/bus_costs.hpp>
 #include <costs/load_costs.hpp>
 #include <costs/line_costs.hpp>
+#include <costs/transformer_costs.hpp>
 
 
 using namespace ifopt;
@@ -43,7 +44,10 @@ int main(int args, char** argv)
 
     // variables, constraints and objectives associated with transformers
     auto trans_vars_ptr = std::make_shared<TransformerVariables>(input_ptr, "trans_variables");
+    auto trans_cost_ptr = std::make_shared<TransformerCosts>("trans_variables");
     nlp.AddVariableSet(trans_vars_ptr);
+    nlp.AddCostSet(trans_cost_ptr);
+
     nlp.PrintCurrent();
 
 
@@ -52,7 +56,7 @@ int main(int args, char** argv)
 
     IpoptSolver ipopt;
     //ipopt.SetOption("linear_solver", "ma27");
-    ipopt.SetOption("jacobian_approximation", "finite-difference-values");
+    //popt.SetOption("jacobian_approximation", "finite-difference-values");
     ipopt.Solve(nlp);
 
 

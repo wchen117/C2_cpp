@@ -13,10 +13,11 @@ LineCosts::~LineCosts()
 double LineCosts::GetCost() const
 {
 
-    // second_term is a row vector
-    auto second_term = -(line_var_ptr->s_enk_plus.array() * line_var_ptr->c_n_s.array()).matrix().colwise().sum();
     // first_term is a column vector
     auto first_term = -(line_var_ptr->x_ek_sw - line_var_ptr->x_e_sw0).array().abs() * (line_var_ptr->c_e_sw.array());
+    // second_term is a row vector
+    auto second_term = -(line_var_ptr->s_enk_plus.array() * line_var_ptr->c_n_s.array()).matrix().colwise().sum();
+
 
     //
     double z_ek = 0.0;

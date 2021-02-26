@@ -39,6 +39,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/test.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test_param.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/test_param.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/transformer.cpp.o"
+  "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/transformer_costs.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/transformer_variables.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformerimpedancecorrectiontable.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/wrapper_construct.cpp.o"
