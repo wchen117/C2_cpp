@@ -43,7 +43,7 @@ int main(int args, char** argv)
 
     // variables, constraints and objectives associated with transformers
     auto trans_vars_ptr = std::make_shared<TransformerVariables>(input_ptr, "trans_variables");
-    //nlp.AddVariableSet(trans_vars_ptr);
+    nlp.AddVariableSet(trans_vars_ptr);
     nlp.PrintCurrent();
 
 

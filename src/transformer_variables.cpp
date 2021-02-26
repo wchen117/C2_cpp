@@ -61,6 +61,7 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
         if(size_F_k0 && Ns)
         {
             trans_var_len = size_F_k0 * Ns + size_F_k0;
+
             SetRows(trans_var_len);
         }
 
@@ -106,7 +107,24 @@ void TransformerVariables::SetVariables(const Eigen::VectorXd &x)
 
 TransformerVariables::VecBound  TransformerVariables::GetBounds() const
 {
-    VecBound trans_bounds(GetRows());
-    return trans_bounds;
+    VecBound line_bounds(GetRows());
+    Eigen::VectorXd upper_bound(GetRows());
+    Eigen::MatrixXd tmp_prod = (t_n_s_over.array() * s_f_over_eigen.array()).matrix();
+    Eigen::Map<const Eigen::VectorXd> tmp_flat_prod(tmp_prod.data(), tmp_prod.size());
+    Eigen::VectorXd x_ek_sw_bound(size_F_k0);
+    for (size_t idx=0; idx<size_F_k0; idx++)
+    {
+        x_ek_sw_bound(idx) = 1.0;
+    }
+    upper_bound << tmp_flat_prod, x_ek_sw_bound;
+
+    for (size_t idx=0; idx<GetRows(); idx++)
+    {
+        line_bounds.at(idx).upper_ = upper_bound(idx);
+        line_bounds.at(idx).lower_ = 0.0;
+
+    }
+
+    return line_bounds;
 
 }
