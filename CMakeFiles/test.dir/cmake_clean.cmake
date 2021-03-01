@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.dir/src/data.cpp.o"
   "CMakeFiles/test.dir/src/fixedshunt.cpp.o"
   "CMakeFiles/test.dir/src/generator.cpp.o"
+  "CMakeFiles/test.dir/src/generator_variables.cpp.o"
   "CMakeFiles/test.dir/src/generatoroutevent.cpp.o"
   "CMakeFiles/test.dir/src/line.cpp.o"
   "CMakeFiles/test.dir/src/line_costs.cpp.o"

@@ -27,7 +27,7 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
         ref_desbus = Eigen::VectorXd::Zero(size_F_k0);
         ref_oribus = Eigen::VectorXd::Zero(size_F_k0);
 
-        for (size_t idx=0; idx <local_input_ptr->F_k0.size(); idx++)
+        for (size_t idx=0; idx <size_F_k0; idx++)
         {
             int oribus_num;
             int destbus_num;

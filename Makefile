@@ -466,6 +466,33 @@ src/generator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator.cpp.s
 .PHONY : src/generator.cpp.s
 
+src/generator_variables.o: src/generator_variables.cpp.o
+
+.PHONY : src/generator_variables.o
+
+# target to build an object file
+src/generator_variables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator_variables.cpp.o
+.PHONY : src/generator_variables.cpp.o
+
+src/generator_variables.i: src/generator_variables.cpp.i
+
+.PHONY : src/generator_variables.i
+
+# target to preprocess a source file
+src/generator_variables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator_variables.cpp.i
+.PHONY : src/generator_variables.cpp.i
+
+src/generator_variables.s: src/generator_variables.cpp.s
+
+.PHONY : src/generator_variables.s
+
+# target to generate assembly for a file
+src/generator_variables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator_variables.cpp.s
+.PHONY : src/generator_variables.cpp.s
+
 src/generatoroutevent.o: src/generatoroutevent.cpp.o
 
 .PHONY : src/generatoroutevent.o
@@ -1267,6 +1294,9 @@ help:
 	@echo "... src/generator.o"
 	@echo "... src/generator.i"
 	@echo "... src/generator.s"
+	@echo "... src/generator_variables.o"
+	@echo "... src/generator_variables.i"
+	@echo "... src/generator_variables.s"
 	@echo "... src/generatoroutevent.o"
 	@echo "... src/generatoroutevent.i"
 	@echo "... src/generatoroutevent.s"
