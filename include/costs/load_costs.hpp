@@ -2,7 +2,7 @@
 #define __LOAD_COSTS_HPP__
 #include <ifopt/cost_term.h>
 #include <variables/load_variables.hpp>
-#include <variables/bus_variables.hpp>
+
 
 class LoadCosts : public ifopt::CostTerm {
 public:

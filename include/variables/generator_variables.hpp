@@ -16,27 +16,28 @@ public:
     void SetVariables(const Eigen::VectorXd &x) override;
     // define the bounds of variables
     VecBound GetBounds() const override;
-    friend class GeneratorCosts;
+    friend class GenCosts;
 
 private:
     std::shared_ptr<Wrapper_Construct> gen_ref_data;
     // first dimension: number of generators, second dimension: Ng (not the same for each generator)
     std::vector<std::vector<double> > p_gnk;
     // these three seems to be binary variables {0, 1}, for now we set them real variables between 0 and 1
-    std::vector<double> x_gk_on;
-    std::vector<double> x_gk_su;
-    std::vector<double> x_gk_sd;
+    Eigen::VectorXd x_gk_on;
+    Eigen::VectorXd x_gk_su;
+    Eigen::VectorXd x_gk_sd;
 
     // coefficients
     std::vector<std::vector<double> > c_gn;
     std::vector<std::vector<double> > p_gn_over;
-    std::vector<double> c_g_on;
-    std::vector<double> c_g_su;
-    std::vector<double> c_g_sd;
+    Eigen::VectorXd c_g_on;
+    Eigen::VectorXd c_g_su;
+    Eigen::VectorXd c_g_sd;
 
     // some useful size parameters
     size_t size_p_gnk = 0;
-    size_t size_G_k0;
+    size_t size_G_k0, gen_var_len;
+
 
 
 };

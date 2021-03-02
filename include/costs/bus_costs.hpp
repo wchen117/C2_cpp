@@ -14,6 +14,7 @@ public:
 private: 
     void FillJacobianBlock(std::string var_set, Jacobian& jac_block) const override;
     std::string bus_var_name;
+    std::shared_ptr<BusVariables> bus_vars_ptr;
 
 
     

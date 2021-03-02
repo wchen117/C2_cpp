@@ -12,6 +12,7 @@
 #include <costs/load_costs.hpp>
 #include <costs/line_costs.hpp>
 #include <costs/transformer_costs.hpp>
+#include <costs/gen_costs.hpp>
 
 
 
@@ -27,10 +28,10 @@ int main(int args, char** argv)
     Problem nlp;
 
     //variables, constraints and objectives associated with buses
-    //auto bus_variables_ptr = std::make_shared<BusVariables>(input_ptr, "bus_variables");
-    //auto bus_cost_ptr = std::make_shared<BusCosts>("bus_variables");
-    //nlp.AddVariableSet(bus_variables_ptr);
-    //nlp.AddCostSet(bus_cost_ptr);
+    auto bus_variables_ptr = std::make_shared<BusVariables>(input_ptr, "bus_variables");
+    auto bus_cost_ptr = std::make_shared<BusCosts>("bus_variables");
+    nlp.AddVariableSet(bus_variables_ptr);
+    nlp.AddCostSet(bus_cost_ptr);
 
     // variables, constraints and objectives assocaited with loads
     //auto load_vars_ptr = std::make_shared<LoadVariables>(input_ptr, "load_variables");
@@ -51,7 +52,10 @@ int main(int args, char** argv)
     //nlp.AddCostSet(trans_cost_ptr);
 
     // variables, constraints and objectives associated with generators
-    auto gen_vars_ptr = std::make_shared<GeneratorVariables>(input_ptr, "gen_variables");
+    //auto gen_vars_ptr = std::make_shared<GeneratorVariables>(input_ptr, "gen_variables");
+    //auto gen_cost_ptr = std::make_shared<GenCosts>("gen_variables");
+    //nlp.AddVariableSet(gen_vars_ptr);
+    //nlp.AddCostSet(gen_cost_ptr);
 
     nlp.PrintCurrent();
 

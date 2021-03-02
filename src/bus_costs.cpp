@@ -14,7 +14,7 @@ double BusCosts::GetCost () const
     std::vector<double> c_n_q;
     double z_ik;
 
-    auto bus_vars_ptr = ifopt::ConstraintSet::GetVariables()->GetComponent<BusVariables>(bus_var_name);
+    auto
     Eigen::VectorXd x = ifopt::ConstraintSet::GetVariables()->GetComponent(bus_var_name)->GetValues();
 
     for (auto pcblock: bus_vars_ptr->data_fvariable->new_data.sup.pcblocks)
@@ -61,6 +61,7 @@ double BusCosts::ComputeObj(const Eigen::MatrixXd& ikn_plus, const Eigen::Matrix
 }
 void BusCosts::InitVariableDependedQuantities (const VariablesPtr& x)
 {
+    bus_vars_ptr = ifopt::ConstraintSet::GetVariables()->GetComponent<BusVariables>(bus_var_name);
 }
 void BusCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const
 {

@@ -439,6 +439,33 @@ src/fixedshunt.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/fixedshunt.cpp.s
 .PHONY : src/fixedshunt.cpp.s
 
+src/gen_costs.o: src/gen_costs.cpp.o
+
+.PHONY : src/gen_costs.o
+
+# target to build an object file
+src/gen_costs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/gen_costs.cpp.o
+.PHONY : src/gen_costs.cpp.o
+
+src/gen_costs.i: src/gen_costs.cpp.i
+
+.PHONY : src/gen_costs.i
+
+# target to preprocess a source file
+src/gen_costs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/gen_costs.cpp.i
+.PHONY : src/gen_costs.cpp.i
+
+src/gen_costs.s: src/gen_costs.cpp.s
+
+.PHONY : src/gen_costs.s
+
+# target to generate assembly for a file
+src/gen_costs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/gen_costs.cpp.s
+.PHONY : src/gen_costs.cpp.s
+
 src/generator.o: src/generator.cpp.o
 
 .PHONY : src/generator.o
@@ -1291,6 +1318,9 @@ help:
 	@echo "... src/fixedshunt.o"
 	@echo "... src/fixedshunt.i"
 	@echo "... src/fixedshunt.s"
+	@echo "... src/gen_costs.o"
+	@echo "... src/gen_costs.i"
+	@echo "... src/gen_costs.s"
 	@echo "... src/generator.o"
 	@echo "... src/generator.i"
 	@echo "... src/generator.s"

@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables.cpp
-variables/generator_variables.hpp
--
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs.cpp
+costs/gen_costs.hpp
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/costs/gen_costs.hpp
 
 /Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include/rapidjson/allocators.h
 rapidjson.h
@@ -8094,6 +8094,14 @@ Eigen/Sparse
 bounds.h
 /usr/local/include/ifopt/bounds.h
 
+/usr/local/include/ifopt/constraint_set.h
+composite.h
+/usr/local/include/ifopt/composite.h
+
+/usr/local/include/ifopt/cost_term.h
+constraint_set.h
+/usr/local/include/ifopt/constraint_set.h
+
 /usr/local/include/ifopt/variable_set.h
 composite.h
 /usr/local/include/ifopt/composite.h
@@ -8135,6 +8143,12 @@ branchoutevent.hpp
 include/branchoutevent.hpp
 generatoroutevent.hpp
 include/generatoroutevent.hpp
+
+include/costs/gen_costs.hpp
+ifopt/cost_term.h
+-
+variables/generator_variables.hpp
+-
 
 include/data.hpp
 raw.hpp
