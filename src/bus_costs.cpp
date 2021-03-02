@@ -10,63 +10,38 @@ BusCosts::~BusCosts() {}
 
 double BusCosts::GetCost () const
 {
-    std::vector<double> c_n_p;
-    std::vector<double> c_n_q;
-    double z_ik;
-
-    auto
-    Eigen::VectorXd x = ifopt::ConstraintSet::GetVariables()->GetComponent(bus_var_name)->GetValues();
-
-    for (auto pcblock: bus_vars_ptr->data_fvariable->new_data.sup.pcblocks)
-    {
-        c_n_p.push_back(pcblock.c * bus_vars_ptr->data_fvariable->s_tilde_inverse);
-    }
-
-    for (auto qcblock: bus_vars_ptr->data_fvariable->new_data.sup.qcblocks)
-    {
-        c_n_q.push_back(qcblock.c * bus_vars_ptr->data_fvariable->s_tilde_inverse);
-    }
-    
-    auto tmp_np = ComputeObj(bus_vars_ptr->p_ikn_plus, bus_vars_ptr->p_ikn_minus, c_n_p);
-    auto tmp_nq = ComputeObj(bus_vars_ptr->q_ikn_plus, bus_vars_ptr->q_ikn_minus, c_n_q);
-
-    z_ik = - (tmp_np + tmp_nq);
-
-
+    double z_ik = 0.0;
+    auto tmp1 = bus_var_ptr->c_n_p.array() * (bus_var_ptr->p_ikn_plus.array() + bus_var_ptr->p_ikn_minus.array());
+    auto tmp2 = bus_var_ptr->c_n_q.array() * (bus_var_ptr->q_ikn_plus.array() + bus_var_ptr->q_ikn_minus.array());
+    z_ik = -1 * (tmp1 + tmp2).sum();
     return z_ik;
-}
-double BusCosts::ComputeObj(const Eigen::MatrixXd& ikn_plus, const Eigen::MatrixXd& ikn_minus, const std::vector<double>& c_n) const
-{
-    size_t size_ikn = ikn_plus.size();
-    double tmp_np;
-    Eigen::MatrixXd tmp = (ikn_plus + ikn_minus);
-    size_t num_rows = c_n.size();
-    size_t num_columns = size_ikn/num_rows;
-    
-    if (num_rows == 1)
-    {
-        tmp_np = c_n.at(0) * tmp.sum();
-    }
-    else
-    {
-        Eigen::Map<Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic>, Eigen::RowMajor> tmp_ikn(tmp.data(), num_rows, num_columns);
-        for (size_t idx=0; idx<num_rows; idx++)
-        {
-            auto tmp_row = (c_n.at(idx) * tmp_ikn.row(idx));
-            //std::cout<<tmp_row.colwise().sum()<<std::endl;;
-        }
-    }
-    return tmp_np;
+
+
 
 }
+
 void BusCosts::InitVariableDependedQuantities (const VariablesPtr& x)
 {
-    bus_vars_ptr = ifopt::ConstraintSet::GetVariables()->GetComponent<BusVariables>(bus_var_name);
+    bus_var_ptr = x->GetComponent<BusVariables>(bus_var_name);
+
 }
 void BusCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const
 {
-    Eigen::VectorXd x = ifopt::ConstraintSet::GetVariables()->GetComponent("bus_variables")->GetValues();
-    auto load_var_ptr = ifopt::ConstraintSet::GetVariables()->GetComponent<BusVariables>("bus_variables");
+    if (var_set == bus_var_name)
+    {
+
+        Eigen::VectorXd tmp_coeff(bus_var_ptr->bus_var_len);
+        Eigen::Map<const Eigen::VectorXd> flat_c_n_p (bus_var_ptr->c_n_p.data(), bus_var_ptr->c_n_p.size());
+        Eigen::Map<const Eigen::VectorXd> flat_c_n_q (bus_var_ptr->c_n_q.data(), bus_var_ptr->c_n_q.size());
+        tmp_coeff << -1 * flat_c_n_p, -1 * flat_c_n_p, -1 * flat_c_n_q, -1 * flat_c_n_q;
+        for (size_t idx=0; idx<tmp_coeff.size(); idx++)
+        {
+            jac.coeffRef(0, idx) = tmp_coeff(idx);
+        }
+
+
+    }
+
 
 
 }

@@ -3,108 +3,109 @@
 BusVariables::BusVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name) : VariableSet(-1, name) 
 {    
     // use kSpecifyLater since we need to figure out how many variables in bus_variables
-    data_fvariable = data_ptr;
+    bus_ref_data = data_ptr;
     // number of rows (variables must be set within the constructor)
     // here we need to figure out the number of variables/rows in this variable set
     // and set their initial values
-    size_p_ikn = data_fvariable->Is * data_fvariable->Np;
-    size_q_ikn = data_fvariable->Is * data_fvariable->Nq;
+
+    Np = bus_ref_data->Np;
+    Nq = bus_ref_data->Nq;
+    Is = bus_ref_data->Is;
+    size_p_ikn = Np * Is;
+    size_q_ikn = Nq * Is;
     // bus variables consist of p_ikn+, p_ikn-, q_ikn+, q_ikn-, z_ik (?)
-    size_bus_variables = 2 * size_q_ikn + 2 * size_p_ikn;
-    SetRows(size_bus_variables);
+    bus_var_len = 2 * size_q_ikn + 2 * size_p_ikn;
+    SetRows(bus_var_len);
     // initlize them to 0?
     if (size_p_ikn && size_q_ikn)
     {
-        p_ikn_plus = VectorXd::Zero(size_p_ikn);
-        p_ikn_minus = VectorXd::Zero(size_p_ikn);
-        q_ikn_plus = VectorXd::Zero(size_q_ikn);
-        q_ikn_minus = VectorXd::Zero(size_q_ikn);
-
+        // will just initialize them to zero i guess
+        p_ikn_plus = Eigen::MatrixXd::Zero(Np, Is);
+        p_ikn_minus = Eigen::MatrixXd::Zero(Np, Is);
+        q_ikn_plus = Eigen::MatrixXd::Zero(Nq, Is);
+        q_ikn_minus = Eigen::MatrixXd::Zero(Nq, Is);
+        c_n_p = Eigen::MatrixXd::Zero(Np, Is);
+        c_n_q = Eigen::MatrixXd::Zero(Nq, Is);
+        p_n_over = Eigen::MatrixXd::Zero(Np, Is);
+        q_n_over = Eigen::MatrixXd::Zero(Nq, Is);
     }
+
+    for (size_t idx=0; idx<Np; idx++)
+    {
+        for (size_t jdx=0; jdx<Is; jdx++)
+        {
+            c_n_p(idx, jdx) = bus_ref_data->new_data.sup.pcblocks.at(idx).c * bus_ref_data->s_tilde_inverse;
+            p_n_over(idx, jdx) = bus_ref_data->new_data.sup.pcblocks.at(idx).pmax* bus_ref_data->s_tilde;
+        }
+    }
+
+    for (size_t idx=0; idx<Nq; idx++)
+    {
+        for(size_t jdx=0; jdx<Is; jdx++)
+        {
+            c_n_q(idx, jdx) =  bus_ref_data->new_data.sup.qcblocks.at(idx).c * bus_ref_data->s_tilde_inverse;
+            q_n_over(idx, jdx) = bus_ref_data->new_data.sup.qcblocks.at(idx).qmax * bus_ref_data->s_tilde;
+        }
+    }
+
+
+
 }
 
 BusVariables::~BusVariables(){}
 
-VectorXd BusVariables::GetValues() const 
+Eigen::VectorXd BusVariables::GetValues() const
 {
-    //
-    if  (GetRows())
-    {
-       VectorXd tmp_x(GetRows());
-       tmp_x.segment(0,size_p_ikn) = p_ikn_plus;
-       tmp_x.segment(size_p_ikn,size_p_ikn) = p_ikn_minus;
-       tmp_x.segment(2*size_p_ikn, size_q_ikn) = q_ikn_plus;
-       tmp_x.segment(2*size_p_ikn+size_q_ikn, size_q_ikn) = q_ikn_minus;
-       return tmp_x;
-    }
-    else 
-    {
-       exit(0);
-    }
+  if (GetRows())
+  {
+      Eigen::VectorXd tmp_x(GetRows());
+      // flatten the *_ikn_* matrix col by col
+      Eigen::Map<const Eigen::VectorXd> flat_p_ikn_plus (p_ikn_plus.data(), p_ikn_plus.size());
+      Eigen::Map<const Eigen::VectorXd> flat_p_ikn_minus (p_ikn_minus.data(), p_ikn_minus.size());
+      Eigen::Map<const Eigen::VectorXd> flat_q_ikn_plus (q_ikn_plus.data(), q_ikn_plus.size());
+      Eigen::Map<const Eigen::VectorXd> flat_q_ikn_minus (q_ikn_minus.data(), q_ikn_minus.size());
+      tmp_x << flat_p_ikn_plus, flat_p_ikn_minus, flat_q_ikn_plus, flat_q_ikn_minus;
+      return tmp_x;
+  }
+  else
+  {
+      exit(0);
+  }
     
 }
 
 void BusVariables::SetVariables(const VectorXd &x) 
 {
-    // I guess?
-    p_ikn_plus = x.segment(0, size_p_ikn);
-    p_ikn_minus = x.segment(size_p_ikn, size_p_ikn);
-    q_ikn_plus = x.segment(2*size_p_ikn, size_q_ikn);
-    q_ikn_minus = x.segment(2*size_p_ikn+size_q_ikn, size_q_ikn);
+    auto flat_p_ikn_plus = x.segment(0, size_p_ikn);
+    auto flat_p_ikn_minus = x.segment(size_p_ikn, size_p_ikn);
+    auto flat_q_ikn_plus = x.segment(2*size_p_ikn, size_q_ikn);
+    auto flat_q_ikn_minus = x.segment(2*size_p_ikn+size_q_ikn, size_q_ikn);
+    // unflatten the vector to matrix
+    Eigen::Map<const Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::ColMajor>> tmp_p_ikn_plus(flat_p_ikn_plus.data(), Np, Is);
+    Eigen::Map<const Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::ColMajor>> tmp_p_ikn_minus(flat_p_ikn_minus.data(), Np, Is);
+    Eigen::Map<const Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::ColMajor>> tmp_q_ikn_plus(flat_q_ikn_plus.data(), Np, Is);
+    Eigen::Map<const Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::ColMajor>> tmp_q_ikn_minus(flat_q_ikn_minus.data(), Np, Is);
+    p_ikn_plus = tmp_p_ikn_plus;
+    p_ikn_minus = tmp_p_ikn_minus;
+    q_ikn_plus = tmp_q_ikn_plus;
+    q_ikn_minus = tmp_q_ikn_minus;
+
 }
 
 
 BusVariables::VecBound BusVariables::GetBounds() const
 {
-    
+
     VecBound bus_bounds(GetRows());
-    Eigen::VectorXd bus_upper_bound(GetRows());
-    std::vector<double> p_n_over_list;
-    std::vector<double> q_n_over_list;
-    for (auto pcblock: data_fvariable->new_data.sup.pcblocks)
+    // in variable sets, GetRows return number of variables
+    Eigen::VectorXd upper_bound(GetRows());
+    Eigen::Map<const Eigen::VectorXd> flat_p_n_over (p_n_over.data(), p_n_over.size());
+    Eigen::Map<const Eigen::VectorXd> flat_q_n_over (q_n_over.data(), q_n_over.size());
+    upper_bound << flat_p_n_over, flat_p_n_over, flat_q_n_over, flat_q_n_over;
+    for (size_t idx=0; idx<GetRows(); idx++)
     {
-        // page 48, "pmax": p_n_over * s_tilde_inverse
-        p_n_over_list.push_back(pcblock.pmax * data_fvariable->s_tilde);
-        //std::cout<<pcblock.pmax * data_fvariable->s_tilde_inverse<<std::endl;
-    }
-    for (auto qcblock: data_fvariable->new_data.sup.qcblocks)
-    {
-        // page 48, "qmax": q_n_over * s_tilde_inverse
-        q_n_over_list.push_back(qcblock.qmax * data_fvariable->s_tilde);
-    }
-    
-    size_t block_size_p = size_p_ikn/p_n_over_list.size();
-    size_t block_size_q = size_q_ikn/q_n_over_list.size();
-
-    Eigen::VectorXd p_ikn_upper_bound(size_p_ikn);
-    Eigen::VectorXd q_ikn_upper_bound(size_q_ikn);
-
-
-    for (size_t idx=0; idx<size_p_ikn; idx++)
-    {
-        size_t tmp = idx/(size_p_ikn/p_n_over_list.size());
-        p_ikn_upper_bound(idx) = p_n_over_list.at(tmp);
-    }
-    
-    for (size_t idx=0; idx<size_q_ikn; idx++)
-    {
-        size_t tmp = idx/(size_q_ikn/q_n_over_list.size());
-        q_ikn_upper_bound(idx) = q_n_over_list.at(tmp);
-    }
-    
-    // segment(i, n): a slice starting from i, for a length of n 
-    bus_upper_bound.segment(0,  size_p_ikn) = p_ikn_upper_bound;
-    bus_upper_bound.segment(size_p_ikn, size_p_ikn) = p_ikn_upper_bound;
-    bus_upper_bound.segment(2*size_p_ikn, size_q_ikn) = q_ikn_upper_bound;
-    bus_upper_bound.segment(2*size_p_ikn+size_q_ikn, size_q_ikn) = q_ikn_upper_bound;
-    
-    // for p_ikn and q_ikn their lower bound is always zero
-
-    
-    for(size_t idx=0; idx<bus_bounds.size(); idx++)
-    {
+        bus_bounds.at(idx).upper_ = upper_bound(idx);
         bus_bounds.at(idx).lower_ = 0.0;
-        bus_bounds.at(idx).upper_ = bus_upper_bound(idx);
     }
 
     return bus_bounds;

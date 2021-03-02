@@ -28,9 +28,9 @@ int main(int args, char** argv)
     Problem nlp;
 
     //variables, constraints and objectives associated with buses
-    auto bus_variables_ptr = std::make_shared<BusVariables>(input_ptr, "bus_variables");
+    auto bus_var_ptr = std::make_shared<BusVariables>(input_ptr, "bus_variables");
     auto bus_cost_ptr = std::make_shared<BusCosts>("bus_variables");
-    nlp.AddVariableSet(bus_variables_ptr);
+    nlp.AddVariableSet(bus_var_ptr);
     nlp.AddCostSet(bus_cost_ptr);
 
     // variables, constraints and objectives assocaited with loads

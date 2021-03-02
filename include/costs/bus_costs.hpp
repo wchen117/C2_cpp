@@ -9,12 +9,10 @@ public:
     ~BusCosts();
     double GetCost () const override;
     void InitVariableDependedQuantities(const VariablesPtr& x) override;
-    double ComputeObj(const Eigen::MatrixXd& p_ikn_plus, const Eigen::MatrixXd& p_ikn_minus, \
-                          const std::vector<double>& c_n) const;
 private: 
     void FillJacobianBlock(std::string var_set, Jacobian& jac_block) const override;
     std::string bus_var_name;
-    std::shared_ptr<BusVariables> bus_vars_ptr;
+    std::shared_ptr<BusVariables> bus_var_ptr;
 
 
     
