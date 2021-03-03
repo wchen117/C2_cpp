@@ -1,20 +1,22 @@
 #ifndef __BUSCONSTRAINTS_HPP__
 #define __BUSCONSTRAINTS_HPP__
 #include <ifopt/constraint_set.h>
-#include <wrapper_construct.hpp>
-
-using Eigen::VectorXd;
+#include <variables/bus_variables.hpp>
 
 class BusConstraints : public ifopt::ConstraintSet {
 public:
-    BusConstraints(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name);
+    BusConstraints(const std::string& name);
     ~BusConstraints();
     VectorXd GetValues() const override;
-    // define the bounds of variables
     VecBound GetBounds() const override;
-private: 
+private:
     void FillJacobianBlock(std::string var_set, Jacobian& jac_block) const override;
-    std::shared_ptr<Wrapper_Construct> data_fvariable;
+    void InitVariableDependedQuantities(const VariablesPtr& x) override;
+    std::string bus_var_name;
+    std::shared_ptr<BusVariables> bus_var_ptr;
+
+
 
 };
+
 #endif

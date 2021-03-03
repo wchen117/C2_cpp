@@ -935,6 +935,7 @@ CMakeFiles/test.dir/src/bus_constraints.cpp.o
  /usr/local/include/ifopt/bounds.h
  /usr/local/include/ifopt/composite.h
  /usr/local/include/ifopt/constraint_set.h
+ /usr/local/include/ifopt/variable_set.h
  include/area.hpp
  include/branchoutevent.hpp
  include/bus.hpp
@@ -963,6 +964,7 @@ CMakeFiles/test.dir/src/bus_constraints.cpp.o
  include/transformer.hpp
  include/transformerimpedancecorrectiontable.hpp
  include/typedefinition.hpp
+ include/variables/bus_variables.hpp
  include/wrapper_construct.hpp
  include/zone.hpp
 CMakeFiles/test.dir/src/bus_costs.cpp.o
@@ -10898,6 +10900,7 @@ CMakeFiles/test.dir/src/test.cpp.o
  include/bus.hpp
  include/caseidentification.hpp
  include/con.hpp
+ include/constraints/bus_constraints.hpp
  include/contingency.hpp
  include/costs/bus_costs.hpp
  include/costs/gen_costs.hpp

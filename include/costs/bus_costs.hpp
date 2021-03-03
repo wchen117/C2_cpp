@@ -8,8 +8,8 @@ public:
     BusCosts(const std::string& name);
     ~BusCosts();
     double GetCost () const override;
+private:
     void InitVariableDependedQuantities(const VariablesPtr& x) override;
-private: 
     void FillJacobianBlock(std::string var_set, Jacobian& jac_block) const override;
     std::string bus_var_name;
     std::shared_ptr<BusVariables> bus_var_ptr;

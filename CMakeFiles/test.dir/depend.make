@@ -934,6 +934,7 @@ CMakeFiles/test.dir/src/bus_constraints.cpp.o: /usr/local/include/boost/version.
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: /usr/local/include/ifopt/bounds.h
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: /usr/local/include/ifopt/composite.h
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: /usr/local/include/ifopt/constraint_set.h
+CMakeFiles/test.dir/src/bus_constraints.cpp.o: /usr/local/include/ifopt/variable_set.h
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/area.hpp
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/branchoutevent.hpp
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/bus.hpp
@@ -962,6 +963,7 @@ CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/switchedshunt.hpp
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/transformer.hpp
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/transformerimpedancecorrectiontable.hpp
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/typedefinition.hpp
+CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/variables/bus_variables.hpp
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/wrapper_construct.hpp
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/zone.hpp
 
@@ -10897,6 +10899,7 @@ CMakeFiles/test.dir/src/test.cpp.o: include/branchoutevent.hpp
 CMakeFiles/test.dir/src/test.cpp.o: include/bus.hpp
 CMakeFiles/test.dir/src/test.cpp.o: include/caseidentification.hpp
 CMakeFiles/test.dir/src/test.cpp.o: include/con.hpp
+CMakeFiles/test.dir/src/test.cpp.o: include/constraints/bus_constraints.hpp
 CMakeFiles/test.dir/src/test.cpp.o: include/contingency.hpp
 CMakeFiles/test.dir/src/test.cpp.o: include/costs/bus_costs.hpp
 CMakeFiles/test.dir/src/test.cpp.o: include/costs/gen_costs.hpp

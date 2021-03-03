@@ -10,10 +10,14 @@ BusCosts::~BusCosts() {}
 
 double BusCosts::GetCost () const
 {
+    //Eigen::VectorXd x = ifopt::ConstraintSet::GetVariables()->GetComponent(bus_var_name)->GetValues();
+    //auto bus_var_ptr = ifopt::ConstraintSet::GetVariables()->GetComponent<BusVariables>(bus_var_name);
     double z_ik = 0.0;
+    // transform MatrixXd or VectorXd object to their array representation for element wise calcs, no additional cost
     auto tmp1 = bus_var_ptr->c_n_p.array() * (bus_var_ptr->p_ikn_plus.array() + bus_var_ptr->p_ikn_minus.array());
     auto tmp2 = bus_var_ptr->c_n_q.array() * (bus_var_ptr->q_ikn_plus.array() + bus_var_ptr->q_ikn_minus.array());
     z_ik = -1 * (tmp1 + tmp2).sum();
+
     return z_ik;
 
 
@@ -27,6 +31,7 @@ void BusCosts::InitVariableDependedQuantities (const VariablesPtr& x)
 }
 void BusCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const
 {
+    //auto bus_var_ptr = ifopt::ConstraintSet::GetVariables()->GetComponent<BusVariables>(bus_var_name);
     if (var_set == bus_var_name)
     {
 

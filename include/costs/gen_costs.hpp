@@ -12,8 +12,9 @@ public:
     GenCosts(const std::string& name);
     ~GenCosts();
     double GetCost () const override;
-    void InitVariableDependedQuantities(const VariablesPtr& x) override;
+
 private:
+    void InitVariableDependedQuantities(const VariablesPtr& x) override;
     void FillJacobianBlock(std::string var_set, Jacobian& jac_block) const override;
     std::string gen_var_name;
     std::shared_ptr<GeneratorVariables> gen_var_ptr;

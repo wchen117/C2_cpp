@@ -2,11 +2,14 @@
 #include <iostream>
 #include <ifopt/problem.h>
 #include <ifopt/ipopt_solver.h>
+
 #include <variables/bus_variables.hpp>
 #include <variables/load_variables.hpp>
 #include <variables/line_variables.hpp>
 #include <variables/transformer_variables.hpp>
 #include <variables/generator_variables.hpp>
+
+#include <constraints/bus_constraints.hpp>
 
 #include <costs/bus_costs.hpp>
 #include <costs/load_costs.hpp>
@@ -29,7 +32,9 @@ int main(int args, char** argv)
 
     //variables, constraints and objectives associated with buses
     auto bus_var_ptr = std::make_shared<BusVariables>(input_ptr, "bus_variables");
+    auto bus_cons_ptr = std::make_shared<BusConstraints>("bus_variables");
     auto bus_cost_ptr = std::make_shared<BusCosts>("bus_variables");
+
     nlp.AddVariableSet(bus_var_ptr);
     nlp.AddCostSet(bus_cost_ptr);
 
@@ -67,6 +72,8 @@ int main(int args, char** argv)
     //ipopt.SetOption("linear_solver", "ma27");
     ipopt.SetOption("jacobian_approximation", "finite-difference-values");
     ipopt.Solve(nlp);
+    //Eigen::VectorXd x = nlp.GetOptVariables()->GetValues();
+    //std::cout << x.transpose() << std::endl;
 
 
     return 0;

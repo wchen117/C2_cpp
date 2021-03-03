@@ -1,27 +1,31 @@
 #include <constraints/bus_constraints.hpp>
-
-BusConstraints::BusConstraints(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name) : ConstraintSet(1, name) 
+BusConstraints::BusConstraints(const std::string& name) : ifopt::ConstraintSet(-1, name + "_constraint")
 {
-    data_fvariable = data_ptr;
-
+    bus_var_name = name;
+    SetRows(10);
 }
 
 BusConstraints::~BusConstraints(){}
 
-VectorXd BusConstraints::GetValues() const 
+Eigen::VectorXd BusConstraints::GetValues() const
 {
-    VectorXd g(GetRows());
-    VectorXd x = GetVariables()->GetComponent("bus_variables")->GetValues();
-    g(0) = std::pow(x(0),2) + x(1);
+    Eigen::VectorXd g(GetRows());
     return g;
+
 }
-BusConstraints::VecBound BusConstraints::GetBounds() const 
+
+BusConstraints::VecBound BusConstraints::GetBounds() const
 {
     VecBound b(GetRows());
-    b.at(0) = ifopt::Bounds(1.0, 1.0);
     return b;
 
 }
-void BusConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block) const {}
 
+void BusConstraints::InitVariableDependedQuantities(const VariablesPtr& x)
+{
+    bus_var_ptr = x->GetComponent<BusVariables>(bus_var_name);
+}
+void BusConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block) const
+{
 
+}

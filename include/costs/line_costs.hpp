@@ -12,8 +12,9 @@ public:
     LineCosts(const std::string& name);
     ~LineCosts();
     double GetCost () const override;
-    void InitVariableDependedQuantities(const VariablesPtr& x) override;
+
 private:
+    void InitVariableDependedQuantities(const VariablesPtr& x) override;
     void FillJacobianBlock(std::string var_set, Jacobian& jac_block) const override;
     std::string line_var_name;
     std::shared_ptr<LineVariables> line_var_ptr;
