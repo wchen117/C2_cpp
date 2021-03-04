@@ -58,7 +58,7 @@ void Wrapper_Construct::construct_bus()
         vover.push_back(bus_it->second.nvhi);
         vunder.push_back(bus_it->second.nvlo);
         v_ct_over.push_back(bus_it->second.evhi);
-        v_ct_over.push_back(bus_it->second.evlo);
+        v_ct_under.push_back(bus_it->second.evlo);
     }
 }
 void Wrapper_Construct::construct_load()

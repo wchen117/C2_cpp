@@ -38,7 +38,8 @@ void BusCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const
         Eigen::VectorXd tmp_coeff(bus_var_ptr->bus_var_len);
         Eigen::Map<const Eigen::VectorXd> flat_c_n_p (bus_var_ptr->c_n_p.data(), bus_var_ptr->c_n_p.size());
         Eigen::Map<const Eigen::VectorXd> flat_c_n_q (bus_var_ptr->c_n_q.data(), bus_var_ptr->c_n_q.size());
-        tmp_coeff << -1 * flat_c_n_p, -1 * flat_c_n_p, -1 * flat_c_n_q, -1 * flat_c_n_q;
+        Eigen::VectorXd zero_vec = Eigen::VectorXd::Zero(bus_var_ptr->Is);
+        tmp_coeff << -1 * flat_c_n_p, -1 * flat_c_n_p, -1 * flat_c_n_q, -1 * flat_c_n_q, zero_vec;
         for (size_t idx=0; idx<tmp_coeff.size(); idx++)
         {
             jac.coeffRef(0, idx) = tmp_coeff(idx);

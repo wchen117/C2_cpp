@@ -36,6 +36,7 @@ int main(int args, char** argv)
     auto bus_cost_ptr = std::make_shared<BusCosts>("bus_variables");
 
     nlp.AddVariableSet(bus_var_ptr);
+    //nlp.AddConstraintSet(bus_cons_ptr);
     nlp.AddCostSet(bus_cost_ptr);
 
     // variables, constraints and objectives assocaited with loads
@@ -72,8 +73,8 @@ int main(int args, char** argv)
     //ipopt.SetOption("linear_solver", "ma27");
     ipopt.SetOption("jacobian_approximation", "finite-difference-values");
     ipopt.Solve(nlp);
-    //Eigen::VectorXd x = nlp.GetOptVariables()->GetValues();
-    //std::cout << x.transpose() << std::endl;
+    Eigen::VectorXd x = nlp.GetOptVariables()->GetValues();
+    std::cout << x.transpose() << std::endl;
 
 
     return 0;
