@@ -16,6 +16,7 @@ public:
     VecBound GetBounds() const override;
     friend class BusCosts;
     friend class BusConstraints;
+
 private:
     std::shared_ptr<Wrapper_Construct> bus_ref_data;
     // p_ikn_* and q_ikn_* are col major matrix of size Np (Nq) * Is

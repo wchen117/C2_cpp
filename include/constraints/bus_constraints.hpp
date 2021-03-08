@@ -14,6 +14,7 @@ private:
     void InitVariableDependedQuantities(const VariablesPtr& x) override;
     std::string bus_var_name;
     std::shared_ptr<BusVariables> bus_var_ptr;
+    size_t bus_cons_size;
 
 
 
