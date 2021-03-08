@@ -25,37 +25,29 @@ Eigen::VectorXd BusConstraints::GetValues() const
 
     // g in both G_i and G_k
     std::vector<int> g_Gi_Gk;
-    for (auto gi: bus_var_ptr->bus_ref_data->G_i)
-    {
-
-        for (auto gk: bus_var_ptr->bus_ref_data->G_k)
-        {
-            int gk_key_int;
-            std::string gk_key_string;
-            std::tie(gk_key_int, gk_key_string) = gk;
-            if (gi.second == gk_key_int)
-            {
-                g_Gi_Gk.push_back(gk_key_int);
-            }
-
-        }
-
-    }
-
+    FindCommon(bus_var_ptr->bus_ref_data->G_i,bus_var_ptr->bus_ref_data->G_k,  g_Gi_Gk);
+    // j in both J_i and J_k
     std::vector<int> j_Ji_Jk;
-    for (auto ji: bus_var_ptr->bus_ref_data->J_i)
+    FindCommon(bus_var_ptr->bus_ref_data->J_i, bus_var_ptr->bus_ref_data->J_k, j_Ji_Jk);
+    // e in both E_i_o and E_k
+    std::vector<int> e_Eio_Ek;
+    FindCommon(bus_var_ptr->bus_ref_data->E_i_o, bus_var_ptr->bus_ref_data->E_k, e_Eio_Ek);
+    // e in both E_i_d and E_k;
+    std::vector<int> e_Eid_Ek;
+    FindCommon(bus_var_ptr->bus_ref_data->E_i_d, bus_var_ptr->bus_ref_data->E_k, e_Eid_Ek);
+    // f in both f_i_o and F_k;
+    std::vector<int> f_Fio_Fk;
+    FindCommon(bus_var_ptr->bus_ref_data->F_i_o, bus_var_ptr->bus_ref_data->F_k, f_Fio_Fk);
+    // f in both F_i_d and F_k;
+    std::vector<int> f_Fid_Fk;
+    FindCommon(bus_var_ptr->bus_ref_data->F_i_d, bus_var_ptr->bus_ref_data->F_k, f_Fid_Fk);
+
+    //std::cout<<eq35.transpose()<<std::endl;
+    for(auto f: f_Fid_Fk)
     {
-        for (auto jk: bus_var_ptr->bus_ref_data->J_k)
-        {
-            int jk_key_int;
-            int jk_key_string;
-            //std::tie(jk_key_int, jk_key_string) = jk;
-            if (ji.second == jk_key_int)
-            {
-                //j_Ji_Jk.push_back(jk_key_int);
-            }
-        }
+        std::cout<<f<<std::endl;
     }
+
 
 
 
@@ -66,6 +58,11 @@ Eigen::VectorXd BusConstraints::GetValues() const
     return bus_cons;
 
 }
+
+
+
+
+
 
 BusConstraints::VecBound BusConstraints::GetBounds() const
 {

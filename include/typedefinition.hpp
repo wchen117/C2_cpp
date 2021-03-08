@@ -31,6 +31,7 @@ typedef std::unordered_map<key_ii, std::string, boost::hash<key_ii> > UMAP_TUPLE
 typedef std::unordered_map<key_is, int, boost::hash<key_is> > UMAP_TUPLE_is_INT;
 typedef std::unordered_map<key_is, double, boost::hash<key_is> > UMAP_TUPLE_is_DOUBLE;
 typedef std::unordered_map<key_is, std::string, boost::hash<key_is> > UMAP_TUPLE_is_STRING;
+
 // unordered map using tuple(int, int, string) as hash key
 typedef std::unordered_map<key_iis, int, boost::hash<key_iis> > UMAP_TUPLE_iis_INT;
 typedef std::unordered_map<key_iis, double, boost::hash<key_iis> > UMAP_TUPLE_iis_DOUBLE;
