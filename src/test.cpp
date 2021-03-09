@@ -26,13 +26,13 @@ int main(int args, char** argv)
 
     // smart pointer pointing to model parameters derived from raw input
     auto input_ptr = std::make_shared<Wrapper_Construct>();
-    
+
     // we first look at k = 0 case
     Problem nlp;
 
     //variables, constraints and objectives associated with buses
     auto bus_var_ptr = std::make_shared<BusVariables>(input_ptr, "bus_variables");
-    auto bus_cons_ptr = std::make_shared<BusConstraints>("bus_variables");
+    auto bus_cons_ptr = std::make_shared<BusConstraints>(input_ptr, "bus_variables");
     auto bus_cost_ptr = std::make_shared<BusCosts>("bus_variables");
 
     nlp.AddVariableSet(bus_var_ptr);

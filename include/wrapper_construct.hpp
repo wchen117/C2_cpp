@@ -59,8 +59,9 @@ class Wrapper_Construct
     UMAP_TUPLE_is_DOUBLE p_l;
     UMAP_TUPLE_is_DOUBLE q_l;
     // arrays holding fixed shunt data
-    std::vector<double> g_fs;
-    std::vector<double> b_fs;
+    // these two needs to be unorderd_map with bus i as key
+    std::unordered_map<int, double> g_fs;
+    std::unordered_map<int, double> b_fs;
     // vectors and maps holding generator data
     std::vector<key_is> G;
     std::vector<key_is> G_k;

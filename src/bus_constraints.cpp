@@ -1,16 +1,19 @@
 #include <constraints/bus_constraints.hpp>
-BusConstraints::BusConstraints(const std::string& name) : ifopt::ConstraintSet(-1, name + "_constraint")
+BusConstraints::BusConstraints(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name) : ifopt::ConstraintSet(-1, name + "_constraint")
 {
     bus_var_name = name;
+    //auto tmp_ptr = ifopt::ConstraintSet::GetVariables()->GetComponent<BusVariables>(bus_var_name);
     // from eqn 33 - 38, it seems that we should have 6 * Is constraints for bus
-    //bus_cons_size = 6 * bus_var_ptr->bus_ref_data->Is;
-    SetRows(96);
+    auto bus_con_size = 6 * data_ptr->Is;
+
+    SetRows(bus_con_size);
 }
 
 BusConstraints::~BusConstraints(){}
 
 Eigen::VectorXd BusConstraints::GetValues() const
 {
+
     // this GetRows() should return the number of constraints we set in the constructor
     Eigen::VectorXd bus_cons(GetRows());
     // these four has lower bound 0 and upper bound +inf
@@ -23,6 +26,7 @@ Eigen::VectorXd BusConstraints::GetValues() const
     Eigen::VectorXd eq35 = Eigen::VectorXd::Zero(bus_var_ptr->Is);
     Eigen::VectorXd eq38 = Eigen::VectorXd::Zero(bus_var_ptr->Is);
 
+    // for some of these vectors they could be empty
     // g in both G_i and G_k
     std::vector<int> g_Gi_Gk;
     FindCommon(bus_var_ptr->bus_ref_data->G_i,bus_var_ptr->bus_ref_data->G_k,  g_Gi_Gk);
@@ -42,11 +46,7 @@ Eigen::VectorXd BusConstraints::GetValues() const
     std::vector<int> f_Fid_Fk;
     FindCommon(bus_var_ptr->bus_ref_data->F_i_d, bus_var_ptr->bus_ref_data->F_k, f_Fid_Fk);
 
-    //std::cout<<eq35.transpose()<<std::endl;
-    for(auto f: f_Fid_Fk)
-    {
-        std::cout<<f<<std::endl;
-    }
+    //std::cout<<"IS = "<<bus_var_ptr->Is<<std::endl;
 
 
 
@@ -55,6 +55,8 @@ Eigen::VectorXd BusConstraints::GetValues() const
 
 
 
+
+    bus_cons = Eigen::VectorXd::Zero(GetRows());
     return bus_cons;
 
 }
@@ -66,8 +68,14 @@ Eigen::VectorXd BusConstraints::GetValues() const
 
 BusConstraints::VecBound BusConstraints::GetBounds() const
 {
-    VecBound bus_con_bounds(GetRows());
-    return bus_con_bounds;
+ VecBound bus_con_bounds(GetRows());
+
+ for (size_t idx=0; idx<bus_con_bounds.size(); idx++)
+ {
+     bus_con_bounds.at(idx).upper_ = 1.0;
+     bus_con_bounds.at(idx).lower_ = 0.0;
+ }
+ return bus_con_bounds;
 
 }
 

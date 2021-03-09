@@ -2,10 +2,11 @@
 #define __BUSCONSTRAINTS_HPP__
 #include <ifopt/constraint_set.h>
 #include <variables/bus_variables.hpp>
+#include <wrapper_construct.hpp>
 
 class BusConstraints : public ifopt::ConstraintSet {
 public:
-    BusConstraints(const std::string& name);
+    BusConstraints(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name);
     ~BusConstraints();
     VectorXd GetValues() const override;
     VecBound GetBounds() const override;
@@ -16,7 +17,8 @@ private:
     void InitVariableDependedQuantities(const VariablesPtr& x) override;
     std::string bus_var_name;
     std::shared_ptr<BusVariables> bus_var_ptr;
-    size_t bus_cons_size;
+
+    //int bus_con_size=0;
     // a template function to find common item between unordered map with key=T and vector with item T
     template<typename T>
     void FindCommon(const std::unordered_map<T, int, boost::hash<T> >& umap_list, \
