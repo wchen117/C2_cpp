@@ -46,7 +46,6 @@ Eigen::VectorXd BusConstraints::GetValues() const
     std::vector<int> f_Fid_Fk;
     FindCommon(bus_var_ptr->bus_ref_data->F_i_d, bus_var_ptr->bus_ref_data->F_k, f_Fid_Fk);
 
-    //std::cout<<"IS = "<<bus_var_ptr->Is<<std::endl;
 
 
 
