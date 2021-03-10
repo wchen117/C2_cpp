@@ -46,6 +46,19 @@ Eigen::VectorXd BusConstraints::GetValues() const
     std::vector<int> f_Fid_Fk;
     FindCommon(bus_var_ptr->bus_ref_data->F_i_d, bus_var_ptr->bus_ref_data->F_k, f_Fid_Fk);
 
+    // now we start to sum the left hand side of eq 35
+
+    /**
+    double sum_p_gk;
+    if(!g_Gi_Gk.empty())
+    {
+        for (auto gik: g_Gi_Gk)
+        {
+
+        }
+    }
+     **/
+
 
 
 

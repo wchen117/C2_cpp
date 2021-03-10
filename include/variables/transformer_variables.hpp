@@ -15,6 +15,7 @@ public:
     // define the bounds of variables
     VecBound GetBounds() const override;
     friend class TransformerCosts;
+    friend class BusConstraints;
 private:
     // first variables, s_fnk_plus is colmajor matrix,
     // first dimension: Ns, second dimension: size of F_k

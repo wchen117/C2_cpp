@@ -31,6 +31,11 @@ BusVariables::BusVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, co
         v_i_under = Eigen::VectorXd::Zero(Is);
     }
 
+    // since the bounds on c_n_*, *_n_over are not i index related
+    // we define them to be sorted by i
+    // same for the variables *_ikn_*, we define their cols are indexed by i in ascending order from left to right
+    // just be careful when dealing with unordered_map in wrapper_construct
+    // always use sorted_bus_ID (see below) to reference their value
     for (size_t jdx=0; jdx<Is; jdx++)
     {
         for (size_t idx=0; idx<Np; idx++)
@@ -49,15 +54,22 @@ BusVariables::BusVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, co
         }
     }
 
-    for (size_t idx=0; idx<Is; idx++)
+    // deep copy it
+    sorted_bus_ID = bus_ref_data->I;
+    // and then sort it in ascending order
+    std::sort(sorted_bus_ID.begin(), sorted_bus_ID.end());
+
+    for (size_t idx=0; idx<sorted_bus_ID.size(); idx++)
     {
         // initialize v_ik
         v_ik(idx) = 0.0;
-        // the sequence of v_ik, v_i_over, v_i_under are in sync with i in I,
-        // but they are not neccessarily sorted from smallest to largest i values
-        // all other quantities, c_n_*, *_n_over, *_ikn_* doesn't have sequence on i
-        v_i_over(idx) = bus_ref_data->vover.at(idx);
-        v_i_under(idx) = bus_ref_data->vunder.at(idx);
+        // now i index in v_i_over and v_i_under are sorted in ascending order
+        // vover and vunder are unordered_map, that's why we are using i index in sorted_I
+        // to reference their value, so that v_i_over and v_i_under are sorted with respect to
+        // I. We are doing this just for consistency.
+
+        v_i_over(idx) = bus_ref_data->vover[sorted_bus_ID.at(idx)];
+        v_i_under(idx) = bus_ref_data->vunder[sorted_bus_ID.at(idx)];
     }
 
     // bus variables consist of p_ikn+, p_ikn-, q_ikn+, q_ikn-, and v_ik

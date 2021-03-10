@@ -32,5 +32,7 @@ private:
     Eigen::VectorXd v_ik;
     // and its associated bound v_over and v_under, for K \neq k0, this is v_
     Eigen::VectorXd v_i_over, v_i_under;
+    // and we just want a local copy of I (bus id) that is sorted for sanity
+    std::vector<int> sorted_bus_ID;
 };
 #endif

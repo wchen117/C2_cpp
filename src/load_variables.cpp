@@ -10,6 +10,10 @@ LoadVariables::LoadVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
         p_jn_over.resize(size_jk);
         c_jn.resize(size_jk);
         p_jkn.resize(size_jk);
+        t_jk.resize(size_jk);
+        t_j_over.resize(size_jk);
+        t_j_under.resize(size_jk);
+        load_j_id.resize(size_jk);
         size_t p_jn_counter = 0;
         
         
@@ -17,6 +21,9 @@ LoadVariables::LoadVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
         {
             int j_num;
             std::string bus_i;
+            // if written this J_k is not ordered at all
+            // we use a vector load_j_id to keep track the ordering of
+            // j in p_jkn, c_jn, p_jn_over, t_jk, t_j_over, t_j_under
             std::tie (j_num, bus_i) = load_ref_data->J_k.at(idx);
             
             for (auto load : load_ref_data->new_data.sup.loads)
@@ -27,6 +34,10 @@ LoadVariables::LoadVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                     p_jn_over.at(idx).resize(cblock_size);
                     c_jn.at(idx).resize(cblock_size);
                     p_jkn.at(idx).resize(cblock_size);
+                    t_jk.at(idx) = 0.0;
+                    t_j_over.at(idx) = load.tmax;
+                    t_j_under.at(idx) = load.tmin;
+                    load_j_id.at(idx) = j_num;
                     for (size_t jdx=0; jdx<cblock_size; jdx++)
                     {
                         //p_jn_over.at(idx).at(jdx) = load.cblocks.at(jdx).pmax;

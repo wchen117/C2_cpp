@@ -965,6 +965,8 @@ CMakeFiles/test.dir/src/bus_constraints.cpp.o
  include/transformerimpedancecorrectiontable.hpp
  include/typedefinition.hpp
  include/variables/bus_variables.hpp
+ include/variables/generator_variables.hpp
+ include/variables/load_variables.hpp
  include/wrapper_construct.hpp
  include/zone.hpp
 CMakeFiles/test.dir/src/bus_costs.cpp.o

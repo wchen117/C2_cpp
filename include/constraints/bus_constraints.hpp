@@ -2,6 +2,8 @@
 #define __BUSCONSTRAINTS_HPP__
 #include <ifopt/constraint_set.h>
 #include <variables/bus_variables.hpp>
+#include <variables/generator_variables.hpp>
+#include <variables/load_variables.hpp>
 #include <wrapper_construct.hpp>
 
 class BusConstraints : public ifopt::ConstraintSet {
@@ -17,6 +19,8 @@ private:
     void InitVariableDependedQuantities(const VariablesPtr& x) override;
     std::string bus_var_name;
     std::shared_ptr<BusVariables> bus_var_ptr;
+    std::shared_ptr<GeneratorVariables> gen_var_ptr;
+    std::shared_ptr<LoadVariables> load_var_ptr;
 
     //int bus_con_size=0;
     // a template function to find common item between unordered map with key=T and vector with item T

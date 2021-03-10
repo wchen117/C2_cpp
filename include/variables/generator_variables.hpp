@@ -17,6 +17,7 @@ public:
     // define the bounds of variables
     VecBound GetBounds() const override;
     friend class GenCosts;
+    friend class BusConstraints;
 
 private:
     std::shared_ptr<Wrapper_Construct> gen_ref_data;

@@ -964,6 +964,8 @@ CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/transformer.hpp
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/transformerimpedancecorrectiontable.hpp
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/typedefinition.hpp
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/variables/bus_variables.hpp
+CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/variables/generator_variables.hpp
+CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/variables/load_variables.hpp
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/wrapper_construct.hpp
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: include/zone.hpp
 

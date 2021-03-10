@@ -53,12 +53,12 @@ void Wrapper_Construct::construct_bus()
     for (bus_it=new_data.raw.buses.begin(); bus_it!=new_data.raw.buses.end(); bus_it++)
     {
         I.push_back(bus_it->second.i);
-        v_0.push_back(bus_it->second.vm);
-        theta_0.push_back(bus_it->second.va * PI / 180.0);
-        vover.push_back(bus_it->second.nvhi);
-        vunder.push_back(bus_it->second.nvlo);
-        v_ct_over.push_back(bus_it->second.evhi);
-        v_ct_under.push_back(bus_it->second.evlo);
+        v_0.insert(std::make_pair(bus_it->second.i, bus_it->second.vm));
+        theta_0.insert(std::make_pair(bus_it->second.i, bus_it->second.va * PI / 180.0));
+        vover.insert(std::make_pair(bus_it->second.i, bus_it->second.nvhi));
+        vunder.insert(std::make_pair(bus_it->second.i, bus_it->second.nvlo));
+        v_ct_over.insert(std::make_pair(bus_it->second.i, bus_it->second.evhi));
+        v_ct_under.insert(std::make_pair(bus_it->second.i, bus_it->second.evlo));
     }
 }
 void Wrapper_Construct::construct_load()

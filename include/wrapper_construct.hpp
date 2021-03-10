@@ -43,12 +43,12 @@ class Wrapper_Construct
     std::vector<size_t> N;
     // vectors holding bus data
     std::vector<int> I;
-    std::vector<double> v_0;
-    std::vector<double> theta_0;
-    std::vector<double> vover;
-    std::vector<double> vunder;
-    std::vector<double> v_ct_over;
-    std::vector<double> v_ct_under;
+    std::unordered_map<int, double> v_0;
+    std::unordered_map<int, double> theta_0;
+    std::unordered_map<int, double> vover;
+    std::unordered_map<int, double> vunder;
+    std::unordered_map<int, double> v_ct_over;
+    std::unordered_map<int, double> v_ct_under;
     // vectors and maps holding load data
     std::vector<key_is> J;
     std::vector<key_is> J_k0;

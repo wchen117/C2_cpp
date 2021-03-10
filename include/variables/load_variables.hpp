@@ -13,6 +13,7 @@ public:
     // define the bounds of variables
     VecBound GetBounds() const override;
     friend class LoadCosts;
+    friend class BusConstraints;
     //friend class LineCosts;
 private:
     std::shared_ptr<Wrapper_Construct> load_ref_data;
@@ -20,6 +21,12 @@ private:
     std::vector<std::vector<double> > p_jn_over;
     std::vector<std::vector<double> > c_jn;
     std::vector<std::vector<double> > p_jkn;
+    std::vector<double> t_jk;
+    std::vector<double> t_j_over;
+    std::vector<double> t_j_under;
+    // a local copy of j index in J_k and all the other variable above
+    std::vector<double> load_j_id;
+
 
 };
 #endif
