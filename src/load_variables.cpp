@@ -53,8 +53,10 @@ LoadVariables::LoadVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
             }
             
         }
-        SetRows(p_jn_counter);
-        assert(GetRows() == p_jn_counter);
+        p_jkn_size = p_jn_counter;
+        t_jk_size = t_jk.size();
+        SetRows(p_jkn_size+t_jk_size);
+        //assert(GetRows() == p_jn_counter);
     }
     else {
         std::cout<<"J_k vector is empty, quit!"<<std::endl;
@@ -71,18 +73,23 @@ Eigen::VectorXd LoadVariables::GetValues() const
     if  (GetRows())
     {
         Eigen::VectorXd tmp_x(GetRows());
+        Eigen::VectorXd flat_p_jkn(p_jkn_size);
+        Eigen::Map<const Eigen::VectorXd> flat_t_jk(t_jk.data(), t_jk.size());
         size_t num_j = p_jkn.size();
         size_t counter = 0;
         for(size_t idx=0; idx<num_j; idx++)
         {
             for (size_t jdx=0; jdx<p_jkn.at(idx).size(); jdx++)
             {
-                tmp_x(counter) = p_jkn.at(idx).at(jdx);
+                flat_p_jkn(counter) = p_jkn.at(idx).at(jdx);
                 //std::cout<<"In GetValues,    tmp_x.at("<<counter<<") is mapped to p_jkn ("<<idx<<", "<<jdx<<")"<<std::endl;
                 counter++;
             }
-        }
 
+        }
+        tmp_x << flat_p_jkn, flat_t_jk;
+
+        // and we are going to add t_jk to variables
         return tmp_x;
     }
     else
@@ -94,36 +101,67 @@ Eigen::VectorXd LoadVariables::GetValues() const
 void LoadVariables::SetVariables(const Eigen::VectorXd &x) 
 {
     size_t counter=0;
+    auto flat_p_jkn = x.segment(0, p_jkn_size);
+    auto flat_t_jk = x.segment(p_jkn_size, t_jk_size);
+
 
     for (size_t idx=0; idx<p_jkn.size(); idx++)
     {
 
         for (size_t jdx=0; jdx<p_jkn.at(idx).size(); jdx++)
         {
-            p_jkn.at(idx).at(jdx) = x(counter);
+            p_jkn.at(idx).at(jdx) = flat_p_jkn(counter);
             //std::cout<<"In SetVariables, tmp_x.at("<<counter<<") is mapped to p_jkn ("<<idx<<", "<<jdx<<")"<<std::endl;
             counter++;
         }
     }
+
+    for (size_t idx=0; idx< t_jk_size; idx++)
+    {
+        t_jk.at(idx) = flat_t_jk(idx);
+
+    }
+
+
     
 
 }
 LoadVariables::VecBound LoadVariables::GetBounds() const 
 {
     VecBound load_bounds(GetRows());
+    Eigen::VectorXd upper_bound(GetRows());
+    Eigen::VectorXd lower_bound(GetRows());
+    Eigen::VectorXd p_jkn_lower = Eigen::VectorXd::Zero(p_jkn_size);
+    Eigen::VectorXd p_jkn_upper(p_jkn_size);
+    Eigen::Map<const Eigen::VectorXd> t_jk_lower(t_j_under.data(), t_j_under.size());
+    Eigen::Map<const Eigen::VectorXd> t_jk_upper(t_j_over.data(), t_j_over.size());
+
     int counter = 0;
     for(auto each_pj : p_jn_over)
-        {
+    {
             size_t each_pj_size = each_pj.size();
 
             for (auto each_p_jn : each_pj)
             {
-                load_bounds.at(counter).upper_ = each_p_jn;
-                load_bounds.at(counter).lower_ = 0.0;
+                p_jkn_upper(counter) = each_p_jn;
+                p_jkn_lower(counter) = 0.0;
                 counter++;
                 //std::cout<<"upper bounds are: "<<each_p_jn<<std::endl;
             }
-        }
+    }
+
+    upper_bound << p_jkn_upper, t_jk_upper;
+    lower_bound << p_jkn_lower, t_jk_lower;
+
+
+    for (size_t idx=0; idx<load_bounds.size(); idx++)
+    {
+        load_bounds.at(idx).upper_ = upper_bound(idx);
+        load_bounds.at(idx).lower_ = lower_bound(idx);
+    }
+
+
+
     return load_bounds;
 
 }

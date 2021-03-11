@@ -26,6 +26,8 @@ private:
     std::vector<double> t_j_under;
     // a local copy of j index in J_k and all the other variable above
     std::vector<double> load_j_id;
+    // some some parameters
+    size_t p_jkn_size, t_jk_size;
 
 
 };
