@@ -37,6 +37,7 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
 
             for (auto n: local_input_ptr->new_data.sup.lines)
             {
+                // this is equal to comparing two tuples e_key and (n.origbus, n.destbus, n.id), I think?
                 if (oribus_num == n.origbus && destbus_num == n.destbus &&  bus_i==n.id)
                 {
                     key_iis tmp_e;

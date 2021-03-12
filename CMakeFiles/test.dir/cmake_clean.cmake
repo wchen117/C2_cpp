@@ -18,6 +18,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.dir/src/line_costs.cpp.o"
   "CMakeFiles/test.dir/src/line_variables.cpp.o"
   "CMakeFiles/test.dir/src/load.cpp.o"
+  "CMakeFiles/test.dir/src/load_constraints.cpp.o"
   "CMakeFiles/test.dir/src/load_costs.cpp.o"
   "CMakeFiles/test.dir/src/load_variables.cpp.o"
   "CMakeFiles/test.dir/src/nontransformerbranch.cpp.o"
