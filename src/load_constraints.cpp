@@ -21,9 +21,7 @@ Eigen::VectorXd LoadConstraints::GetValues() const
     // by order of load_j_id here as well
     Eigen::VectorXd load_cons(GetRows());
     Eigen::VectorXd p_jk(load_var_ptr->p_jkn_size);
-    Eigen::VectorXd eq_40_cons(load_var_ptr->t_jk_size);
-    Eigen::VectorXd eq_42_cons(load_var_ptr->t_jk_size);
-    Eigen::VectorXd eq_43_cons(load_var_ptr->t_jk_size);
+
     assert(load_var_ptr->load_j_id.size() == load_var_ptr->t_jk_size);
 
 
@@ -31,7 +29,7 @@ Eigen::VectorXd LoadConstraints::GetValues() const
     {
         for(size_t jdx=0; jdx<load_var_ptr->p_jkn.at(idx).size(); idx++)
         {
-            p_jk.at(idx) += load_var_ptr->p_jkn.at(idx).at(jdx);
+            p_jk(idx) += load_var_ptr->p_jkn.at(idx).at(jdx);
         }
     }
 
@@ -47,11 +45,14 @@ LoadConstraints::VecBound LoadConstraints::GetBounds() const
     Eigen::VectorXd upper_bound(GetRows());
     Eigen::VectorXd lower_bound(GetRows());
 
+    Eigen::VectorXd eq_40_cons(load_var_ptr->t_jk_size);
+    Eigen::VectorXd eq_42_cons(load_var_ptr->t_jk_size);
+    Eigen::VectorXd eq_43_cons(load_var_ptr->t_jk_size);
     for (size_t idx=0; idx<load_var_ptr->load_j_id.size(); idx++)
     {
         auto j = load_var_ptr->load_j_id.at(idx);
         auto p_j_0 = load_var_ptr->load_ref_data->p_l[j];
-        eq_40_cons(idx) = p_j_0 * load_var_ptr->t_jk(idx);
+        eq_40_cons(idx) = p_j_0 * load_var_ptr->t_jk.at(idx);
 
     }
 
