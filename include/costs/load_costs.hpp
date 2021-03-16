@@ -14,6 +14,7 @@ private:
     void InitVariableDependedQuantities(const VariablesPtr& x) override;
     void FillJacobianBlock(std::string var_set, Jacobian& jac_block) const override;
     std::string load_var_name;
+    std::shared_ptr<LoadVariables> load_var_ptr;
 
 };
 

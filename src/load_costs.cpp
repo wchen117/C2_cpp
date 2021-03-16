@@ -11,7 +11,7 @@ LoadCosts::~LoadCosts() {}
 double LoadCosts::GetCost() const
 {
     //Eigen::VectorXd x = ifopt::ConstraintSet::GetVariables()->GetComponent("load_variables")->GetValues();
-    auto load_var_ptr = ifopt::ConstraintSet::GetVariables()->GetComponent<LoadVariables>(load_var_name);
+    //auto load_var_ptr = ifopt::ConstraintSet::GetVariables()->GetComponent<LoadVariables>(load_var_name);
     double z_jk=0;
     size_t num_j = load_var_ptr->p_jkn.size();
     for (size_t idx=0; idx<num_j; idx++)
@@ -28,7 +28,7 @@ double LoadCosts::GetCost() const
 }
 void LoadCosts::InitVariableDependedQuantities(const VariablesPtr& x)
 {
-    //load_var_ptr = x->GetComponent<LoadVariables>(load_var_name);
+    load_var_ptr = x->GetComponent<LoadVariables>(load_var_name);
 
 }
 void LoadCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const

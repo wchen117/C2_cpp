@@ -148,9 +148,9 @@ LoadVariables::VecBound LoadVariables::GetBounds() const
     Eigen::VectorXd p_jkn_upper(p_jkn_size);
     // so.... it doesn't seem like q_jk has bound at this point, we will code its equality constraint in load_constraints
     Eigen::VectorXd q_jk_upper = Eigen::VectorXd::Zero(t_jk_size);
-    q_jk_upper.setConstant(1.0e5);
+    q_jk_upper.setConstant(1.0e20);
     Eigen::VectorXd q_jk_lower = Eigen::VectorXd::Zero(t_jk_size);
-    q_jk_lower.setConstant(-1.0e5);
+    q_jk_lower.setConstant(-1.0e20);
     Eigen::Map<const Eigen::VectorXd> t_jk_lower(t_j_under.data(), t_j_under.size());
     Eigen::Map<const Eigen::VectorXd> t_jk_upper(t_j_over.data(), t_j_over.size());
 
