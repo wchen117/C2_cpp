@@ -574,6 +574,33 @@ src/line.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line.cpp.s
 .PHONY : src/line.cpp.s
 
+src/line_constraints.o: src/line_constraints.cpp.o
+
+.PHONY : src/line_constraints.o
+
+# target to build an object file
+src/line_constraints.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_constraints.cpp.o
+.PHONY : src/line_constraints.cpp.o
+
+src/line_constraints.i: src/line_constraints.cpp.i
+
+.PHONY : src/line_constraints.i
+
+# target to preprocess a source file
+src/line_constraints.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_constraints.cpp.i
+.PHONY : src/line_constraints.cpp.i
+
+src/line_constraints.s: src/line_constraints.cpp.s
+
+.PHONY : src/line_constraints.s
+
+# target to generate assembly for a file
+src/line_constraints.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_constraints.cpp.s
+.PHONY : src/line_constraints.cpp.s
+
 src/line_costs.o: src/line_costs.cpp.o
 
 .PHONY : src/line_costs.o
@@ -1360,6 +1387,9 @@ help:
 	@echo "... src/line.o"
 	@echo "... src/line.i"
 	@echo "... src/line.s"
+	@echo "... src/line_constraints.o"
+	@echo "... src/line_constraints.i"
+	@echo "... src/line_constraints.s"
 	@echo "... src/line_costs.o"
 	@echo "... src/line_costs.i"
 	@echo "... src/line_costs.s"

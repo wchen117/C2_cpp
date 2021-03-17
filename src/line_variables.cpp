@@ -20,8 +20,8 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
         c_e_sw = Eigen::VectorXd::Zero(size_E_k0);
         ref_desbus = Eigen::VectorXd::Zero(size_E_k0);
         ref_oribus = Eigen::VectorXd::Zero(size_E_k0);
+        // so what's their initial value
         x_ek_sw = Eigen::VectorXd::Zero(size_E_k0);
-        // read in local_input_ptr->
         x_e_sw0 = Eigen::VectorXd::Zero(size_E_k0);
 
 
@@ -47,7 +47,11 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                     ref_oribus(idx) = n.origbus;
                     ref_desbus(idx) = n.destbus;
                     c_e_sw(idx) = n.csw;
+                    // eq(153)
                     x_e_sw0(idx) = local_input_ptr->x_e_sw_0[tmp_e];
+                    x_ek_sw(idx) = local_input_ptr->x_e_sw_0[tmp_e];
+                    // eq(49, E_sw?)
+
 
 
                     for(size_t jdx=0; jdx<Ns; jdx++)

@@ -30,7 +30,6 @@ Eigen::VectorXd LoadConstraints::GetValues() const
     {
         for(size_t jdx=0; jdx<load_var_ptr->p_jkn.at(idx).size(); jdx++)
         {
-            //std::cout<<idx<<" "<<jdx<<std::endl;
             p_jk(idx) += load_var_ptr->p_jkn.at(idx).at(jdx);
         }
     }

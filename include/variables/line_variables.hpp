@@ -16,6 +16,8 @@ public:
     // define the bounds of variables
     VecBound GetBounds() const override;
     friend class LineCosts;
+    friend class LineConstraints;
+
 private:
     // first dimension: Ns, second dimension: size of E_k
     // MatrixXd by default is column major
