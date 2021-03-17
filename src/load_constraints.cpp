@@ -9,7 +9,6 @@ LoadConstraints::LoadConstraints(const std::shared_ptr<Wrapper_Construct> data_p
 
     // so here the constraints are
     SetRows(3*data_ptr->J_k.size());
-    //SetRows(2*data_ptr->J_k.size() + );
 
 }
 
@@ -63,9 +62,6 @@ LoadConstraints::VecBound LoadConstraints::GetBounds() const
 
         eq_40_cons(idx) = p_j_0 * load_var_ptr->t_jk.at(idx);
         eq_41_cons(idx) = q_j_0 * load_var_ptr->t_jk.at(idx);
-
-        eq_42_cons(idx) = p_j_0 + load_var_ptr->p_j_ru_over.at(idx);
-        eq_43_cons(idx) = p_j_0 - load_var_ptr->p_j_rd_over.at(idx);
         eq_42_cons(idx) = p_j_0 + load_var_ptr->p_j_ru_over.at(idx) * load_var_ptr->load_ref_data->new_data.sup.sys_prms["deltar"];
         eq_43_cons(idx) = p_j_0 - load_var_ptr->p_j_rd_over.at(idx) * load_var_ptr->load_ref_data->new_data.sup.sys_prms["deltar"];
 

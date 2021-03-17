@@ -45,7 +45,6 @@ int main(int args, char** argv)
     auto load_cons_ptr = std::make_shared<LoadConstraints>(input_ptr, "load_variables");
     auto load_cost_ptr = std::make_shared<LoadCosts>("load_variables");
     nlp.AddVariableSet(load_vars_ptr);
-
     nlp.AddConstraintSet(load_cons_ptr);
     nlp.AddCostSet(load_cost_ptr);
 
