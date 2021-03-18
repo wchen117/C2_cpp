@@ -29,7 +29,7 @@ LoadVariables::LoadVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
             // j in p_jkn, c_jn, p_jn_over, t_jk, t_j_over, t_j_under
             std::tie (j_num, bus_i) = load_ref_data->J_k.at(idx);
             load_j_id.at(idx) = load_ref_data->J_k.at(idx);
-            q_jk.at(idx) = 0.0;
+            q_jk.at(idx) = 0.1;
             bus_i.erase(std::remove(bus_i.begin(), bus_i.end(), '\''), bus_i.end());
 
             for (auto load : load_ref_data->new_data.sup.loads)
@@ -40,7 +40,7 @@ LoadVariables::LoadVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                     p_jn_over.at(idx).resize(cblock_size);
                     c_jn.at(idx).resize(cblock_size);
                     p_jkn.at(idx).resize(cblock_size);
-                    t_jk.at(idx) = 0.0;
+                    t_jk.at(idx) = 0.1;
                     t_j_over.at(idx) = load.tmax;
                     t_j_under.at(idx) = load.tmin;
 
@@ -65,7 +65,7 @@ LoadVariables::LoadVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
         p_jkn_size = p_jn_counter;
         t_jk_size = t_jk.size();
         // flattened p_jkn + q_jk + t_jk
-        size_t load_var_len = p_jkn_size+2*t_jk_size;
+        size_t load_var_len = p_jkn_size;
         SetRows(load_var_len);
         //assert(GetRows() == p_jn_counter);
     }
@@ -99,7 +99,7 @@ Eigen::VectorXd LoadVariables::GetValues() const
             }
 
         }
-        tmp_x << flat_p_jkn, flat_q_jk, flat_t_jk;
+        tmp_x << flat_p_jkn;
 
         // and we are going to add t_jk to variables
         return tmp_x;
@@ -114,8 +114,8 @@ void LoadVariables::SetVariables(const Eigen::VectorXd &x)
 {
     size_t counter=0;
     auto flat_p_jkn = x.segment(0, p_jkn_size);
-    auto flat_q_jk = x.segment(p_jkn_size, t_jk_size);
-    auto flat_t_jk = x.segment(p_jkn_size+t_jk_size, t_jk_size);
+    //auto flat_q_jk = x.segment(p_jkn_size, t_jk_size);
+    //auto flat_t_jk = x.segment(p_jkn_size+t_jk_size, t_jk_size);
 
 
     for (size_t idx=0; idx<p_jkn.size(); idx++)
@@ -128,12 +128,13 @@ void LoadVariables::SetVariables(const Eigen::VectorXd &x)
             counter++;
         }
     }
-
+    /**
     for (size_t idx=0; idx< t_jk_size; idx++)
     {
         t_jk.at(idx) = flat_t_jk(idx);
         q_jk.at(idx) = flat_q_jk(idx);
     }
+     **/
 
 
     
@@ -168,8 +169,8 @@ LoadVariables::VecBound LoadVariables::GetBounds() const
             }
     }
 
-    upper_bound << p_jkn_upper, q_jk_upper, t_jk_upper;
-    lower_bound << p_jkn_lower, q_jk_lower, t_jk_lower;
+    upper_bound << p_jkn_upper;
+    lower_bound << p_jkn_lower;
 
 
     for (size_t idx=0; idx<load_bounds.size(); idx++)

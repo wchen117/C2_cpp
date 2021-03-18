@@ -73,8 +73,13 @@ int main(int args, char** argv)
     // 2. choose solver and options
 
     IpoptSolver ipopt;
-    //ipopt.SetOption("linear_solver", "ma27");
-    ipopt.SetOption("jacobian_approximation", "finite-difference-values");
+    ipopt.SetOption("linear_solver", "ma27");
+    //ipopt.SetOption("jacobian_approximation", "finite-difference-values");
+    ipopt.SetOption("check_derivatives_for_naninf", "yes");
+    ipopt.SetOption("bound_relax_factor", 0);
+    ipopt.SetOption("print_level", 5);
+    ipopt.SetOption("output_file", "output.txt");
+    ipopt.SetOption("max_iter", 3000);
     ipopt.Solve(nlp);
     Eigen::VectorXd x = nlp.GetOptVariables()->GetValues();
     std::cout << x.transpose() << std::endl;

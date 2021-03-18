@@ -15,7 +15,19 @@ Eigen::VectorXd LineConstraints::GetValues() const
 {
     Eigen::VectorXd line_cons(GetRows());
 
+    // first find all v_ik and v_i'k
+    // g_e at eq(148)
+
+    for (auto ieo_key: line_var_ptr->local_input_ptr->i_e_o)
+    {
+
+
+    }
+
+
     /**
+
+
     for (ieo_key: line_var_ptr->local_input_ptr->i_e_o)
     {
         for (ied_key: line_var_ptr->local_input_ptr->i_e_d)

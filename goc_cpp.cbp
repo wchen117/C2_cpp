@@ -111,13 +111,22 @@
 		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/fixedshunt.cpp">
 			<Option target="test"/>
 		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs.cpp">
+			<Option target="test"/>
+		</Unit>
 		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables.cpp">
 			<Option target="test"/>
 		</Unit>
 		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generatoroutevent.cpp">
 			<Option target="test"/>
 		</Unit>
 		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints.cpp">
 			<Option target="test"/>
 		</Unit>
 		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs.cpp">
@@ -127,6 +136,9 @@
 			<Option target="test"/>
 		</Unit>
 		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints.cpp">
 			<Option target="test"/>
 		</Unit>
 		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs.cpp">
@@ -181,6 +193,9 @@
 			<Option target="test"/>
 		</Unit>
 		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs.cpp">
 			<Option target="test"/>
 		</Unit>
 		<Unit filename="/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables.cpp">

@@ -19,6 +19,8 @@ Eigen::VectorXd LoadConstraints::GetValues() const
     // we have defined that p_jk and v_jk are indexed
     // by order of load_j_id here as well
     Eigen::VectorXd load_cons(GetRows());
+    load_cons = Eigen::VectorXd::Zero(GetRows());
+
     Eigen::VectorXd p_jk(load_var_ptr->t_jk_size);
     Eigen::Map<const Eigen::VectorXd> q_jk(load_var_ptr->q_jk.data(), load_var_ptr->q_jk.size());
 
@@ -66,9 +68,15 @@ LoadConstraints::VecBound LoadConstraints::GetBounds() const
 
     }
 
+    //upper_bound.setConstant(1.0e20);
+    //lower_bound.setConstant(-1.0e20);
+    //lower_bound.setConstant(-1.0e20);
+    //upper_bound << eq_42_cons, eq_42_cons, eq_42_cons;
+    //lower_bound << eq_43_cons, eq_43_cons, eq_43_cons;
     upper_bound << eq_40_cons, eq_41_cons, eq_42_cons;
     lower_bound << eq_40_cons, eq_41_cons, eq_43_cons;
-
+    //std::cout<<upper_bound.transpose()<<std::endl;
+    //std::cout<<lower_bound.transpose()<<std::endl;
     for(size_t idx=0; idx<load_con_bounds.size(); idx++)
     {
         load_con_bounds.at(idx).upper_ = upper_bound(idx);
