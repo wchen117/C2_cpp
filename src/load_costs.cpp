@@ -35,8 +35,6 @@ void LoadCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const
 {
     if (var_set == load_var_name)
     {
-        Eigen::VectorXd x = ifopt::ConstraintSet::GetVariables()->GetComponent("load_variables")->GetValues();
-        auto load_var_ptr = ifopt::ConstraintSet::GetVariables()->GetComponent<LoadVariables>("load_variables");
 
         size_t num_j = load_var_ptr->c_jn.size();
         size_t counter = 0;

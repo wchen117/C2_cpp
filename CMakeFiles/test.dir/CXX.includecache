@@ -6,22 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints.cpp
-constraints/line_constraints.hpp
--
-
-/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints.cpp
-constraints/load_constraints.hpp
--
-
-/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs.cpp
-costs/load_costs.hpp
--
-
-/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables.cpp
-variables/load_variables.hpp
--
-
 /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp
 string
 -
@@ -8208,14 +8192,6 @@ variables/bus_variables.hpp
 variables/generator_variables.hpp
 -
 variables/load_variables.hpp
--
-wrapper_construct.hpp
--
-
-include/constraints/line_constraints.hpp
-ifopt/constraint_set.h
--
-variables/line_variables.hpp
 -
 wrapper_construct.hpp
 -
