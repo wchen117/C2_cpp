@@ -8,12 +8,17 @@ LineConstraints::LineConstraints(const std::shared_ptr<Wrapper_Construct> data_p
 {
     // this name is the corresponding line variable name
     line_var_name = name;
-    std::cout<<4 * data_ptr->E_k.size()<<std::endl;
     SetRows(4 * data_ptr->E_k.size());
+
 }
 LineConstraints::~LineConstraints() {}
-void LineConstraints::ComputeQuantities()
+
+
+Eigen::VectorXd LineConstraints::GetValues() const
 {
+    Eigen::VectorXd line_cons(GetRows());
+    //std::cout<<"Hello this is from GetValues"<<std::endl;
+    UMAP_TUPLE_iis_DOUBLE p_ek_o, q_ek_o, p_ek_d, q_ek_d;
     // x_ek_sw is also ordered by ek in E_k (see line_variables.cpp)
     // we need index of E_k (ekdx) to reference indices in x_ek_sw
     for (size_t ekdx=0; ekdx< line_var_ptr->local_input_ptr->E_k.size(); ekdx++)
@@ -51,21 +56,7 @@ void LineConstraints::ComputeQuantities()
             exit(0);
         }
 
-
-
-
-
-
     }
-
-}
-
-Eigen::VectorXd LineConstraints::GetValues() const
-{
-    Eigen::VectorXd line_cons(GetRows());
-    //std::cout<<"Hello this is from GetValues"<<std::endl;
-
-
 
     return line_cons;
 }

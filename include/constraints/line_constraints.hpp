@@ -16,7 +16,6 @@ public:
     ~LineConstraints();
     VectorXd GetValues() const override;
     VecBound GetBounds() const override;
-    void ComputeQuantities();
 
 private:
     void FillJacobianBlock(std::string var_set, Jacobian &jac_block) const override;
@@ -26,7 +25,7 @@ private:
     std::string line_var_name;
     std::shared_ptr<LineVariables> line_var_ptr;
     std::shared_ptr<BusVariables> bus_var_ptr;
-    UMAP_TUPLE_iis_DOUBLE p_ek_o, q_ek_o, p_ek_d, q_ek_d;
+
     template < typename T>
     std::pair<bool, int > findInVector(const std::vector<T>  & vecOfElements, const T  & element) const {
         std::pair<bool, int> result;
