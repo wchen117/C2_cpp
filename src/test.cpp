@@ -8,9 +8,11 @@
 #include <variables/line_variables.hpp>
 #include <variables/transformer_variables.hpp>
 #include <variables/generator_variables.hpp>
+#include <variables/switch_shunt_variables.hpp>
 
 #include <constraints/bus_constraints.hpp>
 #include <constraints/load_constraints.hpp>
+#include <constraints/line_constraints.hpp>
 
 #include <costs/bus_costs.hpp>
 #include <costs/load_costs.hpp>
@@ -32,26 +34,31 @@ int main(int args, char** argv)
     Problem nlp;
 
     //variables, constraints and objectives associated with buses
-    //auto bus_var_ptr = std::make_shared<BusVariables>(input_ptr, "bus_variables");
+    auto bus_var_ptr = std::make_shared<BusVariables>(input_ptr, "bus_variables");
     //auto bus_cons_ptr = std::make_shared<BusConstraints>(input_ptr, "bus_variables");
     //auto bus_cost_ptr = std::make_shared<BusCosts>("bus_variables");
 
-    //nlp.AddVariableSet(bus_var_ptr);
+    nlp.AddVariableSet(bus_var_ptr);
     //nlp.AddConstraintSet(bus_cons_ptr);
     //nlp.AddCostSet(bus_cost_ptr);
 
     // variables, constraints and objectives assocaited with loads
-    auto load_vars_ptr = std::make_shared<LoadVariables>(input_ptr, "load_variables");
-    auto load_cons_ptr = std::make_shared<LoadConstraints>(input_ptr, "load_variables");
-    auto load_cost_ptr = std::make_shared<LoadCosts>("load_variables");
-    nlp.AddVariableSet(load_vars_ptr);
-    nlp.AddConstraintSet(load_cons_ptr);
-    nlp.AddCostSet(load_cost_ptr);
+    //auto load_vars_ptr = std::make_shared<LoadVariables>(input_ptr, "load_variables");
+    //auto load_cons_ptr = std::make_shared<LoadConstraints>(input_ptr, "load_variables");
+    //auto load_cost_ptr = std::make_shared<LoadCosts>("load_variables");
+    //nlp.AddVariableSet(load_vars_ptr);
+    //nlp.AddConstraintSet(load_cons_ptr);
+    //nlp.AddCostSet(load_cost_ptr);
+
+    // variables and constraints associated with switch shunts
+    //auto load_vars_ptr = std::make_shared<SwitchShuntVariables>(input_ptr, "switch_shunt_variables");
 
     // variables, constraints and objectives associated with lines
-    //auto line_vars_ptr = std::make_shared<LineVariables>(input_ptr, "line_variables");
+    auto line_vars_ptr = std::make_shared<LineVariables>(input_ptr, "line_variables");
+    auto line_cons_ptr = std::make_shared<LineConstraints>(input_ptr, "line_variables");
     //auto line_cost_ptr = std::make_shared<LineCosts>("line_variables");
-    //nlp.AddVariableSet(line_vars_ptr);
+    nlp.AddVariableSet(line_vars_ptr);
+    nlp.AddConstraintSet(line_cons_ptr);
     //nlp.AddCostSet(line_cost_ptr);
 
     // variables, constraints and objectives associated with transformers

@@ -40,9 +40,9 @@ void LineCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const
     {
         Eigen::Map<Eigen::VectorXd> flat_c_ns(line_var_ptr->c_n_s.data(), line_var_ptr->c_n_s.size());
         flat_c_ns *= -1;
-        Eigen::VectorXd x_ek_sw_coeff (line_var_ptr->size_E_k0);
+        Eigen::VectorXd x_ek_sw_coeff (line_var_ptr->size_E_k);
 
-        for (size_t idx=0; idx<line_var_ptr->size_E_k0; idx++)
+        for (size_t idx=0; idx<line_var_ptr->size_E_k; idx++)
         {
             if (line_var_ptr->x_ek_sw(idx) >= line_var_ptr->x_e_sw0(idx))
             {

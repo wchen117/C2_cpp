@@ -35,6 +35,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.dir/src/sup_scblock.cpp.o"
   "CMakeFiles/test.dir/src/sup_transformer.cpp.o"
   "CMakeFiles/test.dir/src/switchedshunt.cpp.o"
+  "CMakeFiles/test.dir/src/switchshunt_variables.cpp.o"
   "CMakeFiles/test.dir/src/test.cpp.o"
   "CMakeFiles/test.dir/src/test_param.cpp.o"
   "CMakeFiles/test.dir/src/transformer.cpp.o"

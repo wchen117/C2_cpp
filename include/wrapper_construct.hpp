@@ -132,7 +132,7 @@ class Wrapper_Construct
     std::unordered_map<int, int> H_i;
     std::unordered_map<int, double> b_h_cs0;
     int NBL;
-    std::unordered_map<int, int> A_h;
+    UMAP_TUPLE_ii_INT A_h;
     UMAP_TUPLE_ii_DOUBLE x_ha_st_over;
     UMAP_TUPLE_ii_DOUBLE b_ha_st;
     std::vector<int> H_k0;

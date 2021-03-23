@@ -40,6 +40,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_scblock.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/sup_scblock.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_transformer.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/sup_transformer.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchedshunt.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/switchedshunt.cpp.o"
+  "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/switchshunt_variables.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/test.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test_param.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/test_param.cpp.o"
   "/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer.cpp" "/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/src/transformer.cpp.o"

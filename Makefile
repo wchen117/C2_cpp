@@ -1114,6 +1114,33 @@ src/switchedshunt.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/switchedshunt.cpp.s
 .PHONY : src/switchedshunt.cpp.s
 
+src/switchshunt_variables.o: src/switchshunt_variables.cpp.o
+
+.PHONY : src/switchshunt_variables.o
+
+# target to build an object file
+src/switchshunt_variables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/switchshunt_variables.cpp.o
+.PHONY : src/switchshunt_variables.cpp.o
+
+src/switchshunt_variables.i: src/switchshunt_variables.cpp.i
+
+.PHONY : src/switchshunt_variables.i
+
+# target to preprocess a source file
+src/switchshunt_variables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/switchshunt_variables.cpp.i
+.PHONY : src/switchshunt_variables.cpp.i
+
+src/switchshunt_variables.s: src/switchshunt_variables.cpp.s
+
+.PHONY : src/switchshunt_variables.s
+
+# target to generate assembly for a file
+src/switchshunt_variables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/switchshunt_variables.cpp.s
+.PHONY : src/switchshunt_variables.cpp.s
+
 src/test.o: src/test.cpp.o
 
 .PHONY : src/test.o
@@ -1447,6 +1474,9 @@ help:
 	@echo "... src/switchedshunt.o"
 	@echo "... src/switchedshunt.i"
 	@echo "... src/switchedshunt.s"
+	@echo "... src/switchshunt_variables.o"
+	@echo "... src/switchshunt_variables.i"
+	@echo "... src/switchshunt_variables.s"
 	@echo "... src/test.o"
 	@echo "... src/test.i"
 	@echo "... src/test.s"

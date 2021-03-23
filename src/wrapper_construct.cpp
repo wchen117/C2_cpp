@@ -304,15 +304,18 @@ void Wrapper_Construct::construct_switched_shunt()
     std::unordered_map<int, SwitchedShunt>::iterator ss_it;
     for(ss_it=new_data.raw.switchedshunts.begin(); ss_it!=new_data.raw.switchedshunts.end(); ss_it++)
     {
+        // ss_it->second.i = i and h
         H.push_back(ss_it->second.i);
         i_h.insert(std::make_pair(ss_it->second.i, ss_it->second.i));
-        b_h_cs0.insert(std::make_pair(ss_it->second.i, ss_it->second.binit));
+        b_h_cs0.insert(std::make_pair(ss_it->second.i, ss_it->second.binit * s_tilde_inverse));
         NBL = ss_it->second.n.size();
-        // so this for loop is A_h
+        // this loop through a \in A_h
         for(int idx=1; idx<=NBL; idx++)
         {
+
             key_ii tmp_ha;
             tmp_ha = std::make_tuple(ss_it->second.i, idx);
+            A_h.insert(std::make_pair(tmp_ha, idx));
             x_ha_st_over.insert(std::make_pair(tmp_ha, ss_it->second.n.at(idx-1)));
             b_ha_st.insert(std::make_pair(tmp_ha, ss_it->second.b.at(idx-1) * s_tilde_inverse));
 

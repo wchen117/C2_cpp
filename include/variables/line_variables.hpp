@@ -36,7 +36,7 @@ private:
     Eigen::VectorXd x_e_sw0;
 
     std::shared_ptr<Wrapper_Construct> local_input_ptr;
-    size_t line_var_len, size_E_k0, Ns;
+    size_t line_var_len, size_E_k, Ns;
 
 };
 
