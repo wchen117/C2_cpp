@@ -56,10 +56,10 @@ int main(int args, char** argv)
     // variables, constraints and objectives associated with lines
     auto line_vars_ptr = std::make_shared<LineVariables>(input_ptr, "line_variables");
     auto line_cons_ptr = std::make_shared<LineConstraints>(input_ptr, "line_variables");
-    //auto line_cost_ptr = std::make_shared<LineCosts>("line_variables");
+    auto line_cost_ptr = std::make_shared<LineCosts>("line_variables");
     nlp.AddVariableSet(line_vars_ptr);
     nlp.AddConstraintSet(line_cons_ptr);
-    //nlp.AddCostSet(line_cost_ptr);
+    nlp.AddCostSet(line_cost_ptr);
 
     // variables, constraints and objectives associated with transformers
     //auto trans_vars_ptr = std::make_shared<TransformerVariables>(input_ptr, "trans_variables");

@@ -16,6 +16,7 @@ public:
     ~LineConstraints();
     VectorXd GetValues() const override;
     VecBound GetBounds() const override;
+    void ComputeQuantities();
 
 private:
     void FillJacobianBlock(std::string var_set, Jacobian &jac_block) const override;

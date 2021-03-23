@@ -23,11 +23,5 @@ Total number of inequality constraints...............:        0
         inequality constraints with only upper bounds:        0
 
 iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
-   0  0.0000000e+00 1.49e-154 0.00e+00   0.0 0.00e+00    -  0.00e+00 0.00e+00   0
-   1  0.0000000e+00 2.00e+00 1.89e+07   7.6 3.86e+07    -  9.90e-01 5.14e-09f  1
-   2  0.0000000e+00 1.49e-154 1.56e+14  11.5 7.98e+02    -  1.00e+00 2.46e-04f  1
-   3  0.0000000e+00 1.49e-154 1.24e+12  10.8 1.85e-02    -  9.90e-01 1.00e+00f  1
-   4  0.0000000e+00 1.49e-154 1.32e+37  10.1 3.22e-02    -  1.00e+00 1.00e+00f  1
-   5  0.0000000e+00 1.49e-154 9.00e+11  10.1 9.46e-01    -  9.90e-01 1.00e+00f  1
-Restoration phase is called at point that is almost feasible,
-  with constraint violation 2.983336e-154. Abort.
+   0 -1.9999980e+00 3.11e+231 1.00e+02   0.0 0.00e+00    -  0.00e+00 0.00e+00   0
+The equality constraints contain an invalid number
