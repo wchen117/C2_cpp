@@ -3,7 +3,7 @@
 //
 
 #include "variables/line_variables.hpp"
-LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name): VariableSet(-1, name)
+LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::shared_ptr<BusVariables> bus_var_ptr, const std::string& name): VariableSet(-1, name)
 {
     local_input_ptr = data_ptr;
 
@@ -63,6 +63,44 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                     }
 
                 }
+            }
+
+        }
+
+        for (size_t ekdx=0; ekdx< local_input_ptr->E_k.size(); ekdx++)
+        {
+            auto ek = local_input_ptr->E_k.at(ekdx);
+            // i \in i_e_o for e \in E_k, i_p \in i_e_d for e \in E_k
+            auto idx = local_input_ptr->i_e_o[ek];
+            auto ipdx = local_input_ptr->i_e_d[ek];
+            auto ge = local_input_ptr->g_e[ek];
+            auto be = local_input_ptr->b_e[ek];
+            std::cout<<ge<<std::endl;
+            auto be_ch = local_input_ptr->b_e_ch[ek];
+            auto diff = local_input_ptr->theta_0[idx] - local_input_ptr->theta_0[ipdx];
+            // now figure out the where bus idx and ipdx locate in v_ik
+            auto bus_idx_pair = findInVector(bus_var_ptr->sorted_bus_ID, idx);
+            auto bus_ipdx_pair = findInVector(bus_var_ptr->sorted_bus_ID, ipdx);
+            auto tmp_x_ek_sw = x_ek_sw(ekdx);
+            if (bus_idx_pair.first && bus_ipdx_pair.first)
+            {
+                auto bus_idx = bus_idx_pair.second;
+                auto bus_ipdx = bus_ipdx_pair.second;
+                auto vik = bus_var_ptr->v_ik(bus_idx);
+                auto vipk = bus_var_ptr->v_ik(bus_ipdx);
+                // eq 50 - 53
+                auto tmp_p_ek_o = tmp_x_ek_sw * (ge * vik * vik - (ge * cos(diff) + be * sin(diff)) * vik * vipk);
+                auto tmp_q_ek_o = tmp_x_ek_sw * (-(be + be_ch * 0.5) * vik * vik + (be * cos(diff) - ge * sin(diff)) * vik * vipk);
+                auto tmp_p_ek_d = tmp_x_ek_sw * (ge * vipk * vipk - (ge * cos(-diff) + be * sin(-diff)) * vik * vipk);
+                auto tmp_q_ek_d = tmp_x_ek_sw * (-(be + be_ch * 0.5) * vipk * vipk + (be * cos(-diff) - ge * sin(-diff))* vik * vipk);
+                p_ek_o.insert(std::make_pair(ek, tmp_p_ek_o));
+                q_ek_o.insert(std::make_pair(ek, tmp_q_ek_o));
+                p_ek_d.insert(std::make_pair(ek, tmp_p_ek_d));
+                q_ek_d.insert(std::make_pair(ek, tmp_q_ek_d));
+
+            }
+            else{
+                exit(0);
             }
 
         }

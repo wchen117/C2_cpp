@@ -305,13 +305,14 @@ void Raw::parse_nontransformerbranch(std::vector<std::string> nontranformerbranc
     for (int idx=1; idx<nontranformerbranch_section.size(); idx++)
     {
         std::vector<std::string> line_vector = parse_on_delimiter(nontranformerbranch_section[idx], ",");
+
         key_iis tmp_key;
         NontransformerBranch tmp_ntb;
         tmp_ntb.i = std::stoi(line_vector[0]);
         tmp_ntb.j = std::stoi(line_vector[1]);
         tmp_ntb.ckt = line_vector[2];
-        tmp_ntb.r = std::stoi(line_vector[3]);
-        tmp_ntb.x = std::stoi(line_vector[4]);
+        tmp_ntb.r = std::stod(line_vector[3]);
+        tmp_ntb.x = std::stod(line_vector[4]);
         tmp_ntb.b = std::stod(line_vector[5]);
         tmp_ntb.ratea =  std::stod(line_vector[6]);
         tmp_ntb.rateb = std::stod(line_vector[7]);

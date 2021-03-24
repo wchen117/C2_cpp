@@ -7375,6 +7375,7 @@ CMakeFiles/test.dir/src/line_costs.cpp.o: include/switchedshunt.hpp
 CMakeFiles/test.dir/src/line_costs.cpp.o: include/transformer.hpp
 CMakeFiles/test.dir/src/line_costs.cpp.o: include/transformerimpedancecorrectiontable.hpp
 CMakeFiles/test.dir/src/line_costs.cpp.o: include/typedefinition.hpp
+CMakeFiles/test.dir/src/line_costs.cpp.o: include/variables/bus_variables.hpp
 CMakeFiles/test.dir/src/line_costs.cpp.o: include/variables/line_variables.hpp
 CMakeFiles/test.dir/src/line_costs.cpp.o: include/wrapper_construct.hpp
 CMakeFiles/test.dir/src/line_costs.cpp.o: include/zone.hpp
@@ -8330,6 +8331,7 @@ CMakeFiles/test.dir/src/line_variables.cpp.o: include/switchedshunt.hpp
 CMakeFiles/test.dir/src/line_variables.cpp.o: include/transformer.hpp
 CMakeFiles/test.dir/src/line_variables.cpp.o: include/transformerimpedancecorrectiontable.hpp
 CMakeFiles/test.dir/src/line_variables.cpp.o: include/typedefinition.hpp
+CMakeFiles/test.dir/src/line_variables.cpp.o: include/variables/bus_variables.hpp
 CMakeFiles/test.dir/src/line_variables.cpp.o: include/variables/line_variables.hpp
 CMakeFiles/test.dir/src/line_variables.cpp.o: include/wrapper_construct.hpp
 CMakeFiles/test.dir/src/line_variables.cpp.o: include/zone.hpp

@@ -5,11 +5,12 @@
 #ifndef GOC_CPP_LINE_VARIABLES_HPP
 #define GOC_CPP_LINE_VARIABLES_HPP
 #include <ifopt/variable_set.h>
+#include <variables/bus_variables.hpp>
 #include <wrapper_construct.hpp>
 
 class LineVariables: public ifopt::VariableSet {
 public:
-    LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name);
+    LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::shared_ptr<BusVariables> bus_var_ptr, const std::string& name);
     ~LineVariables();
     Eigen::VectorXd GetValues() const override;
     void SetVariables(const Eigen::VectorXd &x) override;
@@ -34,9 +35,25 @@ private:
     Eigen::VectorXd ref_oribus;
     Eigen::VectorXd ref_desbus;
     Eigen::VectorXd x_e_sw0;
+    UMAP_TUPLE_iis_DOUBLE p_ek_o, q_ek_o, p_ek_d, q_ek_d;
 
     std::shared_ptr<Wrapper_Construct> local_input_ptr;
     size_t line_var_len, size_E_k, Ns;
+
+    template < typename T>
+    std::pair<bool, int > findInVector(const std::vector<T>  & vecOfElements, const T  & element) const {
+        std::pair<bool, int> result;
+        // Find given element in vector
+        auto it = std::find(vecOfElements.begin(), vecOfElements.end(), element);
+        if (it != vecOfElements.end()) {
+            result.second = distance(vecOfElements.begin(), it);
+            result.first = true;
+        } else {
+            result.first = false;
+            result.second = -1;
+        }
+        return result;
+    }
 
 };
 

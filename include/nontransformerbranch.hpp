@@ -9,8 +9,8 @@ public:
     int i;
     int j;
     std::string ckt;
-    int r;
-    int x;
+    double r;
+    double x;
     double b;
     double ratea;
     double rateb;

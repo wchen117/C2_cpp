@@ -54,7 +54,7 @@ int main(int args, char** argv)
     //auto load_vars_ptr = std::make_shared<SwitchShuntVariables>(input_ptr, "switch_shunt_variables");
 
     // variables, constraints and objectives associated with lines
-    auto line_vars_ptr = std::make_shared<LineVariables>(input_ptr, "line_variables");
+    auto line_vars_ptr = std::make_shared<LineVariables>(input_ptr, bus_var_ptr,"line_variables");
     auto line_cons_ptr = std::make_shared<LineConstraints>(input_ptr, "line_variables");
     auto line_cost_ptr = std::make_shared<LineCosts>("line_variables");
     nlp.AddVariableSet(line_vars_ptr);

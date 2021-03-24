@@ -7376,6 +7376,7 @@ CMakeFiles/test.dir/src/line_costs.cpp.o
  include/transformer.hpp
  include/transformerimpedancecorrectiontable.hpp
  include/typedefinition.hpp
+ include/variables/bus_variables.hpp
  include/variables/line_variables.hpp
  include/wrapper_construct.hpp
  include/zone.hpp
@@ -8331,6 +8332,7 @@ CMakeFiles/test.dir/src/line_variables.cpp.o
  include/transformer.hpp
  include/transformerimpedancecorrectiontable.hpp
  include/typedefinition.hpp
+ include/variables/bus_variables.hpp
  include/variables/line_variables.hpp
  include/wrapper_construct.hpp
  include/zone.hpp
