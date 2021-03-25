@@ -35,8 +35,7 @@ GeneratorVariables::GeneratorVariables(const std::shared_ptr<Wrapper_Construct> 
             {
                 if (g.bus == iii & g.id == idd)
                 {
-                    key_is tmp_g;
-                    tmp_g = std::make_tuple(g.bus, g.id);
+
                     size_t Ng = g.cblocks.size();
                     p_gnk.at(idx).resize(Ng);
                     c_gn.at(idx).resize(Ng);
