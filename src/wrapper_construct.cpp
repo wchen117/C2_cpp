@@ -349,7 +349,7 @@ void Wrapper_Construct::construct_con()
     G_k = G;
     J_k = J_k0;
     H_k = H_k0;
-    
+
 
     for(size_t idx=0; idx<new_data.con.contingencies.size(); idx++)
     {

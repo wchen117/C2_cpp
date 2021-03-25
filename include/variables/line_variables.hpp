@@ -35,10 +35,11 @@ private:
     Eigen::VectorXd ref_oribus;
     Eigen::VectorXd ref_desbus;
     Eigen::VectorXd x_e_sw0;
-    UMAP_TUPLE_iis_DOUBLE p_ek_o, q_ek_o, p_ek_d, q_ek_d;
+    Eigen::VectorXd p_ek_o, q_ek_o, p_ek_d, q_ek_d;
+    Eigen::VectorXd bus_vik, bus_vipk;
 
     std::shared_ptr<Wrapper_Construct> local_input_ptr;
-    size_t line_var_len, size_E_k, Ns;
+    size_t line_var_len, size_E_k, Ns, pq_ek_od_size;
 
     template < typename T>
     std::pair<bool, int > findInVector(const std::vector<T>  & vecOfElements, const T  & element) const {

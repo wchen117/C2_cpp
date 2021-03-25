@@ -8,7 +8,7 @@ LineConstraints::LineConstraints(const std::shared_ptr<Wrapper_Construct> data_p
 {
     // this name is the corresponding line variable name
     line_var_name = name;
-    SetRows(4 * data_ptr->E_k.size());
+    SetRows(3 * data_ptr->E_k.size());
 
 }
 LineConstraints::~LineConstraints() {}
@@ -17,12 +17,13 @@ LineConstraints::~LineConstraints() {}
 Eigen::VectorXd LineConstraints::GetValues() const
 {
     Eigen::VectorXd line_cons(GetRows());
-    //std::cout<<"Hello this is from GetValues"<<std::endl;
+    // eqn 54
+    Eigen::VectorXd s_ek_plus = line_var_ptr->s_enk_plus.colwise().sum();
+    // eqn 55 - 56 for k = k_0 case
+    Eigen::VectorXd eq59 = ((line_var_ptr->p_ek_o.array().square() +  line_var_ptr->q_ek_o.array().square()).sqrt() - s_ek_plus.array()).matrix();
+    Eigen::VectorXd eq60 = ((line_var_ptr->p_ek_d.array().square() +  line_var_ptr->q_ek_d.array().square()).sqrt() - s_ek_plus.array()).matrix();
 
-    // x_ek_sw is also ordered by ek in E_k (see line_variables.cpp)
-    // we need index of E_k (ekdx) to reference indices in x_ek_sw
-
-
+    line_cons << s_ek_plus, eq59, eq60;
 
     return line_cons;
 }
@@ -30,6 +31,9 @@ Eigen::VectorXd LineConstraints::GetValues() const
 LineConstraints::VecBound LineConstraints::GetBounds() const
 {
     VecBound line_con_bounds(GetRows());
+    Eigen::VectorXd upper_bound(GetRows());
+    Eigen::VectorXd lower_bound(GetRows());
+
     return line_con_bounds;
 }
 

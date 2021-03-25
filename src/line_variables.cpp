@@ -26,13 +26,16 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
         x_e_sw0 = Eigen::VectorXd::Zero(size_E_k);
 
 
+
         for (size_t idx=0; idx <local_input_ptr->E_k.size(); idx++)
         {
             int oribus_num;
             int destbus_num;
             std::string bus_i;
+
             auto e_key= local_input_ptr->E_k.at(idx);
             std::tie (oribus_num, destbus_num, bus_i) = e_key;
+            //std::cout<<oribus_num<<" "<<destbus_num<<" "<<bus_i<<std::endl;
             // there are extra '' around the bus_id string read from E_k0
             bus_i.erase(std::remove(bus_i.begin(), bus_i.end(), '\''), bus_i.end());
 
@@ -41,16 +44,14 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                 // this is equal to comparing two tuples e_key and (n.origbus, n.destbus, n.id), I think?
                 if (oribus_num == n.origbus && destbus_num == n.destbus &&  bus_i==n.id)
                 {
-                    key_iis tmp_e;
-                    //reconstruct the key
-                    tmp_e = std::make_tuple(n.origbus, n.destbus, n.id);
+
                     // fetched origbus and desbus are not ordered, use ref_origbus and ref_desbus to help keep track
                     ref_oribus(idx) = n.origbus;
                     ref_desbus(idx) = n.destbus;
                     c_e_sw(idx) = n.csw;
                     // eq(153)
-                    x_e_sw0(idx) = local_input_ptr->x_e_sw_0[tmp_e];
-                    x_ek_sw(idx) = local_input_ptr->x_e_sw_0[tmp_e];
+                    x_e_sw0(idx) = local_input_ptr->x_e_sw_0[e_key];
+                    x_ek_sw(idx) = local_input_ptr->x_e_sw_0[e_key];
                     // eq(49, E_sw?)
 
 
@@ -59,7 +60,7 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                     {
                         c_n_s(jdx, idx) = local_input_ptr->new_data.sup.scblocks.at(jdx).c * local_input_ptr->s_tilde;
                         t_n_s_over(jdx, idx) = local_input_ptr->new_data.sup.scblocks.at(jdx).tmax;
-                        r_e_over_eigen(jdx, idx) = local_input_ptr->r_e_ct_over[tmp_e];
+                        r_e_over_eigen(jdx, idx) = local_input_ptr->r_e_over[e_key];
                     }
 
                 }
@@ -67,6 +68,12 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
 
         }
 
+        p_ek_o = Eigen::VectorXd::Zero(local_input_ptr->E_k.size());
+        q_ek_o = Eigen::VectorXd::Zero(local_input_ptr->E_k.size());
+        p_ek_d = Eigen::VectorXd::Zero(local_input_ptr->E_k.size());
+        q_ek_d = Eigen::VectorXd::Zero(local_input_ptr->E_k.size());
+        bus_vik = Eigen::VectorXd::Zero(local_input_ptr->E_k.size());
+        bus_vipk = Eigen::VectorXd::Zero(local_input_ptr->E_k.size());
         for (size_t ekdx=0; ekdx< local_input_ptr->E_k.size(); ekdx++)
         {
             auto ek = local_input_ptr->E_k.at(ekdx);
@@ -75,7 +82,6 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
             auto ipdx = local_input_ptr->i_e_d[ek];
             auto ge = local_input_ptr->g_e[ek];
             auto be = local_input_ptr->b_e[ek];
-            std::cout<<ge<<std::endl;
             auto be_ch = local_input_ptr->b_e_ch[ek];
             auto diff = local_input_ptr->theta_0[idx] - local_input_ptr->theta_0[ipdx];
             // now figure out the where bus idx and ipdx locate in v_ik
@@ -88,15 +94,19 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                 auto bus_ipdx = bus_ipdx_pair.second;
                 auto vik = bus_var_ptr->v_ik(bus_idx);
                 auto vipk = bus_var_ptr->v_ik(bus_ipdx);
+                bus_vik(ekdx) = bus_var_ptr->v_ik(bus_idx);
+                bus_vipk(ekdx) = bus_var_ptr->v_ik(bus_idx);
+
                 // eq 50 - 53
                 auto tmp_p_ek_o = tmp_x_ek_sw * (ge * vik * vik - (ge * cos(diff) + be * sin(diff)) * vik * vipk);
                 auto tmp_q_ek_o = tmp_x_ek_sw * (-(be + be_ch * 0.5) * vik * vik + (be * cos(diff) - ge * sin(diff)) * vik * vipk);
                 auto tmp_p_ek_d = tmp_x_ek_sw * (ge * vipk * vipk - (ge * cos(-diff) + be * sin(-diff)) * vik * vipk);
                 auto tmp_q_ek_d = tmp_x_ek_sw * (-(be + be_ch * 0.5) * vipk * vipk + (be * cos(-diff) - ge * sin(-diff))* vik * vipk);
-                p_ek_o.insert(std::make_pair(ek, tmp_p_ek_o));
-                q_ek_o.insert(std::make_pair(ek, tmp_q_ek_o));
-                p_ek_d.insert(std::make_pair(ek, tmp_p_ek_d));
-                q_ek_d.insert(std::make_pair(ek, tmp_q_ek_d));
+                // so... these four should always have the same size
+                p_ek_o(ekdx) = tmp_p_ek_o;
+                q_ek_o(ekdx) = tmp_q_ek_o;
+                p_ek_d(ekdx) = tmp_p_ek_d;
+                q_ek_d(ekdx) = tmp_q_ek_d;
 
             }
             else{
@@ -104,13 +114,16 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
             }
 
         }
-        if (size_E_k && Ns)
+
+        pq_ek_od_size =  p_ek_o.size();
+
+        if (size_E_k && Ns && pq_ek_od_size)
         {
-            line_var_len = size_E_k * Ns + size_E_k;
+            line_var_len = size_E_k * Ns + size_E_k + 4 * pq_ek_od_size;
             SetRows(line_var_len);
         }
         else{
-            std::cout<<"null size for size_E_k or Ns, quit"<<std::endl;
+            std::cout<<"null size for size_E_k or Ns or pq_ek_od, quit"<<std::endl;
             exit(0);
         }
 
@@ -133,31 +146,46 @@ Eigen::VectorXd LineVariables::GetValues() const
         Eigen::VectorXd tmp_x(GetRows());
         // this flatten s_enk_plus col by col
         // why must declare const here???? it says s_enk_plus a const double*, why?
+
         Eigen::Map<const Eigen::VectorXd> flat_s_enk(s_enk_plus.data(), s_enk_plus.size());
-        tmp_x << flat_s_enk, x_ek_sw;
+
+
+        tmp_x << flat_s_enk, x_ek_sw, p_ek_o, q_ek_o, p_ek_d, q_ek_d;
+
         assert(tmp_x.size() == GetRows());
+
         return tmp_x;
     }
     else{
         exit(0);
     }
 
-
 }
+
 void LineVariables::SetVariables(const Eigen::VectorXd &x)
 {
+
     size_t flat_len = size_E_k * Ns;
     auto tmp_flat = x.segment(0, flat_len);
     x_ek_sw = x.segment(flat_len, size_E_k);
     Eigen::Map<const Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::ColMajor>> tmp_mat(tmp_flat.data(), Ns, size_E_k);
     s_enk_plus = tmp_mat;
+    p_ek_o = x.segment(flat_len+size_E_k, pq_ek_od_size);
+    q_ek_o = x.segment(flat_len+size_E_k+pq_ek_od_size, pq_ek_od_size);
+    p_ek_d = x.segment(flat_len+size_E_k+2*pq_ek_od_size, pq_ek_od_size);
+    q_ek_d = x.segment(flat_len+size_E_k+3*pq_ek_od_size, pq_ek_od_size);
 }
 
 LineVariables::VecBound  LineVariables::GetBounds() const
 {
 
     VecBound line_bounds(GetRows());
+
     Eigen::VectorXd upper_bound(GetRows());
+    Eigen::VectorXd lower_bound(GetRows());
+    // now to populate the upper and lower bounds
+    // i don't see bounds for pq_ek_od yet
+
     Eigen::MatrixXd tmp_prod = (t_n_s_over.array() * r_e_over_eigen.array()).matrix();
     Eigen::Map<const Eigen::VectorXd> tmp_flat_prod(tmp_prod.data(), tmp_prod.size());
     Eigen::VectorXd x_ek_sw_bound(size_E_k);
@@ -165,13 +193,21 @@ LineVariables::VecBound  LineVariables::GetBounds() const
     {
         x_ek_sw_bound(idx) = 1.0;
     }
-    upper_bound << tmp_flat_prod, x_ek_sw_bound;
+    Eigen::VectorXd pq_ek_od_up_bound = Eigen::VectorXd::Zero(4 * pq_ek_od_size);
+    Eigen::VectorXd pq_ek_od_lo_bound = Eigen::VectorXd::Zero(4 * pq_ek_od_size);
+    pq_ek_od_up_bound.setConstant(1e20);
 
+    upper_bound << tmp_flat_prod, x_ek_sw_bound, pq_ek_od_up_bound;
+
+    pq_ek_od_lo_bound.setConstant(-1e20);
+    Eigen::VectorXd flat_lo_bound = Eigen::VectorXd::Zero(tmp_flat_prod.size());
+    Eigen::VectorXd x_ek_sw_lo_bound = Eigen::VectorXd::Zero(x_ek_sw_bound.size());
+    lower_bound << flat_lo_bound, x_ek_sw_lo_bound, pq_ek_od_lo_bound;
 
     for (size_t idx=0; idx<GetRows(); idx++)
     {
         line_bounds.at(idx).upper_ = upper_bound(idx);
-        line_bounds.at(idx).lower_ = 0.0;
+        line_bounds.at(idx).lower_ = lower_bound(idx);
 
     }
 
