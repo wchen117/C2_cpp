@@ -33,6 +33,28 @@ LineConstraints::VecBound LineConstraints::GetBounds() const
     VecBound line_con_bounds(GetRows());
     Eigen::VectorXd upper_bound(GetRows());
     Eigen::VectorXd lower_bound(GetRows());
+    Eigen::VectorXd sek_up_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k);
+    Eigen::VectorXd sek_lo_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k);
+    Eigen::VectorXd eq59_up_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k);
+    Eigen::VectorXd eq59_lo_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k);
+    Eigen::VectorXd eq60_up_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k);
+    Eigen::VectorXd eq60_lo_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k);
+
+    sek_up_bound.setConstant(1e20);
+    eq59_up_bound = (line_var_ptr->r_e_over_eigen.row(0).transpose().array() * line_var_ptr->bus_vik.array()).matrix();
+    eq59_lo_bound.setConstant(-1e20);
+    eq60_up_bound = (line_var_ptr->r_e_over_eigen.row(0).transpose().array() * line_var_ptr->bus_vipk.array()).matrix();
+    eq60_lo_bound.setConstant(-1e20);
+
+    upper_bound << sek_up_bound, eq59_up_bound, eq60_up_bound;
+    lower_bound << sek_lo_bound, eq59_lo_bound, eq60_lo_bound;
+
+    for (size_t idx=0; idx<line_con_bounds.size(); idx++)
+    {
+        line_con_bounds.at(idx).upper_ = upper_bound(idx);
+        line_con_bounds.at(idx).lower_ = lower_bound(idx);
+    }
+
 
     return line_con_bounds;
 }

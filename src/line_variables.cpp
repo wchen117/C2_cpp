@@ -61,12 +61,14 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                         c_n_s(jdx, idx) = local_input_ptr->new_data.sup.scblocks.at(jdx).c * local_input_ptr->s_tilde;
                         t_n_s_over(jdx, idx) = local_input_ptr->new_data.sup.scblocks.at(jdx).tmax;
                         r_e_over_eigen(jdx, idx) = local_input_ptr->r_e_over[e_key];
+
                     }
 
                 }
             }
 
         }
+
 
         p_ek_o = Eigen::VectorXd::Zero(local_input_ptr->E_k.size());
         q_ek_o = Eigen::VectorXd::Zero(local_input_ptr->E_k.size());
