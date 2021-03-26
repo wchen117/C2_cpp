@@ -16,6 +16,8 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
         // zero initialize all variables
         s_fnk_plus = Eigen::MatrixXd::Zero(Ns, size_F_k0);
         x_fk_sw = Eigen::VectorXd::Zero(size_F_k0);
+        x_fk_st = Eigen::VectorXd::Zero(size_F_k0);
+        x_fk_st_bound = Eigen::VectorXd::Zero(size_F_k0);
 
         // zero initialize all parameters for now
         c_n_s = Eigen::MatrixXd::Zero(Ns, size_F_k0);
@@ -45,6 +47,13 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
                     ref_desbus(idx) = n.destbus;
                     c_f_sw(idx) = n.csw;
                     x_f_sw0(idx) = local_input_ptr->x_f_sw_0[f_key];
+                    // eqn(60)
+                    if (n.swqual == 0)
+                    {
+                        x_fk_sw(idx) = local_input_ptr->x_f_sw_0[f_key];
+                    }
+                    //eqn(61), record x_f_st_over first
+                    x_fk_st_bound(idx) = local_input_ptr->x_f_st_over[f_key];
                     for(size_t jdx=0; jdx<Ns; jdx++)
                     {
                         c_n_s(jdx, idx) = local_input_ptr->new_data.sup.scblocks.at(jdx).c * local_input_ptr->s_tilde;
@@ -55,9 +64,11 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
             }
 
         }
+
+
         if(size_F_k0 && Ns)
         {
-            trans_var_len = size_F_k0 * Ns + size_F_k0;
+            trans_var_len = size_F_k0 * Ns + 2* size_F_k0;
 
             SetRows(trans_var_len);
         }
@@ -80,7 +91,7 @@ Eigen::VectorXd TransformerVariables::GetValues() const
         // this flatten s_enk_plus col by col
         // const is needed here because the current function is read only?
         Eigen::Map<const Eigen::VectorXd> flat_s_fnk(s_fnk_plus.data(), s_fnk_plus.size());
-        tmp_x << flat_s_fnk, x_fk_sw;
+        tmp_x << flat_s_fnk, x_fk_sw, x_fk_st;
         assert(tmp_x.size() == GetRows());
         return tmp_x;
     }
@@ -95,7 +106,8 @@ void TransformerVariables::SetVariables(const Eigen::VectorXd &x)
 
     size_t flat_len = size_F_k0 * Ns;
     auto tmp_flat = x.segment(0, flat_len);
-    x_fk_sw = x.segment(flat_len, size_F_k0);
+    x_fk_sw = x.segment( flat_len, size_F_k0);
+    x_fk_st = x.segment(flat_len + size_F_k0, size_F_k0);
     Eigen::Map<const Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::ColMajor>> tmp_mat(tmp_flat.data(), Ns, size_F_k0);
     s_fnk_plus = tmp_mat;
 
@@ -106,19 +118,32 @@ TransformerVariables::VecBound  TransformerVariables::GetBounds() const
 {
     VecBound line_bounds(GetRows());
     Eigen::VectorXd upper_bound(GetRows());
+    Eigen::VectorXd lower_bound(GetRows());
+
     Eigen::MatrixXd tmp_prod = (t_n_s_over.array() * s_f_over_eigen.array()).matrix();
-    Eigen::Map<const Eigen::VectorXd> tmp_flat_prod(tmp_prod.data(), tmp_prod.size());
-    Eigen::VectorXd x_ek_sw_bound(size_F_k0);
+    // individual upper bounds
+    Eigen::Map<const Eigen::VectorXd> s_fnk_up_bound(tmp_prod.data(), tmp_prod.size());
+    Eigen::VectorXd x_fk_sw_up_bound(size_F_k0);
+    Eigen::VectorXd x_fk_st_up_bound = x_fk_st_bound;
+
+    // individual lower bounds
+    Eigen::VectorXd s_fnk_lo_bound = Eigen::VectorXd::Zero(s_fnk_up_bound.size());
+    Eigen::VectorXd x_fk_sw_lo_bound = Eigen::VectorXd::Zero(size_F_k0);
+    Eigen::VectorXd x_fk_st_lo_bound = -1 * x_fk_st_bound;
+
+
     for (size_t idx=0; idx<size_F_k0; idx++)
     {
-        x_ek_sw_bound(idx) = 1.0;
+        x_fk_sw_up_bound(idx) = 1.0;
     }
-    upper_bound << tmp_flat_prod, x_ek_sw_bound;
+
+    upper_bound << s_fnk_up_bound, x_fk_sw_up_bound, x_fk_st_up_bound;
+    lower_bound << s_fnk_lo_bound, x_fk_sw_lo_bound, x_fk_st_lo_bound;
 
     for (size_t idx=0; idx<GetRows(); idx++)
     {
         line_bounds.at(idx).upper_ = upper_bound(idx);
-        line_bounds.at(idx).lower_ = 0.0;
+        line_bounds.at(idx).lower_ = lower_bound(idx);
 
     }
 

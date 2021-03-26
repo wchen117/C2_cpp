@@ -8,7 +8,7 @@ LineConstraints::LineConstraints(const std::shared_ptr<Wrapper_Construct> data_p
 {
     // this name is the corresponding line variable name
     line_var_name = name;
-    SetRows(3 * data_ptr->E_k.size());
+    SetRows(3 * data_ptr->E_k0.size());
 
 }
 LineConstraints::~LineConstraints() {}
@@ -33,12 +33,12 @@ LineConstraints::VecBound LineConstraints::GetBounds() const
     VecBound line_con_bounds(GetRows());
     Eigen::VectorXd upper_bound(GetRows());
     Eigen::VectorXd lower_bound(GetRows());
-    Eigen::VectorXd sek_up_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k);
-    Eigen::VectorXd sek_lo_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k);
-    Eigen::VectorXd eq59_up_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k);
-    Eigen::VectorXd eq59_lo_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k);
-    Eigen::VectorXd eq60_up_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k);
-    Eigen::VectorXd eq60_lo_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k);
+    Eigen::VectorXd sek_up_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k0);
+    Eigen::VectorXd sek_lo_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k0);
+    Eigen::VectorXd eq59_up_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k0);
+    Eigen::VectorXd eq59_lo_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k0);
+    Eigen::VectorXd eq60_up_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k0);
+    Eigen::VectorXd eq60_lo_bound = Eigen::VectorXd::Zero(line_var_ptr->size_E_k0);
 
     sek_up_bound.setConstant(1e20);
     eq59_up_bound = (line_var_ptr->r_e_over_eigen.row(0).transpose().array() * line_var_ptr->bus_vik.array()).matrix();

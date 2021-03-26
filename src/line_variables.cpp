@@ -7,37 +7,38 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
 {
     local_input_ptr = data_ptr;
 
-    if (!local_input_ptr->E_k.empty())
+    if (!local_input_ptr->E_k0.empty())
     {
-        size_E_k = local_input_ptr->E_k.size();
+        size_E_k0 = local_input_ptr->E_k0.size();
         Ns = local_input_ptr->new_data.sup.scblocks.size();
 
-        s_enk_plus = Eigen::MatrixXd::Zero(Ns, size_E_k);
-        c_n_s = Eigen::MatrixXd::Zero(Ns, size_E_k);
-        t_n_s_over = Eigen::MatrixXd::Zero(Ns, size_E_k);
-        r_e_over_eigen =Eigen::MatrixXd::Zero(Ns, size_E_k);
+        s_enk_plus = Eigen::MatrixXd::Zero(Ns, size_E_k0);
+        c_n_s = Eigen::MatrixXd::Zero(Ns, size_E_k0);
+        t_n_s_over = Eigen::MatrixXd::Zero(Ns, size_E_k0);
+        r_e_over_eigen =Eigen::MatrixXd::Zero(Ns, size_E_k0);
 
-        c_e_sw = Eigen::VectorXd::Zero(size_E_k);
-        ref_desbus = Eigen::VectorXd::Zero(size_E_k);
-        ref_oribus = Eigen::VectorXd::Zero(size_E_k);
+        c_e_sw = Eigen::VectorXd::Zero(size_E_k0);
+        ref_desbus = Eigen::VectorXd::Zero(size_E_k0);
+        ref_oribus = Eigen::VectorXd::Zero(size_E_k0);
         // so what's their initial value
         // x_ek_sw and x_e_sw0 are ordered by E_k's order
-        x_ek_sw = Eigen::VectorXd::Zero(size_E_k);
-        x_e_sw0 = Eigen::VectorXd::Zero(size_E_k);
+        x_ek_sw = Eigen::VectorXd::Zero(size_E_k0);
+        x_e_sw0 = Eigen::VectorXd::Zero(size_E_k0);
 
 
 
-        for (size_t idx=0; idx <local_input_ptr->E_k.size(); idx++)
+
+        for (size_t idx=0; idx <local_input_ptr->E_k0.size(); idx++)
         {
             int oribus_num;
             int destbus_num;
             std::string bus_i;
 
-            auto e_key= local_input_ptr->E_k.at(idx);
+            auto e_key= local_input_ptr->E_k0.at(idx);
             std::tie (oribus_num, destbus_num, bus_i) = e_key;
-            //std::cout<<oribus_num<<" "<<destbus_num<<" "<<bus_i<<std::endl;
             // there are extra '' around the bus_id string read from E_k0
             bus_i.erase(std::remove(bus_i.begin(), bus_i.end(), '\''), bus_i.end());
+
 
             for (auto n: local_input_ptr->new_data.sup.lines)
             {
@@ -50,9 +51,17 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                     ref_desbus(idx) = n.destbus;
                     c_e_sw(idx) = n.csw;
                     // eq(153)
+
                     x_e_sw0(idx) = local_input_ptr->x_e_sw_0[e_key];
-                    x_ek_sw(idx) = local_input_ptr->x_e_sw_0[e_key];
-                    // eq(49, E_sw?)
+
+
+
+                    // Eq(49, e \in E_sw if n.swqual == 1 is taken care of this way)
+                    // shall we use n.swqual < 1?
+                    if (n.swqual == 0)
+                    {
+                        x_ek_sw(idx) = local_input_ptr->x_e_sw_0[e_key];
+                    }
 
 
 
@@ -69,16 +78,18 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
 
         }
 
+        // now to deal with x_ek_sw masked by
 
-        p_ek_o = Eigen::VectorXd::Zero(local_input_ptr->E_k.size());
-        q_ek_o = Eigen::VectorXd::Zero(local_input_ptr->E_k.size());
-        p_ek_d = Eigen::VectorXd::Zero(local_input_ptr->E_k.size());
-        q_ek_d = Eigen::VectorXd::Zero(local_input_ptr->E_k.size());
-        bus_vik = Eigen::VectorXd::Zero(local_input_ptr->E_k.size());
-        bus_vipk = Eigen::VectorXd::Zero(local_input_ptr->E_k.size());
-        for (size_t ekdx=0; ekdx< local_input_ptr->E_k.size(); ekdx++)
+
+        p_ek_o = Eigen::VectorXd::Zero(local_input_ptr->E_k0.size());
+        q_ek_o = Eigen::VectorXd::Zero(local_input_ptr->E_k0.size());
+        p_ek_d = Eigen::VectorXd::Zero(local_input_ptr->E_k0.size());
+        q_ek_d = Eigen::VectorXd::Zero(local_input_ptr->E_k0.size());
+        bus_vik = Eigen::VectorXd::Zero(local_input_ptr->E_k0.size());
+        bus_vipk = Eigen::VectorXd::Zero(local_input_ptr->E_k0.size());
+        for (size_t ekdx=0; ekdx< local_input_ptr->E_k0.size(); ekdx++)
         {
-            auto ek = local_input_ptr->E_k.at(ekdx);
+            auto ek = local_input_ptr->E_k0.at(ekdx);
             // i \in i_e_o for e \in E_k, i_p \in i_e_d for e \in E_k
             auto idx = local_input_ptr->i_e_o[ek];
             auto ipdx = local_input_ptr->i_e_d[ek];
@@ -119,9 +130,9 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
 
         pq_ek_od_size =  p_ek_o.size();
 
-        if (size_E_k && Ns && pq_ek_od_size)
+        if (size_E_k0 && Ns && pq_ek_od_size)
         {
-            line_var_len = size_E_k * Ns + size_E_k + 4 * pq_ek_od_size;
+            line_var_len = size_E_k0 * Ns + size_E_k0 + 4 * pq_ek_od_size;
             SetRows(line_var_len);
         }
         else{
@@ -167,15 +178,15 @@ Eigen::VectorXd LineVariables::GetValues() const
 void LineVariables::SetVariables(const Eigen::VectorXd &x)
 {
 
-    size_t flat_len = size_E_k * Ns;
+    size_t flat_len = size_E_k0 * Ns;
     auto tmp_flat = x.segment(0, flat_len);
-    x_ek_sw = x.segment(flat_len, size_E_k);
-    Eigen::Map<const Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::ColMajor>> tmp_mat(tmp_flat.data(), Ns, size_E_k);
+    x_ek_sw = x.segment(flat_len, size_E_k0);
+    Eigen::Map<const Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::ColMajor>> tmp_mat(tmp_flat.data(), Ns, size_E_k0);
     s_enk_plus = tmp_mat;
-    p_ek_o = x.segment(flat_len+size_E_k, pq_ek_od_size);
-    q_ek_o = x.segment(flat_len+size_E_k+pq_ek_od_size, pq_ek_od_size);
-    p_ek_d = x.segment(flat_len+size_E_k+2*pq_ek_od_size, pq_ek_od_size);
-    q_ek_d = x.segment(flat_len+size_E_k+3*pq_ek_od_size, pq_ek_od_size);
+    p_ek_o = x.segment(flat_len+size_E_k0, pq_ek_od_size);
+    q_ek_o = x.segment(flat_len+size_E_k0+pq_ek_od_size, pq_ek_od_size);
+    p_ek_d = x.segment(flat_len+size_E_k0+2*pq_ek_od_size, pq_ek_od_size);
+    q_ek_d = x.segment(flat_len+size_E_k0+3*pq_ek_od_size, pq_ek_od_size);
 }
 
 LineVariables::VecBound  LineVariables::GetBounds() const
@@ -190,8 +201,8 @@ LineVariables::VecBound  LineVariables::GetBounds() const
 
     Eigen::MatrixXd tmp_prod = (t_n_s_over.array() * r_e_over_eigen.array()).matrix();
     Eigen::Map<const Eigen::VectorXd> tmp_flat_prod(tmp_prod.data(), tmp_prod.size());
-    Eigen::VectorXd x_ek_sw_bound(size_E_k);
-    for (size_t idx=0; idx<size_E_k; idx++)
+    Eigen::VectorXd x_ek_sw_bound(size_E_k0);
+    for (size_t idx=0; idx<size_E_k0; idx++)
     {
         x_ek_sw_bound(idx) = 1.0;
     }

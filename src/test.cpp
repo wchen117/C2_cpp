@@ -54,18 +54,18 @@ int main(int args, char** argv)
     //auto load_vars_ptr = std::make_shared<SwitchShuntVariables>(input_ptr, "switch_shunt_variables");
 
     // variables, constraints and objectives associated with lines
-    auto line_vars_ptr = std::make_shared<LineVariables>(input_ptr, bus_var_ptr,"line_variables");
-    auto line_cons_ptr = std::make_shared<LineConstraints>(input_ptr, "line_variables");
-    auto line_cost_ptr = std::make_shared<LineCosts>("line_variables");
-    nlp.AddVariableSet(line_vars_ptr);
-    nlp.AddConstraintSet(line_cons_ptr);
-    nlp.AddCostSet(line_cost_ptr);
+    //auto line_vars_ptr = std::make_shared<LineVariables>(input_ptr, bus_var_ptr,"line_variables");
+    //auto line_cons_ptr = std::make_shared<LineConstraints>(input_ptr, "line_variables");
+    //auto line_cost_ptr = std::make_shared<LineCosts>("line_variables");
+    //nlp.AddVariableSet(line_vars_ptr);
+    //nlp.AddConstraintSet(line_cons_ptr);
+    //nlp.AddCostSet(line_cost_ptr);
 
     // variables, constraints and objectives associated with transformers
-    //auto trans_vars_ptr = std::make_shared<TransformerVariables>(input_ptr, "trans_variables");
-    //auto trans_cost_ptr = std::make_shared<TransformerCosts>("trans_variables");
-    //nlp.AddVariableSet(trans_vars_ptr);
-    //nlp.AddCostSet(trans_cost_ptr);
+    auto trans_vars_ptr = std::make_shared<TransformerVariables>(input_ptr, "trans_variables");
+    auto trans_cost_ptr = std::make_shared<TransformerCosts>("trans_variables");
+    nlp.AddVariableSet(trans_vars_ptr);
+    nlp.AddCostSet(trans_cost_ptr);
 
     // variables, constraints and objectives associated with generators
     //auto gen_vars_ptr = std::make_shared<GeneratorVariables>(input_ptr, "gen_variables");
