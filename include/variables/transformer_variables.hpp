@@ -24,8 +24,13 @@ private:
     Eigen::VectorXd x_fk_sw;
     // x_fk_st, eqn(61)
     Eigen::VectorXd x_fk_st;
-    // tau_fk eqn(62)
+    // tau_fk eqn(62) and its bounds
     Eigen::VectorXd tau_fk;
+    // upper and lower bounds for tau_fk
+    Eigen::VectorXd tau_fk_over, tau_fk_under;
+    // some coefficents needed for tau_fk and x_fk
+    Eigen::VectorXd tau_f_st, tau_f_mid;
+
 
 
 
