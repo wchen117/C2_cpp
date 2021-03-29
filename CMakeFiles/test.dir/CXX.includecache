@@ -44,9 +44,19 @@ costs/transformer_costs.hpp
 costs/gen_costs.hpp
 -
 
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs.cpp
+costs/transformer_costs.hpp
+-
+
 /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables.cpp
 variables/transformer_variables.hpp
 /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/variables/transformer_variables.hpp
+
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.cpp
+wrapper_construct.hpp
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.hpp
+iostream
+-
 
 /Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include/rapidjson/allocators.h
 rapidjson.h

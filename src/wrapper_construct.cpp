@@ -206,7 +206,7 @@ void Wrapper_Construct::construct_transformer()
         x_f_st_over.insert(std::make_pair(tmp_f, (tran_it->second.ntp1 - 1.0)/2.0));
        
         
-        if (tran_it->second.cod1 == 1)
+        if (abs(tran_it->second.cod1) == 1)
         {
             tau_f_over.insert(std::make_pair(tmp_f, tran_it->second.rma1));
             tau_f_under.insert(std::make_pair(tmp_f, tran_it->second.rma1));
@@ -224,7 +224,7 @@ void Wrapper_Construct::construct_transformer()
         tau_f_st.insert(std::make_pair(tmp_f, tmp_tau_f / x_f_st_over[tmp_f]));
         tau_f_any.insert(std::make_pair(tmp_f, tmp_tau_f));
 
-        if(tran_it->second.cod1 == 3)
+        if(abs(tran_it->second.cod1) == 3 )
         {
             theta_f_over.insert(std::make_pair(tmp_f, tran_it->second.rma1 * PI / 180));
             theta_f_under.insert(std::make_pair(tmp_f, tran_it->second.rma1 * PI / 180));
@@ -256,7 +256,7 @@ void Wrapper_Construct::construct_transformer()
                     
                         } 
                     
-                        if(tran_it->second.cod1 == 1)
+                        if(abs(tran_it->second.cod1) == 1)
                         {
                             for(int idx=0; idx<tcit_it->second.t.size(); idx++)
                             {
@@ -267,7 +267,7 @@ void Wrapper_Construct::construct_transformer()
                             } 
 
                         }
-                        else if(tran_it->second.cod1 == 3)
+                        else if(abs(tran_it->second.cod1) == 3)
                         {
                             for(int idx=0; idx<tcit_it->second.t.size(); idx++)
                             {

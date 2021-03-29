@@ -18,6 +18,7 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
         x_fk_sw = Eigen::VectorXd::Zero(size_F_k0);
         x_fk_st = Eigen::VectorXd::Zero(size_F_k0);
         x_fk_st_bound = Eigen::VectorXd::Zero(size_F_k0);
+        tau_fk = Eigen::VectorXd::Zero(size_F_k0);
 
         // zero initialize all parameters for now
         c_n_s = Eigen::MatrixXd::Zero(Ns, size_F_k0);

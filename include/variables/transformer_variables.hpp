@@ -24,6 +24,8 @@ private:
     Eigen::VectorXd x_fk_sw;
     // x_fk_st, eqn(61)
     Eigen::VectorXd x_fk_st;
+    // tau_fk eqn(62)
+    Eigen::VectorXd tau_fk;
 
 
 
