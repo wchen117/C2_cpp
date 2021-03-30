@@ -38,6 +38,8 @@ private:
     // variables in eqn(66) and eqn(67)
     // these are conductance and susceptance values, not generators
     Eigen::VectorXd b_fk, g_fk, eta_fk;
+    // some coeffcients asscociated with them
+    Eigen::VectorXd b_f_0, g_f_0;
 
 
 

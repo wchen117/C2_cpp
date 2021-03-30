@@ -240,7 +240,7 @@ void Wrapper_Construct::construct_transformer()
         int tmp_i; int tmp_j; std::string tmp_ckt;
         std::tie(tmp_i, tmp_j, tmp_ckt) = tmp_f;
         
-        if (tran_it->second.tab1 != 0)
+        if (tran_it->second.tab1 != 0 and abs(tran_it->second.cod1) == 3 and abs(tran_it->second.cod1) == 1)
         {
             
             F_gamma.push_back(tmp_f);

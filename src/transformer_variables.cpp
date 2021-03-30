@@ -36,9 +36,8 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
         g_fk = Eigen::VectorXd::Zero(size_F_k0);
         b_fk = Eigen::VectorXd::Zero(size_F_k0);
         eta_fk = Eigen::VectorXd::Zero(size_F_k0);
-
-
-
+        g_f_0 = Eigen::VectorXd::Zero(size_F_k0);
+        b_f_0 = Eigen::VectorXd::Zero(size_F_k0);
 
 
         // zero initialize all parameters for now
@@ -51,6 +50,8 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
         ref_desbus = Eigen::VectorXd::Zero(size_F_k0);
         ref_oribus = Eigen::VectorXd::Zero(size_F_k0);
 
+        // F_k0 or F_k is an vector (ordered), so we bound to have orders in all
+        // Eigen::VectorXd read this way
         for (size_t idx=0; idx <size_F_k0; idx++)
         {
             int oribus_num;
@@ -88,6 +89,11 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
                     theta_f_st(idx) = local_input_ptr->theta_f_st[f_key];
                     theta_f_mid(idx) = local_input_ptr->theta_f_any[f_key];
                     theta_f_0(idx) = local_input_ptr->theta_f_0[f_key];
+
+                    //eqn(66) - eqn(68)
+                    b_f_0(idx) = local_input_ptr->b_f_0[f_key];
+                    g_f_0(idx) = local_input_ptr->g_f_0[f_key];
+
 
 
                     for(size_t jdx=0; jdx<Ns; jdx++)

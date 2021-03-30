@@ -67,7 +67,7 @@ int main(int args, char** argv)
     auto trans_cons_ptr = std::make_shared<TransConstraints>(input_ptr, "trans_variables");
     auto trans_cost_ptr = std::make_shared<TransformerCosts>("trans_variables");
     nlp.AddVariableSet(trans_vars_ptr);
-    //nlp.AddConstraintSet(trans_cons_ptr);
+    nlp.AddConstraintSet(trans_cons_ptr);
     nlp.AddCostSet(trans_cost_ptr);
 
     // variables, constraints and objectives associated with generators
