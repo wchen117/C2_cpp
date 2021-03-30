@@ -410,7 +410,6 @@ void Raw::parse_transformer(std::vector<std::string> transformer_section)
         tmp_tfmr.cnxa1 = std::stod(tmp_transformer_section[idx][40]);
         tmp_tfmr.windv2 = std::stod(tmp_transformer_section[idx][41]);
         tmp_tfmr.nomv2 = std::stod(tmp_transformer_section[idx][42]);
-
         tmp_key = std::make_tuple(tmp_tfmr.i, tmp_tfmr.j, tmp_tfmr.ckt);
         transformers.insert(std::make_pair(tmp_key, tmp_tfmr));
     }

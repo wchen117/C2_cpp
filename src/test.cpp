@@ -13,6 +13,7 @@
 #include <constraints/bus_constraints.hpp>
 #include <constraints/load_constraints.hpp>
 #include <constraints/line_constraints.hpp>
+#include <constraints/transformer_constraints.hpp>
 
 #include <costs/bus_costs.hpp>
 #include <costs/load_costs.hpp>
@@ -63,8 +64,10 @@ int main(int args, char** argv)
 
     // variables, constraints and objectives associated with transformers
     auto trans_vars_ptr = std::make_shared<TransformerVariables>(input_ptr, "trans_variables");
+    auto trans_cons_ptr = std::make_shared<TransConstraints>(input_ptr, "trans_variables");
     auto trans_cost_ptr = std::make_shared<TransformerCosts>("trans_variables");
     nlp.AddVariableSet(trans_vars_ptr);
+    //nlp.AddConstraintSet(trans_cons_ptr);
     nlp.AddCostSet(trans_cost_ptr);
 
     // variables, constraints and objectives associated with generators

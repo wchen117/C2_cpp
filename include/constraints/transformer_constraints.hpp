@@ -25,6 +25,6 @@ private:
 
     // the name for the corresponding load variable set
     std::string trans_var_name;
-    std::shared_ptr<LoadVariables> trans_var_ptr;
+    std::shared_ptr<TransformerVariables> trans_var_ptr;
 };
 #endif //GOC_CPP_TRANSFORMER_CONSTRAINTS_HPP

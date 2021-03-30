@@ -15,6 +15,7 @@ public:
     // define the bounds of variables
     VecBound GetBounds() const override;
     friend class TransformerCosts;
+    friend class TransConstraints;
     friend class BusConstraints;
 private:
     // first variables, s_fnk_plus is colmajor matrix,
@@ -29,7 +30,14 @@ private:
     // upper and lower bounds for tau_fk
     Eigen::VectorXd tau_fk_over, tau_fk_under;
     // some coefficents needed for tau_fk and x_fk
-    Eigen::VectorXd tau_f_st, tau_f_mid;
+    Eigen::VectorXd tau_f_st, tau_f_mid, tau_f_0;
+    // theta_fk mentioned in eqn(64)
+    Eigen::VectorXd theta_fk, theta_fk_over, theta_fk_under;
+    // some coefficients needed for theta_fkand x_fk
+    Eigen::VectorXd theta_f_st, theta_f_mid, theta_f_0;
+    // variables in eqn(66) and eqn(67)
+    // these are conductance and susceptance values, not generators
+    Eigen::VectorXd b_fk, g_fk, eta_fk;
 
 
 
