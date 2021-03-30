@@ -18,6 +18,7 @@ public:
     friend class BusConstraints;
     //friend class LineConstraints;
     friend class LineVariables;
+    friend class TransformerVariables;
 
 private:
     std::shared_ptr<Wrapper_Construct> bus_ref_data;

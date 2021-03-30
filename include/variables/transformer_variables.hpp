@@ -5,10 +5,12 @@
 #ifndef GOC_CPP_TRANSFORMER_VARIABLES_H
 #define GOC_CPP_TRANSFORMER_VARIABLES_H
 #include <ifopt/variable_set.h>
+#include <variables/bus_variables.hpp>
 #include <wrapper_construct.hpp>
+
 class TransformerVariables: public ifopt::VariableSet {
 public:
-    TransformerVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name);
+    TransformerVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::shared_ptr<BusVariables> bus_var_ptr, const std::string& name);
     ~TransformerVariables();
     Eigen::VectorXd GetValues() const override;
     void SetVariables(const Eigen::VectorXd &x) override;
@@ -40,6 +42,8 @@ private:
     Eigen::VectorXd b_fk, g_fk, eta_fk;
     // some coeffcients asscociated with them
     Eigen::VectorXd b_f_0, g_f_0;
+    // variables in eqn(72) - eqn(75)
+    Eigen::VectorXd p_fk_o, q_fk_o, p_fk_d, q_fk_d;
 
 
 
@@ -58,7 +62,25 @@ private:
     Eigen::VectorXd x_fk_st_bound;
     // pointer to input data and some useful size info
     std::shared_ptr<Wrapper_Construct> local_input_ptr;
+    std::shared_ptr<BusVariables> bus_var_ptr;
     size_t trans_var_len, size_F_k0, Ns;
+
+    /**
+    template < typename T>
+    std::pair<bool, int > findInVector(const std::vector<T>  & vecOfElements, const T  & element) const {
+        std::pair<bool, int> result;
+        // Find given element in vector
+        auto it = std::find(vecOfElements.begin(), vecOfElements.end(), element);
+        if (it != vecOfElements.end()) {
+            result.second = distance(vecOfElements.begin(), it);
+            result.first = true;
+        } else {
+            result.first = false;
+            result.second = -1;
+        }
+        return result;
+    }
+     **/
 
 
 

@@ -17,19 +17,19 @@ Eigen::VectorXd TransConstraints::GetValues() const
     Eigen::VectorXd trans_cons (GetRows());
     // eqn(62) - eqn(69) are all bounded to zero
     Eigen::VectorXd tau_fk_cons = Eigen::VectorXd::Zero(trans_var_ptr->tau_fk.size());
-    Eigen::VectorXd const &Eqn62 = trans_var_ptr->tau_fk - (trans_var_ptr->tau_f_st.array() * trans_var_ptr->x_fk_st.array()).matrix() - trans_var_ptr->tau_f_mid;
-    Eigen::VectorXd const &Eqn63  = trans_var_ptr->tau_fk - trans_var_ptr->theta_f_0;
+    const Eigen::VectorXd  &Eqn62 = trans_var_ptr->tau_fk - (trans_var_ptr->tau_f_st.array() * trans_var_ptr->x_fk_st.array()).matrix() - trans_var_ptr->tau_f_mid;
+    const Eigen::VectorXd  &Eqn63  = trans_var_ptr->tau_fk - trans_var_ptr->theta_f_0;
 
     Eigen::VectorXd theta_fk_cons = Eigen::VectorXd::Zero(trans_var_ptr->theta_fk.size());
-    Eigen::VectorXd const &Eqn64 = trans_var_ptr->theta_fk - (trans_var_ptr->theta_f_st.array() * trans_var_ptr->x_fk_st.array()).matrix() - trans_var_ptr->theta_f_mid;
-    Eigen::VectorXd const &Eqn65  = trans_var_ptr->theta_fk - trans_var_ptr->theta_f_0;
+    const Eigen::VectorXd  &Eqn64 = trans_var_ptr->theta_fk - (trans_var_ptr->theta_f_st.array() * trans_var_ptr->x_fk_st.array()).matrix() - trans_var_ptr->theta_f_mid;
+    const Eigen::VectorXd  &Eqn65  = trans_var_ptr->theta_fk - trans_var_ptr->theta_f_0;
 
     Eigen::VectorXd b_fk_cons = Eigen::VectorXd::Zero(trans_var_ptr->eta_fk.size());
     Eigen::VectorXd g_fk_cons = Eigen::VectorXd::Zero(trans_var_ptr->eta_fk.size());
-    Eigen::VectorXd const &Eqn66 = trans_var_ptr->b_fk - (trans_var_ptr->b_f_0.array() / trans_var_ptr->eta_fk.array()).matrix();
-    Eigen::VectorXd const &Eqn67 = trans_var_ptr->g_fk - (trans_var_ptr->g_f_0.array() / trans_var_ptr->eta_fk.array()).matrix();
-    Eigen::VectorXd const &Eqn68 = trans_var_ptr->b_fk - trans_var_ptr->b_f_0;
-    Eigen::VectorXd const &Eqn69 = trans_var_ptr->g_fk - trans_var_ptr->g_f_0;
+    const Eigen::VectorXd  &Eqn66 = trans_var_ptr->b_fk - (trans_var_ptr->b_f_0.array() / trans_var_ptr->eta_fk.array()).matrix();
+    const Eigen::VectorXd  &Eqn67 = trans_var_ptr->g_fk - (trans_var_ptr->g_f_0.array() / trans_var_ptr->eta_fk.array()).matrix();
+    const Eigen::VectorXd  &Eqn68 = trans_var_ptr->b_fk - trans_var_ptr->b_f_0;
+    const Eigen::VectorXd  &Eqn69 = trans_var_ptr->g_fk - trans_var_ptr->g_f_0;
 
     for (size_t idx=0; idx<trans_var_ptr->local_input_ptr->F_k0.size(); idx++)
     {

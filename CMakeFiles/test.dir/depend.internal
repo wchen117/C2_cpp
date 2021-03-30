@@ -14773,6 +14773,7 @@ CMakeFiles/test.dir/src/transformer_constraints.cpp.o
  include/transformer.hpp
  include/transformerimpedancecorrectiontable.hpp
  include/typedefinition.hpp
+ include/variables/bus_variables.hpp
  include/variables/transformer_variables.hpp
  include/wrapper_construct.hpp
  include/zone.hpp
@@ -15731,6 +15732,7 @@ CMakeFiles/test.dir/src/transformer_costs.cpp.o
  include/transformer.hpp
  include/transformerimpedancecorrectiontable.hpp
  include/typedefinition.hpp
+ include/variables/bus_variables.hpp
  include/variables/transformer_variables.hpp
  include/wrapper_construct.hpp
  include/zone.hpp
@@ -16686,6 +16688,7 @@ CMakeFiles/test.dir/src/transformer_variables.cpp.o
  include/transformer.hpp
  include/transformerimpedancecorrectiontable.hpp
  include/typedefinition.hpp
+ include/variables/bus_variables.hpp
  include/variables/transformer_variables.hpp
  include/wrapper_construct.hpp
  include/zone.hpp

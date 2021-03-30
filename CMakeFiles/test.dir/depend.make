@@ -14772,6 +14772,7 @@ CMakeFiles/test.dir/src/transformer_constraints.cpp.o: include/switchedshunt.hpp
 CMakeFiles/test.dir/src/transformer_constraints.cpp.o: include/transformer.hpp
 CMakeFiles/test.dir/src/transformer_constraints.cpp.o: include/transformerimpedancecorrectiontable.hpp
 CMakeFiles/test.dir/src/transformer_constraints.cpp.o: include/typedefinition.hpp
+CMakeFiles/test.dir/src/transformer_constraints.cpp.o: include/variables/bus_variables.hpp
 CMakeFiles/test.dir/src/transformer_constraints.cpp.o: include/variables/transformer_variables.hpp
 CMakeFiles/test.dir/src/transformer_constraints.cpp.o: include/wrapper_construct.hpp
 CMakeFiles/test.dir/src/transformer_constraints.cpp.o: include/zone.hpp
@@ -15730,6 +15731,7 @@ CMakeFiles/test.dir/src/transformer_costs.cpp.o: include/switchedshunt.hpp
 CMakeFiles/test.dir/src/transformer_costs.cpp.o: include/transformer.hpp
 CMakeFiles/test.dir/src/transformer_costs.cpp.o: include/transformerimpedancecorrectiontable.hpp
 CMakeFiles/test.dir/src/transformer_costs.cpp.o: include/typedefinition.hpp
+CMakeFiles/test.dir/src/transformer_costs.cpp.o: include/variables/bus_variables.hpp
 CMakeFiles/test.dir/src/transformer_costs.cpp.o: include/variables/transformer_variables.hpp
 CMakeFiles/test.dir/src/transformer_costs.cpp.o: include/wrapper_construct.hpp
 CMakeFiles/test.dir/src/transformer_costs.cpp.o: include/zone.hpp
@@ -16685,6 +16687,7 @@ CMakeFiles/test.dir/src/transformer_variables.cpp.o: include/switchedshunt.hpp
 CMakeFiles/test.dir/src/transformer_variables.cpp.o: include/transformer.hpp
 CMakeFiles/test.dir/src/transformer_variables.cpp.o: include/transformerimpedancecorrectiontable.hpp
 CMakeFiles/test.dir/src/transformer_variables.cpp.o: include/typedefinition.hpp
+CMakeFiles/test.dir/src/transformer_variables.cpp.o: include/variables/bus_variables.hpp
 CMakeFiles/test.dir/src/transformer_variables.cpp.o: include/variables/transformer_variables.hpp
 CMakeFiles/test.dir/src/transformer_variables.cpp.o: include/wrapper_construct.hpp
 CMakeFiles/test.dir/src/transformer_variables.cpp.o: include/zone.hpp

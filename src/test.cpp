@@ -63,7 +63,7 @@ int main(int args, char** argv)
     //nlp.AddCostSet(line_cost_ptr);
 
     // variables, constraints and objectives associated with transformers
-    auto trans_vars_ptr = std::make_shared<TransformerVariables>(input_ptr, "trans_variables");
+    auto trans_vars_ptr = std::make_shared<TransformerVariables>(input_ptr, bus_var_ptr, "trans_variables");
     auto trans_cons_ptr = std::make_shared<TransConstraints>(input_ptr, "trans_variables");
     auto trans_cost_ptr = std::make_shared<TransformerCosts>("trans_variables");
     nlp.AddVariableSet(trans_vars_ptr);

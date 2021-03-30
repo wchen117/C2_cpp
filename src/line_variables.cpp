@@ -98,6 +98,7 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
             auto be_ch = local_input_ptr->b_e_ch[ek];
             auto diff = local_input_ptr->theta_0[idx] - local_input_ptr->theta_0[ipdx];
             // now figure out the where bus idx and ipdx locate in v_ik
+            // findInVector located in typedefinition.hpp
             auto bus_idx_pair = findInVector(bus_var_ptr->sorted_bus_ID, idx);
             auto bus_ipdx_pair = findInVector(bus_var_ptr->sorted_bus_ID, ipdx);
             auto tmp_x_ek_sw = x_ek_sw(ekdx);
