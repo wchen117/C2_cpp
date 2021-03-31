@@ -14,7 +14,6 @@ public:
     ~TransConstraints();
 
     VectorXd GetValues() const override;
-
     VecBound GetBounds() const override;
 
 
