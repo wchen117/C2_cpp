@@ -45,6 +45,9 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
         p_fk_d = Eigen::VectorXd::Zero(size_F_k0);
         q_fk_d = Eigen::VectorXd::Zero(size_F_k0);
 
+        // coefficients in eqn(77) and eqn(78)
+        s_f_over = Eigen::VectorXd::Zero(size_F_k0);
+
         // zero initialize all parameters for now
         c_n_s = Eigen::MatrixXd::Zero(Ns, size_F_k0);
         t_n_s_over = Eigen::MatrixXd::Zero(Ns, size_F_k0);
@@ -99,7 +102,8 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
                     b_f_0(idx) = local_input_ptr->b_f_0[f_key];
                     g_f_0(idx) = local_input_ptr->g_f_0[f_key];
 
-
+                    //eqn(77) and eqn(78)
+                    s_f_over(idx) = local_input_ptr->s_f_over[f_key];
 
                     for(size_t jdx=0; jdx<Ns; jdx++)
                     {
@@ -136,14 +140,15 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
                 auto bus_ipdx = bus_ipdx_pair.second;
                 auto vik = bus_var_ptr->v_ik(bus_idx);
                 auto vipk = bus_var_ptr->v_ik(bus_ipdx);
+                // eqn(72) - eqn(75)
                 auto tmp_p_fk_o = tmp_x_fk_sw * ((tmp_g_fk/tmp_tau_fk/tmp_tau_fk + g_f_m) * vik * vik - (tmp_g_fk * cos(diff) + tmp_b_fk*sin(diff)) * vik * vipk / tmp_tau_fk);
                 auto tmp_q_fk_o = tmp_x_fk_sw * (-(tmp_b_fk/tmp_tau_fk/tmp_tau_fk + b_f_m)* vik * vik - (tmp_b_fk * cos(diff) - tmp_g_fk*sin(diff)) * vik * vipk / tmp_tau_fk);
                 auto tmp_p_fk_d = tmp_x_fk_sw * (tmp_g_fk * vipk * vipk - (tmp_g_fk * cos(-diff) + tmp_b_fk * sin(-diff)) * vik * vipk / tmp_tau_fk);
                 auto tmp_q_fk_d = tmp_x_fk_sw * (-tmp_b_fk * vipk * vipk + (tmp_b_fk * cos(-diff) - tmp_g_fk * sin(-diff)) * vik * vipk / tmp_tau_fk);
-                p_fk_o(idx) = tmp_p_fk_o;
-                q_fk_o(idx) = tmp_q_fk_o;
-                p_fk_d(idx) = tmp_p_fk_d;
-                q_fk_d(idx) = tmp_q_fk_d;
+                p_fk_o(fkdx) = tmp_p_fk_o;
+                q_fk_o(fkdx) = tmp_q_fk_o;
+                p_fk_d(fkdx) = tmp_p_fk_d;
+                q_fk_d(fkdx) = tmp_q_fk_d;
             }
 
         }

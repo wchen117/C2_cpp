@@ -44,6 +44,8 @@ private:
     Eigen::VectorXd b_f_0, g_f_0;
     // variables in eqn(72) - eqn(75)
     Eigen::VectorXd p_fk_o, q_fk_o, p_fk_d, q_fk_d;
+    // coefficients in eqn(77) - eqn(78)
+    Eigen::VectorXd s_f_over;
 
 
 

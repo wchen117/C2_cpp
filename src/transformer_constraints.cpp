@@ -6,7 +6,7 @@
 TransConstraints::TransConstraints(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string &name) : ifopt::ConstraintSet(-1, name + "_constraint")
 {
     trans_var_name = name;
-    SetRows(4 * data_ptr->F_k0.size());
+    SetRows(7 * data_ptr->F_k0.size());
 
 
 }
@@ -45,7 +45,6 @@ Eigen::VectorXd TransConstraints::GetValues() const
             // condition on eqn(63), f \in F_k0 but not in F_tau
             else{
                 tau_fk_cons(idx) = Eqn63(idx);
-
             }
 
         }
@@ -56,7 +55,6 @@ Eigen::VectorXd TransConstraints::GetValues() const
             if (fk == fk_theta)
             {
                 theta_fk_cons(idx) = Eqn64(idx);
-
             }
             // condition on eqn(65), f \in F_k but not in F_theta
             else {
@@ -72,7 +70,6 @@ Eigen::VectorXd TransConstraints::GetValues() const
             {
                 b_fk_cons(idx) = Eqn66(idx);
                 g_fk_cons(idx) = Eqn67(idx);
-
             }
             // condition on eqn(68) and eqn(69)
             else {
@@ -80,12 +77,17 @@ Eigen::VectorXd TransConstraints::GetValues() const
                 g_fk_cons(idx) = Eqn69(idx);
             }
 
-
         }
 
-
     }
-    trans_cons << tau_fk_cons, theta_fk_cons, b_fk_cons, g_fk_cons;
+
+    // eqn(76)
+    // row: Ns, col: size_F_k0, sum over each col with colwise().sum()
+    Eigen::VectorXd s_fk_cons = trans_var_ptr->s_fnk_plus.colwise().sum();
+    const Eigen::VectorXd &Eqn77_cons = (trans_var_ptr->p_fk_o.array().square() + trans_var_ptr->q_fk_o.array().square()).sqrt().matrix() - s_fk_cons - trans_var_ptr->s_f_over;
+    const Eigen::VectorXd &Eqn78_cons = (trans_var_ptr->p_fk_d.array().square() + trans_var_ptr->q_fk_d.array().square()).sqrt().matrix() - s_fk_cons - trans_var_ptr->s_f_over;
+
+    trans_cons << tau_fk_cons, theta_fk_cons, b_fk_cons, g_fk_cons, s_fk_cons, Eqn77_cons, Eqn78_cons;
     return trans_cons;
 }
 
@@ -94,10 +96,25 @@ TransConstraints::VecBound TransConstraints::GetBounds() const
     VecBound trans_con_bounds(GetRows());
     Eigen::VectorXd upper_bounds(GetRows());
     Eigen::VectorXd lower_bounds(GetRows());
+    Eigen::VectorXd eqn62_69_up_bounds = Eigen::VectorXd::Zero(4 * trans_var_ptr->size_F_k0);
+    Eigen::VectorXd eqn62_69_lo_bounds = Eigen::VectorXd::Zero(4 * trans_var_ptr->size_F_k0);
+    Eigen::VectorXd eqn76_up_bounds = Eigen::VectorXd::Zero( trans_var_ptr->size_F_k0);
+    Eigen::VectorXd eqn76_lo_bounds = Eigen::VectorXd::Zero( trans_var_ptr->size_F_k0);
+    Eigen::VectorXd eqn77_78_up_bounds = Eigen::VectorXd::Zero( 2 * trans_var_ptr->size_F_k0);
+    Eigen::VectorXd eqn77_78_lo_bounds = Eigen::VectorXd::Zero( 2 * trans_var_ptr->size_F_k0);
     // well... eqn(70) and eqn(71) hasn't been coded yet, so
     // we might need to relax this bound
-    upper_bounds.setConstant(10);
-    lower_bounds.setConstant(-10);
+    eqn62_69_up_bounds.setConstant(10);
+    eqn62_69_lo_bounds.setConstant(-10);
+    // eqn(76) bound
+    eqn76_up_bounds.setConstant(1e20);
+    eqn76_lo_bounds.setConstant(0);
+    // enq(77) and eqn(78) bound
+    eqn77_78_up_bounds.setConstant(0);
+    eqn77_78_lo_bounds.setConstant(-1e20);
+
+    upper_bounds << eqn62_69_up_bounds, eqn76_up_bounds, eqn77_78_up_bounds;
+    lower_bounds << eqn62_69_lo_bounds, eqn76_lo_bounds, eqn77_78_lo_bounds;
 
     for (size_t idx=0; idx<GetRows(); idx++)
     {
