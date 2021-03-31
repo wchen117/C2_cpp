@@ -49,6 +49,16 @@ GeneratorVariables::GeneratorVariables(const std::shared_ptr<Wrapper_Construct> 
                     c_g_su(idx) = g.sucost;
                     c_g_sd(idx) = g.sdcost;
 
+                    // eqn(82) and eqn(83)
+                    x_g_on_0(idx) = gen_ref_data->x_g_on_0[g_key];
+                    p_g_over(idx) = gen_ref_data->p_g_over[g_key];
+                    p_g_under(idx) = gen_ref_data->p_g_under[g_key];
+                    q_g_over(idx) = gen_ref_data->q_g_over[g_key];
+                    q_g_under(idx) = gen_ref_data->q_g_under[g_key];
+                    // so....
+                    p_g_ru_over(idx) = g.prumax;
+
+
                     for (size_t jdx=0; jdx<Ng; jdx++)
                     {
                         p_gnk.at(idx).at(jdx) = 0.5;
@@ -77,9 +87,6 @@ Eigen::VectorXd GeneratorVariables::GetValues() const
         size_t count = 0;
         Eigen::VectorXd tmp_x(GetRows());
         Eigen::VectorXd flat_p_gnk(size_p_gnk);
-
-
-
 
         for (size_t idx=0; idx<size_G_k0; idx++)
         {

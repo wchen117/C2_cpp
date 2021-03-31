@@ -34,6 +34,11 @@ private:
     Eigen::VectorXd c_g_on;
     Eigen::VectorXd c_g_su;
     Eigen::VectorXd c_g_sd;
+    //coefficients used in eqn(82)
+    Eigen::VectorXd x_g_on_0;
+    //coefficients used in eqn(85) - eqn(88)
+    Eigen::VectorXd p_g_over, p_g_under, q_g_over, q_g_under, p_g_ru_over;
+
 
     // some useful size parameters
     size_t size_p_gnk = 0;
