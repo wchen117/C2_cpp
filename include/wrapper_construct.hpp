@@ -69,8 +69,8 @@ class Wrapper_Construct
     UMAP_TUPLE_is_INT G_i;
     UMAP_TUPLE_is_INT i_g;
     UMAP_TUPLE_is_STRING id_g;
-    UMAP_TUPLE_is_DOUBLE p_g;
-    UMAP_TUPLE_is_DOUBLE q_g;
+    UMAP_TUPLE_is_DOUBLE p_g_0;
+    UMAP_TUPLE_is_DOUBLE q_g_0;
     UMAP_TUPLE_is_DOUBLE q_g_over;
     UMAP_TUPLE_is_DOUBLE q_g_under;
     UMAP_TUPLE_is_DOUBLE p_g_over;

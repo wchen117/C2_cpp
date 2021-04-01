@@ -124,8 +124,8 @@ void Wrapper_Construct::construct_generator()
         G.push_back(tmp_g);
         i_g.insert(std::make_pair(tmp_g, gen_it->second.i));
         id_g.insert(std::make_pair(tmp_g, gen_it->second.id));
-        p_g.insert(std::make_pair(tmp_g, gen_it->second.pg * s_tilde_inverse));
-        q_g.insert(std::make_pair(tmp_g, gen_it->second.qg * s_tilde_inverse));
+        p_g_0.insert(std::make_pair(tmp_g, gen_it->second.pg * s_tilde_inverse));
+        q_g_0.insert(std::make_pair(tmp_g, gen_it->second.qg * s_tilde_inverse));
         q_g_over.insert(std::make_pair(tmp_g, gen_it->second.qt * s_tilde_inverse));
         q_g_under.insert(std::make_pair(tmp_g, gen_it->second.qb * s_tilde_inverse));
         p_g_over.insert(std::make_pair(tmp_g, gen_it->second.pt * s_tilde_inverse));

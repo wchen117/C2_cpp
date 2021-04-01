@@ -18,11 +18,13 @@ public:
     VecBound GetBounds() const override;
     friend class GenCosts;
     friend class BusConstraints;
+    friend class GeneratorConstraints;
 
 private:
     std::shared_ptr<Wrapper_Construct> gen_ref_data;
     // first dimension: number of generators, second dimension: Ng (not the same for each generator)
     std::vector<std::vector<double> > p_gnk;
+    Eigen::VectorXd q_gk;
     // these three seems to be binary variables {0, 1}, for now we set them real variables between 0 and 1
     Eigen::VectorXd x_gk_on;
     Eigen::VectorXd x_gk_su;
@@ -37,7 +39,9 @@ private:
     //coefficients used in eqn(82)
     Eigen::VectorXd x_g_on_0;
     //coefficients used in eqn(85) - eqn(88)
-    Eigen::VectorXd p_g_over, p_g_under, q_g_over, q_g_under, p_g_ru_over;
+    Eigen::VectorXd p_g_over, p_g_under, q_g_over, q_g_under, p_g_ru_over, p_g_rd_over, p_g_0;
+    // to determine if g \in G_su or \in G_sd
+    Eigen::VectorXi G_su_value, G_sd_value;
 
 
     // some useful size parameters

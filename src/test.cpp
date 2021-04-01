@@ -76,6 +76,7 @@ int main(int args, char** argv)
     auto gen_cons_ptr = std::make_shared<GeneratorConstraints>(input_ptr, "gen_variables");
     auto gen_cost_ptr = std::make_shared<GenCosts>("gen_variables");
     nlp.AddVariableSet(gen_vars_ptr);
+    nlp.AddConstraintSet(gen_cons_ptr);
     nlp.AddCostSet(gen_cost_ptr);
 
     nlp.PrintCurrent();

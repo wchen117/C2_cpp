@@ -13,14 +13,30 @@ GeneratorVariables::GeneratorVariables(const std::shared_ptr<Wrapper_Construct> 
         c_gn.resize(size_G_k0);
         p_gn_over.resize(size_G_k0);
 
+        //q_gk only has values for infeasible solutions?
+        q_gk = Eigen::VectorXd::Zero(size_G_k0);
+
         x_gk_on = Eigen::VectorXd::Zero(size_G_k0);
         x_gk_su = Eigen::VectorXd::Zero(size_G_k0);
         x_gk_sd = Eigen::VectorXd::Zero(size_G_k0);
         c_g_on = Eigen::VectorXd::Zero(size_G_k0);
         c_g_su = Eigen::VectorXd::Zero(size_G_k0);
         c_g_sd = Eigen::VectorXd::Zero(size_G_k0);
+        //
+        x_g_on_0 = Eigen::VectorXd::Zero(size_G_k0);
+        p_g_over = Eigen::VectorXd::Zero(size_G_k0);
+        p_g_under = Eigen::VectorXd::Zero(size_G_k0);
+        q_g_over = Eigen::VectorXd::Zero(size_G_k0);
+        q_g_under = Eigen::VectorXd::Zero(size_G_k0);
+        p_g_ru_over = Eigen::VectorXd::Zero(size_G_k0);
+        p_g_rd_over = Eigen::VectorXd::Zero(size_G_k0);
+        p_g_0 = Eigen::VectorXd::Zero(size_G_k0);
+
+        G_su_value = Eigen::VectorXi::Zero(size_G_k0);
+        G_sd_value = Eigen::VectorXi::Zero(size_G_k0);
         // just to sure
         size_p_gnk = 0;
+
 
 
         for (size_t idx=0; idx<size_G_k0; idx++)
@@ -48,6 +64,9 @@ GeneratorVariables::GeneratorVariables(const std::shared_ptr<Wrapper_Construct> 
                     c_g_on(idx) = g.oncost;
                     c_g_su(idx) = g.sucost;
                     c_g_sd(idx) = g.sdcost;
+                    // if they are in G_su or G_sd
+                    G_su_value(idx) = g.suqual;
+                    G_sd_value(idx) = g.sdqual;
 
                     // eqn(82) and eqn(83)
                     x_g_on_0(idx) = gen_ref_data->x_g_on_0[g_key];
@@ -57,6 +76,8 @@ GeneratorVariables::GeneratorVariables(const std::shared_ptr<Wrapper_Construct> 
                     q_g_under(idx) = gen_ref_data->q_g_under[g_key];
                     // so....
                     p_g_ru_over(idx) = g.prumax;
+                    p_g_rd_over(idx) = g.prdmax;
+                    p_g_0(idx) = gen_ref_data->p_g_0[g_key];
 
 
                     for (size_t jdx=0; jdx<Ng; jdx++)
