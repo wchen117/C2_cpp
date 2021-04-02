@@ -121,6 +121,7 @@ GeneratorConstraints::VecBound GeneratorConstraints::GetBounds() const
 
     for (size_t idx=0; idx<gen_con_bounds.size(); idx++)
     {
+        // if apply strick bound, it's having a hard time to converge
         //gen_con_bounds.at(idx).upper_ = 1e10;
         //gen_con_bounds.at(idx).lower_ = 1e-10;
         gen_con_bounds.at(idx).upper_ = upper_bounds(idx);
