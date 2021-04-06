@@ -15,6 +15,8 @@ public:
     Eigen::VectorXd GetValues() const override;
     // define the bounds of variables
     VecBound GetBounds() const override;
+    friend class BusConstraints;
+    friend class BusConstraints;
 private:
     std::shared_ptr<Wrapper_Construct> swsh_ref_data;
     //eq (46)

@@ -18,6 +18,7 @@ public:
     VecBound GetBounds() const override;
     friend class LineCosts;
     friend class LineConstraints;
+    friend class BusConstraints;
 
 private:
     // first dimension: Ns, second dimension: size of E_k

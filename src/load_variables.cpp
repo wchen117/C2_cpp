@@ -139,6 +139,28 @@ void LoadVariables::SetVariables(const Eigen::VectorXd &x)
     
 
 }
+Eigen::VectorXd LoadVariables::get_p_jk() {
+
+    Eigen::VectorXd p_jk = Eigen::VectorXd::Zero(p_jkn.size());
+
+    for (size_t idx=0; idx<p_jkn.size(); idx++)
+    {
+        for (size_t jdx=0; jdx<p_jkn.at(idx).size(); jdx++)
+        {
+            p_jk(idx) += p_jkn.at(idx).at(jdx);
+        }
+    }
+
+    return p_jk;
+
+}
+Eigen::VectorXd LoadVariables::get_q_jk()
+{
+    Eigen::Map<Eigen::VectorXd> q_jk_vectorxd (q_jk.data(), q_jk.size());
+
+    return q_jk_vectorxd;
+}
+
 LoadVariables::VecBound LoadVariables::GetBounds() const 
 {
     VecBound load_bounds(GetRows());

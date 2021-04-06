@@ -105,6 +105,8 @@ Eigen::VectorXd GeneratorVariables::GetValues() const
 
     if(GetRows())
     {
+        auto test = get_p_gk();
+
         size_t count = 0;
         Eigen::VectorXd tmp_x(GetRows());
         Eigen::VectorXd flat_p_gnk(size_p_gnk);
@@ -177,5 +179,22 @@ GeneratorVariables::VecBound GeneratorVariables::GetBounds() const
 
     return gen_bounds;
 
+
+}
+
+Eigen::VectorXd GeneratorVariables::get_p_gk() const
+{
+
+    Eigen::VectorXd p_gk = Eigen::VectorXd::Zero(p_gnk.size());
+
+    for (size_t idx=0; idx<p_gnk.size(); idx++)
+    {
+        for (size_t jdx=0; jdx<p_gnk.at(idx).size(); jdx++)
+        {
+            p_gk(idx) += p_gnk.at(idx).at(jdx);
+        }
+    }
+
+    return p_gk;
 
 }

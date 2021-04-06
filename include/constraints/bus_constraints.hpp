@@ -2,8 +2,11 @@
 #define __BUSCONSTRAINTS_HPP__
 #include <ifopt/constraint_set.h>
 #include <variables/bus_variables.hpp>
+#include <variables/line_variables.hpp>
 #include <variables/generator_variables.hpp>
 #include <variables/load_variables.hpp>
+#include <variables/load_variables.hpp>
+#include <variables/transformer_variables.hpp>
 #include <wrapper_construct.hpp>
 
 class BusConstraints : public ifopt::ConstraintSet {
@@ -14,35 +17,42 @@ public:
     VecBound GetBounds() const override;
 
 
+
 private:
     void FillJacobianBlock(std::string var_set, Jacobian& jac_block) const override;
     void InitVariableDependedQuantities(const VariablesPtr& x) override;
+
+
     std::string bus_var_name;
+    std::shared_ptr<Wrapper_Construct> bus_ref_data;
     std::shared_ptr<BusVariables> bus_var_ptr;
     std::shared_ptr<GeneratorVariables> gen_var_ptr;
     std::shared_ptr<LoadVariables> load_var_ptr;
+    std::shared_ptr<TransformerVariables> trans_var_ptr;
+    std::shared_ptr<LineVariables> line_var_ptr;
 
-    //int bus_con_size=0;
-    // a template function to find common item between unordered map with key=T and vector with item T
-    template<typename T>
-    void FindCommon(const std::unordered_map<T, int, boost::hash<T> >& umap_list, \
-                    const std::vector<T>& vect, std::vector<int>& output) const
+    template <typename T>
+    double get_sum(const std::vector<T> K0_vector, const std::unordered_map<T, int, boost::hash<T> > K0_umap, const Eigen::VectorXd sum_from_vector)  const
     {
-        for (auto umap_item: umap_list)
+        double sum_value = 0.0;
+        for (size_t idx=0; idx<K0_vector.size(); idx++)
         {
-            for (auto vect_item: vect)
+            auto item_k0 =K0_vector.at(idx);
+
+            for (auto k0_u: K0_umap)
             {
-                if (umap_item.second == std::get<0>(vect_item))
+                if (item_k0 == k0_u.first)
                 {
-                    output.push_back(umap_item.second);
+                    sum_value += sum_from_vector(idx);
 
                 }
             }
+
         }
-
-
-
+        return sum_value;
     }
+
+
 
 
 

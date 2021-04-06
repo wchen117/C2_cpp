@@ -5,8 +5,9 @@ BusConstraints::BusConstraints(const std::shared_ptr<Wrapper_Construct> data_ptr
     //auto tmp_ptr = ifopt::ConstraintSet::GetVariables()->GetComponent<BusVariables>(bus_var_name);
     // from eqn 33 - 38, it seems that we should have 6 * Is constraints for bus
     auto bus_con_size = 6 * data_ptr->Is;
-
+    bus_ref_data = data_ptr;
     SetRows(bus_con_size);
+
 }
 
 BusConstraints::~BusConstraints(){}
@@ -26,38 +27,25 @@ Eigen::VectorXd BusConstraints::GetValues() const
     Eigen::VectorXd eq35 = Eigen::VectorXd::Zero(bus_var_ptr->Is);
     Eigen::VectorXd eq38 = Eigen::VectorXd::Zero(bus_var_ptr->Is);
 
-    // for some of these vectors they could be empty
-    // g in both G_i and G_k
-    std::vector<int> g_Gi_Gk;
-    FindCommon(bus_var_ptr->bus_ref_data->G_i,bus_var_ptr->bus_ref_data->G_k,  g_Gi_Gk);
-    // j in both J_i and J_k
-    std::vector<int> j_Ji_Jk;
-    FindCommon(bus_var_ptr->bus_ref_data->J_i, bus_var_ptr->bus_ref_data->J_k, j_Ji_Jk);
-    // e in both E_i_o and E_k
-    std::vector<int> e_Eio_Ek;
-    FindCommon(bus_var_ptr->bus_ref_data->E_i_o, bus_var_ptr->bus_ref_data->E_k, e_Eio_Ek);
-    // e in both E_i_d and E_k;
-    std::vector<int> e_Eid_Ek;
-    FindCommon(bus_var_ptr->bus_ref_data->E_i_d, bus_var_ptr->bus_ref_data->E_k, e_Eid_Ek);
-    // f in both f_i_o and F_k;
-    std::vector<int> f_Fio_Fk;
-    FindCommon(bus_var_ptr->bus_ref_data->F_i_o, bus_var_ptr->bus_ref_data->F_k, f_Fio_Fk);
-    // f in both F_i_d and F_k;
-    std::vector<int> f_Fid_Fk;
-    FindCommon(bus_var_ptr->bus_ref_data->F_i_d, bus_var_ptr->bus_ref_data->F_k, f_Fid_Fk);
+    Eigen::VectorXd gen_p_gk = gen_var_ptr->get_p_gk();
+    Eigen::VectorXd load_p_jk = load_var_ptr->get_p_jk();
+    Eigen::VectorXd load_q_jk = load_var_ptr->get_q_jk();
 
-    // now we start to sum the left hand side of eq 35
+    // same sequence as every variables in generator variables
+    // G_k0, vector
+    double sum_p_gk = get_sum(bus_ref_data->G_k0, bus_ref_data->G_i, gen_p_gk);
+    double sum_p_jk = get_sum(bus_ref_data->J_k0, bus_ref_data->J_i, load_p_jk);
+    double sum_p_ek_o = get_sum(bus_ref_data->E_k0, bus_ref_data->E_i_o, line_var_ptr->p_ek_o);
+    double sum_p_ek_d = get_sum(bus_ref_data->E_k0, bus_ref_data->E_i_d, line_var_ptr->p_ek_d);
+    double sum_p_fk_o = get_sum(bus_ref_data->F_k0, bus_ref_data->F_i_o, trans_var_ptr->p_fk_o);
+    double sum_p_fk_d = get_sum(bus_ref_data->F_k0, bus_ref_data->F_i_d, trans_var_ptr->p_fk_d);
 
-    /**
-    double sum_p_gk;
-    if(!g_Gi_Gk.empty())
-    {
-        for (auto gik: g_Gi_Gk)
-        {
-
-        }
-    }
-     **/
+    double sum_q_gk = get_sum(bus_ref_data->G_k0, bus_ref_data->G_i, gen_var_ptr->q_gk);
+    double sum_q_jk = get_sum(bus_ref_data->J_k0, bus_ref_data->J_i, load_q_jk);
+    double sum_q_ek_o = get_sum(bus_ref_data->E_k0, bus_ref_data->E_i_o, line_var_ptr->q_ek_o);
+    double sum_q_ek_d = get_sum(bus_ref_data->E_k0, bus_ref_data->E_i_d, line_var_ptr->q_ek_d);
+    double sum_q_fk_o = get_sum(bus_ref_data->F_k0, bus_ref_data->F_i_o, trans_var_ptr->q_fk_o);
+    double sum_q_fk_d = get_sum(bus_ref_data->F_k0, bus_ref_data->F_i_d, trans_var_ptr->q_fk_d);
 
 
 
@@ -68,7 +56,7 @@ Eigen::VectorXd BusConstraints::GetValues() const
 
 
 
-    bus_cons = Eigen::VectorXd::Zero(GetRows());
+
     return bus_cons;
 
 }
@@ -94,6 +82,10 @@ BusConstraints::VecBound BusConstraints::GetBounds() const
 void BusConstraints::InitVariableDependedQuantities(const VariablesPtr& x)
 {
     bus_var_ptr = x->GetComponent<BusVariables>(bus_var_name);
+    gen_var_ptr =  x->GetComponent<GeneratorVariables>("gen_variables");
+    load_var_ptr = x->GetComponent<LoadVariables>("load_variables");
+    line_var_ptr = x->GetComponent<LineVariables>("line_variables");
+    trans_var_ptr = x->GetComponent<TransformerVariables>("trans_variables");
 }
 void BusConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block) const
 {

@@ -14,6 +14,7 @@ public:
     ~GeneratorVariables();
     Eigen::VectorXd GetValues() const override;
     void SetVariables(const Eigen::VectorXd &x) override;
+    Eigen::VectorXd get_p_gk() const;
     // define the bounds of variables
     VecBound GetBounds() const override;
     friend class GenCosts;
