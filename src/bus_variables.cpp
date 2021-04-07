@@ -29,6 +29,8 @@ BusVariables::BusVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, co
         v_ik = Eigen::VectorXd::Zero(Is);
         v_i_over = Eigen::VectorXd::Zero(Is);
         v_i_under = Eigen::VectorXd::Zero(Is);
+        b_i_fs = Eigen::VectorXd::Zero(Is);
+        g_i_fs = Eigen::VectorXd::Zero(Is);
     }
 
     // since the bounds on c_n_*, *_n_over are not i index related
@@ -68,8 +70,10 @@ BusVariables::BusVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, co
         // to reference their value, so that v_i_over and v_i_under are sorted with respect to
         // I. We are doing this just for consistency.
 
-        v_i_over(idx) = bus_ref_data->vover[sorted_bus_ID.at(idx)];
-        v_i_under(idx) = bus_ref_data->vunder[sorted_bus_ID.at(idx)];
+        v_i_over(idx) = bus_ref_data->vover.at(sorted_bus_ID.at(idx));
+        v_i_under(idx) = bus_ref_data->vunder.at(sorted_bus_ID.at(idx));
+        b_i_fs(idx) = bus_ref_data->b_fs.at(sorted_bus_ID.at(idx));
+        g_i_fs(idx) = bus_ref_data->g_fs.at(sorted_bus_ID.at(idx));
     }
 
     // bus variables consist of p_ikn+, p_ikn-, q_ikn+, q_ikn-, and v_ik

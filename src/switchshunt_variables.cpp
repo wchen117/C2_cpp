@@ -10,7 +10,9 @@ SwitchShuntVariables::SwitchShuntVariables(const std::shared_ptr<Wrapper_Constru
     // variable x_hak_st defined in eq(46)
     if (!swsh_ref_data->H_k0.empty())
     {
-        x_hak_st.resize(swsh_ref_data->H_k0.size());
+        x_hak_st = Eigen::MatrixXd::Zero(swsh_ref_data->H_k0.size(), swsh_ref_data->NBL);
+        x_hak_st_upbound = Eigen::MatrixXd::Zero(swsh_ref_data->H_k0.size(), swsh_ref_data->NBL);
+        b_ha_st = Eigen::MatrixXd::Zero(swsh_ref_data->H_k0.size(), swsh_ref_data->NBL);
 
         for (size_t idx=0; idx<swsh_ref_data->H_k0.size(); idx++)
         {
@@ -19,41 +21,57 @@ SwitchShuntVariables::SwitchShuntVariables(const std::shared_ptr<Wrapper_Constru
             for (auto jdx=1; jdx<=swsh_ref_data->NBL; jdx++)
             {
                 auto key_ih = std::make_tuple(hk, jdx);
-                auto x_ha_st_over = swsh_ref_data->x_ha_st_over.at(key_ih);
-
+                x_hak_st_upbound(idx, jdx-1) = swsh_ref_data->x_ha_st_over.at(key_ih);
+                x_hak_st(idx, jdx-1) = 1.0;
+                b_ha_st(idx, jdx-1) = swsh_ref_data->b_ha_st.at(key_ih);
 
 
             }
 
 
         }
-        for (auto sw: swsh_ref_data->x_ha_st_over)
-        {
-            int h, a;
-            std::tie(h, a) = sw.first;
-            std::cout<<"h = "<<h<<" a = "<< a<<" sw = "<<sw.second<<std::endl;
-        }
-
 
     }
-    //SetRows(10);
+
+    size_x_hak_st =x_hak_st.rows() * x_hak_st.cols();
+
+    SetRows(size_x_hak_st);
 
 
 }
 SwitchShuntVariables::~SwitchShuntVariables() {}
 
+Eigen::VectorXd SwitchShuntVariables::get_b_hat_st() const
+{
+    Eigen::VectorXd tmp_b_hat_st =  (x_hak_st.array() * b_ha_st.array()).matrix().colwise().sum();
+
+    return tmp_b_hat_st;
+}
 Eigen::VectorXd SwitchShuntVariables::GetValues() const
 {
-
+    Eigen::Map<const Eigen::VectorXd> tmp_x (x_hak_st.data(), x_hak_st.size());
+    return tmp_x;
 }
 
 void SwitchShuntVariables::SetVariables(const Eigen::VectorXd &x)
 {
+    Eigen::Map<const Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::ColMajor>> M2p (x.data(), x_hak_st.rows(), x_hak_st.cols());
+    x_hak_st = M2p;
 
 }
 
 SwitchShuntVariables::VecBound SwitchShuntVariables::GetBounds() const
 {
+    VecBound swsh_bounds(GetRows());
+    Eigen::Map<const Eigen::VectorXd> upper_bound (x_hak_st_upbound.data(), x_hak_st_upbound.size());
+
+    for (size_t idx=0; idx<swsh_bounds.size(); idx++)
+    {
+        swsh_bounds.at(idx).upper_ = upper_bound(idx);
+        swsh_bounds.at(idx).lower_ = 0.0;
+    }
+
+    return swsh_bounds;
 
 }
 

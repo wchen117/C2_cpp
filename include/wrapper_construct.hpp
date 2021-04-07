@@ -128,8 +128,8 @@ class Wrapper_Construct
     UMAP_TUPLE_iisi_DOUBLE theta_f_m;
     // vectors and maps holding switched shunt data
     std::vector<int> H;
-    std::unordered_map<int, int> i_h;
-    std::unordered_map<int, int> H_i;
+    std::unordered_map<int, int, boost::hash<int>> i_h;
+    std::unordered_map<int, int, boost::hash<int>> H_i;
     std::unordered_map<int, double> b_h_cs0;
     int NBL;
     UMAP_TUPLE_ii_INT A_h;

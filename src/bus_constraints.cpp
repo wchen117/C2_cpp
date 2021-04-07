@@ -30,6 +30,7 @@ Eigen::VectorXd BusConstraints::GetValues() const
     Eigen::VectorXd gen_p_gk = gen_var_ptr->get_p_gk();
     Eigen::VectorXd load_p_jk = load_var_ptr->get_p_jk();
     Eigen::VectorXd load_q_jk = load_var_ptr->get_q_jk();
+    Eigen::VectorXd swsh_b_hk_cs = swsh_var_ptr->get_b_hat_st();
 
     // same sequence as every variables in generator variables
     // G_k0, vector
@@ -46,6 +47,11 @@ Eigen::VectorXd BusConstraints::GetValues() const
     double sum_q_ek_d = get_sum(bus_ref_data->E_k0, bus_ref_data->E_i_d, line_var_ptr->q_ek_d);
     double sum_q_fk_o = get_sum(bus_ref_data->F_k0, bus_ref_data->F_i_o, trans_var_ptr->q_fk_o);
     double sum_q_fk_d = get_sum(bus_ref_data->F_k0, bus_ref_data->F_i_d, trans_var_ptr->q_fk_d);
+    double sum_b_hk_cs = get_sum(bus_ref_data->H_k0, bus_ref_data->H_i, swsh_b_hk_cs);
+
+
+    eq35 = (p_ik_plus.array() - p_ik_minus.array() + (bus_var_ptr->g_i_fs.array() * bus_var_ptr->v_ik.array().square()) - sum_p_gk + sum_p_jk + sum_p_ek_o + sum_p_ek_d + sum_p_fk_o + p_fk_d).matrix();
+    eq38 = q_ik_plus.array() - q_ik_minus.array() - (bus_var_ptr->b_i_fs)
 
 
 
@@ -86,6 +92,7 @@ void BusConstraints::InitVariableDependedQuantities(const VariablesPtr& x)
     load_var_ptr = x->GetComponent<LoadVariables>("load_variables");
     line_var_ptr = x->GetComponent<LineVariables>("line_variables");
     trans_var_ptr = x->GetComponent<TransformerVariables>("trans_variables");
+    swsh_var_ptr = x->GetComponent<SwitchShuntVariables>("switch_shunt_variables");
 }
 void BusConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block) const
 {

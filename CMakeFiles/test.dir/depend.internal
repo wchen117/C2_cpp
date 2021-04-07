@@ -968,6 +968,7 @@ CMakeFiles/test.dir/src/bus_constraints.cpp.o
  include/variables/generator_variables.hpp
  include/variables/line_variables.hpp
  include/variables/load_variables.hpp
+ include/variables/switch_shunt_variables.hpp
  include/variables/transformer_variables.hpp
  include/wrapper_construct.hpp
  include/zone.hpp

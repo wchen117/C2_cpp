@@ -119,9 +119,9 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
         // to formulate  p_fk_o, q_fk_o, p_fk_d, q_fk_d
         for (size_t fkdx=0; fkdx<local_input_ptr->F_k0.size(); fkdx++)
         {
-            auto fk = local_input_ptr->E_k0.at(fkdx);
+            auto fk = local_input_ptr->F_k0.at(fkdx);
             auto idx = local_input_ptr->i_f_o.at(fk);
-            auto ipdx = local_input_ptr->i_e_d.at(fk);
+            auto ipdx = local_input_ptr->i_f_d.at(fk);
             auto g_f_m = local_input_ptr->g_f_m.at(fk);
             auto b_f_m = local_input_ptr->b_f_m.at(fk);
             // findInVector located in typedefinition.hpp

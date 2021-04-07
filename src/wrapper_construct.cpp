@@ -89,27 +89,24 @@ void Wrapper_Construct::construct_load()
 void Wrapper_Construct::construct_fixed_shunt()
 {
      // initilize g_fs and b_fs to 0
-     /**
-    for (int idx=0; idx < Is; idx++)
-    {
-        g_fs.push_back(0.0);
-        b_fs.push_back(0.0);
-    }
-      **/
-    
-    // fixed shunt data from raw
-    std::unordered_map<int, FixedShunt>::iterator shunt_it;
-    for(shunt_it=new_data.raw.shunts.begin(); shunt_it!=new_data.raw.shunts.end(); shunt_it++)
-    {
-        g_fs.insert(std::make_pair(shunt_it->second.i, 0.0));
-        b_fs.insert(std::make_pair(shunt_it->second.i, 0.0));
-        if (shunt_it->second.status == 1)
-        {
-            g_fs[shunt_it->second.i] = g_fs[shunt_it->second.i] + shunt_it->second.gl * s_tilde_inverse;
-            b_fs[shunt_it->second.i] = b_fs[shunt_it->second.i] + shunt_it->second.gl * s_tilde_inverse;
-        }
 
-    }
+     for (size_t idx=0; idx< I.size(); idx++)
+     {
+         auto ii = I.at(idx);
+         g_fs.insert(std::make_pair(ii, 0.0));
+         b_fs.insert(std::make_pair(ii, 0.0));
+
+         for (auto shunt : new_data.raw.shunts)
+         {
+             if (shunt.first == ii && shunt.second.status == 1)
+             {
+                 g_fs.at(ii) += shunt.second.gl * s_tilde_inverse;
+                 b_fs.at(ii) += shunt.second.bl * s_tilde_inverse;
+             }
+         }
+
+
+     }
 
 }
 

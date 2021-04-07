@@ -82,7 +82,7 @@ int main(int args, char** argv)
     auto bus_cost_ptr = std::make_shared<BusCosts>("bus_variables");
 
     nlp.AddVariableSet(bus_var_ptr);
-    //nlp.AddConstraintSet(bus_cons_ptr);
+    nlp.AddConstraintSet(bus_cons_ptr);
     nlp.AddCostSet(bus_cost_ptr);
     nlp.PrintCurrent();
 
