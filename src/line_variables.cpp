@@ -52,7 +52,7 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                     c_e_sw(idx) = n.csw;
                     // eq(153)
 
-                    x_e_sw0(idx) = local_input_ptr->x_e_sw_0[e_key];
+                    x_e_sw0(idx) = local_input_ptr->x_e_sw_0.at(e_key);
 
 
 
@@ -60,7 +60,7 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                     // shall we use n.swqual < 1?
                     if (n.swqual == 0)
                     {
-                        x_ek_sw(idx) = local_input_ptr->x_e_sw_0[e_key];
+                        x_ek_sw(idx) = local_input_ptr->x_e_sw_0.at(e_key);
                     }
 
 
@@ -69,7 +69,7 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                     {
                         c_n_s(jdx, idx) = local_input_ptr->new_data.sup.scblocks.at(jdx).c * local_input_ptr->s_tilde;
                         t_n_s_over(jdx, idx) = local_input_ptr->new_data.sup.scblocks.at(jdx).tmax;
-                        r_e_over_eigen(jdx, idx) = local_input_ptr->r_e_over[e_key];
+                        r_e_over_eigen(jdx, idx) = local_input_ptr->r_e_over.at(e_key);
 
                     }
 
@@ -91,12 +91,12 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
         {
             auto ek = local_input_ptr->E_k0.at(ekdx);
             // i \in i_e_o for e \in E_k, i_p \in i_e_d for e \in E_k
-            auto idx = local_input_ptr->i_e_o[ek];
-            auto ipdx = local_input_ptr->i_e_d[ek];
-            auto ge = local_input_ptr->g_e[ek];
-            auto be = local_input_ptr->b_e[ek];
-            auto be_ch = local_input_ptr->b_e_ch[ek];
-            auto diff = local_input_ptr->theta_0[idx] - local_input_ptr->theta_0[ipdx];
+            auto idx = local_input_ptr->i_e_o.at(ek);
+            auto ipdx = local_input_ptr->i_e_d.at(ek);
+            auto ge = local_input_ptr->g_e.at(ek);
+            auto be = local_input_ptr->b_e.at(ek);
+            auto be_ch = local_input_ptr->b_e_ch.at(ek);
+            auto diff = local_input_ptr->theta_0.at(idx) - local_input_ptr->theta_0.at(ipdx);
             // now figure out the where bus idx and ipdx locate in v_ik
             // findInVector located in typedefinition.hpp
             auto bus_idx_pair = findInVector(bus_var_ptr->sorted_bus_ID, idx);

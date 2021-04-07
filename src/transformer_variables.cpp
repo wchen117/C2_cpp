@@ -120,14 +120,14 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
         for (size_t fkdx=0; fkdx<local_input_ptr->F_k0.size(); fkdx++)
         {
             auto fk = local_input_ptr->E_k0.at(fkdx);
-            auto idx = local_input_ptr->i_f_o[fk];
-            auto ipdx = local_input_ptr->i_e_d[fk];
-            auto g_f_m = local_input_ptr->g_f_m[fk];
-            auto b_f_m = local_input_ptr->b_f_m[fk];
+            auto idx = local_input_ptr->i_f_o.at(fk);
+            auto ipdx = local_input_ptr->i_e_d.at(fk);
+            auto g_f_m = local_input_ptr->g_f_m.at(fk);
+            auto b_f_m = local_input_ptr->b_f_m.at(fk);
             // findInVector located in typedefinition.hpp
             auto bus_idx_pair = findInVector(bus_var_ptr->sorted_bus_ID, idx);
             auto bus_ipdx_pair = findInVector(bus_var_ptr->sorted_bus_ID, ipdx);
-            auto diff = local_input_ptr->theta_0[idx] - local_input_ptr->theta_0[ipdx] - theta_fk[fkdx];
+            auto diff = local_input_ptr->theta_0.at(idx) - local_input_ptr->theta_0.at(ipdx) - theta_fk(fkdx);
             // can't use tmp_x_fk_sw to change x_fk_sw(fkdx)
             const auto &tmp_x_fk_sw = x_fk_sw(fkdx);
             const auto &tmp_g_fk = g_fk(fkdx);

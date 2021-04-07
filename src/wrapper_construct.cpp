@@ -316,6 +316,7 @@ void Wrapper_Construct::construct_switched_shunt()
             key_ii tmp_ha;
             tmp_ha = std::make_tuple(ss_it->second.i, idx);
             A_h.insert(std::make_pair(tmp_ha, idx));
+
             x_ha_st_over.insert(std::make_pair(tmp_ha, ss_it->second.n.at(idx-1)));
             b_ha_st.insert(std::make_pair(tmp_ha, ss_it->second.b.at(idx-1) * s_tilde_inverse));
 

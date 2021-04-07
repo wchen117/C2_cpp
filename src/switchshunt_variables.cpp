@@ -8,17 +8,36 @@ SwitchShuntVariables::SwitchShuntVariables(const std::shared_ptr<Wrapper_Constru
     swsh_ref_data = data_ptr;
 
     // variable x_hak_st defined in eq(46)
-    if (!swsh_ref_data->H_k.empty())
+    if (!swsh_ref_data->H_k0.empty())
     {
-        x_hak_st.resize(swsh_ref_data->H_k.size());
+        x_hak_st.resize(swsh_ref_data->H_k0.size());
 
+        for (size_t idx=0; idx<swsh_ref_data->H_k0.size(); idx++)
+        {
+            auto hk = swsh_ref_data->H_k0.at(idx);
+            auto ih = swsh_ref_data->i_h[hk];
+            for (auto jdx=1; jdx<=swsh_ref_data->NBL; jdx++)
+            {
+                auto key_ih = std::make_tuple(hk, jdx);
+                auto x_ha_st_over = swsh_ref_data->x_ha_st_over.at(key_ih);
+
+
+
+            }
+
+
+        }
         for (auto sw: swsh_ref_data->x_ha_st_over)
         {
-            int hh, ah;
-            std::tie(hh, ah) = sw.first;
-            std::cout<<"hh = "<<hh<<" ah = "<<ah<<" and sw.second = "<<sw.second<<std::endl;
+            int h, a;
+            std::tie(h, a) = sw.first;
+            std::cout<<"h = "<<h<<" a = "<< a<<" sw = "<<sw.second<<std::endl;
         }
+
+
     }
+    //SetRows(10);
+
 
 }
 SwitchShuntVariables::~SwitchShuntVariables() {}

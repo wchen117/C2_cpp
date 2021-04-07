@@ -49,7 +49,8 @@ int main(int args, char** argv)
     //nlp.AddCostSet(load_cost_ptr);
 
     // variables and constraints associated with switch shunts
-    //auto load_vars_ptr = std::make_shared<SwitchShuntVariables>(input_ptr, "switch_shunt_variables");
+    auto switch_shunt_vars_ptr = std::make_shared<SwitchShuntVariables>(input_ptr, "switch_shunt_variables");
+    nlp.AddVariableSet(switch_shunt_vars_ptr);
 
     // variables, constraints and objectives associated with lines
     auto line_vars_ptr = std::make_shared<LineVariables>(input_ptr, bus_var_ptr,"line_variables");
@@ -81,7 +82,7 @@ int main(int args, char** argv)
     auto bus_cost_ptr = std::make_shared<BusCosts>("bus_variables");
 
     nlp.AddVariableSet(bus_var_ptr);
-    nlp.AddConstraintSet(bus_cons_ptr);
+    //nlp.AddConstraintSet(bus_cons_ptr);
     nlp.AddCostSet(bus_cost_ptr);
     nlp.PrintCurrent();
 
