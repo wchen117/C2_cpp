@@ -4,8 +4,9 @@ BusConstraints::BusConstraints(const std::shared_ptr<Wrapper_Construct> data_ptr
     bus_var_name = name;
     //auto tmp_ptr = ifopt::ConstraintSet::GetVariables()->GetComponent<BusVariables>(bus_var_name);
     // from eqn 33 - 38, it seems that we should have 6 * Is constraints for bus
-    auto bus_con_size = 6 * data_ptr->Is;
+    auto bus_con_size = 6* data_ptr->Is;
     bus_ref_data = data_ptr;
+
     SetRows(bus_con_size);
 
 }
@@ -18,6 +19,7 @@ Eigen::VectorXd BusConstraints::GetValues() const
     // this GetRows() should return the number of constraints we set in the constructor
     Eigen::VectorXd bus_cons(GetRows());
     // these four has lower bound 0 and upper bound +inf
+    //  eqn(33), eqn(34), eqn(36), eqn(38)
     Eigen::VectorXd p_ik_plus = bus_var_ptr->p_ikn_plus.colwise().sum();
     Eigen::VectorXd p_ik_minus = bus_var_ptr->p_ikn_minus.colwise().sum();
     Eigen::VectorXd q_ik_plus = bus_var_ptr->q_ikn_plus.colwise().sum();
@@ -50,27 +52,18 @@ Eigen::VectorXd BusConstraints::GetValues() const
     double sum_b_hk_cs = get_sum(bus_ref_data->H_k0, bus_ref_data->H_i, swsh_b_hk_cs);
 
 
-    eq35 = (p_ik_plus.array() - p_ik_minus.array() + (bus_var_ptr->g_i_fs.array() * bus_var_ptr->v_ik.array().square()) - sum_p_gk + sum_p_jk + sum_p_ek_o + sum_p_ek_d + sum_p_fk_o + p_fk_d).matrix();
-    eq38 = q_ik_plus.array() - q_ik_minus.array() - (bus_var_ptr->b_i_fs)
+    eq35 = (p_ik_plus.array() - p_ik_minus.array() + (bus_var_ptr->g_i_fs.array() * bus_var_ptr->v_ik.array().square()) - sum_p_gk + sum_p_jk \
+           + sum_p_ek_o + sum_p_ek_d + sum_p_fk_o + sum_p_fk_d).matrix();
+    eq38 = (q_ik_plus.array() - q_ik_minus.array() - (bus_var_ptr->b_i_fs.array() * bus_var_ptr->v_ik.array().square()) - sum_q_gk + sum_q_jk \
+           - (sum_b_hk_cs * bus_var_ptr->v_ik.array().square()) + sum_q_ek_o + sum_q_ek_d + sum_q_fk_o + sum_q_fk_d).matrix();
 
 
-
-
-
-
-
-
-
-
-
+    //bus_cons << p_ik_plus, p_ik_minus, eq35, q_ik_plus, q_ik_minus, eq38;
+    bus_cons << Eigen::VectorXd::Zero(6 * bus_ref_data->Is);
+    //std::cout<<bus_cons.transpose()<<std::endl;
     return bus_cons;
 
 }
-
-
-
-
-
 
 BusConstraints::VecBound BusConstraints::GetBounds() const
 {
@@ -78,8 +71,8 @@ BusConstraints::VecBound BusConstraints::GetBounds() const
 
  for (size_t idx=0; idx<bus_con_bounds.size(); idx++)
  {
-     bus_con_bounds.at(idx).upper_ = 1.0;
-     bus_con_bounds.at(idx).lower_ = 0.0;
+     bus_con_bounds.at(idx).upper_ = 10;
+     bus_con_bounds.at(idx).lower_ = 0;
  }
  return bus_con_bounds;
 
@@ -96,5 +89,11 @@ void BusConstraints::InitVariableDependedQuantities(const VariablesPtr& x)
 }
 void BusConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block) const
 {
+    if (var_set == bus_var_name)
+    {
+
+        std::cout<<jac_block.size()<<std::endl;
+
+    }
 
 }

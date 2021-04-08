@@ -1,4 +1,19 @@
 
+List of options:
+
+                                    Name   Value                # times used
+            check_derivatives_for_naninf = yes                       1
+                   hessian_approximation = limited-memory            7
+                  jacobian_approximation = finite-difference-values      2
+                           linear_solver = mumps                     3
+                            max_cpu_time = 40                        1
+                                max_iter = 3000                      1
+                             output_file = output.txt                1
+                             print_level = 6                         2
+                 print_timing_statistics = no                        1
+                      print_user_options = no                        1
+                                     tol = 0.001                     2
+
 ******************************************************************************
 This program contains Ipopt, a library for large-scale nonlinear optimization.
  Ipopt is released as open source code under the Eclipse Public License (EPL).
@@ -12,4 +27,13 @@ Number of nonzeros in equality constraint Jacobian...:        0
 Number of nonzeros in inequality constraint Jacobian.:    32310
 Number of nonzeros in Lagrangian Hessian.............:        0
 
+Hessian approximation will be done in the space of all 359 x variables.
+
+Scaling parameter for objective function = 1.000000e+00
+objective scaling factor = 1
+No x scaling provided
+No c scaling provided
+No d scaling provided
+Moved initial values of x sufficiently inside the bounds.
+Moved initial values of s sufficiently inside the bounds.
 The Jacobian for the inequality constraints contains an invalid number

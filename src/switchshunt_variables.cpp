@@ -33,7 +33,8 @@ SwitchShuntVariables::SwitchShuntVariables(const std::shared_ptr<Wrapper_Constru
 
     }
 
-    size_x_hak_st =x_hak_st.rows() * x_hak_st.cols();
+    // size of a matrix will be row * col
+    size_x_hak_st = x_hak_st.size();
 
     SetRows(size_x_hak_st);
 
@@ -43,7 +44,7 @@ SwitchShuntVariables::~SwitchShuntVariables() {}
 
 Eigen::VectorXd SwitchShuntVariables::get_b_hat_st() const
 {
-    Eigen::VectorXd tmp_b_hat_st =  (x_hak_st.array() * b_ha_st.array()).matrix().colwise().sum();
+    Eigen::VectorXd tmp_b_hat_st =  (x_hak_st.array() * b_ha_st.array()).matrix().rowwise().sum();
 
     return tmp_b_hat_st;
 }
