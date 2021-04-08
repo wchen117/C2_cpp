@@ -29,6 +29,7 @@ Eigen::VectorXd GeneratorConstraints::GetValues() const
         }
     }
 
+
     const Eigen::VectorXd Eqn85_right = p_gk - (gen_var_ptr->p_g_over.array() * gen_var_ptr->x_gk_on.array()).matrix();
     const Eigen::VectorXd Eqn85_left = p_gk - (gen_var_ptr->p_g_under.array() * gen_var_ptr->x_gk_on.array()).matrix();
     const Eigen::VectorXd Eqn86_right = gen_var_ptr->q_gk - (gen_var_ptr->q_g_over.array() * gen_var_ptr->x_gk_on.array()).matrix();
@@ -122,10 +123,11 @@ GeneratorConstraints::VecBound GeneratorConstraints::GetBounds() const
     for (size_t idx=0; idx<gen_con_bounds.size(); idx++)
     {
         // if apply strick bound, it's having a hard time to converge
-        //gen_con_bounds.at(idx).upper_ = 1e10;
-        //gen_con_bounds.at(idx).lower_ = 1e-10;
-        gen_con_bounds.at(idx).upper_ = upper_bounds(idx);
-        gen_con_bounds.at(idx).lower_ = lower_bounds(idx);
+        //gen_con_bounds.at(idx).upper_ = 10;
+        //gen_con_bounds.at(idx).lower_ = -10;
+        // relax bound by +- 1
+        gen_con_bounds.at(idx).upper_ = upper_bounds(idx) + 1;
+        gen_con_bounds.at(idx).lower_ = lower_bounds(idx) - 1;
 
     }
 

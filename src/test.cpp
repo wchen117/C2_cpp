@@ -35,18 +35,18 @@ int main(int args, char** argv)
     // we first look at k = 0 case
     Problem nlp;
 
-    // variables related with buses
+    // variables related with b   uses
     // their objectives and constraints are presented later
     auto bus_var_ptr = std::make_shared<BusVariables>(input_ptr, "bus_variables");
 
 
     // variables, constraints and objectives assocaited with loads
     auto load_vars_ptr = std::make_shared<LoadVariables>(input_ptr, "load_variables");
-    //auto load_cons_ptr = std::make_shared<LoadConstraints>(input_ptr, "load_variables");
-    //auto load_cost_ptr = std::make_shared<LoadCosts>("load_variables");
+    auto load_cons_ptr = std::make_shared<LoadConstraints>(input_ptr, "load_variables");
+    auto load_cost_ptr = std::make_shared<LoadCosts>("load_variables");
     nlp.AddVariableSet(load_vars_ptr);
     //nlp.AddConstraintSet(load_cons_ptr);
-    //nlp.AddCostSet(load_cost_ptr);
+    nlp.AddCostSet(load_cost_ptr);
 
     // variables and constraints associated with switch shunts
     auto switch_shunt_vars_ptr = std::make_shared<SwitchShuntVariables>(input_ptr, "switch_shunt_variables");
@@ -54,27 +54,27 @@ int main(int args, char** argv)
 
     // variables, constraints and objectives associated with lines
     auto line_vars_ptr = std::make_shared<LineVariables>(input_ptr, bus_var_ptr,"line_variables");
-    //auto line_cons_ptr = std::make_shared<LineConstraints>(input_ptr, "line_variables");
-    //auto line_cost_ptr = std::make_shared<LineCosts>("line_variables");
+    auto line_cons_ptr = std::make_shared<LineConstraints>(input_ptr, "line_variables");
+    auto line_cost_ptr = std::make_shared<LineCosts>("line_variables");
     nlp.AddVariableSet(line_vars_ptr);
-    //nlp.AddConstraintSet(line_cons_ptr);
-    //nlp.AddCostSet(line_cost_ptr);
+    nlp.AddConstraintSet(line_cons_ptr);
+    nlp.AddCostSet(line_cost_ptr);
 
     // variables, constraints and objectives associated with transformers
     auto trans_vars_ptr = std::make_shared<TransformerVariables>(input_ptr, bus_var_ptr, "trans_variables");
-    //auto trans_cons_ptr = std::make_shared<TransConstraints>(input_ptr, "trans_variables");
-    //auto trans_cost_ptr = std::make_shared<TransformerCosts>("trans_variables");
+    auto trans_cons_ptr = std::make_shared<TransConstraints>(input_ptr, "trans_variables");
+    auto trans_cost_ptr = std::make_shared<TransformerCosts>("trans_variables");
     nlp.AddVariableSet(trans_vars_ptr);
-    //nlp.AddConstraintSet(trans_cons_ptr);
-    //nlp.AddCostSet(trans_cost_ptr);
+    nlp.AddConstraintSet(trans_cons_ptr);
+    nlp.AddCostSet(trans_cost_ptr);
 
     // variables, constraints and objectives associated with generators
     auto gen_vars_ptr = std::make_shared<GeneratorVariables>(input_ptr, "gen_variables");
-    //auto gen_cons_ptr = std::make_shared<GeneratorConstraints>(input_ptr, "gen_variables");
-    //auto gen_cost_ptr = std::make_shared<GenCosts>("gen_variables");
+    auto gen_cons_ptr = std::make_shared<GeneratorConstraints>(input_ptr, "gen_variables");
+    auto gen_cost_ptr = std::make_shared<GenCosts>("gen_variables");
     nlp.AddVariableSet(gen_vars_ptr);
-    //nlp.AddConstraintSet(gen_cons_ptr);
-    //nlp.AddCostSet(gen_cost_ptr);
+    nlp.AddConstraintSet(gen_cons_ptr);
+    nlp.AddCostSet(gen_cost_ptr);
 
     //variables, constraints and objectives associated with buses
 
@@ -94,8 +94,8 @@ int main(int args, char** argv)
     //ipopt.SetOption("linear_solver", "ma27");
     ipopt.SetOption("jacobian_approximation", "finite-difference-values");
     ipopt.SetOption("check_derivatives_for_naninf", "yes");
-    ipopt.SetOption("bound_relax_factor", 0);
-    ipopt.SetOption("print_level", 6);
+    ipopt.SetOption("bound_relax_factor", 1);
+    ipopt.SetOption("print_level", 3);
     ipopt.SetOption("output_file", "output.txt");
     ipopt.SetOption("max_iter", 3000);
     ipopt.Solve(nlp);

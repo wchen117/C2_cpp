@@ -88,6 +88,7 @@ Eigen::VectorXd TransConstraints::GetValues() const
     const Eigen::VectorXd &Eqn78_cons = (trans_var_ptr->p_fk_d.array().square() + trans_var_ptr->q_fk_d.array().square()).sqrt().matrix() - s_fk_cons - trans_var_ptr->s_f_over;
 
     trans_cons << tau_fk_cons, theta_fk_cons, b_fk_cons, g_fk_cons, s_fk_cons, Eqn77_cons, Eqn78_cons;
+
     return trans_cons;
 }
 

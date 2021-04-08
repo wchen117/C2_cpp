@@ -62,8 +62,8 @@ LoadConstraints::VecBound LoadConstraints::GetBounds() const
     Eigen::VectorXd test_up_bound = Eigen::VectorXd::Zero(load_var_ptr->t_jk_size);
     Eigen::VectorXd test_lower_bound = Eigen::VectorXd::Zero(load_var_ptr->t_jk_size);
 
-    test_up_bound.setConstant(0.7);
-    test_lower_bound.setConstant(-0.7);
+    test_up_bound.setConstant(0);
+    test_lower_bound.setConstant(0);
 
     Eigen::VectorXd eq_42_cons(load_var_ptr->t_jk_size);
     Eigen::VectorXd eq_43_cons(load_var_ptr->t_jk_size);
@@ -85,8 +85,8 @@ LoadConstraints::VecBound LoadConstraints::GetBounds() const
 
     for(size_t idx=0; idx<load_con_bounds.size(); idx++)
     {
-        load_con_bounds.at(idx).upper_ = upper_bound(idx);
-        load_con_bounds.at(idx).lower_ = lower_bound(idx);
+        load_con_bounds.at(idx).upper_ = upper_bound(idx) + 1e20;
+        load_con_bounds.at(idx).lower_ = lower_bound(idx) - 1e20;
     }
 
     return load_con_bounds;

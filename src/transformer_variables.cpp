@@ -20,6 +20,7 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
         x_fk_st_bound = Eigen::VectorXd::Zero(size_F_k0);
 
         tau_fk = Eigen::VectorXd::Zero(size_F_k0);
+        tau_fk.setOnes(size_F_k0);
         tau_fk_over = Eigen::VectorXd::Zero(size_F_k0);
         tau_fk_under = Eigen::VectorXd::Zero(size_F_k0);
         tau_f_st = Eigen::VectorXd::Zero(size_F_k0);

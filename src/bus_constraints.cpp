@@ -58,23 +58,31 @@ Eigen::VectorXd BusConstraints::GetValues() const
            - (sum_b_hk_cs * bus_var_ptr->v_ik.array().square()) + sum_q_ek_o + sum_q_ek_d + sum_q_fk_o + sum_q_fk_d).matrix();
 
 
-    //bus_cons << p_ik_plus, p_ik_minus, eq35, q_ik_plus, q_ik_minus, eq38;
-    bus_cons << Eigen::VectorXd::Zero(6 * bus_ref_data->Is);
-    //std::cout<<bus_cons.transpose()<<std::endl;
+    bus_cons << p_ik_plus, p_ik_minus, eq35, q_ik_plus, q_ik_minus, eq38;
+
     return bus_cons;
 
 }
 
 BusConstraints::VecBound BusConstraints::GetBounds() const
 {
- VecBound bus_con_bounds(GetRows());
+     VecBound bus_con_bounds(GetRows());
 
- for (size_t idx=0; idx<bus_con_bounds.size(); idx++)
- {
-     bus_con_bounds.at(idx).upper_ = 10;
-     bus_con_bounds.at(idx).lower_ = 0;
- }
- return bus_con_bounds;
+     Eigen::VectorXd upper_infty_bound = Eigen::VectorXd::Zero(bus_ref_data->Is);
+     upper_infty_bound.setConstant(1e20);
+     Eigen::VectorXd lower_zero_bound = Eigen::VectorXd::Zero(bus_ref_data->Is);
+
+     Eigen::VectorXd upper_bound(GetRows());
+     Eigen::VectorXd lower_bound(GetRows());
+     upper_bound << upper_infty_bound, upper_infty_bound, lower_zero_bound, upper_infty_bound, upper_infty_bound, lower_zero_bound;
+     lower_bound << lower_zero_bound, lower_zero_bound, lower_zero_bound, lower_zero_bound, lower_zero_bound, lower_zero_bound;
+     for (size_t idx=0; idx<GetRows(); idx++)
+     {
+         bus_con_bounds.at(idx).upper_ = upper_bound(idx);
+         bus_con_bounds.at(idx).lower_ = lower_bound(idx);
+     }
+
+     return bus_con_bounds;
 
 }
 
@@ -89,11 +97,5 @@ void BusConstraints::InitVariableDependedQuantities(const VariablesPtr& x)
 }
 void BusConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block) const
 {
-    if (var_set == bus_var_name)
-    {
-
-        std::cout<<jac_block.size()<<std::endl;
-
-    }
 
 }
