@@ -440,14 +440,31 @@ void Raw::parse_two_terminal_dc_transmission_line(
     std::vector<std::string> ttdc_transmission_section
 )
 {
-    std::string tmp = ttdc_transmission_section[0];
+    if (ttdc_transmission_section.size() == 1)
+    {
+        std::string tmp = ttdc_transmission_section[0];
+    }
+    else {
+        std::cout<<"ttdc_transmission_section not empty";
+        exit(0);
+    }
+
 }
 
 void Raw::parse_vsc_dc_transmission_line(
     std::vector<std::string> vsc_dc_transmission_section
 )
 {
-    std::string tmp = vsc_dc_transmission_section[0];
+    if (vsc_dc_transmission_section.size() == 1)
+    {
+        std::string tmp = vsc_dc_transmission_section[0];
+    }
+    else {
+        std::cout<<"vsc_dc_transmission_section not empty";
+        exit(0);
+
+    }
+
 }
 
 void Raw::parse_transformer_impedance_correction_table(
@@ -475,25 +492,44 @@ void Raw::parse_multi_terminal_dc(
     std::vector<std::string> multi_terminal_dc_section
 )
 {
-    std::string tmp = multi_terminal_dc_section[0];
-    //std::cout<<tmp<<std::endl;
+    if (multi_terminal_dc_section.size() == 1)
+    {
+        std::string tmp = multi_terminal_dc_section[0];
+    }
+    else{
+        std::cout<<"multi_terminal_dc_section not empty"<<std::endl;
+        exit(0);
+    }
+
 }
 
 void Raw::parse_multi_section_line(
      std::vector<std::string> multi_section_section
 )
 {
-    std::string tmp = multi_section_section[0];
-    //std::cout<<tmp<<std::endl;
+    if (multi_section_section.size() == 1)
+    {
+        std::string tmp = multi_section_section[0];
+    }
+    else {
+        std::cout<<"multi_section_section not empty"<<std::endl;
+        exit(0);
+    }
+
+
 }
 
 void Raw::parse_zone(
     std::vector<std::string> zone_section   
 )
 {
-    std::vector<std::string> line_vector = parse_on_delimiter(zone_section[1], ",");
-    zone.i = std::stoi(line_vector[0]);
-    zone.zoname = line_vector[1];
+    if (zone_section.size() > 1)
+    {
+        std::vector<std::string> line_vector = parse_on_delimiter(zone_section[1], ",");
+        zone.i = std::stoi(line_vector[0]);
+        zone.zoname = line_vector[1];
+    }
+
 
 }
 
@@ -501,7 +537,16 @@ void Raw::parse_interarea_transfer(
     std::vector<std::string> interarea_transfer_section 
 )
 {
-    std::string tmp = interarea_transfer_section[0];
+    if (interarea_transfer_section.size() == 1)
+    {
+        std::string tmp = interarea_transfer_section[0];
+
+    }
+    else{
+        std::cout<<"interarea_transfer_section not empty"<<std::endl;
+        exit(0);
+    }
+
 
 }
 
@@ -509,16 +554,30 @@ void Raw::parse_owner(
     std::vector<std::string> owner_section
 )
 {
-    std::vector<std::string> line_vector = parse_on_delimiter(owner_section[1], ",");
-    owner.i = std::stoi(line_vector[0]);
-    owner.owner_id = line_vector[0];
+    if (owner_section.size() > 1)
+    {
+        std::vector<std::string> line_vector = parse_on_delimiter(owner_section[1], ",");
+        owner.i = std::stoi(line_vector[0]);
+        owner.owner_id = line_vector[0];
+    }
+    else{
+        std::cout<<"owner section empty"<<std::endl;
+    }
+
 }
 
 void Raw::parse_facts_control_device(
     std::vector<std::string> facts_control_device_section
 )
 {
-    std::string tmp = facts_control_device_section[0];
+    if (facts_control_device_section.size() == 1)
+    {
+        std::string tmp = facts_control_device_section[0];
+    }
+    else {
+        std::cout<<"facts_control_device_section not empty"<<std::endl;
+    }
+
 }
 
 void Raw::parse_switched_shunt(
@@ -540,7 +599,7 @@ void Raw::parse_switched_shunt(
         std::string tmp = "            ";
         parse_token(tmp_shunt.rmidnt, line_vector[8], tmp);
         tmp_shunt.binit = std::stoi(line_vector[9]);
-        
+
 
         for (int idx=10; idx<line_vector.size(); idx=idx+2)
         {
@@ -559,14 +618,28 @@ void Raw::parse_gne_device(
     std::vector<std::string> gne_device_section
 )
 {
-    std::string tmp = gne_device_section[0];
+    if (gne_device_section.size() == 1)
+    {
+        std::string tmp = gne_device_section[0];
+    }
+    else {
+        std::cout<<"gne_device_section not empty"<<std::endl;
+    }
+
 }
 
 void Raw::parse_induction_machine(
     std::vector<std::string> induction_machine_section
 )
 {
-    std::string tmp = induction_machine_section[0];
+    if (induction_machine_section.size() == 1)
+    {
+        std::string tmp = induction_machine_section[0];
+    }
+    else {
+        std::cout<<"gne_device_section not empty"<<std::endl;
+    }
+
 }
 
 void Raw::write_case_id(std::ofstream& OutputFile)

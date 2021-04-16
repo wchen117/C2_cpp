@@ -1,7 +1,13 @@
 #include <constraints/bus_constraints.hpp>
-BusConstraints::BusConstraints(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name) : ifopt::ConstraintSet(-1, name + "_constraint")
+BusConstraints::BusConstraints(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name, const std::string load_name,\
+                   const std::string line_name, const std::string swsh_name, const std::string trans_name, const std::string gen_name) : ifopt::ConstraintSet(-1, name + "_constraint")
 {
     bus_var_name = name;
+    load_var_name = load_name;
+    line_var_name = line_name;
+    swsh_var_name = swsh_name;
+    trans_var_name = trans_name;
+    gen_var_name = gen_name;
     //auto tmp_ptr = ifopt::ConstraintSet::GetVariables()->GetComponent<BusVariables>(bus_var_name);
     // from eqn 33 - 38, it seems that we should have 6 * Is constraints for bus
     auto bus_con_size = 6* data_ptr->Is;
@@ -89,11 +95,11 @@ BusConstraints::VecBound BusConstraints::GetBounds() const
 void BusConstraints::InitVariableDependedQuantities(const VariablesPtr& x)
 {
     bus_var_ptr = x->GetComponent<BusVariables>(bus_var_name);
-    gen_var_ptr =  x->GetComponent<GeneratorVariables>("gen_variables");
-    load_var_ptr = x->GetComponent<LoadVariables>("load_variables");
-    line_var_ptr = x->GetComponent<LineVariables>("line_variables");
-    trans_var_ptr = x->GetComponent<TransformerVariables>("trans_variables");
-    swsh_var_ptr = x->GetComponent<SwitchShuntVariables>("switch_shunt_variables");
+    gen_var_ptr =  x->GetComponent<GeneratorVariables>(gen_var_name);
+    load_var_ptr = x->GetComponent<LoadVariables>(load_var_name);
+    line_var_ptr = x->GetComponent<LineVariables>(line_var_name);
+    trans_var_ptr = x->GetComponent<TransformerVariables>(trans_var_name);
+    swsh_var_ptr = x->GetComponent<SwitchShuntVariables>(swsh_var_name);
 }
 void BusConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block) const
 {

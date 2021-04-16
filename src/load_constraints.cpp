@@ -8,7 +8,7 @@ LoadConstraints::LoadConstraints(const std::shared_ptr<Wrapper_Construct> data_p
     load_var_name = name;
 
     // so here the constraints are
-    SetRows(3* data_ptr->J_k.size());
+    SetRows(4 * data_ptr->J_k0.size());
 
 }
 
@@ -20,35 +20,24 @@ Eigen::VectorXd LoadConstraints::GetValues() const
     // by order of load_j_id here as well
     Eigen::VectorXd load_cons(GetRows());
 
-    Eigen::VectorXd p_jk = Eigen::VectorXd::Zero(load_var_ptr->t_jk_size);
-    Eigen::Map<const Eigen::VectorXd> q_jk(load_var_ptr->q_jk.data(), load_var_ptr->q_jk.size());
-    Eigen::VectorXd eq_40_cons(load_var_ptr->t_jk_size);
-    Eigen::VectorXd eq_41_cons(load_var_ptr->t_jk_size);
-
-    assert(load_var_ptr->load_j_id.size() == load_var_ptr->t_jk_size);
+    Eigen::VectorXd eq_40(load_var_ptr->t_jk_size);
+    Eigen::VectorXd eq_41(load_var_ptr->t_jk_size);
+    Eigen::VectorXd eq_42(load_var_ptr->t_jk_size);
+    Eigen::VectorXd eq_43(load_var_ptr->t_jk_size);
 
     // p_jk = \sum_n p_jkn
-    for (size_t idx=0; idx<load_var_ptr->p_jkn.size(); idx++)
-    {
-        for(size_t jdx=0; jdx<load_var_ptr->p_jkn.at(idx).size(); jdx++)
-        {
-            p_jk(idx) += load_var_ptr->p_jkn.at(idx).at(jdx);
-        }
-    }
+    Eigen::VectorXd p_jk = load_var_ptr->get_p_jk();
+    Eigen::VectorXd q_jk = load_var_ptr->get_q_jk();
 
-    for (size_t idx=0; idx<load_var_ptr->load_j_id.size(); idx++) {
-        auto j = load_var_ptr->load_j_id.at(idx);
-        auto p_j_0 = load_var_ptr->load_ref_data->p_l[j];
-        auto q_j_0 = load_var_ptr->load_ref_data->q_l[j];
+    //
+    const double &delta_r = load_var_ptr->load_ref_data->new_data.sup.sys_prms["deltar"];
 
-        eq_40_cons(idx) = p_j_0 * load_var_ptr->t_jk.at(idx);
-        eq_41_cons(idx) = q_j_0 * load_var_ptr->t_jk.at(idx);
-    }
+    eq_40 = (p_jk.array() - load_var_ptr->p_j_0.array() * load_var_ptr->t_jk.array()).matrix();
+    eq_41 = (q_jk.array() - load_var_ptr->q_j_0.array() * load_var_ptr->t_jk.array()).matrix();
+    eq_42 = (p_jk.array() - load_var_ptr->p_j_0.array() - load_var_ptr->p_j_ru_over.array() * delta_r).matrix();
+    eq_43 = (p_jk.array() - load_var_ptr->p_j_0.array() + load_var_ptr->p_j_rd_over.array() * delta_r).matrix();
 
-    // equation 40, 41, (42 and 43)
-    load_cons << p_jk - eq_40_cons, q_jk - eq_41_cons, p_jk;
-
-
+    load_cons << eq_40, eq_41, eq_42, eq_43;
     return load_cons;
 
 }
@@ -58,35 +47,22 @@ LoadConstraints::VecBound LoadConstraints::GetBounds() const
     VecBound load_con_bounds(GetRows());
     Eigen::VectorXd upper_bound(GetRows());
     Eigen::VectorXd lower_bound(GetRows());
+
     Eigen::VectorXd zero_bound = Eigen::VectorXd::Zero(load_var_ptr->t_jk_size);
-    Eigen::VectorXd test_up_bound = Eigen::VectorXd::Zero(load_var_ptr->t_jk_size);
-    Eigen::VectorXd test_lower_bound = Eigen::VectorXd::Zero(load_var_ptr->t_jk_size);
-
-    test_up_bound.setConstant(0);
-    test_lower_bound.setConstant(0);
-
-    Eigen::VectorXd eq_42_cons(load_var_ptr->t_jk_size);
-    Eigen::VectorXd eq_43_cons(load_var_ptr->t_jk_size);
-
-    for (size_t idx=0; idx<load_var_ptr->load_j_id.size(); idx++)
-    {
-        auto j = load_var_ptr->load_j_id.at(idx);
-        auto p_j_0 = load_var_ptr->load_ref_data->p_l[j];
-        auto q_j_0 = load_var_ptr->load_ref_data->q_l[j];
-
-        eq_42_cons(idx) = p_j_0 + load_var_ptr->p_j_ru_over.at(idx) * load_var_ptr->load_ref_data->new_data.sup.sys_prms["deltar"];
-        eq_43_cons(idx) = p_j_0 - load_var_ptr->p_j_rd_over.at(idx) * load_var_ptr->load_ref_data->new_data.sup.sys_prms["deltar"];
-
-    }
+    Eigen::VectorXd up_infy_bound = Eigen::VectorXd::Zero(load_var_ptr->t_jk_size);
+    up_infy_bound.setConstant(1e20);
+    Eigen::VectorXd lo_infy_bound = Eigen::VectorXd::Zero(load_var_ptr->t_jk_size);
+    lo_infy_bound.setConstant(-1e20);
 
 
-    upper_bound << test_up_bound, test_up_bound, eq_42_cons;
-    lower_bound << test_lower_bound, test_lower_bound, eq_43_cons;
+    // arrange bounds such that they correspond to the load_cons above
+    upper_bound << zero_bound, zero_bound, zero_bound, up_infy_bound;
+    lower_bound << zero_bound, zero_bound, lo_infy_bound, zero_bound;
 
     for(size_t idx=0; idx<load_con_bounds.size(); idx++)
     {
-        load_con_bounds.at(idx).upper_ = upper_bound(idx) + 1e20;
-        load_con_bounds.at(idx).lower_ = lower_bound(idx) - 1e20;
+        load_con_bounds.at(idx).upper_ = upper_bound(idx)+1;
+        load_con_bounds.at(idx).lower_ = lower_bound(idx)-1;
     }
 
     return load_con_bounds;

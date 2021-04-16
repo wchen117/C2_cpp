@@ -19,6 +19,7 @@ public:
     friend class TransformerCosts;
     friend class TransConstraints;
     friend class BusConstraints;
+    friend class BaseCaseProblem;
 private:
     // first variables, s_fnk_plus is colmajor matrix,
     // first dimension: Ns, second dimension: size of F_k
@@ -60,6 +61,7 @@ private:
     Eigen::VectorXd c_f_sw;
     Eigen::VectorXd ref_oribus;
     Eigen::VectorXd ref_desbus;
+    Eigen::VectorXi ref_id;
     Eigen::VectorXd x_f_sw0;
     Eigen::VectorXd x_fk_st_bound;
     // pointer to input data and some useful size info

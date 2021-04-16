@@ -58,10 +58,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /usr/local/Cellar/cmake/3.19.2/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /usr/local/Cellar/cmake/3.19.2/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = /Users/wchen/Projects/GOC_competition/C2_cpp_code
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/Cellar/cmake/3.19.2/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -88,8 +88,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/local/Cellar/cmake/3.19.2/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -168,6 +168,33 @@ src/area.s: src/area.cpp.s
 src/area.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/area.cpp.s
 .PHONY : src/area.cpp.s
+
+src/basecase_problem.o: src/basecase_problem.cpp.o
+
+.PHONY : src/basecase_problem.o
+
+# target to build an object file
+src/basecase_problem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/basecase_problem.cpp.o
+.PHONY : src/basecase_problem.cpp.o
+
+src/basecase_problem.i: src/basecase_problem.cpp.i
+
+.PHONY : src/basecase_problem.i
+
+# target to preprocess a source file
+src/basecase_problem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/basecase_problem.cpp.i
+.PHONY : src/basecase_problem.cpp.i
+
+src/basecase_problem.s: src/basecase_problem.cpp.s
+
+.PHONY : src/basecase_problem.s
+
+# target to generate assembly for a file
+src/basecase_problem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/basecase_problem.cpp.s
+.PHONY : src/basecase_problem.cpp.s
 
 src/branchoutevent.o: src/branchoutevent.cpp.o
 
@@ -1423,6 +1450,9 @@ help:
 	@echo "... src/area.o"
 	@echo "... src/area.i"
 	@echo "... src/area.s"
+	@echo "... src/basecase_problem.o"
+	@echo "... src/basecase_problem.i"
+	@echo "... src/basecase_problem.s"
 	@echo "... src/branchoutevent.o"
 	@echo "... src/branchoutevent.i"
 	@echo "... src/branchoutevent.s"

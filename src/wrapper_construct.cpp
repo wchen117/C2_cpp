@@ -1,6 +1,7 @@
 #include "wrapper_construct.hpp"
 #include <iostream>
 Wrapper_Construct::Wrapper_Construct(std::string input_path){
+
     new_data.read(input_path + raw_name,\
                   input_path + sup_name, \
                   input_path + con_name);
@@ -304,6 +305,7 @@ void Wrapper_Construct::construct_switched_shunt()
         // ss_it->second.i = i and h
         H.push_back(ss_it->second.i);
         i_h.insert(std::make_pair(ss_it->second.i, ss_it->second.i));
+        //std::cout<<"lalallala"<<ss_it->second.i<<std::endl;
         b_h_cs0.insert(std::make_pair(ss_it->second.i, ss_it->second.binit * s_tilde_inverse));
         NBL = ss_it->second.n.size();
         // this loop through a \in A_h

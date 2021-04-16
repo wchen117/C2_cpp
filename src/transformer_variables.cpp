@@ -58,6 +58,7 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
         x_f_sw0 = Eigen::VectorXd::Zero(size_F_k0);
         ref_desbus = Eigen::VectorXd::Zero(size_F_k0);
         ref_oribus = Eigen::VectorXd::Zero(size_F_k0);
+        ref_id = Eigen::VectorXi::Zero(size_F_k0);
 
         // F_k0 or F_k is an vector (ordered), so we bound to have orders in all
         // Eigen::VectorXd read this way
@@ -77,6 +78,7 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
                     // fetched origbus and desbus are not ordered, use ref_origbus and ref_desbus to help keep track
                     ref_oribus(idx) = n.origbus;
                     ref_desbus(idx) = n.destbus;
+                    ref_id(idx) = stoi(n.id);
                     c_f_sw(idx) = n.csw;
                     x_f_sw0(idx) = local_input_ptr->x_f_sw_0[f_key];
                     // eqn(60)
@@ -128,7 +130,7 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
             // findInVector located in typedefinition.hpp
             auto bus_idx_pair = findInVector(bus_var_ptr->sorted_bus_ID, idx);
             auto bus_ipdx_pair = findInVector(bus_var_ptr->sorted_bus_ID, ipdx);
-            auto diff = local_input_ptr->theta_0.at(idx) - local_input_ptr->theta_0.at(ipdx) - theta_fk(fkdx);
+            //auto diff = local_input_ptr->theta_0.at(idx) - local_input_ptr->theta_0.at(ipdx) - theta_fk(fkdx);
             // can't use tmp_x_fk_sw to change x_fk_sw(fkdx)
             const auto &tmp_x_fk_sw = x_fk_sw(fkdx);
             const auto &tmp_g_fk = g_fk(fkdx);
@@ -141,6 +143,9 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
                 auto bus_ipdx = bus_ipdx_pair.second;
                 auto vik = bus_var_ptr->v_ik(bus_idx);
                 auto vipk = bus_var_ptr->v_ik(bus_ipdx);
+                auto thetaik = bus_var_ptr->theta_ik(bus_idx);
+                auto thetaipk = bus_var_ptr->theta_ik(bus_ipdx);
+                auto diff = thetaik - thetaipk - theta_fk(fkdx);
                 // eqn(72) - eqn(75)
                 auto tmp_p_fk_o = tmp_x_fk_sw * ((tmp_g_fk/tmp_tau_fk/tmp_tau_fk + g_f_m) * vik * vik - (tmp_g_fk * cos(diff) + tmp_b_fk*sin(diff)) * vik * vipk / tmp_tau_fk);
                 auto tmp_q_fk_o = tmp_x_fk_sw * (-(tmp_b_fk/tmp_tau_fk/tmp_tau_fk + b_f_m)* vik * vik - (tmp_b_fk * cos(diff) - tmp_g_fk*sin(diff)) * vik * vipk / tmp_tau_fk);

@@ -13,12 +13,14 @@ SwitchShuntVariables::SwitchShuntVariables(const std::shared_ptr<Wrapper_Constru
         x_hak_st = Eigen::MatrixXd::Zero(swsh_ref_data->H_k0.size(), swsh_ref_data->NBL);
         x_hak_st_upbound = Eigen::MatrixXd::Zero(swsh_ref_data->H_k0.size(), swsh_ref_data->NBL);
         b_ha_st = Eigen::MatrixXd::Zero(swsh_ref_data->H_k0.size(), swsh_ref_data->NBL);
+        swsh_ih = Eigen::VectorXd::Zero(swsh_ref_data->H_k0.size());
 
         for (size_t idx=0; idx<swsh_ref_data->H_k0.size(); idx++)
         {
             auto hk = swsh_ref_data->H_k0.at(idx);
             auto ih = swsh_ref_data->i_h[hk];
-            for (auto jdx=1; jdx<=swsh_ref_data->NBL; jdx++)
+            swsh_ih(idx) = ih;
+            for (size_t jdx=1; jdx<=swsh_ref_data->NBL; jdx++)
             {
                 auto key_ih = std::make_tuple(hk, jdx);
                 x_hak_st_upbound(idx, jdx-1) = swsh_ref_data->x_ha_st_over.at(key_ih);

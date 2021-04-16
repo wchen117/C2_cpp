@@ -17,6 +17,7 @@ public:
     friend class LoadCosts;
     friend class BusConstraints;
     friend class LoadConstraints;
+    friend class BaseCaseProblem;
     //friend class LineCosts;
 private:
     std::shared_ptr<Wrapper_Construct> load_ref_data;
@@ -26,16 +27,22 @@ private:
     // p_jk = \sum_{n} p_jkn, bounded also to t_jk by equlity constraint(?)
     std::vector<std::vector<double> > p_jkn;
     // so.... this is bounded to t_jk by equality constraint
-    std::vector<double> q_jk;
-    std::vector<double> t_jk;
-    std::vector<double> t_j_over;
-    std::vector<double> t_j_under;
-    // a local copy of j index in J_k and all the other variable above
-    std::vector<key_is> load_j_id;
-    std::vector<key_is> another_load_j_id;
-    std::vector<double> p_j_ru_over;
-    std::vector<double> p_j_rd_over;
+    Eigen::VectorXd q_jk;
+    Eigen::VectorXd t_jk;
+    // bounds for t_jk
+    Eigen::VectorXd t_j_over;
+    Eigen::VectorXd t_j_under;
 
+    Eigen::VectorXd p_j_ru_over;
+    Eigen::VectorXd p_j_rd_over;
+
+    //some coefficients used for load_constraints
+    Eigen::VectorXd p_j_0;
+    Eigen::VectorXd q_j_0;
+
+    // for book keeping
+    Eigen::VectorXi load_i;
+    Eigen::VectorXi load_id_j;
     // some some parameters
     size_t p_jkn_size, t_jk_size;
 

@@ -34,6 +34,9 @@ GeneratorVariables::GeneratorVariables(const std::shared_ptr<Wrapper_Construct> 
 
         G_su_value = Eigen::VectorXi::Zero(size_G_k0);
         G_sd_value = Eigen::VectorXi::Zero(size_G_k0);
+
+        gen_i_g = Eigen::VectorXi::Zero(size_G_k0);
+        gen_id_g = Eigen::VectorXi::Zero(size_G_k0);
         // just to sure
         size_p_gnk = 0;
 
@@ -78,6 +81,9 @@ GeneratorVariables::GeneratorVariables(const std::shared_ptr<Wrapper_Construct> 
                     p_g_ru_over(idx) = g.prumax;
                     p_g_rd_over(idx) = g.prdmax;
                     p_g_0(idx) = gen_ref_data->p_g_0[g_key];
+
+                    gen_i_g(idx) = iii;
+                    gen_id_g(idx) = stoi(idd);
 
 
                     for (size_t jdx=0; jdx<Ng; jdx++)

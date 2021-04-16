@@ -1,0 +1,60 @@
+Initiating Evaluation for /Users/wchen/Projects/GOC_competition/C2_cpp_code/sample_data/ieee14/scenario_3...
+[] [0 -BASECASE]: USE_MPI: False
+[] [0 -BASECASE]: check_contingencies: True
+[] [0 -BASECASE]: line_switching_allowed: None
+[] [0 -BASECASE]: xfmr_switching_allowed: None
+[] [0 -BASECASE]: hard_constr_tol: 0.0001
+[] [0 -BASECASE]: pandas_float_precision: None
+[] [0 -BASECASE]: stop_on_errors: False
+[] [0 -BASECASE]: read all ctgs time: 0.00029087066650390625
+[] [0 -BASECASE]: read data time: 0
+[] [0 -BASECASE]: buses: 15
+[] [0 -BASECASE]: loads: 12
+[] [0 -BASECASE]: fixed_shunts: 2
+[] [0 -BASECASE]: generators: 6
+[] [0 -BASECASE]: nontransformer_branches: 18
+[] [0 -BASECASE]: transformers: 4
+[] [0 -BASECASE]: transformer impedance correction tables: 1
+[] [0 -BASECASE]: switched_shunts: 3
+[] [0 -BASECASE]: contingencies: 25
+[] [0 -BASECASE]: done reading data
+[] [0 -BASECASE]: done setting evaluation data
+[] [0 -BASECASE]: --switched shunt section missing in /Users/wchen/Projects/GOC_competition/C2_cpp_code/sample_data/ieee14/scenario_3/solution_BASECASE.txt
+[] [0 -BASECASE]: expecting 15 buses
+[] [0 -BASECASE]: 	loaded 15 buses
+[] [0 -BASECASE]: expecting 12 loads
+[] [0 -BASECASE]: 	loaded 12 loads
+[] [0 -BASECASE]: expecting 6 gens, total in the problem = 6
+[] [0 -BASECASE]: 	loaded 6 gens
+[] [0 -BASECASE]: expecting 18 lines, total in problem = 18
+[] [0 -BASECASE]: 	loaded 18 lines
+[] [0 -BASECASE]: expecting 4 xfmrs, total in problem = 4
+[] [0 -BASECASE]: 	loaded 4 xfmrs
+[] [0 -BASECASE]: expecting 3 swsh
+[] [0 -BASECASE]: 	loaded 3 swshs
+[FAIL] [0 -BASECASE]: fcn: eval_load_ramp_viol, key: (12, '1'), val: 0.030326135299999994
+infeasibility:1
+
+[FAIL] [0 -BASECASE]: fcn: eval_gen_pow_viol, key: (2, '1'), val: 0.69825
+infeasibility:1
+
+[FAIL] [0 -BASECASE]: fcn: eval_gen_ramp_viol, key: (8, '1'), val: 0.9619933
+infeasibility:1
+
+[FAIL] [0 -BASECASE]: fcn: eval_gen_ramp_viol, key: (1, '1'), val: 0.6921932999999998
+infeasibility:1
+
+[FAIL] [0 -BASECASE]: fcn: eval_infeas, key: None, val: True
+infeasibility:1
+
+[] [0 -BASECASE]: done evaluating case. label: BASECASE, time: 0.10195088386535645
+[] [0 -BASECASE]: solutions path: /Users/wchen/Projects/GOC_competition/C2_cpp_code/sample_data/ieee14/scenario_3
+[PASS] [0 -BASECASE]: Expected 1 BASECASE solution file, Encountered 1 BASECASE solution files, files found: ['/Users/wchen/Projects/GOC_competition/C2_cpp_code/sample_data/ieee14/scenario_3/solution_BASECASE.txt']
+[FAIL] [0 -BASECASE]: Expected 0 contingencies in CON not in solution_*.txt, found 25: ['G_1_1', 'G_2_1', 'G_3_1', 'G_6_1', 'G_8_1', 'L_10_11_1', 'L_12_13_1', 'L_13_14_1', 'L_1_2_1', 'L_1_5_1', 'L_2_3_1', 'L_2_4_1', 'L_2_5_1', 'L_3_4_1', 'L_4_5_1', 'L_6_11_1', 'L_6_12_1', 'L_6_13_1', 'L_7_8_1', 'L_7_9_1', 'L_9_10_1', 'L_9_14_1', 'T_4_7_1', 'T_4_9_1', 'T_5_6_1']
+infeasibility:1
+
+[PASS] [0 -BASECASE]: Expected 0 contingencies in solution_*.txt not in CON, found 0: []
+[FAIL] [0 -BASECASE]: Expected #contingencies: 25, Encountered #contingencies: 0
+infeasibility:1
+
+[] [0 -BASECASE]: Some solution files are missing. Exiting...

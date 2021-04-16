@@ -20,6 +20,7 @@ public:
     friend class GenCosts;
     friend class BusConstraints;
     friend class GeneratorConstraints;
+    friend class BaseCaseProblem;
 
 private:
     std::shared_ptr<Wrapper_Construct> gen_ref_data;
@@ -44,6 +45,8 @@ private:
     // to determine if g \in G_su or \in G_sd
     Eigen::VectorXi G_su_value, G_sd_value;
 
+    Eigen::VectorXi gen_i_g;
+    Eigen::VectorXi gen_id_g;
 
     // some useful size parameters
     size_t size_p_gnk = 0;

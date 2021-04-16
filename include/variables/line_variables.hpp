@@ -19,6 +19,7 @@ public:
     friend class LineCosts;
     friend class LineConstraints;
     friend class BusConstraints;
+    friend class BaseCaseProblem;
 
 private:
     // first dimension: Ns, second dimension: size of E_k
@@ -38,6 +39,7 @@ private:
     Eigen::VectorXd c_e_sw;
     Eigen::VectorXd ref_oribus;
     Eigen::VectorXd ref_desbus;
+    Eigen::VectorXi ref_id;
 
     Eigen::VectorXd p_ek_o, q_ek_o, p_ek_d, q_ek_d;
     Eigen::VectorXd bus_vik, bus_vipk;

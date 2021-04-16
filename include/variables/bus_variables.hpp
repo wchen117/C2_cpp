@@ -19,6 +19,7 @@ public:
     //friend class LineConstraints;
     friend class LineVariables;
     friend class TransformerVariables;
+    friend class BaseCaseProblem;
 
 private:
     std::shared_ptr<Wrapper_Construct> bus_ref_data;
@@ -33,6 +34,7 @@ private:
     // and some variables appear only in constraint set
     // of size Is, here the sequence of i in I is declared
     Eigen::VectorXd v_ik;
+    Eigen::VectorXd theta_ik;
     // and its associated bound v_over and v_under, for K \neq k0, this is v_
     Eigen::VectorXd v_i_over, v_i_under;
     Eigen::VectorXd b_i_fs, g_i_fs;

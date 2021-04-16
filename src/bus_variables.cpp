@@ -27,6 +27,7 @@ BusVariables::BusVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, co
         p_n_over = Eigen::MatrixXd::Zero(Np, Is);
         q_n_over = Eigen::MatrixXd::Zero(Nq, Is);
         v_ik = Eigen::VectorXd::Zero(Is);
+        theta_ik = Eigen::VectorXd::Zero(Is);
         v_i_over = Eigen::VectorXd::Zero(Is);
         v_i_under = Eigen::VectorXd::Zero(Is);
         b_i_fs = Eigen::VectorXd::Zero(Is);
@@ -63,8 +64,9 @@ BusVariables::BusVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, co
 
     for (size_t idx=0; idx<sorted_bus_ID.size(); idx++)
     {
-        // initialize v_ik
+        // initialize v_ik and theta_ik
         v_ik(idx) = 0.0;
+        theta_ik(idx) = bus_ref_data->theta_0.at(sorted_bus_ID.at(idx));
         // now i index in v_i_over and v_i_under are sorted in ascending order
         // vover and vunder are unordered_map, that's why we are using i index in sorted_I
         // to reference their value, so that v_i_over and v_i_under are sorted with respect to
@@ -76,8 +78,8 @@ BusVariables::BusVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, co
         g_i_fs(idx) = bus_ref_data->g_fs.at(sorted_bus_ID.at(idx));
     }
 
-    // bus variables consist of p_ikn+, p_ikn-, q_ikn+, q_ikn-, and v_ik
-    bus_var_len = 2 * size_q_ikn + 2 * size_p_ikn + Is;
+    // bus variables consist of p_ikn+, p_ikn-, q_ikn+, q_ikn-, v_ik and theta_ik
+    bus_var_len = 2 * size_q_ikn + 2 * size_p_ikn + 2* Is;
     SetRows(bus_var_len);
 }
 
@@ -93,7 +95,7 @@ Eigen::VectorXd BusVariables::GetValues() const
       Eigen::Map<const Eigen::VectorXd> flat_p_ikn_minus (p_ikn_minus.data(), p_ikn_minus.size());
       Eigen::Map<const Eigen::VectorXd> flat_q_ikn_plus (q_ikn_plus.data(), q_ikn_plus.size());
       Eigen::Map<const Eigen::VectorXd> flat_q_ikn_minus (q_ikn_minus.data(), q_ikn_minus.size());
-      tmp_x << flat_p_ikn_plus, flat_p_ikn_minus, flat_q_ikn_plus, flat_q_ikn_minus, v_ik;
+      tmp_x << flat_p_ikn_plus, flat_p_ikn_minus, flat_q_ikn_plus, flat_q_ikn_minus, v_ik, theta_ik;
       return tmp_x;
   }
   else
@@ -121,6 +123,7 @@ void BusVariables::SetVariables(const VectorXd &x)
     q_ikn_plus = tmp_q_ikn_plus;
     q_ikn_minus = tmp_q_ikn_minus;
     v_ik = x.segment(2*size_p_ikn+2*size_q_ikn, Is);
+    theta_ik = x.segment(2*size_p_ikn+2*size_q_ikn+Is, Is);
 
 }
 
@@ -134,9 +137,18 @@ BusVariables::VecBound BusVariables::GetBounds() const
     Eigen::VectorXd lower_bound(GetRows());
     Eigen::Map<const Eigen::VectorXd> flat_p_n_over (p_n_over.data(), p_n_over.size());
     Eigen::Map<const Eigen::VectorXd> flat_q_n_over (q_n_over.data(), q_n_over.size());
+
     Eigen::VectorXd zero_vec = Eigen::VectorXd::Zero(2*size_p_ikn + 2*size_q_ikn);
-    upper_bound << flat_p_n_over, flat_p_n_over, flat_q_n_over, flat_q_n_over, v_i_over;
-    lower_bound << zero_vec, v_i_under;
+
+    Eigen::VectorXd theta_ik_over = Eigen::VectorXd::Zero(v_i_over.size());
+    // not sure the bound
+    theta_ik_over.setConstant(100);
+    Eigen::VectorXd theta_ik_under = Eigen::VectorXd::Zero(v_i_over.size());
+    // no bound?
+    theta_ik_under.setConstant(-100);
+
+    upper_bound << flat_p_n_over, flat_p_n_over, flat_q_n_over, flat_q_n_over, v_i_over, theta_ik_over;
+    lower_bound << zero_vec, v_i_under, theta_ik_under;
 
     for (size_t idx=0; idx<GetRows(); idx++)
     {

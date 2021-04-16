@@ -12,7 +12,8 @@
 
 class BusConstraints : public ifopt::ConstraintSet {
 public:
-    BusConstraints(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name);
+    BusConstraints(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string& name, const std::string load_name,\
+                   const std::string line_name, const std::string swsh_name, const std::string trans_name, const std::string gen_name);
     ~BusConstraints();
     VectorXd GetValues() const override;
     VecBound GetBounds() const override;
@@ -25,6 +26,12 @@ private:
 
 
     std::string bus_var_name;
+    std::string load_var_name;
+    std::string line_var_name;
+    std::string swsh_var_name;
+    std::string trans_var_name;
+    std::string gen_var_name;
+
     std::shared_ptr<Wrapper_Construct> bus_ref_data;
     std::shared_ptr<BusVariables> bus_var_ptr;
     std::shared_ptr<GeneratorVariables> gen_var_ptr;
@@ -32,6 +39,7 @@ private:
     std::shared_ptr<TransformerVariables> trans_var_ptr;
     std::shared_ptr<LineVariables> line_var_ptr;
     std::shared_ptr<SwitchShuntVariables> swsh_var_ptr;
+
 
     template <typename T>
     double get_sum(const std::vector<T> K0_vector, const std::unordered_map<T, int, boost::hash<T> > K0_umap, const Eigen::VectorXd sum_from_vector)  const

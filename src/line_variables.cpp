@@ -20,6 +20,7 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
         c_e_sw = Eigen::VectorXd::Zero(size_E_k0);
         ref_desbus = Eigen::VectorXd::Zero(size_E_k0);
         ref_oribus = Eigen::VectorXd::Zero(size_E_k0);
+        ref_id = Eigen::VectorXi::Zero(size_E_k0);
         // so what's their initial value
         // x_ek_sw and x_e_sw0 are ordered by E_k's order
         x_ek_sw = Eigen::VectorXd::Zero(size_E_k0);
@@ -49,6 +50,8 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                     // fetched origbus and desbus are not ordered, use ref_origbus and ref_desbus to help keep track
                     ref_oribus(idx) = n.origbus;
                     ref_desbus(idx) = n.destbus;
+
+                    ref_id(idx) = stoi(n.id);
                     c_e_sw(idx) = n.csw;
                     // eq(153)
 
@@ -96,7 +99,7 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
             auto ge = local_input_ptr->g_e.at(ek);
             auto be = local_input_ptr->b_e.at(ek);
             auto be_ch = local_input_ptr->b_e_ch.at(ek);
-            auto diff = local_input_ptr->theta_0.at(idx) - local_input_ptr->theta_0.at(ipdx);
+            //auto diff = local_input_ptr->theta_0.at(idx) - local_input_ptr->theta_0.at(ipdx);
             // now figure out the where bus idx and ipdx locate in v_ik
             // findInVector located in typedefinition.hpp
             auto bus_idx_pair = findInVector(bus_var_ptr->sorted_bus_ID, idx);
@@ -108,6 +111,9 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                 auto bus_ipdx = bus_ipdx_pair.second;
                 auto vik = bus_var_ptr->v_ik(bus_idx);
                 auto vipk = bus_var_ptr->v_ik(bus_ipdx);
+                auto thetaik = bus_var_ptr->theta_ik(bus_idx);
+                auto thetaipk = bus_var_ptr->theta_ik(bus_ipdx);
+                auto diff = thetaik - thetaipk;
                 bus_vik(ekdx) = bus_var_ptr->v_ik(bus_idx);
                 bus_vipk(ekdx) = bus_var_ptr->v_ik(bus_idx);
 

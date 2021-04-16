@@ -1,0 +1,434 @@
+{
+    "bus_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "bus_pow_imag_imbalance": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "bus_pow_real_imbalance": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "bus_volt_ang_delta_to_prior": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "bus_volt_mag_delta_to_prior": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "bus_volt_mag_max_viol": {
+        "infeas": false,
+        "key": 1,
+        "val": 0.0
+    },
+    "bus_volt_mag_min_viol": {
+        "infeas": false,
+        "key": 1,
+        "val": 0.0
+    },
+    "gen_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_pow_imag_0_if_x_0_viol": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_pow_imag_delta_to_prior": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_pow_imag_max_viol": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_pow_imag_min_viol": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_pow_real_0_if_x_0_viol": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_pow_real_delta_to_prior": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_pow_real_max_viol": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_pow_real_min_viol": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_ramp_down_max_viol": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_ramp_up_max_viol": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_sd_qual": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_sd_su_not_both": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_su_qual": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_su_sd_not_both": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_switch_down_actual": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_switch_down_max": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_switch_up_actual": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_switch_up_max": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_xon_max": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "gen_xon_min": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "infeas": {
+        "infeas": true,
+        "key": "eval_load_ramp_viol",
+        "val": true
+    },
+    "line_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "line_sw_qual": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "line_switch_down_actual": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "line_switch_down_max": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "line_switch_up_actual": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "line_switch_up_max": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "line_xsw_max": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "line_xsw_min": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "load_benefit": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "load_pow_real_delta_to_prior": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "load_ramp_down_max_viol": {
+        "infeas": true,
+        "key": [
+            12,
+            "1"
+        ],
+        "val": 0.030326135299999994
+    },
+    "load_ramp_up_max_viol": {
+        "infeas": false,
+        "key": [
+            2,
+            "1"
+        ],
+        "val": 0.0
+    },
+    "load_t_max_viol": {
+        "infeas": false,
+        "key": [
+            2,
+            "1"
+        ],
+        "val": 0.0
+    },
+    "load_t_min_viol": {
+        "infeas": false,
+        "key": [
+            2,
+            "1"
+        ],
+        "val": 0.0
+    },
+    "max_bus_pow_imag_over": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "max_bus_pow_imag_under": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "max_bus_pow_real_over": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "max_bus_pow_real_under": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "max_line_viol": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "max_xfmr_viol": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "min_total_load_benefit": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "obj": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "sum_bus_pow_imag_over": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "sum_bus_pow_imag_under": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "sum_bus_pow_real_over": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "sum_bus_pow_real_under": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "swsh_b_delta_to_prior": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "swsh_xst_max": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "swsh_xst_min": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "total_bus_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "total_bus_imag_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "total_bus_real_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "total_gen_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "total_gen_energy_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "total_gen_on_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "total_gen_sd_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "total_gen_su_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "total_line_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "total_line_limit_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "total_line_switch_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "total_load_benefit": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "total_xfmr_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "total_xfmr_limit_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "total_xfmr_switch_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "xfmr_cost": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "xfmr_phi_delta_to_prior": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "xfmr_sw_qual": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "xfmr_switch_down_actual": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "xfmr_switch_down_max": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "xfmr_switch_up_actual": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "xfmr_switch_up_max": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "xfmr_tau_delta_to_prior": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "xfmr_xst_bounds": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "xfmr_xsw_max": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    },
+    "xfmr_xsw_min": {
+        "infeas": false,
+        "key": null,
+        "val": 0.0
+    }
+}

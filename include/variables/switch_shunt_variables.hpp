@@ -17,6 +17,7 @@ public:
     // define the bounds of variables
     VecBound GetBounds() const override;
     friend class BusConstraints;
+    friend class BaseCaseProblem;
 private:
     std::shared_ptr<Wrapper_Construct> swsh_ref_data;
     //eq (46)
@@ -27,6 +28,7 @@ private:
     Eigen::MatrixXd x_hak_st_upbound;
     // coefficients for x_hak_st
     Eigen::MatrixXd b_ha_st;
+    Eigen::VectorXd swsh_ih;
     // size of variables
     size_t size_x_hak_st;
 
