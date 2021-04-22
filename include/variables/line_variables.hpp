@@ -14,6 +14,8 @@ public:
     ~LineVariables();
     Eigen::VectorXd GetValues() const override;
     void SetVariables(const Eigen::VectorXd &x) override;
+    Eigen::VectorXd sigmoid_approx(const Eigen::VectorXd& base_array);
+    Eigen::VectorXd inverse_sigmoid_approx(const Eigen::VectorXd& sigmoid_array);
     // define the bounds of variables
     VecBound GetBounds() const override;
     friend class LineCosts;
@@ -28,6 +30,8 @@ private:
     Eigen::MatrixXd s_enk_plus;
     // x_ek_sw is in {0, 1}, for now we sent it to a real number between 0 and 1;
     Eigen::VectorXd x_ek_sw;
+    // x_ek_sw = sigmoid(x_ek_sw_base);
+    Eigen::VectorXd x_ek_sw_base;
     Eigen::VectorXd x_e_sw0;
     // use to track if e \in E^{sw} for e in x_ek_sw
     Eigen::VectorXd swqual_x_ek;

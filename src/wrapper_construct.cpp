@@ -199,6 +199,7 @@ void Wrapper_Construct::construct_transformer()
         b_f_m.insert(std::make_pair(tmp_f, tran_it->second.mag2));
         g_f_0.insert(std::make_pair(tmp_f, tran_it->second.r12 / tmp_denom));
         b_f_0.insert(std::make_pair(tmp_f, -tran_it->second.x12 / tmp_denom));
+
         tau_f_0.insert(std::make_pair(tmp_f, tran_it->second.windv1 / tran_it->second.windv2));
         theta_f_0.insert(std::make_pair(tmp_f, tran_it->second.ang1 * PI / 180.0));
         x_f_st_over.insert(std::make_pair(tmp_f, (tran_it->second.ntp1 - 1.0)/2.0));

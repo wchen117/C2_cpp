@@ -388,8 +388,10 @@ void Raw::parse_transformer(std::vector<std::string> transformer_section)
         tmp_tfmr.f4 = std::stod(tmp_transformer_section[idx][19]);
         std::string tmp_string = "           ";
         parse_token(tmp_tfmr.vecgrp, tmp_transformer_section[idx][20], tmp_string);
+
         tmp_tfmr.r12 = std::stod(tmp_transformer_section[idx][21]);
-        tmp_tfmr.x12 = std::stoi(tmp_transformer_section[idx][22]);
+        tmp_tfmr.x12 = std::stod(tmp_transformer_section[idx][22]);
+
         tmp_tfmr.sbase12 = std::stod(tmp_transformer_section[idx][23]);
         tmp_tfmr.windv1 = std::stod(tmp_transformer_section[idx][24]);
         tmp_tfmr.nomv1 = std::stod(tmp_transformer_section[idx][25]);

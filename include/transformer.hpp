@@ -30,7 +30,7 @@ public:
     double f4;
     std::string vecgrp;
     double r12;
-    int x12;
+    double x12;
     double sbase12;
     double windv1;
     double nomv1;

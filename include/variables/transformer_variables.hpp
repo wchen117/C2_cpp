@@ -69,22 +69,6 @@ private:
     std::shared_ptr<BusVariables> bus_var_ptr;
     size_t trans_var_len, size_F_k0, Ns;
 
-    /**
-    template < typename T>
-    std::pair<bool, int > findInVector(const std::vector<T>  & vecOfElements, const T  & element) const {
-        std::pair<bool, int> result;
-        // Find given element in vector
-        auto it = std::find(vecOfElements.begin(), vecOfElements.end(), element);
-        if (it != vecOfElements.end()) {
-            result.second = distance(vecOfElements.begin(), it);
-            result.first = true;
-        } else {
-            result.first = false;
-            result.second = -1;
-        }
-        return result;
-    }
-     **/
 
 
 

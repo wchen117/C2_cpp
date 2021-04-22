@@ -1,0 +1,39 @@
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit https://github.com/coin-or/Ipopt
+******************************************************************************
+
+Total number of variables............................:      378
+                     variables with only lower bounds:        4
+                variables with lower and upper bounds:      266
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:       48
+Total number of inequality constraints...............:      250
+        inequality constraints with only lower bounds:      112
+   inequality constraints with lower and upper bounds:       58
+        inequality constraints with only upper bounds:       80
+
+
+Number of Iterations....: 102
+
+                                   (scaled)                 (unscaled)
+Objective...............:  -9.9787078581088615e+04   -1.0044896228183383e+11
+Dual infeasibility......:   8.7609935417222335e-08    8.8191048614447348e-02
+Constraint violation....:   9.9999990000000150e-02    9.9999990000000150e-02
+Complementarity.........:   1.0124346379194490e-11    1.0191500763753831e-05
+Overall NLP error.......:   9.9999990000000150e-02    9.9999990000000150e-02
+
+
+Number of objective function evaluations             = 105
+Number of objective gradient evaluations             = 103
+Number of equality constraint evaluations            = 105
+Number of inequality constraint evaluations          = 105
+Number of equality constraint Jacobian evaluations   = 103
+Number of inequality constraint Jacobian evaluations = 103
+Number of Lagrangian Hessian evaluations             = 0
+Total CPU secs in IPOPT (w/o function evaluations)   =     17.508
+Total CPU secs in NLP function evaluations           =     22.703
+
+EXIT: Maximum CPU time exceeded.

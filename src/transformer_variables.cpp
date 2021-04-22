@@ -37,6 +37,7 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
         g_fk = Eigen::VectorXd::Zero(size_F_k0);
         b_fk = Eigen::VectorXd::Zero(size_F_k0);
         eta_fk = Eigen::VectorXd::Zero(size_F_k0);
+        eta_fk.setConstant(1.0);
         g_f_0 = Eigen::VectorXd::Zero(size_F_k0);
         b_f_0 = Eigen::VectorXd::Zero(size_F_k0);
 
@@ -118,6 +119,8 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
             }
 
         }
+
+
 
         // to formulate  p_fk_o, q_fk_o, p_fk_d, q_fk_d
         for (size_t fkdx=0; fkdx<local_input_ptr->F_k0.size(); fkdx++)
@@ -238,7 +241,7 @@ TransformerVariables::VecBound  TransformerVariables::GetBounds() const
     // no bound defined for pq_fk_od
     Eigen::VectorXd  pg_fk_od_up = Eigen::VectorXd::Zero(4 * size_F_k0);
 
-
+    // binary variable, upper bound 1.0
     x_fk_sw_up_bound.setConstant(1.0);
     // no apparent upper bound from document
     b_fk_up_bound.setConstant(1e20);
@@ -257,12 +260,16 @@ TransformerVariables::VecBound  TransformerVariables::GetBounds() const
     // no bound defined for pq_fk_od
     Eigen::VectorXd  pg_fk_od_lo = Eigen::VectorXd::Zero(4 * size_F_k0);
 
+    // no apparent upper bound from document
     b_fk_lo_bound.setConstant(-1e20);
-    g_fk_up_bound.setConstant(-1e20);
+    g_fk_lo_bound.setConstant(-1e20);
+    // no apparent upper bound from document
     pg_fk_od_lo.setConstant(-1e20);
+    // from eqn(280), its requirement is to be strictly positive
+    eta_fk_lo_bound.setConstant(0);
     // no need to modify eta_fk_lo_bound since it's all zeros
     upper_bound << s_fnk_up_bound, x_fk_sw_up_bound, x_fk_st_up_bound, tau_fk_over, theta_fk_over, b_fk_up_bound, g_fk_up_bound, eta_fk_up_bound, pg_fk_od_up;
-    lower_bound << s_fnk_lo_bound, x_fk_sw_lo_bound, x_fk_st_lo_bound, tau_fk_under, theta_fk_under, b_fk_lo_bound, g_fk_up_bound, eta_fk_lo_bound, pg_fk_od_lo;
+    lower_bound << s_fnk_lo_bound, x_fk_sw_lo_bound, x_fk_st_lo_bound, tau_fk_under, theta_fk_under, b_fk_lo_bound, g_fk_lo_bound, eta_fk_lo_bound, pg_fk_od_lo;
 
     for (size_t idx=0; idx<GetRows(); idx++)
     {

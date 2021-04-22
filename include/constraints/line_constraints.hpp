@@ -28,5 +28,6 @@ private:
 
 
 
+
 };
 #endif //GOC_CPP_LINE_CONSTRAINTS_HPP

@@ -24,6 +24,8 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
         // so what's their initial value
         // x_ek_sw and x_e_sw0 are ordered by E_k's order
         x_ek_sw = Eigen::VectorXd::Zero(size_E_k0);
+        x_ek_sw_base = Eigen::VectorXd::Zero(size_E_k0);
+        x_ek_sw_base.setConstant(-1e20);
         x_e_sw0 = Eigen::VectorXd::Zero(size_E_k0);
 
 
@@ -156,6 +158,21 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
 
 LineVariables::~LineVariables() {}
 
+Eigen::VectorXd LineVariables::sigmoid_approx(const Eigen::VectorXd& base_array)
+{
+    Eigen::VectorXd copy_array = base_array;
+    return (0.5 * (copy_array.array().tanh() +1)).matrix();
+}
+
+Eigen::VectorXd LineVariables::inverse_sigmoid_approx(const Eigen::VectorXd& sigmoid_array)
+{
+    // if input = 1, then it returns inf
+
+    Eigen::VectorXd copy_array = sigmoid_array;
+    return (2.0 * copy_array.array() - 1).atanh().matrix();
+
+}
+
 Eigen::VectorXd LineVariables::GetValues() const
 {
     // S_enk_plus, each col: index n in Ns, each row: index e in E_k0
@@ -163,14 +180,19 @@ Eigen::VectorXd LineVariables::GetValues() const
     if(GetRows())
     {
 
+
         Eigen::VectorXd tmp_x(GetRows());
         // this flatten s_enk_plus col by col
         // why must declare const here???? it says s_enk_plus a const double*, why?
 
         Eigen::Map<const Eigen::VectorXd> flat_s_enk(s_enk_plus.data(), s_enk_plus.size());
 
+        Eigen::VectorXd copy_array = x_ek_sw_base;
 
-        tmp_x << flat_s_enk, x_ek_sw, p_ek_o, q_ek_o, p_ek_d, q_ek_d;
+        Eigen::VectorXd local_x_ek_sw = (0.5 * (copy_array.array().tanh() +1)).matrix();
+
+        //tmp_x << flat_s_enk, x_ek_sw, p_ek_o, q_ek_o, p_ek_d, q_ek_d;
+        tmp_x << flat_s_enk, local_x_ek_sw, p_ek_o, q_ek_o, p_ek_d, q_ek_d;
 
         assert(tmp_x.size() == GetRows());
 
@@ -188,6 +210,7 @@ void LineVariables::SetVariables(const Eigen::VectorXd &x)
     size_t flat_len = size_E_k0 * Ns;
     auto tmp_flat = x.segment(0, flat_len);
     x_ek_sw = x.segment(flat_len, size_E_k0);
+    x_ek_sw_base = inverse_sigmoid_approx(x_ek_sw);
     Eigen::Map<const Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::ColMajor>> tmp_mat(tmp_flat.data(), Ns, size_E_k0);
     s_enk_plus = tmp_mat;
     p_ek_o = x.segment(flat_len+size_E_k0, pq_ek_od_size);

@@ -69,13 +69,20 @@ void BaseCaseProblem::Solve()
     ipopt.SetOption("linear_solver", "ma97");
     ipopt.SetOption("jacobian_approximation", "finite-difference-values");
     ipopt.SetOption("check_derivatives_for_naninf", "yes");
-    ipopt.SetOption("bound_relax_factor", 1);
-    ipopt.SetOption("print_level", 5);
+    //ipopt.SetOption("bound_relax_factor", 1);
+    ipopt.SetOption("print_level", 3);
     ipopt.SetOption("output_file", "output.txt");
     ipopt.SetOption("max_iter", 3000);
     ipopt.Solve(nlp);
+
     Eigen::VectorXd x = nlp.GetOptVariables()->GetValues();
-    std::cout << x.transpose() << std::endl;
+
+    std::cout<<"x = "<<x.transpose()<<std::endl;
+
+    std::cout<<"g_fk = "<<trans_vars_ptr->g_fk.transpose()<<std::endl;
+    std::cout<<"b_fk = "<<trans_vars_ptr->b_fk.transpose()<<std::endl;
+    nlp.PrintCurrent();
+
 }
 void BaseCaseProblem::WriteOutputFile()
 {
