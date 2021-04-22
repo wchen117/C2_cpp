@@ -6,13 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints.cpp
-constraints/transformer_constraints.hpp
--
-
-/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables.cpp
-variables/transformer_variables.hpp
-/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/variables/transformer_variables.hpp
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs.cpp
+costs/line_costs.hpp
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/costs/line_costs.hpp
 
 /Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include/rapidjson/allocators.h
 rapidjson.h
@@ -8102,6 +8098,10 @@ bounds.h
 composite.h
 /usr/local/include/ifopt/composite.h
 
+/usr/local/include/ifopt/cost_term.h
+constraint_set.h
+/usr/local/include/ifopt/constraint_set.h
+
 /usr/local/include/ifopt/variable_set.h
 composite.h
 /usr/local/include/ifopt/composite.h
@@ -8134,14 +8134,6 @@ include/branchoutevent.hpp
 contingency.hpp
 include/contingency.hpp
 
-include/constraints/transformer_constraints.hpp
-ifopt/constraint_set.h
--
-variables/transformer_variables.hpp
--
-wrapper_construct.hpp
--
-
 include/contingency.hpp
 string
 -
@@ -8151,6 +8143,12 @@ branchoutevent.hpp
 include/branchoutevent.hpp
 generatoroutevent.hpp
 include/generatoroutevent.hpp
+
+include/costs/line_costs.hpp
+ifopt/cost_term.h
+-
+variables/line_variables.hpp
+-
 
 include/data.hpp
 raw.hpp
@@ -8312,7 +8310,7 @@ ifopt/variable_set.h
 wrapper_construct.hpp
 -
 
-include/variables/transformer_variables.hpp
+include/variables/line_variables.hpp
 ifopt/variable_set.h
 -
 variables/bus_variables.hpp

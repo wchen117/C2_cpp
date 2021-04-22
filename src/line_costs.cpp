@@ -17,13 +17,15 @@ double LineCosts::GetCost() const
     auto first_term = -(line_var_ptr->x_ek_sw - line_var_ptr->x_e_sw0).array().abs() * (line_var_ptr->c_e_sw.array());
     // second_term is a row vector
     auto second_term = -(line_var_ptr->s_enk_plus.array() * line_var_ptr->c_n_s.array()).matrix().colwise().sum();
+    auto delta = line_var_ptr->local_input_ptr->new_data.sup.sys_prms["delta"];
 
 
-    //
+    std::cout<<"c_n_s = "<<line_var_ptr->c_n_s<<std::endl;
+    std::cout<<"s_enk_plus = "<<line_var_ptr->s_enk_plus<<std::endl;
     double z_ek = 0.0;
     for (size_t idx=0; idx< first_term.rows(); idx++)
     {
-        z_ek += line_var_ptr->local_input_ptr->new_data.sup.sys_prms["delta"] * second_term(idx) + first_term(idx);
+        z_ek +=  delta * second_term(idx) + first_term(idx);
     }
     return z_ek;
 

@@ -70,7 +70,7 @@ void BaseCaseProblem::Solve()
     ipopt.SetOption("jacobian_approximation", "finite-difference-values");
     ipopt.SetOption("check_derivatives_for_naninf", "yes");
     //ipopt.SetOption("bound_relax_factor", 1);
-    ipopt.SetOption("print_level", 3);
+    ipopt.SetOption("print_level", 5);
     ipopt.SetOption("output_file", "output.txt");
     ipopt.SetOption("max_iter", 3000);
     ipopt.Solve(nlp);

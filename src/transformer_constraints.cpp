@@ -32,8 +32,8 @@ Eigen::VectorXd TransConstraints::GetValues() const
     const Eigen::VectorXd  Eqn69 = trans_var_ptr->b_fk - trans_var_ptr->b_f_0;
 
 
-    std::cout<<"g_fk = "<<trans_var_ptr->g_fk.transpose()<<std::endl;
-    std::cout<<"eta_fk = "<<trans_var_ptr->eta_fk.transpose()<<std::endl;
+    //std::cout<<"g_fk = "<<trans_var_ptr->g_fk.transpose()<<std::endl;
+    //std::cout<<"eta_fk = "<<trans_var_ptr->eta_fk.transpose()<<std::endl;
     //std::cout<<"Eqn66 = "<<Eqn66.transpose()<<std::endl;
     for (size_t idx=0; idx<trans_var_ptr->local_input_ptr->F_k0.size(); idx++)
     {
@@ -109,8 +109,8 @@ TransConstraints::VecBound TransConstraints::GetBounds() const
     Eigen::VectorXd eqn77_78_lo_bounds = Eigen::VectorXd::Zero( 2 * trans_var_ptr->size_F_k0);
     // well... eqn(70) and eqn(71) hasn't been coded yet, so
     // we might need to relax this bound
-    eqn62_69_up_bounds.setConstant(1);
-    eqn62_69_lo_bounds.setConstant(-1);
+    eqn62_69_up_bounds.setConstant(10);
+    eqn62_69_lo_bounds.setConstant(-10);
     // eqn(76) bound
     eqn76_up_bounds.setConstant(1e20);
     eqn76_lo_bounds.setConstant(0);
