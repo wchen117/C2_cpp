@@ -66,22 +66,31 @@ void BaseCaseProblem::Solve()
     // 2. choose solver and options
 
     ifopt::IpoptSolver ipopt;
-    ipopt.SetOption("linear_solver", "ma97");
+    //ipopt.SetOption("linear_solver", "ma97");
     ipopt.SetOption("jacobian_approximation", "finite-difference-values");
     ipopt.SetOption("check_derivatives_for_naninf", "yes");
     //ipopt.SetOption("bound_relax_factor", 1);
     ipopt.SetOption("print_level", 5);
     ipopt.SetOption("output_file", "output.txt");
     ipopt.SetOption("max_iter", 3000);
+    ipopt.SetOption("max_cpu_time", 1e2);
     ipopt.Solve(nlp);
 
     Eigen::VectorXd x = nlp.GetOptVariables()->GetValues();
 
     std::cout<<"x = "<<x.transpose()<<std::endl;
 
-    std::cout<<"g_fk = "<<trans_vars_ptr->g_fk.transpose()<<std::endl;
-    std::cout<<"b_fk = "<<trans_vars_ptr->b_fk.transpose()<<std::endl;
+    //std::cout<<"g_fk = "<<trans_vars_ptr->g_fk.transpose()<<std::endl;
+    //std::cout<<"b_fk = "<<trans_vars_ptr->b_fk.transpose()<<std::endl;
+
+
     nlp.PrintCurrent();
+
+    std::cout<<"x_ek_sw = "<<line_vars_ptr->x_ek_sw.transpose()<<std::endl;
+    std::cout<<"x_fk_sw = "<<trans_vars_ptr->x_fk_sw.transpose()<<std::endl;
+    std::cout<<"x_gk_on = "<<gen_vars_ptr->x_gk_on.transpose()<<std::endl;
+    std::cout<<"x_gk_su = "<<gen_vars_ptr->x_gk_su.transpose()<<std::endl;
+    std::cout<<"x_gk_sd = "<<gen_vars_ptr->x_gk_sd.transpose()<<std::endl;
 
 }
 void BaseCaseProblem::WriteOutputFile()

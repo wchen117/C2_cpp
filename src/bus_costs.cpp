@@ -18,7 +18,7 @@ double BusCosts::GetCost () const
     auto tmp2 = bus_var_ptr->c_n_q.array() * (bus_var_ptr->q_ikn_plus.array() + bus_var_ptr->q_ikn_minus.array());
     z_ik = -1 * (tmp1 + tmp2).sum();
 
-    return z_ik;
+    return -z_ik;
 
 
 

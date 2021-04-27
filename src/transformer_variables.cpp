@@ -16,6 +16,7 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
         // zero initialize all variables
         s_fnk_plus = Eigen::MatrixXd::Zero(Ns, size_F_k0);
         x_fk_sw = Eigen::VectorXd::Zero(size_F_k0);
+        swqual_state = Eigen::VectorXd::Ones(size_F_k0);
         x_fk_st = Eigen::VectorXd::Zero(size_F_k0);
         x_fk_st_bound = Eigen::VectorXd::Zero(size_F_k0);
 
@@ -85,7 +86,7 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
                     // eqn(60)
                     if (n.swqual == 0)
                     {
-                        x_fk_sw(idx) = local_input_ptr->x_f_sw_0[f_key];
+                       swqual_state(idx) = 0.0;
                     }
                     //eqn(61) - eqn(63), record x_f_st_over first
                     x_fk_st_bound(idx) = local_input_ptr->x_f_st_over[f_key];
@@ -252,8 +253,9 @@ TransformerVariables::VecBound  TransformerVariables::GetBounds() const
 
     // individual lower bounds
     Eigen::VectorXd s_fnk_lo_bound = Eigen::VectorXd::Zero(s_fnk_up_bound.size());
+    // binary variable, lower bound 0
     Eigen::VectorXd x_fk_sw_lo_bound = Eigen::VectorXd::Zero(size_F_k0);
-    Eigen::VectorXd x_fk_st_lo_bound = -1 * x_fk_st_bound;
+    Eigen::VectorXd x_fk_st_lo_bound = (-1 * x_fk_st_bound.array()).matrix();
     Eigen::VectorXd b_fk_lo_bound = Eigen::VectorXd::Zero(size_F_k0);
     Eigen::VectorXd g_fk_lo_bound = Eigen::VectorXd::Zero(size_F_k0);
     Eigen::VectorXd eta_fk_lo_bound = Eigen::VectorXd::Zero(size_F_k0);

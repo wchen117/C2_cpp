@@ -24,7 +24,7 @@ double LoadCosts::GetCost() const
         }
     }
 
-    return z_jk;
+    return -z_jk;
 }
 void LoadCosts::InitVariableDependedQuantities(const VariablesPtr& x)
 {

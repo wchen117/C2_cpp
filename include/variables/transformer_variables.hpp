@@ -26,6 +26,7 @@ private:
     Eigen::MatrixXd s_fnk_plus;
     // x_fk_sw, size of F_k
     Eigen::VectorXd x_fk_sw;
+    Eigen::VectorXd swqual_state;
     // x_fk_st, eqn(61)
     Eigen::VectorXd x_fk_st;
     // tau_fk eqn(62) and its bounds
