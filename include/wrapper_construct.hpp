@@ -99,7 +99,7 @@ class Wrapper_Construct
     UMAP_TUPLE_iis_INT F_i_d;
     std::vector<key_iis> F_tau;
     std::vector<key_iis> F_theta;
-    std::vector<key_iis> F_gamma;
+    std::vector<key_iis> F_eta;
     UMAP_TUPLE_iis_INT i_f_o;
     UMAP_TUPLE_iis_INT i_f_d;
     UMAP_TUPLE_iis_STRING id_F;

@@ -241,8 +241,8 @@ void Wrapper_Construct::construct_transformer()
         
         if (tran_it->second.tab1 != 0 and abs(tran_it->second.cod1) == 3 and abs(tran_it->second.cod1) == 1)
         {
-            
-            F_gamma.push_back(tmp_f);
+
+            F_eta.push_back(tmp_f);
             
             for(tcit_it=new_data.raw.TFICTs.begin(); tcit_it!=new_data.raw.TFICTs.end();tcit_it++)
             {

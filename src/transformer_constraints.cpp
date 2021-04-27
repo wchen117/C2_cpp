@@ -69,7 +69,7 @@ Eigen::VectorXd TransConstraints::GetValues() const
         }
 
         // wrong name, should be F_eta
-        for (auto fk_eta: trans_var_ptr->local_input_ptr->F_gamma)
+        for (auto fk_eta: trans_var_ptr->local_input_ptr->F_eta)
         {
             // condition on eqn(66) and eqn(67)
             if (fk == fk_eta)
