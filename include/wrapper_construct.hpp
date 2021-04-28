@@ -123,7 +123,7 @@ class Wrapper_Construct
     UMAP_TUPLE_iis_DOUBLE x_f_sw_0;
     // vectors and maps holding Transformer Impedance Correction Table data
     double NUMM;
-    UMAP_TUPLE_iisi_DOUBLE gamma_f_m;
+    UMAP_TUPLE_iisi_DOUBLE eta_f_m;
     UMAP_TUPLE_iisi_DOUBLE tau_f_m;
     UMAP_TUPLE_iisi_DOUBLE theta_f_m;
     // vectors and maps holding switched shunt data

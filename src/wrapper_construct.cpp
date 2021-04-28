@@ -251,7 +251,7 @@ void Wrapper_Construct::construct_transformer()
                         for(int idx=0; idx<tcit_it->second.f.size(); idx++)
                         {
                             key_iisi tmp_fm = std::make_tuple(tmp_i, tmp_j, tmp_ckt, idx+1);
-                            gamma_f_m.insert(std::make_pair(tmp_fm, tcit_it->second.f.at(idx)));
+                            eta_f_m.insert(std::make_pair(tmp_fm, tcit_it->second.f.at(idx)));
                     
                         } 
                     
