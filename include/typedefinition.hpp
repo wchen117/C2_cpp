@@ -22,6 +22,8 @@ typedef std::tuple<int, int> key_ii;
 // key: tuple(int, int, string, int)
 typedef std::tuple<int, int, std::string, int> key_iisi;
 
+typedef std::unordered_map<int, std::vector<double>, boost::hash<double>> UMP_int_vec_double;
+
 // unordered_map using tuple(int, int) as hash key
 typedef std::unordered_map<key_ii, int, boost::hash<key_ii> > UMAP_TUPLE_ii_INT;
 typedef std::unordered_map<key_ii, double, boost::hash<key_ii> > UMAP_TUPLE_ii_DOUBLE;
@@ -36,10 +38,13 @@ typedef std::unordered_map<key_is, std::string, boost::hash<key_is> > UMAP_TUPLE
 typedef std::unordered_map<key_iis, int, boost::hash<key_iis> > UMAP_TUPLE_iis_INT;
 typedef std::unordered_map<key_iis, double, boost::hash<key_iis> > UMAP_TUPLE_iis_DOUBLE;
 typedef std::unordered_map<key_iis, std::string, boost::hash<key_iis> > UMAP_TUPLE_iis_STRING;
+typedef std::unordered_map<key_iis, std::vector<double>, boost::hash<key_iis> > UMAP_TUPLE_iis_VecD;
+
 // unordered map using tuple(int, int, string, int) as hash key
 typedef std::unordered_map<key_iisi, int, boost::hash<key_iisi> > UMAP_TUPLE_iisi_INT;
 typedef std::unordered_map<key_iisi, double, boost::hash<key_iisi> > UMAP_TUPLE_iisi_DOUBLE;
 typedef std::unordered_map<key_iisi, std::string, boost::hash<key_iisi> > UMAP_TUPLE_iisi_STRING;
+
 
 
 // two dimensional double vector

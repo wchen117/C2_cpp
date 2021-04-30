@@ -20,8 +20,7 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
         x_fk_st = Eigen::VectorXd::Zero(size_F_k0);
         x_fk_st_bound = Eigen::VectorXd::Zero(size_F_k0);
 
-        tau_fk = Eigen::VectorXd::Zero(size_F_k0);
-        tau_fk.setOnes(size_F_k0);
+        tau_fk = Eigen::VectorXd::Ones(size_F_k0);
         tau_fk_over = Eigen::VectorXd::Zero(size_F_k0);
         tau_fk_under = Eigen::VectorXd::Zero(size_F_k0);
         tau_f_st = Eigen::VectorXd::Zero(size_F_k0);
@@ -37,8 +36,7 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
 
         g_fk = Eigen::VectorXd::Zero(size_F_k0);
         b_fk = Eigen::VectorXd::Zero(size_F_k0);
-        eta_fk = Eigen::VectorXd::Zero(size_F_k0);
-        eta_fk.setConstant(1.0);
+        eta_fk = Eigen::VectorXd::Ones(size_F_k0);
         g_f_0 = Eigen::VectorXd::Zero(size_F_k0);
         b_f_0 = Eigen::VectorXd::Zero(size_F_k0);
 
@@ -50,6 +48,11 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
 
         // coefficients in eqn(77) and eqn(78)
         s_f_over = Eigen::VectorXd::Zero(size_F_k0);
+
+        // keep track eqn(70) and eqn(71)
+        eta_fk_geo_st = Eigen::VectorXi::Zero(size_F_k0);
+        eqn70_geo_st = Eigen::VectorXi::Zero(size_F_k0);
+        eqn71_geo_st = Eigen::VectorXi::Zero(size_F_k0);
 
         // zero initialize all parameters for now
         c_n_s = Eigen::MatrixXd::Zero(Ns, size_F_k0);
@@ -70,7 +73,10 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
             int destbus_num;
             std::string bus_i;
             auto f_key= local_input_ptr->F_k0.at(idx);
+
+
             std::tie (oribus_num, destbus_num, bus_i) = f_key;
+            //std::cout<<"key in F_k0 = "<<oribus_num<<" "<<destbus_num<<" "<<bus_i<<std::endl;
 
             bus_i.erase(std::remove(bus_i.begin(), bus_i.end(), '\''), bus_i.end());
             for (auto n: local_input_ptr->new_data.sup.transformers)
@@ -82,33 +88,34 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
                     ref_desbus(idx) = n.destbus;
                     ref_id(idx) = stoi(n.id);
                     c_f_sw(idx) = n.csw;
-                    x_f_sw0(idx) = local_input_ptr->x_f_sw_0[f_key];
+                    x_f_sw0(idx) = local_input_ptr->x_f_sw_0.at(f_key);
                     // eqn(60)
                     if (n.swqual == 0)
                     {
                        swqual_state(idx) = 0.0;
                     }
                     //eqn(61) - eqn(63), record x_f_st_over first
-                    x_fk_st_bound(idx) = local_input_ptr->x_f_st_over[f_key];
-                    tau_fk_over(idx) = local_input_ptr->tau_f_over[f_key];
-                    tau_fk_under(idx) = local_input_ptr->tau_f_under[f_key];
-                    tau_f_st(idx) = local_input_ptr->tau_f_st[f_key];
-                    tau_f_mid(idx) = local_input_ptr->tau_f_any[f_key];
-                    tau_f_0(idx) =  local_input_ptr->tau_f_0[f_key];
+
+                    x_fk_st_bound(idx) = local_input_ptr->x_f_st_over.at(f_key);
+                    tau_fk_over(idx) = local_input_ptr->tau_f_over.at(f_key);
+                    tau_fk_under(idx) = local_input_ptr->tau_f_under.at(f_key);
+                    tau_f_st(idx) = local_input_ptr->tau_f_st.at(f_key);
+                    tau_f_mid(idx) = local_input_ptr->tau_f_any.at(f_key);
+                    tau_f_0(idx) =  local_input_ptr->tau_f_0.at(f_key);
 
                     //eqn(64) - eqn(65)
-                    theta_fk_over(idx) = local_input_ptr->theta_f_over[f_key];
-                    theta_fk_under(idx) = local_input_ptr->theta_f_under[f_key];
-                    theta_f_st(idx) = local_input_ptr->theta_f_st[f_key];
-                    theta_f_mid(idx) = local_input_ptr->theta_f_any[f_key];
-                    theta_f_0(idx) = local_input_ptr->theta_f_0[f_key];
+                    theta_fk_over(idx) = local_input_ptr->theta_f_over.at(f_key);
+                    theta_fk_under(idx) = local_input_ptr->theta_f_under.at(f_key);
+                    theta_f_st(idx) = local_input_ptr->theta_f_st.at(f_key);
+                    theta_f_mid(idx) = local_input_ptr->theta_f_any.at(f_key);
+                    theta_f_0(idx) = local_input_ptr->theta_f_0.at(f_key);
 
                     //eqn(66) - eqn(68)
-                    b_f_0(idx) = local_input_ptr->b_f_0[f_key];
-                    g_f_0(idx) = local_input_ptr->g_f_0[f_key];
+                    b_f_0(idx) = local_input_ptr->b_f_0.at(f_key);
+                    g_f_0(idx) = local_input_ptr->g_f_0.at(f_key);
 
                     //eqn(77) and eqn(78)
-                    s_f_over(idx) = local_input_ptr->s_f_over[f_key];
+                    s_f_over(idx) = local_input_ptr->s_f_over.at(f_key);
 
                     for(size_t jdx=0; jdx<Ns; jdx++)
                     {
@@ -116,12 +123,94 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
                         t_n_s_over(jdx, idx) = local_input_ptr->new_data.sup.scblocks.at(jdx).tmax;
                         s_f_over_eigen(jdx, idx) = local_input_ptr->s_f_over[f_key];
                     }
+
+
+                    if (local_input_ptr->eta_f_m.find(f_key) == local_input_ptr->eta_f_m.end())
+                    {
+                        // if f_key not in eta_f_m
+                        // do nothing
+                    }
+                    else {
+                        // for this f_key we extract its eta array
+                        auto eta_m = local_input_ptr->eta_f_m.at(f_key);
+                        eta_fk_geo_st(idx) = 1;
+                        eta_fkm_vec.insert(std::make_pair(idx, eta_m));
+
+                        if (local_input_ptr->tau_f_m.find(f_key) == local_input_ptr->tau_f_m.end())
+                        {
+                            // if f_key in eta_fm but not in tau_f_m
+                            // the it could be in theta_fm
+
+                            if (local_input_ptr->theta_f_m.find(f_key) == local_input_ptr->theta_f_m.end())
+                            {
+                                // if f_key not in tau_f_m
+                                // do nothing
+
+                            }
+                            else {
+                                // if f in both eta_f and theta_f, which satisfy eqn(71)
+                                auto theta_m = local_input_ptr->theta_f_m.at(f_key);
+                                eqn71_geo_st(idx) = 1;
+                                eqn71_fkm_vec.insert(std::make_pair(idx, theta_m));
+
+                            }
+
+                        }
+                        else {
+                            // if f in both eta_f and tau_f, which satisfy eqn(70)
+                            auto tau_m = local_input_ptr->tau_f_m.at(f_key);
+                            eqn70_geo_st(idx) = 1;
+                            eqn70_fkm_vec.insert(std::make_pair(idx, tau_m));
+
+                        }
+
+                    }
+
+
+
+
                 }
             }
 
         }
 
+        eqn70_binary_mat.resize(eqn70_fkm_vec.size());
+        eqn71_binary_mat.resize(eqn71_fkm_vec.size());
 
+        /**
+        for (auto const &theta: local_input_ptr->theta_f_m)
+        {
+            int int1;
+            int int2;
+            std::string str1;
+
+
+            std::tie (int1, int2, str1) = theta.first;
+            std::cout<<"theta_f_m has f_key "<<int1<<" "<<int2<<" "<<str1<<std::endl;
+        }
+
+        for (auto const &tau: local_input_ptr->tau_f_m)
+        {
+            int int1;
+            int int2;
+            std::string str1;
+
+
+            std::tie (int1, int2, str1) = tau.first;
+            std::cout<<"tau_f_m has f_key "<<int1<<" "<<int2<<" "<<str1<<std::endl;
+        }
+
+        for (auto const &eta: local_input_ptr->eta_f_m)
+        {
+            int int1;
+            int int2;
+            std::string str1;
+
+
+            std::tie (int1, int2, str1) = eta.first;
+            std::cout<<"eta_f_m has f_key "<<int1<<" "<<int2<<" "<<str1<<std::endl;
+        }
+         **/
 
         // to formulate  p_fk_o, q_fk_o, p_fk_d, q_fk_d
         for (size_t fkdx=0; fkdx<local_input_ptr->F_k0.size(); fkdx++)

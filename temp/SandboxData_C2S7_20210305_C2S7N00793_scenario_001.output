@@ -1,0 +1,48 @@
+owner section empty
+
+************************************************************
+    IFOPT - Interface to Nonlinear Optimizers (v2.0)
+                © Alexander W. Winkler
+           https://github.com/ethz-adrl/ifopt
+************************************************************
+Legend:
+c - number of variables, constraints or cost terms
+i - indices of this set in overall problem
+v - number of [violated variable- or constraint-bounds] or [cost term value]
+
+                                   c             i             v 
+variable-sets:
+   load_variables                2922        0...2921          12
+   switch_shunt_variables          50     2922...2971           0
+   line_variables                7029     2972..10000           0
+   trans_variables               2145    10001..12145         202
+   gen_variables                 1271    12146..13416         478
+   bus_variables                 3965    13417..17381         793
+
+constraint-sets:
+   load_variables_constraint     1948        0...1947         974
+   line_variables_constraint     2343     1948...4290           0
+   trans_variables_constraint    1001     4291...5291           0
+   gen_variables_constraint      1810     5292...7101         314
+   bus_variables_constraint      4758     7102..11859         793
+
+cost-terms:
+   load_variables_obj               1        0......0128081000.00
+   line_variables_obj               1        0......0      -78.10
+   trans_variables_obj              1        0......0      -14.30
+   gen_variables_obj                1        0......0 -3309145.23
+   bus_variables_obj                1        0......0       -0.00
+
+Tried to set Option: bound_relax_factor. It is a valid option, but it is of type  Number, not of type Integer. Please check the documentation for options.
+
+### bound_relax_factor (Real Number) ###
+Category: NLP
+Description: Factor for initial relaxation of the bounds.
+0 <= (1e-08) <= +inf
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit https://github.com/coin-or/Ipopt
+******************************************************************************
+

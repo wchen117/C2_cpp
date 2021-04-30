@@ -137,6 +137,8 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
 
         }
 
+
+
         pq_ek_od_size =  p_ek_o.size();
 
         if (size_E_k0 && Ns && pq_ek_od_size)

@@ -8,6 +8,7 @@ Wrapper_Construct::Wrapper_Construct(std::string input_path){
 
     s_tilde = new_data.raw.CaseIdentificationData.sbase; 
     s_tilde_inverse = 1.0 / s_tilde;
+    alpha_factor = 1e18;
 
     // bus data from raw
     Is = new_data.raw.buses.size();
@@ -235,49 +236,58 @@ void Wrapper_Construct::construct_transformer()
             theta_f_over.insert(std::make_pair(tmp_f, theta_f_0[tmp_f]));
             theta_f_under.insert(std::make_pair(tmp_f, theta_f_0[tmp_f]));
         }
-    
+
         int tmp_i; int tmp_j; std::string tmp_ckt;
         std::tie(tmp_i, tmp_j, tmp_ckt) = tmp_f;
-        
-        if (tran_it->second.tab1 != 0 and abs(tran_it->second.cod1) == 3 and abs(tran_it->second.cod1) == 1)
+
+        if (tran_it->second.tab1 != 0 and (abs(tran_it->second.cod1) == 3 or abs(tran_it->second.cod1) == 1))
         {
+            //std::cout<<"in if, tab1 = "<<tran_it->second.tab1<<std::endl;
+            //std::cout<<"in if, cod1 = "<<tran_it->second.cod1<<std::endl;
+
 
             F_eta.push_back(tmp_f);
-            
-            for(tcit_it=new_data.raw.TFICTs.begin(); tcit_it!=new_data.raw.TFICTs.end();tcit_it++)
+
+            for (auto const &tfict_item: new_data.raw.TFICTs)
             {
-                if(tcit_it->second.i == tran_it->second.tab1)
+                if (tfict_item.second.i == tran_it->second.tab1)
                 {
-                        for(int idx=0; idx<tcit_it->second.f.size(); idx++)
-                        {
-                            key_iisi tmp_fm = std::make_tuple(tmp_i, tmp_j, tmp_ckt, idx+1);
-                            eta_f_m.insert(std::make_pair(tmp_fm, tcit_it->second.f.at(idx)));
-                    
-                        } 
-                    
-                        if(abs(tran_it->second.cod1) == 1)
-                        {
-                            for(int idx=0; idx<tcit_it->second.t.size(); idx++)
-                            {
-                                key_iisi tmp_fm = std::make_tuple(tmp_i, tmp_j, tmp_ckt, idx+1);
-                                tau_f_m.insert(std::make_pair(tmp_fm, tcit_it->second.t.at(idx)));
-                        
+                    eta_f_m.insert(std::make_pair(tmp_f, tfict_item.second.f));
 
-                            } 
-
-                        }
-                        else if(abs(tran_it->second.cod1) == 3)
-                        {
-                            for(int idx=0; idx<tcit_it->second.t.size(); idx++)
-                            {
-                                key_iisi tmp_fm = std::make_tuple(tmp_i, tmp_j, tmp_ckt, idx+1);
-                                theta_f_m.insert(std::make_pair(tmp_fm, tcit_it->second.t.at(idx) * PI / 180.0));
-                            }
-
-                        }
                 }
+
             }
+
         }
+
+        //std::cout<<"in wrapper_construct, f key = "<<tmp_i<<" "<<tmp_j<<" "<<tmp_ckt<<" with tab1 = "<<tran_it->second.tab1<<" and cod1 ="<< tran_it->second.cod1<<std::endl;
+        if (abs(tran_it->second.cod1) == 1)
+        {
+            for (auto const &tfict_item: new_data.raw.TFICTs)
+            {
+
+                    tau_f_m.insert(std::make_pair(tmp_f, tfict_item.second.t));
+            }
+
+
+        }
+
+        if (abs(tran_it->second.cod1) == 3)
+        {
+            for (auto const &tfict_item: new_data.raw.TFICTs)
+            {
+                    // local copy to avoid modify original data
+                    auto tm_array = tfict_item.second.t;
+                    // direct reference to avoid copy
+                    for (auto &tm: tm_array)
+                    {
+                        tm  *= (PI / 180.0);
+                    }
+                    theta_f_m.insert(std::make_pair(tmp_f, tm_array));
+            }
+
+        }
+
 
         double tmp_theta_f = (theta_f_over[tmp_f] - theta_f_under[tmp_f]) / 2.0;
         theta_f_st.insert(std::make_pair(tmp_f, tmp_theta_f/x_f_st_over[tmp_f]));
@@ -285,10 +295,6 @@ void Wrapper_Construct::construct_transformer()
         s_f_over.insert(std::make_pair(tmp_f, tran_it->second.rata1 * s_tilde_inverse));
         s_f_ct_over.insert(std::make_pair(tmp_f, tran_it->second.ratc1 * s_tilde_inverse));
         x_f_sw_0.insert(std::make_pair(tmp_f, tran_it->second.stat));
-
-
-        
-
     }
     // F_k0 = F
     // F_i_o = {f \in F: i_f_o = i} \any i in I

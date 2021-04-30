@@ -1,0 +1,29 @@
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit https://github.com/coin-or/Ipopt
+******************************************************************************
+
+This is Ipopt version 3.13.4, running with linear solver mumps.
+NOTE: Other linear solvers might be more efficient (see Ipopt documentation).
+
+Number of nonzeros in equality constraint Jacobian...:    16632
+Number of nonzeros in inequality constraint Jacobian.:    97524
+Number of nonzeros in Lagrangian Hessian.............:        0
+
+Total number of variables............................:      378
+                     variables with only lower bounds:        4
+                variables with lower and upper bounds:      266
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:       44
+Total number of inequality constraints...............:      258
+        inequality constraints with only lower bounds:      112
+   inequality constraints with lower and upper bounds:       66
+        inequality constraints with only upper bounds:       80
+
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+   0 -3.9599961e+16 3.81e+00 1.01e+10   0.0 0.00e+00    -  0.00e+00 0.00e+00   0
+   1 -2.2766875e+17 3.81e+00 1.01e+10   7.0 5.38e+08    -  1.99e-10 1.44e-10f  1
+   2 -2.2976910e+17 3.81e+00 1.16e+10   6.0 3.85e+03    -  9.90e-01 6.50e-07f  1
+   3 -3.5889337e+17 3.77e+00 9.90e+09   8.1 1.71e+01    -  9.71e-02 8.74e-03f  1

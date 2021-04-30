@@ -3,11 +3,14 @@
 //
 #include <constraints/transformer_constraints.hpp>
 
-TransConstraints::TransConstraints(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string &name) : ifopt::ConstraintSet(-1, name + "_constraint")
+TransConstraints::TransConstraints(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::shared_ptr<TransformerVariables> trans_var_ptr, const std::string &name) : ifopt::ConstraintSet(-1, name + "_constraint")
 {
     trans_var_name = name;
-    SetRows(8 * data_ptr->F_k0.size());
+    // number of constraints from eqn(70) and eqn(71), one of them could be (always) emtpy?
+    size_t add_cons = trans_var_ptr->eqn70_geo_st.size() + trans_var_ptr->eqn71_geo_st.size();
 
+    //SetRows(8 * data_ptr->F_k0.size() + add_cons);
+    SetRows(8 * data_ptr->F_k0.size());
 
 }
 TransConstraints::~TransConstraints() {}
@@ -33,6 +36,51 @@ Eigen::VectorXd TransConstraints::GetValues() const
     const Eigen::VectorXd  Eqn68 = trans_var_ptr->g_fk - trans_var_ptr->g_f_0;
     const Eigen::VectorXd  Eqn69 = trans_var_ptr->b_fk - trans_var_ptr->b_f_0;
 
+    // one of them should be empty
+    Eigen::VectorXd eqn70_cons = Eigen::VectorXd::Zero(trans_var_ptr->eqn70_fkm_vec.size());
+    Eigen::VectorXd eqn71_cons = Eigen::VectorXd::Zero(trans_var_ptr->eqn71_fkm_vec.size());
+    // eqn(70) and eqn(71)
+    if (trans_var_ptr->eqn70_fkm_vec.size() > 0)
+    {
+        for (size_t idx=0; idx<trans_var_ptr->local_input_ptr->F_k0.size(); idx++)
+        {
+            int counter = 0;
+            // these are the f needed to constrainted by eqn70
+            if (trans_var_ptr->eqn70_geo_st(idx) == 1)
+            {
+                // fetch the vector constaining tau_fm and eta_fm
+                std::vector<double> const &tau_fm_array = trans_var_ptr->eqn70_fkm_vec.at(idx);
+                std::vector<double> const &eta_fm_array = trans_var_ptr->eta_fkm_vec.at(idx);
+
+                // n pair of points, n-1 line segments
+                for (size_t jdx=0; jdx< tau_fm_array.size()-1; jdx++)
+                {
+                    // now the equation for each line segment
+                    double slope = (eta_fm_array.at(jdx) - eta_fm_array.at(jdx+1)) / (tau_fm_array.at(jdx) - tau_fm_array.at(jdx+1));
+                    double intcp = eta_fm_array.at(jdx) - slope * tau_fm_array.at(jdx);
+                    if (trans_var_ptr->eta_fk(idx) >= eta_fm_array.at(jdx) and trans_var_ptr->eta_fk(idx) < eta_fm_array.at(jdx+1))
+                    {
+                        if (trans_var_ptr->tau_fk(idx) >= tau_fm_array.at(jdx) and trans_var_ptr->tau_fk(idx) < tau_fm_array.at(jdx+1))
+                        {
+                            eqn70_cons(counter) = trans_var_ptr->eta_fk(idx) - slope * trans_var_ptr->tau_fk(idx) - intcp;
+                            counter++;
+                        }
+
+                    }
+
+                }
+
+
+            }
+        }
+
+
+    }
+
+
+
+
+
 
     //std::cout<<"g_fk = "<<trans_var_ptr->g_fk.transpose()<<std::endl;
     //std::cout<<"eta_fk = "<<trans_var_ptr->eta_fk.transpose()<<std::endl;
@@ -41,7 +89,7 @@ Eigen::VectorXd TransConstraints::GetValues() const
     {
         auto fk = trans_var_ptr->local_input_ptr->F_k0.at(idx);
 
-        for (auto fk_tau: trans_var_ptr->local_input_ptr->F_tau)
+        for (auto const &fk_tau: trans_var_ptr->local_input_ptr->F_tau)
         {
             // condition on eqn(62), f \in F_k0 and F_tau
             if (fk == fk_tau)
@@ -55,7 +103,7 @@ Eigen::VectorXd TransConstraints::GetValues() const
 
         }
 
-        for (auto fk_theta: trans_var_ptr->local_input_ptr->F_theta)
+        for (auto const &fk_theta: trans_var_ptr->local_input_ptr->F_theta)
         {
             // condition on eqn(64), f \in F_k and F_theta
             if (fk == fk_theta)
@@ -69,7 +117,7 @@ Eigen::VectorXd TransConstraints::GetValues() const
         }
 
         // wrong name, should be F_eta
-        for (auto fk_eta: trans_var_ptr->local_input_ptr->F_eta)
+        for (auto const &fk_eta: trans_var_ptr->local_input_ptr->F_eta)
         {
             // condition on eqn(66) and eqn(67)
             if (fk == fk_eta)
@@ -95,6 +143,8 @@ Eigen::VectorXd TransConstraints::GetValues() const
 
     trans_cons << Eqn60, tau_fk_cons, theta_fk_cons, b_fk_cons, g_fk_cons, s_fk_cons, Eqn77_cons, Eqn78_cons;
 
+
+
     return trans_cons;
 }
 
@@ -118,8 +168,8 @@ TransConstraints::VecBound TransConstraints::GetBounds() const
 
     // well... eqn(70) and eqn(71) hasn't been coded yet, so
     // we might need to relax this bound
-    eqn62_69_up_bounds.setConstant(10);
-    eqn62_69_lo_bounds.setConstant(-10);
+    eqn62_69_up_bounds.setConstant(1);
+    eqn62_69_lo_bounds.setConstant(-1);
     // eqn(76) bound
     eqn76_up_bounds.setConstant(1e20);
     eqn76_lo_bounds.setConstant(0);

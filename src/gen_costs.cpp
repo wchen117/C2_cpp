@@ -27,11 +27,10 @@ double GenCosts::GetCost() const
     auto tmp3 = gen_var_ptr->gen_ref_data->new_data.sup.sys_prms["delta"];
     auto tmp4 = gen_var_ptr->c_g_su.array() * gen_var_ptr->x_gk_su.array();
     auto tmp5 = gen_var_ptr->c_g_sd.array() * gen_var_ptr->x_gk_sd.array();
-    double alpha_gk = 1e20;
-    double alpha_gk_on = 1e20;
-    Eigen::ArrayXd tmp6 = (alpha_gk_on * (gen_var_ptr->x_gk_on.array() * (1.0 - gen_var_ptr->x_gk_on.array())));
-    Eigen::ArrayXd tmp7 = (alpha_gk * (gen_var_ptr->x_gk_sd.array() * (1.0 - gen_var_ptr->x_gk_sd.array())));
-    Eigen::ArrayXd tmp8 = (alpha_gk * (gen_var_ptr->x_gk_su.array() * (1.0 - gen_var_ptr->x_gk_su.array())));
+    auto const &alpha = gen_var_ptr->gen_ref_data->alpha_factor;
+    Eigen::ArrayXd tmp6 = (alpha * (gen_var_ptr->x_gk_on.array() * (1.0 - gen_var_ptr->x_gk_on.array())));
+    Eigen::ArrayXd tmp7 = (alpha * (gen_var_ptr->x_gk_sd.array() * (1.0 - gen_var_ptr->x_gk_sd.array())));
+    Eigen::ArrayXd tmp8 = (alpha * (gen_var_ptr->x_gk_su.array() * (1.0 - gen_var_ptr->x_gk_su.array())));
     z_gk = -1 * ((tmp1 + tmp2) * tmp3 + tmp4 + tmp5 + tmp6 + tmp7 + tmp8).sum();
     //z_gk = -1 * ((tmp1 + tmp2) * tmp3 + tmp4 + tmp5).sum();
 

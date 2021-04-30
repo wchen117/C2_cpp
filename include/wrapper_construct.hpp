@@ -26,6 +26,7 @@ class Wrapper_Construct
     std::vector<int> M = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
     double s_tilde;
     double s_tilde_inverse;
+    double alpha_factor = 1e20;
     // sizes of the data
     // number of buses
     size_t Is;
@@ -123,9 +124,9 @@ class Wrapper_Construct
     UMAP_TUPLE_iis_DOUBLE x_f_sw_0;
     // vectors and maps holding Transformer Impedance Correction Table data
     double NUMM;
-    UMAP_TUPLE_iisi_DOUBLE eta_f_m;
-    UMAP_TUPLE_iisi_DOUBLE tau_f_m;
-    UMAP_TUPLE_iisi_DOUBLE theta_f_m;
+    UMAP_TUPLE_iis_VecD eta_f_m;
+    UMAP_TUPLE_iis_VecD tau_f_m;
+    UMAP_TUPLE_iis_VecD theta_f_m;
     // vectors and maps holding switched shunt data
     std::vector<int> H;
     std::unordered_map<int, int, boost::hash<int>> i_h;

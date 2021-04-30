@@ -17,8 +17,8 @@ double LineCosts::GetCost() const
     auto first_term = -(line_var_ptr->x_ek_sw - line_var_ptr->x_e_sw0).array().abs() * (line_var_ptr->c_e_sw.array());
     // second_term is a row vector
     auto second_term = -(line_var_ptr->s_enk_plus.array() * line_var_ptr->c_n_s.array()).matrix().colwise().sum();
-    double alpha_ek = 1e20;
-    auto third_term = (alpha_ek * (line_var_ptr->x_ek_sw.array() * (1.0 - line_var_ptr->x_ek_sw.array()))).matrix();
+    auto const &alpha = line_var_ptr->local_input_ptr->alpha_factor;
+    auto third_term = (alpha * (line_var_ptr->x_ek_sw.array() * (1.0 - line_var_ptr->x_ek_sw.array()))).matrix();
     auto delta = line_var_ptr->local_input_ptr->new_data.sup.sys_prms["delta"];
 
 

@@ -9,12 +9,13 @@
 #include <wrapper_construct.hpp>
 class TransConstraints : public ifopt::ConstraintSet {
 public:
-    TransConstraints(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string &name);
+    TransConstraints(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::shared_ptr<TransformerVariables> trans_var_ptr, const std::string &name);
 
     ~TransConstraints();
 
     VectorXd GetValues() const override;
     VecBound GetBounds() const override;
+
 
 
 private:

@@ -21,7 +21,7 @@ BaseCaseProblem::BaseCaseProblem(const std::string& input_dir)
     line_cost_ptr = std::make_shared<LineCosts>(line_var_name);
 
     trans_vars_ptr = std::make_shared<TransformerVariables>(input_ptr, bus_vars_ptr, trans_var_name);
-    trans_cons_ptr = std::make_shared<TransConstraints>(input_ptr, trans_var_name);
+    trans_cons_ptr = std::make_shared<TransConstraints>(input_ptr, trans_vars_ptr, trans_var_name);
     trans_cost_ptr = std::make_shared<TransformerCosts>(trans_var_name);
 
     gen_vars_ptr = std::make_shared<GeneratorVariables>(input_ptr, gen_var_name);
