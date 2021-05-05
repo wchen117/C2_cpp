@@ -51,11 +51,13 @@ private:
     // vectors to keep track of f in eta_f, f in both eta_f and tau_f (eqn(70)), f in both eta_f and theta_f (eqn(71))
     // 1 if f \in F_eta, or f \in F_tau or f \in F_theta
     Eigen::VectorXi eta_fk_geo_st, eqn70_geo_st, eqn71_geo_st;
-    // unodered map to store the eta_fm, tau_fm and theta_fm vectors and correspond them to indices in F_k0
+    // unordered map to store the eta_fm, tau_fm and theta_fm vectors and correspond them to indices in F_k0
     UMP_int_vec_double eta_fkm_vec, eqn70_fkm_vec, eqn71_fkm_vec;
-    // first dimension: size of eqn(7*)_fkm_vec, second dimension: number of pairs of fm or (NUMM -1)
-    std::vector<std::vector<double>> eqn70_binary_mat;
-    std::vector<std::vector<double>> eqn71_binary_mat;
+    // unordered map to store the corresponding binary variables for the line segments in eqn70 and eqn71
+    UMP_int_vec_double eqn70_binary_mat, eqn71_binary_mat;
+    Eigen::VectorXd eq70_binary_variable, eq71_binary_variable;
+    std::vector<size_t> eqn70_index;
+    std::vector<size_t> eqn71_index;
 
 
     // now some parameters, matrices, size of Ns * F_k
@@ -75,7 +77,8 @@ private:
     std::shared_ptr<Wrapper_Construct> local_input_ptr;
     std::shared_ptr<BusVariables> bus_var_ptr;
     size_t trans_var_len, size_F_k0, Ns;
-
+    size_t eqn_70_binary_count = 0;
+    size_t eqn_71_binary_count = 0;
 
 
 

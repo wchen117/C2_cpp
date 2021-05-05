@@ -51,6 +51,7 @@ Eigen::VectorXd TransConstraints::GetValues() const
                 // fetch the vector constaining tau_fm and eta_fm
                 std::vector<double> const &tau_fm_array = trans_var_ptr->eqn70_fkm_vec.at(idx);
                 std::vector<double> const &eta_fm_array = trans_var_ptr->eta_fkm_vec.at(idx);
+                std::vector<double> const &eqn70_binary_array =  trans_var_ptr->eqn70_binary_mat.at(idx);
 
                 // n pair of points, n-1 line segments
                 for (size_t jdx=0; jdx< tau_fm_array.size()-1; jdx++)
@@ -62,7 +63,7 @@ Eigen::VectorXd TransConstraints::GetValues() const
                     {
                         if (trans_var_ptr->tau_fk(idx) >= tau_fm_array.at(jdx) and trans_var_ptr->tau_fk(idx) < tau_fm_array.at(jdx+1))
                         {
-                            eqn70_cons(counter) = trans_var_ptr->eta_fk(idx) - slope * trans_var_ptr->tau_fk(idx) - intcp;
+                            eqn70_cons(counter) = eqn70_binary_array.at(idx) * (trans_var_ptr->eta_fk(idx) - slope * trans_var_ptr->tau_fk(idx) - intcp);
                             counter++;
                         }
 

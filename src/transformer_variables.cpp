@@ -65,6 +65,7 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
         ref_oribus = Eigen::VectorXd::Zero(size_F_k0);
         ref_id = Eigen::VectorXi::Zero(size_F_k0);
 
+
         // F_k0 or F_k is an vector (ordered), so we bound to have orders in all
         // Eigen::VectorXd read this way
         for (size_t idx=0; idx <size_F_k0; idx++)
@@ -139,7 +140,7 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
                         if (local_input_ptr->tau_f_m.find(f_key) == local_input_ptr->tau_f_m.end())
                         {
                             // if f_key in eta_fm but not in tau_f_m
-                            // the it could be in theta_fm
+                            // then it could be in theta_fm
 
                             if (local_input_ptr->theta_f_m.find(f_key) == local_input_ptr->theta_f_m.end())
                             {
@@ -151,16 +152,25 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
                                 // if f in both eta_f and theta_f, which satisfy eqn(71)
                                 auto theta_m = local_input_ptr->theta_f_m.at(f_key);
                                 eqn71_geo_st(idx) = 1;
+                                eqn71_index.push_back(idx);
                                 eqn71_fkm_vec.insert(std::make_pair(idx, theta_m));
 
+                                std::vector<double> zero_vec (theta_m.size(), 0.0);
+                                eqn71_binary_mat.insert(std::make_pair(idx, zero_vec));
+                                eqn_71_binary_count += theta_m.size();
                             }
 
                         }
                         else {
                             // if f in both eta_f and tau_f, which satisfy eqn(70)
+
                             auto tau_m = local_input_ptr->tau_f_m.at(f_key);
                             eqn70_geo_st(idx) = 1;
+                            eqn70_index.push_back(idx);
                             eqn70_fkm_vec.insert(std::make_pair(idx, tau_m));
+                            std::vector<double> zero_vec (tau_m.size(), 0.0);
+                            eqn70_binary_mat.insert(std::make_pair(idx, zero_vec));
+                            eqn_70_binary_count += tau_m.size();
 
                         }
 
@@ -174,8 +184,11 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
 
         }
 
-        eqn70_binary_mat.resize(eqn70_fkm_vec.size());
-        eqn71_binary_mat.resize(eqn71_fkm_vec.size());
+        std::cout<<"eqn_70_binary_counter = "<<eqn_70_binary_count<<std::endl;
+        std::cout<<"eqn_71_binary_counter = "<<eqn_71_binary_count<<std::endl;
+
+        eq70_binary_variable = Eigen::VectorXd::Zero(eqn_70_binary_count);
+        eq71_binary_variable = Eigen::VectorXd::Zero(eqn_71_binary_count);
 
         /**
         for (auto const &theta: local_input_ptr->theta_f_m)
@@ -255,8 +268,8 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
 
         if(size_F_k0 && Ns)
         {
-            trans_var_len = size_F_k0 * Ns + 11 * size_F_k0;
-
+            trans_var_len = size_F_k0 * Ns + 11 * size_F_k0 + eqn_70_binary_count + eqn_71_binary_count;
+            //trans_var_len = size_F_k0 * Ns + 11 * size_F_k0;
             SetRows(trans_var_len);
         }
 
@@ -279,7 +292,35 @@ Eigen::VectorXd TransformerVariables::GetValues() const
         // const is needed here because the current function is read only?
         Eigen::Map<const Eigen::VectorXd> flat_s_fnk(s_fnk_plus.data(), s_fnk_plus.size());
 
-        tmp_x << flat_s_fnk, x_fk_sw, x_fk_st, tau_fk, theta_fk, b_fk, g_fk, eta_fk, p_fk_o, q_fk_o, p_fk_d, q_fk_d;
+        // again one of the eq70_binary_variable, eq71_binary_variable could be empty
+        /**
+        size_t counter = 0;
+        for (size_t idx=0; idx<eqn70_index.size(); idx++)
+        {
+            auto const &binary_vec = eqn70_binary_mat.at(eqn70_index.at(idx));
+            for (size_t jdx=0; jdx<binary_vec.size(); jdx++)
+            {
+                eq70_binary_variable(counter) = binary_vec.at(jdx);
+                counter++;
+            }
+
+        }
+        counter = 0;
+        for (size_t idx=0; idx<eqn71_index.size(); idx++)
+        {
+            auto const &binary_vec = eqn71_binary_mat.at(eqn71_index.at(idx));
+            for (size_t jdx=0; jdx<binary_vec.size(); jdx++)
+            {
+                eq71_binary_variable(counter) = binary_vec.at(jdx);
+                counter++;
+
+            }
+
+        }
+         **/
+
+
+        tmp_x << flat_s_fnk, x_fk_sw, x_fk_st, tau_fk, theta_fk, b_fk, g_fk, eta_fk, p_fk_o, q_fk_o, p_fk_d, q_fk_d, eq70_binary_variable, eq71_binary_variable;
         assert(tmp_x.size() == GetRows());
 
         return tmp_x;
@@ -309,6 +350,38 @@ void TransformerVariables::SetVariables(const Eigen::VectorXd &x)
     q_fk_o = x.segment(flat_len + 8 * size_F_k0, size_F_k0);
     p_fk_d = x.segment(flat_len + 9 * size_F_k0, size_F_k0);
     q_fk_d = x.segment(flat_len + 10 * size_F_k0, size_F_k0);
+    eq70_binary_variable = x.segment(flat_len + 11 * size_F_k0, eqn_70_binary_count);
+    eq71_binary_variable = x.segment(flat_len + 11 * size_F_k0 + eqn_70_binary_count, eqn_71_binary_count);
+
+    /**
+    size_t counter = 0;
+    for (size_t idx=0; idx<eqn70_index.size(); idx++)
+    {
+        auto &binary_vec = eqn70_binary_mat.at(eqn70_index.at(idx));
+
+        for (size_t jdx=0; jdx<binary_vec.size(); jdx++)
+        {
+            binary_vec.at(jdx) =  eq70_binary_variable(counter);
+            counter ++;
+        }
+
+    }
+    counter = 0;
+    for (size_t idx=0; idx<eqn71_index.size(); idx++)
+    {
+        auto &binary_vec = eqn71_binary_mat.at(eqn71_index.at(idx));
+
+        for (size_t jdx=0; jdx<binary_vec.size(); jdx++)
+        {
+            binary_vec.at(jdx) =  eq71_binary_variable(counter);
+            counter ++;
+        }
+
+    }
+     **/
+
+
+
 
 
 
@@ -330,6 +403,8 @@ TransformerVariables::VecBound  TransformerVariables::GetBounds() const
     Eigen::VectorXd eta_fk_up_bound =  Eigen::VectorXd::Zero(size_F_k0);
     // no bound defined for pq_fk_od
     Eigen::VectorXd  pg_fk_od_up = Eigen::VectorXd::Zero(4 * size_F_k0);
+    Eigen::VectorXd eqn70_binary_up_bound = Eigen::VectorXd::Ones(eqn_70_binary_count);
+    Eigen::VectorXd eqn71_binary_up_bound = Eigen::VectorXd::Ones(eqn_71_binary_count);
 
     // binary variable, upper bound 1.0
     x_fk_sw_up_bound.setConstant(1.0);
@@ -350,6 +425,8 @@ TransformerVariables::VecBound  TransformerVariables::GetBounds() const
     Eigen::VectorXd eta_fk_lo_bound = Eigen::VectorXd::Zero(size_F_k0);
     // no bound defined for pq_fk_od
     Eigen::VectorXd  pg_fk_od_lo = Eigen::VectorXd::Zero(4 * size_F_k0);
+    Eigen::VectorXd eqn70_binary_lo_bound = Eigen::VectorXd::Zero(eqn_70_binary_count);
+    Eigen::VectorXd eqn71_binary_lo_bound = Eigen::VectorXd::Zero(eqn_71_binary_count);
 
     // no apparent upper bound from document
     b_fk_lo_bound.setConstant(-1e20);
@@ -359,8 +436,8 @@ TransformerVariables::VecBound  TransformerVariables::GetBounds() const
     // from eqn(280), its requirement is to be strictly positive
     eta_fk_lo_bound.setConstant(0);
     // no need to modify eta_fk_lo_bound since it's all zeros
-    upper_bound << s_fnk_up_bound, x_fk_sw_up_bound, x_fk_st_up_bound, tau_fk_over, theta_fk_over, b_fk_up_bound, g_fk_up_bound, eta_fk_up_bound, pg_fk_od_up;
-    lower_bound << s_fnk_lo_bound, x_fk_sw_lo_bound, x_fk_st_lo_bound, tau_fk_under, theta_fk_under, b_fk_lo_bound, g_fk_lo_bound, eta_fk_lo_bound, pg_fk_od_lo;
+    upper_bound << s_fnk_up_bound, x_fk_sw_up_bound, x_fk_st_up_bound, tau_fk_over, theta_fk_over, b_fk_up_bound, g_fk_up_bound, eta_fk_up_bound, pg_fk_od_up, eqn70_binary_up_bound, eqn71_binary_up_bound;
+    lower_bound << s_fnk_lo_bound, x_fk_sw_lo_bound, x_fk_st_lo_bound, tau_fk_under, theta_fk_under, b_fk_lo_bound, g_fk_lo_bound, eta_fk_lo_bound, pg_fk_od_lo, eqn70_binary_lo_bound, eqn71_binary_lo_bound;
 
     for (size_t idx=0; idx<GetRows(); idx++)
     {
