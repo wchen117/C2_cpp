@@ -20,16 +20,35 @@ double TransformerCosts::GetCost() const
     auto third_term = (alpha * (trans_var_ptr->x_fk_sw.array() * (1.0 - trans_var_ptr->x_fk_sw.array()))).matrix();
     auto fourth_term = (alpha * (trans_var_ptr->eq70_binary_variable.array() * (1.0 - trans_var_ptr->eq70_binary_variable.array()))).matrix();
     auto fifth_term = (alpha * (trans_var_ptr->eq71_binary_variable.array() * (1.0 - trans_var_ptr->eq71_binary_variable.array()))).matrix();
+
+
     double z_ek = 0.0;
+    for (size_t idx=0; idx< first_term.rows(); idx++)
+    {
+        z_ek += delta * second_term(idx) + first_term(idx) + third_term(idx);
+    }
+
+    if (fourth_term.size() > 0)
+    {
+        for (size_t idx=0; idx< fourth_term.rows(); idx++)
+        {
+            z_ek += fourth_term(idx);
+        }
+    }
+    else if (fifth_term.size() > 0)
+    {
+        for (size_t idx=0; idx< fifth_term.rows(); idx++)
+        {
+            z_ek += fifth_term(idx);
+        }
+    }
     //std::cout<<"first_term = "<<first_term.transpose()<<std::endl;
     //std::cout<<"second_term = "<<second_term<<std::endl;
     //std::cout<<"c_n_s = "<<trans_var_ptr->c_n_s<<std::endl;
     //std::cout<<"s_fnk_plus = "<<trans_var_ptr->s_fnk_plus<<std::endl;
-    for (size_t idx=0; idx< first_term.rows(); idx++)
-    {
-        z_ek += delta * second_term(idx) + first_term(idx) + third_term(idx) + fifth_term(idx);
-        //z_ek += delta * second_term(idx) + first_term(idx);
-    }
+
+
+
 
     return -z_ek;
 

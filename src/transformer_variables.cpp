@@ -49,10 +49,6 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
         // coefficients in eqn(77) and eqn(78)
         s_f_over = Eigen::VectorXd::Zero(size_F_k0);
 
-        // keep track eqn(70) and eqn(71)
-        eta_fk_geo_st = Eigen::VectorXi::Zero(size_F_k0);
-        eqn70_geo_st = Eigen::VectorXi::Zero(size_F_k0);
-        eqn71_geo_st = Eigen::VectorXi::Zero(size_F_k0);
 
         // zero initialize all parameters for now
         c_n_s = Eigen::MatrixXd::Zero(Ns, size_F_k0);
@@ -134,9 +130,7 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
                     else {
                         // for this f_key we extract its eta array
                         auto eta_m = local_input_ptr->eta_f_m.at(f_key);
-                        eta_fk_geo_st(idx) = 1;
                         eta_index.push_back(idx);
-
                         eta_fkm_vec.insert(std::make_pair(idx, eta_m));
 
                         if (local_input_ptr->tau_f_m.find(f_key) == local_input_ptr->tau_f_m.end())
@@ -153,12 +147,8 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
                             else {
                                 // if f in both eta_f and theta_f, which satisfy eqn(71)
                                 auto theta_m = local_input_ptr->theta_f_m.at(f_key);
-                                eqn71_geo_st(idx) = 1;
                                 eqn71_index.push_back(idx);
                                 eqn71_fkm_vec.insert(std::make_pair(idx, theta_m));
-
-                                std::vector<double> zero_vec (theta_m.size(), 0.0);
-                                //eqn71_binary_mat.insert(std::make_pair(idx, zero_vec));
                                 eqn_71_binary_count += theta_m.size();
                             }
 
@@ -167,11 +157,9 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
                             // if f in both eta_f and tau_f, which satisfy eqn(70)
 
                             auto tau_m = local_input_ptr->tau_f_m.at(f_key);
-                            eqn70_geo_st(idx) = 1;
                             eqn70_index.push_back(idx);
                             eqn70_fkm_vec.insert(std::make_pair(idx, tau_m));
-                            std::vector<double> zero_vec (tau_m.size(), 0.0);
-                            //eqn70_binary_mat.insert(std::make_pair(idx, zero_vec));
+
                             eqn_70_binary_count += tau_m.size();
 
                         }
@@ -286,6 +274,7 @@ TransformerVariables::~TransformerVariables() {}
 Eigen::VectorXd TransformerVariables::GetValues() const
 {
 
+
     if(GetRows())
     {
 
@@ -293,34 +282,6 @@ Eigen::VectorXd TransformerVariables::GetValues() const
         // this flatten s_enk_plus col by col
         // const is needed here because the current function is read only?
         Eigen::Map<const Eigen::VectorXd> flat_s_fnk(s_fnk_plus.data(), s_fnk_plus.size());
-
-        // again one of the eq70_binary_variable, eq71_binary_variable could be empty
-        /**
-        size_t counter = 0;
-        for (size_t idx=0; idx<eqn70_index.size(); idx++)
-        {
-            auto const &binary_vec = eqn70_binary_mat.at(eqn70_index.at(idx));
-            for (size_t jdx=0; jdx<binary_vec.size(); jdx++)
-            {
-                eq70_binary_variable(counter) = binary_vec.at(jdx);
-                counter++;
-            }
-
-        }
-        counter = 0;
-        for (size_t idx=0; idx<eqn71_index.size(); idx++)
-        {
-            auto const &binary_vec = eqn71_binary_mat.at(eqn71_index.at(idx));
-            for (size_t jdx=0; jdx<binary_vec.size(); jdx++)
-            {
-                eq71_binary_variable(counter) = binary_vec.at(jdx);
-                counter++;
-
-            }
-
-        }
-         **/
-
 
         tmp_x << flat_s_fnk, x_fk_sw, x_fk_st, tau_fk, theta_fk, b_fk, g_fk, eta_fk, p_fk_o, q_fk_o, p_fk_d, q_fk_d, eq70_binary_variable, eq71_binary_variable;
         assert(tmp_x.size() == GetRows());
@@ -354,38 +315,6 @@ void TransformerVariables::SetVariables(const Eigen::VectorXd &x)
     q_fk_d = x.segment(flat_len + 10 * size_F_k0, size_F_k0);
     eq70_binary_variable = x.segment(flat_len + 11 * size_F_k0, eqn_70_binary_count);
     eq71_binary_variable = x.segment(flat_len + 11 * size_F_k0 + eqn_70_binary_count, eqn_71_binary_count);
-
-    /**
-    size_t counter = 0;
-    for (size_t idx=0; idx<eqn70_index.size(); idx++)
-    {
-        auto &binary_vec = eqn70_binary_mat.at(eqn70_index.at(idx));
-
-        for (size_t jdx=0; jdx<binary_vec.size(); jdx++)
-        {
-            binary_vec.at(jdx) =  eq70_binary_variable(counter);
-            counter ++;
-        }
-
-    }
-    counter = 0;
-    for (size_t idx=0; idx<eqn71_index.size(); idx++)
-    {
-        auto &binary_vec = eqn71_binary_mat.at(eqn71_index.at(idx));
-
-        for (size_t jdx=0; jdx<binary_vec.size(); jdx++)
-        {
-            binary_vec.at(jdx) =  eq71_binary_variable(counter);
-            counter ++;
-        }
-
-    }
-     **/
-
-
-
-
-
 
 }
 

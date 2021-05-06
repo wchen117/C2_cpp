@@ -7,7 +7,7 @@ TransConstraints::TransConstraints(const std::shared_ptr<Wrapper_Construct> data
 {
     trans_var_name = name;
     // number of constraints from eqn(70) and eqn(71), one of them could be (always) emtpy?
-    size_t add_cons = trans_var_ptr->eqn_70_binary_count + trans_var_ptr->eqn_71_binary_count;
+    size_t add_cons = trans_var_ptr->eqn70_index.size() + trans_var_ptr->eqn71_index.size();
 
     SetRows(8 * data_ptr->F_k0.size() + add_cons);
     //SetRows(8 * data_ptr->F_k0.size());
@@ -122,7 +122,7 @@ Eigen::VectorXd TransConstraints::GetValues() const
             {
                 if (trans_var_ptr->tau_fk(eq71_id) >= theta_fm_array.at(jdx) and trans_var_ptr->tau_fk(eq71_id) < theta_fm_array.at(jdx+1))
                 {
-                    eqn70_cons(counter2) = eqn70_binary_array.at(eq71_id) * (trans_var_ptr->eta_fk(eq71_id) - slope * trans_var_ptr->tau_fk(eq71_id) - intcp);
+                    eqn71_cons(counter2) = eqn70_binary_array.at(eq71_id) * (trans_var_ptr->eta_fk(eq71_id) - slope * trans_var_ptr->tau_fk(eq71_id) - intcp);
                     counter2++;
                 }
 
@@ -188,13 +188,16 @@ Eigen::VectorXd TransConstraints::GetValues() const
 
     }
 
+
     // eqn(76)
     // row: Ns, col: size_F_k0, sum over each col with colwise().sum()
     Eigen::VectorXd s_fk_cons = trans_var_ptr->s_fnk_plus.colwise().sum();
     const Eigen::VectorXd &Eqn77_cons = (trans_var_ptr->p_fk_o.array().square() + trans_var_ptr->q_fk_o.array().square()).sqrt().matrix() - s_fk_cons - trans_var_ptr->s_f_over;
     const Eigen::VectorXd &Eqn78_cons = (trans_var_ptr->p_fk_d.array().square() + trans_var_ptr->q_fk_d.array().square()).sqrt().matrix() - s_fk_cons - trans_var_ptr->s_f_over;
 
+
     trans_cons << Eqn60, tau_fk_cons, theta_fk_cons, b_fk_cons, g_fk_cons, s_fk_cons, Eqn77_cons, Eqn78_cons, eqn70_cons, eqn71_cons;
+
 
 
 
