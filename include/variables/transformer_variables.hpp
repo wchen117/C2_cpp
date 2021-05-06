@@ -54,10 +54,11 @@ private:
     // unordered map to store the eta_fm, tau_fm and theta_fm vectors and correspond them to indices in F_k0
     UMP_int_vec_double eta_fkm_vec, eqn70_fkm_vec, eqn71_fkm_vec;
     // unordered map to store the corresponding binary variables for the line segments in eqn70 and eqn71
-    UMP_int_vec_double eqn70_binary_mat, eqn71_binary_mat;
+    //UMP_int_vec_double eqn70_binary_mat, eqn71_binary_mat;
     Eigen::VectorXd eq70_binary_variable, eq71_binary_variable;
     std::vector<size_t> eqn70_index;
     std::vector<size_t> eqn71_index;
+    std::vector<size_t> eta_index;
 
 
     // now some parameters, matrices, size of Ns * F_k

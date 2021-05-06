@@ -135,6 +135,8 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
                         // for this f_key we extract its eta array
                         auto eta_m = local_input_ptr->eta_f_m.at(f_key);
                         eta_fk_geo_st(idx) = 1;
+                        eta_index.push_back(idx);
+
                         eta_fkm_vec.insert(std::make_pair(idx, eta_m));
 
                         if (local_input_ptr->tau_f_m.find(f_key) == local_input_ptr->tau_f_m.end())
@@ -156,7 +158,7 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
                                 eqn71_fkm_vec.insert(std::make_pair(idx, theta_m));
 
                                 std::vector<double> zero_vec (theta_m.size(), 0.0);
-                                eqn71_binary_mat.insert(std::make_pair(idx, zero_vec));
+                                //eqn71_binary_mat.insert(std::make_pair(idx, zero_vec));
                                 eqn_71_binary_count += theta_m.size();
                             }
 
@@ -169,7 +171,7 @@ TransformerVariables::TransformerVariables(const std::shared_ptr<Wrapper_Constru
                             eqn70_index.push_back(idx);
                             eqn70_fkm_vec.insert(std::make_pair(idx, tau_m));
                             std::vector<double> zero_vec (tau_m.size(), 0.0);
-                            eqn70_binary_mat.insert(std::make_pair(idx, zero_vec));
+                            //eqn70_binary_mat.insert(std::make_pair(idx, zero_vec));
                             eqn_70_binary_count += tau_m.size();
 
                         }

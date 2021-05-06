@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables.cpp
-variables/transformer_variables.hpp
-/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/variables/transformer_variables.hpp
+/Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints.cpp
+constraints/transformer_constraints.hpp
+-
 
 /Users/wchen/Softwares/JsonCpp/vcpkg/packages/rapidjson_x64-osx/include/rapidjson/allocators.h
 rapidjson.h
@@ -8094,6 +8094,10 @@ Eigen/Sparse
 bounds.h
 /usr/local/include/ifopt/bounds.h
 
+/usr/local/include/ifopt/constraint_set.h
+composite.h
+/usr/local/include/ifopt/composite.h
+
 /usr/local/include/ifopt/variable_set.h
 composite.h
 /usr/local/include/ifopt/composite.h
@@ -8125,6 +8129,14 @@ branchoutevent.hpp
 include/branchoutevent.hpp
 contingency.hpp
 include/contingency.hpp
+
+include/constraints/transformer_constraints.hpp
+ifopt/constraint_set.h
+-
+variables/transformer_variables.hpp
+-
+wrapper_construct.hpp
+-
 
 include/contingency.hpp
 string
