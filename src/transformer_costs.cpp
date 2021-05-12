@@ -12,10 +12,13 @@ TransformerCosts::~TransformerCosts()
 }
 double TransformerCosts::GetCost() const
 {
-    auto first_term = -1.0 * (trans_var_ptr->x_fk_sw - trans_var_ptr->x_f_sw0).array().abs() * (trans_var_ptr->c_f_sw.array());
+    double epsilon = 1e-4;
+    //auto first_term = -1.0 * (trans_var_ptr->x_fk_sw - trans_var_ptr->x_f_sw0).array().abs() * (trans_var_ptr->c_f_sw.array());
+    auto first_term = -1.0 * (((trans_var_ptr->x_fk_sw - trans_var_ptr->x_f_sw0).array().pow(2) + epsilon).sqrt()).array() * (trans_var_ptr->c_f_sw.array());
     auto second_term = -1.0 * (trans_var_ptr->s_fnk_plus.array() * trans_var_ptr->c_n_s.array()).matrix().colwise().sum();
     auto delta = trans_var_ptr->local_input_ptr->new_data.sup.sys_prms["delta"];
-    auto const &alpha = trans_var_ptr->local_input_ptr->alpha_factor;
+    //auto const &alpha = trans_var_ptr->local_input_ptr->alpha_factor;
+    double alpha = 1e8;
 
     auto third_term = (alpha * (trans_var_ptr->x_fk_sw.array() * (1.0 - trans_var_ptr->x_fk_sw.array()))).matrix();
     auto fourth_term = (alpha * (trans_var_ptr->eq70_binary_variable.array() * (1.0 - trans_var_ptr->eq70_binary_variable.array()))).matrix();

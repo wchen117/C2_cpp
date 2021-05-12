@@ -13,10 +13,11 @@ double BusCosts::GetCost () const
     //Eigen::VectorXd x = ifopt::ConstraintSet::GetVariables()->GetComponent(bus_var_name)->GetValues();
     //auto bus_var_ptr = ifopt::ConstraintSet::GetVariables()->GetComponent<BusVariables>(bus_var_name);
     double z_ik = 0.0;
+    auto const& delta = bus_var_ptr->bus_ref_data->new_data.sup.sys_prms["delta"];
     // transform MatrixXd or VectorXd object to their array representation for element wise calcs, no additional cost
     auto tmp1 = bus_var_ptr->c_n_p.array() * (bus_var_ptr->p_ikn_plus.array() + bus_var_ptr->p_ikn_minus.array());
     auto tmp2 = bus_var_ptr->c_n_q.array() * (bus_var_ptr->q_ikn_plus.array() + bus_var_ptr->q_ikn_minus.array());
-    z_ik = -1 * (tmp1 + tmp2).sum();
+    z_ik = -1 * delta * (tmp1 + tmp2).sum();
 
     return -z_ik;
 
@@ -35,14 +36,16 @@ void BusCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const
     if (var_set == bus_var_name)
     {
 
+        auto const& delta = bus_var_ptr->bus_ref_data->new_data.sup.sys_prms["delta"];
         Eigen::VectorXd tmp_coeff(bus_var_ptr->bus_var_len);
         Eigen::Map<const Eigen::VectorXd> flat_c_n_p (bus_var_ptr->c_n_p.data(), bus_var_ptr->c_n_p.size());
         Eigen::Map<const Eigen::VectorXd> flat_c_n_q (bus_var_ptr->c_n_q.data(), bus_var_ptr->c_n_q.size());
-        Eigen::VectorXd zero_vec = Eigen::VectorXd::Zero(bus_var_ptr->Is);
-        tmp_coeff << -1 * flat_c_n_p, -1 * flat_c_n_p, -1 * flat_c_n_q, -1 * flat_c_n_q, zero_vec;
+        // there are v_ik and theta_ik in bus_variables as well, both of length Is
+        Eigen::VectorXd zero_vec = Eigen::VectorXd::Zero(2 * bus_var_ptr->Is);
+        tmp_coeff << flat_c_n_p, flat_c_n_p,  flat_c_n_q, flat_c_n_q, zero_vec;
         for (size_t idx=0; idx<tmp_coeff.size(); idx++)
         {
-            jac.coeffRef(0, idx) = tmp_coeff(idx);
+            jac.coeffRef(0, idx) = delta * tmp_coeff(idx);
         }
 
 

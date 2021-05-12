@@ -19,6 +19,8 @@ public:
     friend class LoadConstraints;
     friend class BaseCaseProblem;
     //friend class LineCosts;
+
+    friend class LoadCostsCon;
 private:
     std::shared_ptr<Wrapper_Construct> load_ref_data;
     // each inner vector has length n, outter vector has length J_k

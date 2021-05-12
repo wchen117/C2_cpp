@@ -9,8 +9,20 @@ TransConstraints::TransConstraints(const std::shared_ptr<Wrapper_Construct> data
     // number of constraints from eqn(70) and eqn(71), one of them could be (always) emtpy?
     size_t add_cons = trans_var_ptr->eqn70_index.size() + trans_var_ptr->eqn71_index.size();
 
-    SetRows(8 * data_ptr->F_k0.size() + add_cons);
+    size_t eq70_bi, eq71_bi;
     //SetRows(8 * data_ptr->F_k0.size());
+    // eqn70 and eqn71 cannot both be empty
+
+
+    if (trans_var_ptr->eqn70_index.size() == 0 or trans_var_ptr->eqn71_index.size() == 0)
+    {
+        SetRows(8 * data_ptr->F_k0.size() + add_cons + 1);
+    }
+    else {
+        SetRows(8 * data_ptr->F_k0.size() + add_cons + 2);
+    }
+
+
 
 }
 TransConstraints::~TransConstraints() {}
@@ -62,7 +74,7 @@ Eigen::VectorXd TransConstraints::GetValues() const
     counter = 0;
     for (auto const &eq71_id : trans_var_ptr->eqn71_index)
     {
-        auto const &binary_vec = trans_var_ptr->eqn71_fkm_vec.at( eq71_id);
+        auto const &binary_vec = trans_var_ptr->eqn71_fkm_vec.at(eq71_id);
 
         std::vector<double> zero_vec (binary_vec.size(), 0.0);
         for (size_t jdx=0; jdx<zero_vec.size(); jdx++)
@@ -84,11 +96,12 @@ Eigen::VectorXd TransConstraints::GetValues() const
         std::vector<double> const &eqn70_binary_array = eqn70_binary_mat.at(eq70_id);
 
         // n pair of points, n-1 line segments
-        for (size_t jdx=0; jdx< tau_fm_array.size()-1; jdx++)
+        for (size_t jdx=0; jdx< tau_fm_array.size() - 1; jdx++)
         {
             // now the equation for each line segment
             double slope = (eta_fm_array.at(jdx) - eta_fm_array.at(jdx+1)) / (tau_fm_array.at(jdx) - tau_fm_array.at(jdx+1));
             double intcp = eta_fm_array.at(jdx) - slope * tau_fm_array.at(jdx);
+
             if (trans_var_ptr->eta_fk(eq70_id) >= eta_fm_array.at(jdx) and trans_var_ptr->eta_fk(eq70_id) < eta_fm_array.at(jdx+1))
             {
                 if (trans_var_ptr->tau_fk(eq70_id) >= tau_fm_array.at(jdx) and trans_var_ptr->tau_fk(eq70_id) < tau_fm_array.at(jdx+1))
@@ -100,6 +113,7 @@ Eigen::VectorXd TransConstraints::GetValues() const
 
             }
 
+
         }
 
     }
@@ -110,7 +124,7 @@ Eigen::VectorXd TransConstraints::GetValues() const
         int counter2 = 0;
         std::vector<double> const &theta_fm_array = trans_var_ptr->eqn71_fkm_vec.at(eq71_id);
         std::vector<double> const &eta_fm_array = trans_var_ptr->eta_fkm_vec.at(eq71_id);
-        std::vector<double> const &eqn70_binary_array = eqn70_binary_mat.at(eq71_id);
+        std::vector<double> const &eqn71_binary_array = eqn71_binary_mat.at(eq71_id);
 
         // n pair of points, n-1 line segments
         for (size_t jdx=0; jdx< theta_fm_array.size()-1; jdx++)
@@ -118,19 +132,37 @@ Eigen::VectorXd TransConstraints::GetValues() const
             // now the equation for each line segment
             double slope = (eta_fm_array.at(jdx) - eta_fm_array.at(jdx+1)) / (theta_fm_array.at(jdx) - theta_fm_array.at(jdx+1));
             double intcp = eta_fm_array.at(jdx) - slope * theta_fm_array.at(jdx);
+
+
             if (trans_var_ptr->eta_fk(eq71_id) >= eta_fm_array.at(jdx) and trans_var_ptr->eta_fk(eq71_id) < eta_fm_array.at(jdx+1))
             {
                 if (trans_var_ptr->tau_fk(eq71_id) >= theta_fm_array.at(jdx) and trans_var_ptr->tau_fk(eq71_id) < theta_fm_array.at(jdx+1))
                 {
-                    eqn71_cons(counter2) = eqn70_binary_array.at(eq71_id) * (trans_var_ptr->eta_fk(eq71_id) - slope * trans_var_ptr->tau_fk(eq71_id) - intcp);
+                    eqn71_cons(counter2) = eqn71_binary_array.at(eq71_id) * (trans_var_ptr->eta_fk(eq71_id) - slope * trans_var_ptr->tau_fk(eq71_id) - intcp);
                     counter2++;
                 }
 
             }
 
+
         }
 
     }
+
+    Eigen::VectorXd eqn70_binary_cons, eqn71_binary_cons;
+    if (trans_var_ptr->eqn70_index.size() > 0)
+    {
+        eqn70_binary_cons = Eigen::VectorXd(1);
+        eqn70_binary_cons[0] = trans_var_ptr->eq70_binary_variable.array().sum();
+    }
+
+
+    if (trans_var_ptr->eqn71_index.size() > 0)
+    {
+        eqn71_binary_cons = Eigen::VectorXd(1);
+        eqn71_binary_cons[0] = trans_var_ptr->eq71_binary_variable.array().sum();
+    }
+
 
 
 
@@ -189,15 +221,15 @@ Eigen::VectorXd TransConstraints::GetValues() const
     }
 
 
+
     // eqn(76)
     // row: Ns, col: size_F_k0, sum over each col with colwise().sum()
     Eigen::VectorXd s_fk_cons = trans_var_ptr->s_fnk_plus.colwise().sum();
     const Eigen::VectorXd &Eqn77_cons = (trans_var_ptr->p_fk_o.array().square() + trans_var_ptr->q_fk_o.array().square()).sqrt().matrix() - s_fk_cons - trans_var_ptr->s_f_over;
     const Eigen::VectorXd &Eqn78_cons = (trans_var_ptr->p_fk_d.array().square() + trans_var_ptr->q_fk_d.array().square()).sqrt().matrix() - s_fk_cons - trans_var_ptr->s_f_over;
 
-
-    trans_cons << Eqn60, tau_fk_cons, theta_fk_cons, b_fk_cons, g_fk_cons, s_fk_cons, Eqn77_cons, Eqn78_cons, eqn70_cons, eqn71_cons;
-
+    trans_cons << Eqn60, tau_fk_cons, theta_fk_cons, b_fk_cons, g_fk_cons, s_fk_cons, Eqn77_cons, Eqn78_cons, eqn70_cons, eqn71_cons, eqn70_binary_cons, eqn71_binary_cons;
+    //trans_cons << Eqn60, tau_fk_cons, theta_fk_cons, b_fk_cons, g_fk_cons, s_fk_cons, Eqn77_cons, Eqn78_cons;
 
 
 
@@ -206,6 +238,7 @@ Eigen::VectorXd TransConstraints::GetValues() const
 
 TransConstraints::VecBound TransConstraints::GetBounds() const
 {
+    std::cout<<"getbound, getrows ="<<GetRows()<<std::endl;
     VecBound trans_con_bounds(GetRows());
     Eigen::VectorXd upper_bounds(GetRows());
     Eigen::VectorXd lower_bounds(GetRows());
@@ -223,14 +256,27 @@ TransConstraints::VecBound TransConstraints::GetBounds() const
     Eigen::VectorXd eqn71_up_bound = Eigen::VectorXd::Zero( trans_var_ptr->eqn71_fkm_vec.size());
     Eigen::VectorXd eqn71_lo_bound = Eigen::VectorXd::Zero( trans_var_ptr->eqn71_fkm_vec.size());
 
+    Eigen::VectorXd eqn70_binary_bound, eqn71_binary_bound;
+
+    if (trans_var_ptr->eqn70_index.size() > 0)
+    {
+        eqn70_binary_bound = Eigen::VectorXd::Ones(1);
+
+    }
+
+    if (trans_var_ptr->eqn71_index.size() > 0)
+    {
+        eqn71_binary_bound = Eigen::VectorXd::Ones(1);
+    }
+
     // eqn(60), x_fk_sw - x_f_sw0 = 0 if swqual = 0
     eqn60_up_bound = (eqn60_up_bound.array() * trans_var_ptr->swqual_state.array()).matrix();
     eqn60_lo_bound = (eqn60_lo_bound.array() * trans_var_ptr->swqual_state.array()).matrix();
 
     // well... eqn(70) and eqn(71) hasn't been coded yet, so
     // we might need to relax this bound
-    eqn62_69_up_bounds.setConstant(1);
-    eqn62_69_lo_bounds.setConstant(-1);
+    eqn62_69_up_bounds.setConstant(10);
+    eqn62_69_lo_bounds.setConstant(-10);
     // eqn(76) bound
     eqn76_up_bounds.setConstant(1e20);
     eqn76_lo_bounds.setConstant(0);
@@ -238,9 +284,11 @@ TransConstraints::VecBound TransConstraints::GetBounds() const
     eqn77_78_up_bounds.setConstant(0);
     eqn77_78_lo_bounds.setConstant(-1e20);
 
-    upper_bounds <<eqn60_up_bound,  eqn62_69_up_bounds, eqn76_up_bounds, eqn77_78_up_bounds, eqn70_up_bound, eqn71_up_bound;
-    lower_bounds <<eqn60_lo_bound,  eqn62_69_lo_bounds, eqn76_lo_bounds, eqn77_78_lo_bounds, eqn70_lo_bound, eqn71_lo_bound;
+    upper_bounds <<eqn60_up_bound,  eqn62_69_up_bounds, eqn76_up_bounds, eqn77_78_up_bounds, eqn70_up_bound, eqn71_up_bound, eqn70_binary_bound, eqn71_binary_bound;
+    lower_bounds <<eqn60_lo_bound,  eqn62_69_lo_bounds, eqn76_lo_bounds, eqn77_78_lo_bounds, eqn70_lo_bound, eqn71_lo_bound, eqn70_binary_bound, eqn71_binary_bound;
 
+    //upper_bounds <<eqn60_up_bound,  eqn62_69_up_bounds, eqn76_up_bounds, eqn77_78_up_bounds;
+    //lower_bounds <<eqn60_lo_bound,  eqn62_69_lo_bounds, eqn76_lo_bounds, eqn77_78_lo_bounds;
     for (size_t idx=0; idx<GetRows(); idx++)
     {
         trans_con_bounds.at(idx).upper_ = upper_bounds(idx);

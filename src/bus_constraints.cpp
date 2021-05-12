@@ -32,6 +32,7 @@ Eigen::VectorXd BusConstraints::GetValues() const
     Eigen::VectorXd q_ik_minus = bus_var_ptr->q_ikn_minus.colwise().sum();
     // now the more complicated ones, equation 35 and 38
     // just to be sure initlize them to zero first
+    // p_ik+, p_ik-, q_ik+, q_ik- are of size Is,
     Eigen::VectorXd eq35 = Eigen::VectorXd::Zero(bus_var_ptr->Is);
     Eigen::VectorXd eq38 = Eigen::VectorXd::Zero(bus_var_ptr->Is);
 
@@ -103,5 +104,26 @@ void BusConstraints::InitVariableDependedQuantities(const VariablesPtr& x)
 }
 void BusConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block) const
 {
+    if (var_set == bus_var_name)
+    {
+        Eigen::VectorXd p_one_vec = -1.0 * Eigen::VectorXd::Ones(bus_var_ptr->size_p_ikn);
+        Eigen::VectorXd p_zero_vec = Eigen::VectorXd::Zero(bus_var_ptr->size_p_ikn);
+        Eigen::VectorXd q_one_vec = -1.0 * Eigen::VectorXd::Ones(bus_var_ptr->size_q_ikn);
+        Eigen::VectorXd q_zero_vec = Eigen::VectorXd::Zero(bus_var_ptr->size_q_ikn);
+        // eqn
+        Eigen::VectorXd vt_zero_vec = Eigen::VectorXd::Zero(2 * bus_var_ptr->Is);
+
+        Eigen::VectorXd eq33_jac(bus_var_ptr->bus_var_len);
+        eq33_jac << p_one_vec, p_zero_vec, q_one_vec, q_zero_vec, vt_zero_vec;
+
+        Eigen::VectorXd eq34_jac(bus_var_ptr->bus_var_len);
+        eq34_jac << p_zero_vec, p_one_vec, q_one_vec, q_zero_vec, vt_zero_vec;
+
+        Eigen::VectorXd eq35_jac(bus_var_ptr->bus_var_len);
+
+
+
+
+    }
 
 }

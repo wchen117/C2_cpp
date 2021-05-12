@@ -21,6 +21,10 @@ public:
     friend class TransformerVariables;
     friend class BaseCaseProblem;
 
+    // so later these will be in BusVariablesCon;
+    friend class BusCostsCon;
+    friend class LineVariablesCon;
+
 private:
     std::shared_ptr<Wrapper_Construct> bus_ref_data;
     // p_ikn_* and q_ikn_* are col major matrix of size Np (Nq) * Is
