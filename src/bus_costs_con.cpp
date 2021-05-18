@@ -30,7 +30,7 @@ double BusCostsCon::GetCost () const
 
 void BusCostsCon::InitVariableDependedQuantities (const VariablesPtr& x)
 {
-    bus_var_ptr = x->GetComponent<BusVariables>(bus_var_name);
+    bus_var_ptr = x->GetComponent<BusVariablesCon>(bus_var_name);
 
 }
 void BusCostsCon::FillJacobianBlock(std::string var_set, Jacobian& jac) const

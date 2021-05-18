@@ -3,7 +3,7 @@
 //
 
 #include "variables/line_variables_con.hpp"
-LineVariablesCon::LineVariablesCon(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::shared_ptr<BusVariables> bus_var_ptr, const std::string& name): VariableSet(-1, name)
+LineVariablesCon::LineVariablesCon(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::shared_ptr<BusVariablesCon> bus_var_ptr, const std::string& name): VariableSet(-1, name)
 {
     local_input_ptr = data_ptr;
 
@@ -212,6 +212,7 @@ LineVariablesCon::VecBound  LineVariablesCon::GetBounds() const
     // now to populate the upper and lower bounds
     // i don't see bounds for pq_ek_od yet
 
+    //eqn(21)
     Eigen::MatrixXd tmp_prod = (t_n_s_over.array() * r_e_over_eigen.array()).matrix();
     Eigen::Map<const Eigen::VectorXd> tmp_flat_prod(tmp_prod.data(), tmp_prod.size());
     Eigen::VectorXd x_ek_sw_bound(size_E_k0);

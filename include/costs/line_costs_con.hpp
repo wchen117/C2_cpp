@@ -18,7 +18,7 @@ private:
     void FillJacobianBlock(std::string var_set, Jacobian& jac_block) const override;
     std::string line_var_name;
     std::shared_ptr<LineVariablesCon> line_var_ptr;
-    //std::shared_ptr<LoadVariables> load_var_ptr;
+
 
 };
 #endif //GOC_CPP_LINE_COSTS_CON_HPP

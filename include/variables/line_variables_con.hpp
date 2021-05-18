@@ -5,17 +5,15 @@
 #ifndef GOC_CPP_LINE_VARIABLES_CON_HPP
 #define GOC_CPP_LINE_VARIABLES_CON_HPP
 #include <ifopt/variable_set.h>
-#include <variables/bus_variables.hpp>
+#include <variables/bus_variables_con.hpp>
 #include <wrapper_construct.hpp>
 
 class LineVariablesCon: public ifopt::VariableSet {
 public:
-    LineVariablesCon(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::shared_ptr<BusVariables> bus_var_ptr, const std::string& name);
+    LineVariablesCon(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::shared_ptr<BusVariablesCon> bus_var_ptr, const std::string& name);
     ~LineVariablesCon();
     Eigen::VectorXd GetValues() const override;
     void SetVariables(const Eigen::VectorXd &x) override;
-    Eigen::VectorXd sigmoid_approx(const Eigen::VectorXd& base_array);
-    Eigen::VectorXd inverse_sigmoid_approx(const Eigen::VectorXd& sigmoid_array);
     // define the bounds of variables
     VecBound GetBounds() const override;
     friend class LineCostsCon;

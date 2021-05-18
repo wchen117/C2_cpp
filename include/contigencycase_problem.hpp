@@ -12,24 +12,24 @@
 #include <ifopt/problem.h>
 #include <ifopt/ipopt_solver.h>
 
-#include <variables/bus_variables.hpp>
-#include <variables/load_variables.hpp>
+#include <variables/bus_variables_con.hpp>
+#include <variables/load_variables_con.hpp>
 #include <variables/line_variables_con.hpp>
-#include <variables/transformer_variables.hpp>
-#include <variables/generator_variables.hpp>
-#include <variables/switch_shunt_variables.hpp>
+#include <variables/transformer_variables_con.hpp>
+#include <variables/generator_variables_con.hpp>
+#include <variables/switch_shunt_variables_con.hpp>
 
-#include <constraints/bus_constraints.hpp>
-#include <constraints/load_constraints.hpp>
-#include <constraints/line_constraints.hpp>
-#include <constraints/transformer_constraints.hpp>
-#include <constraints/generator_constraints.hpp>
+#include <constraints/bus_constraints_con.hpp>
+#include <constraints/load_constraints_con.hpp>
+#include <constraints/line_constraints_con.hpp>
+#include <constraints/transformer_constraints_con.hpp>
+#include <constraints/generator_constraints_con.hpp>
 
 #include <costs/bus_costs_con.hpp>
 #include <costs/load_costs_con.hpp>
 #include <costs/line_costs_con.hpp>
-#include <costs/transformer_costs.hpp>
-#include <costs/gen_costs.hpp>
+#include <costs/transformer_costs_con.hpp>
+#include <costs/gen_costs_con.hpp>
 class ContigencyCaseProblem {
 public:
     ContigencyCaseProblem(const std::string& input_dir);
@@ -51,27 +51,27 @@ private:
     std::shared_ptr<Wrapper_Construct> input_ptr;
     ifopt::Problem nlp;
 
-    std::shared_ptr<BusVariables> bus_vars_ptr;
-    std::shared_ptr<BusConstraints> bus_cons_ptr;
+    std::shared_ptr<BusVariablesCon> bus_vars_ptr;
+    std::shared_ptr<BusConstraintsCon> bus_cons_ptr;
     std::shared_ptr<BusCostsCon> bus_cost_ptr;
 
-    std::shared_ptr<LoadVariables> load_vars_ptr;
-    std::shared_ptr<LoadConstraints> load_cons_ptr;
+    std::shared_ptr<LoadVariablesCon> load_vars_ptr;
+    std::shared_ptr<LoadConstraintsCon> load_cons_ptr;
     std::shared_ptr<LoadCostsCon> load_cost_ptr;
 
     std::shared_ptr<LineVariablesCon> line_vars_ptr;
-    std::shared_ptr<LineConstraints> line_cons_ptr;
+    std::shared_ptr<LineConstraintsCon> line_cons_ptr;
     std::shared_ptr<LineCostsCon> line_cost_ptr;
 
-    std::shared_ptr<SwitchShuntVariables> switch_shunt_vars_ptr;
+    std::shared_ptr<SwitchShuntVariablesCon> switch_shunt_vars_ptr;
 
-    std::shared_ptr<TransformerVariables> trans_vars_ptr;
-    std::shared_ptr<TransConstraints> trans_cons_ptr;
-    std::shared_ptr<TransformerCosts> trans_cost_ptr;
+    std::shared_ptr<TransformerVariablesCon> trans_vars_ptr;
+    std::shared_ptr<TransConstraintsCon> trans_cons_ptr;
+    std::shared_ptr<TransformerCostsCon> trans_cost_ptr;
 
-    std::shared_ptr<GeneratorVariables> gen_vars_ptr;
-    std::shared_ptr<GeneratorConstraints> gen_cons_ptr;
-    std::shared_ptr<GenCosts> gen_cost_ptr;
+    std::shared_ptr<GeneratorVariablesCon> gen_vars_ptr;
+    std::shared_ptr<GeneratorConstraintsCon> gen_cons_ptr;
+    std::shared_ptr<GenCostsCon> gen_cost_ptr;
 
 
 

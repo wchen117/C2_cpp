@@ -31,7 +31,7 @@ double LoadCostsCon::GetCost() const
 }
 void LoadCostsCon::InitVariableDependedQuantities(const VariablesPtr& x)
 {
-    load_var_ptr = x->GetComponent<LoadVariables>(load_var_name);
+    load_var_ptr = x->GetComponent<LoadVariablesCon>(load_var_name);
 
 }
 void LoadCostsCon::FillJacobianBlock(std::string var_set, Jacobian& jac) const

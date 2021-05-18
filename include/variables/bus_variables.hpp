@@ -16,14 +16,10 @@ public:
     VecBound GetBounds() const override;
     friend class BusCosts;
     friend class BusConstraints;
-    //friend class LineConstraints;
+
     friend class LineVariables;
     friend class TransformerVariables;
     friend class BaseCaseProblem;
-
-    // so later these will be in BusVariablesCon;
-    friend class BusCostsCon;
-    friend class LineVariablesCon;
 
 private:
     std::shared_ptr<Wrapper_Construct> bus_ref_data;

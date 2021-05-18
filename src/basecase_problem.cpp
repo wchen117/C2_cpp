@@ -72,7 +72,7 @@ void BaseCaseProblem::Solve()
     //ipopt.SetOption("bound_relax_factor", 1);
     ipopt.SetOption("print_level", 5);
     ipopt.SetOption("output_file", "output.txt");
-    ipopt.SetOption("max_iter", 500);
+    ipopt.SetOption("max_iter", 100);
     ipopt.SetOption("max_cpu_time", 1e3);
     ipopt.Solve(nlp);
 
@@ -146,6 +146,19 @@ void BaseCaseProblem::WriteOutputFile()
         outputfile << "\n";
 
     }
+    outputfile.close();
+
+    std::ofstream additional_outfile;
+    additional_outfile.open("additional_generator_var" + input_ptr->label_k_0 + ".txt");
+    additional_outfile << "--generator section\ni, id, p, q, x_gk_on, x_gk_su, x_gk_sd\n";
+
+    for (size_t idx=0; idx<input_ptr->G_k0.size(); idx++)
+    {
+        additional_outfile <<gen_vars_ptr->gen_i_g(idx)<<", "<<gen_vars_ptr->gen_id_g(idx)<<", "<<p_gk(idx)<<", "<<gen_vars_ptr->q_gk(idx)<<", "<<gen_vars_ptr->x_gk_on(idx)<<", "<<gen_vars_ptr->x_gk_su(idx)<<", "<<gen_vars_ptr->x_gk_sd(idx)<<std::endl;
+    }
+    additional_outfile.close();
+
+
 
 
 
