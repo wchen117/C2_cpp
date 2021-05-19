@@ -42,6 +42,14 @@ GeneratorVariablesCon::GeneratorVariablesCon(const std::shared_ptr<Wrapper_Const
 
 
 
+        auto basecase_generators = get_base_gen_var();
+        x_gk_on_base = Eigen::VectorXd::Zero(size_G_k0);
+        x_gk_su_base = Eigen::VectorXd::Zero(size_G_k0);
+        x_gk_sd_base = Eigen::VectorXd::Zero(size_G_k0);
+        q_gk_base = Eigen::VectorXd::Zero(size_G_k0);
+        p_gk_base = Eigen::VectorXd::Zero(size_G_k0);
+
+
         for (size_t idx=0; idx<size_G_k0; idx++)
         {
             int iii;
@@ -96,7 +104,27 @@ GeneratorVariablesCon::GeneratorVariablesCon(const std::shared_ptr<Wrapper_Const
                 }
             }
 
+            // read in the base case gen vars, make sure the one-to-one corresponds
+            for (auto const &bg: basecase_generators)
+            {
+                if (bg->i == iii & bg->id == std::stoi(idd))
+                {
+                    x_gk_on_base(idx) = bg->x_gk_on;
+                    x_gk_su_base(idx) = bg->x_gk_su;
+                    x_gk_sd_base(idx) = bg->x_gk_sd;
+                    p_gk_base(idx) = bg->p_gk;
+                    q_gk_base(idx) = bg->q_gk;
+
+
+                }
+
+            }
+
         }
+
+
+
+
         // length of p_gnk +  x_gk_on +  x_gk_su + x_gk_sd
         gen_var_len = size_p_gnk + 3 * size_G_k0;
         SetRows(gen_var_len);
@@ -105,18 +133,7 @@ GeneratorVariablesCon::GeneratorVariablesCon(const std::shared_ptr<Wrapper_Const
 }
 
 GeneratorVariablesCon::~GeneratorVariablesCon() {}
-void GeneratorVariablesCon::FileExist(const std::string FileName)
-{
 
-}
-void GeneratorVariablesCon::ReadBaseCase()
-{
-
-
-
-
-
-}
 Eigen::VectorXd GeneratorVariablesCon::GetValues() const
 {
 
@@ -253,14 +270,14 @@ std::vector<std::string> GeneratorVariablesCon::parse_on_delimiter(std::string c
 
 }
 
-std::vector<std::shared_ptr<generator>> GeneratorVariablesCon::get_base_gen_var()
+std::vector<std::shared_ptr<GeneratorVariablesCon::read_generator>> GeneratorVariablesCon::get_base_gen_var()
 {
     std::string additional_var = "additional_generator_varBASECASE.txt";
 
     std::string content = read_to_string(additional_var);
     std::vector<std::string> vector_string = parse_on_delimiter(content, "--");
 
-    std::vector<std::shared_ptr<generator>> generator_ref_vec;
+    std::vector<std::shared_ptr<read_generator>> generator_ref_vec;
 
     for (size_t idx=0; idx<vector_string.size(); idx++)
     {
@@ -274,7 +291,7 @@ std::vector<std::shared_ptr<generator>> GeneratorVariablesCon::get_base_gen_var(
             {
                 std::string const& line = lines_vector.at(jdx);
                 std::vector<std::string> num_vec = parse_on_delimiter(line, ",");
-                auto tmp_gen = std::make_shared<generator>();
+                auto tmp_gen = std::make_shared<read_generator>();
                 tmp_gen->i = std::stoi(num_vec.at(0));
                 tmp_gen->id = std::stoi(num_vec.at(1));
                 tmp_gen->p_gk = std::stod(num_vec.at(2));

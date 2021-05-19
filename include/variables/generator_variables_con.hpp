@@ -6,6 +6,7 @@
 #define GOC_CPP_GENERATOR_VARIABLES_CON_HPP
 #include <ifopt/variable_set.h>
 #include <wrapper_construct.hpp>
+#include <fstream>
 
 class GeneratorVariablesCon : public ifopt::VariableSet
 {
@@ -17,12 +18,25 @@ public:
     Eigen::VectorXd get_p_gk() const;
     // define the bounds of variables
     VecBound GetBounds() const override;
-    std::string read_to_string(std::string file_name)
-    std::vector<std::string>  parse_on_delimiter(std::string const &input_string, std::string delimiter)
+    std::string read_to_string(std::string file_name);
+    std::vector<std::string>  parse_on_delimiter(std::string const &input_string, std::string delimiter);
+
     friend class GenCostsCon;
     friend class BusConstraintsCon;
     friend class GeneratorConstraintsCon;
     friend class ContigencyCaseProblem;
+
+    struct read_generator {
+        int i;
+        int id;
+        double p_gk;
+        double q_gk;
+        double x_gk_on;
+        double x_gk_su;
+        double x_gk_sd;
+    };
+
+    std::vector<std::shared_ptr<read_generator>> get_base_gen_var();
 
 private:
     std::shared_ptr<Wrapper_Construct> gen_ref_data;
@@ -33,6 +47,8 @@ private:
     Eigen::VectorXd x_gk_on;
     Eigen::VectorXd x_gk_su;
     Eigen::VectorXd x_gk_sd;
+
+    Eigen::VectorXd x_gk_on_base, x_gk_su_base, x_gk_sd_base, p_gk_base, q_gk_base;
 
     // coefficients
     std::vector<std::vector<double> > c_gn;
@@ -54,15 +70,7 @@ private:
     size_t size_p_gnk = 0;
     size_t size_G_k0, gen_var_len;
 
-    struct generator {
-        int i;
-        int id;
-        double p_gk;
-        double q_gk;
-        double x_gk_on;
-        double x_gk_su;
-        double x_gk_sd;
-    };
+
 
 
 

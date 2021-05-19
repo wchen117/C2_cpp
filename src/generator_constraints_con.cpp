@@ -5,7 +5,7 @@
 
 GeneratorConstraintsCon::GeneratorConstraintsCon(const std::shared_ptr<Wrapper_Construct> data_ptr, const std::string &name) : ifopt::ConstraintSet(-1, name + "_constraint")
 {
-    SetRows(10 * data_ptr->G_k0.size());
+    SetRows(12 * data_ptr->G_k0.size());
     gen_var_name = name;
 
 }
@@ -15,7 +15,7 @@ GeneratorConstraintsCon::~GeneratorConstraintsCon() {}
 Eigen::VectorXd GeneratorConstraintsCon::GetValues() const
 {
     Eigen::VectorXd gen_cons(GetRows());
-    const Eigen::VectorXd Eqn82 = gen_var_ptr->x_gk_on - gen_var_ptr->x_g_on_0 - gen_var_ptr->x_gk_su + gen_var_ptr->x_gk_sd;
+    const Eigen::VectorXd Eqn83 = gen_var_ptr->x_gk_on - gen_var_ptr->x_gk_on_base - gen_var_ptr->x_gk_su + gen_var_ptr->x_gk_sd;
     const Eigen::VectorXd Eqn84 = ((gen_var_ptr->x_gk_su + gen_var_ptr->x_gk_sd).array() - 1.0).matrix();
 
     // p_gk = \sum_n p_gnk
@@ -37,12 +37,14 @@ Eigen::VectorXd GeneratorConstraintsCon::GetValues() const
 
     const double &delta_r = gen_var_ptr->gen_ref_data->new_data.sup.sys_prms["deltar"];
     // Eqn(89) and Eqn(90)
-    const Eigen::VectorXd Eqn89 = (p_gk.array() - (gen_var_ptr->p_g_0 + gen_var_ptr->p_g_ru_over * delta_r).array() \
+    const Eigen::VectorXd Eqn89 = (p_gk.array() - (gen_var_ptr->p_gk_base + gen_var_ptr->p_g_ru_over * delta_r).array() \
                                            * (gen_var_ptr->x_gk_on - gen_var_ptr->x_gk_su).array() + (gen_var_ptr->p_g_under + gen_var_ptr->p_g_ru_over * delta_r).array() * gen_var_ptr->x_gk_su.array()).matrix();
-    const Eigen::VectorXd Eqn90 = (p_gk.array() - (gen_var_ptr->p_g_0 - gen_var_ptr->p_g_rd_over * delta_r).array() \
+    const Eigen::VectorXd Eqn90 = (p_gk.array() - (gen_var_ptr->p_gk_base - gen_var_ptr->p_g_rd_over * delta_r).array() \
                                            * (gen_var_ptr->x_gk_on - gen_var_ptr->x_gk_su).array()).matrix();
+    Eigen::VectorXd Eqn95 = gen_var_ptr->x_gk_su_base.array() + gen_var_ptr->x_gk_sd.array() - 1.0;
+    Eigen::VectorXd Eqn96 = gen_var_ptr->x_gk_sd_base.array() + gen_var_ptr->x_gk_su.array() - 1.0;
 
-    gen_cons << Eqn82, Eqn84, Eqn85_right, Eqn85_left, Eqn86_right, Eqn86_left, Eqn89, Eqn90, gen_var_ptr->x_gk_su, gen_var_ptr->x_gk_sd;
+    gen_cons << Eqn83, Eqn84, Eqn85_right, Eqn85_left, Eqn86_right, Eqn86_left, Eqn89, Eqn90, gen_var_ptr->x_gk_su, gen_var_ptr->x_gk_sd, Eqn95, Eqn96;
 
     return gen_cons;
 }
@@ -116,10 +118,15 @@ GeneratorConstraintsCon::VecBound GeneratorConstraintsCon::GetBounds() const
         }
     }
 
+    // eqn(95) and eqn(96) have zero up bound, -infty lower bound;
+    auto const& Eqn9596_up_bound = Eqn87_up_bound;
+    auto const& Eqn9596_low_bound = Eqn87_lo_bound;
+
+
     upper_bounds << Eqn82_up_bound, Eqn84_up_bound, Eqn85_right_up_bound, Eqn85_left_up_bound, Eqn86_right_up_bound, \
-                    Eqn86_left_up_bound, Eqn87_up_bound, Eqn88_up_bound, Eqn91_up_bound, Eqn93_up_bound;
+                    Eqn86_left_up_bound, Eqn87_up_bound, Eqn88_up_bound, Eqn91_up_bound, Eqn93_up_bound, Eqn9596_up_bound, Eqn9596_up_bound;
     lower_bounds <<  Eqn82_lo_bound, Eqn84_lo_bound, Eqn85_right_lo_bound, Eqn85_left_lo_bound, Eqn86_right_lo_bound, \
-                    Eqn86_left_lo_bound, Eqn87_lo_bound, Eqn88_lo_bound, Eqn91_lo_bound, Eqn93_lo_bound;
+                    Eqn86_left_lo_bound, Eqn87_lo_bound, Eqn88_lo_bound, Eqn91_lo_bound, Eqn93_lo_bound, Eqn87_lo_bound, Eqn87_lo_bound;
 
     for (size_t idx=0; idx<gen_con_bounds.size(); idx++)
     {
