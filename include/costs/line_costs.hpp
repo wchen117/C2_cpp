@@ -18,6 +18,7 @@ private:
     void FillJacobianBlock(std::string var_set, Jacobian& jac_block) const override;
     std::string line_var_name;
     std::shared_ptr<LineVariables> line_var_ptr;
+    double epsilon = 1e-4;
     //std::shared_ptr<LoadVariables> load_var_ptr;
 
 };

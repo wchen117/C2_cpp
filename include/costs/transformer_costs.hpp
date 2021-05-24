@@ -19,6 +19,7 @@ private:
     void FillJacobianBlock(std::string var_set, Jacobian& jac_block) const override;
     std::string trans_var_name;
     std::shared_ptr<TransformerVariables> trans_var_ptr ;
+    double epsilon = 1e-4;
 
 };
 

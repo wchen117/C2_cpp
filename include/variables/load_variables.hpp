@@ -45,7 +45,8 @@ private:
     Eigen::VectorXi load_i;
     Eigen::VectorXi load_id_j;
     // some some parameters
-    size_t p_jkn_size, t_jk_size;
+    // p_jkn_size is the flattened p_jkn size
+    size_t p_jk_size, p_jkn_size, t_jk_size;
 
 
 };

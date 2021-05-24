@@ -76,6 +76,7 @@ LoadVariables::LoadVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
             
         }
         p_jkn_size = p_jn_counter;
+        p_jk_size = p_jkn.size();
         t_jk_size = t_jk.size();
         // flattened p_jkn + q_jk + t_jk
         size_t load_var_len = p_jkn_size+2*t_jk_size;

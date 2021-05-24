@@ -77,6 +77,61 @@ void LoadConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block
     if (var_set == load_var_name)
     {
 
+        // size of p_jk = the size of p_jkn's first dimension
+        Eigen::MatrixXd eqn40_wrt_flat_p_jkn = Eigen::MatrixXd::Zero(load_var_ptr->p_jk_size, load_var_ptr->p_jkn_size);
+        size_t sum_len = 0;
+        for (size_t idx=0; idx<load_var_ptr->p_jkn.size(); idx++)
+        {
+            for (size_t jdx=0; jdx<load_var_ptr->p_jkn.at(idx).size(); jdx++)
+            {
+                // p_jk = \sum_n p_jkn, for each j, only
+                eqn40_wrt_flat_p_jkn(idx, jdx + sum_len) = 1.0;
+            }
+            sum_len += load_var_ptr->p_jkn.at(idx).size();
+        }
+
+        // eqn40 has no q_jk, q_jk and t_jk same size
+        Eigen::MatrixXd eqn40_wrt_q_jk = Eigen::MatrixXd::Zero(load_var_ptr->p_jk_size, load_var_ptr->q_jk.size());
+        Eigen::MatrixXd eqn40_wrt_t_jk = Eigen::MatrixXd(load_var_ptr->p_jk_size, load_var_ptr->t_jk_size);
+        eqn40_wrt_t_jk.diagonal() << -1.0 * load_var_ptr->p_j_0;
+        Eigen::MatrixXd eqn40_jac(eqn40_wrt_flat_p_jkn.rows(), eqn40_wrt_flat_p_jkn.cols() + eqn40_wrt_q_jk.cols() + eqn40_wrt_t_jk.cols());
+        eqn40_jac << eqn40_wrt_flat_p_jkn, eqn40_wrt_q_jk, eqn40_wrt_t_jk;
+
+        Eigen::MatrixXd eqn41_wrt_flat_p_jkn = Eigen::MatrixXd::Zero(load_var_ptr->p_jk_size, load_var_ptr->p_jkn_size);
+        Eigen::MatrixXd eqn41_wrt_q_jk = Eigen::MatrixXd::Ones(load_var_ptr->p_jk_size, load_var_ptr->q_jk.size());
+        Eigen::MatrixXd eqn41_wrt_t_jk = Eigen::MatrixXd(load_var_ptr->p_jk_size, load_var_ptr->q_jk.size());
+        eqn41_wrt_t_jk.diagonal() << -1.0 * load_var_ptr->q_j_0;
+
+        Eigen::MatrixXd eqn41_jac(eqn41_wrt_flat_p_jkn.rows(), eqn41_wrt_flat_p_jkn.cols() + eqn41_wrt_q_jk.cols() + eqn41_wrt_t_jk.cols());
+        eqn41_jac << eqn41_wrt_flat_p_jkn, eqn41_wrt_q_jk, eqn41_wrt_t_jk;
+
+        // eqn42
+        Eigen::MatrixXd const& eqn42_wrt_flat_p_jkn = eqn40_wrt_flat_p_jkn;
+        Eigen::MatrixXd eqn42_wrt_q_jk = Eigen::MatrixXd::Zero(load_var_ptr->p_jk_size, load_var_ptr->q_jk.size());
+        Eigen::MatrixXd eqn42_wrt_t_jk = Eigen::MatrixXd::Zero(load_var_ptr->p_jk_size, load_var_ptr->q_jk.size());
+        Eigen::MatrixXd eqn42_jac(eqn42_wrt_flat_p_jkn.rows(), eqn42_wrt_flat_p_jkn.cols() + eqn42_wrt_q_jk.cols() + eqn42_wrt_t_jk.cols());
+        eqn42_jac << eqn42_wrt_flat_p_jkn, eqn42_wrt_q_jk, eqn42_wrt_t_jk;
+
+        //eqn43
+        Eigen::MatrixXd const& eqn43_wrt_flat_p_jkn = eqn40_wrt_flat_p_jkn;
+        Eigen::MatrixXd const& eqn43_wrt_q_jk = eqn42_wrt_q_jk;
+        Eigen::MatrixXd const& eqn43_wrt_t_jk = eqn42_wrt_t_jk;
+        Eigen::MatrixXd eqn43_jac(eqn43_wrt_flat_p_jkn.rows(), eqn43_wrt_flat_p_jkn.cols() + eqn43_wrt_q_jk.cols() + eqn43_wrt_t_jk.cols());
+        eqn43_jac << eqn43_wrt_flat_p_jkn, eqn43_wrt_q_jk, eqn43_wrt_t_jk;
+
+        Eigen::MatrixXd load_jac(4 * eqn42_wrt_flat_p_jkn.rows(), eqn42_wrt_flat_p_jkn.cols() + eqn42_wrt_q_jk.cols() + eqn42_wrt_t_jk.cols());
+        load_jac << eqn40_jac, eqn41_jac, eqn42_jac, eqn43_jac;
+
+
+        for(size_t idx=0; idx<jac_block.rows(); idx++)
+        {
+            for(size_t jdx=0; jdx<jac_block.cols(); jdx++)
+            {
+                jac_block.coeffRef(idx, jdx) = load_jac(idx, jdx);
+            }
+        }
+
+
     }
 
 }

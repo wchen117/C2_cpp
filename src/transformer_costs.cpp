@@ -12,7 +12,7 @@ TransformerCosts::~TransformerCosts()
 }
 double TransformerCosts::GetCost() const
 {
-    double epsilon = 1e-4;
+
     //auto first_term = -1.0 * (trans_var_ptr->x_fk_sw - trans_var_ptr->x_f_sw0).array().abs() * (trans_var_ptr->c_f_sw.array());
     auto first_term = -1.0 * (((trans_var_ptr->x_fk_sw - trans_var_ptr->x_f_sw0).array().pow(2) + epsilon).sqrt()).array() * (trans_var_ptr->c_f_sw.array());
     auto second_term = -1.0 * (trans_var_ptr->s_fnk_plus.array() * trans_var_ptr->c_n_s.array()).matrix().colwise().sum();
@@ -66,28 +66,18 @@ void TransformerCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) con
 {
     if (var_set == trans_var_name)
     {
-        Eigen::Map<Eigen::VectorXd> flat_c_ns(trans_var_ptr->c_n_s.data(), trans_var_ptr->c_n_s.size());
-        flat_c_ns *= -1;
-        Eigen::VectorXd x_fk_sw_coeff (trans_var_ptr->size_F_k0);
+        Eigen::VectorXd eqn22_der_1 = ((trans_var_ptr->x_fk_sw.array() - trans_var_ptr->x_f_sw0.array()) / ((trans_var_ptr->x_fk_sw.array() - trans_var_ptr->x_f_sw0.array()).pow(2) + epsilon).sqrt()).matrix();
+        Eigen::VectorXd zero_vec = Eigen::VectorXd::Zero(trans_var_ptr->size_F_k0);
+        Eigen::Map<const Eigen::VectorXd> flat_cns(trans_var_ptr->c_n_s.data(), trans_var_ptr->c_n_s.size());
+        assert(jac.cols() == trans_var_ptr->trans_var_len);
+        Eigen::VectorXd eqn22_jac = Eigen::VectorXd::Zero(trans_var_ptr->trans_var_len);
+        eqn22_jac << flat_cns, eqn22_der_1, zero_vec, zero_vec, zero_vec ,zero_vec;
 
-        for (size_t idx=0; idx<trans_var_ptr->size_F_k0; idx++)
+        for (size_t idx=0; idx<jac.cols(); idx++)
         {
-            if (trans_var_ptr->x_fk_sw(idx) >= trans_var_ptr->x_fk_sw(idx))
-            {
-                x_fk_sw_coeff(idx) = - trans_var_ptr->c_f_sw(idx);
-            }
-            else {
-                x_fk_sw_coeff(idx) = trans_var_ptr->c_f_sw(idx);
-
-            }
+            jac.coeffRef(0, idx) = eqn22_jac(idx);
         }
-        Eigen::VectorXd tmp(trans_var_ptr->trans_var_len);
-        tmp<< flat_c_ns, x_fk_sw_coeff;
-        for (size_t idx=0; idx<trans_var_ptr->trans_var_len; idx++)
-        {
-            jac.coeffRef(0, idx) = tmp(idx);
 
-        }
 
     }
 
