@@ -8,6 +8,7 @@
 #include <boost/multi_array.hpp>
 
 
+
 // some constants here
 const double PI  = 3.141592653589793238463;
 
@@ -69,5 +70,8 @@ std::pair<bool, int > findInVector(const std::vector<T>  & vecOfElements, const 
     return result;
 }
 
+// type definition for triplet form of sparse matrix (mostly jacobians)
+
+typedef Eigen::Triplet<double> eigen_triplet;
 
 #endif

@@ -75,6 +75,37 @@ void LineConstraints::InitVariableDependedQuantities(const VariablesPtr& x)
 }
 void LineConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block) const
 {
+    if (var_set == line_var_name)
+    {
+        Eigen::MatrixXd eqn49 = Eigen::MatrixXd::Zero(line_var_ptr->size_E_k0, line_var_ptr->x_ek_sw.size());
+        std::vector<eigen_triplet> eqn49_triplets;
+        // eq(49), x_ek_sw - x_e_sw0 = 0 if swqual = 0
+        for (size_t idx=0; idx<line_var_ptr->size_E_k0; idx++)
+        {
+            if (line_var_ptr->swqual_state(idx) == 0)
+            {
+                eqn49_triplets.push_back(eigen_triplet(idx, idx+line_var_ptr->s_enk_plus.cols(), 1.0));
+            }
+        }
+
+        jac_block.setFromTriplets(eqn49_triplets);
+
+        // s_enk_plus.size() = s_enk_plus.rows() * s_enk_plus.cols()
+        Eigen::MatrixXd eqn54 = Eigen::MatrixXd::Zero(line_var_ptr->size_E_k0, line_var_ptr->s_enk_plus.size());
+        size_t sum_len = 0;
+        for (size_t idx=0; idx<line_var_ptr->s_enk_plus.cols(); idx++)
+        {
+            for (size_t jdx=0; jdx<line_var_ptr->s_enk_plus.rows(); jdx++)
+            {
+                // p_jk = \sum_n p_jkn, for each j, only
+                eqn54(jdx, idx + sum_len) = 1.0;
+            }
+            sum_len += line_var_ptr->s_enk_plus.cols();
+        }
+
+
+
+    }
 
 }
 

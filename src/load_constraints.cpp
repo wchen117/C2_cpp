@@ -97,13 +97,18 @@ void LoadConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block
         Eigen::MatrixXd eqn40_jac(eqn40_wrt_flat_p_jkn.rows(), eqn40_wrt_flat_p_jkn.cols() + eqn40_wrt_q_jk.cols() + eqn40_wrt_t_jk.cols());
         eqn40_jac << eqn40_wrt_flat_p_jkn, eqn40_wrt_q_jk, eqn40_wrt_t_jk;
 
+
+
         Eigen::MatrixXd eqn41_wrt_flat_p_jkn = Eigen::MatrixXd::Zero(load_var_ptr->p_jk_size, load_var_ptr->p_jkn_size);
-        Eigen::MatrixXd eqn41_wrt_q_jk = Eigen::MatrixXd::Ones(load_var_ptr->p_jk_size, load_var_ptr->q_jk.size());
+        Eigen::MatrixXd eqn41_wrt_q_jk = Eigen::MatrixXd::Identity(load_var_ptr->p_jk_size, load_var_ptr->q_jk.size());
+
         Eigen::MatrixXd eqn41_wrt_t_jk = Eigen::MatrixXd(load_var_ptr->p_jk_size, load_var_ptr->q_jk.size());
         eqn41_wrt_t_jk.diagonal() << -1.0 * load_var_ptr->q_j_0;
 
+
         Eigen::MatrixXd eqn41_jac(eqn41_wrt_flat_p_jkn.rows(), eqn41_wrt_flat_p_jkn.cols() + eqn41_wrt_q_jk.cols() + eqn41_wrt_t_jk.cols());
         eqn41_jac << eqn41_wrt_flat_p_jkn, eqn41_wrt_q_jk, eqn41_wrt_t_jk;
+
 
         // eqn42
         Eigen::MatrixXd const& eqn42_wrt_flat_p_jkn = eqn40_wrt_flat_p_jkn;
@@ -128,8 +133,10 @@ void LoadConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block
             for(size_t jdx=0; jdx<jac_block.cols(); jdx++)
             {
                 jac_block.coeffRef(idx, jdx) = load_jac(idx, jdx);
+                //jac_block.coeffRef(idx, jdx) = 10.0;
             }
         }
+
 
 
     }

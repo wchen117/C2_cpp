@@ -37,9 +37,9 @@ LoadVariables::LoadVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
             // j in p_jkn, c_jn, p_jn_over, t_jk, t_j_over, t_j_under
             auto load_key =  load_ref_data->J_k0.at(idx);
             std::tie (j_num, bus_i) = load_key;
-            q_jk(idx) = 0.0;
-            p_j_0(idx) = load_ref_data->p_l.at(load_key) * load_ref_data->s_tilde_inverse;
-            q_j_0(idx) = load_ref_data->q_l.at(load_key) * load_ref_data->s_tilde_inverse;
+            q_jk(idx) = 0.5;
+            p_j_0(idx) = load_ref_data->p_l.at(load_key);
+            q_j_0(idx) = load_ref_data->q_l.at(load_key);
             // bus_i = "'1'", so we need to get rid of the '' before comparing to load.id
             bus_i.erase(std::remove(bus_i.begin(), bus_i.end(), '\''), bus_i.end());
 
