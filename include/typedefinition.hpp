@@ -72,6 +72,6 @@ std::pair<bool, int > findInVector(const std::vector<T>  & vecOfElements, const 
 
 // type definition for triplet form of sparse matrix (mostly jacobians)
 
-typedef Eigen::Triplet<double> eigen_triplet;
+//typedef Eigen::Triplet<double> eigen_triplet;
 
 #endif

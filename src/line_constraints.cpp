@@ -77,6 +77,8 @@ void LineConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block
 {
     if (var_set == line_var_name)
     {
+
+        typedef Eigen::Triplet<double> eigen_triplet;
         Eigen::MatrixXd eqn49 = Eigen::MatrixXd::Zero(line_var_ptr->size_E_k0, line_var_ptr->x_ek_sw.size());
         std::vector<eigen_triplet> eqn49_triplets;
         // eq(49), x_ek_sw - x_e_sw0 = 0 if swqual = 0
@@ -88,20 +90,33 @@ void LineConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block
             }
         }
 
-        jac_block.setFromTriplets(eqn49_triplets);
+        //jac_block.setFromTriplets()
+        //jac_block.setFromTriplets(eqn49_triplets);
+
+
 
         // s_enk_plus.size() = s_enk_plus.rows() * s_enk_plus.cols()
-        Eigen::MatrixXd eqn54 = Eigen::MatrixXd::Zero(line_var_ptr->size_E_k0, line_var_ptr->s_enk_plus.size());
+        Eigen::MatrixXd eqn54_wrt_flat_s_enk = Eigen::MatrixXd::Zero(line_var_ptr->size_E_k0, line_var_ptr->s_enk_plus.size());
         size_t sum_len = 0;
+        /**
         for (size_t idx=0; idx<line_var_ptr->s_enk_plus.cols(); idx++)
         {
             for (size_t jdx=0; jdx<line_var_ptr->s_enk_plus.rows(); jdx++)
             {
                 // p_jk = \sum_n p_jkn, for each j, only
-                eqn54(jdx, idx + sum_len) = 1.0;
+                eqn54_wrt_flat_s_enk(jdx, idx + sum_len) = 1.0;
             }
             sum_len += line_var_ptr->s_enk_plus.cols();
         }
+
+
+
+       Eigen::MatrixXd const& eqn55_wrt_flat_s_enk = eqn54_wrt_flat_s_enk;
+       Eigen::MatrixXd const& eqn56_wrt_flat_s_enk = eqn54_wrt_flat_s_enk;
+**/
+        //Eigen::MatrixXd eqn55_wrt_p_ek_o = line_var_ptr->p_ek_o.array() / (line_var_ptr->p_ek_o.array().square() + )
+
+
 
 
 

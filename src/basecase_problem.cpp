@@ -32,9 +32,9 @@ BaseCaseProblem::BaseCaseProblem(const std::string& input_dir)
                                                          line_var_name, swsh_var_name, trans_var_name, gen_var_name);
     bus_cost_ptr = std::make_shared<BusCosts>(bus_var_name);
 
-    nlp.AddVariableSet(load_vars_ptr);
-    nlp.AddConstraintSet(load_cons_ptr);
-    nlp.AddCostSet(load_cost_ptr);
+    //nlp.AddVariableSet(load_vars_ptr);
+    //nlp.AddConstraintSet(load_cons_ptr);
+    //nlp.AddCostSet(load_cost_ptr);
 
     //nlp.AddVariableSet(switch_shunt_vars_ptr);
 

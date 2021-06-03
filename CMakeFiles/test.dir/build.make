@@ -53,10 +53,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.19.2/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.19.2/bin/cmake -E rm -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -79,847 +79,847 @@ include CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/area.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/area.cpp.o: src/area.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test.dir/src/area.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/area.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/area.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/area.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/area.cpp
 
 CMakeFiles/test.dir/src/area.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/area.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/area.cpp > CMakeFiles/test.dir/src/area.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/area.cpp > CMakeFiles/test.dir/src/area.cpp.i
 
 CMakeFiles/test.dir/src/area.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/area.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/area.cpp -o CMakeFiles/test.dir/src/area.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/area.cpp -o CMakeFiles/test.dir/src/area.cpp.s
 
 CMakeFiles/test.dir/src/basecase_problem.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/basecase_problem.cpp.o: src/basecase_problem.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/src/basecase_problem.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/basecase_problem.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/basecase_problem.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/basecase_problem.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/basecase_problem.cpp
 
 CMakeFiles/test.dir/src/basecase_problem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/basecase_problem.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/basecase_problem.cpp > CMakeFiles/test.dir/src/basecase_problem.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/basecase_problem.cpp > CMakeFiles/test.dir/src/basecase_problem.cpp.i
 
 CMakeFiles/test.dir/src/basecase_problem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/basecase_problem.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/basecase_problem.cpp -o CMakeFiles/test.dir/src/basecase_problem.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/basecase_problem.cpp -o CMakeFiles/test.dir/src/basecase_problem.cpp.s
 
 CMakeFiles/test.dir/src/branchoutevent.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/branchoutevent.cpp.o: src/branchoutevent.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/src/branchoutevent.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/branchoutevent.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/branchoutevent.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/branchoutevent.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/branchoutevent.cpp
 
 CMakeFiles/test.dir/src/branchoutevent.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/branchoutevent.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/branchoutevent.cpp > CMakeFiles/test.dir/src/branchoutevent.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/branchoutevent.cpp > CMakeFiles/test.dir/src/branchoutevent.cpp.i
 
 CMakeFiles/test.dir/src/branchoutevent.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/branchoutevent.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/branchoutevent.cpp -o CMakeFiles/test.dir/src/branchoutevent.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/branchoutevent.cpp -o CMakeFiles/test.dir/src/branchoutevent.cpp.s
 
 CMakeFiles/test.dir/src/bus.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/bus.cpp.o: src/bus.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test.dir/src/bus.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus.cpp
 
 CMakeFiles/test.dir/src/bus.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/bus.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus.cpp > CMakeFiles/test.dir/src/bus.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus.cpp > CMakeFiles/test.dir/src/bus.cpp.i
 
 CMakeFiles/test.dir/src/bus.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/bus.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus.cpp -o CMakeFiles/test.dir/src/bus.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus.cpp -o CMakeFiles/test.dir/src/bus.cpp.s
 
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/bus_constraints.cpp.o: src/bus_constraints.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test.dir/src/bus_constraints.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_constraints.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_constraints.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints.cpp
 
 CMakeFiles/test.dir/src/bus_constraints.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/bus_constraints.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints.cpp > CMakeFiles/test.dir/src/bus_constraints.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints.cpp > CMakeFiles/test.dir/src/bus_constraints.cpp.i
 
 CMakeFiles/test.dir/src/bus_constraints.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/bus_constraints.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints.cpp -o CMakeFiles/test.dir/src/bus_constraints.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints.cpp -o CMakeFiles/test.dir/src/bus_constraints.cpp.s
 
 CMakeFiles/test.dir/src/bus_constraints_con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/bus_constraints_con.cpp.o: src/bus_constraints_con.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test.dir/src/bus_constraints_con.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_constraints_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints_con.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_constraints_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints_con.cpp
 
 CMakeFiles/test.dir/src/bus_constraints_con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/bus_constraints_con.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints_con.cpp > CMakeFiles/test.dir/src/bus_constraints_con.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints_con.cpp > CMakeFiles/test.dir/src/bus_constraints_con.cpp.i
 
 CMakeFiles/test.dir/src/bus_constraints_con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/bus_constraints_con.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints_con.cpp -o CMakeFiles/test.dir/src/bus_constraints_con.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints_con.cpp -o CMakeFiles/test.dir/src/bus_constraints_con.cpp.s
 
 CMakeFiles/test.dir/src/bus_costs.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/bus_costs.cpp.o: src/bus_costs.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/test.dir/src/bus_costs.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_costs.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_costs.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs.cpp
 
 CMakeFiles/test.dir/src/bus_costs.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/bus_costs.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs.cpp > CMakeFiles/test.dir/src/bus_costs.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs.cpp > CMakeFiles/test.dir/src/bus_costs.cpp.i
 
 CMakeFiles/test.dir/src/bus_costs.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/bus_costs.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs.cpp -o CMakeFiles/test.dir/src/bus_costs.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs.cpp -o CMakeFiles/test.dir/src/bus_costs.cpp.s
 
 CMakeFiles/test.dir/src/bus_costs_con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/bus_costs_con.cpp.o: src/bus_costs_con.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test.dir/src/bus_costs_con.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_costs_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs_con.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_costs_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs_con.cpp
 
 CMakeFiles/test.dir/src/bus_costs_con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/bus_costs_con.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs_con.cpp > CMakeFiles/test.dir/src/bus_costs_con.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs_con.cpp > CMakeFiles/test.dir/src/bus_costs_con.cpp.i
 
 CMakeFiles/test.dir/src/bus_costs_con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/bus_costs_con.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs_con.cpp -o CMakeFiles/test.dir/src/bus_costs_con.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs_con.cpp -o CMakeFiles/test.dir/src/bus_costs_con.cpp.s
 
 CMakeFiles/test.dir/src/bus_variables.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/bus_variables.cpp.o: src/bus_variables.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/test.dir/src/bus_variables.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables.cpp
 
 CMakeFiles/test.dir/src/bus_variables.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/bus_variables.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables.cpp > CMakeFiles/test.dir/src/bus_variables.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables.cpp > CMakeFiles/test.dir/src/bus_variables.cpp.i
 
 CMakeFiles/test.dir/src/bus_variables.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/bus_variables.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables.cpp -o CMakeFiles/test.dir/src/bus_variables.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables.cpp -o CMakeFiles/test.dir/src/bus_variables.cpp.s
 
 CMakeFiles/test.dir/src/bus_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/bus_variables_con.cpp.o: src/bus_variables_con.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/test.dir/src/bus_variables_con.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables_con.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables_con.cpp
 
 CMakeFiles/test.dir/src/bus_variables_con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/bus_variables_con.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables_con.cpp > CMakeFiles/test.dir/src/bus_variables_con.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables_con.cpp > CMakeFiles/test.dir/src/bus_variables_con.cpp.i
 
 CMakeFiles/test.dir/src/bus_variables_con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/bus_variables_con.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables_con.cpp -o CMakeFiles/test.dir/src/bus_variables_con.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables_con.cpp -o CMakeFiles/test.dir/src/bus_variables_con.cpp.s
 
 CMakeFiles/test.dir/src/caseidentification.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/caseidentification.cpp.o: src/caseidentification.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/test.dir/src/caseidentification.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/caseidentification.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/caseidentification.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/caseidentification.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/caseidentification.cpp
 
 CMakeFiles/test.dir/src/caseidentification.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/caseidentification.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/caseidentification.cpp > CMakeFiles/test.dir/src/caseidentification.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/caseidentification.cpp > CMakeFiles/test.dir/src/caseidentification.cpp.i
 
 CMakeFiles/test.dir/src/caseidentification.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/caseidentification.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/caseidentification.cpp -o CMakeFiles/test.dir/src/caseidentification.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/caseidentification.cpp -o CMakeFiles/test.dir/src/caseidentification.cpp.s
 
 CMakeFiles/test.dir/src/con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/con.cpp.o: src/con.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/test.dir/src/con.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/con.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/con.cpp
 
 CMakeFiles/test.dir/src/con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/con.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/con.cpp > CMakeFiles/test.dir/src/con.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/con.cpp > CMakeFiles/test.dir/src/con.cpp.i
 
 CMakeFiles/test.dir/src/con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/con.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/con.cpp -o CMakeFiles/test.dir/src/con.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/con.cpp -o CMakeFiles/test.dir/src/con.cpp.s
 
 CMakeFiles/test.dir/src/contigencycase_problem.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/contigencycase_problem.cpp.o: src/contigencycase_problem.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/test.dir/src/contigencycase_problem.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/contigencycase_problem.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contigencycase_problem.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/contigencycase_problem.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contigencycase_problem.cpp
 
 CMakeFiles/test.dir/src/contigencycase_problem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/contigencycase_problem.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contigencycase_problem.cpp > CMakeFiles/test.dir/src/contigencycase_problem.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contigencycase_problem.cpp > CMakeFiles/test.dir/src/contigencycase_problem.cpp.i
 
 CMakeFiles/test.dir/src/contigencycase_problem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/contigencycase_problem.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contigencycase_problem.cpp -o CMakeFiles/test.dir/src/contigencycase_problem.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contigencycase_problem.cpp -o CMakeFiles/test.dir/src/contigencycase_problem.cpp.s
 
 CMakeFiles/test.dir/src/contingency.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/contingency.cpp.o: src/contingency.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/test.dir/src/contingency.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/contingency.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contingency.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/contingency.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contingency.cpp
 
 CMakeFiles/test.dir/src/contingency.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/contingency.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contingency.cpp > CMakeFiles/test.dir/src/contingency.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contingency.cpp > CMakeFiles/test.dir/src/contingency.cpp.i
 
 CMakeFiles/test.dir/src/contingency.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/contingency.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contingency.cpp -o CMakeFiles/test.dir/src/contingency.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contingency.cpp -o CMakeFiles/test.dir/src/contingency.cpp.s
 
 CMakeFiles/test.dir/src/data.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/data.cpp.o: src/data.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/test.dir/src/data.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/data.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/data.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/data.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/data.cpp
 
 CMakeFiles/test.dir/src/data.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/data.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/data.cpp > CMakeFiles/test.dir/src/data.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/data.cpp > CMakeFiles/test.dir/src/data.cpp.i
 
 CMakeFiles/test.dir/src/data.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/data.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/data.cpp -o CMakeFiles/test.dir/src/data.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/data.cpp -o CMakeFiles/test.dir/src/data.cpp.s
 
 CMakeFiles/test.dir/src/fixedshunt.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/fixedshunt.cpp.o: src/fixedshunt.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/test.dir/src/fixedshunt.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/fixedshunt.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/fixedshunt.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/fixedshunt.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/fixedshunt.cpp
 
 CMakeFiles/test.dir/src/fixedshunt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/fixedshunt.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/fixedshunt.cpp > CMakeFiles/test.dir/src/fixedshunt.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/fixedshunt.cpp > CMakeFiles/test.dir/src/fixedshunt.cpp.i
 
 CMakeFiles/test.dir/src/fixedshunt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/fixedshunt.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/fixedshunt.cpp -o CMakeFiles/test.dir/src/fixedshunt.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/fixedshunt.cpp -o CMakeFiles/test.dir/src/fixedshunt.cpp.s
 
 CMakeFiles/test.dir/src/gen_costs.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/gen_costs.cpp.o: src/gen_costs.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/test.dir/src/gen_costs.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/gen_costs.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/gen_costs.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs.cpp
 
 CMakeFiles/test.dir/src/gen_costs.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/gen_costs.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs.cpp > CMakeFiles/test.dir/src/gen_costs.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs.cpp > CMakeFiles/test.dir/src/gen_costs.cpp.i
 
 CMakeFiles/test.dir/src/gen_costs.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/gen_costs.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs.cpp -o CMakeFiles/test.dir/src/gen_costs.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs.cpp -o CMakeFiles/test.dir/src/gen_costs.cpp.s
 
 CMakeFiles/test.dir/src/gen_costs_con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/gen_costs_con.cpp.o: src/gen_costs_con.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/test.dir/src/gen_costs_con.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/gen_costs_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs_con.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/gen_costs_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs_con.cpp
 
 CMakeFiles/test.dir/src/gen_costs_con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/gen_costs_con.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs_con.cpp > CMakeFiles/test.dir/src/gen_costs_con.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs_con.cpp > CMakeFiles/test.dir/src/gen_costs_con.cpp.i
 
 CMakeFiles/test.dir/src/gen_costs_con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/gen_costs_con.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs_con.cpp -o CMakeFiles/test.dir/src/gen_costs_con.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs_con.cpp -o CMakeFiles/test.dir/src/gen_costs_con.cpp.s
 
 CMakeFiles/test.dir/src/generator.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/generator.cpp.o: src/generator.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/test.dir/src/generator.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator.cpp
 
 CMakeFiles/test.dir/src/generator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/generator.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator.cpp > CMakeFiles/test.dir/src/generator.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator.cpp > CMakeFiles/test.dir/src/generator.cpp.i
 
 CMakeFiles/test.dir/src/generator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/generator.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator.cpp -o CMakeFiles/test.dir/src/generator.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator.cpp -o CMakeFiles/test.dir/src/generator.cpp.s
 
 CMakeFiles/test.dir/src/generator_constraints.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/generator_constraints.cpp.o: src/generator_constraints.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/test.dir/src/generator_constraints.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator_constraints.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator_constraints.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints.cpp
 
 CMakeFiles/test.dir/src/generator_constraints.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/generator_constraints.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints.cpp > CMakeFiles/test.dir/src/generator_constraints.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints.cpp > CMakeFiles/test.dir/src/generator_constraints.cpp.i
 
 CMakeFiles/test.dir/src/generator_constraints.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/generator_constraints.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints.cpp -o CMakeFiles/test.dir/src/generator_constraints.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints.cpp -o CMakeFiles/test.dir/src/generator_constraints.cpp.s
 
 CMakeFiles/test.dir/src/generator_constraints_con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/generator_constraints_con.cpp.o: src/generator_constraints_con.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/test.dir/src/generator_constraints_con.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator_constraints_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints_con.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator_constraints_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints_con.cpp
 
 CMakeFiles/test.dir/src/generator_constraints_con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/generator_constraints_con.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints_con.cpp > CMakeFiles/test.dir/src/generator_constraints_con.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints_con.cpp > CMakeFiles/test.dir/src/generator_constraints_con.cpp.i
 
 CMakeFiles/test.dir/src/generator_constraints_con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/generator_constraints_con.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints_con.cpp -o CMakeFiles/test.dir/src/generator_constraints_con.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints_con.cpp -o CMakeFiles/test.dir/src/generator_constraints_con.cpp.s
 
 CMakeFiles/test.dir/src/generator_variables.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/generator_variables.cpp.o: src/generator_variables.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/test.dir/src/generator_variables.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables.cpp
 
 CMakeFiles/test.dir/src/generator_variables.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/generator_variables.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables.cpp > CMakeFiles/test.dir/src/generator_variables.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables.cpp > CMakeFiles/test.dir/src/generator_variables.cpp.i
 
 CMakeFiles/test.dir/src/generator_variables.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/generator_variables.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables.cpp -o CMakeFiles/test.dir/src/generator_variables.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables.cpp -o CMakeFiles/test.dir/src/generator_variables.cpp.s
 
 CMakeFiles/test.dir/src/generator_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/generator_variables_con.cpp.o: src/generator_variables_con.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/test.dir/src/generator_variables_con.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables_con.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables_con.cpp
 
 CMakeFiles/test.dir/src/generator_variables_con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/generator_variables_con.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables_con.cpp > CMakeFiles/test.dir/src/generator_variables_con.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables_con.cpp > CMakeFiles/test.dir/src/generator_variables_con.cpp.i
 
 CMakeFiles/test.dir/src/generator_variables_con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/generator_variables_con.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables_con.cpp -o CMakeFiles/test.dir/src/generator_variables_con.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables_con.cpp -o CMakeFiles/test.dir/src/generator_variables_con.cpp.s
 
 CMakeFiles/test.dir/src/generatoroutevent.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/generatoroutevent.cpp.o: src/generatoroutevent.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/test.dir/src/generatoroutevent.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generatoroutevent.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generatoroutevent.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generatoroutevent.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generatoroutevent.cpp
 
 CMakeFiles/test.dir/src/generatoroutevent.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/generatoroutevent.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generatoroutevent.cpp > CMakeFiles/test.dir/src/generatoroutevent.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generatoroutevent.cpp > CMakeFiles/test.dir/src/generatoroutevent.cpp.i
 
 CMakeFiles/test.dir/src/generatoroutevent.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/generatoroutevent.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generatoroutevent.cpp -o CMakeFiles/test.dir/src/generatoroutevent.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generatoroutevent.cpp -o CMakeFiles/test.dir/src/generatoroutevent.cpp.s
 
 CMakeFiles/test.dir/src/line.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/line.cpp.o: src/line.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/test.dir/src/line.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line.cpp
 
 CMakeFiles/test.dir/src/line.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/line.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line.cpp > CMakeFiles/test.dir/src/line.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line.cpp > CMakeFiles/test.dir/src/line.cpp.i
 
 CMakeFiles/test.dir/src/line.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/line.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line.cpp -o CMakeFiles/test.dir/src/line.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line.cpp -o CMakeFiles/test.dir/src/line.cpp.s
 
 CMakeFiles/test.dir/src/line_constraints.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/line_constraints.cpp.o: src/line_constraints.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/test.dir/src/line_constraints.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_constraints.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_constraints.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints.cpp
 
 CMakeFiles/test.dir/src/line_constraints.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/line_constraints.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints.cpp > CMakeFiles/test.dir/src/line_constraints.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints.cpp > CMakeFiles/test.dir/src/line_constraints.cpp.i
 
 CMakeFiles/test.dir/src/line_constraints.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/line_constraints.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints.cpp -o CMakeFiles/test.dir/src/line_constraints.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints.cpp -o CMakeFiles/test.dir/src/line_constraints.cpp.s
 
 CMakeFiles/test.dir/src/line_constraints_con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/line_constraints_con.cpp.o: src/line_constraints_con.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/test.dir/src/line_constraints_con.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_constraints_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints_con.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_constraints_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints_con.cpp
 
 CMakeFiles/test.dir/src/line_constraints_con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/line_constraints_con.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints_con.cpp > CMakeFiles/test.dir/src/line_constraints_con.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints_con.cpp > CMakeFiles/test.dir/src/line_constraints_con.cpp.i
 
 CMakeFiles/test.dir/src/line_constraints_con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/line_constraints_con.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints_con.cpp -o CMakeFiles/test.dir/src/line_constraints_con.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints_con.cpp -o CMakeFiles/test.dir/src/line_constraints_con.cpp.s
 
 CMakeFiles/test.dir/src/line_costs.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/line_costs.cpp.o: src/line_costs.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/test.dir/src/line_costs.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_costs.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_costs.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs.cpp
 
 CMakeFiles/test.dir/src/line_costs.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/line_costs.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs.cpp > CMakeFiles/test.dir/src/line_costs.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs.cpp > CMakeFiles/test.dir/src/line_costs.cpp.i
 
 CMakeFiles/test.dir/src/line_costs.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/line_costs.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs.cpp -o CMakeFiles/test.dir/src/line_costs.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs.cpp -o CMakeFiles/test.dir/src/line_costs.cpp.s
 
 CMakeFiles/test.dir/src/line_costs_con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/line_costs_con.cpp.o: src/line_costs_con.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/test.dir/src/line_costs_con.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_costs_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs_con.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_costs_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs_con.cpp
 
 CMakeFiles/test.dir/src/line_costs_con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/line_costs_con.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs_con.cpp > CMakeFiles/test.dir/src/line_costs_con.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs_con.cpp > CMakeFiles/test.dir/src/line_costs_con.cpp.i
 
 CMakeFiles/test.dir/src/line_costs_con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/line_costs_con.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs_con.cpp -o CMakeFiles/test.dir/src/line_costs_con.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs_con.cpp -o CMakeFiles/test.dir/src/line_costs_con.cpp.s
 
 CMakeFiles/test.dir/src/line_variables.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/line_variables.cpp.o: src/line_variables.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/test.dir/src/line_variables.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables.cpp
 
 CMakeFiles/test.dir/src/line_variables.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/line_variables.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables.cpp > CMakeFiles/test.dir/src/line_variables.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables.cpp > CMakeFiles/test.dir/src/line_variables.cpp.i
 
 CMakeFiles/test.dir/src/line_variables.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/line_variables.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables.cpp -o CMakeFiles/test.dir/src/line_variables.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables.cpp -o CMakeFiles/test.dir/src/line_variables.cpp.s
 
 CMakeFiles/test.dir/src/line_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/line_variables_con.cpp.o: src/line_variables_con.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/test.dir/src/line_variables_con.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables_con.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables_con.cpp
 
 CMakeFiles/test.dir/src/line_variables_con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/line_variables_con.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables_con.cpp > CMakeFiles/test.dir/src/line_variables_con.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables_con.cpp > CMakeFiles/test.dir/src/line_variables_con.cpp.i
 
 CMakeFiles/test.dir/src/line_variables_con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/line_variables_con.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables_con.cpp -o CMakeFiles/test.dir/src/line_variables_con.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables_con.cpp -o CMakeFiles/test.dir/src/line_variables_con.cpp.s
 
 CMakeFiles/test.dir/src/load.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/load.cpp.o: src/load.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/test.dir/src/load.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load.cpp
 
 CMakeFiles/test.dir/src/load.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/load.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load.cpp > CMakeFiles/test.dir/src/load.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load.cpp > CMakeFiles/test.dir/src/load.cpp.i
 
 CMakeFiles/test.dir/src/load.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/load.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load.cpp -o CMakeFiles/test.dir/src/load.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load.cpp -o CMakeFiles/test.dir/src/load.cpp.s
 
 CMakeFiles/test.dir/src/load_constraints.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/load_constraints.cpp.o: src/load_constraints.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/test.dir/src/load_constraints.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_constraints.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_constraints.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints.cpp
 
 CMakeFiles/test.dir/src/load_constraints.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/load_constraints.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints.cpp > CMakeFiles/test.dir/src/load_constraints.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints.cpp > CMakeFiles/test.dir/src/load_constraints.cpp.i
 
 CMakeFiles/test.dir/src/load_constraints.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/load_constraints.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints.cpp -o CMakeFiles/test.dir/src/load_constraints.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints.cpp -o CMakeFiles/test.dir/src/load_constraints.cpp.s
 
 CMakeFiles/test.dir/src/load_constraints_con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/load_constraints_con.cpp.o: src/load_constraints_con.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/test.dir/src/load_constraints_con.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_constraints_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints_con.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_constraints_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints_con.cpp
 
 CMakeFiles/test.dir/src/load_constraints_con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/load_constraints_con.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints_con.cpp > CMakeFiles/test.dir/src/load_constraints_con.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints_con.cpp > CMakeFiles/test.dir/src/load_constraints_con.cpp.i
 
 CMakeFiles/test.dir/src/load_constraints_con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/load_constraints_con.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints_con.cpp -o CMakeFiles/test.dir/src/load_constraints_con.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints_con.cpp -o CMakeFiles/test.dir/src/load_constraints_con.cpp.s
 
 CMakeFiles/test.dir/src/load_costs.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/load_costs.cpp.o: src/load_costs.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/test.dir/src/load_costs.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_costs.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_costs.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs.cpp
 
 CMakeFiles/test.dir/src/load_costs.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/load_costs.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs.cpp > CMakeFiles/test.dir/src/load_costs.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs.cpp > CMakeFiles/test.dir/src/load_costs.cpp.i
 
 CMakeFiles/test.dir/src/load_costs.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/load_costs.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs.cpp -o CMakeFiles/test.dir/src/load_costs.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs.cpp -o CMakeFiles/test.dir/src/load_costs.cpp.s
 
 CMakeFiles/test.dir/src/load_costs_con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/load_costs_con.cpp.o: src/load_costs_con.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/test.dir/src/load_costs_con.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_costs_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs_con.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_costs_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs_con.cpp
 
 CMakeFiles/test.dir/src/load_costs_con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/load_costs_con.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs_con.cpp > CMakeFiles/test.dir/src/load_costs_con.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs_con.cpp > CMakeFiles/test.dir/src/load_costs_con.cpp.i
 
 CMakeFiles/test.dir/src/load_costs_con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/load_costs_con.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs_con.cpp -o CMakeFiles/test.dir/src/load_costs_con.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs_con.cpp -o CMakeFiles/test.dir/src/load_costs_con.cpp.s
 
 CMakeFiles/test.dir/src/load_variables.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/load_variables.cpp.o: src/load_variables.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/test.dir/src/load_variables.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables.cpp
 
 CMakeFiles/test.dir/src/load_variables.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/load_variables.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables.cpp > CMakeFiles/test.dir/src/load_variables.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables.cpp > CMakeFiles/test.dir/src/load_variables.cpp.i
 
 CMakeFiles/test.dir/src/load_variables.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/load_variables.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables.cpp -o CMakeFiles/test.dir/src/load_variables.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables.cpp -o CMakeFiles/test.dir/src/load_variables.cpp.s
 
 CMakeFiles/test.dir/src/load_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/load_variables_con.cpp.o: src/load_variables_con.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/test.dir/src/load_variables_con.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables_con.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables_con.cpp
 
 CMakeFiles/test.dir/src/load_variables_con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/load_variables_con.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables_con.cpp > CMakeFiles/test.dir/src/load_variables_con.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables_con.cpp > CMakeFiles/test.dir/src/load_variables_con.cpp.i
 
 CMakeFiles/test.dir/src/load_variables_con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/load_variables_con.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables_con.cpp -o CMakeFiles/test.dir/src/load_variables_con.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables_con.cpp -o CMakeFiles/test.dir/src/load_variables_con.cpp.s
 
 CMakeFiles/test.dir/src/nontransformerbranch.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/nontransformerbranch.cpp.o: src/nontransformerbranch.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/test.dir/src/nontransformerbranch.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/nontransformerbranch.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/nontransformerbranch.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/nontransformerbranch.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/nontransformerbranch.cpp
 
 CMakeFiles/test.dir/src/nontransformerbranch.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/nontransformerbranch.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/nontransformerbranch.cpp > CMakeFiles/test.dir/src/nontransformerbranch.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/nontransformerbranch.cpp > CMakeFiles/test.dir/src/nontransformerbranch.cpp.i
 
 CMakeFiles/test.dir/src/nontransformerbranch.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/nontransformerbranch.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/nontransformerbranch.cpp -o CMakeFiles/test.dir/src/nontransformerbranch.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/nontransformerbranch.cpp -o CMakeFiles/test.dir/src/nontransformerbranch.cpp.s
 
 CMakeFiles/test.dir/src/owner.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/owner.cpp.o: src/owner.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/test.dir/src/owner.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/owner.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/owner.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/owner.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/owner.cpp
 
 CMakeFiles/test.dir/src/owner.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/owner.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/owner.cpp > CMakeFiles/test.dir/src/owner.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/owner.cpp > CMakeFiles/test.dir/src/owner.cpp.i
 
 CMakeFiles/test.dir/src/owner.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/owner.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/owner.cpp -o CMakeFiles/test.dir/src/owner.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/owner.cpp -o CMakeFiles/test.dir/src/owner.cpp.s
 
 CMakeFiles/test.dir/src/raw.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/raw.cpp.o: src/raw.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/test.dir/src/raw.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/raw.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/raw.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/raw.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/raw.cpp
 
 CMakeFiles/test.dir/src/raw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/raw.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/raw.cpp > CMakeFiles/test.dir/src/raw.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/raw.cpp > CMakeFiles/test.dir/src/raw.cpp.i
 
 CMakeFiles/test.dir/src/raw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/raw.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/raw.cpp -o CMakeFiles/test.dir/src/raw.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/raw.cpp -o CMakeFiles/test.dir/src/raw.cpp.s
 
 CMakeFiles/test.dir/src/sup.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup.cpp.o: src/sup.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/test.dir/src/sup.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup.cpp
 
 CMakeFiles/test.dir/src/sup.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup.cpp > CMakeFiles/test.dir/src/sup.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup.cpp > CMakeFiles/test.dir/src/sup.cpp.i
 
 CMakeFiles/test.dir/src/sup.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup.cpp -o CMakeFiles/test.dir/src/sup.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup.cpp -o CMakeFiles/test.dir/src/sup.cpp.s
 
 CMakeFiles/test.dir/src/sup_cblock.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_cblock.cpp.o: src/sup_cblock.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/test.dir/src/sup_cblock.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_cblock.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_cblock.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_cblock.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_cblock.cpp
 
 CMakeFiles/test.dir/src/sup_cblock.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup_cblock.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_cblock.cpp > CMakeFiles/test.dir/src/sup_cblock.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_cblock.cpp > CMakeFiles/test.dir/src/sup_cblock.cpp.i
 
 CMakeFiles/test.dir/src/sup_cblock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup_cblock.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_cblock.cpp -o CMakeFiles/test.dir/src/sup_cblock.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_cblock.cpp -o CMakeFiles/test.dir/src/sup_cblock.cpp.s
 
 CMakeFiles/test.dir/src/sup_generator.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_generator.cpp.o: src/sup_generator.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/test.dir/src/sup_generator.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_generator.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_generator.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_generator.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_generator.cpp
 
 CMakeFiles/test.dir/src/sup_generator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup_generator.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_generator.cpp > CMakeFiles/test.dir/src/sup_generator.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_generator.cpp > CMakeFiles/test.dir/src/sup_generator.cpp.i
 
 CMakeFiles/test.dir/src/sup_generator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup_generator.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_generator.cpp -o CMakeFiles/test.dir/src/sup_generator.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_generator.cpp -o CMakeFiles/test.dir/src/sup_generator.cpp.s
 
 CMakeFiles/test.dir/src/sup_line.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_line.cpp.o: src/sup_line.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/test.dir/src/sup_line.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_line.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_line.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_line.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_line.cpp
 
 CMakeFiles/test.dir/src/sup_line.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup_line.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_line.cpp > CMakeFiles/test.dir/src/sup_line.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_line.cpp > CMakeFiles/test.dir/src/sup_line.cpp.i
 
 CMakeFiles/test.dir/src/sup_line.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup_line.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_line.cpp -o CMakeFiles/test.dir/src/sup_line.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_line.cpp -o CMakeFiles/test.dir/src/sup_line.cpp.s
 
 CMakeFiles/test.dir/src/sup_load.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_load.cpp.o: src/sup_load.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/test.dir/src/sup_load.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_load.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_load.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_load.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_load.cpp
 
 CMakeFiles/test.dir/src/sup_load.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup_load.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_load.cpp > CMakeFiles/test.dir/src/sup_load.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_load.cpp > CMakeFiles/test.dir/src/sup_load.cpp.i
 
 CMakeFiles/test.dir/src/sup_load.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup_load.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_load.cpp -o CMakeFiles/test.dir/src/sup_load.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_load.cpp -o CMakeFiles/test.dir/src/sup_load.cpp.s
 
 CMakeFiles/test.dir/src/sup_pcblock.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_pcblock.cpp.o: src/sup_pcblock.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/test.dir/src/sup_pcblock.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_pcblock.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_pcblock.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_pcblock.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_pcblock.cpp
 
 CMakeFiles/test.dir/src/sup_pcblock.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup_pcblock.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_pcblock.cpp > CMakeFiles/test.dir/src/sup_pcblock.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_pcblock.cpp > CMakeFiles/test.dir/src/sup_pcblock.cpp.i
 
 CMakeFiles/test.dir/src/sup_pcblock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup_pcblock.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_pcblock.cpp -o CMakeFiles/test.dir/src/sup_pcblock.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_pcblock.cpp -o CMakeFiles/test.dir/src/sup_pcblock.cpp.s
 
 CMakeFiles/test.dir/src/sup_qcblock.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_qcblock.cpp.o: src/sup_qcblock.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/test.dir/src/sup_qcblock.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_qcblock.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_qcblock.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_qcblock.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_qcblock.cpp
 
 CMakeFiles/test.dir/src/sup_qcblock.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup_qcblock.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_qcblock.cpp > CMakeFiles/test.dir/src/sup_qcblock.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_qcblock.cpp > CMakeFiles/test.dir/src/sup_qcblock.cpp.i
 
 CMakeFiles/test.dir/src/sup_qcblock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup_qcblock.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_qcblock.cpp -o CMakeFiles/test.dir/src/sup_qcblock.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_qcblock.cpp -o CMakeFiles/test.dir/src/sup_qcblock.cpp.s
 
 CMakeFiles/test.dir/src/sup_scblock.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_scblock.cpp.o: src/sup_scblock.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/test.dir/src/sup_scblock.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_scblock.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_scblock.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_scblock.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_scblock.cpp
 
 CMakeFiles/test.dir/src/sup_scblock.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup_scblock.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_scblock.cpp > CMakeFiles/test.dir/src/sup_scblock.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_scblock.cpp > CMakeFiles/test.dir/src/sup_scblock.cpp.i
 
 CMakeFiles/test.dir/src/sup_scblock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup_scblock.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_scblock.cpp -o CMakeFiles/test.dir/src/sup_scblock.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_scblock.cpp -o CMakeFiles/test.dir/src/sup_scblock.cpp.s
 
 CMakeFiles/test.dir/src/sup_transformer.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_transformer.cpp.o: src/sup_transformer.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/test.dir/src/sup_transformer.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_transformer.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_transformer.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_transformer.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_transformer.cpp
 
 CMakeFiles/test.dir/src/sup_transformer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup_transformer.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_transformer.cpp > CMakeFiles/test.dir/src/sup_transformer.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_transformer.cpp > CMakeFiles/test.dir/src/sup_transformer.cpp.i
 
 CMakeFiles/test.dir/src/sup_transformer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup_transformer.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_transformer.cpp -o CMakeFiles/test.dir/src/sup_transformer.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_transformer.cpp -o CMakeFiles/test.dir/src/sup_transformer.cpp.s
 
 CMakeFiles/test.dir/src/switchedshunt.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/switchedshunt.cpp.o: src/switchedshunt.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/test.dir/src/switchedshunt.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/switchedshunt.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchedshunt.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/switchedshunt.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchedshunt.cpp
 
 CMakeFiles/test.dir/src/switchedshunt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/switchedshunt.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchedshunt.cpp > CMakeFiles/test.dir/src/switchedshunt.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchedshunt.cpp > CMakeFiles/test.dir/src/switchedshunt.cpp.i
 
 CMakeFiles/test.dir/src/switchedshunt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/switchedshunt.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchedshunt.cpp -o CMakeFiles/test.dir/src/switchedshunt.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchedshunt.cpp -o CMakeFiles/test.dir/src/switchedshunt.cpp.s
 
 CMakeFiles/test.dir/src/switchshunt_variables.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/switchshunt_variables.cpp.o: src/switchshunt_variables.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/test.dir/src/switchshunt_variables.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/switchshunt_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/switchshunt_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables.cpp
 
 CMakeFiles/test.dir/src/switchshunt_variables.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/switchshunt_variables.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables.cpp > CMakeFiles/test.dir/src/switchshunt_variables.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables.cpp > CMakeFiles/test.dir/src/switchshunt_variables.cpp.i
 
 CMakeFiles/test.dir/src/switchshunt_variables.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/switchshunt_variables.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables.cpp -o CMakeFiles/test.dir/src/switchshunt_variables.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables.cpp -o CMakeFiles/test.dir/src/switchshunt_variables.cpp.s
 
 CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.o: src/switchshunt_variables_con.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables_con.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables_con.cpp
 
 CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables_con.cpp > CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables_con.cpp > CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.i
 
 CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables_con.cpp -o CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables_con.cpp -o CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.s
 
 CMakeFiles/test.dir/src/test.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/test.cpp.o: src/test.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/test.dir/src/test.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/test.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/test.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp
 
 CMakeFiles/test.dir/src/test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/test.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp > CMakeFiles/test.dir/src/test.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp > CMakeFiles/test.dir/src/test.cpp.i
 
 CMakeFiles/test.dir/src/test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/test.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp -o CMakeFiles/test.dir/src/test.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp -o CMakeFiles/test.dir/src/test.cpp.s
 
 CMakeFiles/test.dir/src/test_param.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/test_param.cpp.o: src/test_param.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/test.dir/src/test_param.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/test_param.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test_param.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/test_param.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test_param.cpp
 
 CMakeFiles/test.dir/src/test_param.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/test_param.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test_param.cpp > CMakeFiles/test.dir/src/test_param.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test_param.cpp > CMakeFiles/test.dir/src/test_param.cpp.i
 
 CMakeFiles/test.dir/src/test_param.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/test_param.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test_param.cpp -o CMakeFiles/test.dir/src/test_param.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test_param.cpp -o CMakeFiles/test.dir/src/test_param.cpp.s
 
 CMakeFiles/test.dir/src/transformer.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/transformer.cpp.o: src/transformer.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/test.dir/src/transformer.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer.cpp
 
 CMakeFiles/test.dir/src/transformer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/transformer.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer.cpp > CMakeFiles/test.dir/src/transformer.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer.cpp > CMakeFiles/test.dir/src/transformer.cpp.i
 
 CMakeFiles/test.dir/src/transformer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/transformer.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer.cpp -o CMakeFiles/test.dir/src/transformer.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer.cpp -o CMakeFiles/test.dir/src/transformer.cpp.s
 
 CMakeFiles/test.dir/src/transformer_constraints.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/transformer_constraints.cpp.o: src/transformer_constraints.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/test.dir/src/transformer_constraints.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_constraints.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_constraints.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints.cpp
 
 CMakeFiles/test.dir/src/transformer_constraints.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/transformer_constraints.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints.cpp > CMakeFiles/test.dir/src/transformer_constraints.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints.cpp > CMakeFiles/test.dir/src/transformer_constraints.cpp.i
 
 CMakeFiles/test.dir/src/transformer_constraints.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/transformer_constraints.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints.cpp -o CMakeFiles/test.dir/src/transformer_constraints.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints.cpp -o CMakeFiles/test.dir/src/transformer_constraints.cpp.s
 
 CMakeFiles/test.dir/src/transformer_constraints_con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/transformer_constraints_con.cpp.o: src/transformer_constraints_con.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/test.dir/src/transformer_constraints_con.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_constraints_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints_con.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_constraints_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints_con.cpp
 
 CMakeFiles/test.dir/src/transformer_constraints_con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/transformer_constraints_con.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints_con.cpp > CMakeFiles/test.dir/src/transformer_constraints_con.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints_con.cpp > CMakeFiles/test.dir/src/transformer_constraints_con.cpp.i
 
 CMakeFiles/test.dir/src/transformer_constraints_con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/transformer_constraints_con.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints_con.cpp -o CMakeFiles/test.dir/src/transformer_constraints_con.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints_con.cpp -o CMakeFiles/test.dir/src/transformer_constraints_con.cpp.s
 
 CMakeFiles/test.dir/src/transformer_costs.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/transformer_costs.cpp.o: src/transformer_costs.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/test.dir/src/transformer_costs.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_costs.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_costs.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs.cpp
 
 CMakeFiles/test.dir/src/transformer_costs.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/transformer_costs.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs.cpp > CMakeFiles/test.dir/src/transformer_costs.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs.cpp > CMakeFiles/test.dir/src/transformer_costs.cpp.i
 
 CMakeFiles/test.dir/src/transformer_costs.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/transformer_costs.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs.cpp -o CMakeFiles/test.dir/src/transformer_costs.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs.cpp -o CMakeFiles/test.dir/src/transformer_costs.cpp.s
 
 CMakeFiles/test.dir/src/transformer_costs_con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/transformer_costs_con.cpp.o: src/transformer_costs_con.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/test.dir/src/transformer_costs_con.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_costs_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs_con.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_costs_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs_con.cpp
 
 CMakeFiles/test.dir/src/transformer_costs_con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/transformer_costs_con.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs_con.cpp > CMakeFiles/test.dir/src/transformer_costs_con.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs_con.cpp > CMakeFiles/test.dir/src/transformer_costs_con.cpp.i
 
 CMakeFiles/test.dir/src/transformer_costs_con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/transformer_costs_con.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs_con.cpp -o CMakeFiles/test.dir/src/transformer_costs_con.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs_con.cpp -o CMakeFiles/test.dir/src/transformer_costs_con.cpp.s
 
 CMakeFiles/test.dir/src/transformer_variables.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/transformer_variables.cpp.o: src/transformer_variables.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/test.dir/src/transformer_variables.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables.cpp
 
 CMakeFiles/test.dir/src/transformer_variables.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/transformer_variables.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables.cpp > CMakeFiles/test.dir/src/transformer_variables.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables.cpp > CMakeFiles/test.dir/src/transformer_variables.cpp.i
 
 CMakeFiles/test.dir/src/transformer_variables.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/transformer_variables.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables.cpp -o CMakeFiles/test.dir/src/transformer_variables.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables.cpp -o CMakeFiles/test.dir/src/transformer_variables.cpp.s
 
 CMakeFiles/test.dir/src/transformer_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/transformer_variables_con.cpp.o: src/transformer_variables_con.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/test.dir/src/transformer_variables_con.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables_con.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables_con.cpp
 
 CMakeFiles/test.dir/src/transformer_variables_con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/transformer_variables_con.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables_con.cpp > CMakeFiles/test.dir/src/transformer_variables_con.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables_con.cpp > CMakeFiles/test.dir/src/transformer_variables_con.cpp.i
 
 CMakeFiles/test.dir/src/transformer_variables_con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/transformer_variables_con.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables_con.cpp -o CMakeFiles/test.dir/src/transformer_variables_con.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables_con.cpp -o CMakeFiles/test.dir/src/transformer_variables_con.cpp.s
 
 CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o: src/transformerimpedancecorrectiontable.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformerimpedancecorrectiontable.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformerimpedancecorrectiontable.cpp
 
 CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformerimpedancecorrectiontable.cpp > CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformerimpedancecorrectiontable.cpp > CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.i
 
 CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformerimpedancecorrectiontable.cpp -o CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformerimpedancecorrectiontable.cpp -o CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.s
 
 CMakeFiles/test.dir/src/wrapper_construct.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/wrapper_construct.cpp.o: src/wrapper_construct.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/test.dir/src/wrapper_construct.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/wrapper_construct.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/wrapper_construct.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.cpp
 
 CMakeFiles/test.dir/src/wrapper_construct.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/wrapper_construct.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.cpp > CMakeFiles/test.dir/src/wrapper_construct.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.cpp > CMakeFiles/test.dir/src/wrapper_construct.cpp.i
 
 CMakeFiles/test.dir/src/wrapper_construct.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/wrapper_construct.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.cpp -o CMakeFiles/test.dir/src/wrapper_construct.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.cpp -o CMakeFiles/test.dir/src/wrapper_construct.cpp.s
 
 CMakeFiles/test.dir/src/zone.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/zone.cpp.o: src/zone.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/test.dir/src/zone.cpp.o"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/zone.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/zone.cpp
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/zone.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/zone.cpp
 
 CMakeFiles/test.dir/src/zone.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/zone.cpp.i"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/zone.cpp > CMakeFiles/test.dir/src/zone.cpp.i
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/zone.cpp > CMakeFiles/test.dir/src/zone.cpp.i
 
 CMakeFiles/test.dir/src/zone.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/zone.cpp.s"
-	/usr/local/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/zone.cpp -o CMakeFiles/test.dir/src/zone.cpp.s
+	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/zone.cpp -o CMakeFiles/test.dir/src/zone.cpp.s
 
 # Object files for target test
 test_OBJECTS = \
