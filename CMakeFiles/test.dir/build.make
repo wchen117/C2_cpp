@@ -53,19 +53,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /gpfs/group/RISE/sw7/cmake-3.19-intel-19.1.2/cmake-3.19.6/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /gpfs/group/RISE/sw7/cmake-3.19-intel-19.1.2/cmake-3.19.6/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/wchen/Projects/GOC_competition/C2_cpp_code
+CMAKE_SOURCE_DIR = /gpfs/group/vvs3/default/Weinan/C2_cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/wchen/Projects/GOC_competition/C2_cpp_code
+CMAKE_BINARY_DIR = /gpfs/group/vvs3/default/Weinan/C2_cpp
 
 # Include any dependencies generated for this target.
 include CMakeFiles/test.dir/depend.make
@@ -78,848 +78,848 @@ include CMakeFiles/test.dir/flags.make
 
 CMakeFiles/test.dir/src/area.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/area.cpp.o: src/area.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test.dir/src/area.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/area.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/area.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test.dir/src/area.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/area.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/area.cpp
 
 CMakeFiles/test.dir/src/area.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/area.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/area.cpp > CMakeFiles/test.dir/src/area.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/area.cpp > CMakeFiles/test.dir/src/area.cpp.i
 
 CMakeFiles/test.dir/src/area.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/area.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/area.cpp -o CMakeFiles/test.dir/src/area.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/area.cpp -o CMakeFiles/test.dir/src/area.cpp.s
 
 CMakeFiles/test.dir/src/basecase_problem.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/basecase_problem.cpp.o: src/basecase_problem.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/src/basecase_problem.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/basecase_problem.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/basecase_problem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/src/basecase_problem.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/basecase_problem.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/basecase_problem.cpp
 
 CMakeFiles/test.dir/src/basecase_problem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/basecase_problem.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/basecase_problem.cpp > CMakeFiles/test.dir/src/basecase_problem.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/basecase_problem.cpp > CMakeFiles/test.dir/src/basecase_problem.cpp.i
 
 CMakeFiles/test.dir/src/basecase_problem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/basecase_problem.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/basecase_problem.cpp -o CMakeFiles/test.dir/src/basecase_problem.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/basecase_problem.cpp -o CMakeFiles/test.dir/src/basecase_problem.cpp.s
 
 CMakeFiles/test.dir/src/branchoutevent.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/branchoutevent.cpp.o: src/branchoutevent.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/src/branchoutevent.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/branchoutevent.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/branchoutevent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/src/branchoutevent.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/branchoutevent.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/branchoutevent.cpp
 
 CMakeFiles/test.dir/src/branchoutevent.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/branchoutevent.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/branchoutevent.cpp > CMakeFiles/test.dir/src/branchoutevent.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/branchoutevent.cpp > CMakeFiles/test.dir/src/branchoutevent.cpp.i
 
 CMakeFiles/test.dir/src/branchoutevent.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/branchoutevent.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/branchoutevent.cpp -o CMakeFiles/test.dir/src/branchoutevent.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/branchoutevent.cpp -o CMakeFiles/test.dir/src/branchoutevent.cpp.s
 
 CMakeFiles/test.dir/src/bus.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/bus.cpp.o: src/bus.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test.dir/src/bus.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test.dir/src/bus.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/bus.cpp
 
 CMakeFiles/test.dir/src/bus.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/bus.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus.cpp > CMakeFiles/test.dir/src/bus.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/bus.cpp > CMakeFiles/test.dir/src/bus.cpp.i
 
 CMakeFiles/test.dir/src/bus.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/bus.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus.cpp -o CMakeFiles/test.dir/src/bus.cpp.s
-
-CMakeFiles/test.dir/src/bus_constraints.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/bus_constraints.cpp.o: src/bus_constraints.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test.dir/src/bus_constraints.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_constraints.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints.cpp
-
-CMakeFiles/test.dir/src/bus_constraints.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/bus_constraints.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints.cpp > CMakeFiles/test.dir/src/bus_constraints.cpp.i
-
-CMakeFiles/test.dir/src/bus_constraints.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/bus_constraints.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints.cpp -o CMakeFiles/test.dir/src/bus_constraints.cpp.s
-
-CMakeFiles/test.dir/src/bus_constraints_con.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/bus_constraints_con.cpp.o: src/bus_constraints_con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test.dir/src/bus_constraints_con.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_constraints_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints_con.cpp
-
-CMakeFiles/test.dir/src/bus_constraints_con.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/bus_constraints_con.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints_con.cpp > CMakeFiles/test.dir/src/bus_constraints_con.cpp.i
-
-CMakeFiles/test.dir/src/bus_constraints_con.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/bus_constraints_con.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_constraints_con.cpp -o CMakeFiles/test.dir/src/bus_constraints_con.cpp.s
-
-CMakeFiles/test.dir/src/bus_costs.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/bus_costs.cpp.o: src/bus_costs.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/test.dir/src/bus_costs.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_costs.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs.cpp
-
-CMakeFiles/test.dir/src/bus_costs.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/bus_costs.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs.cpp > CMakeFiles/test.dir/src/bus_costs.cpp.i
-
-CMakeFiles/test.dir/src/bus_costs.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/bus_costs.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs.cpp -o CMakeFiles/test.dir/src/bus_costs.cpp.s
-
-CMakeFiles/test.dir/src/bus_costs_con.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/bus_costs_con.cpp.o: src/bus_costs_con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test.dir/src/bus_costs_con.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_costs_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs_con.cpp
-
-CMakeFiles/test.dir/src/bus_costs_con.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/bus_costs_con.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs_con.cpp > CMakeFiles/test.dir/src/bus_costs_con.cpp.i
-
-CMakeFiles/test.dir/src/bus_costs_con.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/bus_costs_con.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_costs_con.cpp -o CMakeFiles/test.dir/src/bus_costs_con.cpp.s
-
-CMakeFiles/test.dir/src/bus_variables.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/bus_variables.cpp.o: src/bus_variables.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/test.dir/src/bus_variables.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables.cpp
-
-CMakeFiles/test.dir/src/bus_variables.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/bus_variables.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables.cpp > CMakeFiles/test.dir/src/bus_variables.cpp.i
-
-CMakeFiles/test.dir/src/bus_variables.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/bus_variables.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables.cpp -o CMakeFiles/test.dir/src/bus_variables.cpp.s
-
-CMakeFiles/test.dir/src/bus_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/bus_variables_con.cpp.o: src/bus_variables_con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/test.dir/src/bus_variables_con.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/bus_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables_con.cpp
-
-CMakeFiles/test.dir/src/bus_variables_con.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/bus_variables_con.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables_con.cpp > CMakeFiles/test.dir/src/bus_variables_con.cpp.i
-
-CMakeFiles/test.dir/src/bus_variables_con.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/bus_variables_con.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/bus_variables_con.cpp -o CMakeFiles/test.dir/src/bus_variables_con.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/bus.cpp -o CMakeFiles/test.dir/src/bus.cpp.s
 
 CMakeFiles/test.dir/src/caseidentification.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/caseidentification.cpp.o: src/caseidentification.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/test.dir/src/caseidentification.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/caseidentification.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/caseidentification.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test.dir/src/caseidentification.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/caseidentification.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/caseidentification.cpp
 
 CMakeFiles/test.dir/src/caseidentification.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/caseidentification.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/caseidentification.cpp > CMakeFiles/test.dir/src/caseidentification.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/caseidentification.cpp > CMakeFiles/test.dir/src/caseidentification.cpp.i
 
 CMakeFiles/test.dir/src/caseidentification.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/caseidentification.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/caseidentification.cpp -o CMakeFiles/test.dir/src/caseidentification.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/caseidentification.cpp -o CMakeFiles/test.dir/src/caseidentification.cpp.s
 
 CMakeFiles/test.dir/src/con.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/con.cpp.o: src/con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/test.dir/src/con.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/con.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test.dir/src/con.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/con.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/con.cpp
 
 CMakeFiles/test.dir/src/con.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/con.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/con.cpp > CMakeFiles/test.dir/src/con.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/con.cpp > CMakeFiles/test.dir/src/con.cpp.i
 
 CMakeFiles/test.dir/src/con.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/con.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/con.cpp -o CMakeFiles/test.dir/src/con.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/con.cpp -o CMakeFiles/test.dir/src/con.cpp.s
+
+CMakeFiles/test.dir/src/constraints/bus_constraints.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/constraints/bus_constraints.cpp.o: src/constraints/bus_constraints.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/test.dir/src/constraints/bus_constraints.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/constraints/bus_constraints.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints/bus_constraints.cpp
+
+CMakeFiles/test.dir/src/constraints/bus_constraints.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/constraints/bus_constraints.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints/bus_constraints.cpp > CMakeFiles/test.dir/src/constraints/bus_constraints.cpp.i
+
+CMakeFiles/test.dir/src/constraints/bus_constraints.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/constraints/bus_constraints.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints/bus_constraints.cpp -o CMakeFiles/test.dir/src/constraints/bus_constraints.cpp.s
+
+CMakeFiles/test.dir/src/constraints/generator_constraints.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/constraints/generator_constraints.cpp.o: src/constraints/generator_constraints.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test.dir/src/constraints/generator_constraints.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/constraints/generator_constraints.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints/generator_constraints.cpp
+
+CMakeFiles/test.dir/src/constraints/generator_constraints.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/constraints/generator_constraints.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints/generator_constraints.cpp > CMakeFiles/test.dir/src/constraints/generator_constraints.cpp.i
+
+CMakeFiles/test.dir/src/constraints/generator_constraints.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/constraints/generator_constraints.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints/generator_constraints.cpp -o CMakeFiles/test.dir/src/constraints/generator_constraints.cpp.s
+
+CMakeFiles/test.dir/src/constraints/line_constraints.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/constraints/line_constraints.cpp.o: src/constraints/line_constraints.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/test.dir/src/constraints/line_constraints.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/constraints/line_constraints.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints/line_constraints.cpp
+
+CMakeFiles/test.dir/src/constraints/line_constraints.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/constraints/line_constraints.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints/line_constraints.cpp > CMakeFiles/test.dir/src/constraints/line_constraints.cpp.i
+
+CMakeFiles/test.dir/src/constraints/line_constraints.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/constraints/line_constraints.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints/line_constraints.cpp -o CMakeFiles/test.dir/src/constraints/line_constraints.cpp.s
+
+CMakeFiles/test.dir/src/constraints/load_constraints.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/constraints/load_constraints.cpp.o: src/constraints/load_constraints.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/test.dir/src/constraints/load_constraints.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/constraints/load_constraints.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints/load_constraints.cpp
+
+CMakeFiles/test.dir/src/constraints/load_constraints.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/constraints/load_constraints.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints/load_constraints.cpp > CMakeFiles/test.dir/src/constraints/load_constraints.cpp.i
+
+CMakeFiles/test.dir/src/constraints/load_constraints.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/constraints/load_constraints.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints/load_constraints.cpp -o CMakeFiles/test.dir/src/constraints/load_constraints.cpp.s
+
+CMakeFiles/test.dir/src/constraints/transformer_constraints.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/constraints/transformer_constraints.cpp.o: src/constraints/transformer_constraints.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/test.dir/src/constraints/transformer_constraints.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/constraints/transformer_constraints.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints/transformer_constraints.cpp
+
+CMakeFiles/test.dir/src/constraints/transformer_constraints.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/constraints/transformer_constraints.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints/transformer_constraints.cpp > CMakeFiles/test.dir/src/constraints/transformer_constraints.cpp.i
+
+CMakeFiles/test.dir/src/constraints/transformer_constraints.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/constraints/transformer_constraints.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints/transformer_constraints.cpp -o CMakeFiles/test.dir/src/constraints/transformer_constraints.cpp.s
+
+CMakeFiles/test.dir/src/constraints_con/bus_constraints_con.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/constraints_con/bus_constraints_con.cpp.o: src/constraints_con/bus_constraints_con.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/test.dir/src/constraints_con/bus_constraints_con.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/constraints_con/bus_constraints_con.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints_con/bus_constraints_con.cpp
+
+CMakeFiles/test.dir/src/constraints_con/bus_constraints_con.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/constraints_con/bus_constraints_con.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints_con/bus_constraints_con.cpp > CMakeFiles/test.dir/src/constraints_con/bus_constraints_con.cpp.i
+
+CMakeFiles/test.dir/src/constraints_con/bus_constraints_con.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/constraints_con/bus_constraints_con.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints_con/bus_constraints_con.cpp -o CMakeFiles/test.dir/src/constraints_con/bus_constraints_con.cpp.s
+
+CMakeFiles/test.dir/src/constraints_con/generator_constraints_con.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/constraints_con/generator_constraints_con.cpp.o: src/constraints_con/generator_constraints_con.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/test.dir/src/constraints_con/generator_constraints_con.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/constraints_con/generator_constraints_con.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints_con/generator_constraints_con.cpp
+
+CMakeFiles/test.dir/src/constraints_con/generator_constraints_con.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/constraints_con/generator_constraints_con.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints_con/generator_constraints_con.cpp > CMakeFiles/test.dir/src/constraints_con/generator_constraints_con.cpp.i
+
+CMakeFiles/test.dir/src/constraints_con/generator_constraints_con.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/constraints_con/generator_constraints_con.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints_con/generator_constraints_con.cpp -o CMakeFiles/test.dir/src/constraints_con/generator_constraints_con.cpp.s
+
+CMakeFiles/test.dir/src/constraints_con/line_constraints_con.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/constraints_con/line_constraints_con.cpp.o: src/constraints_con/line_constraints_con.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/test.dir/src/constraints_con/line_constraints_con.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/constraints_con/line_constraints_con.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints_con/line_constraints_con.cpp
+
+CMakeFiles/test.dir/src/constraints_con/line_constraints_con.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/constraints_con/line_constraints_con.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints_con/line_constraints_con.cpp > CMakeFiles/test.dir/src/constraints_con/line_constraints_con.cpp.i
+
+CMakeFiles/test.dir/src/constraints_con/line_constraints_con.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/constraints_con/line_constraints_con.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints_con/line_constraints_con.cpp -o CMakeFiles/test.dir/src/constraints_con/line_constraints_con.cpp.s
+
+CMakeFiles/test.dir/src/constraints_con/load_constraints_con.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/constraints_con/load_constraints_con.cpp.o: src/constraints_con/load_constraints_con.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/test.dir/src/constraints_con/load_constraints_con.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/constraints_con/load_constraints_con.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints_con/load_constraints_con.cpp
+
+CMakeFiles/test.dir/src/constraints_con/load_constraints_con.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/constraints_con/load_constraints_con.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints_con/load_constraints_con.cpp > CMakeFiles/test.dir/src/constraints_con/load_constraints_con.cpp.i
+
+CMakeFiles/test.dir/src/constraints_con/load_constraints_con.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/constraints_con/load_constraints_con.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints_con/load_constraints_con.cpp -o CMakeFiles/test.dir/src/constraints_con/load_constraints_con.cpp.s
+
+CMakeFiles/test.dir/src/constraints_con/transformer_constraints_con.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/constraints_con/transformer_constraints_con.cpp.o: src/constraints_con/transformer_constraints_con.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/test.dir/src/constraints_con/transformer_constraints_con.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/constraints_con/transformer_constraints_con.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints_con/transformer_constraints_con.cpp
+
+CMakeFiles/test.dir/src/constraints_con/transformer_constraints_con.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/constraints_con/transformer_constraints_con.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints_con/transformer_constraints_con.cpp > CMakeFiles/test.dir/src/constraints_con/transformer_constraints_con.cpp.i
+
+CMakeFiles/test.dir/src/constraints_con/transformer_constraints_con.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/constraints_con/transformer_constraints_con.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/constraints_con/transformer_constraints_con.cpp -o CMakeFiles/test.dir/src/constraints_con/transformer_constraints_con.cpp.s
 
 CMakeFiles/test.dir/src/contigencycase_problem.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/contigencycase_problem.cpp.o: src/contigencycase_problem.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/test.dir/src/contigencycase_problem.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/contigencycase_problem.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contigencycase_problem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/test.dir/src/contigencycase_problem.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/contigencycase_problem.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/contigencycase_problem.cpp
 
 CMakeFiles/test.dir/src/contigencycase_problem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/contigencycase_problem.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contigencycase_problem.cpp > CMakeFiles/test.dir/src/contigencycase_problem.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/contigencycase_problem.cpp > CMakeFiles/test.dir/src/contigencycase_problem.cpp.i
 
 CMakeFiles/test.dir/src/contigencycase_problem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/contigencycase_problem.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contigencycase_problem.cpp -o CMakeFiles/test.dir/src/contigencycase_problem.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/contigencycase_problem.cpp -o CMakeFiles/test.dir/src/contigencycase_problem.cpp.s
 
 CMakeFiles/test.dir/src/contingency.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/contingency.cpp.o: src/contingency.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/test.dir/src/contingency.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/contingency.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contingency.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/test.dir/src/contingency.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/contingency.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/contingency.cpp
 
 CMakeFiles/test.dir/src/contingency.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/contingency.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contingency.cpp > CMakeFiles/test.dir/src/contingency.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/contingency.cpp > CMakeFiles/test.dir/src/contingency.cpp.i
 
 CMakeFiles/test.dir/src/contingency.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/contingency.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/contingency.cpp -o CMakeFiles/test.dir/src/contingency.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/contingency.cpp -o CMakeFiles/test.dir/src/contingency.cpp.s
+
+CMakeFiles/test.dir/src/cost/bus_costs.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/cost/bus_costs.cpp.o: src/cost/bus_costs.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/test.dir/src/cost/bus_costs.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/cost/bus_costs.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost/bus_costs.cpp
+
+CMakeFiles/test.dir/src/cost/bus_costs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/cost/bus_costs.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost/bus_costs.cpp > CMakeFiles/test.dir/src/cost/bus_costs.cpp.i
+
+CMakeFiles/test.dir/src/cost/bus_costs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/cost/bus_costs.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost/bus_costs.cpp -o CMakeFiles/test.dir/src/cost/bus_costs.cpp.s
+
+CMakeFiles/test.dir/src/cost/gen_costs.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/cost/gen_costs.cpp.o: src/cost/gen_costs.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/test.dir/src/cost/gen_costs.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/cost/gen_costs.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost/gen_costs.cpp
+
+CMakeFiles/test.dir/src/cost/gen_costs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/cost/gen_costs.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost/gen_costs.cpp > CMakeFiles/test.dir/src/cost/gen_costs.cpp.i
+
+CMakeFiles/test.dir/src/cost/gen_costs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/cost/gen_costs.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost/gen_costs.cpp -o CMakeFiles/test.dir/src/cost/gen_costs.cpp.s
+
+CMakeFiles/test.dir/src/cost/line_costs.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/cost/line_costs.cpp.o: src/cost/line_costs.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/test.dir/src/cost/line_costs.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/cost/line_costs.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost/line_costs.cpp
+
+CMakeFiles/test.dir/src/cost/line_costs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/cost/line_costs.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost/line_costs.cpp > CMakeFiles/test.dir/src/cost/line_costs.cpp.i
+
+CMakeFiles/test.dir/src/cost/line_costs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/cost/line_costs.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost/line_costs.cpp -o CMakeFiles/test.dir/src/cost/line_costs.cpp.s
+
+CMakeFiles/test.dir/src/cost/load_costs.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/cost/load_costs.cpp.o: src/cost/load_costs.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/test.dir/src/cost/load_costs.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/cost/load_costs.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost/load_costs.cpp
+
+CMakeFiles/test.dir/src/cost/load_costs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/cost/load_costs.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost/load_costs.cpp > CMakeFiles/test.dir/src/cost/load_costs.cpp.i
+
+CMakeFiles/test.dir/src/cost/load_costs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/cost/load_costs.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost/load_costs.cpp -o CMakeFiles/test.dir/src/cost/load_costs.cpp.s
+
+CMakeFiles/test.dir/src/cost/transformer_costs.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/cost/transformer_costs.cpp.o: src/cost/transformer_costs.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/test.dir/src/cost/transformer_costs.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/cost/transformer_costs.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost/transformer_costs.cpp
+
+CMakeFiles/test.dir/src/cost/transformer_costs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/cost/transformer_costs.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost/transformer_costs.cpp > CMakeFiles/test.dir/src/cost/transformer_costs.cpp.i
+
+CMakeFiles/test.dir/src/cost/transformer_costs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/cost/transformer_costs.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost/transformer_costs.cpp -o CMakeFiles/test.dir/src/cost/transformer_costs.cpp.s
+
+CMakeFiles/test.dir/src/cost_con/bus_costs_con.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/cost_con/bus_costs_con.cpp.o: src/cost_con/bus_costs_con.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/test.dir/src/cost_con/bus_costs_con.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/cost_con/bus_costs_con.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost_con/bus_costs_con.cpp
+
+CMakeFiles/test.dir/src/cost_con/bus_costs_con.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/cost_con/bus_costs_con.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost_con/bus_costs_con.cpp > CMakeFiles/test.dir/src/cost_con/bus_costs_con.cpp.i
+
+CMakeFiles/test.dir/src/cost_con/bus_costs_con.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/cost_con/bus_costs_con.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost_con/bus_costs_con.cpp -o CMakeFiles/test.dir/src/cost_con/bus_costs_con.cpp.s
+
+CMakeFiles/test.dir/src/cost_con/gen_costs_con.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/cost_con/gen_costs_con.cpp.o: src/cost_con/gen_costs_con.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/test.dir/src/cost_con/gen_costs_con.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/cost_con/gen_costs_con.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost_con/gen_costs_con.cpp
+
+CMakeFiles/test.dir/src/cost_con/gen_costs_con.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/cost_con/gen_costs_con.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost_con/gen_costs_con.cpp > CMakeFiles/test.dir/src/cost_con/gen_costs_con.cpp.i
+
+CMakeFiles/test.dir/src/cost_con/gen_costs_con.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/cost_con/gen_costs_con.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost_con/gen_costs_con.cpp -o CMakeFiles/test.dir/src/cost_con/gen_costs_con.cpp.s
+
+CMakeFiles/test.dir/src/cost_con/line_costs_con.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/cost_con/line_costs_con.cpp.o: src/cost_con/line_costs_con.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/test.dir/src/cost_con/line_costs_con.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/cost_con/line_costs_con.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost_con/line_costs_con.cpp
+
+CMakeFiles/test.dir/src/cost_con/line_costs_con.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/cost_con/line_costs_con.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost_con/line_costs_con.cpp > CMakeFiles/test.dir/src/cost_con/line_costs_con.cpp.i
+
+CMakeFiles/test.dir/src/cost_con/line_costs_con.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/cost_con/line_costs_con.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost_con/line_costs_con.cpp -o CMakeFiles/test.dir/src/cost_con/line_costs_con.cpp.s
+
+CMakeFiles/test.dir/src/cost_con/load_costs_con.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/cost_con/load_costs_con.cpp.o: src/cost_con/load_costs_con.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/test.dir/src/cost_con/load_costs_con.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/cost_con/load_costs_con.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost_con/load_costs_con.cpp
+
+CMakeFiles/test.dir/src/cost_con/load_costs_con.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/cost_con/load_costs_con.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost_con/load_costs_con.cpp > CMakeFiles/test.dir/src/cost_con/load_costs_con.cpp.i
+
+CMakeFiles/test.dir/src/cost_con/load_costs_con.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/cost_con/load_costs_con.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost_con/load_costs_con.cpp -o CMakeFiles/test.dir/src/cost_con/load_costs_con.cpp.s
+
+CMakeFiles/test.dir/src/cost_con/transformer_costs_con.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/cost_con/transformer_costs_con.cpp.o: src/cost_con/transformer_costs_con.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/test.dir/src/cost_con/transformer_costs_con.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/cost_con/transformer_costs_con.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost_con/transformer_costs_con.cpp
+
+CMakeFiles/test.dir/src/cost_con/transformer_costs_con.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/cost_con/transformer_costs_con.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost_con/transformer_costs_con.cpp > CMakeFiles/test.dir/src/cost_con/transformer_costs_con.cpp.i
+
+CMakeFiles/test.dir/src/cost_con/transformer_costs_con.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/cost_con/transformer_costs_con.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/cost_con/transformer_costs_con.cpp -o CMakeFiles/test.dir/src/cost_con/transformer_costs_con.cpp.s
 
 CMakeFiles/test.dir/src/data.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/data.cpp.o: src/data.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/test.dir/src/data.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/data.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/data.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/test.dir/src/data.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/data.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/data.cpp
 
 CMakeFiles/test.dir/src/data.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/data.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/data.cpp > CMakeFiles/test.dir/src/data.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/data.cpp > CMakeFiles/test.dir/src/data.cpp.i
 
 CMakeFiles/test.dir/src/data.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/data.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/data.cpp -o CMakeFiles/test.dir/src/data.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/data.cpp -o CMakeFiles/test.dir/src/data.cpp.s
 
 CMakeFiles/test.dir/src/fixedshunt.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/fixedshunt.cpp.o: src/fixedshunt.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/test.dir/src/fixedshunt.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/fixedshunt.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/fixedshunt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/test.dir/src/fixedshunt.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/fixedshunt.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/fixedshunt.cpp
 
 CMakeFiles/test.dir/src/fixedshunt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/fixedshunt.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/fixedshunt.cpp > CMakeFiles/test.dir/src/fixedshunt.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/fixedshunt.cpp > CMakeFiles/test.dir/src/fixedshunt.cpp.i
 
 CMakeFiles/test.dir/src/fixedshunt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/fixedshunt.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/fixedshunt.cpp -o CMakeFiles/test.dir/src/fixedshunt.cpp.s
-
-CMakeFiles/test.dir/src/gen_costs.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/gen_costs.cpp.o: src/gen_costs.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/test.dir/src/gen_costs.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/gen_costs.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs.cpp
-
-CMakeFiles/test.dir/src/gen_costs.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/gen_costs.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs.cpp > CMakeFiles/test.dir/src/gen_costs.cpp.i
-
-CMakeFiles/test.dir/src/gen_costs.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/gen_costs.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs.cpp -o CMakeFiles/test.dir/src/gen_costs.cpp.s
-
-CMakeFiles/test.dir/src/gen_costs_con.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/gen_costs_con.cpp.o: src/gen_costs_con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/test.dir/src/gen_costs_con.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/gen_costs_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs_con.cpp
-
-CMakeFiles/test.dir/src/gen_costs_con.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/gen_costs_con.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs_con.cpp > CMakeFiles/test.dir/src/gen_costs_con.cpp.i
-
-CMakeFiles/test.dir/src/gen_costs_con.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/gen_costs_con.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/gen_costs_con.cpp -o CMakeFiles/test.dir/src/gen_costs_con.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/fixedshunt.cpp -o CMakeFiles/test.dir/src/fixedshunt.cpp.s
 
 CMakeFiles/test.dir/src/generator.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/generator.cpp.o: src/generator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/test.dir/src/generator.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/test.dir/src/generator.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/generator.cpp
 
 CMakeFiles/test.dir/src/generator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/generator.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator.cpp > CMakeFiles/test.dir/src/generator.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/generator.cpp > CMakeFiles/test.dir/src/generator.cpp.i
 
 CMakeFiles/test.dir/src/generator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/generator.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator.cpp -o CMakeFiles/test.dir/src/generator.cpp.s
-
-CMakeFiles/test.dir/src/generator_constraints.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/generator_constraints.cpp.o: src/generator_constraints.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/test.dir/src/generator_constraints.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator_constraints.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints.cpp
-
-CMakeFiles/test.dir/src/generator_constraints.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/generator_constraints.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints.cpp > CMakeFiles/test.dir/src/generator_constraints.cpp.i
-
-CMakeFiles/test.dir/src/generator_constraints.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/generator_constraints.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints.cpp -o CMakeFiles/test.dir/src/generator_constraints.cpp.s
-
-CMakeFiles/test.dir/src/generator_constraints_con.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/generator_constraints_con.cpp.o: src/generator_constraints_con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/test.dir/src/generator_constraints_con.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator_constraints_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints_con.cpp
-
-CMakeFiles/test.dir/src/generator_constraints_con.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/generator_constraints_con.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints_con.cpp > CMakeFiles/test.dir/src/generator_constraints_con.cpp.i
-
-CMakeFiles/test.dir/src/generator_constraints_con.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/generator_constraints_con.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_constraints_con.cpp -o CMakeFiles/test.dir/src/generator_constraints_con.cpp.s
-
-CMakeFiles/test.dir/src/generator_variables.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/generator_variables.cpp.o: src/generator_variables.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/test.dir/src/generator_variables.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables.cpp
-
-CMakeFiles/test.dir/src/generator_variables.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/generator_variables.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables.cpp > CMakeFiles/test.dir/src/generator_variables.cpp.i
-
-CMakeFiles/test.dir/src/generator_variables.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/generator_variables.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables.cpp -o CMakeFiles/test.dir/src/generator_variables.cpp.s
-
-CMakeFiles/test.dir/src/generator_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/generator_variables_con.cpp.o: src/generator_variables_con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/test.dir/src/generator_variables_con.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables_con.cpp
-
-CMakeFiles/test.dir/src/generator_variables_con.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/generator_variables_con.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables_con.cpp > CMakeFiles/test.dir/src/generator_variables_con.cpp.i
-
-CMakeFiles/test.dir/src/generator_variables_con.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/generator_variables_con.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generator_variables_con.cpp -o CMakeFiles/test.dir/src/generator_variables_con.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/generator.cpp -o CMakeFiles/test.dir/src/generator.cpp.s
 
 CMakeFiles/test.dir/src/generatoroutevent.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/generatoroutevent.cpp.o: src/generatoroutevent.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/test.dir/src/generatoroutevent.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generatoroutevent.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generatoroutevent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/test.dir/src/generatoroutevent.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generatoroutevent.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/generatoroutevent.cpp
 
 CMakeFiles/test.dir/src/generatoroutevent.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/generatoroutevent.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generatoroutevent.cpp > CMakeFiles/test.dir/src/generatoroutevent.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/generatoroutevent.cpp > CMakeFiles/test.dir/src/generatoroutevent.cpp.i
 
 CMakeFiles/test.dir/src/generatoroutevent.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/generatoroutevent.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/generatoroutevent.cpp -o CMakeFiles/test.dir/src/generatoroutevent.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/generatoroutevent.cpp -o CMakeFiles/test.dir/src/generatoroutevent.cpp.s
 
 CMakeFiles/test.dir/src/line.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/line.cpp.o: src/line.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/test.dir/src/line.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/test.dir/src/line.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/line.cpp
 
 CMakeFiles/test.dir/src/line.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/line.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line.cpp > CMakeFiles/test.dir/src/line.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/line.cpp > CMakeFiles/test.dir/src/line.cpp.i
 
 CMakeFiles/test.dir/src/line.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/line.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line.cpp -o CMakeFiles/test.dir/src/line.cpp.s
-
-CMakeFiles/test.dir/src/line_constraints.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/line_constraints.cpp.o: src/line_constraints.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/test.dir/src/line_constraints.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_constraints.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints.cpp
-
-CMakeFiles/test.dir/src/line_constraints.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/line_constraints.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints.cpp > CMakeFiles/test.dir/src/line_constraints.cpp.i
-
-CMakeFiles/test.dir/src/line_constraints.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/line_constraints.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints.cpp -o CMakeFiles/test.dir/src/line_constraints.cpp.s
-
-CMakeFiles/test.dir/src/line_constraints_con.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/line_constraints_con.cpp.o: src/line_constraints_con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/test.dir/src/line_constraints_con.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_constraints_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints_con.cpp
-
-CMakeFiles/test.dir/src/line_constraints_con.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/line_constraints_con.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints_con.cpp > CMakeFiles/test.dir/src/line_constraints_con.cpp.i
-
-CMakeFiles/test.dir/src/line_constraints_con.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/line_constraints_con.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_constraints_con.cpp -o CMakeFiles/test.dir/src/line_constraints_con.cpp.s
-
-CMakeFiles/test.dir/src/line_costs.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/line_costs.cpp.o: src/line_costs.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/test.dir/src/line_costs.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_costs.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs.cpp
-
-CMakeFiles/test.dir/src/line_costs.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/line_costs.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs.cpp > CMakeFiles/test.dir/src/line_costs.cpp.i
-
-CMakeFiles/test.dir/src/line_costs.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/line_costs.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs.cpp -o CMakeFiles/test.dir/src/line_costs.cpp.s
-
-CMakeFiles/test.dir/src/line_costs_con.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/line_costs_con.cpp.o: src/line_costs_con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/test.dir/src/line_costs_con.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_costs_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs_con.cpp
-
-CMakeFiles/test.dir/src/line_costs_con.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/line_costs_con.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs_con.cpp > CMakeFiles/test.dir/src/line_costs_con.cpp.i
-
-CMakeFiles/test.dir/src/line_costs_con.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/line_costs_con.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_costs_con.cpp -o CMakeFiles/test.dir/src/line_costs_con.cpp.s
-
-CMakeFiles/test.dir/src/line_variables.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/line_variables.cpp.o: src/line_variables.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/test.dir/src/line_variables.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables.cpp
-
-CMakeFiles/test.dir/src/line_variables.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/line_variables.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables.cpp > CMakeFiles/test.dir/src/line_variables.cpp.i
-
-CMakeFiles/test.dir/src/line_variables.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/line_variables.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables.cpp -o CMakeFiles/test.dir/src/line_variables.cpp.s
-
-CMakeFiles/test.dir/src/line_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/line_variables_con.cpp.o: src/line_variables_con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/test.dir/src/line_variables_con.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/line_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables_con.cpp
-
-CMakeFiles/test.dir/src/line_variables_con.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/line_variables_con.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables_con.cpp > CMakeFiles/test.dir/src/line_variables_con.cpp.i
-
-CMakeFiles/test.dir/src/line_variables_con.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/line_variables_con.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/line_variables_con.cpp -o CMakeFiles/test.dir/src/line_variables_con.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/line.cpp -o CMakeFiles/test.dir/src/line.cpp.s
 
 CMakeFiles/test.dir/src/load.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/load.cpp.o: src/load.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/test.dir/src/load.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/test.dir/src/load.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/load.cpp
 
 CMakeFiles/test.dir/src/load.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/load.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load.cpp > CMakeFiles/test.dir/src/load.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/load.cpp > CMakeFiles/test.dir/src/load.cpp.i
 
 CMakeFiles/test.dir/src/load.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/load.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load.cpp -o CMakeFiles/test.dir/src/load.cpp.s
-
-CMakeFiles/test.dir/src/load_constraints.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/load_constraints.cpp.o: src/load_constraints.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/test.dir/src/load_constraints.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_constraints.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints.cpp
-
-CMakeFiles/test.dir/src/load_constraints.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/load_constraints.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints.cpp > CMakeFiles/test.dir/src/load_constraints.cpp.i
-
-CMakeFiles/test.dir/src/load_constraints.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/load_constraints.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints.cpp -o CMakeFiles/test.dir/src/load_constraints.cpp.s
-
-CMakeFiles/test.dir/src/load_constraints_con.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/load_constraints_con.cpp.o: src/load_constraints_con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/test.dir/src/load_constraints_con.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_constraints_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints_con.cpp
-
-CMakeFiles/test.dir/src/load_constraints_con.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/load_constraints_con.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints_con.cpp > CMakeFiles/test.dir/src/load_constraints_con.cpp.i
-
-CMakeFiles/test.dir/src/load_constraints_con.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/load_constraints_con.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_constraints_con.cpp -o CMakeFiles/test.dir/src/load_constraints_con.cpp.s
-
-CMakeFiles/test.dir/src/load_costs.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/load_costs.cpp.o: src/load_costs.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/test.dir/src/load_costs.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_costs.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs.cpp
-
-CMakeFiles/test.dir/src/load_costs.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/load_costs.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs.cpp > CMakeFiles/test.dir/src/load_costs.cpp.i
-
-CMakeFiles/test.dir/src/load_costs.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/load_costs.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs.cpp -o CMakeFiles/test.dir/src/load_costs.cpp.s
-
-CMakeFiles/test.dir/src/load_costs_con.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/load_costs_con.cpp.o: src/load_costs_con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/test.dir/src/load_costs_con.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_costs_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs_con.cpp
-
-CMakeFiles/test.dir/src/load_costs_con.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/load_costs_con.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs_con.cpp > CMakeFiles/test.dir/src/load_costs_con.cpp.i
-
-CMakeFiles/test.dir/src/load_costs_con.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/load_costs_con.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_costs_con.cpp -o CMakeFiles/test.dir/src/load_costs_con.cpp.s
-
-CMakeFiles/test.dir/src/load_variables.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/load_variables.cpp.o: src/load_variables.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/test.dir/src/load_variables.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables.cpp
-
-CMakeFiles/test.dir/src/load_variables.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/load_variables.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables.cpp > CMakeFiles/test.dir/src/load_variables.cpp.i
-
-CMakeFiles/test.dir/src/load_variables.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/load_variables.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables.cpp -o CMakeFiles/test.dir/src/load_variables.cpp.s
-
-CMakeFiles/test.dir/src/load_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/load_variables_con.cpp.o: src/load_variables_con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/test.dir/src/load_variables_con.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/load_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables_con.cpp
-
-CMakeFiles/test.dir/src/load_variables_con.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/load_variables_con.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables_con.cpp > CMakeFiles/test.dir/src/load_variables_con.cpp.i
-
-CMakeFiles/test.dir/src/load_variables_con.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/load_variables_con.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/load_variables_con.cpp -o CMakeFiles/test.dir/src/load_variables_con.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/load.cpp -o CMakeFiles/test.dir/src/load.cpp.s
 
 CMakeFiles/test.dir/src/nontransformerbranch.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/nontransformerbranch.cpp.o: src/nontransformerbranch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/test.dir/src/nontransformerbranch.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/nontransformerbranch.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/nontransformerbranch.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/test.dir/src/nontransformerbranch.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/nontransformerbranch.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/nontransformerbranch.cpp
 
 CMakeFiles/test.dir/src/nontransformerbranch.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/nontransformerbranch.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/nontransformerbranch.cpp > CMakeFiles/test.dir/src/nontransformerbranch.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/nontransformerbranch.cpp > CMakeFiles/test.dir/src/nontransformerbranch.cpp.i
 
 CMakeFiles/test.dir/src/nontransformerbranch.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/nontransformerbranch.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/nontransformerbranch.cpp -o CMakeFiles/test.dir/src/nontransformerbranch.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/nontransformerbranch.cpp -o CMakeFiles/test.dir/src/nontransformerbranch.cpp.s
 
 CMakeFiles/test.dir/src/owner.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/owner.cpp.o: src/owner.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/test.dir/src/owner.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/owner.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/owner.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/test.dir/src/owner.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/owner.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/owner.cpp
 
 CMakeFiles/test.dir/src/owner.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/owner.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/owner.cpp > CMakeFiles/test.dir/src/owner.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/owner.cpp > CMakeFiles/test.dir/src/owner.cpp.i
 
 CMakeFiles/test.dir/src/owner.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/owner.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/owner.cpp -o CMakeFiles/test.dir/src/owner.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/owner.cpp -o CMakeFiles/test.dir/src/owner.cpp.s
 
 CMakeFiles/test.dir/src/raw.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/raw.cpp.o: src/raw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/test.dir/src/raw.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/raw.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/raw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/test.dir/src/raw.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/raw.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/raw.cpp
 
 CMakeFiles/test.dir/src/raw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/raw.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/raw.cpp > CMakeFiles/test.dir/src/raw.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/raw.cpp > CMakeFiles/test.dir/src/raw.cpp.i
 
 CMakeFiles/test.dir/src/raw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/raw.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/raw.cpp -o CMakeFiles/test.dir/src/raw.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/raw.cpp -o CMakeFiles/test.dir/src/raw.cpp.s
 
 CMakeFiles/test.dir/src/sup.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup.cpp.o: src/sup.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/test.dir/src/sup.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/test.dir/src/sup.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup.cpp
 
 CMakeFiles/test.dir/src/sup.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup.cpp > CMakeFiles/test.dir/src/sup.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup.cpp > CMakeFiles/test.dir/src/sup.cpp.i
 
 CMakeFiles/test.dir/src/sup.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup.cpp -o CMakeFiles/test.dir/src/sup.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup.cpp -o CMakeFiles/test.dir/src/sup.cpp.s
 
 CMakeFiles/test.dir/src/sup_cblock.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_cblock.cpp.o: src/sup_cblock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/test.dir/src/sup_cblock.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_cblock.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_cblock.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/test.dir/src/sup_cblock.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_cblock.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_cblock.cpp
 
 CMakeFiles/test.dir/src/sup_cblock.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup_cblock.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_cblock.cpp > CMakeFiles/test.dir/src/sup_cblock.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_cblock.cpp > CMakeFiles/test.dir/src/sup_cblock.cpp.i
 
 CMakeFiles/test.dir/src/sup_cblock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup_cblock.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_cblock.cpp -o CMakeFiles/test.dir/src/sup_cblock.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_cblock.cpp -o CMakeFiles/test.dir/src/sup_cblock.cpp.s
 
 CMakeFiles/test.dir/src/sup_generator.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_generator.cpp.o: src/sup_generator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/test.dir/src/sup_generator.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_generator.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_generator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/test.dir/src/sup_generator.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_generator.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_generator.cpp
 
 CMakeFiles/test.dir/src/sup_generator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup_generator.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_generator.cpp > CMakeFiles/test.dir/src/sup_generator.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_generator.cpp > CMakeFiles/test.dir/src/sup_generator.cpp.i
 
 CMakeFiles/test.dir/src/sup_generator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup_generator.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_generator.cpp -o CMakeFiles/test.dir/src/sup_generator.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_generator.cpp -o CMakeFiles/test.dir/src/sup_generator.cpp.s
 
 CMakeFiles/test.dir/src/sup_line.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_line.cpp.o: src/sup_line.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/test.dir/src/sup_line.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_line.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_line.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/test.dir/src/sup_line.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_line.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_line.cpp
 
 CMakeFiles/test.dir/src/sup_line.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup_line.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_line.cpp > CMakeFiles/test.dir/src/sup_line.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_line.cpp > CMakeFiles/test.dir/src/sup_line.cpp.i
 
 CMakeFiles/test.dir/src/sup_line.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup_line.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_line.cpp -o CMakeFiles/test.dir/src/sup_line.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_line.cpp -o CMakeFiles/test.dir/src/sup_line.cpp.s
 
 CMakeFiles/test.dir/src/sup_load.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_load.cpp.o: src/sup_load.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/test.dir/src/sup_load.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_load.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_load.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/test.dir/src/sup_load.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_load.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_load.cpp
 
 CMakeFiles/test.dir/src/sup_load.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup_load.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_load.cpp > CMakeFiles/test.dir/src/sup_load.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_load.cpp > CMakeFiles/test.dir/src/sup_load.cpp.i
 
 CMakeFiles/test.dir/src/sup_load.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup_load.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_load.cpp -o CMakeFiles/test.dir/src/sup_load.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_load.cpp -o CMakeFiles/test.dir/src/sup_load.cpp.s
 
 CMakeFiles/test.dir/src/sup_pcblock.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_pcblock.cpp.o: src/sup_pcblock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/test.dir/src/sup_pcblock.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_pcblock.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_pcblock.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/test.dir/src/sup_pcblock.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_pcblock.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_pcblock.cpp
 
 CMakeFiles/test.dir/src/sup_pcblock.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup_pcblock.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_pcblock.cpp > CMakeFiles/test.dir/src/sup_pcblock.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_pcblock.cpp > CMakeFiles/test.dir/src/sup_pcblock.cpp.i
 
 CMakeFiles/test.dir/src/sup_pcblock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup_pcblock.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_pcblock.cpp -o CMakeFiles/test.dir/src/sup_pcblock.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_pcblock.cpp -o CMakeFiles/test.dir/src/sup_pcblock.cpp.s
 
 CMakeFiles/test.dir/src/sup_qcblock.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_qcblock.cpp.o: src/sup_qcblock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/test.dir/src/sup_qcblock.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_qcblock.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_qcblock.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/test.dir/src/sup_qcblock.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_qcblock.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_qcblock.cpp
 
 CMakeFiles/test.dir/src/sup_qcblock.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup_qcblock.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_qcblock.cpp > CMakeFiles/test.dir/src/sup_qcblock.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_qcblock.cpp > CMakeFiles/test.dir/src/sup_qcblock.cpp.i
 
 CMakeFiles/test.dir/src/sup_qcblock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup_qcblock.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_qcblock.cpp -o CMakeFiles/test.dir/src/sup_qcblock.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_qcblock.cpp -o CMakeFiles/test.dir/src/sup_qcblock.cpp.s
 
 CMakeFiles/test.dir/src/sup_scblock.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_scblock.cpp.o: src/sup_scblock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/test.dir/src/sup_scblock.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_scblock.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_scblock.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/test.dir/src/sup_scblock.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_scblock.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_scblock.cpp
 
 CMakeFiles/test.dir/src/sup_scblock.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup_scblock.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_scblock.cpp > CMakeFiles/test.dir/src/sup_scblock.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_scblock.cpp > CMakeFiles/test.dir/src/sup_scblock.cpp.i
 
 CMakeFiles/test.dir/src/sup_scblock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup_scblock.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_scblock.cpp -o CMakeFiles/test.dir/src/sup_scblock.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_scblock.cpp -o CMakeFiles/test.dir/src/sup_scblock.cpp.s
 
 CMakeFiles/test.dir/src/sup_transformer.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/sup_transformer.cpp.o: src/sup_transformer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/test.dir/src/sup_transformer.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_transformer.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_transformer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/test.dir/src/sup_transformer.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/sup_transformer.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_transformer.cpp
 
 CMakeFiles/test.dir/src/sup_transformer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/sup_transformer.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_transformer.cpp > CMakeFiles/test.dir/src/sup_transformer.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_transformer.cpp > CMakeFiles/test.dir/src/sup_transformer.cpp.i
 
 CMakeFiles/test.dir/src/sup_transformer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/sup_transformer.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/sup_transformer.cpp -o CMakeFiles/test.dir/src/sup_transformer.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/sup_transformer.cpp -o CMakeFiles/test.dir/src/sup_transformer.cpp.s
 
 CMakeFiles/test.dir/src/switchedshunt.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/switchedshunt.cpp.o: src/switchedshunt.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/test.dir/src/switchedshunt.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/switchedshunt.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchedshunt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/test.dir/src/switchedshunt.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/switchedshunt.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/switchedshunt.cpp
 
 CMakeFiles/test.dir/src/switchedshunt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/switchedshunt.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchedshunt.cpp > CMakeFiles/test.dir/src/switchedshunt.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/switchedshunt.cpp > CMakeFiles/test.dir/src/switchedshunt.cpp.i
 
 CMakeFiles/test.dir/src/switchedshunt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/switchedshunt.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchedshunt.cpp -o CMakeFiles/test.dir/src/switchedshunt.cpp.s
-
-CMakeFiles/test.dir/src/switchshunt_variables.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/switchshunt_variables.cpp.o: src/switchshunt_variables.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/test.dir/src/switchshunt_variables.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/switchshunt_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables.cpp
-
-CMakeFiles/test.dir/src/switchshunt_variables.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/switchshunt_variables.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables.cpp > CMakeFiles/test.dir/src/switchshunt_variables.cpp.i
-
-CMakeFiles/test.dir/src/switchshunt_variables.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/switchshunt_variables.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables.cpp -o CMakeFiles/test.dir/src/switchshunt_variables.cpp.s
-
-CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.o: src/switchshunt_variables_con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables_con.cpp
-
-CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables_con.cpp > CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.i
-
-CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/switchshunt_variables_con.cpp -o CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/switchedshunt.cpp -o CMakeFiles/test.dir/src/switchedshunt.cpp.s
 
 CMakeFiles/test.dir/src/test.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/test.cpp.o: src/test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/test.dir/src/test.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/test.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/test.dir/src/test.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/test.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/test.cpp
 
 CMakeFiles/test.dir/src/test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/test.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp > CMakeFiles/test.dir/src/test.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/test.cpp > CMakeFiles/test.dir/src/test.cpp.i
 
 CMakeFiles/test.dir/src/test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/test.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test.cpp -o CMakeFiles/test.dir/src/test.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/test.cpp -o CMakeFiles/test.dir/src/test.cpp.s
 
 CMakeFiles/test.dir/src/test_param.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/test_param.cpp.o: src/test_param.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/test.dir/src/test_param.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/test_param.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test_param.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/test.dir/src/test_param.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/test_param.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/test_param.cpp
 
 CMakeFiles/test.dir/src/test_param.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/test_param.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test_param.cpp > CMakeFiles/test.dir/src/test_param.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/test_param.cpp > CMakeFiles/test.dir/src/test_param.cpp.i
 
 CMakeFiles/test.dir/src/test_param.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/test_param.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/test_param.cpp -o CMakeFiles/test.dir/src/test_param.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/test_param.cpp -o CMakeFiles/test.dir/src/test_param.cpp.s
 
 CMakeFiles/test.dir/src/transformer.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/transformer.cpp.o: src/transformer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/test.dir/src/transformer.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/test.dir/src/transformer.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/transformer.cpp
 
 CMakeFiles/test.dir/src/transformer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/transformer.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer.cpp > CMakeFiles/test.dir/src/transformer.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/transformer.cpp > CMakeFiles/test.dir/src/transformer.cpp.i
 
 CMakeFiles/test.dir/src/transformer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/transformer.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer.cpp -o CMakeFiles/test.dir/src/transformer.cpp.s
-
-CMakeFiles/test.dir/src/transformer_constraints.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/transformer_constraints.cpp.o: src/transformer_constraints.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/test.dir/src/transformer_constraints.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_constraints.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints.cpp
-
-CMakeFiles/test.dir/src/transformer_constraints.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/transformer_constraints.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints.cpp > CMakeFiles/test.dir/src/transformer_constraints.cpp.i
-
-CMakeFiles/test.dir/src/transformer_constraints.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/transformer_constraints.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints.cpp -o CMakeFiles/test.dir/src/transformer_constraints.cpp.s
-
-CMakeFiles/test.dir/src/transformer_constraints_con.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/transformer_constraints_con.cpp.o: src/transformer_constraints_con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/test.dir/src/transformer_constraints_con.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_constraints_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints_con.cpp
-
-CMakeFiles/test.dir/src/transformer_constraints_con.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/transformer_constraints_con.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints_con.cpp > CMakeFiles/test.dir/src/transformer_constraints_con.cpp.i
-
-CMakeFiles/test.dir/src/transformer_constraints_con.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/transformer_constraints_con.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_constraints_con.cpp -o CMakeFiles/test.dir/src/transformer_constraints_con.cpp.s
-
-CMakeFiles/test.dir/src/transformer_costs.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/transformer_costs.cpp.o: src/transformer_costs.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/test.dir/src/transformer_costs.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_costs.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs.cpp
-
-CMakeFiles/test.dir/src/transformer_costs.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/transformer_costs.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs.cpp > CMakeFiles/test.dir/src/transformer_costs.cpp.i
-
-CMakeFiles/test.dir/src/transformer_costs.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/transformer_costs.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs.cpp -o CMakeFiles/test.dir/src/transformer_costs.cpp.s
-
-CMakeFiles/test.dir/src/transformer_costs_con.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/transformer_costs_con.cpp.o: src/transformer_costs_con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/test.dir/src/transformer_costs_con.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_costs_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs_con.cpp
-
-CMakeFiles/test.dir/src/transformer_costs_con.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/transformer_costs_con.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs_con.cpp > CMakeFiles/test.dir/src/transformer_costs_con.cpp.i
-
-CMakeFiles/test.dir/src/transformer_costs_con.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/transformer_costs_con.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_costs_con.cpp -o CMakeFiles/test.dir/src/transformer_costs_con.cpp.s
-
-CMakeFiles/test.dir/src/transformer_variables.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/transformer_variables.cpp.o: src/transformer_variables.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/test.dir/src/transformer_variables.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_variables.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables.cpp
-
-CMakeFiles/test.dir/src/transformer_variables.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/transformer_variables.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables.cpp > CMakeFiles/test.dir/src/transformer_variables.cpp.i
-
-CMakeFiles/test.dir/src/transformer_variables.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/transformer_variables.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables.cpp -o CMakeFiles/test.dir/src/transformer_variables.cpp.s
-
-CMakeFiles/test.dir/src/transformer_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/transformer_variables_con.cpp.o: src/transformer_variables_con.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/test.dir/src/transformer_variables_con.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformer_variables_con.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables_con.cpp
-
-CMakeFiles/test.dir/src/transformer_variables_con.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/transformer_variables_con.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables_con.cpp > CMakeFiles/test.dir/src/transformer_variables_con.cpp.i
-
-CMakeFiles/test.dir/src/transformer_variables_con.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/transformer_variables_con.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformer_variables_con.cpp -o CMakeFiles/test.dir/src/transformer_variables_con.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/transformer.cpp -o CMakeFiles/test.dir/src/transformer.cpp.s
 
 CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o: src/transformerimpedancecorrectiontable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformerimpedancecorrectiontable.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/transformerimpedancecorrectiontable.cpp
 
 CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformerimpedancecorrectiontable.cpp > CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/transformerimpedancecorrectiontable.cpp > CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.i
 
 CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/transformerimpedancecorrectiontable.cpp -o CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/transformerimpedancecorrectiontable.cpp -o CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.s
+
+CMakeFiles/test.dir/src/variables/bus_variables.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/variables/bus_variables.cpp.o: src/variables/bus_variables.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/test.dir/src/variables/bus_variables.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/variables/bus_variables.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/bus_variables.cpp
+
+CMakeFiles/test.dir/src/variables/bus_variables.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/variables/bus_variables.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/bus_variables.cpp > CMakeFiles/test.dir/src/variables/bus_variables.cpp.i
+
+CMakeFiles/test.dir/src/variables/bus_variables.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/variables/bus_variables.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/bus_variables.cpp -o CMakeFiles/test.dir/src/variables/bus_variables.cpp.s
+
+CMakeFiles/test.dir/src/variables/generator_variables.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/variables/generator_variables.cpp.o: src/variables/generator_variables.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/test.dir/src/variables/generator_variables.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/variables/generator_variables.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/generator_variables.cpp
+
+CMakeFiles/test.dir/src/variables/generator_variables.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/variables/generator_variables.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/generator_variables.cpp > CMakeFiles/test.dir/src/variables/generator_variables.cpp.i
+
+CMakeFiles/test.dir/src/variables/generator_variables.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/variables/generator_variables.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/generator_variables.cpp -o CMakeFiles/test.dir/src/variables/generator_variables.cpp.s
+
+CMakeFiles/test.dir/src/variables/line_variables.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/variables/line_variables.cpp.o: src/variables/line_variables.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/test.dir/src/variables/line_variables.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/variables/line_variables.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/line_variables.cpp
+
+CMakeFiles/test.dir/src/variables/line_variables.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/variables/line_variables.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/line_variables.cpp > CMakeFiles/test.dir/src/variables/line_variables.cpp.i
+
+CMakeFiles/test.dir/src/variables/line_variables.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/variables/line_variables.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/line_variables.cpp -o CMakeFiles/test.dir/src/variables/line_variables.cpp.s
+
+CMakeFiles/test.dir/src/variables/load_variables.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/variables/load_variables.cpp.o: src/variables/load_variables.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/test.dir/src/variables/load_variables.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/variables/load_variables.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/load_variables.cpp
+
+CMakeFiles/test.dir/src/variables/load_variables.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/variables/load_variables.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/load_variables.cpp > CMakeFiles/test.dir/src/variables/load_variables.cpp.i
+
+CMakeFiles/test.dir/src/variables/load_variables.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/variables/load_variables.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/load_variables.cpp -o CMakeFiles/test.dir/src/variables/load_variables.cpp.s
+
+CMakeFiles/test.dir/src/variables/switchshunt_variables.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/variables/switchshunt_variables.cpp.o: src/variables/switchshunt_variables.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/test.dir/src/variables/switchshunt_variables.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/variables/switchshunt_variables.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/switchshunt_variables.cpp
+
+CMakeFiles/test.dir/src/variables/switchshunt_variables.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/variables/switchshunt_variables.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/switchshunt_variables.cpp > CMakeFiles/test.dir/src/variables/switchshunt_variables.cpp.i
+
+CMakeFiles/test.dir/src/variables/switchshunt_variables.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/variables/switchshunt_variables.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/switchshunt_variables.cpp -o CMakeFiles/test.dir/src/variables/switchshunt_variables.cpp.s
+
+CMakeFiles/test.dir/src/variables/transformer_variables.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/variables/transformer_variables.cpp.o: src/variables/transformer_variables.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/test.dir/src/variables/transformer_variables.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/variables/transformer_variables.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/transformer_variables.cpp
+
+CMakeFiles/test.dir/src/variables/transformer_variables.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/variables/transformer_variables.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/transformer_variables.cpp > CMakeFiles/test.dir/src/variables/transformer_variables.cpp.i
+
+CMakeFiles/test.dir/src/variables/transformer_variables.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/variables/transformer_variables.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables/transformer_variables.cpp -o CMakeFiles/test.dir/src/variables/transformer_variables.cpp.s
+
+CMakeFiles/test.dir/src/variables_con/bus_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/variables_con/bus_variables_con.cpp.o: src/variables_con/bus_variables_con.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/test.dir/src/variables_con/bus_variables_con.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/variables_con/bus_variables_con.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/bus_variables_con.cpp
+
+CMakeFiles/test.dir/src/variables_con/bus_variables_con.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/variables_con/bus_variables_con.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/bus_variables_con.cpp > CMakeFiles/test.dir/src/variables_con/bus_variables_con.cpp.i
+
+CMakeFiles/test.dir/src/variables_con/bus_variables_con.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/variables_con/bus_variables_con.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/bus_variables_con.cpp -o CMakeFiles/test.dir/src/variables_con/bus_variables_con.cpp.s
+
+CMakeFiles/test.dir/src/variables_con/generator_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/variables_con/generator_variables_con.cpp.o: src/variables_con/generator_variables_con.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/test.dir/src/variables_con/generator_variables_con.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/variables_con/generator_variables_con.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/generator_variables_con.cpp
+
+CMakeFiles/test.dir/src/variables_con/generator_variables_con.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/variables_con/generator_variables_con.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/generator_variables_con.cpp > CMakeFiles/test.dir/src/variables_con/generator_variables_con.cpp.i
+
+CMakeFiles/test.dir/src/variables_con/generator_variables_con.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/variables_con/generator_variables_con.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/generator_variables_con.cpp -o CMakeFiles/test.dir/src/variables_con/generator_variables_con.cpp.s
+
+CMakeFiles/test.dir/src/variables_con/line_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/variables_con/line_variables_con.cpp.o: src/variables_con/line_variables_con.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/test.dir/src/variables_con/line_variables_con.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/variables_con/line_variables_con.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/line_variables_con.cpp
+
+CMakeFiles/test.dir/src/variables_con/line_variables_con.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/variables_con/line_variables_con.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/line_variables_con.cpp > CMakeFiles/test.dir/src/variables_con/line_variables_con.cpp.i
+
+CMakeFiles/test.dir/src/variables_con/line_variables_con.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/variables_con/line_variables_con.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/line_variables_con.cpp -o CMakeFiles/test.dir/src/variables_con/line_variables_con.cpp.s
+
+CMakeFiles/test.dir/src/variables_con/load_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/variables_con/load_variables_con.cpp.o: src/variables_con/load_variables_con.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/test.dir/src/variables_con/load_variables_con.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/variables_con/load_variables_con.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/load_variables_con.cpp
+
+CMakeFiles/test.dir/src/variables_con/load_variables_con.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/variables_con/load_variables_con.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/load_variables_con.cpp > CMakeFiles/test.dir/src/variables_con/load_variables_con.cpp.i
+
+CMakeFiles/test.dir/src/variables_con/load_variables_con.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/variables_con/load_variables_con.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/load_variables_con.cpp -o CMakeFiles/test.dir/src/variables_con/load_variables_con.cpp.s
+
+CMakeFiles/test.dir/src/variables_con/switchshunt_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/variables_con/switchshunt_variables_con.cpp.o: src/variables_con/switchshunt_variables_con.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/test.dir/src/variables_con/switchshunt_variables_con.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/variables_con/switchshunt_variables_con.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/switchshunt_variables_con.cpp
+
+CMakeFiles/test.dir/src/variables_con/switchshunt_variables_con.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/variables_con/switchshunt_variables_con.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/switchshunt_variables_con.cpp > CMakeFiles/test.dir/src/variables_con/switchshunt_variables_con.cpp.i
+
+CMakeFiles/test.dir/src/variables_con/switchshunt_variables_con.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/variables_con/switchshunt_variables_con.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/switchshunt_variables_con.cpp -o CMakeFiles/test.dir/src/variables_con/switchshunt_variables_con.cpp.s
+
+CMakeFiles/test.dir/src/variables_con/transformer_variables_con.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/variables_con/transformer_variables_con.cpp.o: src/variables_con/transformer_variables_con.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/test.dir/src/variables_con/transformer_variables_con.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/variables_con/transformer_variables_con.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/transformer_variables_con.cpp
+
+CMakeFiles/test.dir/src/variables_con/transformer_variables_con.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/variables_con/transformer_variables_con.cpp.i"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/transformer_variables_con.cpp > CMakeFiles/test.dir/src/variables_con/transformer_variables_con.cpp.i
+
+CMakeFiles/test.dir/src/variables_con/transformer_variables_con.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/variables_con/transformer_variables_con.cpp.s"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/variables_con/transformer_variables_con.cpp -o CMakeFiles/test.dir/src/variables_con/transformer_variables_con.cpp.s
 
 CMakeFiles/test.dir/src/wrapper_construct.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/wrapper_construct.cpp.o: src/wrapper_construct.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/test.dir/src/wrapper_construct.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/wrapper_construct.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/test.dir/src/wrapper_construct.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/wrapper_construct.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/wrapper_construct.cpp
 
 CMakeFiles/test.dir/src/wrapper_construct.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/wrapper_construct.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.cpp > CMakeFiles/test.dir/src/wrapper_construct.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/wrapper_construct.cpp > CMakeFiles/test.dir/src/wrapper_construct.cpp.i
 
 CMakeFiles/test.dir/src/wrapper_construct.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/wrapper_construct.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/wrapper_construct.cpp -o CMakeFiles/test.dir/src/wrapper_construct.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/wrapper_construct.cpp -o CMakeFiles/test.dir/src/wrapper_construct.cpp.s
 
 CMakeFiles/test.dir/src/zone.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/zone.cpp.o: src/zone.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/test.dir/src/zone.cpp.o"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/zone.cpp.o -c /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/zone.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/test.dir/src/zone.cpp.o"
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/zone.cpp.o -c /gpfs/group/vvs3/default/Weinan/C2_cpp/src/zone.cpp
 
 CMakeFiles/test.dir/src/zone.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/zone.cpp.i"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/zone.cpp > CMakeFiles/test.dir/src/zone.cpp.i
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /gpfs/group/vvs3/default/Weinan/C2_cpp/src/zone.cpp > CMakeFiles/test.dir/src/zone.cpp.i
 
 CMakeFiles/test.dir/src/zone.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/zone.cpp.s"
-	/usr/local/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wchen/Projects/GOC_competition/C2_cpp_code/src/zone.cpp -o CMakeFiles/test.dir/src/zone.cpp.s
+	/opt/aci/intel/compilers_and_libraries_2020.2.254/linux/bin/intel64/icpc $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /gpfs/group/vvs3/default/Weinan/C2_cpp/src/zone.cpp -o CMakeFiles/test.dir/src/zone.cpp.s
 
 # Object files for target test
 test_OBJECTS = \
@@ -927,40 +927,36 @@ test_OBJECTS = \
 "CMakeFiles/test.dir/src/basecase_problem.cpp.o" \
 "CMakeFiles/test.dir/src/branchoutevent.cpp.o" \
 "CMakeFiles/test.dir/src/bus.cpp.o" \
-"CMakeFiles/test.dir/src/bus_constraints.cpp.o" \
-"CMakeFiles/test.dir/src/bus_constraints_con.cpp.o" \
-"CMakeFiles/test.dir/src/bus_costs.cpp.o" \
-"CMakeFiles/test.dir/src/bus_costs_con.cpp.o" \
-"CMakeFiles/test.dir/src/bus_variables.cpp.o" \
-"CMakeFiles/test.dir/src/bus_variables_con.cpp.o" \
 "CMakeFiles/test.dir/src/caseidentification.cpp.o" \
 "CMakeFiles/test.dir/src/con.cpp.o" \
+"CMakeFiles/test.dir/src/constraints/bus_constraints.cpp.o" \
+"CMakeFiles/test.dir/src/constraints/generator_constraints.cpp.o" \
+"CMakeFiles/test.dir/src/constraints/line_constraints.cpp.o" \
+"CMakeFiles/test.dir/src/constraints/load_constraints.cpp.o" \
+"CMakeFiles/test.dir/src/constraints/transformer_constraints.cpp.o" \
+"CMakeFiles/test.dir/src/constraints_con/bus_constraints_con.cpp.o" \
+"CMakeFiles/test.dir/src/constraints_con/generator_constraints_con.cpp.o" \
+"CMakeFiles/test.dir/src/constraints_con/line_constraints_con.cpp.o" \
+"CMakeFiles/test.dir/src/constraints_con/load_constraints_con.cpp.o" \
+"CMakeFiles/test.dir/src/constraints_con/transformer_constraints_con.cpp.o" \
 "CMakeFiles/test.dir/src/contigencycase_problem.cpp.o" \
 "CMakeFiles/test.dir/src/contingency.cpp.o" \
+"CMakeFiles/test.dir/src/cost/bus_costs.cpp.o" \
+"CMakeFiles/test.dir/src/cost/gen_costs.cpp.o" \
+"CMakeFiles/test.dir/src/cost/line_costs.cpp.o" \
+"CMakeFiles/test.dir/src/cost/load_costs.cpp.o" \
+"CMakeFiles/test.dir/src/cost/transformer_costs.cpp.o" \
+"CMakeFiles/test.dir/src/cost_con/bus_costs_con.cpp.o" \
+"CMakeFiles/test.dir/src/cost_con/gen_costs_con.cpp.o" \
+"CMakeFiles/test.dir/src/cost_con/line_costs_con.cpp.o" \
+"CMakeFiles/test.dir/src/cost_con/load_costs_con.cpp.o" \
+"CMakeFiles/test.dir/src/cost_con/transformer_costs_con.cpp.o" \
 "CMakeFiles/test.dir/src/data.cpp.o" \
 "CMakeFiles/test.dir/src/fixedshunt.cpp.o" \
-"CMakeFiles/test.dir/src/gen_costs.cpp.o" \
-"CMakeFiles/test.dir/src/gen_costs_con.cpp.o" \
 "CMakeFiles/test.dir/src/generator.cpp.o" \
-"CMakeFiles/test.dir/src/generator_constraints.cpp.o" \
-"CMakeFiles/test.dir/src/generator_constraints_con.cpp.o" \
-"CMakeFiles/test.dir/src/generator_variables.cpp.o" \
-"CMakeFiles/test.dir/src/generator_variables_con.cpp.o" \
 "CMakeFiles/test.dir/src/generatoroutevent.cpp.o" \
 "CMakeFiles/test.dir/src/line.cpp.o" \
-"CMakeFiles/test.dir/src/line_constraints.cpp.o" \
-"CMakeFiles/test.dir/src/line_constraints_con.cpp.o" \
-"CMakeFiles/test.dir/src/line_costs.cpp.o" \
-"CMakeFiles/test.dir/src/line_costs_con.cpp.o" \
-"CMakeFiles/test.dir/src/line_variables.cpp.o" \
-"CMakeFiles/test.dir/src/line_variables_con.cpp.o" \
 "CMakeFiles/test.dir/src/load.cpp.o" \
-"CMakeFiles/test.dir/src/load_constraints.cpp.o" \
-"CMakeFiles/test.dir/src/load_constraints_con.cpp.o" \
-"CMakeFiles/test.dir/src/load_costs.cpp.o" \
-"CMakeFiles/test.dir/src/load_costs_con.cpp.o" \
-"CMakeFiles/test.dir/src/load_variables.cpp.o" \
-"CMakeFiles/test.dir/src/load_variables_con.cpp.o" \
 "CMakeFiles/test.dir/src/nontransformerbranch.cpp.o" \
 "CMakeFiles/test.dir/src/owner.cpp.o" \
 "CMakeFiles/test.dir/src/raw.cpp.o" \
@@ -974,18 +970,22 @@ test_OBJECTS = \
 "CMakeFiles/test.dir/src/sup_scblock.cpp.o" \
 "CMakeFiles/test.dir/src/sup_transformer.cpp.o" \
 "CMakeFiles/test.dir/src/switchedshunt.cpp.o" \
-"CMakeFiles/test.dir/src/switchshunt_variables.cpp.o" \
-"CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.o" \
 "CMakeFiles/test.dir/src/test.cpp.o" \
 "CMakeFiles/test.dir/src/test_param.cpp.o" \
 "CMakeFiles/test.dir/src/transformer.cpp.o" \
-"CMakeFiles/test.dir/src/transformer_constraints.cpp.o" \
-"CMakeFiles/test.dir/src/transformer_constraints_con.cpp.o" \
-"CMakeFiles/test.dir/src/transformer_costs.cpp.o" \
-"CMakeFiles/test.dir/src/transformer_costs_con.cpp.o" \
-"CMakeFiles/test.dir/src/transformer_variables.cpp.o" \
-"CMakeFiles/test.dir/src/transformer_variables_con.cpp.o" \
 "CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o" \
+"CMakeFiles/test.dir/src/variables/bus_variables.cpp.o" \
+"CMakeFiles/test.dir/src/variables/generator_variables.cpp.o" \
+"CMakeFiles/test.dir/src/variables/line_variables.cpp.o" \
+"CMakeFiles/test.dir/src/variables/load_variables.cpp.o" \
+"CMakeFiles/test.dir/src/variables/switchshunt_variables.cpp.o" \
+"CMakeFiles/test.dir/src/variables/transformer_variables.cpp.o" \
+"CMakeFiles/test.dir/src/variables_con/bus_variables_con.cpp.o" \
+"CMakeFiles/test.dir/src/variables_con/generator_variables_con.cpp.o" \
+"CMakeFiles/test.dir/src/variables_con/line_variables_con.cpp.o" \
+"CMakeFiles/test.dir/src/variables_con/load_variables_con.cpp.o" \
+"CMakeFiles/test.dir/src/variables_con/switchshunt_variables_con.cpp.o" \
+"CMakeFiles/test.dir/src/variables_con/transformer_variables_con.cpp.o" \
 "CMakeFiles/test.dir/src/wrapper_construct.cpp.o" \
 "CMakeFiles/test.dir/src/zone.cpp.o"
 
@@ -996,40 +996,36 @@ test: CMakeFiles/test.dir/src/area.cpp.o
 test: CMakeFiles/test.dir/src/basecase_problem.cpp.o
 test: CMakeFiles/test.dir/src/branchoutevent.cpp.o
 test: CMakeFiles/test.dir/src/bus.cpp.o
-test: CMakeFiles/test.dir/src/bus_constraints.cpp.o
-test: CMakeFiles/test.dir/src/bus_constraints_con.cpp.o
-test: CMakeFiles/test.dir/src/bus_costs.cpp.o
-test: CMakeFiles/test.dir/src/bus_costs_con.cpp.o
-test: CMakeFiles/test.dir/src/bus_variables.cpp.o
-test: CMakeFiles/test.dir/src/bus_variables_con.cpp.o
 test: CMakeFiles/test.dir/src/caseidentification.cpp.o
 test: CMakeFiles/test.dir/src/con.cpp.o
+test: CMakeFiles/test.dir/src/constraints/bus_constraints.cpp.o
+test: CMakeFiles/test.dir/src/constraints/generator_constraints.cpp.o
+test: CMakeFiles/test.dir/src/constraints/line_constraints.cpp.o
+test: CMakeFiles/test.dir/src/constraints/load_constraints.cpp.o
+test: CMakeFiles/test.dir/src/constraints/transformer_constraints.cpp.o
+test: CMakeFiles/test.dir/src/constraints_con/bus_constraints_con.cpp.o
+test: CMakeFiles/test.dir/src/constraints_con/generator_constraints_con.cpp.o
+test: CMakeFiles/test.dir/src/constraints_con/line_constraints_con.cpp.o
+test: CMakeFiles/test.dir/src/constraints_con/load_constraints_con.cpp.o
+test: CMakeFiles/test.dir/src/constraints_con/transformer_constraints_con.cpp.o
 test: CMakeFiles/test.dir/src/contigencycase_problem.cpp.o
 test: CMakeFiles/test.dir/src/contingency.cpp.o
+test: CMakeFiles/test.dir/src/cost/bus_costs.cpp.o
+test: CMakeFiles/test.dir/src/cost/gen_costs.cpp.o
+test: CMakeFiles/test.dir/src/cost/line_costs.cpp.o
+test: CMakeFiles/test.dir/src/cost/load_costs.cpp.o
+test: CMakeFiles/test.dir/src/cost/transformer_costs.cpp.o
+test: CMakeFiles/test.dir/src/cost_con/bus_costs_con.cpp.o
+test: CMakeFiles/test.dir/src/cost_con/gen_costs_con.cpp.o
+test: CMakeFiles/test.dir/src/cost_con/line_costs_con.cpp.o
+test: CMakeFiles/test.dir/src/cost_con/load_costs_con.cpp.o
+test: CMakeFiles/test.dir/src/cost_con/transformer_costs_con.cpp.o
 test: CMakeFiles/test.dir/src/data.cpp.o
 test: CMakeFiles/test.dir/src/fixedshunt.cpp.o
-test: CMakeFiles/test.dir/src/gen_costs.cpp.o
-test: CMakeFiles/test.dir/src/gen_costs_con.cpp.o
 test: CMakeFiles/test.dir/src/generator.cpp.o
-test: CMakeFiles/test.dir/src/generator_constraints.cpp.o
-test: CMakeFiles/test.dir/src/generator_constraints_con.cpp.o
-test: CMakeFiles/test.dir/src/generator_variables.cpp.o
-test: CMakeFiles/test.dir/src/generator_variables_con.cpp.o
 test: CMakeFiles/test.dir/src/generatoroutevent.cpp.o
 test: CMakeFiles/test.dir/src/line.cpp.o
-test: CMakeFiles/test.dir/src/line_constraints.cpp.o
-test: CMakeFiles/test.dir/src/line_constraints_con.cpp.o
-test: CMakeFiles/test.dir/src/line_costs.cpp.o
-test: CMakeFiles/test.dir/src/line_costs_con.cpp.o
-test: CMakeFiles/test.dir/src/line_variables.cpp.o
-test: CMakeFiles/test.dir/src/line_variables_con.cpp.o
 test: CMakeFiles/test.dir/src/load.cpp.o
-test: CMakeFiles/test.dir/src/load_constraints.cpp.o
-test: CMakeFiles/test.dir/src/load_constraints_con.cpp.o
-test: CMakeFiles/test.dir/src/load_costs.cpp.o
-test: CMakeFiles/test.dir/src/load_costs_con.cpp.o
-test: CMakeFiles/test.dir/src/load_variables.cpp.o
-test: CMakeFiles/test.dir/src/load_variables_con.cpp.o
 test: CMakeFiles/test.dir/src/nontransformerbranch.cpp.o
 test: CMakeFiles/test.dir/src/owner.cpp.o
 test: CMakeFiles/test.dir/src/raw.cpp.o
@@ -1043,25 +1039,29 @@ test: CMakeFiles/test.dir/src/sup_qcblock.cpp.o
 test: CMakeFiles/test.dir/src/sup_scblock.cpp.o
 test: CMakeFiles/test.dir/src/sup_transformer.cpp.o
 test: CMakeFiles/test.dir/src/switchedshunt.cpp.o
-test: CMakeFiles/test.dir/src/switchshunt_variables.cpp.o
-test: CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.o
 test: CMakeFiles/test.dir/src/test.cpp.o
 test: CMakeFiles/test.dir/src/test_param.cpp.o
 test: CMakeFiles/test.dir/src/transformer.cpp.o
-test: CMakeFiles/test.dir/src/transformer_constraints.cpp.o
-test: CMakeFiles/test.dir/src/transformer_constraints_con.cpp.o
-test: CMakeFiles/test.dir/src/transformer_costs.cpp.o
-test: CMakeFiles/test.dir/src/transformer_costs_con.cpp.o
-test: CMakeFiles/test.dir/src/transformer_variables.cpp.o
-test: CMakeFiles/test.dir/src/transformer_variables_con.cpp.o
 test: CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.o
+test: CMakeFiles/test.dir/src/variables/bus_variables.cpp.o
+test: CMakeFiles/test.dir/src/variables/generator_variables.cpp.o
+test: CMakeFiles/test.dir/src/variables/line_variables.cpp.o
+test: CMakeFiles/test.dir/src/variables/load_variables.cpp.o
+test: CMakeFiles/test.dir/src/variables/switchshunt_variables.cpp.o
+test: CMakeFiles/test.dir/src/variables/transformer_variables.cpp.o
+test: CMakeFiles/test.dir/src/variables_con/bus_variables_con.cpp.o
+test: CMakeFiles/test.dir/src/variables_con/generator_variables_con.cpp.o
+test: CMakeFiles/test.dir/src/variables_con/line_variables_con.cpp.o
+test: CMakeFiles/test.dir/src/variables_con/load_variables_con.cpp.o
+test: CMakeFiles/test.dir/src/variables_con/switchshunt_variables_con.cpp.o
+test: CMakeFiles/test.dir/src/variables_con/transformer_variables_con.cpp.o
 test: CMakeFiles/test.dir/src/wrapper_construct.cpp.o
 test: CMakeFiles/test.dir/src/zone.cpp.o
 test: CMakeFiles/test.dir/build.make
-test: /usr/local/lib/libifopt_ipopt.dylib
-test: /usr/local/lib/libifopt_core.dylib
+test: /gpfs/group/vvs3/default/Weinan/ifopt/install/usr/local/lib64/libifopt_ipopt.so
+test: /gpfs/group/vvs3/default/Weinan/ifopt/install/usr/local/lib64/libifopt_core.so
 test: CMakeFiles/test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Linking CXX executable test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Linking CXX executable test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -1074,6 +1074,6 @@ CMakeFiles/test.dir/clean:
 .PHONY : CMakeFiles/test.dir/clean
 
 CMakeFiles/test.dir/depend:
-	cd /Users/wchen/Projects/GOC_competition/C2_cpp_code && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/wchen/Projects/GOC_competition/C2_cpp_code /Users/wchen/Projects/GOC_competition/C2_cpp_code /Users/wchen/Projects/GOC_competition/C2_cpp_code /Users/wchen/Projects/GOC_competition/C2_cpp_code /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /gpfs/group/vvs3/default/Weinan/C2_cpp && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /gpfs/group/vvs3/default/Weinan/C2_cpp /gpfs/group/vvs3/default/Weinan/C2_cpp /gpfs/group/vvs3/default/Weinan/C2_cpp /gpfs/group/vvs3/default/Weinan/C2_cpp /gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test.dir/depend
 

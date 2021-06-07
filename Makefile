@@ -58,19 +58,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /gpfs/group/RISE/sw7/cmake-3.19-intel-19.1.2/cmake-3.19.6/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /gpfs/group/RISE/sw7/cmake-3.19-intel-19.1.2/cmake-3.19.6/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/wchen/Projects/GOC_competition/C2_cpp_code
+CMAKE_SOURCE_DIR = /gpfs/group/vvs3/default/Weinan/C2_cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/wchen/Projects/GOC_competition/C2_cpp_code
+CMAKE_BINARY_DIR = /gpfs/group/vvs3/default/Weinan/C2_cpp
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = /Users/wchen/Projects/GOC_competition/C2_cpp_code
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/gpfs/group/RISE/sw7/cmake-3.19-intel-19.1.2/cmake-3.19.6/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -88,8 +88,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles /Users/wchen/Projects/GOC_competition/C2_cpp_code//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles /gpfs/group/vvs3/default/Weinan/C2_cpp//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wchen/Projects/GOC_competition/C2_cpp_code/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /gpfs/group/vvs3/default/Weinan/C2_cpp/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -250,168 +250,6 @@ src/bus.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus.cpp.s
 .PHONY : src/bus.cpp.s
 
-src/bus_constraints.o: src/bus_constraints.cpp.o
-
-.PHONY : src/bus_constraints.o
-
-# target to build an object file
-src/bus_constraints.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_constraints.cpp.o
-.PHONY : src/bus_constraints.cpp.o
-
-src/bus_constraints.i: src/bus_constraints.cpp.i
-
-.PHONY : src/bus_constraints.i
-
-# target to preprocess a source file
-src/bus_constraints.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_constraints.cpp.i
-.PHONY : src/bus_constraints.cpp.i
-
-src/bus_constraints.s: src/bus_constraints.cpp.s
-
-.PHONY : src/bus_constraints.s
-
-# target to generate assembly for a file
-src/bus_constraints.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_constraints.cpp.s
-.PHONY : src/bus_constraints.cpp.s
-
-src/bus_constraints_con.o: src/bus_constraints_con.cpp.o
-
-.PHONY : src/bus_constraints_con.o
-
-# target to build an object file
-src/bus_constraints_con.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_constraints_con.cpp.o
-.PHONY : src/bus_constraints_con.cpp.o
-
-src/bus_constraints_con.i: src/bus_constraints_con.cpp.i
-
-.PHONY : src/bus_constraints_con.i
-
-# target to preprocess a source file
-src/bus_constraints_con.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_constraints_con.cpp.i
-.PHONY : src/bus_constraints_con.cpp.i
-
-src/bus_constraints_con.s: src/bus_constraints_con.cpp.s
-
-.PHONY : src/bus_constraints_con.s
-
-# target to generate assembly for a file
-src/bus_constraints_con.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_constraints_con.cpp.s
-.PHONY : src/bus_constraints_con.cpp.s
-
-src/bus_costs.o: src/bus_costs.cpp.o
-
-.PHONY : src/bus_costs.o
-
-# target to build an object file
-src/bus_costs.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_costs.cpp.o
-.PHONY : src/bus_costs.cpp.o
-
-src/bus_costs.i: src/bus_costs.cpp.i
-
-.PHONY : src/bus_costs.i
-
-# target to preprocess a source file
-src/bus_costs.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_costs.cpp.i
-.PHONY : src/bus_costs.cpp.i
-
-src/bus_costs.s: src/bus_costs.cpp.s
-
-.PHONY : src/bus_costs.s
-
-# target to generate assembly for a file
-src/bus_costs.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_costs.cpp.s
-.PHONY : src/bus_costs.cpp.s
-
-src/bus_costs_con.o: src/bus_costs_con.cpp.o
-
-.PHONY : src/bus_costs_con.o
-
-# target to build an object file
-src/bus_costs_con.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_costs_con.cpp.o
-.PHONY : src/bus_costs_con.cpp.o
-
-src/bus_costs_con.i: src/bus_costs_con.cpp.i
-
-.PHONY : src/bus_costs_con.i
-
-# target to preprocess a source file
-src/bus_costs_con.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_costs_con.cpp.i
-.PHONY : src/bus_costs_con.cpp.i
-
-src/bus_costs_con.s: src/bus_costs_con.cpp.s
-
-.PHONY : src/bus_costs_con.s
-
-# target to generate assembly for a file
-src/bus_costs_con.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_costs_con.cpp.s
-.PHONY : src/bus_costs_con.cpp.s
-
-src/bus_variables.o: src/bus_variables.cpp.o
-
-.PHONY : src/bus_variables.o
-
-# target to build an object file
-src/bus_variables.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_variables.cpp.o
-.PHONY : src/bus_variables.cpp.o
-
-src/bus_variables.i: src/bus_variables.cpp.i
-
-.PHONY : src/bus_variables.i
-
-# target to preprocess a source file
-src/bus_variables.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_variables.cpp.i
-.PHONY : src/bus_variables.cpp.i
-
-src/bus_variables.s: src/bus_variables.cpp.s
-
-.PHONY : src/bus_variables.s
-
-# target to generate assembly for a file
-src/bus_variables.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_variables.cpp.s
-.PHONY : src/bus_variables.cpp.s
-
-src/bus_variables_con.o: src/bus_variables_con.cpp.o
-
-.PHONY : src/bus_variables_con.o
-
-# target to build an object file
-src/bus_variables_con.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_variables_con.cpp.o
-.PHONY : src/bus_variables_con.cpp.o
-
-src/bus_variables_con.i: src/bus_variables_con.cpp.i
-
-.PHONY : src/bus_variables_con.i
-
-# target to preprocess a source file
-src/bus_variables_con.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_variables_con.cpp.i
-.PHONY : src/bus_variables_con.cpp.i
-
-src/bus_variables_con.s: src/bus_variables_con.cpp.s
-
-.PHONY : src/bus_variables_con.s
-
-# target to generate assembly for a file
-src/bus_variables_con.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bus_variables_con.cpp.s
-.PHONY : src/bus_variables_con.cpp.s
-
 src/caseidentification.o: src/caseidentification.cpp.o
 
 .PHONY : src/caseidentification.o
@@ -465,6 +303,276 @@ src/con.s: src/con.cpp.s
 src/con.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/con.cpp.s
 .PHONY : src/con.cpp.s
+
+src/constraints/bus_constraints.o: src/constraints/bus_constraints.cpp.o
+
+.PHONY : src/constraints/bus_constraints.o
+
+# target to build an object file
+src/constraints/bus_constraints.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints/bus_constraints.cpp.o
+.PHONY : src/constraints/bus_constraints.cpp.o
+
+src/constraints/bus_constraints.i: src/constraints/bus_constraints.cpp.i
+
+.PHONY : src/constraints/bus_constraints.i
+
+# target to preprocess a source file
+src/constraints/bus_constraints.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints/bus_constraints.cpp.i
+.PHONY : src/constraints/bus_constraints.cpp.i
+
+src/constraints/bus_constraints.s: src/constraints/bus_constraints.cpp.s
+
+.PHONY : src/constraints/bus_constraints.s
+
+# target to generate assembly for a file
+src/constraints/bus_constraints.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints/bus_constraints.cpp.s
+.PHONY : src/constraints/bus_constraints.cpp.s
+
+src/constraints/generator_constraints.o: src/constraints/generator_constraints.cpp.o
+
+.PHONY : src/constraints/generator_constraints.o
+
+# target to build an object file
+src/constraints/generator_constraints.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints/generator_constraints.cpp.o
+.PHONY : src/constraints/generator_constraints.cpp.o
+
+src/constraints/generator_constraints.i: src/constraints/generator_constraints.cpp.i
+
+.PHONY : src/constraints/generator_constraints.i
+
+# target to preprocess a source file
+src/constraints/generator_constraints.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints/generator_constraints.cpp.i
+.PHONY : src/constraints/generator_constraints.cpp.i
+
+src/constraints/generator_constraints.s: src/constraints/generator_constraints.cpp.s
+
+.PHONY : src/constraints/generator_constraints.s
+
+# target to generate assembly for a file
+src/constraints/generator_constraints.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints/generator_constraints.cpp.s
+.PHONY : src/constraints/generator_constraints.cpp.s
+
+src/constraints/line_constraints.o: src/constraints/line_constraints.cpp.o
+
+.PHONY : src/constraints/line_constraints.o
+
+# target to build an object file
+src/constraints/line_constraints.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints/line_constraints.cpp.o
+.PHONY : src/constraints/line_constraints.cpp.o
+
+src/constraints/line_constraints.i: src/constraints/line_constraints.cpp.i
+
+.PHONY : src/constraints/line_constraints.i
+
+# target to preprocess a source file
+src/constraints/line_constraints.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints/line_constraints.cpp.i
+.PHONY : src/constraints/line_constraints.cpp.i
+
+src/constraints/line_constraints.s: src/constraints/line_constraints.cpp.s
+
+.PHONY : src/constraints/line_constraints.s
+
+# target to generate assembly for a file
+src/constraints/line_constraints.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints/line_constraints.cpp.s
+.PHONY : src/constraints/line_constraints.cpp.s
+
+src/constraints/load_constraints.o: src/constraints/load_constraints.cpp.o
+
+.PHONY : src/constraints/load_constraints.o
+
+# target to build an object file
+src/constraints/load_constraints.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints/load_constraints.cpp.o
+.PHONY : src/constraints/load_constraints.cpp.o
+
+src/constraints/load_constraints.i: src/constraints/load_constraints.cpp.i
+
+.PHONY : src/constraints/load_constraints.i
+
+# target to preprocess a source file
+src/constraints/load_constraints.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints/load_constraints.cpp.i
+.PHONY : src/constraints/load_constraints.cpp.i
+
+src/constraints/load_constraints.s: src/constraints/load_constraints.cpp.s
+
+.PHONY : src/constraints/load_constraints.s
+
+# target to generate assembly for a file
+src/constraints/load_constraints.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints/load_constraints.cpp.s
+.PHONY : src/constraints/load_constraints.cpp.s
+
+src/constraints/transformer_constraints.o: src/constraints/transformer_constraints.cpp.o
+
+.PHONY : src/constraints/transformer_constraints.o
+
+# target to build an object file
+src/constraints/transformer_constraints.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints/transformer_constraints.cpp.o
+.PHONY : src/constraints/transformer_constraints.cpp.o
+
+src/constraints/transformer_constraints.i: src/constraints/transformer_constraints.cpp.i
+
+.PHONY : src/constraints/transformer_constraints.i
+
+# target to preprocess a source file
+src/constraints/transformer_constraints.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints/transformer_constraints.cpp.i
+.PHONY : src/constraints/transformer_constraints.cpp.i
+
+src/constraints/transformer_constraints.s: src/constraints/transformer_constraints.cpp.s
+
+.PHONY : src/constraints/transformer_constraints.s
+
+# target to generate assembly for a file
+src/constraints/transformer_constraints.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints/transformer_constraints.cpp.s
+.PHONY : src/constraints/transformer_constraints.cpp.s
+
+src/constraints_con/bus_constraints_con.o: src/constraints_con/bus_constraints_con.cpp.o
+
+.PHONY : src/constraints_con/bus_constraints_con.o
+
+# target to build an object file
+src/constraints_con/bus_constraints_con.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints_con/bus_constraints_con.cpp.o
+.PHONY : src/constraints_con/bus_constraints_con.cpp.o
+
+src/constraints_con/bus_constraints_con.i: src/constraints_con/bus_constraints_con.cpp.i
+
+.PHONY : src/constraints_con/bus_constraints_con.i
+
+# target to preprocess a source file
+src/constraints_con/bus_constraints_con.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints_con/bus_constraints_con.cpp.i
+.PHONY : src/constraints_con/bus_constraints_con.cpp.i
+
+src/constraints_con/bus_constraints_con.s: src/constraints_con/bus_constraints_con.cpp.s
+
+.PHONY : src/constraints_con/bus_constraints_con.s
+
+# target to generate assembly for a file
+src/constraints_con/bus_constraints_con.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints_con/bus_constraints_con.cpp.s
+.PHONY : src/constraints_con/bus_constraints_con.cpp.s
+
+src/constraints_con/generator_constraints_con.o: src/constraints_con/generator_constraints_con.cpp.o
+
+.PHONY : src/constraints_con/generator_constraints_con.o
+
+# target to build an object file
+src/constraints_con/generator_constraints_con.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints_con/generator_constraints_con.cpp.o
+.PHONY : src/constraints_con/generator_constraints_con.cpp.o
+
+src/constraints_con/generator_constraints_con.i: src/constraints_con/generator_constraints_con.cpp.i
+
+.PHONY : src/constraints_con/generator_constraints_con.i
+
+# target to preprocess a source file
+src/constraints_con/generator_constraints_con.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints_con/generator_constraints_con.cpp.i
+.PHONY : src/constraints_con/generator_constraints_con.cpp.i
+
+src/constraints_con/generator_constraints_con.s: src/constraints_con/generator_constraints_con.cpp.s
+
+.PHONY : src/constraints_con/generator_constraints_con.s
+
+# target to generate assembly for a file
+src/constraints_con/generator_constraints_con.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints_con/generator_constraints_con.cpp.s
+.PHONY : src/constraints_con/generator_constraints_con.cpp.s
+
+src/constraints_con/line_constraints_con.o: src/constraints_con/line_constraints_con.cpp.o
+
+.PHONY : src/constraints_con/line_constraints_con.o
+
+# target to build an object file
+src/constraints_con/line_constraints_con.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints_con/line_constraints_con.cpp.o
+.PHONY : src/constraints_con/line_constraints_con.cpp.o
+
+src/constraints_con/line_constraints_con.i: src/constraints_con/line_constraints_con.cpp.i
+
+.PHONY : src/constraints_con/line_constraints_con.i
+
+# target to preprocess a source file
+src/constraints_con/line_constraints_con.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints_con/line_constraints_con.cpp.i
+.PHONY : src/constraints_con/line_constraints_con.cpp.i
+
+src/constraints_con/line_constraints_con.s: src/constraints_con/line_constraints_con.cpp.s
+
+.PHONY : src/constraints_con/line_constraints_con.s
+
+# target to generate assembly for a file
+src/constraints_con/line_constraints_con.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints_con/line_constraints_con.cpp.s
+.PHONY : src/constraints_con/line_constraints_con.cpp.s
+
+src/constraints_con/load_constraints_con.o: src/constraints_con/load_constraints_con.cpp.o
+
+.PHONY : src/constraints_con/load_constraints_con.o
+
+# target to build an object file
+src/constraints_con/load_constraints_con.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints_con/load_constraints_con.cpp.o
+.PHONY : src/constraints_con/load_constraints_con.cpp.o
+
+src/constraints_con/load_constraints_con.i: src/constraints_con/load_constraints_con.cpp.i
+
+.PHONY : src/constraints_con/load_constraints_con.i
+
+# target to preprocess a source file
+src/constraints_con/load_constraints_con.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints_con/load_constraints_con.cpp.i
+.PHONY : src/constraints_con/load_constraints_con.cpp.i
+
+src/constraints_con/load_constraints_con.s: src/constraints_con/load_constraints_con.cpp.s
+
+.PHONY : src/constraints_con/load_constraints_con.s
+
+# target to generate assembly for a file
+src/constraints_con/load_constraints_con.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints_con/load_constraints_con.cpp.s
+.PHONY : src/constraints_con/load_constraints_con.cpp.s
+
+src/constraints_con/transformer_constraints_con.o: src/constraints_con/transformer_constraints_con.cpp.o
+
+.PHONY : src/constraints_con/transformer_constraints_con.o
+
+# target to build an object file
+src/constraints_con/transformer_constraints_con.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints_con/transformer_constraints_con.cpp.o
+.PHONY : src/constraints_con/transformer_constraints_con.cpp.o
+
+src/constraints_con/transformer_constraints_con.i: src/constraints_con/transformer_constraints_con.cpp.i
+
+.PHONY : src/constraints_con/transformer_constraints_con.i
+
+# target to preprocess a source file
+src/constraints_con/transformer_constraints_con.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints_con/transformer_constraints_con.cpp.i
+.PHONY : src/constraints_con/transformer_constraints_con.cpp.i
+
+src/constraints_con/transformer_constraints_con.s: src/constraints_con/transformer_constraints_con.cpp.s
+
+.PHONY : src/constraints_con/transformer_constraints_con.s
+
+# target to generate assembly for a file
+src/constraints_con/transformer_constraints_con.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/constraints_con/transformer_constraints_con.cpp.s
+.PHONY : src/constraints_con/transformer_constraints_con.cpp.s
 
 src/contigencycase_problem.o: src/contigencycase_problem.cpp.o
 
@@ -520,6 +628,276 @@ src/contingency.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/contingency.cpp.s
 .PHONY : src/contingency.cpp.s
 
+src/cost/bus_costs.o: src/cost/bus_costs.cpp.o
+
+.PHONY : src/cost/bus_costs.o
+
+# target to build an object file
+src/cost/bus_costs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost/bus_costs.cpp.o
+.PHONY : src/cost/bus_costs.cpp.o
+
+src/cost/bus_costs.i: src/cost/bus_costs.cpp.i
+
+.PHONY : src/cost/bus_costs.i
+
+# target to preprocess a source file
+src/cost/bus_costs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost/bus_costs.cpp.i
+.PHONY : src/cost/bus_costs.cpp.i
+
+src/cost/bus_costs.s: src/cost/bus_costs.cpp.s
+
+.PHONY : src/cost/bus_costs.s
+
+# target to generate assembly for a file
+src/cost/bus_costs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost/bus_costs.cpp.s
+.PHONY : src/cost/bus_costs.cpp.s
+
+src/cost/gen_costs.o: src/cost/gen_costs.cpp.o
+
+.PHONY : src/cost/gen_costs.o
+
+# target to build an object file
+src/cost/gen_costs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost/gen_costs.cpp.o
+.PHONY : src/cost/gen_costs.cpp.o
+
+src/cost/gen_costs.i: src/cost/gen_costs.cpp.i
+
+.PHONY : src/cost/gen_costs.i
+
+# target to preprocess a source file
+src/cost/gen_costs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost/gen_costs.cpp.i
+.PHONY : src/cost/gen_costs.cpp.i
+
+src/cost/gen_costs.s: src/cost/gen_costs.cpp.s
+
+.PHONY : src/cost/gen_costs.s
+
+# target to generate assembly for a file
+src/cost/gen_costs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost/gen_costs.cpp.s
+.PHONY : src/cost/gen_costs.cpp.s
+
+src/cost/line_costs.o: src/cost/line_costs.cpp.o
+
+.PHONY : src/cost/line_costs.o
+
+# target to build an object file
+src/cost/line_costs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost/line_costs.cpp.o
+.PHONY : src/cost/line_costs.cpp.o
+
+src/cost/line_costs.i: src/cost/line_costs.cpp.i
+
+.PHONY : src/cost/line_costs.i
+
+# target to preprocess a source file
+src/cost/line_costs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost/line_costs.cpp.i
+.PHONY : src/cost/line_costs.cpp.i
+
+src/cost/line_costs.s: src/cost/line_costs.cpp.s
+
+.PHONY : src/cost/line_costs.s
+
+# target to generate assembly for a file
+src/cost/line_costs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost/line_costs.cpp.s
+.PHONY : src/cost/line_costs.cpp.s
+
+src/cost/load_costs.o: src/cost/load_costs.cpp.o
+
+.PHONY : src/cost/load_costs.o
+
+# target to build an object file
+src/cost/load_costs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost/load_costs.cpp.o
+.PHONY : src/cost/load_costs.cpp.o
+
+src/cost/load_costs.i: src/cost/load_costs.cpp.i
+
+.PHONY : src/cost/load_costs.i
+
+# target to preprocess a source file
+src/cost/load_costs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost/load_costs.cpp.i
+.PHONY : src/cost/load_costs.cpp.i
+
+src/cost/load_costs.s: src/cost/load_costs.cpp.s
+
+.PHONY : src/cost/load_costs.s
+
+# target to generate assembly for a file
+src/cost/load_costs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost/load_costs.cpp.s
+.PHONY : src/cost/load_costs.cpp.s
+
+src/cost/transformer_costs.o: src/cost/transformer_costs.cpp.o
+
+.PHONY : src/cost/transformer_costs.o
+
+# target to build an object file
+src/cost/transformer_costs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost/transformer_costs.cpp.o
+.PHONY : src/cost/transformer_costs.cpp.o
+
+src/cost/transformer_costs.i: src/cost/transformer_costs.cpp.i
+
+.PHONY : src/cost/transformer_costs.i
+
+# target to preprocess a source file
+src/cost/transformer_costs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost/transformer_costs.cpp.i
+.PHONY : src/cost/transformer_costs.cpp.i
+
+src/cost/transformer_costs.s: src/cost/transformer_costs.cpp.s
+
+.PHONY : src/cost/transformer_costs.s
+
+# target to generate assembly for a file
+src/cost/transformer_costs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost/transformer_costs.cpp.s
+.PHONY : src/cost/transformer_costs.cpp.s
+
+src/cost_con/bus_costs_con.o: src/cost_con/bus_costs_con.cpp.o
+
+.PHONY : src/cost_con/bus_costs_con.o
+
+# target to build an object file
+src/cost_con/bus_costs_con.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost_con/bus_costs_con.cpp.o
+.PHONY : src/cost_con/bus_costs_con.cpp.o
+
+src/cost_con/bus_costs_con.i: src/cost_con/bus_costs_con.cpp.i
+
+.PHONY : src/cost_con/bus_costs_con.i
+
+# target to preprocess a source file
+src/cost_con/bus_costs_con.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost_con/bus_costs_con.cpp.i
+.PHONY : src/cost_con/bus_costs_con.cpp.i
+
+src/cost_con/bus_costs_con.s: src/cost_con/bus_costs_con.cpp.s
+
+.PHONY : src/cost_con/bus_costs_con.s
+
+# target to generate assembly for a file
+src/cost_con/bus_costs_con.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost_con/bus_costs_con.cpp.s
+.PHONY : src/cost_con/bus_costs_con.cpp.s
+
+src/cost_con/gen_costs_con.o: src/cost_con/gen_costs_con.cpp.o
+
+.PHONY : src/cost_con/gen_costs_con.o
+
+# target to build an object file
+src/cost_con/gen_costs_con.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost_con/gen_costs_con.cpp.o
+.PHONY : src/cost_con/gen_costs_con.cpp.o
+
+src/cost_con/gen_costs_con.i: src/cost_con/gen_costs_con.cpp.i
+
+.PHONY : src/cost_con/gen_costs_con.i
+
+# target to preprocess a source file
+src/cost_con/gen_costs_con.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost_con/gen_costs_con.cpp.i
+.PHONY : src/cost_con/gen_costs_con.cpp.i
+
+src/cost_con/gen_costs_con.s: src/cost_con/gen_costs_con.cpp.s
+
+.PHONY : src/cost_con/gen_costs_con.s
+
+# target to generate assembly for a file
+src/cost_con/gen_costs_con.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost_con/gen_costs_con.cpp.s
+.PHONY : src/cost_con/gen_costs_con.cpp.s
+
+src/cost_con/line_costs_con.o: src/cost_con/line_costs_con.cpp.o
+
+.PHONY : src/cost_con/line_costs_con.o
+
+# target to build an object file
+src/cost_con/line_costs_con.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost_con/line_costs_con.cpp.o
+.PHONY : src/cost_con/line_costs_con.cpp.o
+
+src/cost_con/line_costs_con.i: src/cost_con/line_costs_con.cpp.i
+
+.PHONY : src/cost_con/line_costs_con.i
+
+# target to preprocess a source file
+src/cost_con/line_costs_con.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost_con/line_costs_con.cpp.i
+.PHONY : src/cost_con/line_costs_con.cpp.i
+
+src/cost_con/line_costs_con.s: src/cost_con/line_costs_con.cpp.s
+
+.PHONY : src/cost_con/line_costs_con.s
+
+# target to generate assembly for a file
+src/cost_con/line_costs_con.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost_con/line_costs_con.cpp.s
+.PHONY : src/cost_con/line_costs_con.cpp.s
+
+src/cost_con/load_costs_con.o: src/cost_con/load_costs_con.cpp.o
+
+.PHONY : src/cost_con/load_costs_con.o
+
+# target to build an object file
+src/cost_con/load_costs_con.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost_con/load_costs_con.cpp.o
+.PHONY : src/cost_con/load_costs_con.cpp.o
+
+src/cost_con/load_costs_con.i: src/cost_con/load_costs_con.cpp.i
+
+.PHONY : src/cost_con/load_costs_con.i
+
+# target to preprocess a source file
+src/cost_con/load_costs_con.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost_con/load_costs_con.cpp.i
+.PHONY : src/cost_con/load_costs_con.cpp.i
+
+src/cost_con/load_costs_con.s: src/cost_con/load_costs_con.cpp.s
+
+.PHONY : src/cost_con/load_costs_con.s
+
+# target to generate assembly for a file
+src/cost_con/load_costs_con.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost_con/load_costs_con.cpp.s
+.PHONY : src/cost_con/load_costs_con.cpp.s
+
+src/cost_con/transformer_costs_con.o: src/cost_con/transformer_costs_con.cpp.o
+
+.PHONY : src/cost_con/transformer_costs_con.o
+
+# target to build an object file
+src/cost_con/transformer_costs_con.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost_con/transformer_costs_con.cpp.o
+.PHONY : src/cost_con/transformer_costs_con.cpp.o
+
+src/cost_con/transformer_costs_con.i: src/cost_con/transformer_costs_con.cpp.i
+
+.PHONY : src/cost_con/transformer_costs_con.i
+
+# target to preprocess a source file
+src/cost_con/transformer_costs_con.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost_con/transformer_costs_con.cpp.i
+.PHONY : src/cost_con/transformer_costs_con.cpp.i
+
+src/cost_con/transformer_costs_con.s: src/cost_con/transformer_costs_con.cpp.s
+
+.PHONY : src/cost_con/transformer_costs_con.s
+
+# target to generate assembly for a file
+src/cost_con/transformer_costs_con.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/cost_con/transformer_costs_con.cpp.s
+.PHONY : src/cost_con/transformer_costs_con.cpp.s
+
 src/data.o: src/data.cpp.o
 
 .PHONY : src/data.o
@@ -574,60 +952,6 @@ src/fixedshunt.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/fixedshunt.cpp.s
 .PHONY : src/fixedshunt.cpp.s
 
-src/gen_costs.o: src/gen_costs.cpp.o
-
-.PHONY : src/gen_costs.o
-
-# target to build an object file
-src/gen_costs.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/gen_costs.cpp.o
-.PHONY : src/gen_costs.cpp.o
-
-src/gen_costs.i: src/gen_costs.cpp.i
-
-.PHONY : src/gen_costs.i
-
-# target to preprocess a source file
-src/gen_costs.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/gen_costs.cpp.i
-.PHONY : src/gen_costs.cpp.i
-
-src/gen_costs.s: src/gen_costs.cpp.s
-
-.PHONY : src/gen_costs.s
-
-# target to generate assembly for a file
-src/gen_costs.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/gen_costs.cpp.s
-.PHONY : src/gen_costs.cpp.s
-
-src/gen_costs_con.o: src/gen_costs_con.cpp.o
-
-.PHONY : src/gen_costs_con.o
-
-# target to build an object file
-src/gen_costs_con.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/gen_costs_con.cpp.o
-.PHONY : src/gen_costs_con.cpp.o
-
-src/gen_costs_con.i: src/gen_costs_con.cpp.i
-
-.PHONY : src/gen_costs_con.i
-
-# target to preprocess a source file
-src/gen_costs_con.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/gen_costs_con.cpp.i
-.PHONY : src/gen_costs_con.cpp.i
-
-src/gen_costs_con.s: src/gen_costs_con.cpp.s
-
-.PHONY : src/gen_costs_con.s
-
-# target to generate assembly for a file
-src/gen_costs_con.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/gen_costs_con.cpp.s
-.PHONY : src/gen_costs_con.cpp.s
-
 src/generator.o: src/generator.cpp.o
 
 .PHONY : src/generator.o
@@ -654,114 +978,6 @@ src/generator.s: src/generator.cpp.s
 src/generator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator.cpp.s
 .PHONY : src/generator.cpp.s
-
-src/generator_constraints.o: src/generator_constraints.cpp.o
-
-.PHONY : src/generator_constraints.o
-
-# target to build an object file
-src/generator_constraints.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator_constraints.cpp.o
-.PHONY : src/generator_constraints.cpp.o
-
-src/generator_constraints.i: src/generator_constraints.cpp.i
-
-.PHONY : src/generator_constraints.i
-
-# target to preprocess a source file
-src/generator_constraints.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator_constraints.cpp.i
-.PHONY : src/generator_constraints.cpp.i
-
-src/generator_constraints.s: src/generator_constraints.cpp.s
-
-.PHONY : src/generator_constraints.s
-
-# target to generate assembly for a file
-src/generator_constraints.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator_constraints.cpp.s
-.PHONY : src/generator_constraints.cpp.s
-
-src/generator_constraints_con.o: src/generator_constraints_con.cpp.o
-
-.PHONY : src/generator_constraints_con.o
-
-# target to build an object file
-src/generator_constraints_con.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator_constraints_con.cpp.o
-.PHONY : src/generator_constraints_con.cpp.o
-
-src/generator_constraints_con.i: src/generator_constraints_con.cpp.i
-
-.PHONY : src/generator_constraints_con.i
-
-# target to preprocess a source file
-src/generator_constraints_con.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator_constraints_con.cpp.i
-.PHONY : src/generator_constraints_con.cpp.i
-
-src/generator_constraints_con.s: src/generator_constraints_con.cpp.s
-
-.PHONY : src/generator_constraints_con.s
-
-# target to generate assembly for a file
-src/generator_constraints_con.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator_constraints_con.cpp.s
-.PHONY : src/generator_constraints_con.cpp.s
-
-src/generator_variables.o: src/generator_variables.cpp.o
-
-.PHONY : src/generator_variables.o
-
-# target to build an object file
-src/generator_variables.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator_variables.cpp.o
-.PHONY : src/generator_variables.cpp.o
-
-src/generator_variables.i: src/generator_variables.cpp.i
-
-.PHONY : src/generator_variables.i
-
-# target to preprocess a source file
-src/generator_variables.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator_variables.cpp.i
-.PHONY : src/generator_variables.cpp.i
-
-src/generator_variables.s: src/generator_variables.cpp.s
-
-.PHONY : src/generator_variables.s
-
-# target to generate assembly for a file
-src/generator_variables.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator_variables.cpp.s
-.PHONY : src/generator_variables.cpp.s
-
-src/generator_variables_con.o: src/generator_variables_con.cpp.o
-
-.PHONY : src/generator_variables_con.o
-
-# target to build an object file
-src/generator_variables_con.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator_variables_con.cpp.o
-.PHONY : src/generator_variables_con.cpp.o
-
-src/generator_variables_con.i: src/generator_variables_con.cpp.i
-
-.PHONY : src/generator_variables_con.i
-
-# target to preprocess a source file
-src/generator_variables_con.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator_variables_con.cpp.i
-.PHONY : src/generator_variables_con.cpp.i
-
-src/generator_variables_con.s: src/generator_variables_con.cpp.s
-
-.PHONY : src/generator_variables_con.s
-
-# target to generate assembly for a file
-src/generator_variables_con.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator_variables_con.cpp.s
-.PHONY : src/generator_variables_con.cpp.s
 
 src/generatoroutevent.o: src/generatoroutevent.cpp.o
 
@@ -817,168 +1033,6 @@ src/line.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line.cpp.s
 .PHONY : src/line.cpp.s
 
-src/line_constraints.o: src/line_constraints.cpp.o
-
-.PHONY : src/line_constraints.o
-
-# target to build an object file
-src/line_constraints.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_constraints.cpp.o
-.PHONY : src/line_constraints.cpp.o
-
-src/line_constraints.i: src/line_constraints.cpp.i
-
-.PHONY : src/line_constraints.i
-
-# target to preprocess a source file
-src/line_constraints.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_constraints.cpp.i
-.PHONY : src/line_constraints.cpp.i
-
-src/line_constraints.s: src/line_constraints.cpp.s
-
-.PHONY : src/line_constraints.s
-
-# target to generate assembly for a file
-src/line_constraints.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_constraints.cpp.s
-.PHONY : src/line_constraints.cpp.s
-
-src/line_constraints_con.o: src/line_constraints_con.cpp.o
-
-.PHONY : src/line_constraints_con.o
-
-# target to build an object file
-src/line_constraints_con.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_constraints_con.cpp.o
-.PHONY : src/line_constraints_con.cpp.o
-
-src/line_constraints_con.i: src/line_constraints_con.cpp.i
-
-.PHONY : src/line_constraints_con.i
-
-# target to preprocess a source file
-src/line_constraints_con.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_constraints_con.cpp.i
-.PHONY : src/line_constraints_con.cpp.i
-
-src/line_constraints_con.s: src/line_constraints_con.cpp.s
-
-.PHONY : src/line_constraints_con.s
-
-# target to generate assembly for a file
-src/line_constraints_con.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_constraints_con.cpp.s
-.PHONY : src/line_constraints_con.cpp.s
-
-src/line_costs.o: src/line_costs.cpp.o
-
-.PHONY : src/line_costs.o
-
-# target to build an object file
-src/line_costs.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_costs.cpp.o
-.PHONY : src/line_costs.cpp.o
-
-src/line_costs.i: src/line_costs.cpp.i
-
-.PHONY : src/line_costs.i
-
-# target to preprocess a source file
-src/line_costs.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_costs.cpp.i
-.PHONY : src/line_costs.cpp.i
-
-src/line_costs.s: src/line_costs.cpp.s
-
-.PHONY : src/line_costs.s
-
-# target to generate assembly for a file
-src/line_costs.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_costs.cpp.s
-.PHONY : src/line_costs.cpp.s
-
-src/line_costs_con.o: src/line_costs_con.cpp.o
-
-.PHONY : src/line_costs_con.o
-
-# target to build an object file
-src/line_costs_con.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_costs_con.cpp.o
-.PHONY : src/line_costs_con.cpp.o
-
-src/line_costs_con.i: src/line_costs_con.cpp.i
-
-.PHONY : src/line_costs_con.i
-
-# target to preprocess a source file
-src/line_costs_con.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_costs_con.cpp.i
-.PHONY : src/line_costs_con.cpp.i
-
-src/line_costs_con.s: src/line_costs_con.cpp.s
-
-.PHONY : src/line_costs_con.s
-
-# target to generate assembly for a file
-src/line_costs_con.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_costs_con.cpp.s
-.PHONY : src/line_costs_con.cpp.s
-
-src/line_variables.o: src/line_variables.cpp.o
-
-.PHONY : src/line_variables.o
-
-# target to build an object file
-src/line_variables.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_variables.cpp.o
-.PHONY : src/line_variables.cpp.o
-
-src/line_variables.i: src/line_variables.cpp.i
-
-.PHONY : src/line_variables.i
-
-# target to preprocess a source file
-src/line_variables.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_variables.cpp.i
-.PHONY : src/line_variables.cpp.i
-
-src/line_variables.s: src/line_variables.cpp.s
-
-.PHONY : src/line_variables.s
-
-# target to generate assembly for a file
-src/line_variables.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_variables.cpp.s
-.PHONY : src/line_variables.cpp.s
-
-src/line_variables_con.o: src/line_variables_con.cpp.o
-
-.PHONY : src/line_variables_con.o
-
-# target to build an object file
-src/line_variables_con.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_variables_con.cpp.o
-.PHONY : src/line_variables_con.cpp.o
-
-src/line_variables_con.i: src/line_variables_con.cpp.i
-
-.PHONY : src/line_variables_con.i
-
-# target to preprocess a source file
-src/line_variables_con.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_variables_con.cpp.i
-.PHONY : src/line_variables_con.cpp.i
-
-src/line_variables_con.s: src/line_variables_con.cpp.s
-
-.PHONY : src/line_variables_con.s
-
-# target to generate assembly for a file
-src/line_variables_con.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/line_variables_con.cpp.s
-.PHONY : src/line_variables_con.cpp.s
-
 src/load.o: src/load.cpp.o
 
 .PHONY : src/load.o
@@ -1005,168 +1059,6 @@ src/load.s: src/load.cpp.s
 src/load.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load.cpp.s
 .PHONY : src/load.cpp.s
-
-src/load_constraints.o: src/load_constraints.cpp.o
-
-.PHONY : src/load_constraints.o
-
-# target to build an object file
-src/load_constraints.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_constraints.cpp.o
-.PHONY : src/load_constraints.cpp.o
-
-src/load_constraints.i: src/load_constraints.cpp.i
-
-.PHONY : src/load_constraints.i
-
-# target to preprocess a source file
-src/load_constraints.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_constraints.cpp.i
-.PHONY : src/load_constraints.cpp.i
-
-src/load_constraints.s: src/load_constraints.cpp.s
-
-.PHONY : src/load_constraints.s
-
-# target to generate assembly for a file
-src/load_constraints.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_constraints.cpp.s
-.PHONY : src/load_constraints.cpp.s
-
-src/load_constraints_con.o: src/load_constraints_con.cpp.o
-
-.PHONY : src/load_constraints_con.o
-
-# target to build an object file
-src/load_constraints_con.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_constraints_con.cpp.o
-.PHONY : src/load_constraints_con.cpp.o
-
-src/load_constraints_con.i: src/load_constraints_con.cpp.i
-
-.PHONY : src/load_constraints_con.i
-
-# target to preprocess a source file
-src/load_constraints_con.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_constraints_con.cpp.i
-.PHONY : src/load_constraints_con.cpp.i
-
-src/load_constraints_con.s: src/load_constraints_con.cpp.s
-
-.PHONY : src/load_constraints_con.s
-
-# target to generate assembly for a file
-src/load_constraints_con.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_constraints_con.cpp.s
-.PHONY : src/load_constraints_con.cpp.s
-
-src/load_costs.o: src/load_costs.cpp.o
-
-.PHONY : src/load_costs.o
-
-# target to build an object file
-src/load_costs.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_costs.cpp.o
-.PHONY : src/load_costs.cpp.o
-
-src/load_costs.i: src/load_costs.cpp.i
-
-.PHONY : src/load_costs.i
-
-# target to preprocess a source file
-src/load_costs.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_costs.cpp.i
-.PHONY : src/load_costs.cpp.i
-
-src/load_costs.s: src/load_costs.cpp.s
-
-.PHONY : src/load_costs.s
-
-# target to generate assembly for a file
-src/load_costs.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_costs.cpp.s
-.PHONY : src/load_costs.cpp.s
-
-src/load_costs_con.o: src/load_costs_con.cpp.o
-
-.PHONY : src/load_costs_con.o
-
-# target to build an object file
-src/load_costs_con.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_costs_con.cpp.o
-.PHONY : src/load_costs_con.cpp.o
-
-src/load_costs_con.i: src/load_costs_con.cpp.i
-
-.PHONY : src/load_costs_con.i
-
-# target to preprocess a source file
-src/load_costs_con.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_costs_con.cpp.i
-.PHONY : src/load_costs_con.cpp.i
-
-src/load_costs_con.s: src/load_costs_con.cpp.s
-
-.PHONY : src/load_costs_con.s
-
-# target to generate assembly for a file
-src/load_costs_con.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_costs_con.cpp.s
-.PHONY : src/load_costs_con.cpp.s
-
-src/load_variables.o: src/load_variables.cpp.o
-
-.PHONY : src/load_variables.o
-
-# target to build an object file
-src/load_variables.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_variables.cpp.o
-.PHONY : src/load_variables.cpp.o
-
-src/load_variables.i: src/load_variables.cpp.i
-
-.PHONY : src/load_variables.i
-
-# target to preprocess a source file
-src/load_variables.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_variables.cpp.i
-.PHONY : src/load_variables.cpp.i
-
-src/load_variables.s: src/load_variables.cpp.s
-
-.PHONY : src/load_variables.s
-
-# target to generate assembly for a file
-src/load_variables.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_variables.cpp.s
-.PHONY : src/load_variables.cpp.s
-
-src/load_variables_con.o: src/load_variables_con.cpp.o
-
-.PHONY : src/load_variables_con.o
-
-# target to build an object file
-src/load_variables_con.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_variables_con.cpp.o
-.PHONY : src/load_variables_con.cpp.o
-
-src/load_variables_con.i: src/load_variables_con.cpp.i
-
-.PHONY : src/load_variables_con.i
-
-# target to preprocess a source file
-src/load_variables_con.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_variables_con.cpp.i
-.PHONY : src/load_variables_con.cpp.i
-
-src/load_variables_con.s: src/load_variables_con.cpp.s
-
-.PHONY : src/load_variables_con.s
-
-# target to generate assembly for a file
-src/load_variables_con.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/load_variables_con.cpp.s
-.PHONY : src/load_variables_con.cpp.s
 
 src/nontransformerbranch.o: src/nontransformerbranch.cpp.o
 
@@ -1519,60 +1411,6 @@ src/switchedshunt.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/switchedshunt.cpp.s
 .PHONY : src/switchedshunt.cpp.s
 
-src/switchshunt_variables.o: src/switchshunt_variables.cpp.o
-
-.PHONY : src/switchshunt_variables.o
-
-# target to build an object file
-src/switchshunt_variables.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/switchshunt_variables.cpp.o
-.PHONY : src/switchshunt_variables.cpp.o
-
-src/switchshunt_variables.i: src/switchshunt_variables.cpp.i
-
-.PHONY : src/switchshunt_variables.i
-
-# target to preprocess a source file
-src/switchshunt_variables.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/switchshunt_variables.cpp.i
-.PHONY : src/switchshunt_variables.cpp.i
-
-src/switchshunt_variables.s: src/switchshunt_variables.cpp.s
-
-.PHONY : src/switchshunt_variables.s
-
-# target to generate assembly for a file
-src/switchshunt_variables.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/switchshunt_variables.cpp.s
-.PHONY : src/switchshunt_variables.cpp.s
-
-src/switchshunt_variables_con.o: src/switchshunt_variables_con.cpp.o
-
-.PHONY : src/switchshunt_variables_con.o
-
-# target to build an object file
-src/switchshunt_variables_con.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.o
-.PHONY : src/switchshunt_variables_con.cpp.o
-
-src/switchshunt_variables_con.i: src/switchshunt_variables_con.cpp.i
-
-.PHONY : src/switchshunt_variables_con.i
-
-# target to preprocess a source file
-src/switchshunt_variables_con.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.i
-.PHONY : src/switchshunt_variables_con.cpp.i
-
-src/switchshunt_variables_con.s: src/switchshunt_variables_con.cpp.s
-
-.PHONY : src/switchshunt_variables_con.s
-
-# target to generate assembly for a file
-src/switchshunt_variables_con.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/switchshunt_variables_con.cpp.s
-.PHONY : src/switchshunt_variables_con.cpp.s
-
 src/test.o: src/test.cpp.o
 
 .PHONY : src/test.o
@@ -1654,168 +1492,6 @@ src/transformer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer.cpp.s
 .PHONY : src/transformer.cpp.s
 
-src/transformer_constraints.o: src/transformer_constraints.cpp.o
-
-.PHONY : src/transformer_constraints.o
-
-# target to build an object file
-src/transformer_constraints.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_constraints.cpp.o
-.PHONY : src/transformer_constraints.cpp.o
-
-src/transformer_constraints.i: src/transformer_constraints.cpp.i
-
-.PHONY : src/transformer_constraints.i
-
-# target to preprocess a source file
-src/transformer_constraints.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_constraints.cpp.i
-.PHONY : src/transformer_constraints.cpp.i
-
-src/transformer_constraints.s: src/transformer_constraints.cpp.s
-
-.PHONY : src/transformer_constraints.s
-
-# target to generate assembly for a file
-src/transformer_constraints.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_constraints.cpp.s
-.PHONY : src/transformer_constraints.cpp.s
-
-src/transformer_constraints_con.o: src/transformer_constraints_con.cpp.o
-
-.PHONY : src/transformer_constraints_con.o
-
-# target to build an object file
-src/transformer_constraints_con.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_constraints_con.cpp.o
-.PHONY : src/transformer_constraints_con.cpp.o
-
-src/transformer_constraints_con.i: src/transformer_constraints_con.cpp.i
-
-.PHONY : src/transformer_constraints_con.i
-
-# target to preprocess a source file
-src/transformer_constraints_con.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_constraints_con.cpp.i
-.PHONY : src/transformer_constraints_con.cpp.i
-
-src/transformer_constraints_con.s: src/transformer_constraints_con.cpp.s
-
-.PHONY : src/transformer_constraints_con.s
-
-# target to generate assembly for a file
-src/transformer_constraints_con.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_constraints_con.cpp.s
-.PHONY : src/transformer_constraints_con.cpp.s
-
-src/transformer_costs.o: src/transformer_costs.cpp.o
-
-.PHONY : src/transformer_costs.o
-
-# target to build an object file
-src/transformer_costs.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_costs.cpp.o
-.PHONY : src/transformer_costs.cpp.o
-
-src/transformer_costs.i: src/transformer_costs.cpp.i
-
-.PHONY : src/transformer_costs.i
-
-# target to preprocess a source file
-src/transformer_costs.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_costs.cpp.i
-.PHONY : src/transformer_costs.cpp.i
-
-src/transformer_costs.s: src/transformer_costs.cpp.s
-
-.PHONY : src/transformer_costs.s
-
-# target to generate assembly for a file
-src/transformer_costs.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_costs.cpp.s
-.PHONY : src/transformer_costs.cpp.s
-
-src/transformer_costs_con.o: src/transformer_costs_con.cpp.o
-
-.PHONY : src/transformer_costs_con.o
-
-# target to build an object file
-src/transformer_costs_con.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_costs_con.cpp.o
-.PHONY : src/transformer_costs_con.cpp.o
-
-src/transformer_costs_con.i: src/transformer_costs_con.cpp.i
-
-.PHONY : src/transformer_costs_con.i
-
-# target to preprocess a source file
-src/transformer_costs_con.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_costs_con.cpp.i
-.PHONY : src/transformer_costs_con.cpp.i
-
-src/transformer_costs_con.s: src/transformer_costs_con.cpp.s
-
-.PHONY : src/transformer_costs_con.s
-
-# target to generate assembly for a file
-src/transformer_costs_con.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_costs_con.cpp.s
-.PHONY : src/transformer_costs_con.cpp.s
-
-src/transformer_variables.o: src/transformer_variables.cpp.o
-
-.PHONY : src/transformer_variables.o
-
-# target to build an object file
-src/transformer_variables.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_variables.cpp.o
-.PHONY : src/transformer_variables.cpp.o
-
-src/transformer_variables.i: src/transformer_variables.cpp.i
-
-.PHONY : src/transformer_variables.i
-
-# target to preprocess a source file
-src/transformer_variables.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_variables.cpp.i
-.PHONY : src/transformer_variables.cpp.i
-
-src/transformer_variables.s: src/transformer_variables.cpp.s
-
-.PHONY : src/transformer_variables.s
-
-# target to generate assembly for a file
-src/transformer_variables.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_variables.cpp.s
-.PHONY : src/transformer_variables.cpp.s
-
-src/transformer_variables_con.o: src/transformer_variables_con.cpp.o
-
-.PHONY : src/transformer_variables_con.o
-
-# target to build an object file
-src/transformer_variables_con.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_variables_con.cpp.o
-.PHONY : src/transformer_variables_con.cpp.o
-
-src/transformer_variables_con.i: src/transformer_variables_con.cpp.i
-
-.PHONY : src/transformer_variables_con.i
-
-# target to preprocess a source file
-src/transformer_variables_con.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_variables_con.cpp.i
-.PHONY : src/transformer_variables_con.cpp.i
-
-src/transformer_variables_con.s: src/transformer_variables_con.cpp.s
-
-.PHONY : src/transformer_variables_con.s
-
-# target to generate assembly for a file
-src/transformer_variables_con.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformer_variables_con.cpp.s
-.PHONY : src/transformer_variables_con.cpp.s
-
 src/transformerimpedancecorrectiontable.o: src/transformerimpedancecorrectiontable.cpp.o
 
 .PHONY : src/transformerimpedancecorrectiontable.o
@@ -1842,6 +1518,330 @@ src/transformerimpedancecorrectiontable.s: src/transformerimpedancecorrectiontab
 src/transformerimpedancecorrectiontable.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/transformerimpedancecorrectiontable.cpp.s
 .PHONY : src/transformerimpedancecorrectiontable.cpp.s
+
+src/variables/bus_variables.o: src/variables/bus_variables.cpp.o
+
+.PHONY : src/variables/bus_variables.o
+
+# target to build an object file
+src/variables/bus_variables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/bus_variables.cpp.o
+.PHONY : src/variables/bus_variables.cpp.o
+
+src/variables/bus_variables.i: src/variables/bus_variables.cpp.i
+
+.PHONY : src/variables/bus_variables.i
+
+# target to preprocess a source file
+src/variables/bus_variables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/bus_variables.cpp.i
+.PHONY : src/variables/bus_variables.cpp.i
+
+src/variables/bus_variables.s: src/variables/bus_variables.cpp.s
+
+.PHONY : src/variables/bus_variables.s
+
+# target to generate assembly for a file
+src/variables/bus_variables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/bus_variables.cpp.s
+.PHONY : src/variables/bus_variables.cpp.s
+
+src/variables/generator_variables.o: src/variables/generator_variables.cpp.o
+
+.PHONY : src/variables/generator_variables.o
+
+# target to build an object file
+src/variables/generator_variables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/generator_variables.cpp.o
+.PHONY : src/variables/generator_variables.cpp.o
+
+src/variables/generator_variables.i: src/variables/generator_variables.cpp.i
+
+.PHONY : src/variables/generator_variables.i
+
+# target to preprocess a source file
+src/variables/generator_variables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/generator_variables.cpp.i
+.PHONY : src/variables/generator_variables.cpp.i
+
+src/variables/generator_variables.s: src/variables/generator_variables.cpp.s
+
+.PHONY : src/variables/generator_variables.s
+
+# target to generate assembly for a file
+src/variables/generator_variables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/generator_variables.cpp.s
+.PHONY : src/variables/generator_variables.cpp.s
+
+src/variables/line_variables.o: src/variables/line_variables.cpp.o
+
+.PHONY : src/variables/line_variables.o
+
+# target to build an object file
+src/variables/line_variables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/line_variables.cpp.o
+.PHONY : src/variables/line_variables.cpp.o
+
+src/variables/line_variables.i: src/variables/line_variables.cpp.i
+
+.PHONY : src/variables/line_variables.i
+
+# target to preprocess a source file
+src/variables/line_variables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/line_variables.cpp.i
+.PHONY : src/variables/line_variables.cpp.i
+
+src/variables/line_variables.s: src/variables/line_variables.cpp.s
+
+.PHONY : src/variables/line_variables.s
+
+# target to generate assembly for a file
+src/variables/line_variables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/line_variables.cpp.s
+.PHONY : src/variables/line_variables.cpp.s
+
+src/variables/load_variables.o: src/variables/load_variables.cpp.o
+
+.PHONY : src/variables/load_variables.o
+
+# target to build an object file
+src/variables/load_variables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/load_variables.cpp.o
+.PHONY : src/variables/load_variables.cpp.o
+
+src/variables/load_variables.i: src/variables/load_variables.cpp.i
+
+.PHONY : src/variables/load_variables.i
+
+# target to preprocess a source file
+src/variables/load_variables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/load_variables.cpp.i
+.PHONY : src/variables/load_variables.cpp.i
+
+src/variables/load_variables.s: src/variables/load_variables.cpp.s
+
+.PHONY : src/variables/load_variables.s
+
+# target to generate assembly for a file
+src/variables/load_variables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/load_variables.cpp.s
+.PHONY : src/variables/load_variables.cpp.s
+
+src/variables/switchshunt_variables.o: src/variables/switchshunt_variables.cpp.o
+
+.PHONY : src/variables/switchshunt_variables.o
+
+# target to build an object file
+src/variables/switchshunt_variables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/switchshunt_variables.cpp.o
+.PHONY : src/variables/switchshunt_variables.cpp.o
+
+src/variables/switchshunt_variables.i: src/variables/switchshunt_variables.cpp.i
+
+.PHONY : src/variables/switchshunt_variables.i
+
+# target to preprocess a source file
+src/variables/switchshunt_variables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/switchshunt_variables.cpp.i
+.PHONY : src/variables/switchshunt_variables.cpp.i
+
+src/variables/switchshunt_variables.s: src/variables/switchshunt_variables.cpp.s
+
+.PHONY : src/variables/switchshunt_variables.s
+
+# target to generate assembly for a file
+src/variables/switchshunt_variables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/switchshunt_variables.cpp.s
+.PHONY : src/variables/switchshunt_variables.cpp.s
+
+src/variables/transformer_variables.o: src/variables/transformer_variables.cpp.o
+
+.PHONY : src/variables/transformer_variables.o
+
+# target to build an object file
+src/variables/transformer_variables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/transformer_variables.cpp.o
+.PHONY : src/variables/transformer_variables.cpp.o
+
+src/variables/transformer_variables.i: src/variables/transformer_variables.cpp.i
+
+.PHONY : src/variables/transformer_variables.i
+
+# target to preprocess a source file
+src/variables/transformer_variables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/transformer_variables.cpp.i
+.PHONY : src/variables/transformer_variables.cpp.i
+
+src/variables/transformer_variables.s: src/variables/transformer_variables.cpp.s
+
+.PHONY : src/variables/transformer_variables.s
+
+# target to generate assembly for a file
+src/variables/transformer_variables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables/transformer_variables.cpp.s
+.PHONY : src/variables/transformer_variables.cpp.s
+
+src/variables_con/bus_variables_con.o: src/variables_con/bus_variables_con.cpp.o
+
+.PHONY : src/variables_con/bus_variables_con.o
+
+# target to build an object file
+src/variables_con/bus_variables_con.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/bus_variables_con.cpp.o
+.PHONY : src/variables_con/bus_variables_con.cpp.o
+
+src/variables_con/bus_variables_con.i: src/variables_con/bus_variables_con.cpp.i
+
+.PHONY : src/variables_con/bus_variables_con.i
+
+# target to preprocess a source file
+src/variables_con/bus_variables_con.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/bus_variables_con.cpp.i
+.PHONY : src/variables_con/bus_variables_con.cpp.i
+
+src/variables_con/bus_variables_con.s: src/variables_con/bus_variables_con.cpp.s
+
+.PHONY : src/variables_con/bus_variables_con.s
+
+# target to generate assembly for a file
+src/variables_con/bus_variables_con.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/bus_variables_con.cpp.s
+.PHONY : src/variables_con/bus_variables_con.cpp.s
+
+src/variables_con/generator_variables_con.o: src/variables_con/generator_variables_con.cpp.o
+
+.PHONY : src/variables_con/generator_variables_con.o
+
+# target to build an object file
+src/variables_con/generator_variables_con.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/generator_variables_con.cpp.o
+.PHONY : src/variables_con/generator_variables_con.cpp.o
+
+src/variables_con/generator_variables_con.i: src/variables_con/generator_variables_con.cpp.i
+
+.PHONY : src/variables_con/generator_variables_con.i
+
+# target to preprocess a source file
+src/variables_con/generator_variables_con.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/generator_variables_con.cpp.i
+.PHONY : src/variables_con/generator_variables_con.cpp.i
+
+src/variables_con/generator_variables_con.s: src/variables_con/generator_variables_con.cpp.s
+
+.PHONY : src/variables_con/generator_variables_con.s
+
+# target to generate assembly for a file
+src/variables_con/generator_variables_con.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/generator_variables_con.cpp.s
+.PHONY : src/variables_con/generator_variables_con.cpp.s
+
+src/variables_con/line_variables_con.o: src/variables_con/line_variables_con.cpp.o
+
+.PHONY : src/variables_con/line_variables_con.o
+
+# target to build an object file
+src/variables_con/line_variables_con.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/line_variables_con.cpp.o
+.PHONY : src/variables_con/line_variables_con.cpp.o
+
+src/variables_con/line_variables_con.i: src/variables_con/line_variables_con.cpp.i
+
+.PHONY : src/variables_con/line_variables_con.i
+
+# target to preprocess a source file
+src/variables_con/line_variables_con.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/line_variables_con.cpp.i
+.PHONY : src/variables_con/line_variables_con.cpp.i
+
+src/variables_con/line_variables_con.s: src/variables_con/line_variables_con.cpp.s
+
+.PHONY : src/variables_con/line_variables_con.s
+
+# target to generate assembly for a file
+src/variables_con/line_variables_con.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/line_variables_con.cpp.s
+.PHONY : src/variables_con/line_variables_con.cpp.s
+
+src/variables_con/load_variables_con.o: src/variables_con/load_variables_con.cpp.o
+
+.PHONY : src/variables_con/load_variables_con.o
+
+# target to build an object file
+src/variables_con/load_variables_con.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/load_variables_con.cpp.o
+.PHONY : src/variables_con/load_variables_con.cpp.o
+
+src/variables_con/load_variables_con.i: src/variables_con/load_variables_con.cpp.i
+
+.PHONY : src/variables_con/load_variables_con.i
+
+# target to preprocess a source file
+src/variables_con/load_variables_con.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/load_variables_con.cpp.i
+.PHONY : src/variables_con/load_variables_con.cpp.i
+
+src/variables_con/load_variables_con.s: src/variables_con/load_variables_con.cpp.s
+
+.PHONY : src/variables_con/load_variables_con.s
+
+# target to generate assembly for a file
+src/variables_con/load_variables_con.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/load_variables_con.cpp.s
+.PHONY : src/variables_con/load_variables_con.cpp.s
+
+src/variables_con/switchshunt_variables_con.o: src/variables_con/switchshunt_variables_con.cpp.o
+
+.PHONY : src/variables_con/switchshunt_variables_con.o
+
+# target to build an object file
+src/variables_con/switchshunt_variables_con.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/switchshunt_variables_con.cpp.o
+.PHONY : src/variables_con/switchshunt_variables_con.cpp.o
+
+src/variables_con/switchshunt_variables_con.i: src/variables_con/switchshunt_variables_con.cpp.i
+
+.PHONY : src/variables_con/switchshunt_variables_con.i
+
+# target to preprocess a source file
+src/variables_con/switchshunt_variables_con.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/switchshunt_variables_con.cpp.i
+.PHONY : src/variables_con/switchshunt_variables_con.cpp.i
+
+src/variables_con/switchshunt_variables_con.s: src/variables_con/switchshunt_variables_con.cpp.s
+
+.PHONY : src/variables_con/switchshunt_variables_con.s
+
+# target to generate assembly for a file
+src/variables_con/switchshunt_variables_con.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/switchshunt_variables_con.cpp.s
+.PHONY : src/variables_con/switchshunt_variables_con.cpp.s
+
+src/variables_con/transformer_variables_con.o: src/variables_con/transformer_variables_con.cpp.o
+
+.PHONY : src/variables_con/transformer_variables_con.o
+
+# target to build an object file
+src/variables_con/transformer_variables_con.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/transformer_variables_con.cpp.o
+.PHONY : src/variables_con/transformer_variables_con.cpp.o
+
+src/variables_con/transformer_variables_con.i: src/variables_con/transformer_variables_con.cpp.i
+
+.PHONY : src/variables_con/transformer_variables_con.i
+
+# target to preprocess a source file
+src/variables_con/transformer_variables_con.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/transformer_variables_con.cpp.i
+.PHONY : src/variables_con/transformer_variables_con.cpp.i
+
+src/variables_con/transformer_variables_con.s: src/variables_con/transformer_variables_con.cpp.s
+
+.PHONY : src/variables_con/transformer_variables_con.s
+
+# target to generate assembly for a file
+src/variables_con/transformer_variables_con.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/variables_con/transformer_variables_con.cpp.s
+.PHONY : src/variables_con/transformer_variables_con.cpp.s
 
 src/wrapper_construct.o: src/wrapper_construct.cpp.o
 
@@ -1918,108 +1918,96 @@ help:
 	@echo "... src/bus.o"
 	@echo "... src/bus.i"
 	@echo "... src/bus.s"
-	@echo "... src/bus_constraints.o"
-	@echo "... src/bus_constraints.i"
-	@echo "... src/bus_constraints.s"
-	@echo "... src/bus_constraints_con.o"
-	@echo "... src/bus_constraints_con.i"
-	@echo "... src/bus_constraints_con.s"
-	@echo "... src/bus_costs.o"
-	@echo "... src/bus_costs.i"
-	@echo "... src/bus_costs.s"
-	@echo "... src/bus_costs_con.o"
-	@echo "... src/bus_costs_con.i"
-	@echo "... src/bus_costs_con.s"
-	@echo "... src/bus_variables.o"
-	@echo "... src/bus_variables.i"
-	@echo "... src/bus_variables.s"
-	@echo "... src/bus_variables_con.o"
-	@echo "... src/bus_variables_con.i"
-	@echo "... src/bus_variables_con.s"
 	@echo "... src/caseidentification.o"
 	@echo "... src/caseidentification.i"
 	@echo "... src/caseidentification.s"
 	@echo "... src/con.o"
 	@echo "... src/con.i"
 	@echo "... src/con.s"
+	@echo "... src/constraints/bus_constraints.o"
+	@echo "... src/constraints/bus_constraints.i"
+	@echo "... src/constraints/bus_constraints.s"
+	@echo "... src/constraints/generator_constraints.o"
+	@echo "... src/constraints/generator_constraints.i"
+	@echo "... src/constraints/generator_constraints.s"
+	@echo "... src/constraints/line_constraints.o"
+	@echo "... src/constraints/line_constraints.i"
+	@echo "... src/constraints/line_constraints.s"
+	@echo "... src/constraints/load_constraints.o"
+	@echo "... src/constraints/load_constraints.i"
+	@echo "... src/constraints/load_constraints.s"
+	@echo "... src/constraints/transformer_constraints.o"
+	@echo "... src/constraints/transformer_constraints.i"
+	@echo "... src/constraints/transformer_constraints.s"
+	@echo "... src/constraints_con/bus_constraints_con.o"
+	@echo "... src/constraints_con/bus_constraints_con.i"
+	@echo "... src/constraints_con/bus_constraints_con.s"
+	@echo "... src/constraints_con/generator_constraints_con.o"
+	@echo "... src/constraints_con/generator_constraints_con.i"
+	@echo "... src/constraints_con/generator_constraints_con.s"
+	@echo "... src/constraints_con/line_constraints_con.o"
+	@echo "... src/constraints_con/line_constraints_con.i"
+	@echo "... src/constraints_con/line_constraints_con.s"
+	@echo "... src/constraints_con/load_constraints_con.o"
+	@echo "... src/constraints_con/load_constraints_con.i"
+	@echo "... src/constraints_con/load_constraints_con.s"
+	@echo "... src/constraints_con/transformer_constraints_con.o"
+	@echo "... src/constraints_con/transformer_constraints_con.i"
+	@echo "... src/constraints_con/transformer_constraints_con.s"
 	@echo "... src/contigencycase_problem.o"
 	@echo "... src/contigencycase_problem.i"
 	@echo "... src/contigencycase_problem.s"
 	@echo "... src/contingency.o"
 	@echo "... src/contingency.i"
 	@echo "... src/contingency.s"
+	@echo "... src/cost/bus_costs.o"
+	@echo "... src/cost/bus_costs.i"
+	@echo "... src/cost/bus_costs.s"
+	@echo "... src/cost/gen_costs.o"
+	@echo "... src/cost/gen_costs.i"
+	@echo "... src/cost/gen_costs.s"
+	@echo "... src/cost/line_costs.o"
+	@echo "... src/cost/line_costs.i"
+	@echo "... src/cost/line_costs.s"
+	@echo "... src/cost/load_costs.o"
+	@echo "... src/cost/load_costs.i"
+	@echo "... src/cost/load_costs.s"
+	@echo "... src/cost/transformer_costs.o"
+	@echo "... src/cost/transformer_costs.i"
+	@echo "... src/cost/transformer_costs.s"
+	@echo "... src/cost_con/bus_costs_con.o"
+	@echo "... src/cost_con/bus_costs_con.i"
+	@echo "... src/cost_con/bus_costs_con.s"
+	@echo "... src/cost_con/gen_costs_con.o"
+	@echo "... src/cost_con/gen_costs_con.i"
+	@echo "... src/cost_con/gen_costs_con.s"
+	@echo "... src/cost_con/line_costs_con.o"
+	@echo "... src/cost_con/line_costs_con.i"
+	@echo "... src/cost_con/line_costs_con.s"
+	@echo "... src/cost_con/load_costs_con.o"
+	@echo "... src/cost_con/load_costs_con.i"
+	@echo "... src/cost_con/load_costs_con.s"
+	@echo "... src/cost_con/transformer_costs_con.o"
+	@echo "... src/cost_con/transformer_costs_con.i"
+	@echo "... src/cost_con/transformer_costs_con.s"
 	@echo "... src/data.o"
 	@echo "... src/data.i"
 	@echo "... src/data.s"
 	@echo "... src/fixedshunt.o"
 	@echo "... src/fixedshunt.i"
 	@echo "... src/fixedshunt.s"
-	@echo "... src/gen_costs.o"
-	@echo "... src/gen_costs.i"
-	@echo "... src/gen_costs.s"
-	@echo "... src/gen_costs_con.o"
-	@echo "... src/gen_costs_con.i"
-	@echo "... src/gen_costs_con.s"
 	@echo "... src/generator.o"
 	@echo "... src/generator.i"
 	@echo "... src/generator.s"
-	@echo "... src/generator_constraints.o"
-	@echo "... src/generator_constraints.i"
-	@echo "... src/generator_constraints.s"
-	@echo "... src/generator_constraints_con.o"
-	@echo "... src/generator_constraints_con.i"
-	@echo "... src/generator_constraints_con.s"
-	@echo "... src/generator_variables.o"
-	@echo "... src/generator_variables.i"
-	@echo "... src/generator_variables.s"
-	@echo "... src/generator_variables_con.o"
-	@echo "... src/generator_variables_con.i"
-	@echo "... src/generator_variables_con.s"
 	@echo "... src/generatoroutevent.o"
 	@echo "... src/generatoroutevent.i"
 	@echo "... src/generatoroutevent.s"
 	@echo "... src/line.o"
 	@echo "... src/line.i"
 	@echo "... src/line.s"
-	@echo "... src/line_constraints.o"
-	@echo "... src/line_constraints.i"
-	@echo "... src/line_constraints.s"
-	@echo "... src/line_constraints_con.o"
-	@echo "... src/line_constraints_con.i"
-	@echo "... src/line_constraints_con.s"
-	@echo "... src/line_costs.o"
-	@echo "... src/line_costs.i"
-	@echo "... src/line_costs.s"
-	@echo "... src/line_costs_con.o"
-	@echo "... src/line_costs_con.i"
-	@echo "... src/line_costs_con.s"
-	@echo "... src/line_variables.o"
-	@echo "... src/line_variables.i"
-	@echo "... src/line_variables.s"
-	@echo "... src/line_variables_con.o"
-	@echo "... src/line_variables_con.i"
-	@echo "... src/line_variables_con.s"
 	@echo "... src/load.o"
 	@echo "... src/load.i"
 	@echo "... src/load.s"
-	@echo "... src/load_constraints.o"
-	@echo "... src/load_constraints.i"
-	@echo "... src/load_constraints.s"
-	@echo "... src/load_constraints_con.o"
-	@echo "... src/load_constraints_con.i"
-	@echo "... src/load_constraints_con.s"
-	@echo "... src/load_costs.o"
-	@echo "... src/load_costs.i"
-	@echo "... src/load_costs.s"
-	@echo "... src/load_costs_con.o"
-	@echo "... src/load_costs_con.i"
-	@echo "... src/load_costs_con.s"
-	@echo "... src/load_variables.o"
-	@echo "... src/load_variables.i"
-	@echo "... src/load_variables.s"
-	@echo "... src/load_variables_con.o"
-	@echo "... src/load_variables_con.i"
-	@echo "... src/load_variables_con.s"
 	@echo "... src/nontransformerbranch.o"
 	@echo "... src/nontransformerbranch.i"
 	@echo "... src/nontransformerbranch.s"
@@ -2059,12 +2047,6 @@ help:
 	@echo "... src/switchedshunt.o"
 	@echo "... src/switchedshunt.i"
 	@echo "... src/switchedshunt.s"
-	@echo "... src/switchshunt_variables.o"
-	@echo "... src/switchshunt_variables.i"
-	@echo "... src/switchshunt_variables.s"
-	@echo "... src/switchshunt_variables_con.o"
-	@echo "... src/switchshunt_variables_con.i"
-	@echo "... src/switchshunt_variables_con.s"
 	@echo "... src/test.o"
 	@echo "... src/test.i"
 	@echo "... src/test.s"
@@ -2074,27 +2056,45 @@ help:
 	@echo "... src/transformer.o"
 	@echo "... src/transformer.i"
 	@echo "... src/transformer.s"
-	@echo "... src/transformer_constraints.o"
-	@echo "... src/transformer_constraints.i"
-	@echo "... src/transformer_constraints.s"
-	@echo "... src/transformer_constraints_con.o"
-	@echo "... src/transformer_constraints_con.i"
-	@echo "... src/transformer_constraints_con.s"
-	@echo "... src/transformer_costs.o"
-	@echo "... src/transformer_costs.i"
-	@echo "... src/transformer_costs.s"
-	@echo "... src/transformer_costs_con.o"
-	@echo "... src/transformer_costs_con.i"
-	@echo "... src/transformer_costs_con.s"
-	@echo "... src/transformer_variables.o"
-	@echo "... src/transformer_variables.i"
-	@echo "... src/transformer_variables.s"
-	@echo "... src/transformer_variables_con.o"
-	@echo "... src/transformer_variables_con.i"
-	@echo "... src/transformer_variables_con.s"
 	@echo "... src/transformerimpedancecorrectiontable.o"
 	@echo "... src/transformerimpedancecorrectiontable.i"
 	@echo "... src/transformerimpedancecorrectiontable.s"
+	@echo "... src/variables/bus_variables.o"
+	@echo "... src/variables/bus_variables.i"
+	@echo "... src/variables/bus_variables.s"
+	@echo "... src/variables/generator_variables.o"
+	@echo "... src/variables/generator_variables.i"
+	@echo "... src/variables/generator_variables.s"
+	@echo "... src/variables/line_variables.o"
+	@echo "... src/variables/line_variables.i"
+	@echo "... src/variables/line_variables.s"
+	@echo "... src/variables/load_variables.o"
+	@echo "... src/variables/load_variables.i"
+	@echo "... src/variables/load_variables.s"
+	@echo "... src/variables/switchshunt_variables.o"
+	@echo "... src/variables/switchshunt_variables.i"
+	@echo "... src/variables/switchshunt_variables.s"
+	@echo "... src/variables/transformer_variables.o"
+	@echo "... src/variables/transformer_variables.i"
+	@echo "... src/variables/transformer_variables.s"
+	@echo "... src/variables_con/bus_variables_con.o"
+	@echo "... src/variables_con/bus_variables_con.i"
+	@echo "... src/variables_con/bus_variables_con.s"
+	@echo "... src/variables_con/generator_variables_con.o"
+	@echo "... src/variables_con/generator_variables_con.i"
+	@echo "... src/variables_con/generator_variables_con.s"
+	@echo "... src/variables_con/line_variables_con.o"
+	@echo "... src/variables_con/line_variables_con.i"
+	@echo "... src/variables_con/line_variables_con.s"
+	@echo "... src/variables_con/load_variables_con.o"
+	@echo "... src/variables_con/load_variables_con.i"
+	@echo "... src/variables_con/load_variables_con.s"
+	@echo "... src/variables_con/switchshunt_variables_con.o"
+	@echo "... src/variables_con/switchshunt_variables_con.i"
+	@echo "... src/variables_con/switchshunt_variables_con.s"
+	@echo "... src/variables_con/transformer_variables_con.o"
+	@echo "... src/variables_con/transformer_variables_con.i"
+	@echo "... src/variables_con/transformer_variables_con.s"
 	@echo "... src/wrapper_construct.o"
 	@echo "... src/wrapper_construct.i"
 	@echo "... src/wrapper_construct.s"

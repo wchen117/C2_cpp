@@ -1,4 +1,0 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -G "CodeBlocks - Unix Makefiles" /Users/wchen/Projects/GOC_competition/C2_cpp_code
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/wchen/Projects/GOC_competition/C2_cpp_code
