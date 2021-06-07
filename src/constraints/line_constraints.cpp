@@ -99,7 +99,7 @@ void LineConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block
         Eigen::MatrixXd eqn54_wrt_flat_s_enk = Eigen::MatrixXd::Zero(line_var_ptr->size_E_k0, line_var_ptr->s_enk_plus.size());
         size_t sum_len = 0;
         
-        
+        /**
         for (size_t idx=0; idx<line_var_ptr->s_enk_plus.cols(); idx++)
         {
             for (size_t jdx=0; jdx<line_var_ptr->s_enk_plus.rows(); jdx++)
@@ -116,7 +116,7 @@ void LineConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block
        Eigen::MatrixXd const& eqn56_wrt_flat_s_enk = eqn54_wrt_flat_s_enk;
 
         //Eigen::MatrixXd eqn55_wrt_p_ek_o = line_var_ptr->p_ek_o.array() / (line_var_ptr->p_ek_o.array().square() + )
-
+        **/
 
 
 
