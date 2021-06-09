@@ -32,27 +32,27 @@ BaseCaseProblem::BaseCaseProblem(const std::string& input_dir)
                                                          line_var_name, swsh_var_name, trans_var_name, gen_var_name);
     bus_cost_ptr = std::make_shared<BusCosts>(bus_var_name);
 
-    nlp.AddVariableSet(load_vars_ptr);
-    nlp.AddConstraintSet(load_cons_ptr);
-    nlp.AddCostSet(load_cost_ptr);
+    //nlp.AddVariableSet(load_vars_ptr);
+    //nlp.AddConstraintSet(load_cons_ptr);
+    //nlp.AddCostSet(load_cost_ptr);
 
-    nlp.AddVariableSet(switch_shunt_vars_ptr);
+    //nlp.AddVariableSet(switch_shunt_vars_ptr);
 
     nlp.AddVariableSet(line_vars_ptr);
     nlp.AddConstraintSet(line_cons_ptr);
     nlp.AddCostSet(line_cost_ptr);
 
-    nlp.AddVariableSet(trans_vars_ptr);
-    nlp.AddConstraintSet(trans_cons_ptr);
-    nlp.AddCostSet(trans_cost_ptr);
+    //nlp.AddVariableSet(trans_vars_ptr);
+    //nlp.AddConstraintSet(trans_cons_ptr);
+    //nlp.AddCostSet(trans_cost_ptr);
 
-    nlp.AddVariableSet(gen_vars_ptr);
-    nlp.AddConstraintSet(gen_cons_ptr);
-    nlp.AddCostSet(gen_cost_ptr);
+    //nlp.AddVariableSet(gen_vars_ptr);
+    //nlp.AddConstraintSet(gen_cons_ptr);
+    //nlp.AddCostSet(gen_cost_ptr);
 
-    nlp.AddVariableSet(bus_vars_ptr);
-    nlp.AddConstraintSet(bus_cons_ptr);
-    nlp.AddCostSet(bus_cost_ptr);
+    //nlp.AddVariableSet(bus_vars_ptr);
+    //nlp.AddConstraintSet(bus_cons_ptr);
+    //nlp.AddCostSet(bus_cost_ptr);
     nlp.PrintCurrent();
 
 
@@ -67,8 +67,8 @@ void BaseCaseProblem::Solve()
 
     ifopt::IpoptSolver ipopt;
     //ipopt.SetOption("linear_solver", "ma97");
-    //ipopt.SetOption("jacobian_approximation", "exact");
-    ipopt.SetOption("jacobian_approximation", "finite-difference-values");
+    ipopt.SetOption("jacobian_approximation", "exact");
+    //ipopt.SetOption("jacobian_approximation", "finite-difference-values");
     //ipopt.SetOption("check_derivatives_for_naninf", "yes");
     //ipopt.SetOption("derivative_test", "first-order");
     //ipopt.SetOption("bound_relax_factor", 1);

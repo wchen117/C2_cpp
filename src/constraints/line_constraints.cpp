@@ -79,47 +79,43 @@ void LineConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block
     {
 
         typedef Eigen::Triplet<double> eigen_triplet;
-        Eigen::MatrixXd eqn49 = Eigen::MatrixXd::Zero(line_var_ptr->size_E_k0, line_var_ptr->x_ek_sw.size());
+        Eigen::MatrixXd eqn49_wrt_x_ek_sw = Eigen::MatrixXd::Zero(line_var_ptr->size_E_k0, line_var_ptr->x_ek_sw.size());
         std::vector<eigen_triplet> eqn49_triplets;
         // eq(49), x_ek_sw - x_e_sw0 = 0 if swqual = 0
         for (size_t idx=0; idx<line_var_ptr->size_E_k0; idx++)
         {
             if (line_var_ptr->swqual_state(idx) == 0)
             {
-                eqn49_triplets.push_back(eigen_triplet(idx, idx+line_var_ptr->s_enk_plus.cols(), 1.0));
+                eqn49_wrt_x_ek_sw(idx, idx) = 1.0;
             }
         }
-
-        //jac_block.setFromTriplets()
-        //jac_block.setFromTriplets(eqn49_triplets);
-
-
 
         // s_enk_plus.size() = s_enk_plus.rows() * s_enk_plus.cols()
         Eigen::MatrixXd eqn54_wrt_flat_s_enk = Eigen::MatrixXd::Zero(line_var_ptr->size_E_k0, line_var_ptr->s_enk_plus.size());
         size_t sum_len = 0;
-        
-        /**
-        for (size_t idx=0; idx<line_var_ptr->s_enk_plus.cols(); idx++)
+        for (size_t idx=0; idx<line_var_ptr->s_enk_plus.rows(); idx++)
         {
-            for (size_t jdx=0; jdx<line_var_ptr->s_enk_plus.rows(); jdx++)
+            for (size_t jdx=0; jdx<line_var_ptr->s_enk_plus.cols(); jdx++)
             {
-                // p_jk = \sum_n p_jkn, for each j, only
-                eqn54_wrt_flat_s_enk(jdx, idx + sum_len) = 1.0;
+               eqn54_wrt_flat_s_enk(jdx + sum_len, idx) = 1.0;
             }
-            sum_len += line_var_ptr->s_enk_plus.rows();
+           
         }
+        Eigen::MatrixXd const& eqn55_wrt_flat_s_enk = eqn54_wrt_flat_s_enk;
+        Eigen::MatrixXd const& eqn56_wrt_flat_s_enk = eqn54_wrt_flat_s_enk;
 
+        constexpr float eps = std::numeric_limits<float>::epsilon();
+        Eigen::MatrixXd eqn55_denominator = ( (line_var_ptr->p_ek_o.array().square() + line_var_ptr->q_ek_o.array().square()).sqrt()) + eps;
+        Eigen::MatrixXd eqn56_denominator = ( (line_var_ptr->p_ek_d.array().square() + line_var_ptr->q_ek_d.array().square()).sqrt()) + eps;
 
+        
+        Eigen::MatrixXd eqn55_wrt_p_ek_o = (line_var_ptr->p_ek_o.array() / eqn55_denominator.array()).matrix().asDiagonal();
+        Eigen::MatrixXd eqn55_wrt_q_ek_o = (line_var_ptr->q_ek_o.array() / eqn55_denominator.array()).matrix().asDiagonal();
+        Eigen::MatrixXd eqn56_wrt_p_ek_d = (line_var_ptr->p_ek_d.array() / eqn56_denominator.array()).matrix().asDiagonal();
+        Eigen::MatrixXd eqn56_wrt_q_ek_d = (line_var_ptr->q_ek_d.array() / eqn56_denominator.array()).matrix().asDiagonal();
 
-       Eigen::MatrixXd const& eqn55_wrt_flat_s_enk = eqn54_wrt_flat_s_enk;
-       Eigen::MatrixXd const& eqn56_wrt_flat_s_enk = eqn54_wrt_flat_s_enk;
-
-        //Eigen::MatrixXd eqn55_wrt_p_ek_o = line_var_ptr->p_ek_o.array() / (line_var_ptr->p_ek_o.array().square() + )
-        **/
-
-
-
+        
+       
 
     }
 

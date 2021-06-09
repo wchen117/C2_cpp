@@ -129,6 +129,7 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
                 q_ek_o(ekdx) = tmp_q_ek_o;
                 p_ek_d(ekdx) = tmp_p_ek_d;
                 q_ek_d(ekdx) = tmp_q_ek_d;
+                std::cout<<"tmp_p_ek_o = "<<tmp_p_ek_o<<std::endl;
 
             }
             else{
@@ -137,7 +138,7 @@ LineVariables::LineVariables(const std::shared_ptr<Wrapper_Construct> data_ptr, 
 
         }
 
-
+        //std::cout<<p_ek_o.transpose()<<std::endl;
 
         pq_ek_od_size =  p_ek_o.size();
 
