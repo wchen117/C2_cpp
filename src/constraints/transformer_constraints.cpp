@@ -231,6 +231,7 @@ Eigen::VectorXd TransConstraints::GetValues() const
     trans_cons << Eqn60, tau_fk_cons, theta_fk_cons, b_fk_cons, g_fk_cons, s_fk_cons, Eqn77_cons, Eqn78_cons, eqn70_cons, eqn71_cons, eqn70_binary_cons, eqn71_binary_cons;
     //trans_cons << Eqn60, tau_fk_cons, theta_fk_cons, b_fk_cons, g_fk_cons, s_fk_cons, Eqn77_cons, Eqn78_cons;
 
+    std::cout<<"I am here"<<std::endl;
 
 
     return trans_cons;
@@ -287,8 +288,7 @@ TransConstraints::VecBound TransConstraints::GetBounds() const
     upper_bounds <<eqn60_up_bound,  eqn62_69_up_bounds, eqn76_up_bounds, eqn77_78_up_bounds, eqn70_up_bound, eqn71_up_bound, eqn70_binary_bound, eqn71_binary_bound;
     lower_bounds <<eqn60_lo_bound,  eqn62_69_lo_bounds, eqn76_lo_bounds, eqn77_78_lo_bounds, eqn70_lo_bound, eqn71_lo_bound, eqn70_binary_bound, eqn71_binary_bound;
 
-    //upper_bounds <<eqn60_up_bound,  eqn62_69_up_bounds, eqn76_up_bounds, eqn77_78_up_bounds;
-    //lower_bounds <<eqn60_lo_bound,  eqn62_69_lo_bounds, eqn76_lo_bounds, eqn77_78_lo_bounds;
+
     for (size_t idx=0; idx<GetRows(); idx++)
     {
         trans_con_bounds.at(idx).upper_ = upper_bounds(idx);
@@ -304,6 +304,75 @@ void TransConstraints::InitVariableDependedQuantities(const VariablesPtr& x)
 }
 void TransConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block) const
 {
+    if (var_set == trans_var_name)
+    {
+        /**
+        typedef Eigen::Triplet<double> T;
+        std::vector<T> transformer_triplets;
+
+         // jacobian for eqn(60)
+        for (size_t idx=0; idx<trans_var_ptr->size_F_k0; idx++)
+        {
+            if (trans_var_ptr->swqual_state(idx) == 0)
+            {
+                transformer_triplets.push_back(T(idx+trans_var_ptr->s_fnk_plus.size(), idx, 1.0));
+            }
+        }
+
+
+        
+        jac_block.setFromTriplets(transformer_triplets.begin(), transformer_triplets.end());
+        
+        
+        for (size_t idx=0; idx<trans_var_ptr->size_F_k0; idx++)
+        {
+            // jacobian for eqn(62, 63)
+            transformer_triplets.push_back(T(idx+trans_var_ptr->size_F_k0, idx+trans_var_ptr->s_fnk_plus.size()+2*trans_var_ptr->size_F_k0, 1.0));
+            // jacobian for eqn(64, 65)
+            transformer_triplets.push_back(T(idx+2*trans_var_ptr->size_F_k0, idx+trans_var_ptr->s_fnk_plus.size()+3*trans_var_ptr->size_F_k0, 1.0));
+            // jacobian for eqn(67), wrt to b_fk
+            transformer_triplets.push_back(T(idx+3*trans_var_ptr->size_F_k0, idx+trans_var_ptr->s_fnk_plus.size()+4*trans_var_ptr->size_F_k0, 1.0));
+            // jacobian for eqn(67), wrt to eta_fk
+            transformer_triplets.push_back(T(idx+3*trans_var_ptr->size_F_k0, idx+trans_var_ptr->s_fnk_plus.size()+6*trans_var_ptr->size_F_k0, 1.0));
+            // jacobian for eqn(66), wrt to g_fk
+            transformer_triplets.push_back(T(idx+4*trans_var_ptr->size_F_k0, idx+trans_var_ptr->s_fnk_plus.size()+5*trans_var_ptr->size_F_k0, 1.0));
+            // jacobian for eqn(66), wrt to eta_fk
+            transformer_triplets.push_back(T(idx+4*trans_var_ptr->size_F_k0, idx+trans_var_ptr->s_fnk_plus.size()+6*trans_var_ptr->size_F_k0, 1.0));
+
+        }
+
+      
+        
+        // s_fnk_plus.size() = s_fnk_plus.rows() * s_fnk_plus.cols()
+        Eigen::MatrixXd eqn77_wrt_flat_s_fnk = Eigen::MatrixXd::Zero(trans_var_ptr->size_F_k0, trans_var_ptr->s_fnk_plus.size());
+        size_t sum_len = 0;
+        for (size_t idx=0; idx<trans_var_ptr->s_fnk_plus.rows(); idx++)
+        {
+            for (size_t jdx=0; jdx<trans_var_ptr->s_fnk_plus.cols(); jdx++)
+            {
+              
+               // eqn76 wrt flat_s_fnk
+               transformer_triplets.push_back(T(jdx+sum_len+5*trans_var_ptr->size_F_k0 , idx, 1.0));
+               // eqn77 wrt flat_s_fnk
+               transformer_triplets.push_back(T(jdx+sum_len+6*trans_var_ptr->size_F_k0 , idx, 1.0));
+                // eqn78 wrt flat_s_fnk
+               transformer_triplets.push_back(T(jdx+sum_len+7*trans_var_ptr->size_F_k0 , idx, 1.0));
+               // eqn70 wrt falt_s_fnk
+            
+
+            }
+            sum_len += trans_var_ptr->s_fnk_plus.rows();
+           
+        }
+
+        
+
+
+
+
+     **/
+    }
+    
 
 }
 

@@ -66,17 +66,20 @@ void TransformerCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) con
 {
     if (var_set == trans_var_name)
     {
+        
         Eigen::VectorXd eqn22_der_1 = ((trans_var_ptr->x_fk_sw.array() - trans_var_ptr->x_f_sw0.array()) / ((trans_var_ptr->x_fk_sw.array() - trans_var_ptr->x_f_sw0.array()).pow(2) + epsilon).sqrt()).matrix();
-        Eigen::VectorXd zero_vec = Eigen::VectorXd::Zero(trans_var_ptr->size_F_k0);
+        Eigen::VectorXd zero_vec = Eigen::VectorXd::Zero(10 * trans_var_ptr->size_F_k0 + trans_var_ptr->eqn_70_binary_count + trans_var_ptr->eqn_71_binary_count);
         Eigen::Map<const Eigen::VectorXd> flat_cns(trans_var_ptr->c_n_s.data(), trans_var_ptr->c_n_s.size());
         assert(jac.cols() == trans_var_ptr->trans_var_len);
         Eigen::VectorXd eqn22_jac = Eigen::VectorXd::Zero(trans_var_ptr->trans_var_len);
-        eqn22_jac << flat_cns, eqn22_der_1, zero_vec, zero_vec, zero_vec ,zero_vec;
+        
+        eqn22_jac << flat_cns, eqn22_der_1, zero_vec;
 
         for (size_t idx=0; idx<jac.cols(); idx++)
         {
             jac.coeffRef(0, idx) = eqn22_jac(idx);
         }
+        
 
 
     }

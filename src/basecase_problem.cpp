@@ -38,13 +38,13 @@ BaseCaseProblem::BaseCaseProblem(const std::string& input_dir)
 
     //nlp.AddVariableSet(switch_shunt_vars_ptr);
 
-    nlp.AddVariableSet(line_vars_ptr);
-    nlp.AddConstraintSet(line_cons_ptr);
-    nlp.AddCostSet(line_cost_ptr);
+    //nlp.AddVariableSet(line_vars_ptr);
+    //nlp.AddConstraintSet(line_cons_ptr);
+    //nlp.AddCostSet(line_cost_ptr);
 
-    //nlp.AddVariableSet(trans_vars_ptr);
-    //nlp.AddConstraintSet(trans_cons_ptr);
-    //nlp.AddCostSet(trans_cost_ptr);
+    nlp.AddVariableSet(trans_vars_ptr);
+    nlp.AddConstraintSet(trans_cons_ptr);
+    nlp.AddCostSet(trans_cost_ptr);
 
     //nlp.AddVariableSet(gen_vars_ptr);
     //nlp.AddConstraintSet(gen_cons_ptr);
@@ -67,7 +67,7 @@ void BaseCaseProblem::Solve()
 
     ifopt::IpoptSolver ipopt;
     //ipopt.SetOption("linear_solver", "ma97");
-    ipopt.SetOption("jacobian_approximation", "exact");
+    //ipopt.SetOption("jacobian_approximation", "exact");
     //ipopt.SetOption("jacobian_approximation", "finite-difference-values");
     //ipopt.SetOption("check_derivatives_for_naninf", "yes");
     //ipopt.SetOption("derivative_test", "first-order");

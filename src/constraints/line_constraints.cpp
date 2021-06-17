@@ -78,6 +78,7 @@ void LineConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block
     if (var_set == line_var_name)
     {
 
+        size_t const E_k0_size= line_var_ptr->local_input_ptr->E_k0.size();
         typedef Eigen::Triplet<double> eigen_triplet;
         Eigen::MatrixXd eqn49_wrt_x_ek_sw = Eigen::MatrixXd::Zero(line_var_ptr->size_E_k0, line_var_ptr->x_ek_sw.size());
         std::vector<eigen_triplet> eqn49_triplets;
@@ -99,6 +100,7 @@ void LineConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block
             {
                eqn54_wrt_flat_s_enk(jdx + sum_len, idx) = 1.0;
             }
+             sum_len += line_var_ptr->s_enk_plus.rows();
            
         }
         Eigen::MatrixXd const& eqn55_wrt_flat_s_enk = eqn54_wrt_flat_s_enk;
@@ -114,7 +116,39 @@ void LineConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block
         Eigen::MatrixXd eqn56_wrt_p_ek_d = (line_var_ptr->p_ek_d.array() / eqn56_denominator.array()).matrix().asDiagonal();
         Eigen::MatrixXd eqn56_wrt_q_ek_d = (line_var_ptr->q_ek_d.array() / eqn56_denominator.array()).matrix().asDiagonal();
 
+        // eqn(49)
+        Eigen::MatrixXd eqn49_wrt_flat_s_enk = Eigen::MatrixXd::Zero(line_var_ptr->size_E_k0, line_var_ptr->s_enk_plus.size());
+        Eigen::MatrixXd eqn49_wrt_pq_ek_od = Eigen::MatrixXd::Zero(line_var_ptr->size_E_k0, line_var_ptr->pq_ek_od_size);
+        Eigen::MatrixXd eqn49_jac(eqn49_wrt_flat_s_enk.rows(), eqn49_wrt_flat_s_enk.cols() + eqn49_wrt_x_ek_sw.cols() + 4 * eqn49_wrt_pq_ek_od.cols());
+        eqn49_jac << eqn49_wrt_flat_s_enk, eqn49_wrt_x_ek_sw, eqn49_wrt_pq_ek_od, eqn49_wrt_pq_ek_od, eqn49_wrt_pq_ek_od, eqn49_wrt_pq_ek_od;
+
+        // eqn(54)
+        Eigen::MatrixXd eqn54_wrt_x_ek_sw = Eigen::MatrixXd::Zero(line_var_ptr->size_E_k0, eqn49_wrt_x_ek_sw.cols());
+        Eigen::MatrixXd eqn54_jac(eqn49_jac.rows(),  eqn49_jac.cols());
+        eqn54_jac << eqn54_wrt_flat_s_enk, eqn54_wrt_x_ek_sw, eqn49_wrt_pq_ek_od, eqn49_wrt_pq_ek_od, eqn49_wrt_pq_ek_od, eqn49_wrt_pq_ek_od;
+
+        //eqn(55)
+        Eigen::MatrixXd eqn55_jac(eqn54_jac.rows(), eqn54_jac.cols());
+        eqn55_jac << eqn55_wrt_flat_s_enk, eqn49_wrt_x_ek_sw, eqn55_wrt_p_ek_o, eqn55_wrt_q_ek_o, eqn49_wrt_pq_ek_od, eqn49_wrt_pq_ek_od;
+
+        // eqn(56)
+        Eigen::MatrixXd eqn56_jac(eqn55_jac.rows(), eqn55_jac.cols());
+        eqn56_jac << eqn56_wrt_flat_s_enk, eqn49_wrt_x_ek_sw, eqn49_wrt_pq_ek_od, eqn49_wrt_pq_ek_od, eqn56_wrt_p_ek_d, eqn56_wrt_q_ek_d;
+
+        Eigen::MatrixXd line_jac(4*eqn49_jac.rows(), eqn49_jac.cols());
+        line_jac << eqn49_jac, eqn54_jac, eqn55_jac, eqn56_jac;
+
+        for(size_t idx=0; idx<jac_block.rows(); idx++)
+        {
+            for(size_t jdx=0; jdx<jac_block.cols(); jdx++)
+            {
+                jac_block.coeffRef(idx, jdx) = line_jac(idx, jdx);
+                //jac_block.coeffRef(idx, jdx) = 10.0;
+            }
+        }
         
+
+
        
 
     }
