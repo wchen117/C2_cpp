@@ -229,9 +229,6 @@ Eigen::VectorXd TransConstraints::GetValues() const
     const Eigen::VectorXd &Eqn78_cons = (trans_var_ptr->p_fk_d.array().square() + trans_var_ptr->q_fk_d.array().square()).sqrt().matrix() - s_fk_cons - trans_var_ptr->s_f_over;
 
     trans_cons << Eqn60, tau_fk_cons, theta_fk_cons, b_fk_cons, g_fk_cons, s_fk_cons, Eqn77_cons, Eqn78_cons, eqn70_cons, eqn71_cons, eqn70_binary_cons, eqn71_binary_cons;
-    //trans_cons << Eqn60, tau_fk_cons, theta_fk_cons, b_fk_cons, g_fk_cons, s_fk_cons, Eqn77_cons, Eqn78_cons;
-
-    std::cout<<"I am here"<<std::endl;
 
 
     return trans_cons;
@@ -306,7 +303,7 @@ void TransConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_bloc
 {
     if (var_set == trans_var_name)
     {
-        /**
+        
         typedef Eigen::Triplet<double> T;
         std::vector<T> transformer_triplets;
 
@@ -321,7 +318,7 @@ void TransConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_bloc
 
 
         
-        jac_block.setFromTriplets(transformer_triplets.begin(), transformer_triplets.end());
+        
         
         
         for (size_t idx=0; idx<trans_var_ptr->size_F_k0; idx++)
@@ -341,6 +338,7 @@ void TransConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_bloc
 
         }
 
+        jac_block.setFromTriplets(transformer_triplets.begin(), transformer_triplets.end());
       
         
         // s_fnk_plus.size() = s_fnk_plus.rows() * s_fnk_plus.cols()
@@ -366,11 +364,13 @@ void TransConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_bloc
         }
 
         
+        
+        
 
 
 
 
-     **/
+
     }
     
 
