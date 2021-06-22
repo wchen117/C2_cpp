@@ -35,6 +35,7 @@ void LoadCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const
 {
     if (var_set == load_var_name)
     {
+        
         auto const& delta = load_var_ptr->load_ref_data->new_data.sup.sys_prms["delta"];
 
         size_t num_j = load_var_ptr->c_jn.size();
@@ -55,6 +56,7 @@ void LoadCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const
         {
             //std::cout<<jac.coeff(0, idx)<<std::endl;
         }
+        
     }
 
 

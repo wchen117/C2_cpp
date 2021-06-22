@@ -171,7 +171,6 @@ Eigen::VectorXd LineVariables::GetValues() const
 
         Eigen::VectorXd tmp_x(GetRows());
         // this flatten s_enk_plus col by col
-        // why must declare const here???? it says s_enk_plus a const double*, why?
 
         Eigen::Map<const Eigen::VectorXd> flat_s_enk(s_enk_plus.data(), s_enk_plus.size());
 

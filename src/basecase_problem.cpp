@@ -67,12 +67,12 @@ void BaseCaseProblem::Solve()
 
     ifopt::IpoptSolver ipopt;
     ipopt.SetOption("linear_solver", "ma97");
-    //ipopt.SetOption("jacobian_approximation", "exact");
-    ipopt.SetOption("jacobian_approximation", "finite-difference-values");
+    ipopt.SetOption("jacobian_approximation", "exact");
+    //ipopt.SetOption("jacobian_approximation", "finite-difference-values");
     //ipopt.SetOption("check_derivatives_for_naninf", "yes");
     ipopt.SetOption("derivative_test", "first-order");
     //ipopt.SetOption("bound_relax_factor", 1);
-    ipopt.SetOption("print_level", 5);
+    ipopt.SetOption("print_level", 4);
     ipopt.SetOption("output_file", "output.txt");
     ipopt.SetOption("max_iter", 100);
     ipopt.SetOption("max_cpu_time", 1e3);

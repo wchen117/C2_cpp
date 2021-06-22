@@ -76,7 +76,7 @@ void LoadConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block
 {
     if (var_set == load_var_name)
     {
-
+         
         // size of p_jk = the size of p_jkn's first dimension
         Eigen::MatrixXd eqn40_wrt_flat_p_jkn = Eigen::MatrixXd::Zero(load_var_ptr->p_jk_size, load_var_ptr->p_jkn_size);
         size_t sum_len = 0;
@@ -136,6 +136,7 @@ void LoadConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_block
                 //jac_block.coeffRef(idx, jdx) = 10.0;
             }
         }
+    
 
 
 
