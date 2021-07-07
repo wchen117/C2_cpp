@@ -38,17 +38,17 @@ BaseCaseProblem::BaseCaseProblem(const std::string& input_dir)
 
     //nlp.AddVariableSet(switch_shunt_vars_ptr);
 
-    nlp.AddVariableSet(line_vars_ptr);
-    nlp.AddConstraintSet(line_cons_ptr);
-    nlp.AddCostSet(line_cost_ptr);
+    //nlp.AddVariableSet(line_vars_ptr);
+    //nlp.AddConstraintSet(line_cons_ptr);
+    //nlp.AddCostSet(line_cost_ptr);
 
     //nlp.AddVariableSet(trans_vars_ptr);
     //nlp.AddConstraintSet(trans_cons_ptr);
     //nlp.AddCostSet(trans_cost_ptr);
 
-    //nlp.AddVariableSet(gen_vars_ptr);
-    //nlp.AddConstraintSet(gen_cons_ptr);
-    //nlp.AddCostSet(gen_cost_ptr);
+    nlp.AddVariableSet(gen_vars_ptr);
+    nlp.AddConstraintSet(gen_cons_ptr);
+    nlp.AddCostSet(gen_cost_ptr);
 
     //nlp.AddVariableSet(bus_vars_ptr);
     //nlp.AddConstraintSet(bus_cons_ptr);

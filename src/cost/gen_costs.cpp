@@ -49,6 +49,7 @@ void GenCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const
         // GetRows() here returns the number of cost, which is one
         Eigen::VectorXd tmp(gen_var_ptr->gen_var_len);
         Eigen::VectorXd flat_c_gn(gen_var_ptr->size_p_gnk);
+        Eigen::VectorXd gen_obj_wrt_q = Eigen::VectorXd::Zero(gen_var_ptr->size_G_k0);
         size_t count = 0;
         for (size_t idx=0; idx<gen_var_ptr->size_G_k0; idx++)
         {
@@ -60,7 +61,10 @@ void GenCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const
 
         }
 
-        tmp << -1* flat_c_gn, -1 * gen_var_ptr->c_g_on, -1 * gen_var_ptr->c_g_su, -1 * gen_var_ptr->c_g_sd;
+        auto const &alpha = gen_var_ptr->gen_ref_data->alpha_factor;
+
+
+        tmp << -1 * flat_c_gn, gen_obj_wrt_q, -1 * gen_var_ptr->c_g_on.array() + alpha * (1.0 - 2.0 * gen_var_ptr->x_gk_on.array()), -1 * gen_var_ptr->c_g_su.array() + alpha * (1.0 - 2.0 * gen_var_ptr->x_gk_su.array()), -1 * gen_var_ptr->c_g_sd.array() + alpha * (1.0 - 2.0 * gen_var_ptr->x_gk_sd.array());
 
         for(size_t idx=0; idx<tmp.size(); idx++)
         {

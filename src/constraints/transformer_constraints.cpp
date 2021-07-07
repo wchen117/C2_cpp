@@ -315,7 +315,7 @@ void TransConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_bloc
                 transformer_triplets.push_back(T(idx+trans_var_ptr->s_fnk_plus.size(), idx, 1.0));
             }
         }
-
+        
 
         
         
@@ -324,8 +324,10 @@ void TransConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_bloc
         for (size_t idx=0; idx<trans_var_ptr->size_F_k0; idx++)
         {
             // jacobian for eqn(62, 63)
+            transformer_triplets.push_back(T(idx+trans_var_ptr->size_F_k0, idx+trans_var_ptr->s_fnk_plus.size()+trans_var_ptr->size_F_k0, -trans_var_ptr->tau_f_st(idx)));
             transformer_triplets.push_back(T(idx+trans_var_ptr->size_F_k0, idx+trans_var_ptr->s_fnk_plus.size()+2*trans_var_ptr->size_F_k0, 1.0));
             // jacobian for eqn(64, 65)
+            transformer_triplets.push_back(T(idx+2*trans_var_ptr->size_F_k0, idx+trans_var_ptr->s_fnk_plus.size()+trans_var_ptr->size_F_k0, -trans_var_ptr->theta_f_st(idx)));
             transformer_triplets.push_back(T(idx+2*trans_var_ptr->size_F_k0, idx+trans_var_ptr->s_fnk_plus.size()+3*trans_var_ptr->size_F_k0, 1.0));
             // jacobian for eqn(67), wrt to b_fk
             transformer_triplets.push_back(T(idx+3*trans_var_ptr->size_F_k0, idx+trans_var_ptr->s_fnk_plus.size()+4*trans_var_ptr->size_F_k0, 1.0));
@@ -338,31 +340,29 @@ void TransConstraints::FillJacobianBlock(std::string var_set, Jacobian& jac_bloc
 
         }
 
-        jac_block.setFromTriplets(transformer_triplets.begin(), transformer_triplets.end());
+       
       
         
-        // s_fnk_plus.size() = s_fnk_plus.rows() * s_fnk_plus.cols()
-        Eigen::MatrixXd eqn77_wrt_flat_s_fnk = Eigen::MatrixXd::Zero(trans_var_ptr->size_F_k0, trans_var_ptr->s_fnk_plus.size());
-        size_t sum_len = 0;
-        for (size_t idx=0; idx<trans_var_ptr->s_fnk_plus.rows(); idx++)
-        {
-            for (size_t jdx=0; jdx<trans_var_ptr->s_fnk_plus.cols(); jdx++)
-            {
-              
-               // eqn76 wrt flat_s_fnk
-               transformer_triplets.push_back(T(jdx+sum_len+5*trans_var_ptr->size_F_k0 , idx, 1.0));
-               // eqn77 wrt flat_s_fnk
-               transformer_triplets.push_back(T(jdx+sum_len+6*trans_var_ptr->size_F_k0 , idx, 1.0));
-                // eqn78 wrt flat_s_fnk
-               transformer_triplets.push_back(T(jdx+sum_len+7*trans_var_ptr->size_F_k0 , idx, 1.0));
-               // eqn70 wrt falt_s_fnk
-            
 
+        size_t sum_len = 0;
+        for (size_t jdx=0; jdx<trans_var_ptr->s_fnk_plus.cols(); jdx++)
+        {
+            for (size_t idx=0; idx<trans_var_ptr->s_fnk_plus.rows(); idx++)
+            {
+                // Eqn(76) wrt. to flat_s_fnk
+                transformer_triplets.push_back(T(jdx + 5*trans_var_ptr->size_F_k0, idx+sum_len, 1.0));
+                // Eqn(77) wrt. to flat_s_fnk
+                transformer_triplets.push_back(T(jdx + 6*trans_var_ptr->size_F_k0, idx+sum_len, -1.0));
+                // Eqn(78) wrt. to flat_s_fnk
+                transformer_triplets.push_back(T(jdx + 7*trans_var_ptr->size_F_k0, idx+sum_len, -1.0));
             }
             sum_len += trans_var_ptr->s_fnk_plus.rows();
            
         }
 
+        jac_block.setFromTriplets(transformer_triplets.begin(), transformer_triplets.end());
+
+     
         
         
         

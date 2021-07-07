@@ -97,8 +97,8 @@ GeneratorVariables::GeneratorVariables(const std::shared_ptr<Wrapper_Construct> 
             }
 
         }
-        // length of p_gnk +  x_gk_on +  x_gk_su + x_gk_sd
-        gen_var_len = size_p_gnk + 3 * size_G_k0;
+        // length of p_gnk + q_gk + x_gk_on +  x_gk_su + x_gk_sd
+        gen_var_len = size_p_gnk + 4 * size_G_k0;
         SetRows(gen_var_len);
 
     }
@@ -127,7 +127,7 @@ Eigen::VectorXd GeneratorVariables::GetValues() const
             }
         }
         assert(count == size_p_gnk);
-        tmp_x << flat_p_gnk, x_gk_on, x_gk_su, x_gk_sd;
+        tmp_x << flat_p_gnk, q_gk, x_gk_on, x_gk_su, x_gk_sd;
         return tmp_x;
     }
     else
@@ -149,9 +149,10 @@ void GeneratorVariables::SetVariables(const Eigen::VectorXd &x)
         }
     }
     assert(count==size_p_gnk);
-    x_gk_on = x.segment(size_p_gnk, size_G_k0);
-    x_gk_su = x.segment(size_p_gnk+size_G_k0, size_G_k0);
-    x_gk_sd = x.segment(size_p_gnk+2*size_G_k0, size_G_k0);
+    q_gk = x.segment(size_p_gnk, size_G_k0);
+    x_gk_on = x.segment(size_p_gnk+size_G_k0, size_G_k0);
+    x_gk_su = x.segment(size_p_gnk+2*size_G_k0, size_G_k0);
+    x_gk_sd = x.segment(size_p_gnk+3*size_G_k0, size_G_k0);
 
 }
 
@@ -163,7 +164,15 @@ GeneratorVariables::VecBound GeneratorVariables::GetBounds() const
 
     size_t count = 0;
     Eigen::VectorXd upper_bound(GetRows());
+    Eigen::VectorXd lower_bound(GetRows());
     Eigen::VectorXd p_gnk_ub(size_p_gnk);
+    Eigen::VectorXd q_gk_lb = Eigen::VectorXd::Zero(size_G_k0);
+    Eigen::VectorXd q_gk_ub = Eigen::VectorXd::Zero(size_G_k0);
+    Eigen::VectorXd p_gnk_lb = Eigen::VectorXd::Zero(size_p_gnk);
+    Eigen::VectorXd x_gk_su_lb = Eigen::VectorXd::Zero(size_G_k0);
+    q_gk_lb.setConstant(-1e20);
+    q_gk_ub.setConstant(1e20);
+
     for (size_t idx=0; idx<size_G_k0; idx++)
     {
         for (size_t jdx=0; jdx<p_gn_over.at(idx).size(); jdx++)
@@ -175,12 +184,13 @@ GeneratorVariables::VecBound GeneratorVariables::GetBounds() const
 
     Eigen::VectorXd x_gk_ub(size_G_k0);
     x_gk_ub.setOnes();
-    upper_bound << p_gnk_ub, x_gk_ub, x_gk_ub, x_gk_ub;
+    upper_bound << p_gnk_ub, q_gk_ub, x_gk_ub, x_gk_ub, x_gk_ub;
+    lower_bound << p_gnk_lb, q_gk_lb, x_gk_su_lb, x_gk_su_lb, x_gk_su_lb;
 
     for (size_t idx=0; idx<gen_bounds.size(); idx++)
     {
         gen_bounds.at(idx).upper_ = upper_bound(idx);
-        gen_bounds.at(idx).lower_ = 0.0;
+        gen_bounds.at(idx).lower_ = lower_bound(idx);
     }
 
     return gen_bounds;
