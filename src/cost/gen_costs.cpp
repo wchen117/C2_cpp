@@ -63,7 +63,6 @@ void GenCosts::FillJacobianBlock(std::string var_set, Jacobian& jac) const
 
         auto const &alpha = gen_var_ptr->gen_ref_data->alpha_factor;
 
-
         tmp << -1 * flat_c_gn, gen_obj_wrt_q, -1 * gen_var_ptr->c_g_on.array() + alpha * (1.0 - 2.0 * gen_var_ptr->x_gk_on.array()), -1 * gen_var_ptr->c_g_su.array() + alpha * (1.0 - 2.0 * gen_var_ptr->x_gk_su.array()), -1 * gen_var_ptr->c_g_sd.array() + alpha * (1.0 - 2.0 * gen_var_ptr->x_gk_sd.array());
 
         for(size_t idx=0; idx<tmp.size(); idx++)

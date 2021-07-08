@@ -38,7 +38,7 @@ Eigen::VectorXd GeneratorConstraintsCon::GetValues() const
     const double &delta_r = gen_var_ptr->gen_ref_data->new_data.sup.sys_prms["deltar"];
     // Eqn(89) and Eqn(90)
     const Eigen::VectorXd Eqn89 = (p_gk.array() - (gen_var_ptr->p_gk_base + gen_var_ptr->p_g_ru_over * delta_r).array() \
-                                           * (gen_var_ptr->x_gk_on - gen_var_ptr->x_gk_su).array() + (gen_var_ptr->p_g_under + gen_var_ptr->p_g_ru_over * delta_r).array() * gen_var_ptr->x_gk_su.array()).matrix();
+                                           * (gen_var_ptr->x_gk_on - gen_var_ptr->x_gk_su).array() - (gen_var_ptr->p_g_under + gen_var_ptr->p_g_ru_over * delta_r).array() * gen_var_ptr->x_gk_su.array()).matrix();
     const Eigen::VectorXd Eqn90 = (p_gk.array() - (gen_var_ptr->p_gk_base - gen_var_ptr->p_g_rd_over * delta_r).array() \
                                            * (gen_var_ptr->x_gk_on - gen_var_ptr->x_gk_su).array()).matrix();
     Eigen::VectorXd Eqn95 = gen_var_ptr->x_gk_su_base.array() + gen_var_ptr->x_gk_sd.array() - 1.0;
@@ -149,5 +149,78 @@ void GeneratorConstraintsCon::InitVariableDependedQuantities(const VariablesPtr&
 }
 void GeneratorConstraintsCon::FillJacobianBlock(std::string var_set, Jacobian& jac_block) const
 {
+     if (var_set == gen_var_name)
+    {
+    typedef Eigen::Triplet<double> T;
+        std::vector<T> generator_triplets;
+
+        const auto &delta_r = gen_var_ptr->gen_ref_data->new_data.sup.sys_prms["deltar"];
+
+        for(size_t idx=0; idx<gen_var_ptr->size_G_k0;idx++)
+        {
+            // eqn(82) wrt to x_gk_on
+            generator_triplets.push_back(T(idx, gen_var_ptr->size_p_gnk+gen_var_ptr->size_G_k0+idx, 1.0));
+            // eqn(82) wrt to x_gk_su
+            generator_triplets.push_back(T(idx, gen_var_ptr->size_p_gnk+2*gen_var_ptr->size_G_k0+idx, -1.0));
+            // eqn(82) wrt to x_gk_sd
+            generator_triplets.push_back(T(idx, gen_var_ptr->size_p_gnk+3*gen_var_ptr->size_G_k0+idx, 1.0));
+            // eqn(84) wrt to x_gk_on
+            generator_triplets.push_back(T(gen_var_ptr->size_G_k0 + idx, gen_var_ptr->size_p_gnk+2*gen_var_ptr->size_G_k0+idx, 1.0));
+            // eqn(83) wrt to x_gk_sd
+            generator_triplets.push_back(T(gen_var_ptr->size_G_k0 + idx, gen_var_ptr->size_p_gnk+3*gen_var_ptr->size_G_k0+idx, 1.0));
+            // eqn(85) right hand side wrt to x_gk_on
+            generator_triplets.push_back(T(2*gen_var_ptr->size_G_k0 + idx, gen_var_ptr->size_p_gnk+gen_var_ptr->size_G_k0+idx, -gen_var_ptr->p_g_over(idx)));
+            // eqn(85) left hand side wrt to x_gk_on
+            generator_triplets.push_back(T(3*gen_var_ptr->size_G_k0 + idx, gen_var_ptr->size_p_gnk+gen_var_ptr->size_G_k0+idx, -gen_var_ptr->p_g_under(idx)));
+            // eqn(86) right hand side wrt to q_gk
+            generator_triplets.push_back(T(4*gen_var_ptr->size_G_k0 + idx, gen_var_ptr->size_p_gnk+idx, 1.0));
+            // eqn(86) left hand side wrt to q_gk
+            generator_triplets.push_back(T(5*gen_var_ptr->size_G_k0 + idx, gen_var_ptr->size_p_gnk+idx, 1.0));
+            // eqn(86) right hand side wrt to x_gk_on
+            generator_triplets.push_back(T(4*gen_var_ptr->size_G_k0 + idx, gen_var_ptr->size_p_gnk+gen_var_ptr->size_G_k0+idx, -gen_var_ptr->q_g_over(idx)));
+            // eqn(86) left hand side wrt to x_gk_on
+            generator_triplets.push_back(T(5*gen_var_ptr->size_G_k0 + idx, gen_var_ptr->size_p_gnk+gen_var_ptr->size_G_k0+idx, -gen_var_ptr->q_g_under(idx)));
+            // eqn(87) wrt to x_gk_on
+            generator_triplets.push_back(T(6*gen_var_ptr->size_G_k0 + idx, gen_var_ptr->size_p_gnk+gen_var_ptr->size_G_k0+idx, -(gen_var_ptr->p_g_0(idx) + gen_var_ptr->p_g_rd_over(idx) * delta_r)));
+            //std::cout<<"indices are "<<6*gen_var_ptr->size_G_k0 + idx<<" and "<< gen_var_ptr->size_p_gnk+gen_var_ptr->size_G_k0+idx<<std::endl;
+            // eqn(87) wrt to x_gk_su
+            generator_triplets.push_back(T(6*gen_var_ptr->size_G_k0 + idx, gen_var_ptr->size_p_gnk+2*gen_var_ptr->size_G_k0+idx, gen_var_ptr->p_g_0(idx) - gen_var_ptr->p_g_under(idx)));
+            // eqn(88) wrt to x_gk_on
+            generator_triplets.push_back(T(7*gen_var_ptr->size_G_k0 + idx, gen_var_ptr->size_p_gnk+gen_var_ptr->size_G_k0+idx, -gen_var_ptr->p_g_0(idx) + gen_var_ptr->p_g_rd_over(idx) * delta_r));
+            // eqn(88) wrt to x_gk_su
+            generator_triplets.push_back(T(7*gen_var_ptr->size_G_k0 + idx, gen_var_ptr->size_p_gnk+2*gen_var_ptr->size_G_k0+idx, gen_var_ptr->p_g_0(idx) - gen_var_ptr->p_g_rd_over(idx) * delta_r));
+            // eqn(91) wrt to x_gk_su
+            generator_triplets.push_back(T(8*gen_var_ptr->size_G_k0 + idx, gen_var_ptr->size_p_gnk+2*gen_var_ptr->size_G_k0+idx, 1.0));
+            // eqn(92) wrt to x_gk_sd
+            generator_triplets.push_back(T(9*gen_var_ptr->size_G_k0 + idx, gen_var_ptr->size_p_gnk+3*gen_var_ptr->size_G_k0+idx, 1.0));
+            // eqn(95) wrt tp x_gk_sd
+            generator_triplets.push_back(T(10*gen_var_ptr->size_G_k0 + idx, gen_var_ptr->size_p_gnk+3*gen_var_ptr->size_G_k0+idx, 1.0));
+            // eqn(96) wrt to x_gk_su
+            generator_triplets.push_back(T(11*gen_var_ptr->size_G_k0 + idx, gen_var_ptr->size_p_gnk+2*gen_var_ptr->size_G_k0+idx, 1.0));
+        }
+
+        size_t sum_len = 0;
+        for (size_t idx=0; idx<gen_var_ptr->p_gnk.size(); idx++)
+        {
+            for (size_t jdx=0; jdx<gen_var_ptr->p_gnk.at(idx).size(); jdx++)
+            {
+                // eqn(85) right hand side wrt to flat_p_gnk
+                generator_triplets.push_back(T(2*gen_var_ptr->size_G_k0+idx, jdx+sum_len, 1.0));
+                // eqn(85) left hand size wrt to flat_p_gnk
+                generator_triplets.push_back(T(3*gen_var_ptr->size_G_k0+idx, jdx+sum_len, 1.0));
+                // eqn(87) wrt to flat_p_gnk
+                generator_triplets.push_back(T(6*gen_var_ptr->size_G_k0+idx, jdx+sum_len, 1.0));
+                // eqn(88) wrt to flat_p_gnk
+                generator_triplets.push_back(T(7*gen_var_ptr->size_G_k0+idx, jdx+sum_len, 1.0));
+                
+            }
+            sum_len += gen_var_ptr->p_gnk.at(idx).size();
+        }
+
+        jac_block.setFromTriplets(generator_triplets.begin(), generator_triplets.end());
+    
+
+    }
+    
 
 }
